@@ -312,7 +312,7 @@
             border-color: #d1d5db;
         }
 
-        /* NUEVOS ESTILOS PARA RETRY Y NOTIFICACIONES */
+        /* NOTIFICACIONES DE RETRY */
         .retry-notification {
             background: #fef3c7;
             border: 1px solid #fbbf24;
@@ -630,7 +630,7 @@
             margin-right: 8px;
         }
 
-        /* NUEVOS ESTILOS PARA ESTADO DE SERVIDOR */
+        /* ESTADO DE SERVIDOR */
         .server-status {
             display: flex;
             align-items: center;
@@ -650,11 +650,6 @@
         .server-status.offline {
             background: #fee2e2;
             color: #991b1b;
-        }
-
-        .server-status.demo {
-            background: #fef3c7;
-            color: #92400e;
         }
 
         .status-indicator {
@@ -838,18 +833,18 @@
         let failedQuestions = {};
         let isServerOnline = false;
         let retryAttempt = 0;
-        let maxRetryAttempts = 5;
+        let maxRetryAttempts = 3;
         const API_BASE = '';
 
         // ========================
-        // SISTEMA MEJORADO DE VERIFICACIÓN DEL SERVIDOR
+        // VERIFICACIÓN DEL SERVIDOR
         // ========================
 
         async function checkServerHealth() {
             try {
                 const response = await fetch(`${API_BASE}/api/health`, {
                     method: 'GET',
-                    timeout: 5000
+                    headers: { 'Content-Type': 'application/json' }
                 });
                 
                 if (response.ok) {
@@ -863,7 +858,7 @@
                 console.log('❌ Servidor no disponible:', error.message);
             }
             
-            updateServerStatus('offline', 'Servidor no disponible - Modo demostración');
+            updateServerStatus('offline', 'Modo demostración');
             isServerOnline = false;
             return false;
         }
@@ -878,7 +873,7 @@
         }
 
         // ========================
-        // SISTEMA MEJORADO DE REINTENTOS CON UI
+        // SISTEMA DE REINTENTOS
         // ========================
 
         function showRetryNotification(attempt, maxAttempts, message) {
@@ -889,7 +884,6 @@
             notification.classList.add('active');
             messageElement.textContent = `${message} (Intento ${attempt}/${maxAttempts})`;
             
-            // Animar barra de progreso
             const progressPercentage = (attempt / maxAttempts) * 100;
             progressBar.style.width = `${progressPercentage}%`;
         }
@@ -907,19 +901,15 @@
                 retryAttempt++;
                 
                 if (retryAttempt > 1) {
-                    showRetryNotification(retryAttempt, maxRetryAttempts, 'Reintentando generar pregunta...');
-                    
-                    // Espera progresiva: 3s, 6s, 12s, 24s
-                    const waitTime = Math.min(3000 * Math.pow(2, retryAttempt - 2), 30000);
+                    showRetryNotification(retryAttempt, maxRetryAttempts, 'Reintentando...');
+                    const waitTime = Math.min(2000 * Math.pow(2, retryAttempt - 2), 10000);
                     await new Promise(resolve => setTimeout(resolve, waitTime));
                 }
                 
                 try {
                     const response = await fetch(`${API_BASE}/api/generate-exam`, {
                         method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
+                        headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
                             topics: [currentTopic],
                             questionCount: 1
@@ -940,7 +930,7 @@
                         console.log(`⏳ Error ${response.status}: ${errorData.error}`);
                         
                         if (retryAttempt < maxRetryAttempts) {
-                            showRetryNotification(retryAttempt, maxRetryAttempts, errorData.error || 'Servidor temporalmente ocupado');
+                            showRetryNotification(retryAttempt, maxRetryAttempts, errorData.error || 'Servidor ocupado');
                             continue;
                         }
                     } else {
@@ -950,14 +940,592 @@
                     console.error(`❌ Intento ${retryAttempt} fallido:`, error);
                     
                     if (retryAttempt < maxRetryAttempts) {
-                        showRetryNotification(retryAttempt, maxRetryAttempts, 'Error de conexión, reintentando...');
+                        showRetryNotification(retryAttempt, maxRetryAttempts, 'Error de conexión');
                         continue;
                     }
                 }
             }
             
-            // Si llegamos aquí, todos los intentos fallaron
             hideRetryNotification();
             showDemoQuestion();
-            showError('No se pudo conectar con el servidor. Mostrando pregunta de demostración.');
+            showError('No se pudo conectar. Mostrando pregunta de demostración.');
             return false;
+        }
+
+        // ========================
+        // PERSISTENCIA DE DATOS
+        // ========================
+
+        function saveUserStats() {
+            try {
+                localStorage.setItem('oposicion_stats', JSON.stringify(userStats));
+                console.log('📊 Estadísticas guardadas');
+            } catch (error) {
+                console.error('Error guardando estadísticas:', error);
+            }
+        }
+
+        function loadUserStatsFromLocal() {
+            try {
+                const saved = localStorage.getItem('oposicion_stats');
+                if (saved) {
+                    userStats = JSON.parse(saved);
+                    console.log('📊 Estadísticas cargadas');
+                } else {
+                    userStats = {};
+                }
+            } catch (error) {
+                console.error('Error cargando estadísticas:', error);
+                userStats = {};
+            }
+        }
+
+        function saveFailedQuestions() {
+            try {
+                localStorage.setItem('oposicion_failed', JSON.stringify(failedQuestions));
+                console.log('❌ Preguntas falladas guardadas');
+            } catch (error) {
+                console.error('Error guardando preguntas falladas:', error);
+            }
+        }
+
+        function loadFailedQuestionsFromLocal() {
+            try {
+                const saved = localStorage.getItem('oposicion_failed');
+                if (saved) {
+                    failedQuestions = JSON.parse(saved);
+                    console.log('❌ Preguntas falladas cargadas');
+                } else {
+                    failedQuestions = {};
+                }
+            } catch (error) {
+                console.error('Error cargando preguntas falladas:', error);
+                failedQuestions = {};
+            }
+        }
+
+        function updateLocalStats(topicId, isCorrect) {
+            const topicConfig = availableTopics.find(([id]) => id === topicId);
+            const topicTitle = topicConfig ? topicConfig[1].title : 'Tema desconocido';
+            
+            if (!userStats[topicId]) {
+                userStats[topicId] = {
+                    title: topicTitle,
+                    totalQuestions: 0,
+                    correctAnswers: 0,
+                    lastStudied: new Date().toISOString()
+                };
+            }
+            
+            userStats[topicId].totalQuestions++;
+            if (isCorrect) {
+                userStats[topicId].correctAnswers++;
+            }
+            userStats[topicId].lastStudied = new Date().toISOString();
+            userStats[topicId].accuracy = Math.round((userStats[topicId].correctAnswers / userStats[topicId].totalQuestions) * 100);
+            
+            saveUserStats();
+        }
+
+        function addLocalFailedQuestion(topicId, questionData, userAnswer) {
+            const topicConfig = availableTopics.find(([id]) => id === topicId);
+            const topicTitle = topicConfig ? topicConfig[1].title : 'Tema desconocido';
+            
+            if (!failedQuestions[topicId]) {
+                failedQuestions[topicId] = {
+                    title: topicTitle,
+                    questions: []
+                };
+            }
+            
+            const failedQuestion = {
+                ...questionData,
+                userAnswer,
+                date: new Date().toISOString(),
+                id: Date.now() + Math.random()
+            };
+            
+            failedQuestions[topicId].questions.push(failedQuestion);
+            saveFailedQuestions();
+        }
+
+        function removeLocalFailedQuestion(topicId, questionId) {
+            if (failedQuestions[topicId]) {
+                failedQuestions[topicId].questions = failedQuestions[topicId].questions.filter(q => q.id !== questionId);
+                
+                if (failedQuestions[topicId].questions.length === 0) {
+                    delete failedQuestions[topicId];
+                }
+                
+                saveFailedQuestions();
+            }
+        }
+
+        // ========================
+        // NAVEGACIÓN
+        // ========================
+
+        function showPage(pageName) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            document.querySelectorAll('.nav-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            document.getElementById(`${pageName}-page`).classList.add('active');
+            document.getElementById(`nav-${pageName}`).classList.add('active');
+            
+            switch(pageName) {
+                case 'study':
+                    loadAvailableTopics();
+                    break;
+                case 'progress':
+                    displayStats();
+                    break;
+                case 'review':
+                    displayFailedQuestions();
+                    break;
+            }
+        }
+
+        function showQuestionMode() {
+            document.getElementById('topic-selection').style.display = 'none';
+            document.getElementById('available-topics').style.display = 'none';
+            document.getElementById('question-container').classList.remove('hidden');
+        }
+
+        function backToTopicSelection() {
+            document.getElementById('topic-selection').style.display = 'block';
+            document.getElementById('available-topics').style.display = 'block';
+            document.getElementById('question-container').classList.add('hidden');
+            hideRetryNotification();
+            loadAvailableTopics();
+        }
+
+        // ========================
+        // CARGA DE TEMAS
+        // ========================
+
+        async function loadAvailableTopics() {
+            try {
+                console.log('🔄 Cargando temas...');
+                
+                if (!isServerOnline) {
+                    loadDemoTopics();
+                    return;
+                }
+                
+                const response = await fetch(`${API_BASE}/api/documents-status`);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const status = await response.json();
+                
+                availableTopics = Object.entries(status).filter(([id, config]) => 
+                    config.files && config.files.some(file => file.exists)
+                );
+                
+                populateTopicSelect();
+                updateTopicInfo();
+                
+            } catch (error) {
+                console.error('❌ Error cargando temas:', error);
+                loadDemoTopics();
+            }
+        }
+
+        function loadDemoTopics() {
+            availableTopics = [
+                ['demo-tema-14', { title: 'TEMA 14 - LOPJ (Demo)' }],
+                ['demo-constitucional', { title: 'Derecho Constitucional (Demo)' }],
+                ['demo-civil', { title: 'Procedimiento Civil (Demo)' }]
+            ];
+            
+            populateTopicSelect();
+            updateTopicInfo();
+        }
+
+        function populateTopicSelect() {
+            const select = document.getElementById('topic-select');
+            select.innerHTML = '<option value="">Selecciona un tema...</option>';
+            
+            availableTopics.forEach(([id, config]) => {
+                const option = document.createElement('option');
+                option.value = id;
+                option.textContent = config.title;
+                select.appendChild(option);
+            });
+            
+            select.addEventListener('change', function() {
+                const startBtn = document.getElementById('start-btn');
+                startBtn.disabled = !this.value;
+            });
+        }
+
+        function updateTopicInfo() {
+            const infoText = isServerOnline ? 
+                `${availableTopics.length} temas disponibles` :
+                `⚠️ Modo demostración - ${availableTopics.length} temas de prueba`;
+            
+            document.getElementById('available-topics').innerHTML = 
+                `<p style="text-align: center; color: ${isServerOnline ? '#6b7280' : '#dc2626'};">${infoText}</p>`;
+        }
+
+        // ========================
+        // INICIO DEL ESTUDIO
+        // ========================
+
+        function startStudying() {
+            const select = document.getElementById('topic-select');
+            const selectedTopicId = select.value;
+            
+            if (!selectedTopicId) {
+                showError('Por favor selecciona un tema');
+                return;
+            }
+            
+            currentTopic = selectedTopicId;
+            
+            const topicConfig = availableTopics.find(([id]) => id === selectedTopicId);
+            const topicTitle = topicConfig ? topicConfig[1].title : 'Tema Demo';
+            
+            document.getElementById('current-topic-name').textContent = topicTitle;
+            questionCount = 0;
+            correctAnswers = 0;
+            
+            showQuestionMode();
+            generateNextQuestion();
+        }
+
+        // ========================
+        // GENERACIÓN DE PREGUNTAS
+        // ========================
+
+        async function generateNextQuestion() {
+            if (!currentTopic) return;
+            
+            questionCount++;
+            document.getElementById('question-number').textContent = `Pregunta ${questionCount}`;
+            
+            showLoading();
+            
+            if (isServerOnline) {
+                await generateQuestionWithRetry();
+            } else {
+                setTimeout(() => {
+                    showDemoQuestion();
+                }, 1000);
+            }
+        }
+
+        function showDemoQuestion() {
+            const demoQuestions = [
+                {
+                    question: "¿Cuál es el órgano constitucional de gobierno del Poder Judicial?",
+                    options: [
+                        "A) El Consejo General del Poder Judicial (art. 122 CE)",
+                        "B) El Ministerio de Justicia",
+                        "C) El Tribunal Supremo",
+                        "D) Las Audiencias Provinciales"
+                    ],
+                    correct: 0,
+                    explanation: "La respuesta correcta es A. El artículo 122 de la Constitución establece que el CGPJ es el órgano de gobierno del Poder Judicial.",
+                    difficulty: "media",
+                    page_reference: "Artículo 122 CE"
+                },
+                {
+                    question: "Según la Constitución, ¿cuál es el principio fundamental de la administración de justicia?",
+                    options: [
+                        "A) La justicia emana del pueblo y se administra por Jueces independientes (art. 117 CE)",
+                        "B) Los jueces dependen del Gobierno",
+                        "C) La justicia es administrada por las Comunidades Autónomas",
+                        "D) Los tribunales están subordinados al Parlamento"
+                    ],
+                    correct: 0,
+                    explanation: "Correcto: A. El artículo 117 CE establece que la justicia emana del pueblo y se administra por Jueces y Tribunales independientes.",
+                    difficulty: "media",
+                    page_reference: "Artículo 117 CE"
+                },
+                {
+                    question: "¿Cuál es el plazo general para interponer recurso de apelación según la LEC?",
+                    options: [
+                        "A) 10 días desde la notificación",
+                        "B) 20 días desde la notificación",
+                        "C) 15 días desde la notificación",
+                        "D) 30 días desde la notificación"
+                    ],
+                    correct: 1,
+                    explanation: "Correcto: B. El artículo 458 LEC establece un plazo de 20 días para interponer recurso de apelación.",
+                    difficulty: "difícil",
+                    page_reference: "Artículo 458 LEC"
+                }
+            ];
+            
+            const randomIndex = Math.floor(Math.random() * demoQuestions.length);
+            currentQuestion = demoQuestions[randomIndex];
+            
+            displayQuestion();
+        }
+
+        function displayQuestion() {
+            document.getElementById('question-text').textContent = currentQuestion.question;
+            
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+            
+            currentQuestion.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'option';
+                optionDiv.onclick = () => selectOption(index);
+                
+                optionDiv.innerHTML = `
+                    <input type="radio" name="question-option" id="option-${index}" value="${index}">
+                    <div class="option-text">${option}</div>
+                `;
+                
+                optionsContainer.appendChild(optionDiv);
+            });
+            
+            document.getElementById('result-section').style.display = 'none';
+            document.getElementById('next-question-btn').style.display = 'none';
+        }
+
+        function selectOption(optionIndex) {
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+            
+            const selectedOption = document.querySelectorAll('.option')[optionIndex];
+            selectedOption.classList.add('selected');
+            document.getElementById(`option-${optionIndex}`).checked = true;
+            
+            showResult(optionIndex);
+        }
+
+        function showResult(userAnswer) {
+            const isCorrect = userAnswer === currentQuestion.correct;
+            
+            if (isCorrect) correctAnswers++;
+            
+            updateLocalStats(currentTopic, isCorrect);
+            
+            if (!isCorrect) {
+                addLocalFailedQuestion(currentTopic, currentQuestion, userAnswer);
+            }
+            
+            document.querySelectorAll('.option').forEach((opt, index) => {
+                if (index === currentQuestion.correct) {
+                    opt.classList.add('correct');
+                } else if (index === userAnswer && !isCorrect) {
+                    opt.classList.add('incorrect');
+                }
+            });
+            
+            const resultSection = document.getElementById('result-section');
+            const resultIcon = document.getElementById('result-icon');
+            const resultTitle = document.getElementById('result-title');
+            const resultExplanation = document.getElementById('result-explanation');
+            
+            if (isCorrect) {
+                resultSection.className = 'result-section correct';
+                resultIcon.textContent = '✅';
+                resultTitle.textContent = '¡Correcto!';
+                resultTitle.style.color = '#16a34a';
+            } else {
+                resultSection.className = 'result-section incorrect';
+                resultIcon.textContent = '❌';
+                resultTitle.textContent = 'Incorrecto';
+                resultTitle.style.color = '#dc2626';
+            }
+            
+            resultExplanation.textContent = currentQuestion.explanation;
+            resultSection.style.display = 'block';
+            
+            document.getElementById('next-question-btn').style.display = 'block';
+        }
+
+        // ========================
+        // ESTADÍSTICAS
+        // ========================
+
+        function displayStats() {
+            const container = document.getElementById('stats-container');
+            
+            if (Object.keys(userStats).length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="emoji">📈</div>
+                        <h3>¡Comienza a estudiar!</h3>
+                        <p>Aquí verás tus estadísticas una vez que respondas algunas preguntas.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            let statsHTML = '<div class="stats-grid">';
+            
+            Object.entries(userStats).forEach(([topicId, stats]) => {
+                const accuracy = stats.accuracy || 0;
+                const badgeClass = accuracy >= 80 ? 'good' : accuracy >= 60 ? 'warning' : 'danger';
+                const lastStudied = new Date(stats.lastStudied).toLocaleDateString('es-ES');
+                
+                statsHTML += `
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-title">${stats.title}</div>
+                            <div class="stat-badge ${badgeClass}">${accuracy}%</div>
+                        </div>
+                        <div class="stat-numbers">
+                            <div class="stat-number">
+                                <div class="value">${stats.totalQuestions}</div>
+                                <div class="label">Preguntas</div>
+                            </div>
+                            <div class="stat-number">
+                                <div class="value">${stats.correctAnswers}</div>
+                                <div class="label">Correctas</div>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill ${badgeClass}" style="width: ${accuracy}%"></div>
+                        </div>
+                        <div class="last-studied">Último estudio: ${lastStudied}</div>
+                    </div>
+                `;
+            });
+            
+            statsHTML += '</div>';
+            container.innerHTML = statsHTML;
+        }
+
+        // ========================
+        // PREGUNTAS FALLADAS
+        // ========================
+
+        function displayFailedQuestions() {
+            const container = document.getElementById('failed-container');
+            
+            if (Object.keys(failedQuestions).length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="emoji">🎯</div>
+                        <h3>¡Excelente!</h3>
+                        <p>No tienes preguntas falladas para repasar.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            let failedHTML = '<div class="failed-topics">';
+            
+            Object.entries(failedQuestions).forEach(([topicId, topicData]) => {
+                failedHTML += `
+                    <div class="failed-topic">
+                        <div class="failed-topic-header" onclick="toggleFailedTopic('${topicId}')">
+                            <h3>${topicData.title}</h3>
+                            <div class="failed-topic-count">${topicData.questions.length} preguntas falladas</div>
+                        </div>
+                        <div class="failed-questions" id="failed-${topicId}">
+                `;
+                
+                topicData.questions.forEach(question => {
+                    const correctAnswer = question.options[question.correct];
+                    const userAnswer = question.options[question.userAnswer];
+                    const dateString = new Date(question.date).toLocaleDateString('es-ES');
+                    
+                    failedHTML += `
+                        <div class="failed-question">
+                            <div class="failed-question-text">${question.question}</div>
+                            <div class="failed-question-details">
+                                <strong>Tu respuesta:</strong> ${userAnswer}<br>
+                                <strong>Respuesta correcta:</strong> ${correctAnswer}<br>
+                                <strong>Fecha:</strong> ${dateString}
+                            </div>
+                            <button class="retry-button" onclick="removeFailedQuestion('${topicId}', ${question.id})">
+                                ✅ Marcar como repasada
+                            </button>
+                        </div>
+                    `;
+                });
+                
+                failedHTML += '</div></div>';
+            });
+            
+            failedHTML += '</div>';
+            container.innerHTML = failedHTML;
+        }
+
+        function toggleFailedTopic(topicId) {
+            const element = document.getElementById(`failed-${topicId}`);
+            element.classList.toggle('active');
+        }
+
+        function removeFailedQuestion(topicId, questionId) {
+            removeLocalFailedQuestion(topicId, questionId);
+            displayFailedQuestions();
+            showSuccess('Pregunta marcada como repasada');
+        }
+
+        // ========================
+        // UTILIDADES
+        // ========================
+
+        function showLoading() {
+            document.getElementById('question-text').innerHTML = 
+                `<div style="text-align: center; padding: 20px;">
+                    <div class="loading"></div>
+                    <p style="margin-top: 12px; color: #6b7280;">Generando pregunta...</p>
+                </div>`;
+            document.getElementById('options-container').innerHTML = '';
+            document.getElementById('result-section').style.display = 'none';
+            document.getElementById('next-question-btn').style.display = 'none';
+        }
+
+        function showError(message) {
+            const container = document.getElementById('error-container');
+            container.innerHTML = `<div class="error-message">${message}</div>`;
+            setTimeout(() => container.innerHTML = '', 5000);
+        }
+
+        function showSuccess(message) {
+            const container = document.getElementById('error-container');
+            container.innerHTML = `<div class="success-message">${message}</div>`;
+            setTimeout(() => container.innerHTML = '', 3000);
+        }
+
+        function clearAllData() {
+            if (confirm('¿Borrar todos los datos de progreso?')) {
+                localStorage.removeItem('oposicion_stats');
+                localStorage.removeItem('oposicion_failed');
+                userStats = {};
+                failedQuestions = {};
+                
+                displayStats();
+                displayFailedQuestions();
+                
+                showSuccess('Datos eliminados');
+            }
+        }
+
+        // ========================
+        // INICIALIZACIÓN
+        // ========================
+
+        window.onload = async function() {
+            console.log('🚀 Iniciando aplicación...');
+            
+            await checkServerHealth();
+            
+            loadUserStatsFromLocal();
+            loadFailedQuestionsFromLocal();
+            
+            showPage('study');
+            
+            console.log('✅ Aplicación iniciada');
+        };
+    </script>
+</body>
+</html>

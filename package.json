@@ -1,18 +1,29 @@
 {
   "name": "oposiciones-app",
   "version": "1.0.0",
-  "description": "Aplicación de preparación de oposiciones",
+  "description": "Sistema inteligente de preparación de oposiciones técnicas",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "echo 'No build required'"
   },
   "dependencies": {
-    "express": "^4.18.2",
+    "express": "^4.21.2",
     "cors": "^2.8.5",
     "@anthropic-ai/sdk": "^0.24.3",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.6.1"
   },
   "engines": {
-    "node": "18.x"
-  }
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "oposiciones",
+    "examenes",
+    "claude",
+    "ai",
+    "justicia"
+  ],
+  "author": "Tu Nombre",
+  "license": "MIT"
 }

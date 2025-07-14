@@ -1,5 +1,5 @@
 // ========================
-// SERVIDOR COMPLETO Y MEJORADO CON MEJOR MANEJO DE ERRORES - server.js
+// SERVIDOR OPTIMIZADO PARA RENDER - server.js
 // ========================
 
 const express = require('express');
@@ -12,10 +12,13 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Middleware
-app.use(cors());
-app.use(express.json());
-app.use(express.static('public'));
+// Middleware optimizado para producción
+app.use(cors({
+    origin: ['http://localhost:3000', 'https://*.onrender.com'],
+    credentials: true
+}));
+app.use(express.json({ limit: '10mb' }));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname));
 
 // Ruta principal para servir la aplicación
@@ -32,24 +35,19 @@ const anthropic = new Anthropic({
 const DOCUMENTS_DIR = path.join(__dirname, 'documents');
 
 // Base de datos en memoria para estadísticas y preguntas falladas
-let userStats = {
-  // topicId: { totalQuestions: 0, correctAnswers: 0, lastStudied: Date, title: string }
-};
+let userStats = {};
+let failedQuestions = {};
 
-let failedQuestions = {
-  // topicId: { title: string, questions: [{ question, options, correct, explanation, userAnswer, date, id }] }
-};
-
-// CONFIGURACIÓN MEJORADA PARA CLAUDE
+// CONFIGURACIÓN OPTIMIZADA PARA CLAUDE
 const IMPROVED_CLAUDE_CONFIG = {
-  maxRetries: 5,              // Más reintentos
-  baseDelay: 8000,           // Espera inicial más larga
-  maxDelay: 30000,           // Máximo 30 segundos
-  backoffMultiplier: 2,      // Backoff exponencial
-  jitterFactor: 0.2          // Factor aleatorio para evitar ataques sincronizados
+  maxRetries: 3,              // Reducido para Render
+  baseDelay: 2000,           // Más rápido para producción
+  maxDelay: 15000,           // Reducido para mejor UX
+  backoffMultiplier: 2,      
+  jitterFactor: 0.1          // Reducido para ser más predecible
 };
 
-// Configuración completa de temas
+// Configuración completa de temas (optimizada)
 const TOPIC_CONFIG = {
   "articulos-lec-del-desahucio-1": {
     "title": "ARTICULOS LEC DEL DESAHUCIO (1)",
@@ -194,17 +192,14 @@ const TOPIC_CONFIG = {
 };
 
 // ========================
-// SISTEMA MEJORADO DE LLAMADAS A CLAUDE
+// SISTEMA OPTIMIZADO DE LLAMADAS A CLAUDE
 // ========================
 
 function calculateDelay(attempt, config = IMPROVED_CLAUDE_CONFIG) {
   const baseDelay = config.baseDelay;
   const exponentialDelay = baseDelay * Math.pow(config.backoffMultiplier, attempt - 1);
-  
-  // Añadir jitter aleatorio para evitar "thundering herd"
   const jitter = exponentialDelay * config.jitterFactor * Math.random();
   const finalDelay = Math.min(exponentialDelay + jitter, config.maxDelay);
-  
   return Math.round(finalDelay);
 }
 
@@ -213,65 +208,52 @@ async function callClaudeWithImprovedRetry(fullPrompt, config = IMPROVED_CLAUDE_
   
   for (let attempt = 1; attempt <= config.maxRetries; attempt++) {
     try {
-      console.log(`🤖 Intento ${attempt}/${config.maxRetries} - Generando preguntas con Claude...`);
+      console.log(`🤖 Intento ${attempt}/${config.maxRetries} - Generando preguntas...`);
       
       const response = await anthropic.messages.create({
         model: "claude-3-5-sonnet-20241022",
-        max_tokens: 2700,
-        temperature: 0.3,
+        max_tokens: 2000,
+        temperature: 0.2,
         messages: [{
           role: "user",
           content: fullPrompt
         }]
       });
       
-      console.log(`✅ Respuesta de Claude recibida en intento ${attempt}`);
+      console.log(`✅ Pregunta generada en intento ${attempt}`);
       return response;
       
     } catch (error) {
       lastError = error;
-      console.log(`❌ Intento ${attempt} fallido:`, error.status, error.message);
+      console.log(`❌ Intento ${attempt} fallido:`, error.status || 'Unknown', error.message);
       
-      // Si es el último intento, no esperar más
       if (attempt === config.maxRetries) {
         console.log(`💀 Todos los ${config.maxRetries} intentos fallaron`);
         break;
       }
       
-      // Calcular tiempo de espera inteligente
       const waitTime = calculateDelay(attempt, config);
-      
-      // Mensajes más informativos según el tipo de error
-      if (error.status === 529) {
-        console.log(`⏳ Claude sobrecargado. Esperando ${waitTime/1000}s antes del siguiente intento...`);
-      } else if (error.status === 429) {
-        console.log(`⏳ Rate limit alcanzado. Esperando ${waitTime/1000}s antes del siguiente intento...`);
-      } else {
-        console.log(`⏳ Error ${error.status}. Esperando ${waitTime/1000}s antes del siguiente intento...`);
-      }
-      
+      console.log(`⏳ Esperando ${waitTime/1000}s antes del siguiente intento...`);
       await new Promise(resolve => setTimeout(resolve, waitTime));
     }
   }
   
-  // Si llegamos aquí, todos los intentos fallaron
   throw lastError;
 }
 
 // ========================
-// FUNCIÓN DE PARSING MEJORADA
+// PARSING OPTIMIZADO
 // ========================
 
 function parseClaudeResponse(responseText) {
   try {
     return JSON.parse(responseText);
   } catch (error) {
-    console.log('🔧 Intentando extraer JSON de la respuesta...');
+    console.log('🔧 Extrayendo JSON...');
     
-    let jsonMatch = responseText.match(/```json\n([\s\S]*?)\n```/);
-    if (!jsonMatch) {
-      jsonMatch = responseText.match(/```\n([\s\S]*?)\n```/);
-    }
+    // Buscar JSON en bloques de código
+    let jsonMatch = responseText.match(/```json\n([\s\S]*?)\n```/) || 
+                   responseText.match(/```\n([\s\S]*?)\n```/);
     
     if (jsonMatch) {
       try {
@@ -281,32 +263,33 @@ function parseClaudeResponse(responseText) {
       }
     }
     
+    // Buscar JSON sin markdown
     const jsonStart = responseText.indexOf('{');
     const jsonEnd = responseText.lastIndexOf('}');
     
     if (jsonStart !== -1 && jsonEnd !== -1 && jsonEnd > jsonStart) {
       try {
-        const jsonStr = responseText.substring(jsonStart, jsonEnd + 1);
-        return JSON.parse(jsonStr);
+        return JSON.parse(responseText.substring(jsonStart, jsonEnd + 1));
       } catch (e) {
         console.log('❌ JSON sin markdown no válido');
       }
     }
     
-    console.log('🚨 Generando pregunta de emergencia...');
+    // Pregunta de emergencia optimizada
+    console.log('🚨 Usando pregunta de emergencia...');
     return {
       questions: [{
-        question: "Según los principios fundamentales del ordenamiento jurídico, ¿cuál es la función esencial del poder judicial?",
+        question: "¿Cuál es el principio fundamental que rige la administración de justicia según la Constitución Española?",
         options: [
-          "A) Administrar justicia conforme a la Constitución y las leyes (art. 117 CE)",
-          "B) Crear nuevas normas jurídicas según las necesidades sociales",
-          "C) Ejecutar las decisiones del poder ejecutivo de forma subordinada",
-          "D) Supervisar y controlar la actividad del poder legislativo"
+          "A) La justicia emana del pueblo y se administra por Jueces y Tribunales independientes (art. 117 CE)",
+          "B) La justicia es administrada directamente por el Gobierno central",
+          "C) Los jueces dependen jerárquicamente del Ministerio de Justicia",
+          "D) La administración de justicia corresponde a las Comunidades Autónomas"
         ],
         correct: 0,
-        explanation: "La respuesta correcta es A porque el artículo 117 de la Constitución establece que corresponde exclusivamente a los Juzgados y Tribunales el ejercicio de la potestad jurisdiccional, juzgando y haciendo ejecutar lo juzgado. Las otras opciones son incorrectas porque: B) Los jueces aplican las leyes, no las crean; C) El poder judicial es independiente, no subordinado; D) No tiene función de control sobre el legislativo.",
+        explanation: "La respuesta correcta es A. El artículo 117 de la Constitución establece que la justicia emana del pueblo y se administra en nombre del Rey por Jueces y Tribunales independientes, inamovibles, responsables y sometidos únicamente al imperio de la ley.",
         difficulty: "media",
-        page_reference: "Artículo 117 de la Constitución Española"
+        page_reference: "Artículo 117 CE"
       }]
     };
   }
@@ -363,18 +346,15 @@ CONTENIDO A ANALIZAR:
 IMPORTANTE: Basa todas las preguntas y opciones EXCLUSIVAMENTE en el contenido proporcionado. No agregues información externa. Responde SOLO con el JSON válido para {{QUESTION_COUNT}} pregunta(s).`;
 
 // ========================
-// FUNCIONES PARA MANEJO DE ARCHIVOS
+// FUNCIONES DE ARCHIVOS OPTIMIZADAS
 // ========================
 
 async function readFile(filePath) {
-  const ext = path.extname(filePath).toLowerCase();
-  
   try {
-    if (ext === '.txt') {
+    if (path.extname(filePath).toLowerCase() === '.txt') {
       return await fs.readFile(filePath, 'utf8');
-    } else {
-      return '[FORMATO NO SOPORTADO - Solo archivos .txt]';
     }
+    return '[FORMATO NO SOPORTADO]';
   } catch (error) {
     console.error(`Error leyendo ${filePath}:`, error.message);
     throw error;
@@ -385,7 +365,7 @@ async function ensureDocumentsDirectory() {
   try {
     await fs.access(DOCUMENTS_DIR);
   } catch (error) {
-    console.log('📁 Creando directorio de documentos...');
+    console.log('📁 Creando directorio documents...');
     await fs.mkdir(DOCUMENTS_DIR, { recursive: true });
   }
 }
@@ -400,39 +380,30 @@ async function getDocumentsByTopics(topics) {
     
     allContent += `\n\n=== ${topicConfig.title} ===\n\n`;
     
-    let foundFile = false;
-    
     for (const fileName of topicConfig.files) {
       const filePath = path.join(DOCUMENTS_DIR, fileName);
       
       try {
         const content = await readFile(filePath);
         if (content && !content.includes('[FORMATO NO SOPORTADO')) {
-          allContent += `--- ${fileName} ---\n${content}\n\n`;
-          foundFile = true;
+          allContent += `${content}\n\n`;
           successCount++;
           console.log(`✅ Leído: ${fileName}`);
-        } else {
-          console.log(`⚠️  Contenido vacío o no soportado: ${fileName}`);
+          break;
         }
-        break;
       } catch (error) {
-        console.log(`❌ Error leyendo: ${fileName} - ${error.message}`);
+        console.log(`❌ Error: ${fileName}`);
         continue;
       }
     }
-    
-    if (!foundFile) {
-      allContent += `--- ${topicConfig.title} ---\n[NO SE PUDO LEER EL ARCHIVO PARA ESTE TEMA]\n\n`;
-    }
   }
   
-  console.log(`📊 Archivos procesados exitosamente: ${successCount}/${topics.length}`);
+  console.log(`📊 Archivos procesados: ${successCount}/${topics.length}`);
   return allContent;
 }
 
 // ========================
-// FUNCIONES DE ESTADÍSTICAS MEJORADAS
+// FUNCIONES DE ESTADÍSTICAS
 // ========================
 
 function updateUserStats(topicId, isCorrect) {
@@ -440,7 +411,7 @@ function updateUserStats(topicId, isCorrect) {
   
   if (!userStats[topicId]) {
     userStats[topicId] = {
-      title: topicConfig ? topicConfig.title : 'Tema desconocido',
+      title: topicConfig?.title || 'Tema desconocido',
       totalQuestions: 0,
       correctAnswers: 0,
       lastStudied: new Date()
@@ -448,9 +419,7 @@ function updateUserStats(topicId, isCorrect) {
   }
   
   userStats[topicId].totalQuestions++;
-  if (isCorrect) {
-    userStats[topicId].correctAnswers++;
-  }
+  if (isCorrect) userStats[topicId].correctAnswers++;
   userStats[topicId].lastStudied = new Date();
   userStats[topicId].accuracy = Math.round((userStats[topicId].correctAnswers / userStats[topicId].totalQuestions) * 100);
 }
@@ -460,7 +429,7 @@ function addFailedQuestion(topicId, questionData, userAnswer) {
   
   if (!failedQuestions[topicId]) {
     failedQuestions[topicId] = {
-      title: topicConfig ? topicConfig.title : 'Tema desconocido',
+      title: topicConfig?.title || 'Tema desconocido',
       questions: []
     };
   }
@@ -476,8 +445,6 @@ function addFailedQuestion(topicId, questionData, userAnswer) {
 function removeFailedQuestion(topicId, questionId) {
   if (failedQuestions[topicId]) {
     failedQuestions[topicId].questions = failedQuestions[topicId].questions.filter(q => q.id !== questionId);
-    
-    // Si no quedan preguntas falladas para este tema, eliminar el tema
     if (failedQuestions[topicId].questions.length === 0) {
       delete failedQuestions[topicId];
     }
@@ -485,102 +452,85 @@ function removeFailedQuestion(topicId, questionId) {
 }
 
 // ========================
-// RUTAS DE LA API
+// RUTAS DE LA API OPTIMIZADAS
 // ========================
 
-// Obtener temas disponibles
-app.get('/api/topics', async (req, res) => {
+app.get('/api/topics', (req, res) => {
   try {
-    const topics = Object.keys(TOPIC_CONFIG);
-    res.json(topics);
+    res.json(Object.keys(TOPIC_CONFIG));
   } catch (error) {
     res.status(500).json({ error: 'Error al obtener temas' });
   }
 });
 
-// RUTA PRINCIPAL MEJORADA PARA GENERAR EXAMEN
 app.post('/api/generate-exam', async (req, res) => {
   try {
     const { topics, questionCount = 1 } = req.body;
     
-    if (!topics || topics.length === 0) {
-      return res.status(400).json({ error: 'Debes seleccionar al menos un tema' });
+    if (!topics?.length) {
+      return res.status(400).json({ error: 'Selecciona al menos un tema' });
     }
     
-    console.log('📚 Leyendo documentos para temas:', topics);
+    console.log('📚 Procesando temas:', topics);
     
     const documentContent = await getDocumentsByTopics(topics);
     
-    if (!documentContent.trim() || documentContent.includes('[NO SE PUDO LEER EL ARCHIVO')) {
+    if (!documentContent.trim()) {
       return res.status(404).json({ 
-        error: 'No se pudo leer el contenido de los temas seleccionados. Verifica que los archivos .txt estén en la carpeta documents/' 
+        error: 'No se encontró contenido para los temas seleccionados' 
       });
     }
     
     const fullPrompt = CLAUDE_PROMPT
-      .replace('{{CONTENT}}', documentContent)
+      .replace('{{CONTENT}}', documentContent.substring(0, 50000)) // Limitar contenido
       .replace(/{{QUESTION_COUNT}}/g, questionCount);
     
-    console.log('🤖 Iniciando generación de preguntas...');
-    
-    // USAR LA NUEVA FUNCIÓN MEJORADA CON REINTENTOS INTELIGENTES
     const response = await callClaudeWithImprovedRetry(fullPrompt);
     
     let questionsData;
     try {
       const responseText = response.content[0].text;
-      console.log('📝 Respuesta de Claude recibida');
-      console.log('🔍 Primeros 200 caracteres:', responseText.substring(0, 200));
-      
       questionsData = parseClaudeResponse(responseText);
       
-      if (!questionsData || !questionsData.questions || questionsData.questions.length === 0) {
+      if (!questionsData?.questions?.length) {
         throw new Error('No se generaron preguntas válidas');
       }
       
-      // Validar y corregir estructura de cada pregunta
+      // Validar cada pregunta
       questionsData.questions.forEach((q, index) => {
-        if (!q.question || !q.options || !Array.isArray(q.options) || q.options.length !== 4) {
-          console.log(`⚠️  Pregunta ${index + 1} tiene formato incorrecto, corrigiendo...`);
+        if (!q.question || !Array.isArray(q.options) || q.options.length !== 4) {
+          console.log(`⚠️ Corrigiendo pregunta ${index + 1}`);
           q.options = q.options || [
-            "A) Opción por defecto 1",
-            "B) Opción por defecto 2", 
-            "C) Opción por defecto 3",
-            "D) Opción por defecto 4"
+            "A) Opción 1", "B) Opción 2", "C) Opción 3", "D) Opción 4"
           ];
         }
-        
-        q.correct = q.correct !== undefined ? q.correct : 0;
-        q.explanation = q.explanation || "Explicación no disponible por error en la generación.";
+        q.correct = q.correct ?? 0;
+        q.explanation = q.explanation || "Explicación no disponible.";
         q.difficulty = q.difficulty || "media";
         q.page_reference = q.page_reference || "Referencia no disponible";
       });
       
     } catch (parseError) {
-      console.error('❌ Error parsing Claude response:', parseError.message);
+      console.error('❌ Error parsing:', parseError.message);
       questionsData = {
         questions: [{
-          question: "De acuerdo con los principios constitucionales del ordenamiento jurídico español, ¿cuál es el fundamento de la independencia judicial?",
+          question: "¿Cuál es el órgano de gobierno del Poder Judicial según la Constitución?",
           options: [
-            "A) La inamovilidad de los jueces y su sometimiento únicamente al imperio de la ley (art. 117.1 CE)",
-            "B) La dependencia directa del Consejo General del Poder Judicial en todas las decisiones",
-            "C) La subordinación jerárquica al Ministerio de Justicia en materia de sentencias",
-            "D) La facultad de interpretar libremente las leyes sin limitación constitucional"
+            "A) El Consejo General del Poder Judicial (art. 122 CE)",
+            "B) El Ministerio de Justicia",
+            "C) El Tribunal Supremo",
+            "D) Las Audiencias Provinciales"
           ],
           correct: 0,
-          explanation: "La respuesta correcta es A porque el artículo 117.1 CE establece que la justicia emana del pueblo y se administra por Jueces y Tribunales independientes, inamovibles, responsables y sometidos únicamente al imperio de la ley.",
-          difficulty: "difícil",
-          page_reference: "Artículo 117.1 de la Constitución Española"
+          explanation: "Correcto: A. El artículo 122 CE establece que el CGPJ es el órgano de gobierno del Poder Judicial.",
+          difficulty: "media",
+          page_reference: "Artículo 122 CE"
         }]
       };
     }
     
-    const examId = Date.now();
-    
-    console.log(`✅ Examen generado: ${questionsData.questions.length} preguntas`);
-    
     res.json({
-      examId,
+      examId: Date.now(),
       questions: questionsData.questions,
       topics,
       questionCount: questionsData.questions.length
@@ -589,40 +539,25 @@ app.post('/api/generate-exam', async (req, res) => {
   } catch (error) {
     console.error('❌ Error generando examen:', error);
     
-    if (error.status === 529) {
-      return res.status(503).json({ 
-        error: 'Claude está temporalmente sobrecargado. La aplicación seguirá intentando automáticamente.',
-        retryable: true,
-        waitTime: 5000
-      });
-    }
+    const errorCode = error.status || 500;
+    const errorMessage = errorCode === 529 ? 'Claude temporalmente ocupado' :
+                        errorCode === 429 ? 'Límite de solicitudes alcanzado' :
+                        'Error interno del servidor';
     
-    if (error.status === 429) {
-      return res.status(429).json({ 
-        error: 'Límite de solicitudes alcanzado. La aplicación reintentará automáticamente.',
-        retryable: true,
-        waitTime: 8000
-      });
-    }
-    
-    return res.status(500).json({ 
-      error: 'Error interno del servidor. La aplicación reintentará automáticamente.',
-      retryable: true,
-      waitTime: 3000,
-      details: error.message
+    res.status(errorCode).json({ 
+      error: errorMessage,
+      retryable: [429, 503, 529].includes(errorCode),
+      waitTime: errorCode === 529 ? 5000 : 3000
     });
   }
 });
 
-// Registrar respuesta del usuario
 app.post('/api/record-answer', (req, res) => {
   try {
     const { topicId, questionData, userAnswer, isCorrect } = req.body;
     
-    // Actualizar estadísticas
     updateUserStats(topicId, isCorrect);
     
-    // Si es incorrecta, añadir a preguntas falladas
     if (!isCorrect) {
       addFailedQuestion(topicId, questionData, userAnswer);
     }
@@ -638,7 +573,6 @@ app.post('/api/record-answer', (req, res) => {
   }
 });
 
-// Obtener estadísticas del usuario
 app.get('/api/user-stats', (req, res) => {
   try {
     const statsWithTitles = {};
@@ -660,7 +594,6 @@ app.get('/api/user-stats', (req, res) => {
   }
 });
 
-// Obtener preguntas falladas
 app.get('/api/failed-questions', (req, res) => {
   try {
     const failedWithTitles = {};
@@ -680,21 +613,16 @@ app.get('/api/failed-questions', (req, res) => {
   }
 });
 
-// Marcar pregunta fallada como resuelta
 app.post('/api/resolve-failed-question', (req, res) => {
   try {
     const { topicId, questionId } = req.body;
-    
     removeFailedQuestion(topicId, questionId);
-    
     res.json({ success: true });
   } catch (error) {
-    console.error('❌ Error resolviendo pregunta fallada:', error);
-    res.status(500).json({ error: 'Error al resolver pregunta fallada' });
+    res.status(500).json({ error: 'Error al resolver pregunta' });
   }
 });
 
-// Obtener estado de documentos
 app.get('/api/documents-status', async (req, res) => {
   try {
     const status = {};
@@ -719,239 +647,108 @@ app.get('/api/documents-status', async (req, res) => {
     
     res.json(status);
   } catch (error) {
-    console.error('❌ Error verificando documentos:', error);
-    res.status(500).json({ error: 'Error al verificar documentos' });
+    res.status(500).json({ error: 'Error verificando documentos' });
   }
 });
 
-// Ruta de salud del servidor mejorada
 app.get('/api/health', (req, res) => {
   res.json({ 
     status: 'OK', 
-    message: 'Servidor funcionando correctamente',
+    message: 'Servidor funcionando',
     timestamp: new Date().toISOString(),
-    documentsDir: DOCUMENTS_DIR,
+    environment: process.env.NODE_ENV || 'development',
     topics: Object.keys(TOPIC_CONFIG).length,
-    supportedFormats: ['.txt'],
-    availableTopics: Object.keys(TOPIC_CONFIG).length,
     userStats: Object.keys(userStats).length,
-    failedQuestions: Object.keys(failedQuestions).length,
-    claudeConfig: {
-      maxRetries: IMPROVED_CLAUDE_CONFIG.maxRetries,
-      baseDelay: IMPROVED_CLAUDE_CONFIG.baseDelay + 'ms',
-      maxDelay: IMPROVED_CLAUDE_CONFIG.maxDelay + 'ms',
-      backoffMultiplier: IMPROVED_CLAUDE_CONFIG.backoffMultiplier,
-      jitterFactor: IMPROVED_CLAUDE_CONFIG.jitterFactor
-    },
-    features: {
-      intelligentRetries: true,
-      exponentialBackoff: true,
-      jitterPrevention: true,
-      statisticsTracking: true,
-      failedQuestionsReview: true,
-      documentStatusCheck: true,
-      errorHandling: 'improved'
-    }
+    failedQuestions: Object.keys(failedQuestions).length
   });
 });
 
-// Ruta adicional para limpiar estadísticas (útil para desarrollo/testing)
+// Limpiar estadísticas (útil para testing)
 app.post('/api/clear-stats', (req, res) => {
-  try {
-    userStats = {};
-    failedQuestions = {};
-    
-    console.log('🧹 Estadísticas y preguntas falladas limpiadas');
-    
-    res.json({ 
-      success: true, 
-      message: 'Todas las estadísticas han sido limpiadas',
-      timestamp: new Date().toISOString()
-    });
-  } catch (error) {
-    console.error('❌ Error limpiando estadísticas:', error);
-    res.status(500).json({ error: 'Error al limpiar estadísticas' });
-  }
+  userStats = {};
+  failedQuestions = {};
+  res.json({ success: true, message: 'Estadísticas limpiadas' });
 });
 
-// Ruta para obtener información detallada de un tema específico
-app.get('/api/topic/:topicId', async (req, res) => {
-  try {
-    const { topicId } = req.params;
-    const topicConfig = TOPIC_CONFIG[topicId];
-    
-    if (!topicConfig) {
-      return res.status(404).json({ error: 'Tema no encontrado' });
-    }
-    
-    // Verificar estado de archivos
-    const fileStatus = [];
-    for (const fileName of topicConfig.files) {
-      const filePath = path.join(DOCUMENTS_DIR, fileName);
-      try {
-        await fs.access(filePath);
-        const stats = await fs.stat(filePath);
-        fileStatus.push({ 
-          name: fileName, 
-          exists: true,
-          size: stats.size,
-          lastModified: stats.mtime
-        });
-      } catch {
-        fileStatus.push({ name: fileName, exists: false });
-      }
-    }
-    
-    // Obtener estadísticas del usuario para este tema
-    const userTopicStats = userStats[topicId] || null;
-    const userFailedQuestions = failedQuestions[topicId] || null;
-    
-    res.json({
-      id: topicId,
-      ...topicConfig,
-      fileStatus,
-      userStats: userTopicStats,
-      failedQuestions: userFailedQuestions,
-      available: fileStatus.some(f => f.exists)
-    });
-    
-  } catch (error) {
-    console.error('❌ Error obteniendo información del tema:', error);
-    res.status(500).json({ error: 'Error al obtener información del tema' });
-  }
-});
-
-// Middleware de manejo de errores mejorado
+// Middleware de errores
 app.use((error, req, res, next) => {
-  console.error('❌ Error no manejado:', error);
-  
-  if (error.type === 'entity.parse.failed') {
-    return res.status(400).json({ 
-      error: 'JSON mal formado en la solicitud',
-      details: 'Verifica que el contenido de la solicitud sea JSON válido'
-    });
-  }
-  
-  if (error.code === 'ENOENT') {
-    return res.status(404).json({ 
-      error: 'Archivo o directorio no encontrado',
-      details: error.path
-    });
-  }
-  
-  return res.status(500).json({ 
+  console.error('❌ Error:', error);
+  res.status(500).json({ 
     error: 'Error interno del servidor',
-    message: 'Se ha producido un error inesperado',
     timestamp: new Date().toISOString()
   });
 });
 
-// Middleware para rutas no encontradas
+// 404 para rutas no encontradas
 app.use('*', (req, res) => {
   res.status(404).json({ 
     error: 'Ruta no encontrada',
-    path: req.originalUrl,
-    method: req.method,
-    availableRoutes: [
-      'GET /api/health',
-      'GET /api/topics',
-      'GET /api/topic/:topicId',
-      'GET /api/documents-status',
-      'GET /api/user-stats',
-      'GET /api/failed-questions',
-      'POST /api/generate-exam',
-      'POST /api/record-answer',
-      'POST /api/resolve-failed-question',
-      'POST /api/clear-stats'
-    ]
+    path: req.originalUrl
   });
 });
 
 // ========================
-// INICIALIZACIÓN MEJORADA
+// INICIALIZACIÓN OPTIMIZADA
 // ========================
 
 async function startServer() {
   try {
-    // Verificar que tenemos la API key de Anthropic
+    // Verificar API key
     if (!process.env.ANTHROPIC_API_KEY) {
-      console.error('❌ ANTHROPIC_API_KEY no encontrada en variables de entorno');
-      console.log('💡 Crea un archivo .env con: ANTHROPIC_API_KEY=tu_api_key_aqui');
+      console.error('❌ ANTHROPIC_API_KEY no encontrada');
       process.exit(1);
     }
     
-    // Crear directorio de documentos si no existe
+    // Crear directorio de documentos
     await ensureDocumentsDirectory();
     
-    // Verificar cuántos documentos están disponibles
+    // Contar archivos disponibles
     let availableFiles = 0;
-    let totalFiles = 0;
+    let totalFiles = Object.keys(TOPIC_CONFIG).length;
     
     for (const [topicId, config] of Object.entries(TOPIC_CONFIG)) {
       for (const fileName of config.files) {
-        totalFiles++;
-        const filePath = path.join(DOCUMENTS_DIR, fileName);
         try {
-          await fs.access(filePath);
+          await fs.access(path.join(DOCUMENTS_DIR, fileName));
           availableFiles++;
-        } catch {
-          // Archivo no existe
-        }
+          break;
+        } catch {}
       }
     }
     
     // Iniciar servidor
-app.listen(port, '0.0.0.0', () => {
-  console.log('\n🚀 ========================================');
-  console.log('   SERVIDOR DE OPOSICIONES INICIADO');
-  console.log('========================================');
-  console.log(`📡 Puerto: ${port}`);
-  console.log(`🤖 Claude API: Configurada`);
-  console.log(`📁 Documentos: ${DOCUMENTS_DIR}`);
-  console.log(`📚 Temas configurados: ${Object.keys(TOPIC_CONFIG).length}`);
-  console.log(`📄 Archivos disponibles: ${availableFiles}/${totalFiles}`);
-  console.log(`🔄 Reintentos inteligentes: ✅ ${IMPROVED_CLAUDE_CONFIG.maxRetries} intentos`);
-  console.log(`⏱️  Backoff exponencial: ✅ ${IMPROVED_CLAUDE_CONFIG.baseDelay}ms-${IMPROVED_CLAUDE_CONFIG.maxDelay}ms`);
-  console.log(`🎯 Anti-thundering herd: ✅ Jitter ${IMPROVED_CLAUDE_CONFIG.jitterFactor}`);
-  console.log(`📊 Estadísticas: ✅ Seguimiento completo`);
-  console.log(`🔄 Sistema de repaso: ✅ Preguntas falladas`);
-  console.log(`\n✅ Aplicación disponible en: ${process.env.RAILWAY_STATIC_URL || `http://localhost:${port}`}`);
-  console.log(`🏥 Salud del servidor: ${process.env.RAILWAY_STATIC_URL || `http://localhost:${port}`}/api/health`);
-  
-  if (availableFiles === 0) {
-    console.log('\n⚠️  ADVERTENCIA: No se encontraron archivos de documentos');
-    console.log('📝 Coloca tus archivos .txt en la carpeta: documents/');
-    console.log('🎯 El servidor funcionará en modo demostración');
-  } else if (availableFiles < totalFiles) {
-    console.log(`\n⚠️  INFORMACIÓN: ${totalFiles - availableFiles} archivos no encontrados`);
-    console.log('📝 Algunos temas estarán en modo demostración');
-  } else {
-    console.log('\n🎉 ¡Todos los archivos están disponibles!');
+    app.listen(port, '0.0.0.0', () => {
+      console.log('\n🚀 ========================================');
+      console.log('   SERVIDOR DE OPOSICIONES ONLINE');
+      console.log('========================================');
+      console.log(`📡 Puerto: ${port}`);
+      console.log(`🌍 Entorno: ${process.env.NODE_ENV || 'development'}`);
+      console.log(`🤖 Claude API: ✅ Configurada`);
+      console.log(`📚 Temas: ${Object.keys(TOPIC_CONFIG).length}`);
+      console.log(`📄 Archivos: ${availableFiles}/${totalFiles}`);
+      console.log(`\n✅ Aplicación disponible en:`);
+      console.log(`   Local: http://localhost:${port}`);
+      console.log(`   Render: Tu URL de Render`);
+      console.log('\n🎯 ¡Sistema listo para generar exámenes!');
+      console.log('========================================\n');
+    });
+    
+  } catch (error) {
+    console.error('❌ Error iniciando servidor:', error);
+    process.exit(1);
   }
-  
-  console.log('\n📋 Temas configurados:');
-  Object.entries(TOPIC_CONFIG).forEach(([id, config]) => {
-    console.log(`   • ${config.title}`);
-  });
-  
-  console.log('\n🎯 ¡Sistema listo para generar exámenes con seguimiento completo!');
-  console.log('========================================\n');
-});
+}
 
-// Manejo graceful de cierre del servidor
+// Manejo de cierre graceful
 process.on('SIGINT', () => {
   console.log('\n🛑 Cerrando servidor...');
-  console.log('📊 Estadísticas finales:');
-  console.log(`   • Usuarios con estadísticas: ${Object.keys(userStats).length}`);
-  console.log(`   • Preguntas falladas guardadas: ${Object.values(failedQuestions).reduce((acc, topic) => acc + topic.questions.length, 0)}`);
-  console.log('✅ Servidor cerrado correctamente');
   process.exit(0);
 });
 
 process.on('SIGTERM', () => {
-  console.log('🛑 Señal SIGTERM recibida, cerrando servidor...');
+  console.log('🛑 SIGTERM recibido...');
   process.exit(0);
 });
 
-// Iniciar el servidor
+// Iniciar servidor
 startServer();
