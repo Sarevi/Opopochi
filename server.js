@@ -212,8 +212,8 @@ async function callClaudeWithImprovedRetry(fullPrompt, config = IMPROVED_CLAUDE_
       
       const response = await anthropic.messages.create({
         model: "claude-3-5-sonnet-20241022",
-        max_tokens: 600, // Ultra-reducido: solo explicación de correcta (no incorrectas)
-        temperature: 0.4,  // Variedad con chunks pequeños
+        max_tokens: 700, // Ajustado para chunks de 1 página
+        temperature: 0.4,  // Variedad manteniendo calidad
         messages: [{
           role: "user",
           content: fullPrompt
@@ -330,8 +330,8 @@ async function ensureDocumentsDirectory() {
   }
 }
 
-// Función para dividir contenido en chunks (ultra-optimizado para velocidad máxima)
-function splitIntoChunks(content, chunkSize = 1500) {
+// Función para dividir contenido en chunks (1 página ≈ 2500 caracteres)
+function splitIntoChunks(content, chunkSize = 2500) {
   const chunks = [];
   const lines = content.split('\n');
   let currentChunk = '';
@@ -393,8 +393,8 @@ async function getRandomChunkFromTopics(topics) {
     return null;
   }
 
-  // Dividir en chunks de ~1500 caracteres (ultra-optimizado para velocidad)
-  const chunks = splitIntoChunks(allContent, 1500);
+  // Dividir en chunks de ~2500 caracteres (1 página completa)
+  const chunks = splitIntoChunks(allContent, 2500);
 
   console.log(`📄 Documento dividido en ${chunks.length} chunks`);
 
