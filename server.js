@@ -295,7 +295,7 @@ function parseClaudeResponse(responseText) {
   }
 }
 
-// PROMPT OPTIMIZADO PARA CLAUDE
+// PROMPT OPTIMIZADO PARA CLAUDE CON SISTEMA DE CHUNKS
 const CLAUDE_PROMPT = `Eres un experto en redacción de preguntas de examen para oposiciones técnicas en el ámbito judicial.
 
 INSTRUCCIONES CRÍTICAS:
@@ -304,15 +304,20 @@ INSTRUCCIONES CRÍTICAS:
 3. NO uses bloques de código markdown
 4. Genera exactamente {{QUESTION_COUNT}} pregunta(s)
 
+IMPORTANTE: El contenido proporcionado es un FRAGMENTO ESPECÍFICO de un documento más amplio.
+- Genera preguntas basadas ÚNICAMENTE en este fragmento concreto
+- NO intentes conectar con otras partes del documento que no están aquí
+- Enfócate en la información específica de este fragmento
+
 CONDICIONES GENERALES OBLIGATORIAS:
-- NO inventes ni extrapoles información: todas las preguntas y opciones deben estar explícitamente fundamentadas en los documentos adjuntos
+- NO inventes ni extrapoles información: todas las preguntas y opciones deben estar explícitamente fundamentadas en el fragmento proporcionado
 - Las respuestas incorrectas deben ser plausibles pero contrastadas como falsas o inexactas según el texto
 - Cada pregunta debe tener una sola opción correcta claramente identificada
-- No repitas enunciados, busca variedad en la formulación y el enfoque
-- Incluye entre paréntesis tras cada respuesta el número de página o sección del documento donde se fundamenta
+- Busca variedad en la formulación y el enfoque
+- Incluye entre paréntesis tras cada respuesta el número de artículo o sección donde se fundamenta
 
 DISTRIBUCIÓN DEL NIVEL DE DIFICULTAD:
-- Cuando generes preguntas: 60% difíciles, 30% medias, 10% sencillas 
+- Cuando generes preguntas: 60% difíciles, 30% medias, 10% sencillas
 - Si generas más de 10: mantén proporción 60% difíciles, 30% medias, 10% sencillas
 
 DEFINICIÓN DE NIVELES:
@@ -327,23 +332,23 @@ FORMATO JSON OBLIGATORIO (responde solo con esto):
     {
       "question": "Texto de la pregunta",
       "options": [
-        "A) Opción 1 (referencia específica del documento)",
-        "B) Opción 2 (referencia específica del documento)", 
-        "C) Opción 3 (referencia específica del documento)",
-        "D) Opción 4 (referencia específica del documento)"
+        "A) Opción 1 (referencia específica del fragmento)",
+        "B) Opción 2 (referencia específica del fragmento)",
+        "C) Opción 3 (referencia específica del fragmento)",
+        "D) Opción 4 (referencia específica del fragmento)"
       ],
       "correct": 2,
-      "explanation": "La respuesta correcta es C porque... (página/artículo X). Las otras opciones son incorrectas porque: A) ...  B) ...  D) ...",
+      "explanation": "La respuesta correcta es C porque... (artículo/sección X). Las otras opciones son incorrectas porque: A) ...  B) ...  D) ...",
       "difficulty": "difícil",
-      "page_reference": "Artículo X, página Y del documento"
+      "page_reference": "Artículo X del fragmento proporcionado"
     }
   ]
 }
 
-CONTENIDO A ANALIZAR:
+FRAGMENTO DEL DOCUMENTO A ANALIZAR:
 {{CONTENT}}
 
-IMPORTANTE: Basa todas las preguntas y opciones EXCLUSIVAMENTE en el contenido proporcionado. No agregues información externa. Responde SOLO con el JSON válido para {{QUESTION_COUNT}} pregunta(s).`;
+IMPORTANTE: Basa todas las preguntas y opciones EXCLUSIVAMENTE en este fragmento específico. No agregues información externa ni de otras partes del documento. Responde SOLO con el JSON válido para {{QUESTION_COUNT}} pregunta(s).`;
 
 // ========================
 // FUNCIONES DE ARCHIVOS OPTIMIZADAS
@@ -370,19 +375,42 @@ async function ensureDocumentsDirectory() {
   }
 }
 
+// Función para dividir contenido en chunks (páginas individuales o grupos pequeños)
+function splitIntoChunks(content, chunkSize = 3000) {
+  const chunks = [];
+  const lines = content.split('\n');
+  let currentChunk = '';
+
+  for (const line of lines) {
+    // Si agregar esta línea excede el tamaño del chunk, guardar el chunk actual
+    if (currentChunk.length + line.length > chunkSize && currentChunk.length > 0) {
+      chunks.push(currentChunk.trim());
+      currentChunk = '';
+    }
+    currentChunk += line + '\n';
+  }
+
+  // Agregar el último chunk si tiene contenido
+  if (currentChunk.trim().length > 0) {
+    chunks.push(currentChunk.trim());
+  }
+
+  return chunks;
+}
+
 async function getDocumentsByTopics(topics) {
   let allContent = '';
   let successCount = 0;
-  
+
   for (const topic of topics) {
     const topicConfig = TOPIC_CONFIG[topic];
     if (!topicConfig) continue;
-    
+
     allContent += `\n\n=== ${topicConfig.title} ===\n\n`;
-    
+
     for (const fileName of topicConfig.files) {
       const filePath = path.join(DOCUMENTS_DIR, fileName);
-      
+
       try {
         const content = await readFile(filePath);
         if (content && !content.includes('[FORMATO NO SOPORTADO')) {
@@ -397,9 +425,35 @@ async function getDocumentsByTopics(topics) {
       }
     }
   }
-  
+
   console.log(`📊 Archivos procesados: ${successCount}/${topics.length}`);
   return allContent;
+}
+
+// Nueva función para obtener chunks aleatorios de documentos
+async function getRandomChunkFromTopics(topics) {
+  const allContent = await getDocumentsByTopics(topics);
+
+  if (!allContent.trim()) {
+    return null;
+  }
+
+  // Dividir en chunks de ~3000 caracteres (aprox 1-2 páginas)
+  const chunks = splitIntoChunks(allContent, 3000);
+
+  console.log(`📄 Documento dividido en ${chunks.length} chunks`);
+
+  if (chunks.length === 0) {
+    return allContent.substring(0, 3000);
+  }
+
+  // Seleccionar un chunk aleatorio
+  const randomIndex = Math.floor(Math.random() * chunks.length);
+  const selectedChunk = chunks[randomIndex];
+
+  console.log(`🎲 Chunk aleatorio seleccionado: ${randomIndex + 1}/${chunks.length} (${selectedChunk.length} caracteres)`);
+
+  return selectedChunk;
 }
 
 // ========================
@@ -466,25 +520,28 @@ app.get('/api/topics', (req, res) => {
 app.post('/api/generate-exam', async (req, res) => {
   try {
     const { topics, questionCount = 1 } = req.body;
-    
+
     if (!topics?.length) {
       return res.status(400).json({ error: 'Selecciona al menos un tema' });
     }
-    
+
     console.log('📚 Procesando temas:', topics);
-    
-    const documentContent = await getDocumentsByTopics(topics);
-    
-    if (!documentContent.trim()) {
-      return res.status(404).json({ 
-        error: 'No se encontró contenido para los temas seleccionados' 
+
+    // NUEVO: Obtener un chunk aleatorio en lugar del documento completo
+    const documentChunk = await getRandomChunkFromTopics(topics);
+
+    if (!documentChunk || !documentChunk.trim()) {
+      return res.status(404).json({
+        error: 'No se encontró contenido para los temas seleccionados'
       });
     }
-    
+
+    console.log(`✅ Generando pregunta de ${documentChunk.length} caracteres (chunk aleatorio)`);
+
     const fullPrompt = CLAUDE_PROMPT
-      .replace('{{CONTENT}}', documentContent.substring(0, 50000)) // Limitar contenido
+      .replace('{{CONTENT}}', documentChunk) // Usar solo el chunk aleatorio
       .replace(/{{QUESTION_COUNT}}/g, questionCount);
-    
+
     const response = await callClaudeWithImprovedRetry(fullPrompt);
     
     let questionsData;
