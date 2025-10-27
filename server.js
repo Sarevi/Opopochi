@@ -212,8 +212,8 @@ async function callClaudeWithImprovedRetry(fullPrompt, config = IMPROVED_CLAUDE_
       
       const response = await anthropic.messages.create({
         model: "claude-3-5-sonnet-20241022",
-        max_tokens: 2000,
-        temperature: 0.2,
+        max_tokens: 1200, // Reducido: prompt optimizado + 1 pregunta = menos tokens
+        temperature: 0.3,  // Ligeramente aumentado para más variedad
         messages: [{
           role: "user",
           content: fullPrompt
@@ -295,60 +295,30 @@ function parseClaudeResponse(responseText) {
   }
 }
 
-// PROMPT OPTIMIZADO PARA CLAUDE CON SISTEMA DE CHUNKS
-const CLAUDE_PROMPT = `Eres un experto en redacción de preguntas de examen para oposiciones técnicas en el ámbito judicial.
+// PROMPT ULTRA-OPTIMIZADO (mínimos tokens, máxima calidad)
+const CLAUDE_PROMPT = `Genera {{QUESTION_COUNT}} pregunta(s) tipo oposición judicial del texto. Solo JSON sin markdown.
 
-INSTRUCCIONES CRÍTICAS:
-1. Responde ÚNICAMENTE con JSON válido
-2. NO incluyas texto adicional fuera del JSON
-3. NO uses bloques de código markdown
-4. Genera exactamente {{QUESTION_COUNT}} pregunta(s)
+REGLAS:
+- Usa SOLO datos del fragmento, no inventes
+- 60% difíciles (análisis/comparación/detalles técnicos), 30% medias, 10% básicas
+- 4 opciones plausibles, 1 correcta
+- Distorsiona cifras/plazos/conceptos para opciones falsas
+- Incluye artículo/página entre paréntesis
 
-IMPORTANTE: El contenido proporcionado es un FRAGMENTO ESPECÍFICO de un documento más amplio.
-- Genera preguntas basadas ÚNICAMENTE en este fragmento concreto
-- NO intentes conectar con otras partes del documento que no están aquí
-- Enfócate en la información específica de este fragmento
-
-CONDICIONES GENERALES OBLIGATORIAS:
-- NO inventes ni extrapoles información: todas las preguntas y opciones deben estar explícitamente fundamentadas en el fragmento proporcionado
-- Las respuestas incorrectas deben ser plausibles pero contrastadas como falsas o inexactas según el texto
-- Cada pregunta debe tener una sola opción correcta claramente identificada
-- Busca variedad en la formulación y el enfoque
-- Incluye entre paréntesis tras cada respuesta el número de artículo o sección donde se fundamenta
-
-DISTRIBUCIÓN DEL NIVEL DE DIFICULTAD:
-- Cuando generes preguntas: 60% difíciles, 30% medias, 10% sencillas
-- Si generas más de 10: mantén proporción 60% difíciles, 30% medias, 10% sencillas
-
-DEFINICIÓN DE NIVELES:
-- DIFÍCIL: Requieren análisis, comparación, integración de conceptos o atención a detalles técnicos específicos
-- MEDIA: Preguntan hechos, clasificaciones, procedimientos con alguna complejidad conceptual
-- SENCILLA: Pregunta directa sobre definiciones, conceptos básicos claramente establecidos
-
-FORMATO JSON OBLIGATORIO (responde solo con esto):
-
+JSON:
 {
-  "questions": [
-    {
-      "question": "Texto de la pregunta",
-      "options": [
-        "A) Opción 1 (referencia específica del fragmento)",
-        "B) Opción 2 (referencia específica del fragmento)",
-        "C) Opción 3 (referencia específica del fragmento)",
-        "D) Opción 4 (referencia específica del fragmento)"
-      ],
-      "correct": 2,
-      "explanation": "La respuesta correcta es C porque... (artículo/sección X). Las otras opciones son incorrectas porque: A) ...  B) ...  D) ...",
-      "difficulty": "difícil",
-      "page_reference": "Artículo X del fragmento proporcionado"
-    }
-  ]
+  "questions": [{
+    "question": "texto",
+    "options": ["A) opción (ref)", "B) opción (ref)", "C) opción (ref)", "D) opción (ref)"],
+    "correct": 0,
+    "explanation": "Correcta: A. Razón. Incorrectas: B/C/D razones.",
+    "difficulty": "difícil",
+    "page_reference": "Art. X"
+  }]
 }
 
-FRAGMENTO DEL DOCUMENTO A ANALIZAR:
-{{CONTENT}}
-
-IMPORTANTE: Basa todas las preguntas y opciones EXCLUSIVAMENTE en este fragmento específico. No agregues información externa ni de otras partes del documento. Responde SOLO con el JSON válido para {{QUESTION_COUNT}} pregunta(s).`;
+FRAGMENTO:
+{{CONTENT}}`;
 
 // ========================
 // FUNCIONES DE ARCHIVOS OPTIMIZADAS
@@ -375,8 +345,8 @@ async function ensureDocumentsDirectory() {
   }
 }
 
-// Función para dividir contenido en chunks (páginas individuales o grupos pequeños)
-function splitIntoChunks(content, chunkSize = 3000) {
+// Función para dividir contenido en chunks (2-3 páginas por defecto)
+function splitIntoChunks(content, chunkSize = 5000) {
   const chunks = [];
   const lines = content.split('\n');
   let currentChunk = '';
@@ -438,8 +408,8 @@ async function getRandomChunkFromTopics(topics) {
     return null;
   }
 
-  // Dividir en chunks de ~3000 caracteres (aprox 1-2 páginas)
-  const chunks = splitIntoChunks(allContent, 3000);
+  // Dividir en chunks de ~5000 caracteres (aprox 2-3 páginas) - optimizado tras reducir prompt
+  const chunks = splitIntoChunks(allContent, 5000);
 
   console.log(`📄 Documento dividido en ${chunks.length} chunks`);
 
