@@ -212,8 +212,8 @@ async function callClaudeWithImprovedRetry(fullPrompt, config = IMPROVED_CLAUDE_
       
       const response = await anthropic.messages.create({
         model: "claude-3-5-sonnet-20241022",
-        max_tokens: 800, // Super reducido para velocidad (1-2 segundos)
-        temperature: 0.4,  // Aumentado para más variedad con menos contexto
+        max_tokens: 600, // Ultra-reducido: solo explicación de correcta (no incorrectas)
+        temperature: 0.4,  // Variedad con chunks pequeños
         messages: [{
           role: "user",
           content: fullPrompt
@@ -295,13 +295,12 @@ function parseClaudeResponse(responseText) {
   }
 }
 
-// PROMPT SUPER-OPTIMIZADO (velocidad máxima, mínimos tokens)
-const CLAUDE_PROMPT = `Crea 1 pregunta de oposición judicial. Solo JSON.
+// PROMPT ULTRA-OPTIMIZADO (máxima velocidad y ahorro)
+const CLAUDE_PROMPT = `Pregunta oposición judicial. Solo JSON.
 
-REGLAS: Usa solo el texto. 60% difícil, 30% media, 10% fácil. 4 opciones, distorsiona números/plazos. Incluye refs.
+Usa solo texto. 10% muy difícil, 60% difícil, 20% media, 10% fácil. Distorsiona números/plazos en opciones falsas.
 
-JSON:
-{"questions":[{"question":"...","options":["A)...","B)...","C)...","D)..."],"correct":0,"explanation":"Correcta: A porque... Incorrectas: B/C/D porque...","difficulty":"difícil","page_reference":"Art.X"}]}
+{"questions":[{"question":"","options":["A)","B)","C)","D)"],"correct":0,"explanation":"","difficulty":"","page_reference":""}]}
 
 TEXTO:
 {{CONTENT}}`;
@@ -331,8 +330,8 @@ async function ensureDocumentsDirectory() {
   }
 }
 
-// Función para dividir contenido en chunks (optimizado para velocidad)
-function splitIntoChunks(content, chunkSize = 2000) {
+// Función para dividir contenido en chunks (ultra-optimizado para velocidad máxima)
+function splitIntoChunks(content, chunkSize = 1500) {
   const chunks = [];
   const lines = content.split('\n');
   let currentChunk = '';
@@ -394,8 +393,8 @@ async function getRandomChunkFromTopics(topics) {
     return null;
   }
 
-  // Dividir en chunks de ~2000 caracteres (optimizado para velocidad máxima)
-  const chunks = splitIntoChunks(allContent, 2000);
+  // Dividir en chunks de ~1500 caracteres (ultra-optimizado para velocidad)
+  const chunks = splitIntoChunks(allContent, 1500);
 
   console.log(`📄 Documento dividido en ${chunks.length} chunks`);
 
