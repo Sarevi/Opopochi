@@ -38,13 +38,13 @@ const DOCUMENTS_DIR = path.join(__dirname, 'documents');
 let userStats = {};
 let failedQuestions = {};
 
-// CONFIGURACIÓN OPTIMIZADA PARA CLAUDE
+// CONFIGURACIÓN OPTIMIZADA PARA VELOCIDAD MÁXIMA
 const IMPROVED_CLAUDE_CONFIG = {
-  maxRetries: 3,              // Reducido para Render
-  baseDelay: 2000,           // Más rápido para producción
-  maxDelay: 15000,           // Reducido para mejor UX
-  backoffMultiplier: 2,      
-  jitterFactor: 0.1          // Reducido para ser más predecible
+  maxRetries: 2,              // Reducido a 2 intentos para velocidad
+  baseDelay: 1000,           // 1 segundo de delay inicial
+  maxDelay: 5000,            // Máximo 5 segundos
+  backoffMultiplier: 2,
+  jitterFactor: 0.05         // Mínimo jitter
 };
 
 // Configuración completa de temas (optimizada)
@@ -212,8 +212,8 @@ async function callClaudeWithImprovedRetry(fullPrompt, config = IMPROVED_CLAUDE_
       
       const response = await anthropic.messages.create({
         model: "claude-3-5-sonnet-20241022",
-        max_tokens: 1200, // Reducido: prompt optimizado + 1 pregunta = menos tokens
-        temperature: 0.3,  // Ligeramente aumentado para más variedad
+        max_tokens: 800, // Super reducido para velocidad (1-2 segundos)
+        temperature: 0.4,  // Aumentado para más variedad con menos contexto
         messages: [{
           role: "user",
           content: fullPrompt
@@ -295,29 +295,15 @@ function parseClaudeResponse(responseText) {
   }
 }
 
-// PROMPT ULTRA-OPTIMIZADO (mínimos tokens, máxima calidad)
-const CLAUDE_PROMPT = `Genera {{QUESTION_COUNT}} pregunta(s) tipo oposición judicial del texto. Solo JSON sin markdown.
+// PROMPT SUPER-OPTIMIZADO (velocidad máxima, mínimos tokens)
+const CLAUDE_PROMPT = `Crea 1 pregunta de oposición judicial. Solo JSON.
 
-REGLAS:
-- Usa SOLO datos del fragmento, no inventes
-- 60% difíciles (análisis/comparación/detalles técnicos), 30% medias, 10% básicas
-- 4 opciones plausibles, 1 correcta
-- Distorsiona cifras/plazos/conceptos para opciones falsas
-- Incluye artículo/página entre paréntesis
+REGLAS: Usa solo el texto. 60% difícil, 30% media, 10% fácil. 4 opciones, distorsiona números/plazos. Incluye refs.
 
 JSON:
-{
-  "questions": [{
-    "question": "texto",
-    "options": ["A) opción (ref)", "B) opción (ref)", "C) opción (ref)", "D) opción (ref)"],
-    "correct": 0,
-    "explanation": "Correcta: A. Razón. Incorrectas: B/C/D razones.",
-    "difficulty": "difícil",
-    "page_reference": "Art. X"
-  }]
-}
+{"questions":[{"question":"...","options":["A)...","B)...","C)...","D)..."],"correct":0,"explanation":"Correcta: A porque... Incorrectas: B/C/D porque...","difficulty":"difícil","page_reference":"Art.X"}]}
 
-FRAGMENTO:
+TEXTO:
 {{CONTENT}}`;
 
 // ========================
@@ -345,8 +331,8 @@ async function ensureDocumentsDirectory() {
   }
 }
 
-// Función para dividir contenido en chunks (2-3 páginas por defecto)
-function splitIntoChunks(content, chunkSize = 5000) {
+// Función para dividir contenido en chunks (optimizado para velocidad)
+function splitIntoChunks(content, chunkSize = 2000) {
   const chunks = [];
   const lines = content.split('\n');
   let currentChunk = '';
@@ -408,8 +394,8 @@ async function getRandomChunkFromTopics(topics) {
     return null;
   }
 
-  // Dividir en chunks de ~5000 caracteres (aprox 2-3 páginas) - optimizado tras reducir prompt
-  const chunks = splitIntoChunks(allContent, 5000);
+  // Dividir en chunks de ~2000 caracteres (optimizado para velocidad máxima)
+  const chunks = splitIntoChunks(allContent, 2000);
 
   console.log(`📄 Documento dividido en ${chunks.length} chunks`);
 
