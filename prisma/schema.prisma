@@ -1,0 +1,136 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                  String             @id @default(cuid())
+  name                String?
+  email               String             @unique
+  password            String
+  emailVerified       DateTime?
+  image               String?
+  role                String             @default("user") // user, admin
+  hasPaid             Boolean            @default(false)
+  paymentDate         DateTime?
+  stripeCustomerId    String?
+  hospitalSettingsId  String?            @unique
+  hospitalSettings    HospitalSettings?  @relation(fields: [hospitalSettingsId], references: [id])
+  downloads           InfographicDownload[]
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+}
+
+model Pathology {
+  id          String       @id @default(cuid())
+  name        String       // Neurología, Neumología, etc.
+  slug        String       @unique
+  description String?
+  icon        String?      // Icon name for the pathology
+  medications Medication[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model Medication {
+  id                    String       @id @default(cuid())
+  name                  String
+  slug                  String       @unique
+  genericName           String?
+  pathologyId           String
+  pathology             Pathology    @relation(fields: [pathologyId], references: [id])
+
+  // Patient Infographic Data
+  patientDescription    String       // Qué es y para qué sirve
+  patientAdministration String       // Cómo se administra
+  patientExpectations   String       // Qué esperar
+  patientSideEffects    String[]     // Efectos secundarios comunes
+  patientWarningsSigns  String[]     // Señales de alarma
+  patientBeforeStart    String[]     // Antes de empezar
+  patientTips           String[]     // Consejos
+  patientContactInfo    String?      // Teléfono/email del servicio
+
+  // Professional Infographic Data
+  professionalIndication        String   // Indicación aprobada
+  professionalDosage            String   // Posología y esquema
+  professionalPrerequisites     String[] // Requisitos previos
+  professionalMonitoring        String[] // Monitorización
+  professionalManagement        String   // Manejo básico
+  professionalPreparation       String   // Preparación, estabilidad
+  professionalPracticalTips     String[] // Perlas prácticas
+  professionalDatasheetLink     String?  // Link a ficha técnica
+
+  lastUpdated           DateTime     @default(now())
+  createdAt             DateTime     @default(now())
+  updatedAt             DateTime     @updatedAt
+}
+
+model Disclaimer {
+  id          String   @id @default(cuid())
+  content     String
+  lastUpdated DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model HospitalSettings {
+  id                String   @id @default(cuid())
+  hospitalName      String
+  departmentName    String?  // Ej: "Servicio de Farmacia Hospitalaria"
+  logoUrl           String?  // URL del logo del hospital
+  contactPhone      String?
+  contactEmail      String?
+  address           String?
+  customFooter      String?  // Texto personalizado para el pie de página
+  primaryColor      String   @default("#2563eb") // Color principal en hex
+  user              User?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model InfographicDownload {
+  id              String   @id @default(cuid())
+  downloadCode    String   @unique // Código único para cada descarga
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  medicationId    String
+  medicationName  String   // Nombre del medicamento
+  patientName     String?  // Nombre del paciente (opcional)
+  infographicType String   // "patient" o "professional"
+  generatedAt     DateTime @default(now())
+  createdAt       DateTime @default(now())
+
+  @@index([downloadCode])
+  @@index([userId])
+}
+
+model Update {
+  id                String   @id @default(cuid())
+  title             String   // Título de la actualización
+  month             String   // "Enero 2025", "Febrero 2025", etc.
+  publishDate       DateTime @default(now())
+
+  // Contenido de la actualización (5 minutos de lectura)
+  ftChanges         String[] // Cambios en fichas técnicas
+  newMedications    String[] // Nuevos biológicos aprobados
+  screeningReminders String[] // Recordatorios de screening/vacunas
+  clinicalTips      String[] // Tips farmacéuticos de consulta
+
+  // Metadata
+  isPublished       Boolean  @default(false)
+  featured          Boolean  @default(false) // Destacar en dashboard
+  readCount         Int      @default(0)
+
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@index([publishDate])
+  @@index([isPublished])
+}
