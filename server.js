@@ -211,9 +211,9 @@ async function callClaudeWithImprovedRetry(fullPrompt, config = IMPROVED_CLAUDE_
       console.log(`🤖 Intento ${attempt}/${config.maxRetries} - Generando preguntas...`);
       
       const response = await anthropic.messages.create({
-        model: "claude-3-5-sonnet-20240620", // Versión válida del modelo
-        max_tokens: 1000, // Aumentado para asegurar respuesta completa
-        temperature: 0.3,  // Reducido ligeramente para más consistencia
+        model: "claude-haiku-4-5-20251001", // Claude Haiku 4.5 - Rápido, económico y capaz
+        max_tokens: 1000, // Suficiente para pregunta completa
+        temperature: 0.3,  // Balance calidad/variedad
         messages: [{
           role: "user",
           content: fullPrompt
