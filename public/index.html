@@ -659,19 +659,219 @@
             background: currentColor;
         }
 
+        /* AUTENTICACIÓN */
+        .auth-screen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #fef7f0;
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .auth-screen.active {
+            display: flex;
+        }
+
+        .auth-container {
+            max-width: 440px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            padding: 48px 40px;
+            border: 1px solid #f3f4f6;
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .auth-header h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 8px;
+        }
+
+        .auth-header p {
+            color: #9ca3af;
+            font-size: 1rem;
+        }
+
+        .auth-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 32px;
+            background: #f9fafb;
+            padding: 4px;
+            border-radius: 10px;
+        }
+
+        .auth-tab {
+            flex: 1;
+            padding: 10px 16px;
+            background: transparent;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #6b7280;
+        }
+
+        .auth-tab.active {
+            background: white;
+            color: #f97316;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .auth-form {
+            display: none;
+        }
+
+        .auth-form.active {
+            display: block;
+        }
+
+        .auth-input-group {
+            margin-bottom: 20px;
+        }
+
+        .auth-input-group label {
+            display: block;
+            font-weight: 500;
+            font-size: 0.875rem;
+            margin-bottom: 8px;
+            color: #374151;
+        }
+
+        .auth-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: #fafafa;
+            color: #374151;
+            transition: all 0.2s ease;
+        }
+
+        .auth-input:focus {
+            outline: none;
+            border-color: #f97316;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+        }
+
+        .auth-button {
+            width: 100%;
+            padding: 14px 20px;
+            background: #f97316;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 8px;
+        }
+
+        .auth-button:hover:not(:disabled) {
+            background: #ea580c;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+        }
+
+        .auth-button:disabled {
+            background: #d1d5db;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .auth-message {
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.875rem;
+            text-align: center;
+            display: none;
+        }
+
+        .auth-message.error {
+            background: #fef2f2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+            display: block;
+        }
+
+        .auth-message.success {
+            background: #f0fdf4;
+            color: #065f46;
+            border: 1px solid #bbf7d0;
+            display: block;
+        }
+
+        .auth-message.warning {
+            background: #fef3c7;
+            color: #92400e;
+            border: 1px solid #fbbf24;
+            display: block;
+        }
+
+        .logout-button {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            padding: 8px 16px;
+            background: #f9fafb;
+            color: #6b7280;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .logout-button:hover {
+            background: #f3f4f6;
+            color: #374151;
+            border-color: #d1d5db;
+        }
+
+        .user-info {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #fff7ed;
+            color: #f97316;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-left: 12px;
+        }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2rem;
             }
-            
+
             .container {
                 padding: 16px;
             }
-            
+
             .card {
                 padding: 24px;
             }
-            
+
             .action-buttons, .main-nav {
                 flex-direction: column;
             }
@@ -687,13 +887,126 @@
             .stat-numbers {
                 gap: 16px;
             }
+
+            .auth-container {
+                padding: 32px 24px;
+            }
+
+            .logout-button {
+                position: static;
+                margin-top: 16px;
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <!-- PANTALLA DE AUTENTICACIÓN -->
+    <div id="auth-screen" class="auth-screen">
+        <div class="auth-container">
+            <div class="auth-header">
+                <h1>📚 Oposiciones</h1>
+                <p>Accede a tu cuenta para estudiar</p>
+            </div>
+
+            <div id="auth-message" class="auth-message"></div>
+
+            <div class="auth-tabs">
+                <button class="auth-tab active" onclick="switchAuthTab('login')" id="tab-login">
+                    Iniciar Sesión
+                </button>
+                <button class="auth-tab" onclick="switchAuthTab('register')" id="tab-register">
+                    Registrarse
+                </button>
+            </div>
+
+            <!-- FORMULARIO DE LOGIN -->
+            <form id="login-form" class="auth-form active" onsubmit="handleLogin(event)">
+                <div class="auth-input-group">
+                    <label for="login-username">Usuario</label>
+                    <input
+                        type="text"
+                        id="login-username"
+                        class="auth-input"
+                        placeholder="Ingresa tu usuario"
+                        required
+                        autocomplete="username"
+                    >
+                </div>
+                <div class="auth-input-group">
+                    <label for="login-password">Contraseña</label>
+                    <input
+                        type="password"
+                        id="login-password"
+                        class="auth-input"
+                        placeholder="Ingresa tu contraseña"
+                        required
+                        autocomplete="current-password"
+                    >
+                </div>
+                <button type="submit" class="auth-button" id="login-btn">
+                    Iniciar Sesión
+                </button>
+            </form>
+
+            <!-- FORMULARIO DE REGISTRO -->
+            <form id="register-form" class="auth-form" onsubmit="handleRegister(event)">
+                <div class="auth-input-group">
+                    <label for="register-username">Usuario</label>
+                    <input
+                        type="text"
+                        id="register-username"
+                        class="auth-input"
+                        placeholder="Elige un usuario (mín. 3 caracteres)"
+                        minlength="3"
+                        required
+                        autocomplete="username"
+                    >
+                </div>
+                <div class="auth-input-group">
+                    <label for="register-password">Contraseña</label>
+                    <input
+                        type="password"
+                        id="register-password"
+                        class="auth-input"
+                        placeholder="Elige una contraseña (mín. 6 caracteres)"
+                        minlength="6"
+                        required
+                        autocomplete="new-password"
+                    >
+                </div>
+                <div class="auth-input-group">
+                    <label for="register-password-confirm">Confirmar Contraseña</label>
+                    <input
+                        type="password"
+                        id="register-password-confirm"
+                        class="auth-input"
+                        placeholder="Repite tu contraseña"
+                        minlength="6"
+                        required
+                        autocomplete="new-password"
+                    >
+                </div>
+                <button type="submit" class="auth-button" id="register-btn">
+                    Crear Cuenta
+                </button>
+                <p style="margin-top: 16px; font-size: 0.875rem; color: #6b7280; text-align: center;">
+                    Tu cuenta quedará bloqueada hasta que el administrador la active.
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div class="container" id="main-app" style="display: none;">
+        <button class="logout-button" onclick="handleLogout()" id="logout-btn" style="display: none;">
+            🚪 Cerrar Sesión
+        </button>
+
         <div class="header">
-            <h1><span class="emoji">📚</span>Preparación Oposición</h1>
+            <h1>
+                <span class="emoji">📚</span>Preparación Oposición
+                <span id="user-info" class="user-info" style="display: none;"></span>
+            </h1>
             <p>Sistema de estudio inteligente</p>
             <div id="server-status" class="server-status offline">
                 <div class="status-indicator"></div>
@@ -835,6 +1148,231 @@
         let retryAttempt = 0;
         let maxRetryAttempts = 3;
         const API_BASE = '';
+        let currentUser = null;
+        let isAuthenticated = false;
+
+        // ========================
+        // SISTEMA DE AUTENTICACIÓN
+        // ========================
+
+        async function checkAuth() {
+            try {
+                const response = await fetch(`${API_BASE}/api/auth/check`, {
+                    method: 'GET',
+                    credentials: 'include',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+
+                const data = await response.json();
+
+                if (data.authenticated) {
+                    if (data.blocked) {
+                        showAuthScreen();
+                        showAuthMessage('error', 'Tu cuenta está bloqueada. Contacta al administrador para reactivarla.');
+                        return false;
+                    }
+
+                    isAuthenticated = true;
+                    currentUser = data.user;
+                    showMainApp();
+                    return true;
+                } else {
+                    showAuthScreen();
+                    return false;
+                }
+            } catch (error) {
+                console.error('Error verificando autenticación:', error);
+                showAuthScreen();
+                return false;
+            }
+        }
+
+        function switchAuthTab(tab) {
+            document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+
+            if (tab === 'login') {
+                document.getElementById('tab-login').classList.add('active');
+                document.getElementById('login-form').classList.add('active');
+            } else {
+                document.getElementById('tab-register').classList.add('active');
+                document.getElementById('register-form').classList.add('active');
+            }
+
+            // Limpiar mensajes
+            showAuthMessage();
+        }
+
+        async function handleLogin(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+            const btn = document.getElementById('login-btn');
+
+            btn.disabled = true;
+            btn.textContent = 'Iniciando sesión...';
+
+            try {
+                const response = await fetch(`${API_BASE}/api/auth/login`, {
+                    method: 'POST',
+                    credentials: 'include',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    currentUser = data.user;
+                    isAuthenticated = true;
+                    showMainApp();
+
+                    // Cargar datos del usuario desde el servidor
+                    await loadUserData();
+                } else {
+                    showAuthMessage('error', data.error || 'Error al iniciar sesión');
+                }
+            } catch (error) {
+                console.error('Error en login:', error);
+                showAuthMessage('error', 'Error de conexión. Intenta de nuevo.');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Iniciar Sesión';
+            }
+        }
+
+        async function handleRegister(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('register-username').value;
+            const password = document.getElementById('register-password').value;
+            const passwordConfirm = document.getElementById('register-password-confirm').value;
+            const btn = document.getElementById('register-btn');
+
+            if (password !== passwordConfirm) {
+                showAuthMessage('error', 'Las contraseñas no coinciden');
+                return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = 'Creando cuenta...';
+
+            try {
+                const response = await fetch(`${API_BASE}/api/auth/register`, {
+                    method: 'POST',
+                    credentials: 'include',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    if (data.requiresActivation) {
+                        showAuthMessage('warning', 'Cuenta creada. Espera a que el administrador la active para poder acceder.');
+                        // Cambiar a tab de login después de 3 segundos
+                        setTimeout(() => {
+                            switchAuthTab('login');
+                        }, 3000);
+                    } else {
+                        showAuthMessage('success', 'Cuenta creada exitosamente');
+                    }
+
+                    // Limpiar formulario
+                    document.getElementById('register-form').reset();
+                } else {
+                    showAuthMessage('error', data.error || 'Error al crear cuenta');
+                }
+            } catch (error) {
+                console.error('Error en registro:', error);
+                showAuthMessage('error', 'Error de conexión. Intenta de nuevo.');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Crear Cuenta';
+            }
+        }
+
+        async function handleLogout() {
+            if (!confirm('¿Seguro que quieres cerrar sesión?')) {
+                return;
+            }
+
+            try {
+                await fetch(`${API_BASE}/api/auth/logout`, {
+                    method: 'POST',
+                    credentials: 'include'
+                });
+
+                isAuthenticated = false;
+                currentUser = null;
+                userStats = {};
+                failedQuestions = {};
+
+                showAuthScreen();
+                showAuthMessage('success', 'Sesión cerrada correctamente');
+            } catch (error) {
+                console.error('Error al cerrar sesión:', error);
+            }
+        }
+
+        function showAuthScreen() {
+            document.getElementById('auth-screen').classList.add('active');
+            document.getElementById('main-app').style.display = 'none';
+            document.getElementById('logout-btn').style.display = 'none';
+            document.getElementById('user-info').style.display = 'none';
+        }
+
+        function showMainApp() {
+            document.getElementById('auth-screen').classList.remove('active');
+            document.getElementById('main-app').style.display = 'block';
+            document.getElementById('logout-btn').style.display = 'block';
+
+            if (currentUser) {
+                const userInfoElement = document.getElementById('user-info');
+                userInfoElement.textContent = currentUser.username;
+                userInfoElement.style.display = 'inline-block';
+            }
+        }
+
+        function showAuthMessage(type, message) {
+            const messageElement = document.getElementById('auth-message');
+
+            if (!type || !message) {
+                messageElement.className = 'auth-message';
+                messageElement.textContent = '';
+                return;
+            }
+
+            messageElement.className = `auth-message ${type}`;
+            messageElement.textContent = message;
+        }
+
+        async function loadUserData() {
+            try {
+                // Cargar estadísticas del usuario desde el servidor
+                const statsResponse = await fetch(`${API_BASE}/api/user-stats`, {
+                    credentials: 'include'
+                });
+
+                if (statsResponse.ok) {
+                    userStats = await statsResponse.json();
+                    displayStats();
+                }
+
+                // Cargar preguntas falladas del usuario desde el servidor
+                const failedResponse = await fetch(`${API_BASE}/api/failed-questions`, {
+                    credentials: 'include'
+                });
+
+                if (failedResponse.ok) {
+                    failedQuestions = await failedResponse.json();
+                    displayFailedQuestions();
+                }
+            } catch (error) {
+                console.error('Error cargando datos del usuario:', error);
+            }
+        }
 
         // ========================
         // VERIFICACIÓN DEL SERVIDOR
@@ -909,6 +1447,7 @@
                 try {
                     const response = await fetch(`${API_BASE}/api/generate-exam`, {
                         method: 'POST',
+                        credentials: 'include',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
                             topics: [currentTopic],
@@ -916,9 +1455,19 @@
                         }),
                     });
 
+                    if (response.status === 401 || response.status === 403) {
+                        // Sesión expirada o cuenta bloqueada
+                        isAuthenticated = false;
+                        currentUser = null;
+                        showAuthScreen();
+                        const errorData = await response.json();
+                        showAuthMessage('error', errorData.error || 'Sesión expirada. Inicia sesión nuevamente.');
+                        return false;
+                    }
+
                     if (response.ok) {
                         const data = await response.json();
-                        
+
                         if (data.questions && data.questions.length > 0) {
                             currentQuestion = data.questions[0];
                             hideRetryNotification();
@@ -928,7 +1477,7 @@
                     } else if (response.status === 503 || response.status === 429) {
                         const errorData = await response.json();
                         console.log(`⏳ Error ${response.status}: ${errorData.error}`);
-                        
+
                         if (retryAttempt < maxRetryAttempts) {
                             showRetryNotification(retryAttempt, maxRetryAttempts, errorData.error || 'Servidor ocupado');
                             continue;
@@ -1004,10 +1553,11 @@
             }
         }
 
-        function updateLocalStats(topicId, isCorrect) {
+        async function updateLocalStats(topicId, isCorrect) {
             const topicConfig = availableTopics.find(([id]) => id === topicId);
             const topicTitle = topicConfig ? topicConfig[1].title : 'Tema desconocido';
-            
+
+            // Actualizar localmente primero
             if (!userStats[topicId]) {
                 userStats[topicId] = {
                     title: topicTitle,
@@ -1016,48 +1566,124 @@
                     lastStudied: new Date().toISOString()
                 };
             }
-            
+
             userStats[topicId].totalQuestions++;
             if (isCorrect) {
                 userStats[topicId].correctAnswers++;
             }
             userStats[topicId].lastStudied = new Date().toISOString();
             userStats[topicId].accuracy = Math.round((userStats[topicId].correctAnswers / userStats[topicId].totalQuestions) * 100);
-            
-            saveUserStats();
+
+            // Enviar al servidor
+            try {
+                const response = await fetch(`${API_BASE}/api/record-answer`, {
+                    method: 'POST',
+                    credentials: 'include',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        topicId,
+                        questionData: currentQuestion,
+                        userAnswer: null,
+                        isCorrect
+                    })
+                });
+
+                if (response.status === 401 || response.status === 403) {
+                    isAuthenticated = false;
+                    currentUser = null;
+                    showAuthScreen();
+                    showAuthMessage('error', 'Sesión expirada. Inicia sesión nuevamente.');
+                }
+
+                if (response.ok) {
+                    console.log('✅ Estadísticas guardadas en servidor');
+                }
+            } catch (error) {
+                console.error('Error guardando estadísticas:', error);
+            }
         }
 
-        function addLocalFailedQuestion(topicId, questionData, userAnswer) {
+        async function addLocalFailedQuestion(topicId, questionData, userAnswer) {
             const topicConfig = availableTopics.find(([id]) => id === topicId);
             const topicTitle = topicConfig ? topicConfig[1].title : 'Tema desconocido';
-            
+
+            // Actualizar localmente primero
             if (!failedQuestions[topicId]) {
                 failedQuestions[topicId] = {
                     title: topicTitle,
                     questions: []
                 };
             }
-            
+
             const failedQuestion = {
                 ...questionData,
                 userAnswer,
                 date: new Date().toISOString(),
                 id: Date.now() + Math.random()
             };
-            
+
             failedQuestions[topicId].questions.push(failedQuestion);
-            saveFailedQuestions();
+
+            // Enviar al servidor
+            try {
+                const response = await fetch(`${API_BASE}/api/record-answer`, {
+                    method: 'POST',
+                    credentials: 'include',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        topicId,
+                        questionData,
+                        userAnswer,
+                        isCorrect: false
+                    })
+                });
+
+                if (response.status === 401 || response.status === 403) {
+                    isAuthenticated = false;
+                    currentUser = null;
+                    showAuthScreen();
+                    showAuthMessage('error', 'Sesión expirada. Inicia sesión nuevamente.');
+                }
+
+                if (response.ok) {
+                    console.log('✅ Pregunta fallada guardada en servidor');
+                }
+            } catch (error) {
+                console.error('Error guardando pregunta fallada:', error);
+            }
         }
 
-        function removeLocalFailedQuestion(topicId, questionId) {
+        async function removeLocalFailedQuestion(topicId, questionId) {
+            // Actualizar localmente primero
             if (failedQuestions[topicId]) {
                 failedQuestions[topicId].questions = failedQuestions[topicId].questions.filter(q => q.id !== questionId);
-                
+
                 if (failedQuestions[topicId].questions.length === 0) {
                     delete failedQuestions[topicId];
                 }
-                
-                saveFailedQuestions();
+            }
+
+            // Enviar al servidor
+            try {
+                const response = await fetch(`${API_BASE}/api/resolve-failed-question`, {
+                    method: 'POST',
+                    credentials: 'include',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ questionId })
+                });
+
+                if (response.status === 401 || response.status === 403) {
+                    isAuthenticated = false;
+                    currentUser = null;
+                    showAuthScreen();
+                    showAuthMessage('error', 'Sesión expirada. Inicia sesión nuevamente.');
+                }
+
+                if (response.ok) {
+                    console.log('✅ Pregunta resuelta guardada en servidor');
+                }
+            } catch (error) {
+                console.error('Error marcando pregunta como repasada:', error);
             }
         }
 
@@ -1306,15 +1932,15 @@
             showResult(optionIndex);
         }
 
-        function showResult(userAnswer) {
+        async function showResult(userAnswer) {
             const isCorrect = userAnswer === currentQuestion.correct;
-            
+
             if (isCorrect) correctAnswers++;
-            
-            updateLocalStats(currentTopic, isCorrect);
-            
+
+            await updateLocalStats(currentTopic, isCorrect);
+
             if (!isCorrect) {
-                addLocalFailedQuestion(currentTopic, currentQuestion, userAnswer);
+                await addLocalFailedQuestion(currentTopic, currentQuestion, userAnswer);
             }
             
             document.querySelectorAll('.option').forEach((opt, index) => {
@@ -1516,15 +2142,19 @@
 
         window.onload = async function() {
             console.log('🚀 Iniciando aplicación...');
-            
-            await checkServerHealth();
-            
-            loadUserStatsFromLocal();
-            loadFailedQuestionsFromLocal();
-            
-            showPage('study');
-            
-            console.log('✅ Aplicación iniciada');
+
+            // Primero verificar autenticación
+            const authenticated = await checkAuth();
+
+            if (authenticated) {
+                // Solo cargar la app si está autenticado
+                await checkServerHealth();
+                await loadUserData();
+                showPage('study');
+                console.log('✅ Aplicación iniciada');
+            } else {
+                console.log('⏳ Esperando autenticación...');
+            }
         };
     </script>
 </body>
