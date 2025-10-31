@@ -211,7 +211,7 @@ async function callClaudeWithImprovedRetry(fullPrompt, config = IMPROVED_CLAUDE_
       console.log(`🤖 Intento ${attempt}/${config.maxRetries} - Generando preguntas...`);
       
       const response = await anthropic.messages.create({
-        model: "claude-3-5-sonnet-20240620", // Versión válida del modelo
+        model: "claude-3-sonnet-20240229", // Claude 3 Sonnet base (disponible para todas las API keys)
         max_tokens: 1000, // Aumentado para asegurar respuesta completa
         temperature: 0.3,  // Reducido ligeramente para más consistencia
         messages: [{
