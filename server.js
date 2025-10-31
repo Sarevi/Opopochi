@@ -38,13 +38,13 @@ const DOCUMENTS_DIR = path.join(__dirname, 'documents');
 let userStats = {};
 let failedQuestions = {};
 
-// CONFIGURACIÓN OPTIMIZADA PARA VELOCIDAD MÁXIMA
+// CONFIGURACIÓN OPTIMIZADA (balance velocidad-confiabilidad)
 const IMPROVED_CLAUDE_CONFIG = {
-  maxRetries: 2,              // Reducido a 2 intentos para velocidad
-  baseDelay: 1000,           // 1 segundo de delay inicial
-  maxDelay: 5000,            // Máximo 5 segundos
+  maxRetries: 3,              // 3 intentos para mayor confiabilidad
+  baseDelay: 1500,           // 1.5 segundos de delay inicial
+  maxDelay: 8000,            // Máximo 8 segundos
   backoffMultiplier: 2,
-  jitterFactor: 0.05         // Mínimo jitter
+  jitterFactor: 0.1          // Jitter moderado
 };
 
 // Configuración completa de temas (optimizada)
@@ -212,8 +212,8 @@ async function callClaudeWithImprovedRetry(fullPrompt, config = IMPROVED_CLAUDE_
       
       const response = await anthropic.messages.create({
         model: "claude-3-5-sonnet-20241022",
-        max_tokens: 700, // Ajustado para chunks de 1 página
-        temperature: 0.4,  // Variedad manteniendo calidad
+        max_tokens: 1000, // Aumentado para asegurar respuesta completa
+        temperature: 0.3,  // Reducido ligeramente para más consistencia
         messages: [{
           role: "user",
           content: fullPrompt
@@ -225,13 +225,18 @@ async function callClaudeWithImprovedRetry(fullPrompt, config = IMPROVED_CLAUDE_
       
     } catch (error) {
       lastError = error;
-      console.log(`❌ Intento ${attempt} fallido:`, error.status || 'Unknown', error.message);
-      
+      console.error(`❌ Intento ${attempt} fallido:`, {
+        status: error.status,
+        message: error.message,
+        type: error.type,
+        error: error.error
+      });
+
       if (attempt === config.maxRetries) {
         console.log(`💀 Todos los ${config.maxRetries} intentos fallaron`);
         break;
       }
-      
+
       const waitTime = calculateDelay(attempt, config);
       console.log(`⏳ Esperando ${waitTime/1000}s antes del siguiente intento...`);
       await new Promise(resolve => setTimeout(resolve, waitTime));
@@ -295,14 +300,34 @@ function parseClaudeResponse(responseText) {
   }
 }
 
-// PROMPT ULTRA-OPTIMIZADO (máxima velocidad y ahorro)
-const CLAUDE_PROMPT = `Pregunta oposición judicial. Solo JSON.
+// PROMPT OPTIMIZADO (balance velocidad-claridad)
+const CLAUDE_PROMPT = `Genera 1 pregunta tipo test de oposición judicial basada en el texto. Responde SOLO con JSON, sin markdown.
 
-Usa solo texto. 10% muy difícil, 60% difícil, 20% media, 10% fácil. Distorsiona números/plazos en opciones falsas.
+INSTRUCCIONES:
+- Usa únicamente información del texto proporcionado
+- Dificultad: 10% muy difícil, 60% difícil, 20% media, 10% fácil
+- Crea 4 opciones (A, B, C, D) donde solo 1 es correcta
+- Las opciones incorrectas deben distorsionar números, plazos o conceptos del texto real
+- Incluye referencia al artículo/página
 
-{"questions":[{"question":"","options":["A)","B)","C)","D)"],"correct":0,"explanation":"","difficulty":"","page_reference":""}]}
+Responde con este formato JSON exacto:
+{
+  "questions": [{
+    "question": "texto de la pregunta aquí",
+    "options": [
+      "A) primera opción con referencia",
+      "B) segunda opción con referencia",
+      "C) tercera opción con referencia",
+      "D) cuarta opción con referencia"
+    ],
+    "correct": 0,
+    "explanation": "La correcta es A porque...",
+    "difficulty": "difícil",
+    "page_reference": "Art. X"
+  }]
+}
 
-TEXTO:
+TEXTO DEL DOCUMENTO:
 {{CONTENT}}`;
 
 // ========================
@@ -492,16 +517,19 @@ app.post('/api/generate-exam', async (req, res) => {
     }
 
     console.log(`✅ Generando pregunta de ${documentChunk.length} caracteres (chunk aleatorio)`);
+    console.log(`📝 Primeros 200 chars del chunk: ${documentChunk.substring(0, 200)}...`);
 
-    const fullPrompt = CLAUDE_PROMPT
-      .replace('{{CONTENT}}', documentChunk) // Usar solo el chunk aleatorio
-      .replace(/{{QUESTION_COUNT}}/g, questionCount);
+    const fullPrompt = CLAUDE_PROMPT.replace('{{CONTENT}}', documentChunk);
+
+    console.log(`🔍 Prompt length: ${fullPrompt.length} caracteres`);
 
     const response = await callClaudeWithImprovedRetry(fullPrompt);
     
     let questionsData;
     try {
       const responseText = response.content[0].text;
+      console.log(`📥 Response recibida (primeros 500 chars): ${responseText.substring(0, 500)}...`);
+
       questionsData = parseClaudeResponse(responseText);
       
       if (!questionsData?.questions?.length) {
