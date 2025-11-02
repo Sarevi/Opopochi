@@ -225,6 +225,44 @@ async function callClaudeWithImprovedRetry(fullPrompt, config = IMPROVED_CLAUDE_
 }
 
 // ========================
+// FUNCIÓN PARA ALEATORIZAR OPCIONES
+// ========================
+
+function randomizeQuestionOptions(question) {
+  // Guardar la opción correcta original
+  const correctOption = question.options[question.correct];
+
+  // Crear array de índices [0, 1, 2, 3]
+  const indices = [0, 1, 2, 3];
+
+  // Algoritmo Fisher-Yates para barajar aleatoriamente
+  for (let i = indices.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [indices[i], indices[j]] = [indices[j], indices[i]];
+  }
+
+  // Reordenar las opciones según los índices barajados
+  const shuffledOptions = indices.map(i => question.options[i]);
+
+  // Encontrar la nueva posición de la opción correcta
+  const newCorrectIndex = shuffledOptions.indexOf(correctOption);
+
+  // Actualizar las letras de las opciones (A, B, C, D)
+  const letters = ['A', 'B', 'C', 'D'];
+  const reorderedOptions = shuffledOptions.map((option, index) => {
+    // Remover la letra anterior y agregar la nueva
+    const optionText = option.substring(3); // Quitar "A) ", "B) ", etc.
+    return `${letters[index]}) ${optionText}`;
+  });
+
+  return {
+    ...question,
+    options: reorderedOptions,
+    correct: newCorrectIndex
+  };
+}
+
+// ========================
 // PARSING OPTIMIZADO
 // ========================
 
@@ -792,8 +830,8 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
         throw new Error('No se generaron preguntas válidas');
       }
       
-      // Validar cada pregunta
-      questionsData.questions.forEach((q, index) => {
+      // Validar y aleatorizar cada pregunta
+      questionsData.questions = questionsData.questions.map((q, index) => {
         if (!q.question || !Array.isArray(q.options) || q.options.length !== 4) {
           console.log(`⚠️ Corrigiendo pregunta ${index + 1}`);
           q.options = q.options || [
@@ -804,24 +842,33 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
         q.explanation = q.explanation || "Explicación no disponible.";
         q.difficulty = q.difficulty || "media";
         q.page_reference = q.page_reference || "Referencia no disponible";
+
+        // ALEATORIZAR ORDEN DE LAS OPCIONES
+        const randomizedQuestion = randomizeQuestionOptions(q);
+        console.log(`🎲 Pregunta ${index + 1}: Respuesta correcta aleatoriamente asignada a opción ${['A', 'B', 'C', 'D'][randomizedQuestion.correct]}`);
+
+        return randomizedQuestion;
       });
       
     } catch (parseError) {
       console.error('❌ Error parsing:', parseError.message);
+      const fallbackQuestion = {
+        question: "¿Cuál es la temperatura de conservación de los medicamentos termolábiles?",
+        options: [
+          "A) Entre 2°C y 8°C en frigorífico",
+          "B) Entre 15°C y 25°C a temperatura ambiente",
+          "C) Entre -18°C y -25°C en congelador",
+          "D) Entre 8°C y 15°C en cámara fría"
+        ],
+        correct: 0,
+        explanation: "Correcto: A. Los medicamentos termolábiles deben conservarse entre 2°C y 8°C en frigorífico.",
+        difficulty: "media",
+        page_reference: "Tema de Farmacia"
+      };
+
+      // Aleatorizar también la pregunta de fallback
       questionsData = {
-        questions: [{
-          question: "¿Cuál es el órgano de gobierno del Poder Judicial según la Constitución?",
-          options: [
-            "A) El Consejo General del Poder Judicial (art. 122 CE)",
-            "B) El Ministerio de Justicia",
-            "C) El Tribunal Supremo",
-            "D) Las Audiencias Provinciales"
-          ],
-          correct: 0,
-          explanation: "Correcto: A. El artículo 122 CE establece que el CGPJ es el órgano de gobierno del Poder Judicial.",
-          difficulty: "media",
-          page_reference: "Artículo 122 CE"
-        }]
+        questions: [randomizeQuestionOptions(fallbackQuestion)]
       };
     }
 
