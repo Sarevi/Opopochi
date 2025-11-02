@@ -184,13 +184,15 @@ async function callClaudeWithImprovedRetry(fullPrompt, config = IMPROVED_CLAUDE_
       
       const response = await anthropic.messages.create({
         model: "claude-haiku-4-5-20251001", // Claude Haiku 4.5 - Rápido, económico y capaz
-        max_tokens: 1000, // Suficiente para pregunta completa
+        max_tokens: 700, // OPTIMIZADO: Suficiente para preguntas elaboradas
         temperature: 0.3,  // Balance calidad/variedad
-        /* COSTO POR PREGUNTA:
-         * Input: ~1000 tokens × $0.80/1M = $0.0008
-         * Output: ~250 tokens × $4.00/1M = $0.001
-         * Total: ~$0.0018 USD (~0.0017 EUR) por pregunta
-         * Con 1€ puedes generar ~588 preguntas
+        /* COSTO POR PREGUNTA OPTIMIZADO:
+         * Chunk: 1600 caracteres (~640 tokens input)
+         * Input: ~640 tokens × $0.80/1M = $0.000512
+         * Output: ~180 tokens × $4.00/1M = $0.00072
+         * Total: ~$0.001232 USD (~0.00114 EUR) por pregunta
+         * Con 1€ puedes generar ~877 preguntas
+         * Reducción del 33% en costos manteniendo calidad elaborada
          */
         messages: [{
           role: "user",
@@ -316,45 +318,28 @@ function parseClaudeResponse(responseText) {
   }
 }
 
-// PROMPT OPTIMIZADO - Estilo Examen de Oposición Real
-const CLAUDE_PROMPT = `Genera 1 pregunta tipo test de oposición de Técnico de Farmacia basada en el texto. Responde SOLO con JSON, sin markdown.
+// PROMPT OPTIMIZADO - Máxima eficiencia manteniendo calidad elaborada
+const CLAUDE_PROMPT = `Genera 1 pregunta tipo test de Técnico de Farmacia. Solo JSON, sin markdown.
 
-INSTRUCCIONES CRÍTICAS:
-- Usa únicamente información del texto proporcionado
-- Dificultad: 10% muy difícil, 60% difícil, 20% media, 10% fácil
-- Crea 4 opciones (A, B, C, D) donde solo 1 es correcta
-- Las opciones incorrectas deben distorsionar números, plazos o conceptos del texto real
+REGLAS:
+- Usa solo info del texto
+- 60% difícil, 20% media, 20% fácil
+- Crea preguntas con CASOS PRÁCTICOS o situaciones reales
+- 4 opciones (A,B,C,D), solo 1 correcta
+- Opciones incorrectas: distorsiona números/plazos del texto
 
-ESTILO DE PREGUNTA:
-- NO uses frases como "Según el texto", "Como indica el documento", "De acuerdo con los apuntes"
-- Formula la pregunta de forma directa y profesional, como en un examen oficial
-- Ejemplo BUENO: "¿Cuál es el plazo de conservación de los medicamentos termolábiles?"
-- Ejemplo MALO: "Según el texto, ¿cuál es el plazo de conservación...?"
+ESTILO:
+- Pregunta directa y profesional (NO "según el texto")
+- Sin paréntesis en opciones: (Art. X), (Tema Y)
+- Ejemplos de casos prácticos:
+  * "Un técnico recibe un medicamento termolábil..."
+  * "Durante la elaboración de una fórmula magistral..."
+  * "Al revisar el stock, observas que..."
 
-FORMATO DE OPCIONES:
-- NO incluyas referencias entre paréntesis en las opciones: (Art. X), (Tema Y), etc.
-- Las opciones deben ser limpias y profesionales
-- Ejemplo BUENO: "A) Entre 2°C y 8°C en frigorífico"
-- Ejemplo MALO: "A) Entre 2°C y 8°C en frigorífico (Art. 45)"
+JSON:
+{"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"difícil","page_reference":""}]}
 
-Responde con este formato JSON exacto:
-{
-  "questions": [{
-    "question": "texto de la pregunta directa aquí",
-    "options": [
-      "A) primera opción limpia sin paréntesis",
-      "B) segunda opción limpia sin paréntesis",
-      "C) tercera opción limpia sin paréntesis",
-      "D) cuarta opción limpia sin paréntesis"
-    ],
-    "correct": 0,
-    "explanation": "La correcta es A porque...",
-    "difficulty": "difícil",
-    "page_reference": "Referencia del tema"
-  }]
-}
-
-TEXTO DEL DOCUMENTO:
+TEXTO:
 {{CONTENT}}`;
 
 // ========================
@@ -393,8 +378,8 @@ async function ensureDocumentsDirectory() {
   }
 }
 
-// Función para dividir contenido en chunks (1 página ≈ 2500 caracteres)
-function splitIntoChunks(content, chunkSize = 2500) {
+// Función para dividir contenido en chunks OPTIMIZADO (1600 caracteres = balance costo/calidad)
+function splitIntoChunks(content, chunkSize = 1600) {
   const chunks = [];
   const lines = content.split('\n');
   let currentChunk = '';
