@@ -6,11 +6,35 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs').promises;
 const path = require('path');
+const session = require('express-session');
+const SQLiteStore = require('connect-sqlite3')(session);
 const { Anthropic } = require('@anthropic-ai/sdk');
 require('dotenv').config();
 
+// Importar sistema de base de datos
+const db = require('./database');
+
 const app = express();
 const port = process.env.PORT || 3000;
+
+// Inicializar base de datos
+db.initDatabase();
+
+// Middleware de sesiones
+app.use(session({
+  store: new SQLiteStore({
+    db: 'sessions.db',
+    dir: __dirname
+  }),
+  secret: process.env.SESSION_SECRET || 'oposiciones-secret-key-change-in-production',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 7 * 24 * 60 * 60 * 1000, // 7 días
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production'
+  }
+}));
 
 // Middleware optimizado para producción
 app.use(cors({
@@ -21,11 +45,6 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname));
 
-// Ruta principal para servir la aplicación
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
-
 // Cliente de Anthropic (Claude)
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
@@ -33,10 +52,6 @@ const anthropic = new Anthropic({
 
 // Directorio de documentos
 const DOCUMENTS_DIR = path.join(__dirname, 'documents');
-
-// Base de datos en memoria para estadísticas y preguntas falladas
-let userStats = {};
-let failedQuestions = {};
 
 // CONFIGURACIÓN OPTIMIZADA (balance velocidad-confiabilidad)
 const IMPROVED_CLAUDE_CONFIG = {
@@ -437,53 +452,237 @@ async function getRandomChunkFromTopics(topics) {
 }
 
 // ========================
-// FUNCIONES DE ESTADÍSTICAS
+// FUNCIONES DE ESTADÍSTICAS - AHORA EN DATABASE.JS
+// ========================
+// Las funciones de estadísticas y preguntas falladas ahora están en database.js
+// usando SQLite para persistencia de datos por usuario
+
+// ========================
+// MIDDLEWARE DE AUTENTICACIÓN
 // ========================
 
-function updateUserStats(topicId, isCorrect) {
-  const topicConfig = TOPIC_CONFIG[topicId];
-  
-  if (!userStats[topicId]) {
-    userStats[topicId] = {
-      title: topicConfig?.title || 'Tema desconocido',
-      totalQuestions: 0,
-      correctAnswers: 0,
-      lastStudied: new Date()
-    };
+// Middleware para verificar si el usuario está autenticado
+function requireAuth(req, res, next) {
+  if (!req.session.userId) {
+    return res.status(401).json({ error: 'No autenticado', requiresLogin: true });
   }
-  
-  userStats[topicId].totalQuestions++;
-  if (isCorrect) userStats[topicId].correctAnswers++;
-  userStats[topicId].lastStudied = new Date();
-  userStats[topicId].accuracy = Math.round((userStats[topicId].correctAnswers / userStats[topicId].totalQuestions) * 100);
+
+  // Verificar que el usuario existe y está activo
+  const user = db.getUserById(req.session.userId);
+  if (!user) {
+    req.session.destroy();
+    return res.status(401).json({ error: 'Usuario no encontrado', requiresLogin: true });
+  }
+
+  if (user.estado === 'bloqueado') {
+    return res.status(403).json({ error: 'Cuenta bloqueada. Contacta al administrador.' });
+  }
+
+  req.user = user;
+  next();
 }
 
-function addFailedQuestion(topicId, questionData, userAnswer) {
-  const topicConfig = TOPIC_CONFIG[topicId];
-  
-  if (!failedQuestions[topicId]) {
-    failedQuestions[topicId] = {
-      title: topicConfig?.title || 'Tema desconocido',
-      questions: []
-    };
+// Middleware para verificar si es admin
+function requireAdmin(req, res, next) {
+  const adminPassword = process.env.ADMIN_PASSWORD || 'admin123';
+  const providedPassword = req.headers['x-admin-password'];
+
+  if (providedPassword !== adminPassword) {
+    return res.status(403).json({ error: 'Acceso denegado' });
   }
-  
-  failedQuestions[topicId].questions.push({
-    ...questionData,
-    userAnswer,
-    date: new Date(),
-    id: Date.now() + Math.random()
-  });
+
+  next();
 }
 
-function removeFailedQuestion(topicId, questionId) {
-  if (failedQuestions[topicId]) {
-    failedQuestions[topicId].questions = failedQuestions[topicId].questions.filter(q => q.id !== questionId);
-    if (failedQuestions[topicId].questions.length === 0) {
-      delete failedQuestions[topicId];
+// ========================
+// RUTAS DE AUTENTICACIÓN
+// ========================
+
+// Ruta principal - redirige a login si no está autenticado
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+// Registro de usuario
+app.post('/api/auth/register', (req, res) => {
+  try {
+    const { username, password } = req.body;
+
+    if (!username || !password) {
+      return res.status(400).json({ error: 'Username y password requeridos' });
     }
+
+    if (username.length < 3) {
+      return res.status(400).json({ error: 'Username debe tener al menos 3 caracteres' });
+    }
+
+    if (password.length < 6) {
+      return res.status(400).json({ error: 'Password debe tener al menos 6 caracteres' });
+    }
+
+    const result = db.createUser(username, password);
+
+    if (!result.success) {
+      return res.status(400).json({ error: result.error });
+    }
+
+    // Auto-login después de registro (pero cuenta queda bloqueada)
+    req.session.userId = result.userId;
+    res.json({
+      success: true,
+      message: 'Usuario creado. Cuenta bloqueada hasta activación del administrador.',
+      requiresActivation: true
+    });
+
+  } catch (error) {
+    console.error('Error en registro:', error);
+    res.status(500).json({ error: 'Error al registrar usuario' });
   }
-}
+});
+
+// Login
+app.post('/api/auth/login', (req, res) => {
+  try {
+    const { username, password } = req.body;
+
+    if (!username || !password) {
+      return res.status(400).json({ error: 'Username y password requeridos' });
+    }
+
+    const result = db.authenticateUser(username, password);
+
+    if (!result.success) {
+      return res.status(401).json({ error: result.error });
+    }
+
+    // Guardar en sesión
+    req.session.userId = result.user.id;
+
+    res.json({
+      success: true,
+      user: {
+        id: result.user.id,
+        username: result.user.username
+      }
+    });
+
+  } catch (error) {
+    console.error('Error en login:', error);
+    res.status(500).json({ error: 'Error al iniciar sesión' });
+  }
+});
+
+// Logout
+app.post('/api/auth/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      return res.status(500).json({ error: 'Error al cerrar sesión' });
+    }
+    res.json({ success: true });
+  });
+});
+
+// Verificar sesión
+app.get('/api/auth/check', (req, res) => {
+  if (!req.session.userId) {
+    return res.json({ authenticated: false });
+  }
+
+  const user = db.getUserById(req.session.userId);
+
+  if (!user) {
+    req.session.destroy();
+    return res.json({ authenticated: false });
+  }
+
+  if (user.estado === 'bloqueado') {
+    return res.json({
+      authenticated: true,
+      blocked: true,
+      message: 'Cuenta bloqueada. Contacta al administrador.'
+    });
+  }
+
+  res.json({
+    authenticated: true,
+    user: {
+      id: user.id,
+      username: user.username
+    }
+  });
+});
+
+// ========================
+// RUTAS DE ADMINISTRACIÓN
+// ========================
+
+// Obtener todos los usuarios (requiere admin)
+app.get('/api/admin/users', requireAdmin, (req, res) => {
+  try {
+    const users = db.getAllUsers();
+    res.json(users);
+  } catch (error) {
+    console.error('Error obteniendo usuarios:', error);
+    res.status(500).json({ error: 'Error al obtener usuarios' });
+  }
+});
+
+// Crear usuario (admin)
+app.post('/api/admin/users', requireAdmin, (req, res) => {
+  try {
+    const { username, password } = req.body;
+
+    if (!username || !password) {
+      return res.status(400).json({ error: 'Username y password requeridos' });
+    }
+
+    const result = db.createUser(username, password);
+
+    if (!result.success) {
+      return res.status(400).json({ error: result.error });
+    }
+
+    res.json({ success: true, userId: result.userId });
+  } catch (error) {
+    console.error('Error creando usuario:', error);
+    res.status(500).json({ error: 'Error al crear usuario' });
+  }
+});
+
+// Activar usuario
+app.post('/api/admin/users/:id/activate', requireAdmin, (req, res) => {
+  try {
+    const userId = parseInt(req.params.id);
+    db.activateUser(userId);
+    res.json({ success: true });
+  } catch (error) {
+    console.error('Error activando usuario:', error);
+    res.status(500).json({ error: 'Error al activar usuario' });
+  }
+});
+
+// Bloquear usuario
+app.post('/api/admin/users/:id/block', requireAdmin, (req, res) => {
+  try {
+    const userId = parseInt(req.params.id);
+    db.blockUser(userId);
+    res.json({ success: true });
+  } catch (error) {
+    console.error('Error bloqueando usuario:', error);
+    res.status(500).json({ error: 'Error al bloquear usuario' });
+  }
+});
+
+// Bloquear todos los usuarios
+app.post('/api/admin/users/block-all', requireAdmin, (req, res) => {
+  try {
+    const result = db.blockAllUsers();
+    res.json({ success: true, count: result.count });
+  } catch (error) {
+    console.error('Error bloqueando usuarios:', error);
+    res.status(500).json({ error: 'Error al bloquear usuarios' });
+  }
+});
 
 // ========================
 // RUTAS DE LA API OPTIMIZADAS
@@ -497,7 +696,7 @@ app.get('/api/topics', (req, res) => {
   }
 });
 
-app.post('/api/generate-exam', async (req, res) => {
+app.post('/api/generate-exam', requireAuth, async (req, res) => {
   try {
     const { topics, questionCount = 1 } = req.body;
 
@@ -592,73 +791,88 @@ app.post('/api/generate-exam', async (req, res) => {
   }
 });
 
-app.post('/api/record-answer', (req, res) => {
+app.post('/api/record-answer', requireAuth, (req, res) => {
   try {
     const { topicId, questionData, userAnswer, isCorrect } = req.body;
-    
-    updateUserStats(topicId, isCorrect);
-    
+    const userId = req.user.id;
+
+    // Obtener título del tema
+    const topicConfig = TOPIC_CONFIG[topicId];
+    const topicTitle = topicConfig?.title || 'Tema desconocido';
+
+    // Actualizar estadísticas en la base de datos
+    db.updateUserStats(userId, topicId, topicTitle, isCorrect);
+
+    // Si es incorrecta, guardar en preguntas falladas
     if (!isCorrect) {
-      addFailedQuestion(topicId, questionData, userAnswer);
+      db.addFailedQuestion(userId, topicId, questionData, userAnswer);
     }
-    
-    res.json({ 
-      success: true, 
-      stats: userStats[topicId] 
+
+    // Obtener estadísticas actualizadas del usuario para este tema
+    const allStats = db.getUserStats(userId);
+    const topicStats = allStats.find(s => s.topic_id === topicId);
+
+    res.json({
+      success: true,
+      stats: topicStats || { total_questions: 0, correct_answers: 0, accuracy: 0 }
     });
-    
+
   } catch (error) {
     console.error('❌ Error registrando respuesta:', error);
     res.status(500).json({ error: 'Error al registrar respuesta' });
   }
 });
 
-app.get('/api/user-stats', (req, res) => {
+app.get('/api/user-stats', requireAuth, (req, res) => {
   try {
+    const userId = req.user.id;
+    const stats = db.getUserStats(userId);
+
+    // Transformar formato de base de datos a formato esperado por frontend
     const statsWithTitles = {};
-    
-    Object.entries(userStats).forEach(([topicId, stats]) => {
-      if (TOPIC_CONFIG[topicId]) {
-        statsWithTitles[topicId] = {
-          ...stats,
-          title: TOPIC_CONFIG[topicId].title,
-          accuracy: stats.totalQuestions > 0 ? 
-            Math.round((stats.correctAnswers / stats.totalQuestions) * 100) : 0
-        };
-      }
+
+    stats.forEach(stat => {
+      statsWithTitles[stat.topic_id] = {
+        title: stat.topic_title,
+        totalQuestions: stat.total_questions,
+        correctAnswers: stat.correct_answers,
+        accuracy: stat.accuracy,
+        lastStudied: stat.last_studied
+      };
     });
-    
+
     res.json(statsWithTitles);
   } catch (error) {
+    console.error('❌ Error obteniendo estadísticas:', error);
     res.status(500).json({ error: 'Error al obtener estadísticas' });
   }
 });
 
-app.get('/api/failed-questions', (req, res) => {
+app.get('/api/failed-questions', requireAuth, (req, res) => {
   try {
-    const failedWithTitles = {};
-    
-    Object.entries(failedQuestions).forEach(([topicId, topicData]) => {
-      if (TOPIC_CONFIG[topicId] && topicData.questions.length > 0) {
-        failedWithTitles[topicId] = {
-          title: TOPIC_CONFIG[topicId].title,
-          questions: topicData.questions
-        };
-      }
-    });
-    
-    res.json(failedWithTitles);
+    const userId = req.user.id;
+    const failedQuestions = db.getUserFailedQuestions(userId);
+
+    // El formato ya viene agrupado por topic_id desde database.js
+    // Solo necesitamos asegurarnos que se mantiene el formato esperado
+    res.json(failedQuestions);
   } catch (error) {
+    console.error('❌ Error obteniendo preguntas falladas:', error);
     res.status(500).json({ error: 'Error al obtener preguntas falladas' });
   }
 });
 
-app.post('/api/resolve-failed-question', (req, res) => {
+app.post('/api/resolve-failed-question', requireAuth, (req, res) => {
   try {
-    const { topicId, questionId } = req.body;
-    removeFailedQuestion(topicId, questionId);
+    const userId = req.user.id;
+    const { questionId } = req.body;
+
+    // Eliminar pregunta fallada de la base de datos
+    db.removeFailedQuestion(userId, questionId);
+
     res.json({ success: true });
   } catch (error) {
+    console.error('❌ Error resolviendo pregunta:', error);
     res.status(500).json({ error: 'Error al resolver pregunta' });
   }
 });
@@ -692,22 +906,31 @@ app.get('/api/documents-status', async (req, res) => {
 });
 
 app.get('/api/health', (req, res) => {
-  res.json({ 
-    status: 'OK', 
-    message: 'Servidor funcionando',
-    timestamp: new Date().toISOString(),
-    environment: process.env.NODE_ENV || 'development',
-    topics: Object.keys(TOPIC_CONFIG).length,
-    userStats: Object.keys(userStats).length,
-    failedQuestions: Object.keys(failedQuestions).length
-  });
-});
+  try {
+    // Contar usuarios activos en la base de datos
+    const users = db.db.prepare('SELECT COUNT(*) as count FROM users WHERE estado = ?').get('activo');
+    const totalUsers = db.db.prepare('SELECT COUNT(*) as count FROM users').get();
 
-// Limpiar estadísticas (útil para testing)
-app.post('/api/clear-stats', (req, res) => {
-  userStats = {};
-  failedQuestions = {};
-  res.json({ success: true, message: 'Estadísticas limpiadas' });
+    res.json({
+      status: 'OK',
+      message: 'Servidor funcionando',
+      timestamp: new Date().toISOString(),
+      environment: process.env.NODE_ENV || 'development',
+      topics: Object.keys(TOPIC_CONFIG).length,
+      totalUsers: totalUsers.count,
+      activeUsers: users.count,
+      database: 'SQLite - Conectado'
+    });
+  } catch (error) {
+    res.json({
+      status: 'OK',
+      message: 'Servidor funcionando',
+      timestamp: new Date().toISOString(),
+      environment: process.env.NODE_ENV || 'development',
+      topics: Object.keys(TOPIC_CONFIG).length,
+      database: 'Error al conectar'
+    });
+  }
 });
 
 // Middleware de errores

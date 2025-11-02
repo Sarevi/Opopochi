@@ -12,7 +12,11 @@
     "express": "^4.21.2",
     "cors": "^2.8.5",
     "@anthropic-ai/sdk": "^0.24.3",
-    "dotenv": "^16.6.1"
+    "dotenv": "^16.6.1",
+    "better-sqlite3": "^11.0.0",
+    "bcrypt": "^5.1.1",
+    "express-session": "^1.18.0",
+    "connect-sqlite3": "^0.9.13"
   },
   "engines": {
     "node": ">=18.0.0"
