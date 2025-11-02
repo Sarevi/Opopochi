@@ -64,6 +64,18 @@ function initDatabase() {
     )
   `);
 
+  // Tabla de actividad (para tracking de uso)
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS activity_log (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL,
+      activity_type TEXT NOT NULL,
+      topic_id TEXT,
+      timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    )
+  `);
+
   console.log('✅ Base de datos inicializada');
 }
 
@@ -285,6 +297,166 @@ function removeFailedQuestion(userId, questionId) {
 }
 
 // ========================
+// FUNCIONES DE ACTIVIDAD Y ESTADÍSTICAS DE ADMIN
+// ========================
+
+// Registrar actividad
+function logActivity(userId, activityType, topicId = null) {
+  try {
+    const stmt = db.prepare(`
+      INSERT INTO activity_log (user_id, activity_type, topic_id)
+      VALUES (?, ?, ?)
+    `);
+    stmt.run(userId, activityType, topicId);
+  } catch (error) {
+    console.error('Error registrando actividad:', error);
+  }
+}
+
+// Obtener estadísticas completas de todos los usuarios (para admin)
+function getAdminStats() {
+  const stmt = db.prepare(`
+    SELECT
+      u.id,
+      u.username,
+      u.estado,
+      u.created_at,
+      u.last_access,
+      COALESCE(SUM(s.total_questions), 0) as total_questions,
+      COALESCE(SUM(s.correct_answers), 0) as correct_answers,
+      COALESCE(AVG(s.accuracy), 0) as avg_accuracy
+    FROM users u
+    LEFT JOIN user_stats s ON u.id = s.user_id
+    GROUP BY u.id
+    ORDER BY u.last_access DESC
+  `);
+
+  return stmt.all();
+}
+
+// Obtener preguntas por día de un usuario
+function getUserQuestionsPerDay(userId, days = 30) {
+  const stmt = db.prepare(`
+    SELECT
+      DATE(timestamp) as date,
+      COUNT(*) as count
+    FROM activity_log
+    WHERE user_id = ?
+      AND activity_type = 'question_generated'
+      AND timestamp >= datetime('now', '-' || ? || ' days')
+    GROUP BY DATE(timestamp)
+    ORDER BY date DESC
+  `);
+
+  return stmt.all(userId, days);
+}
+
+// Obtener preguntas por mes de un usuario
+function getUserQuestionsPerMonth(userId, months = 6) {
+  const stmt = db.prepare(`
+    SELECT
+      strftime('%Y-%m', timestamp) as month,
+      COUNT(*) as count
+    FROM activity_log
+    WHERE user_id = ?
+      AND activity_type = 'question_generated'
+      AND timestamp >= datetime('now', '-' || ? || ' months')
+    GROUP BY strftime('%Y-%m', timestamp)
+    ORDER BY month DESC
+  `);
+
+  return stmt.all(userId, months);
+}
+
+// Obtener actividad reciente de un usuario
+function getUserActivity(userId, limit = 50) {
+  const stmt = db.prepare(`
+    SELECT activity_type, topic_id, timestamp
+    FROM activity_log
+    WHERE user_id = ?
+    ORDER BY timestamp DESC
+    LIMIT ?
+  `);
+
+  return stmt.all(userId, limit);
+}
+
+// Calcular tiempo promedio en la app por usuario
+function getUserAverageSessionTime(userId) {
+  // Calcular sesiones basadas en gaps de más de 30 minutos
+  const stmt = db.prepare(`
+    SELECT
+      timestamp,
+      LAG(timestamp) OVER (ORDER BY timestamp) as prev_timestamp
+    FROM activity_log
+    WHERE user_id = ?
+    ORDER BY timestamp
+  `);
+
+  const activities = stmt.all(userId);
+
+  if (activities.length < 2) {
+    return { avgSessionMinutes: 0, totalSessions: 0 };
+  }
+
+  let sessions = [];
+  let currentSessionStart = activities[0].timestamp;
+  let currentSessionEnd = activities[0].timestamp;
+
+  for (let i = 1; i < activities.length; i++) {
+    const current = new Date(activities[i].timestamp);
+    const previous = new Date(activities[i - 1].timestamp);
+    const diffMinutes = (current - previous) / (1000 * 60);
+
+    if (diffMinutes > 30) {
+      // Nueva sesión
+      sessions.push({
+        start: currentSessionStart,
+        end: currentSessionEnd,
+        duration: (new Date(currentSessionEnd) - new Date(currentSessionStart)) / (1000 * 60)
+      });
+      currentSessionStart = activities[i].timestamp;
+    }
+    currentSessionEnd = activities[i].timestamp;
+  }
+
+  // Agregar última sesión
+  sessions.push({
+    start: currentSessionStart,
+    end: currentSessionEnd,
+    duration: (new Date(currentSessionEnd) - new Date(currentSessionStart)) / (1000 * 60)
+  });
+
+  const totalMinutes = sessions.reduce((sum, s) => sum + s.duration, 0);
+  const avgMinutes = sessions.length > 0 ? totalMinutes / sessions.length : 0;
+
+  return {
+    avgSessionMinutes: Math.round(avgMinutes),
+    totalSessions: sessions.length,
+    totalMinutes: Math.round(totalMinutes)
+  };
+}
+
+// Obtener resumen de actividad de hoy
+function getTodayActivity() {
+  const stmt = db.prepare(`
+    SELECT
+      u.username,
+      COUNT(a.id) as questions_today
+    FROM users u
+    LEFT JOIN activity_log a ON u.id = a.user_id
+      AND DATE(a.timestamp) = DATE('now')
+      AND a.activity_type = 'question_generated'
+    WHERE u.estado = 'activo'
+    GROUP BY u.id
+    HAVING questions_today > 0
+    ORDER BY questions_today DESC
+  `);
+
+  return stmt.all();
+}
+
+// ========================
 // EXPORTAR FUNCIONES
 // ========================
 
@@ -302,5 +474,12 @@ module.exports = {
   getUserFailedQuestions,
   addFailedQuestion,
   removeFailedQuestion,
+  logActivity,
+  getAdminStats,
+  getUserQuestionsPerDay,
+  getUserQuestionsPerMonth,
+  getUserActivity,
+  getUserAverageSessionTime,
+  getTodayActivity,
   db
 };

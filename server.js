@@ -684,6 +684,50 @@ app.post('/api/admin/users/block-all', requireAdmin, (req, res) => {
   }
 });
 
+// Obtener estadísticas completas (admin)
+app.get('/api/admin/stats', requireAdmin, (req, res) => {
+  try {
+    const stats = db.getAdminStats();
+    res.json(stats);
+  } catch (error) {
+    console.error('Error obteniendo estadísticas:', error);
+    res.status(500).json({ error: 'Error al obtener estadísticas' });
+  }
+});
+
+// Obtener actividad detallada de un usuario (admin)
+app.get('/api/admin/users/:id/activity', requireAdmin, (req, res) => {
+  try {
+    const userId = parseInt(req.params.id);
+
+    const questionsPerDay = db.getUserQuestionsPerDay(userId, 30);
+    const questionsPerMonth = db.getUserQuestionsPerMonth(userId, 6);
+    const sessionTime = db.getUserAverageSessionTime(userId);
+    const recentActivity = db.getUserActivity(userId, 50);
+
+    res.json({
+      questionsPerDay,
+      questionsPerMonth,
+      sessionTime,
+      recentActivity
+    });
+  } catch (error) {
+    console.error('Error obteniendo actividad:', error);
+    res.status(500).json({ error: 'Error al obtener actividad' });
+  }
+});
+
+// Obtener actividad de hoy (admin)
+app.get('/api/admin/today', requireAdmin, (req, res) => {
+  try {
+    const today = db.getTodayActivity();
+    res.json(today);
+  } catch (error) {
+    console.error('Error obteniendo actividad de hoy:', error);
+    res.status(500).json({ error: 'Error al obtener actividad de hoy' });
+  }
+});
+
 // ========================
 // RUTAS DE LA API OPTIMIZADAS
 // ========================
@@ -767,7 +811,10 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
         }]
       };
     }
-    
+
+    // Registrar actividad de generación de pregunta
+    db.logActivity(req.user.id, 'question_generated', topics[0]);
+
     res.json({
       examId: Date.now(),
       questions: questionsData.questions,
