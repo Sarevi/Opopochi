@@ -396,6 +396,71 @@
             font-size: 0.85rem;
         }
 
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            z-index: 9999;
+            display: none;
+            font-weight: 600;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .notification.success {
+            background: #4caf50;
+            color: white;
+        }
+
+        .notification.error {
+            background: #f44336;
+            color: white;
+        }
+
+        .notification.info {
+            background: #2196F3;
+            color: white;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            border: 2px solid #e0e0e0;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .filter-btn:hover:not(.active) {
+            border-color: #667eea;
+        }
+
         @media (max-width: 768px) {
             .stats-grid {
                 grid-template-columns: 1fr;
@@ -444,6 +509,9 @@
         </div>
     </div>
 
+    <!-- NOTIFICACIONES -->
+    <div id="notification" class="notification"></div>
+
     <!-- DASHBOARD -->
     <div id="dashboard" class="dashboard">
         <div class="header">
@@ -475,8 +543,25 @@
         <div class="users-container">
             <div class="section-header">
                 <h2>Gestión de Usuarios</h2>
-                <button class="action-button danger" onclick="blockAllUsers()">
-                    🚫 Bloquear Todos
+                <div style="display: flex; gap: 10px;">
+                    <button class="action-button" onclick="loadUsers()">
+                        🔄 Refrescar
+                    </button>
+                    <button class="action-button danger" onclick="blockAllUsers()">
+                        🚫 Bloquear Todos
+                    </button>
+                </div>
+            </div>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterUsers('todos')" id="filter-todos">
+                    Todos (<span id="count-todos">0</span>)
+                </button>
+                <button class="filter-btn" onclick="filterUsers('bloqueado')" id="filter-bloqueado">
+                    🔴 Bloqueados (<span id="count-bloqueado">0</span>)
+                </button>
+                <button class="filter-btn" onclick="filterUsers('activo')" id="filter-activo">
+                    🟢 Activos (<span id="count-activo">0</span>)
                 </button>
             </div>
 
@@ -504,6 +589,22 @@
         const API_BASE = '';
         let adminPassword = '';
         let users = [];
+        let currentFilter = 'todos';
+
+        // ========================
+        // SISTEMA DE NOTIFICACIONES
+        // ========================
+
+        function showNotification(message, type = 'success') {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.className = `notification ${type}`;
+            notification.style.display = 'block';
+
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
 
         // ========================
         // AUTENTICACIÓN DE ADMIN
@@ -575,6 +676,26 @@
             document.getElementById('total-users').textContent = totalUsers;
             document.getElementById('active-users').textContent = activeUsers;
             document.getElementById('blocked-users').textContent = blockedUsers;
+
+            // Actualizar contadores de filtros
+            document.getElementById('count-todos').textContent = totalUsers;
+            document.getElementById('count-bloqueado').textContent = blockedUsers;
+            document.getElementById('count-activo').textContent = activeUsers;
+        }
+
+        // ========================
+        // FILTROS
+        // ========================
+
+        function filterUsers(filter) {
+            currentFilter = filter;
+
+            // Actualizar botones activos
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`filter-${filter}`).classList.add('active');
+
+            // Re-renderizar tabla con filtro
+            renderUsers();
         }
 
         async function loadTodayActivity() {
@@ -602,8 +723,22 @@
         function renderUsers() {
             const container = document.getElementById('users-table-container');
 
+            // Aplicar filtro
+            let filteredUsers = users;
+            if (currentFilter !== 'todos') {
+                filteredUsers = users.filter(u => u.estado === currentFilter);
+            }
+
+            // Ordenar: más recientes primero
+            filteredUsers.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+
             if (users.length === 0) {
                 container.innerHTML = '<p style="text-align: center; padding: 40px; color: #999;">No hay usuarios registrados</p>';
+                return;
+            }
+
+            if (filteredUsers.length === 0) {
+                container.innerHTML = `<p style="text-align: center; padding: 40px; color: #999;">No hay usuarios ${currentFilter === 'bloqueado' ? 'bloqueados' : 'activos'}</p>`;
                 return;
             }
 
@@ -614,6 +749,7 @@
                             <th>ID</th>
                             <th>Usuario</th>
                             <th>Estado</th>
+                            <th>Registrado</th>
                             <th>Preguntas</th>
                             <th>Precisión</th>
                             <th>Último Acceso</th>
@@ -623,24 +759,43 @@
                     <tbody>
             `;
 
-            users.forEach(user => {
-                const lastAccess = new Date(user.last_access).toLocaleString('es-ES');
+            filteredUsers.forEach(user => {
+                const lastAccess = new Date(user.last_access).toLocaleString('es-ES', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                const createdAt = new Date(user.created_at).toLocaleString('es-ES', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric'
+                });
                 const precision = Math.round(user.avg_accuracy) || 0;
 
+                // Destacar usuarios recién registrados (menos de 24h)
+                const isNew = (Date.now() - new Date(user.created_at)) < 24 * 60 * 60 * 1000;
+                const rowStyle = isNew && user.estado === 'bloqueado' ? 'background: #fff3cd;' : '';
+
                 html += `
-                    <tr>
+                    <tr style="${rowStyle}">
                         <td>${user.id}</td>
-                        <td><strong>${user.username}</strong></td>
+                        <td>
+                            <strong>${user.username}</strong>
+                            ${isNew && user.estado === 'bloqueado' ? '<br><small style="color: #f59e0b;">🆕 NUEVO</small>' : ''}
+                        </td>
                         <td><span class="status-badge ${user.estado}">${user.estado.toUpperCase()}</span></td>
+                        <td>${createdAt}</td>
                         <td>${user.total_questions}</td>
                         <td>${precision}%</td>
                         <td>${lastAccess}</td>
                         <td>
                             ${user.estado === 'bloqueado'
-                                ? `<button class="btn-small btn-success" onclick="activateUser(${user.id})">✅ Activar</button>`
-                                : `<button class="btn-small btn-danger" onclick="blockUser(${user.id})">🚫 Bloquear</button>`
+                                ? `<button class="btn-small btn-success" onclick="activateUser(${user.id}, '${user.username}')">✅ Activar</button>`
+                                : `<button class="btn-small btn-danger" onclick="blockUser(${user.id}, '${user.username}')">🚫 Bloquear</button>`
                             }
-                            <button class="btn-small btn-info" onclick="showUserStats(${user.id})">📊 Ver Stats</button>
+                            <button class="btn-small btn-info" onclick="showUserStats(${user.id})">📊 Stats</button>
                         </td>
                     </tr>
                 `;
@@ -654,8 +809,8 @@
         // ACCIONES DE USUARIOS
         // ========================
 
-        async function activateUser(userId) {
-            if (!confirm('¿Activar este usuario?')) return;
+        async function activateUser(userId, username) {
+            if (!confirm(`¿Activar al usuario "${username}"?\n\nPodrá acceder a la aplicación inmediatamente.`)) return;
 
             try {
                 const response = await fetch(`${API_BASE}/api/admin/users/${userId}/activate`, {
@@ -666,18 +821,19 @@
                 });
 
                 if (response.ok) {
+                    showNotification(`✅ Usuario "${username}" activado correctamente`, 'success');
                     await loadUsers();
                 } else {
-                    alert('Error al activar usuario');
+                    showNotification('❌ Error al activar usuario', 'error');
                 }
             } catch (error) {
                 console.error('Error:', error);
-                alert('Error de conexión');
+                showNotification('❌ Error de conexión', 'error');
             }
         }
 
-        async function blockUser(userId) {
-            if (!confirm('¿Bloquear este usuario? No podrá acceder hasta que lo actives de nuevo.')) return;
+        async function blockUser(userId, username) {
+            if (!confirm(`¿Bloquear al usuario "${username}"?\n\nNo podrá acceder hasta que lo actives de nuevo.`)) return;
 
             try {
                 const response = await fetch(`${API_BASE}/api/admin/users/${userId}/block`, {
@@ -688,19 +844,20 @@
                 });
 
                 if (response.ok) {
+                    showNotification(`🚫 Usuario "${username}" bloqueado`, 'info');
                     await loadUsers();
                 } else {
-                    alert('Error al bloquear usuario');
+                    showNotification('❌ Error al bloquear usuario', 'error');
                 }
             } catch (error) {
                 console.error('Error:', error);
-                alert('Error de conexión');
+                showNotification('❌ Error de conexión', 'error');
             }
         }
 
         async function blockAllUsers() {
-            if (!confirm('⚠️ ¿BLOQUEAR TODOS LOS USUARIOS? Esta acción bloqueará a todos (útil para fin de mes).')) return;
-            if (!confirm('¿Estás completamente seguro? Todos los usuarios serán bloqueados.')) return;
+            if (!confirm('⚠️ ¿BLOQUEAR TODOS LOS USUARIOS?\n\nEsta acción bloqueará a TODOS los usuarios (útil para fin de mes).')) return;
+            if (!confirm('¿Estás completamente seguro?\n\nTodos los usuarios serán bloqueados y no podrán acceder.')) return;
 
             try {
                 const response = await fetch(`${API_BASE}/api/admin/users/block-all`, {
@@ -712,14 +869,14 @@
 
                 if (response.ok) {
                     const data = await response.json();
-                    alert(`✅ ${data.count} usuarios bloqueados`);
+                    showNotification(`🚫 ${data.count} usuarios bloqueados correctamente`, 'info');
                     await loadUsers();
                 } else {
-                    alert('Error al bloquear usuarios');
+                    showNotification('❌ Error al bloquear usuarios', 'error');
                 }
             } catch (error) {
                 console.error('Error:', error);
-                alert('Error de conexión');
+                showNotification('❌ Error de conexión', 'error');
             }
         }
 
