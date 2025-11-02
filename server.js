@@ -175,39 +175,44 @@ function calculateDelay(attempt, config = IMPROVED_CLAUDE_CONFIG) {
   return Math.round(finalDelay);
 }
 
-async function callClaudeWithImprovedRetry(fullPrompt, maxTokens = 700, questionType = 'elaborada', config = IMPROVED_CLAUDE_CONFIG) {
+async function callClaudeWithImprovedRetry(fullPrompt, maxTokens = 700, questionType = 'elaborada', questionsPerCall = 3, config = IMPROVED_CLAUDE_CONFIG) {
   let lastError = null;
 
   for (let attempt = 1; attempt <= config.maxRetries; attempt++) {
     try {
-      console.log(`🤖 Intento ${attempt}/${config.maxRetries} - Generando pregunta ${questionType}...`);
+      console.log(`🤖 Intento ${attempt}/${config.maxRetries} - Generando ${questionsPerCall} preguntas ${questionType}...`);
 
       const response = await anthropic.messages.create({
         model: "claude-haiku-4-5-20251001", // Claude Haiku 4.5 - Rápido, económico y capaz
         max_tokens: maxTokens, // Variable según tipo de pregunta
         temperature: 0.2,  // Temperatura baja para eficiencia máxima
-        /* COSTO ULTRA-OPTIMIZADO CON SISTEMA MIXTO 80/20:
+        /* COSTO ULTRA-OPTIMIZADO CON MÚLTIPLES PREGUNTAS POR LLAMADA:
          *
-         * PREGUNTA SIMPLE (80%):
+         * PREGUNTAS SIMPLES (80% - 3 por llamada):
          * - Chunk: 1200 caracteres (~480 tokens input)
-         * - Prompt: ~50 tokens (ultra-compacto)
-         * - Input total: ~530 tokens × $0.80/1M = $0.000424
-         * - Output: ~100 tokens × $4.00/1M = $0.000400
-         * - Total: ~$0.000824 USD por pregunta simple
+         * - Prompt: ~120 tokens (optimizado para múltiples)
+         * - Input total: ~600 tokens × $0.80/1M = $0.000480
+         * - Output: ~100 tokens × 3 preguntas = 300 tokens × $4.00/1M = $0.001200
+         * - Total por llamada: $0.001680 USD
+         * - POR PREGUNTA: $0.001680 ÷ 3 = $0.000560 USD
          *
-         * PREGUNTA ELABORADA (20%):
+         * PREGUNTAS ELABORADAS (20% - 2 por llamada):
          * - Chunk: 1200 caracteres (~480 tokens input)
-         * - Prompt: ~60 tokens (compacto)
-         * - Input total: ~540 tokens × $0.80/1M = $0.000432
-         * - Output: ~150 tokens × $4.00/1M = $0.000600
-         * - Total: ~$0.001032 USD por pregunta elaborada
+         * - Prompt: ~150 tokens (casos prácticos detallados)
+         * - Input total: ~630 tokens × $0.80/1M = $0.000504
+         * - Output: ~150 tokens × 2 preguntas = 300 tokens × $4.00/1M = $0.001200
+         * - Total por llamada: $0.001704 USD
+         * - POR PREGUNTA: $0.001704 ÷ 2 = $0.000852 USD
          *
-         * COSTO PROMEDIO MIXTO 80/20:
-         * (0.8 × $0.000824) + (0.2 × $0.001032) = $0.000865 USD (~0.00080 EUR)
-         * Con 1€ puedes generar ~1,250 preguntas (antes 1,020)
-         * Reducción adicional del 19% sobre el sistema anterior
-         * REDUCCIÓN TOTAL: 55% respecto al sistema original
-         * AHORRO MENSUAL: Si generas 10,000 preguntas/mes = $8.65 vs $19.30 original
+         * COSTO PROMEDIO PONDERADO (80% simples / 20% elaboradas):
+         * (0.8 × $0.000560) + (0.2 × $0.000852) = $0.000618 USD (~0.00057 EUR)
+         *
+         * 🎉 RESULTADOS FINALES:
+         * • Con 1€ generas ~1,750 preguntas (era 1,250 antes)
+         * • Reducción adicional del 29% sobre sistema anterior
+         * • REDUCCIÓN TOTAL: 68% respecto al sistema original
+         * • Ahorro mensual (10k preguntas): $6.18 vs $19.30 = AHORRO $13.12/mes
+         * • Mantiene CALIDAD EXCELENTE con variedad de dificultad y casos prácticos
          */
         messages: [{
           role: "user",
@@ -215,7 +220,7 @@ async function callClaudeWithImprovedRetry(fullPrompt, maxTokens = 700, question
         }]
       });
 
-      console.log(`✅ Pregunta ${questionType} generada en intento ${attempt}`);
+      console.log(`✅ ${questionsPerCall} preguntas ${questionType} generadas en intento ${attempt}`);
       return response;
 
     } catch (error) {
@@ -333,31 +338,50 @@ function parseClaudeResponse(responseText) {
   }
 }
 
-// PROMPTS ULTRA-OPTIMIZADOS - Máxima eficiencia sin perder calidad
+// PROMPTS OPTIMIZADOS PARA MÚLTIPLES PREGUNTAS - Calidad excelente + máxima eficiencia
 
-// PROMPT SIMPLE (80% de preguntas) - Ultra compacto
-const CLAUDE_PROMPT_SIMPLE = `Genera 1 pregunta test Técnico Farmacia. Solo JSON.
+// PROMPT SIMPLE (80% - Genera 3 preguntas por llamada)
+const CLAUDE_PROMPT_SIMPLE = `Genera 3 preguntas test Técnico Farmacia del MISMO texto. Solo JSON.
 
-- Info del texto únicamente
-- Pregunta directa, concepto clave
+IMPORTANTE: Cada pregunta debe cubrir un CONCEPTO DIFERENTE del texto.
+
+VARIEDAD OBLIGATORIA:
+- Pregunta 1: Muy difícil (requiere análisis profundo)
+- Pregunta 2: Difícil (procedimiento técnico complejo)
+- Pregunta 3: Media (aplicación práctica)
+
+REGLAS:
 - 4 opciones (A,B,C,D), 1 correcta
-- Explicación concisa
+- Distractores: altera números/plazos/términos del texto
+- Explicación: 1 línea (máximo 15 palabras)
+- NO repetir conceptos entre las 3 preguntas
 
-JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"media","page_reference":""}]}
+JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"","page_reference":""}]}
 
 TEXTO:
 {{CONTENT}}`;
 
-// PROMPT ELABORADO (20% de preguntas) - Casos prácticos compacto
-const CLAUDE_PROMPT_ELABORADO = `Genera 1 pregunta test Técnico Farmacia con caso práctico. Solo JSON.
+// PROMPT ELABORADO (20% - Genera 2 preguntas por llamada)
+const CLAUDE_PROMPT_ELABORADO = `Genera 2 preguntas test Técnico Farmacia con CASOS PRÁCTICOS diferentes. Solo JSON.
 
-- Info del texto únicamente
-- Caso práctico real (ej: "Un técnico recibe...", "Durante la elaboración...")
-- 4 opciones, 1 correcta, distorsiona números en incorrectas
-- Sin paréntesis en opciones
-- Explicación clara
+IMPORTANTE: Cada caso debe ser una SITUACIÓN DISTINTA del mismo contenido.
 
-JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"difícil","page_reference":""}]}
+CASOS PRÁCTICOS (elegir 2 tipos DIFERENTES):
+A) Recepción de pedido: "Recibes un pedido de medicamentos que..."
+B) Elaboración/Preparación: "Al preparar una fórmula magistral observas..."
+C) Dispensación a paciente: "Un paciente solicita un medicamento y..."
+D) Control de almacén: "Durante el inventario detectas que..."
+E) Conservación: "Compruebas las condiciones de un medicamento y..."
+F) Análisis en laboratorio: "En el laboratorio de farmacia encuentras..."
+
+REGLAS:
+- Basado en info real del texto
+- 4 opciones, distorsiona números/datos en incorrectas
+- Explicación: 2 líneas (máximo 30 palabras)
+- Dificultad: muy difícil (ambas preguntas)
+- NO usar el mismo tipo de caso 2 veces
+
+JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"muy difícil","page_reference":""}]}
 
 TEXTO:
 {{CONTENT}}`;
@@ -799,72 +823,120 @@ app.get('/api/topics', (req, res) => {
 app.post('/api/generate-exam', requireAuth, async (req, res) => {
   try {
     const { topics, questionCount = 1 } = req.body;
+    const userId = req.user.id;
 
     if (!topics?.length) {
       return res.status(400).json({ error: 'Selecciona al menos un tema' });
     }
 
-    console.log('📚 Procesando temas:', topics);
+    console.log(`📚 Usuario ${userId} solicita ${questionCount} preguntas de:`, topics);
 
-    // NUEVO: Obtener un chunk aleatorio en lugar del documento completo
-    const documentChunk = await getRandomChunkFromTopics(topics);
+    // Obtener todo el contenido para dividir en chunks
+    const allContent = await getDocumentsByTopics(topics);
 
-    if (!documentChunk || !documentChunk.trim()) {
+    if (!allContent || !allContent.trim()) {
       return res.status(404).json({
         error: 'No se encontró contenido para los temas seleccionados'
       });
     }
 
-    console.log(`✅ Generando pregunta de ${documentChunk.length} caracteres (chunk aleatorio)`);
-    console.log(`📝 Primeros 200 chars del chunk: ${documentChunk.substring(0, 200)}...`);
+    // Dividir en chunks de 1200 caracteres
+    const chunks = splitIntoChunks(allContent, 1200);
+    console.log(`📄 Documento dividido en ${chunks.length} chunks`);
 
-    // SISTEMA MIXTO ULTRA-OPTIMIZADO: 80% preguntas simples, 20% elaboradas
-    const useSimpleQuestion = Math.random() < 0.8; // 80% probabilidad
-    const prompt = useSimpleQuestion ? CLAUDE_PROMPT_SIMPLE : CLAUDE_PROMPT_ELABORADO;
-    const maxTokens = useSimpleQuestion ? 300 : 600; // Simples: 300 tokens, Elaboradas: 600 tokens
-    const questionType = useSimpleQuestion ? 'simple' : 'elaborada';
+    if (chunks.length === 0) {
+      return res.status(404).json({ error: 'No hay contenido suficiente' });
+    }
 
-    console.log(`🎯 Tipo de pregunta seleccionado: ${questionType.toUpperCase()}`);
+    const topicId = topics.join(','); // Combinar topics si son múltiples
+    let allGeneratedQuestions = [];
 
-    const fullPrompt = prompt.replace('{{CONTENT}}', documentChunk);
+    // Determinar cuántas llamadas hacer basado en questionCount
+    // 80% simples (3/llamada), 20% elaboradas (2/llamada)
+    const totalNeeded = questionCount;
+    const elaboratedNeeded = Math.ceil(totalNeeded * 0.2); // 20% elaboradas
+    const simpleNeeded = totalNeeded - elaboratedNeeded;
 
-    console.log(`🔍 Prompt length: ${fullPrompt.length} caracteres`);
+    const simpleCalls = Math.ceil(simpleNeeded / 3); // 3 preguntas simples por llamada
+    const elaboratedCalls = Math.ceil(elaboratedNeeded / 2); // 2 preguntas elaboradas por llamada
 
-    const response = await callClaudeWithImprovedRetry(fullPrompt, maxTokens, questionType);
-    
-    let questionsData;
-    try {
-      const responseText = response.content[0].text;
-      console.log(`📥 Response recibida (primeros 500 chars): ${responseText.substring(0, 500)}...`);
+    console.log(`🎯 Plan: ${simpleNeeded} simples (${simpleCalls} llamadas) + ${elaboratedNeeded} elaboradas (${elaboratedCalls} llamadas)`);
 
-      questionsData = parseClaudeResponse(responseText);
-      
-      if (!questionsData?.questions?.length) {
-        throw new Error('No se generaron preguntas válidas');
-      }
-      
-      // Validar y aleatorizar cada pregunta
-      questionsData.questions = questionsData.questions.map((q, index) => {
-        if (!q.question || !Array.isArray(q.options) || q.options.length !== 4) {
-          console.log(`⚠️ Corrigiendo pregunta ${index + 1}`);
-          q.options = q.options || [
-            "A) Opción 1", "B) Opción 2", "C) Opción 3", "D) Opción 4"
-          ];
+    // Generar preguntas simples
+    for (let i = 0; i < simpleCalls; i++) {
+      // Obtener chunk sin repetición
+      const chunkIndex = db.getUnusedChunkIndex(userId, topicId, chunks.length);
+      const selectedChunk = chunks[chunkIndex];
+
+      console.log(`\n🔵 LLAMADA SIMPLE ${i + 1}/${simpleCalls} - Chunk ${chunkIndex}/${chunks.length}`);
+      console.log(`📝 Primeros 200 chars: ${selectedChunk.substring(0, 200)}...`);
+
+      const fullPrompt = CLAUDE_PROMPT_SIMPLE.replace('{{CONTENT}}', selectedChunk);
+
+      try {
+        const response = await callClaudeWithImprovedRetry(fullPrompt, 800, 'simples', 3);
+        const responseText = response.content[0].text;
+        const questionsData = parseClaudeResponse(responseText);
+
+        if (questionsData?.questions?.length) {
+          allGeneratedQuestions.push(...questionsData.questions);
+          // Marcar chunk como usado
+          db.markChunkAsUsed(userId, topicId, chunkIndex);
         }
-        q.correct = q.correct ?? 0;
-        q.explanation = q.explanation || "Explicación no disponible.";
-        q.difficulty = q.difficulty || "media";
-        q.page_reference = q.page_reference || "Referencia no disponible";
+      } catch (error) {
+        console.error(`❌ Error en llamada simple ${i + 1}:`, error.message);
+      }
+    }
 
-        // ALEATORIZAR ORDEN DE LAS OPCIONES
-        const randomizedQuestion = randomizeQuestionOptions(q);
-        console.log(`🎲 Pregunta ${index + 1}: Respuesta correcta aleatoriamente asignada a opción ${['A', 'B', 'C', 'D'][randomizedQuestion.correct]}`);
+    // Generar preguntas elaboradas
+    for (let i = 0; i < elaboratedCalls; i++) {
+      // Obtener chunk sin repetición
+      const chunkIndex = db.getUnusedChunkIndex(userId, topicId, chunks.length);
+      const selectedChunk = chunks[chunkIndex];
 
-        return randomizedQuestion;
-      });
-      
-    } catch (parseError) {
-      console.error('❌ Error parsing:', parseError.message);
+      console.log(`\n🔴 LLAMADA ELABORADA ${i + 1}/${elaboratedCalls} - Chunk ${chunkIndex}/${chunks.length}`);
+      console.log(`📝 Primeros 200 chars: ${selectedChunk.substring(0, 200)}...`);
+
+      const fullPrompt = CLAUDE_PROMPT_ELABORADO.replace('{{CONTENT}}', selectedChunk);
+
+      try {
+        const response = await callClaudeWithImprovedRetry(fullPrompt, 1000, 'elaboradas', 2);
+        const responseText = response.content[0].text;
+        const questionsData = parseClaudeResponse(responseText);
+
+        if (questionsData?.questions?.length) {
+          allGeneratedQuestions.push(...questionsData.questions);
+          // Marcar chunk como usado
+          db.markChunkAsUsed(userId, topicId, chunkIndex);
+        }
+      } catch (error) {
+        console.error(`❌ Error en llamada elaborada ${i + 1}:`, error.message);
+      }
+    }
+
+    // Validar y aleatorizar todas las preguntas generadas
+    const finalQuestions = allGeneratedQuestions.slice(0, questionCount).map((q, index) => {
+      if (!q.question || !Array.isArray(q.options) || q.options.length !== 4) {
+        console.log(`⚠️ Corrigiendo pregunta ${index + 1}`);
+        q.options = q.options || [
+          "A) Opción 1", "B) Opción 2", "C) Opción 3", "D) Opción 4"
+        ];
+      }
+      q.correct = q.correct ?? 0;
+      q.explanation = q.explanation || "Explicación no disponible.";
+      q.difficulty = q.difficulty || "media";
+      q.page_reference = q.page_reference || "Referencia no disponible";
+
+      // ALEATORIZAR ORDEN DE LAS OPCIONES
+      const randomizedQuestion = randomizeQuestionOptions(q);
+      console.log(`🎲 Pregunta ${index + 1}: "${q.question.substring(0, 50)}..." - Correcta: ${['A', 'B', 'C', 'D'][randomizedQuestion.correct]} - Dificultad: ${q.difficulty}`);
+
+      return randomizedQuestion;
+    });
+
+    // Si no se generaron suficientes preguntas, agregar fallback
+    if (finalQuestions.length === 0) {
+      console.log('⚠️ No se generaron preguntas, usando fallback');
       const fallbackQuestion = {
         question: "¿Cuál es la temperatura de conservación de los medicamentos termolábiles?",
         options: [
@@ -874,25 +946,32 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
           "D) Entre 8°C y 15°C en cámara fría"
         ],
         correct: 0,
-        explanation: "Correcto: A. Los medicamentos termolábiles deben conservarse entre 2°C y 8°C en frigorífico.",
+        explanation: "Los medicamentos termolábiles deben conservarse entre 2°C y 8°C.",
         difficulty: "media",
         page_reference: "Tema de Farmacia"
       };
-
-      // Aleatorizar también la pregunta de fallback
-      questionsData = {
-        questions: [randomizeQuestionOptions(fallbackQuestion)]
-      };
+      finalQuestions.push(randomizeQuestionOptions(fallbackQuestion));
     }
 
-    // Registrar actividad de generación de pregunta
-    db.logActivity(req.user.id, 'question_generated', topics[0]);
+    // Registrar actividad por cada pregunta generada
+    finalQuestions.forEach(() => {
+      db.logActivity(userId, 'question_generated', topics[0]);
+    });
+
+    // Mostrar cobertura de chunks
+    const coverage = db.getChunkCoverage(userId, topicId);
+    console.log(`📊 Cobertura del tema: ${coverage}/${chunks.length} chunks usados (${Math.round(coverage/chunks.length*100)}%)`);
 
     res.json({
       examId: Date.now(),
-      questions: questionsData.questions,
+      questions: finalQuestions,
       topics,
-      questionCount: questionsData.questions.length
+      questionCount: finalQuestions.length,
+      coverage: {
+        used: coverage,
+        total: chunks.length,
+        percentage: Math.round(coverage/chunks.length*100)
+      }
     });
     
   } catch (error) {
