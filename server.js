@@ -185,26 +185,29 @@ async function callClaudeWithImprovedRetry(fullPrompt, maxTokens = 700, question
       const response = await anthropic.messages.create({
         model: "claude-haiku-4-5-20251001", // Claude Haiku 4.5 - Rápido, económico y capaz
         max_tokens: maxTokens, // Variable según tipo de pregunta
-        temperature: 0.3,  // Balance calidad/variedad
-        /* COSTO OPTIMIZADO CON SISTEMA MIXTO:
+        temperature: 0.2,  // Temperatura baja para eficiencia máxima
+        /* COSTO ULTRA-OPTIMIZADO CON SISTEMA MIXTO 80/20:
          *
-         * PREGUNTA SIMPLE (70%):
-         * - Chunk: 1600 caracteres (~640 tokens input)
-         * - Input: ~640 tokens × $0.80/1M = $0.000512
-         * - Output: ~120 tokens × $4.00/1M = $0.00048
-         * - Total: ~$0.000992 USD por pregunta simple
+         * PREGUNTA SIMPLE (80%):
+         * - Chunk: 1200 caracteres (~480 tokens input)
+         * - Prompt: ~50 tokens (ultra-compacto)
+         * - Input total: ~530 tokens × $0.80/1M = $0.000424
+         * - Output: ~100 tokens × $4.00/1M = $0.000400
+         * - Total: ~$0.000824 USD por pregunta simple
          *
-         * PREGUNTA ELABORADA (30%):
-         * - Chunk: 1600 caracteres (~640 tokens input)
-         * - Input: ~640 tokens × $0.80/1M = $0.000512
-         * - Output: ~180 tokens × $4.00/1M = $0.00072
-         * - Total: ~$0.001232 USD por pregunta elaborada
+         * PREGUNTA ELABORADA (20%):
+         * - Chunk: 1200 caracteres (~480 tokens input)
+         * - Prompt: ~60 tokens (compacto)
+         * - Input total: ~540 tokens × $0.80/1M = $0.000432
+         * - Output: ~150 tokens × $4.00/1M = $0.000600
+         * - Total: ~$0.001032 USD por pregunta elaborada
          *
-         * COSTO PROMEDIO MIXTO:
-         * (0.7 × $0.000992) + (0.3 × $0.001232) = $0.001064 USD (~0.00098 EUR)
-         * Con 1€ puedes generar ~1,020 preguntas
-         * Reducción adicional del 14% sobre el sistema anterior
-         * REDUCCIÓN TOTAL: 45% respecto al sistema original
+         * COSTO PROMEDIO MIXTO 80/20:
+         * (0.8 × $0.000824) + (0.2 × $0.001032) = $0.000865 USD (~0.00080 EUR)
+         * Con 1€ puedes generar ~1,250 preguntas (antes 1,020)
+         * Reducción adicional del 19% sobre el sistema anterior
+         * REDUCCIÓN TOTAL: 55% respecto al sistema original
+         * AHORRO MENSUAL: Si generas 10,000 preguntas/mes = $8.65 vs $19.30 original
          */
         messages: [{
           role: "user",
@@ -330,43 +333,31 @@ function parseClaudeResponse(responseText) {
   }
 }
 
-// PROMPTS OPTIMIZADOS - Sistema mixto para reducir costos
+// PROMPTS ULTRA-OPTIMIZADOS - Máxima eficiencia sin perder calidad
 
-// PROMPT SIMPLE (70% de preguntas) - Optimizado para bajo costo
-const CLAUDE_PROMPT_SIMPLE = `Genera 1 pregunta tipo test de Técnico de Farmacia. Solo JSON.
+// PROMPT SIMPLE (80% de preguntas) - Ultra compacto
+const CLAUDE_PROMPT_SIMPLE = `Genera 1 pregunta test Técnico Farmacia. Solo JSON.
 
-REGLAS:
-- Usa solo info del texto
-- Pregunta directa sobre concepto clave
+- Info del texto únicamente
+- Pregunta directa, concepto clave
 - 4 opciones (A,B,C,D), 1 correcta
-- Explicación breve
+- Explicación concisa
 
-JSON:
-{"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"media","page_reference":""}]}
+JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"media","page_reference":""}]}
 
 TEXTO:
 {{CONTENT}}`;
 
-// PROMPT ELABORADO (30% de preguntas) - Máxima calidad con casos prácticos
-const CLAUDE_PROMPT_ELABORADO = `Genera 1 pregunta tipo test de Técnico de Farmacia. Solo JSON, sin markdown.
+// PROMPT ELABORADO (20% de preguntas) - Casos prácticos compacto
+const CLAUDE_PROMPT_ELABORADO = `Genera 1 pregunta test Técnico Farmacia con caso práctico. Solo JSON.
 
-REGLAS:
-- Usa solo info del texto
-- 60% difícil, 20% media, 20% fácil
-- Crea preguntas con CASOS PRÁCTICOS o situaciones reales
-- 4 opciones (A,B,C,D), solo 1 correcta
-- Opciones incorrectas: distorsiona números/plazos del texto
+- Info del texto únicamente
+- Caso práctico real (ej: "Un técnico recibe...", "Durante la elaboración...")
+- 4 opciones, 1 correcta, distorsiona números en incorrectas
+- Sin paréntesis en opciones
+- Explicación clara
 
-ESTILO:
-- Pregunta directa y profesional (NO "según el texto")
-- Sin paréntesis en opciones: (Art. X), (Tema Y)
-- Ejemplos de casos prácticos:
-  * "Un técnico recibe un medicamento termolábil..."
-  * "Durante la elaboración de una fórmula magistral..."
-  * "Al revisar el stock, observas que..."
-
-JSON:
-{"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"difícil","page_reference":""}]}
+JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"difícil","page_reference":""}]}
 
 TEXTO:
 {{CONTENT}}`;
@@ -407,8 +398,8 @@ async function ensureDocumentsDirectory() {
   }
 }
 
-// Función para dividir contenido en chunks OPTIMIZADO (1600 caracteres = balance costo/calidad)
-function splitIntoChunks(content, chunkSize = 1600) {
+// Función para dividir contenido en chunks ULTRA-OPTIMIZADO (1200 caracteres = máxima eficiencia)
+function splitIntoChunks(content, chunkSize = 1200) {
   const chunks = [];
   const lines = content.split('\n');
   let currentChunk = '';
@@ -470,8 +461,8 @@ async function getRandomChunkFromTopics(topics) {
     return null;
   }
 
-  // Dividir en chunks de ~2500 caracteres (1 página completa)
-  const chunks = splitIntoChunks(allContent, 2500);
+  // Dividir en chunks de ~1200 caracteres (optimizado para costos)
+  const chunks = splitIntoChunks(allContent, 1200);
 
   console.log(`📄 Documento dividido en ${chunks.length} chunks`);
 
@@ -827,10 +818,10 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
     console.log(`✅ Generando pregunta de ${documentChunk.length} caracteres (chunk aleatorio)`);
     console.log(`📝 Primeros 200 chars del chunk: ${documentChunk.substring(0, 200)}...`);
 
-    // SISTEMA MIXTO: 70% preguntas simples, 30% elaboradas
-    const useSimpleQuestion = Math.random() < 0.7; // 70% probabilidad
+    // SISTEMA MIXTO ULTRA-OPTIMIZADO: 80% preguntas simples, 20% elaboradas
+    const useSimpleQuestion = Math.random() < 0.8; // 80% probabilidad
     const prompt = useSimpleQuestion ? CLAUDE_PROMPT_SIMPLE : CLAUDE_PROMPT_ELABORADO;
-    const maxTokens = useSimpleQuestion ? 400 : 700; // Simples: 400 tokens, Elaboradas: 700 tokens
+    const maxTokens = useSimpleQuestion ? 300 : 600; // Simples: 300 tokens, Elaboradas: 600 tokens
     const questionType = useSimpleQuestion ? 'simple' : 'elaborada';
 
     console.log(`🎯 Tipo de pregunta seleccionado: ${questionType.toUpperCase()}`);
