@@ -124,42 +124,42 @@ const TOPIC_CONFIG = {
   "tema-12-almacenamiento": {
     "title": "TEMA 12 - ALMACENAMIENTO Y CONSERVACION",
     "description": "Almacenamiento y Conservación",
-    "files": ["TEMA 12- ALMACENAMIENTO Y CONSERVACION.txt"]
+    "files": ["TEMA-12-ALMACENAMIENTO-Y-CONSERVACION.txt"]
   },
   "tema-13-laboratorio": {
     "title": "TEMA 13 - LABORATORIO FARMACEUTICO",
     "description": "Laboratorio Farmacéutico",
-    "files": ["TEMA 13- LABORATORIO FARMACEUTICO.txt"]
+    "files": ["TEMA-13-LABORATORIO-FARMACEUTICO.txt"]
   },
   "tema-13-parte-2": {
     "title": "TEMA 13 (2ª parte) - LABORATORIO FARMACEUTICO",
     "description": "Laboratorio Farmacéutico - Parte 2",
-    "files": ["TEMA 13-2ª parte- LABORATORIO FARMACEUTICO.txt"]
+    "files": ["TEMA-13-2ª-parte-LABORATORIO-FARMACEUTICO.txt"]
   },
   "tema-14-operaciones": {
     "title": "TEMA 14 - OPERACIONES FARMACEUTICAS BASICAS",
     "description": "Operaciones Farmacéuticas Básicas",
-    "files": ["TEMA 14 - OPERACIONES FARMACEUTICAS BASICAS.txt"]
+    "files": ["TEMA-14-OPERACIONES-FARMACEUTICAS-BASICAS.txt"]
   },
   "tema-14-parte-2": {
     "title": "TEMA 14 (2ª parte) - LABORATORIO FARMACEUTICO",
     "description": "Laboratorio Farmacéutico - Parte 2",
-    "files": ["TEMA 14 -2ª parte- LABORATORIO FARMACEUTICO.txt"]
+    "files": ["TEMA-14-2ª-parte-LABORATORIO-FARMACEUTICO.txt"]
   },
   "tema-15-analisis-clinicos": {
     "title": "TEMA 15 - ANALISIS CLINICOS",
     "description": "Análisis Clínicos",
-    "files": ["TEMA 15- ANALISIS CLINICOS.txt"]
+    "files": ["TEMA-15-ANALISIS-CLINICOS.txt"]
   },
   "tema-17-espectrofotometria": {
     "title": "TEMA 17 - ESPECTROFOTOMETRIA Y MICROSCOPIA",
     "description": "Espectrofotometría y Microscopía",
-    "files": ["TEMA 17- ESPECTROFOTOMETRIA Y MICROSCOPIA.txt"]
+    "files": ["TEMA-17-ESPECTROFOTOMETRIA-Y-MICROSCOPIA.txt"]
   },
   "tema-18-parafarmacia": {
     "title": "TEMA 18 - PARAFARMACIA",
     "description": "Parafarmacia",
-    "files": ["TEMA 18- PARAFARMACIA.txt"]
+    "files": ["TEMA-18-PARAFARMACIA.txt"]
   }
 };
 
@@ -186,6 +186,12 @@ async function callClaudeWithImprovedRetry(fullPrompt, config = IMPROVED_CLAUDE_
         model: "claude-haiku-4-5-20251001", // Claude Haiku 4.5 - Rápido, económico y capaz
         max_tokens: 1000, // Suficiente para pregunta completa
         temperature: 0.3,  // Balance calidad/variedad
+        /* COSTO POR PREGUNTA:
+         * Input: ~1000 tokens × $0.80/1M = $0.0008
+         * Output: ~250 tokens × $4.00/1M = $0.001
+         * Total: ~$0.0018 USD (~0.0017 EUR) por pregunta
+         * Con 1€ puedes generar ~588 preguntas
+         */
         messages: [{
           role: "user",
           content: fullPrompt
@@ -272,30 +278,41 @@ function parseClaudeResponse(responseText) {
   }
 }
 
-// PROMPT OPTIMIZADO (balance velocidad-claridad)
-const CLAUDE_PROMPT = `Genera 1 pregunta tipo test de oposición judicial basada en el texto. Responde SOLO con JSON, sin markdown.
+// PROMPT OPTIMIZADO - Estilo Examen de Oposición Real
+const CLAUDE_PROMPT = `Genera 1 pregunta tipo test de oposición de Técnico de Farmacia basada en el texto. Responde SOLO con JSON, sin markdown.
 
-INSTRUCCIONES:
+INSTRUCCIONES CRÍTICAS:
 - Usa únicamente información del texto proporcionado
 - Dificultad: 10% muy difícil, 60% difícil, 20% media, 10% fácil
 - Crea 4 opciones (A, B, C, D) donde solo 1 es correcta
 - Las opciones incorrectas deben distorsionar números, plazos o conceptos del texto real
-- Incluye referencia al artículo/página
+
+ESTILO DE PREGUNTA:
+- NO uses frases como "Según el texto", "Como indica el documento", "De acuerdo con los apuntes"
+- Formula la pregunta de forma directa y profesional, como en un examen oficial
+- Ejemplo BUENO: "¿Cuál es el plazo de conservación de los medicamentos termolábiles?"
+- Ejemplo MALO: "Según el texto, ¿cuál es el plazo de conservación...?"
+
+FORMATO DE OPCIONES:
+- NO incluyas referencias entre paréntesis en las opciones: (Art. X), (Tema Y), etc.
+- Las opciones deben ser limpias y profesionales
+- Ejemplo BUENO: "A) Entre 2°C y 8°C en frigorífico"
+- Ejemplo MALO: "A) Entre 2°C y 8°C en frigorífico (Art. 45)"
 
 Responde con este formato JSON exacto:
 {
   "questions": [{
-    "question": "texto de la pregunta aquí",
+    "question": "texto de la pregunta directa aquí",
     "options": [
-      "A) primera opción con referencia",
-      "B) segunda opción con referencia",
-      "C) tercera opción con referencia",
-      "D) cuarta opción con referencia"
+      "A) primera opción limpia sin paréntesis",
+      "B) segunda opción limpia sin paréntesis",
+      "C) tercera opción limpia sin paréntesis",
+      "D) cuarta opción limpia sin paréntesis"
     ],
     "correct": 0,
     "explanation": "La correcta es A porque...",
     "difficulty": "difícil",
-    "page_reference": "Art. X"
+    "page_reference": "Referencia del tema"
   }]
 }
 
