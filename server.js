@@ -555,14 +555,17 @@ app.post('/api/auth/register', (req, res) => {
 app.post('/api/auth/login', (req, res) => {
   try {
     const { username, password } = req.body;
+    console.log('🔑 Intento de login - Usuario:', username);
 
     if (!username || !password) {
+      console.log('❌ Faltan credenciales');
       return res.status(400).json({ error: 'Username y password requeridos' });
     }
 
     const result = db.authenticateUser(username, password);
 
     if (!result.success) {
+      console.log('❌ Login fallido:', result.error);
       return res.status(401).json({ error: result.error });
     }
 
@@ -579,7 +582,7 @@ app.post('/api/auth/login', (req, res) => {
     });
 
   } catch (error) {
-    console.error('Error en login:', error);
+    console.error('❌ Error en login (excepción):', error);
     res.status(500).json({ error: 'Error al iniciar sesión' });
   }
 });
