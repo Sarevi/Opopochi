@@ -55,7 +55,7 @@ function initDatabase() {
       question TEXT NOT NULL,
       options TEXT NOT NULL,
       correct INTEGER NOT NULL,
-      user_answer INTEGER NOT NULL,
+      user_answer INTEGER,
       explanation TEXT,
       difficulty TEXT,
       page_reference TEXT,
@@ -75,6 +75,49 @@ function initDatabase() {
       FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
     )
   `);
+
+  // MIGRACIÓN: Arreglar tabla failed_questions si existe con user_answer NOT NULL
+  try {
+    // Intentar verificar si la tabla necesita migración
+    const tableInfo = db.prepare("PRAGMA table_info(failed_questions)").all();
+    const userAnswerColumn = tableInfo.find(col => col.name === 'user_answer');
+
+    if (userAnswerColumn && userAnswerColumn.notnull === 1) {
+      console.log('🔄 Migrando tabla failed_questions para permitir user_answer NULL...');
+
+      // Crear tabla temporal con schema correcto
+      db.exec(`
+        CREATE TABLE failed_questions_new (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          user_id INTEGER NOT NULL,
+          topic_id TEXT NOT NULL,
+          question TEXT NOT NULL,
+          options TEXT NOT NULL,
+          correct INTEGER NOT NULL,
+          user_answer INTEGER,
+          explanation TEXT,
+          difficulty TEXT,
+          page_reference TEXT,
+          date DATETIME DEFAULT CURRENT_TIMESTAMP,
+          FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+        )
+      `);
+
+      // Copiar datos
+      db.exec(`
+        INSERT INTO failed_questions_new
+        SELECT * FROM failed_questions
+      `);
+
+      // Eliminar tabla vieja y renombrar
+      db.exec(`DROP TABLE failed_questions`);
+      db.exec(`ALTER TABLE failed_questions_new RENAME TO failed_questions`);
+
+      console.log('✅ Migración completada: user_answer ahora permite NULL');
+    }
+  } catch (error) {
+    console.log('ℹ️ No se requiere migración de failed_questions');
+  }
 
   console.log('✅ Base de datos inicializada');
 }
