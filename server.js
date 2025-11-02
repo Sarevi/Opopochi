@@ -175,7 +175,7 @@ function calculateDelay(attempt, config = IMPROVED_CLAUDE_CONFIG) {
   return Math.round(finalDelay);
 }
 
-async function callClaudeWithImprovedRetry(fullPrompt, maxTokens = 700, questionType = 'elaborada', questionsPerCall = 3, config = IMPROVED_CLAUDE_CONFIG) {
+async function callClaudeWithImprovedRetry(fullPrompt, maxTokens = 700, questionType = 'media', questionsPerCall = 3, config = IMPROVED_CLAUDE_CONFIG) {
   let lastError = null;
 
   for (let attempt = 1; attempt <= config.maxRetries; attempt++) {
@@ -186,33 +186,39 @@ async function callClaudeWithImprovedRetry(fullPrompt, maxTokens = 700, question
         model: "claude-haiku-4-5-20251001", // Claude Haiku 4.5 - Rápido, económico y capaz
         max_tokens: maxTokens, // Variable según tipo de pregunta
         temperature: 0.2,  // Temperatura baja para eficiencia máxima
-        /* COSTO ULTRA-OPTIMIZADO CON MÚLTIPLES PREGUNTAS POR LLAMADA:
+        /* COSTO OPTIMIZADO - SISTEMA 3 NIVELES (30% Simple / 50% Media / 20% Elaborada):
          *
-         * PREGUNTAS SIMPLES (80% - 3 por llamada):
-         * - Chunk: 1200 caracteres (~480 tokens input)
-         * - Prompt: ~120 tokens (optimizado para múltiples)
+         * PREGUNTAS SIMPLES (30% - 3 por llamada) - DIRECTAS:
+         * - Chunk: 1200 caracteres (~480 tokens)
+         * - Prompt: ~110 tokens
+         * - Input total: ~590 tokens × $0.80/1M = $0.000472
+         * - Output: ~70 tokens × 3 = 210 tokens × $4.00/1M = $0.000840
+         * - Total: $0.001312 ÷ 3 = $0.000437 USD/pregunta
+         *
+         * PREGUNTAS MEDIAS (50% - 3 por llamada) - CONTEXTO CORTO:
+         * - Chunk: 1200 caracteres (~480 tokens)
+         * - Prompt: ~120 tokens
          * - Input total: ~600 tokens × $0.80/1M = $0.000480
-         * - Output: ~100 tokens × 3 preguntas = 300 tokens × $4.00/1M = $0.001200
-         * - Total por llamada: $0.001680 USD
-         * - POR PREGUNTA: $0.001680 ÷ 3 = $0.000560 USD
+         * - Output: ~110 tokens × 3 = 330 tokens × $4.00/1M = $0.001320
+         * - Total: $0.001800 ÷ 3 = $0.000600 USD/pregunta
          *
-         * PREGUNTAS ELABORADAS (20% - 2 por llamada):
-         * - Chunk: 1200 caracteres (~480 tokens input)
-         * - Prompt: ~150 tokens (casos prácticos detallados)
-         * - Input total: ~630 tokens × $0.80/1M = $0.000504
-         * - Output: ~150 tokens × 2 preguntas = 300 tokens × $4.00/1M = $0.001200
-         * - Total por llamada: $0.001704 USD
-         * - POR PREGUNTA: $0.001704 ÷ 2 = $0.000852 USD
+         * PREGUNTAS ELABORADAS (20% - 2 por llamada) - CASOS LARGOS:
+         * - Chunk: 1200 caracteres (~480 tokens)
+         * - Prompt: ~140 tokens
+         * - Input total: ~620 tokens × $0.80/1M = $0.000496
+         * - Output: ~160 tokens × 2 = 320 tokens × $4.00/1M = $0.001280
+         * - Total: $0.001776 ÷ 2 = $0.000888 USD/pregunta
          *
-         * COSTO PROMEDIO PONDERADO (80% simples / 20% elaboradas):
-         * (0.8 × $0.000560) + (0.2 × $0.000852) = $0.000618 USD (~0.00057 EUR)
+         * COSTO PROMEDIO PONDERADO (30/50/20):
+         * (0.30 × $0.000437) + (0.50 × $0.000600) + (0.20 × $0.000888)
+         * = $0.000131 + $0.000300 + $0.000178
+         * = $0.000609 USD (~0.00056 EUR) por pregunta
          *
-         * 🎉 RESULTADOS FINALES:
-         * • Con 1€ generas ~1,750 preguntas (era 1,250 antes)
-         * • Reducción adicional del 29% sobre sistema anterior
-         * • REDUCCIÓN TOTAL: 68% respecto al sistema original
-         * • Ahorro mensual (10k preguntas): $6.18 vs $19.30 = AHORRO $13.12/mes
-         * • Mantiene CALIDAD EXCELENTE con variedad de dificultad y casos prácticos
+         * 🎉 RESULTADOS:
+         * • Con 1€ generas ~1,790 preguntas
+         * • Mejor balance: 50% contexto corto (calidad media-alta)
+         * • 30% directas rápidas + 20% casos complejos
+         * • REDUCCIÓN TOTAL: 68.5% vs sistema original
          */
         messages: [{
           role: "user",
@@ -338,48 +344,80 @@ function parseClaudeResponse(responseText) {
   }
 }
 
-// PROMPTS OPTIMIZADOS PARA MÚLTIPLES PREGUNTAS - Calidad excelente + máxima eficiencia
+// PROMPTS OPTIMIZADOS - 3 NIVELES: Simple (30%), Media (50%), Elaborada (20%)
 
-// PROMPT SIMPLE (80% - Genera 3 preguntas por llamada)
-const CLAUDE_PROMPT_SIMPLE = `Genera 3 preguntas test Técnico Farmacia del MISMO texto. Solo JSON.
+// PROMPT SIMPLE (30% - Genera 3 preguntas por llamada) - PREGUNTAS DIRECTAS
+const CLAUDE_PROMPT_SIMPLE = `Genera 3 preguntas test DIRECTAS de Técnico Farmacia. Solo JSON.
 
-IMPORTANTE: Cada pregunta debe cubrir un CONCEPTO DIFERENTE del texto.
+ESTILO: Pregunta directa sin contexto ni enunciado largo.
 
-VARIEDAD OBLIGATORIA:
-- Pregunta 1: Muy difícil (requiere análisis profundo)
-- Pregunta 2: Difícil (procedimiento técnico complejo)
-- Pregunta 3: Media (aplicación práctica)
+EJEMPLOS:
+- "¿Cuál es la temperatura de conservación de medicamentos termolábiles?"
+- "¿Qué ratio habitantes/farmacia rige en zonas semiurbanas?"
+- "¿Cuánto tiempo puede conservarse una fórmula magistral acuosa?"
+
+VARIEDAD:
+- Pregunta 1: Muy difícil
+- Pregunta 2: Difícil
+- Pregunta 3: Media
 
 REGLAS:
+- Pregunta: 1 línea, máximo 15 palabras
 - 4 opciones (A,B,C,D), 1 correcta
-- Distractores: altera números/plazos/términos del texto
-- Explicación: 1 línea (máximo 15 palabras)
-- NO repetir conceptos entre las 3 preguntas
+- Distractores: altera números/plazos del texto
+- Explicación: 1 línea (máximo 12 palabras)
+- Conceptos DIFERENTES entre sí
 
 JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"","page_reference":""}]}
 
 TEXTO:
 {{CONTENT}}`;
 
-// PROMPT ELABORADO (20% - Genera 2 preguntas por llamada)
-const CLAUDE_PROMPT_ELABORADO = `Genera 2 preguntas test Técnico Farmacia con CASOS PRÁCTICOS diferentes. Solo JSON.
+// PROMPT MEDIA (50% - Genera 3 preguntas por llamada) - CONTEXTO CORTO
+const CLAUDE_PROMPT_MEDIA = `Genera 3 preguntas test con CONTEXTO CORTO de Técnico Farmacia. Solo JSON.
 
-IMPORTANTE: Cada caso debe ser una SITUACIÓN DISTINTA del mismo contenido.
+ESTILO: Contexto breve (1-2 líneas) + pregunta concreta.
 
-CASOS PRÁCTICOS (elegir 2 tipos DIFERENTES):
-A) Recepción de pedido: "Recibes un pedido de medicamentos que..."
-B) Elaboración/Preparación: "Al preparar una fórmula magistral observas..."
-C) Dispensación a paciente: "Un paciente solicita un medicamento y..."
-D) Control de almacén: "Durante el inventario detectas que..."
-E) Conservación: "Compruebas las condiciones de un medicamento y..."
-F) Análisis en laboratorio: "En el laboratorio de farmacia encuentras..."
+EJEMPLOS:
+- "Un medicamento llega a 15°C. ¿Es aceptable para termolábiles?"
+- "Una zona tiene 5.600 habitantes. ¿Cuántas farmacias pueden abrirse?"
+- "Preparas una fórmula acuosa hoy. ¿Hasta cuándo es válida?"
+
+VARIEDAD:
+- Pregunta 1: Muy difícil
+- Pregunta 2: Difícil
+- Pregunta 3: Media
 
 REGLAS:
-- Basado en info real del texto
-- 4 opciones, distorsiona números/datos en incorrectas
-- Explicación: 2 líneas (máximo 30 palabras)
-- Dificultad: muy difícil (ambas preguntas)
-- NO usar el mismo tipo de caso 2 veces
+- Contexto + pregunta: máximo 25 palabras total
+- 4 opciones, distorsiona números en incorrectas
+- Explicación: 1 línea (máximo 15 palabras)
+- Situaciones DIFERENTES entre sí
+
+JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"","page_reference":""}]}
+
+TEXTO:
+{{CONTENT}}`;
+
+// PROMPT ELABORADA (20% - Genera 2 preguntas por llamada) - CASOS PRÁCTICOS LARGOS
+const CLAUDE_PROMPT_ELABORADA = `Genera 2 preguntas test con CASOS PRÁCTICOS completos. Solo JSON.
+
+ESTILO: Situación realista detallada (3-4 líneas) + pregunta específica.
+
+CASOS PRÁCTICOS (elegir 2 tipos DIFERENTES):
+A) Recepción: "Durante la recepción de un pedido observas que..."
+B) Elaboración: "Al preparar una fórmula magistral en el laboratorio detectas..."
+C) Dispensación: "Un paciente solicita un medicamento y al revisar..."
+D) Control: "Durante el inventario del almacén compruebas que..."
+E) Conservación: "Al verificar las condiciones de almacenamiento encuentras..."
+F) Análisis: "En el laboratorio de análisis clínicos observas que..."
+
+REGLAS:
+- Caso completo con detalles relevantes
+- 4 opciones, distorsiona datos numéricos
+- Explicación: 2 líneas (máximo 25 palabras)
+- Dificultad: muy difícil (ambas)
+- NO repetir tipo de caso
 
 JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"muy difícil","page_reference":""}]}
 
@@ -851,53 +889,75 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
     const topicId = topics.join(','); // Combinar topics si son múltiples
     let allGeneratedQuestions = [];
 
-    // Determinar cuántas llamadas hacer basado en questionCount
-    // 80% simples (3/llamada), 20% elaboradas (2/llamada)
+    // SISTEMA 3 NIVELES: 30% simples / 50% medias / 20% elaboradas
     const totalNeeded = questionCount;
-    const elaboratedNeeded = Math.ceil(totalNeeded * 0.2); // 20% elaboradas
-    const simpleNeeded = totalNeeded - elaboratedNeeded;
+    const simpleNeeded = Math.round(totalNeeded * 0.30); // 30% simples
+    const mediaNeeded = Math.round(totalNeeded * 0.50); // 50% medias
+    const elaboratedNeeded = totalNeeded - simpleNeeded - mediaNeeded; // 20% elaboradas (resto)
 
     const simpleCalls = Math.ceil(simpleNeeded / 3); // 3 preguntas simples por llamada
+    const mediaCalls = Math.ceil(mediaNeeded / 3); // 3 preguntas medias por llamada
     const elaboratedCalls = Math.ceil(elaboratedNeeded / 2); // 2 preguntas elaboradas por llamada
 
-    console.log(`🎯 Plan: ${simpleNeeded} simples (${simpleCalls} llamadas) + ${elaboratedNeeded} elaboradas (${elaboratedCalls} llamadas)`);
+    console.log(`🎯 Plan (30/50/20): ${simpleNeeded} simples (${simpleCalls} llamadas) + ${mediaNeeded} medias (${mediaCalls} llamadas) + ${elaboratedNeeded} elaboradas (${elaboratedCalls} llamadas)`);
 
-    // Generar preguntas simples
+    // Generar preguntas SIMPLES (30%)
     for (let i = 0; i < simpleCalls; i++) {
-      // Obtener chunk sin repetición
       const chunkIndex = db.getUnusedChunkIndex(userId, topicId, chunks.length);
       const selectedChunk = chunks[chunkIndex];
 
-      console.log(`\n🔵 LLAMADA SIMPLE ${i + 1}/${simpleCalls} - Chunk ${chunkIndex}/${chunks.length}`);
-      console.log(`📝 Primeros 200 chars: ${selectedChunk.substring(0, 200)}...`);
+      console.log(`\n⚪ SIMPLE ${i + 1}/${simpleCalls} - Chunk ${chunkIndex}/${chunks.length}`);
+      console.log(`📝 "${selectedChunk.substring(0, 100)}..."`);
 
       const fullPrompt = CLAUDE_PROMPT_SIMPLE.replace('{{CONTENT}}', selectedChunk);
 
       try {
-        const response = await callClaudeWithImprovedRetry(fullPrompt, 800, 'simples', 3);
+        const response = await callClaudeWithImprovedRetry(fullPrompt, 600, 'simples', 3);
         const responseText = response.content[0].text;
         const questionsData = parseClaudeResponse(responseText);
 
         if (questionsData?.questions?.length) {
           allGeneratedQuestions.push(...questionsData.questions);
-          // Marcar chunk como usado
           db.markChunkAsUsed(userId, topicId, chunkIndex);
         }
       } catch (error) {
-        console.error(`❌ Error en llamada simple ${i + 1}:`, error.message);
+        console.error(`❌ Error en simple ${i + 1}:`, error.message);
       }
     }
 
-    // Generar preguntas elaboradas
-    for (let i = 0; i < elaboratedCalls; i++) {
-      // Obtener chunk sin repetición
+    // Generar preguntas MEDIAS (50%)
+    for (let i = 0; i < mediaCalls; i++) {
       const chunkIndex = db.getUnusedChunkIndex(userId, topicId, chunks.length);
       const selectedChunk = chunks[chunkIndex];
 
-      console.log(`\n🔴 LLAMADA ELABORADA ${i + 1}/${elaboratedCalls} - Chunk ${chunkIndex}/${chunks.length}`);
-      console.log(`📝 Primeros 200 chars: ${selectedChunk.substring(0, 200)}...`);
+      console.log(`\n🔵 MEDIA ${i + 1}/${mediaCalls} - Chunk ${chunkIndex}/${chunks.length}`);
+      console.log(`📝 "${selectedChunk.substring(0, 100)}..."`);
 
-      const fullPrompt = CLAUDE_PROMPT_ELABORADO.replace('{{CONTENT}}', selectedChunk);
+      const fullPrompt = CLAUDE_PROMPT_MEDIA.replace('{{CONTENT}}', selectedChunk);
+
+      try {
+        const response = await callClaudeWithImprovedRetry(fullPrompt, 900, 'medias', 3);
+        const responseText = response.content[0].text;
+        const questionsData = parseClaudeResponse(responseText);
+
+        if (questionsData?.questions?.length) {
+          allGeneratedQuestions.push(...questionsData.questions);
+          db.markChunkAsUsed(userId, topicId, chunkIndex);
+        }
+      } catch (error) {
+        console.error(`❌ Error en media ${i + 1}:`, error.message);
+      }
+    }
+
+    // Generar preguntas ELABORADAS (20%)
+    for (let i = 0; i < elaboratedCalls; i++) {
+      const chunkIndex = db.getUnusedChunkIndex(userId, topicId, chunks.length);
+      const selectedChunk = chunks[chunkIndex];
+
+      console.log(`\n🔴 ELABORADA ${i + 1}/${elaboratedCalls} - Chunk ${chunkIndex}/${chunks.length}`);
+      console.log(`📝 "${selectedChunk.substring(0, 100)}..."`);
+
+      const fullPrompt = CLAUDE_PROMPT_ELABORADA.replace('{{CONTENT}}', selectedChunk);
 
       try {
         const response = await callClaudeWithImprovedRetry(fullPrompt, 1000, 'elaboradas', 2);
@@ -906,11 +966,10 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
 
         if (questionsData?.questions?.length) {
           allGeneratedQuestions.push(...questionsData.questions);
-          // Marcar chunk como usado
           db.markChunkAsUsed(userId, topicId, chunkIndex);
         }
       } catch (error) {
-        console.error(`❌ Error en llamada elaborada ${i + 1}:`, error.message);
+        console.error(`❌ Error en elaborada ${i + 1}:`, error.message);
       }
     }
 
