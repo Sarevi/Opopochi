@@ -1,0 +1,921 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+TECNICO DE FARMACIA
+SERGAS
+
+
+
+
+9TEMA 9:
+     PAUTAS DE ADMINISTRACCIÓN DE MEDICAMENTOS. DOSIFICACIÓN DE LOS FÁRMACOS: TIPOS DE DOSIS, RELACIÓN DOSIS-EFECTO, FACTORES QUE INTERVIENEN EN LA DOSIFICACIÓN. CONTRAINDICACIONES. INTERACCIONES FARMACOLÓGICAS. REACCIONES ADVERSAS DE LOS MEDICAMENTOS.TARJETA AMARILLA. ALERTAS FARMACÉUTICAS. TIPOS: SEGURIDAD, CALIDAD.
+SISTEMA SINASP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INDICE:
+
+1. RELACIÓN DOSIS-RESPUESTA
+1.1. TIPOS DE DOSIS
+1.2. CURVA DOSIS-RESPUESTA
+2. DOSIFICACIÓN DE FÁRMACOS
+2.1. FACTORES QUE INFLUYEN EN LA DOSIFICACIÓN
+2.2. CÁLCULO DE LA DOSIS TERAPÉUTICA
+2.3. PROBLEMAS DE DOSIFICACIÓN
+3. PROBLEMAS RELACIONADOS CON LOS MEDICAMENTOS
+3.1. REACCIONES ADVERSAS A LOS MEDICAMENTOS
+3.1.1. REACCIONES ADVERSAS SEGÚN LA CAUSA
+3.2. INTERACCIONES
+3.2.1. TIPOS DE INTERACCIONES
+3.3. CONTRAINDICACIONES
+4. FARMACOVIGILANCIA
+4.1. NOTIFICACIÓN ESPONTÁNEA DE REACCIONES ADVERSAS
+4.2. ALERTAS FARMACÉUTICAS
+
+5. SISTEMA DE NOTIFICACIÓN Y APRENDIZAJE PARA LA SEGURIDAD DEL PACIENTE (SINASP)
+5.1. OBJETIVOS DEL SINASP
+5.2. PRINCIPIOS BÁSICOS DEL SINASP
+5.3. INCIDENTES QUE DEBEN NOTIFICARSE
+5.4. ESTRUCTURA Y FUNCIONAMIENTO
+5.5. CARACTERÍSTICAS DE LA APLICACIÓN INFORMÁTICA
+6. BIBLIOGRAFÍA
+7. ANEXO: Instituto para el uso seguro de los medicamentos (ISMP): http://www.ismp- espana.org/
+
+1. RELACIÓN DOSIS-RESPUESTA
+El efecto farmacológico de un medicamento depende de la dosis administrada y de la respuesta obtenida.
+La posología es la rama de la farmacología que estudia la dosificación de los medicamentos, es decir, las dosis que se deben administrar en cada toma o en un espacio de 24 horas.
+La dosis es la cantidad de fármaco que se administra de una vez. Se refiere a la cantidad de principio activo expresada en peso o volumen.
+
+Dosis: concentración de principio activo (PA) que tiene una forma farmacéutica. Ejemplo: un comprimido que tenga 1 gramo de PA o una solución con 10 mg/ml.
+
+Posología: cuántos comprimidos y cada cuánto tiempo. Ejemplo: un comprimido cada 8 horas de 1 mg o 5 ml de solución cada 8 horas.
+
+Por ejemplo: si un médico prescribe 2 gramos de paracetamol al día, con tomas cada 6 horas, se deben hacer 4 tomas en 24 horas. La posología es de 2 gramos al día o 500 mg cada 6 horas. Las dosis son de 500 mg cada una. Si la forma farmacéutica son comprimidos de 500 mg, cada dosis se corresponde con un comprimido.
+La combinación de las dos hace posible la efectividad del tratamiento al mantener una concentración de principio activo efectiva en nuestro organismo sin generar toxicidad.
+
+El uso racional de los medicamentos requiere un diagnóstico correcto, un conocimiento adecuado de la enfermedad, la selección del fármaco idóneo y el diseño de una pauta de administración que consiga la máxima eficacia con el mínimo riesgo. En la pauta de administración se establece la dosis, la frecuencia con que se debe administrar y la duración que debe tener el tratamiento para conseguir, con la rapidez necesaria y durante el tiempo adecuado, una óptima concentración del fármaco en su lugar de acción.
+
+La pauta de administración de un fármaco debe individualizarse teniendo en cuenta las características fisiológicas, patológicas y yatrógenas que puedan alterar la respuesta al tratamiento y debe tener en cuenta los siguientes aspectos:
+
+a) Características de la enfermedad para la que se administra el fármaco, de su gravedad y urgencia, así como de la respuesta previa a otros tratamientos.
+b) Eficacia y toxicidad del fármaco, existencia de factores que puedan alterar la eficacia y necesidad de prevenir una posible toxicidad grave o irreversible.
+c) Características farmacocinéticas del fármaco y factores que puedan alterarlas.
+d) Vía de administración.
+e) Preparado farmacéutico que se va a utilizar.
+f) Conveniencia de facilitar el cumplimiento terapéutico.
+g) Binomio coste/beneficio = eficiencia
+
+Hay que tener claros 3 conceptos:
+* Eficacia: resultado farmacológico o beneficio terapéutico de un medicamento en condiciones ideales (E. clínicos).
+* Efectividad: resultado farmacológico o beneficio terapéutico de un medicamento en condiciones reales.
+* Eficiencia: balance entre el coste económico/resultado farmacológico.
+
+1.1. TIPOS DE DOSIS
+
+La dosis es la cantidad de fármaco que se administra para lograr eficazmente un efecto determinado. Son tipos de dosis:
+
+* Dosis terapéutica mínima o dosis mínima eficaz: es la menor dosis capaz de producir el efecto.
+* Dosis terapéutica máxima: es la mayor dosis tolerada sin que aparezcan efectos tóxicos.
+* Dosis de inicio: dosis menor a la dosis terapéutica aconsejada, con la que se inicia el tratamiento, para reducir la posibilidad de aparición de efectos secundarios. Se va aumentando dosis al ir verificando tolerancia del paciente, hasta la dosis terapéutica
+necesaria.
+* Dosis terapéutica o dosis efectiva (DE): es la dosis que se encuentra entre la dosis terapéutica mínima y la máxima. El intervalo entre la dosis máxima y la mínima se denomina margen o intervalo terapéutico (IT).
+
+Constituye, por tanto, una medida del margen de seguridad de un medicamento.
+? Los medicamentos con amplio IT son medicamentos muy seguros.
+? Los medicamentos con un estrecho IT son peligrosos.
+Los medicamentos con estrecho margen terapéutico son aquellos en los que la diferencia entre la dosis terapéutica mínima y la máxima es muy pequeña. Muchos de estos medicamentos requieren seguimiento médico especial y monitorización.
+La monitorización de un fármaco va a estar justificada:
+* En fármacos de EMT
+* Fármacos con gran variabilidad en su comportamiento farmacocinético.
+* Fármacos de eficacia y toxicidad de difícil y/o lenta valoración.
+* Fármacos para los que existe clara relación concentración/respuesta.
+
+
+
+* Dosis tóxica (DT): es con la que se consigue una concentración de fármaco que produce efectos tóxicos.
+* Dosis letal (DL): es la dosis que inevitablemente produce la muerte.
+* Dosis de choque: dosis que se utiliza en caso de urgencia para alcanzar rápidamente la concentración deseada en sangre, generalmente una dosis alta y en un corto período de tiempo. Por ejemplo: en una urgencia por hipertensión.
+
+* Dosis de ataque o carga: es una dosis mayor que la normal que se administra al inicio del tratamiento para obtener una concentración terapéutica de principio activo en el organismo.
+* Dosis de mantenimiento: son las dosis que se administran para mantener el efecto farmacológico cuando se ha conseguido la concentración terapéutica. Estas dosis permiten mantener las concentraciones de principio activo dentro del intervalo terapéutico.
+* Dosis diaria definida (DDD): es la dosis de mantenimiento promedio que se estima que debe tomar en un día una persona adulta que toma el medicamento para su indicación principal y vía de administración.
+La DDD es una unidad de medida y no refleja necesariamente la dosis diaria recomendada o prescrita. Las dosis terapéuticas para pacientes y grupos de pacientes suelen diferir de la DDD, ya que se basan en características individuales (como edad, peso, diferencias étnicas, tipo y gravedad de la enfermedad) y consideraciones farmacocinéticas.
+Solo se asigna una dosis diaria recomendada (DDD) por código ATC y vía de administración (p. ej., formulación oral). La DDD casi siempre es un compromiso basado en la revisión de la información disponible, incluyendo las dosis utilizadas en diversos países, cuando esta información está disponible. La DDD a veces es una "dosis" que rara vez se prescribe, ya que puede ser un promedio de dos o más dosis de uso común.
+Los datos de consumo de medicamentos presentados en DDD solo ofrecen una estimación aproximada del consumo y no una imagen exacta del uso real. Las DDD proporcionan una unidad de medida fija, independiente del precio, la moneda, el tamaño del envase y la concentración, lo que permite al investigador evaluar las tendencias en el consumo de medicamentos y realizar comparaciones entre grupos de población.
+Las DDD solo se asignan a medicamentos con un código ATC y normalmente no se asignará una DDD a una sustancia antes de que un producto esté aprobado y comercializado en al menos un país.
+
+El principio básico es asignar sólo una DDD por vía de administración dentro de un código ATC.
+La DDD fue definida por la OMS que, a través del Grupo de Investigación sobre la Utilización de Medicamentos (DURG), recomienda las DDD para cada fármaco.
+Es un valor dinámico que se revisa de forma periódica.
+No se han establecido DDD para productos tópicos, sueros, vacunas, agentes antineoplásicos, extractos de alérgenos, anestésicos generales y locales y medios de contraste.
+Los productos parenterales con diferentes vías de administración (por ejemplo, intravenosa e intramuscular) tienen la misma DDD.
+
+
+
+En estudios farmacológicos se utilizan las siguientes dosis:
+* DL50 (Dosis Letal 50 o Dosis Mortal 50%): es la dosis que produce la muerte en 50% de la población que recibe el fármaco.
+* DE50 (Dosis efectiva 50): es la dosis que produce un efecto terapéutico en el 50% de la población que recibe el fármaco.
+* DT50 (Dosis tóxica 50): es la dosis que produce toxicidad en el 50% de los individuos.
+En la administración y dosificación de medicamentos, hay que tener en cuenta los siguientes tiempos:
+? Período de latencia. Es el tiempo que transcurre entre la administración del medicamento y la aparición del efecto.
+? Intervalo de administración. Es el tiempo que transcurre entre la administración de una dosis y la siguiente.
+
+1.2. CURVA DOSIS-RESPUESTA
+
+El efecto farmacológico debido a la interacción fármaco-receptor se puede cuantificar y se representa mediante una curva de dosis-respuesta.
+Esta curva representa el porcentaje de respuesta en relación con la dosis administrada y nos permite determinar la eficacia y la potencia de un fármaco.
+
+• Potencia. Un fármaco es más potente que otro cuando necesita una dosis menor para que se manifieste el efecto.
+Por ejemplo: un analgésico es más potente que otro cuando el primero necesita una dosis menor que el segundo para calmar el dolor.
+• Eficacia. Un fármaco es más eficaz que otro cuando la intensidad del efecto máximo que produce es mayor.
+Por ejemplo: un diurético es más eficaz que otro cuando la misma dosis produce mayor diuresis.
+
+1= curva de dosis-efectos tóxicos; y 2= curva de dosis-efectos letales
+
+Para que los fármacos ejerzan su efecto tienen que alcanzar una determinada concentración en el lugar de acción. Esta concentración depende de la dosis administrada.
+
+2. DOSIFICACIÓN DE FÁRMACOS
+En la mayoría de las formas farmacéuticas sólidas la dosis se expresa en peso del principio activo (gramos, miligramos o microgramos). En la práctica las formas farmacéuticas vienen dosificadas por las casas comerciales y el facultativo prescribe un número determinado de comprimidos, cápsulas, sobres... por toma o por día. (Por ejemplo: un sobre cada ocho horas o un comprimido al día).
+
+La forma más segura de expresar las dosis es utilizando las unidades de peso del Sistema Internacional de Unidades siempre que sea posible. Cuando usar las medidas de peso sea inhabitual, como en el caso de la fluidoterapia, se usarán las medidas de volumen de dicho sistema. Expresar las dosis mediante la forma de presentación del fármaco, en forma de comprimidos o cápsulas, o mediante el envase, por ejemplo, ampollas o viales, ofrece una comodidad aparente pero engañosa, en realidad esconde un aumento de las posibilidades de equivocar la dosis. Dosificar los fármacos utilizando el envase o la forma de presentación induce a error ya que pueden existir distintas presentaciones cuyo contenido en principio activo sea variable. También es fuente de error expresar la dosis mediante la unidad de volumen a menos que se señale también la concentración de principio activo.
+
+En ocasiones, para preparar la dosis que se administra al paciente, es necesario disolverla en un volumen de disolvente como agua destilada o suero fisiológico.
+
+2.1. FACTORES QUE INFLUYEN EN LA DOSIFICACIÓN
+
+A la hora de prescribir un medicamento es necesario ajustar las dosis de forma individualizada, teniendo en cuenta las características fisiológicas y patológicas del paciente.
+
+
+
+
+2.2. CÁLCULO DE LA DOSIS TERAPÉUTICA
+
+El cálculo de la dosis terapéutica se puede realizar teniendo en cuenta diferentes criterios. Los más utilizados son el peso y la edad o bien la combinación de ambos.
+* PESO DEL INDIVIDUO
+
+La dosis se calcula en función del peso del individuo y se expresa como mg de fármaco/ Kg de peso.
+Dosis = (dosis del fármaco por Kg) X (peso total del individuo en kg)
+
+Ejemplo: un paciente pesa 70 kg. El prospecto de un medicamento nos indica que se deben administrar 0,5 mg de fármaco por Kg (0,5 mg/kg). La dosis será la siguiente:
+Dosis = 0,5 mg/Kg x 70 kg Dosis = 35 mg
+
+* EDAD
+Cuando las dosis de un medicamento se pautan en función de la edad, esto puede hacerse utilizando este único criterio o combinándolo con el del peso.
+? Dosis fijas por grupo de edad
+Ejemplo:
+- Adultos: 2 mg/día
+- Niños entre 6-12 años: 1 mg/día
+
+- Niños entre 2-6 años: 0,5 mg/día
+? Dosis en función de peso y edad
+Ejemplo:
+- Adultos: 2 mg/kg cada 12 horas
+- Niños entre 6-12 años: 1 mg/Kg cada 12 horas
+- Niños entre 2-6 años: 0,5 mg/Kg cada 12 horas
+* LA SUPERFICIE CORPORAL
+Se expresa en metros cuadrados (m2) y permite un cálculo más preciso de las dosis pediátricas que el peso corporal, ya que muchos fenómenos fisiológicos guardan una mayor correlación con la superficie corporal.
+La superficie corporal media de una persona de 70kg es de 1.8m2, aproximadamente. Se calcula a partir de la altura y el peso mediante un nomograma.
+En la oficina de farmacia se usan muchas abreviaturas, las más frecuentes son:
+
+
+Nota: no hay unanimidad entre las distintas sociedades científicas en cuanto a la consideración de paciente infantil, pediátrico y adulto.
+
+
+FORMA FARMACÉUTICA:
+cap: cápsula. comp: comprimido. elix: elixir.
+got/gt: gotas. sol: solución. sl: sublingual.
+sup: supositorio. susp: suspensión. amp: ampolla.CANTIDAD:mcg: microgramo.VOLUMEN:mg: miligramo.ml: mililitro.g: gramo.dl: decilitro.Kg: kilogramo.l: litro.
+2.3. PROBLEMAS DE DOSIFICACIÓN
+
+Los problemas de dosificación, por exceso o defecto, suelen deberse a:
+* Problemas con la dosis prescrita:
+En ocasiones se puede indicar a la persona usuaria una dosis incorrecta por diversas razones:
+- Interpretación errónea de la receta, por confusión en la lectura de la dosis prescrita. Las recetas electrónicas reducen sensiblemente el riesgo de que se produzca este error.
+- Cálculo incorrecto de la dosis por parte del prescriptor.
+* Problemas con la dosis administrada:
+La dosis prescrita no siempre se corresponde con la dosis que la persona usuaria toma en realidad. Esto se puede deber a distintas causas, como:
+- Incumplimiento del tratamiento por parte de la persona usuaria, por error o por no haber comprendido las instrucciones de uso.
+- Abuso de fármacos.
+* Problemas con la cantidad de principio activo que llega a su diana farmacológica y realiza su acción:
+Estos se debe a:
+- Factores fisiológicos que alteran la distribución y la velocidad de eliminación del fármaco, es decir, su proceso LADME.
+- Aparición de tolerancia o resistencias al fármaco.
+          - Interacciones con otros medicamentos o con alimentos. Hay que diferenciar los conceptos de:
+* Tolerancia: se define como la disminución en la magnitud de la respuesta al efecto farmacológico de los compuestos como resultado de la exposición previa o del uso de un
+
+agente relacionado; o bien, como la necesidad de incrementar la dosis de un compuesto para mantener el mismo efecto inicial.
+* Taquifilaxia: fenómeno farmacológico que se caracteriza por una disminución rápida de la respuesta a un medicamento tras la administración repetida en un corto período de tiempo. En otras palabras, es una forma de tolerancia que se desarrolla muy rápidamente con la administración continua o frecuente de un medicamento.
+
+
+3. PROBLEMAS RELACIONADOS CON LOS MEDICAMENTOS
+El tercer Consenso de Granada de Atención farmacéutica redefine los conceptos de PRM y RNM.
+Problemas Relacionados con Medicamentos (PRM): aquellas situaciones que en el proceso de
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Existen varias clasificaciones de RNM. La más reciente considera los RNM como causas de de las reacciones adversas a medicamentos y parte de la premisa de que un medicamento para poder ser utilizado debe ser:
+• Necesario. Un medicamento es necesario cuando ha sido prescrito o indicado para un problema de salud concreto que presenta el paciente.
+• Efectivo. Un medicamento es efectivo cuando alcanza los objetivos terapéuticos esperados.
+• Seguro. Un medicamento es seguro cuando no produce ningún problema de salud ni lo empeora.
+
+Tipos de RNM
+* NECESIDAD
+Problema de Salud no tratado: El paciente sufre un problema de salud asociado a no recibir una medicación que necesita.
+Efecto de medicamento innecesario: El paciente sufre un problema de salud asociado a recibir un medicamento que no necesita.
+
+
+* EFECTIVIDAD
+Inefectividad no cuantitativa: El paciente sufre un problema de salud asociado a una inefectividad no cuantitativa de la medicación.
+Inefectividad cuantitativa: El paciente sufre un problema de salud asociado a una inefectividad cuantitativa de la medicación.
+* SEGURIDAD
+Inseguridad no cuantitativa: El paciente sufre un problema de salud asociado a una inseguridad no cuantitativa de un medicamento.
+Inseguridad cuantitativa: El paciente sufre un problema de salud asociado a una inseguridad cuantitativa de un medicamento.
+El Foro de Atención Farmacéutica elaboró un listado de problemas relacionados con medicamentos (PRM) que son los siguientes:
+? Administración errónea del medicamento.
+? Características personales.
+? Conservación inadecuada.
+? Contraindicación.
+? Dosis, pauta y/o duración no adecuada.
+? Duplicidad.
+? Errores en la dispensación.
+? Errores en la prescripción.
+? Incumplimiento.
+? Interacciones.
+? Medicamento no necesario.
+? problemas de salud que afectan al tratamiento.
+? Probabilidad de efectos adversos.
+? Problema de salud insuficientemente tratado.
+? Otros
+Seguimiento Farmacoterapéutico es la práctica profesional en la que el farmacéutico se responsabiliza de las necesidades del paciente relacionadas con los medicamentos. Esto se realiza mediante la detección de problemas relacionados con medicamentos (PRM) para la prevención y resolución de resultados negativos asociados a la medicación (RNM). Este servicio implica un compromiso, y debe proveerse de forma continuada, sistematizada y documentada, en colaboración con el propio paciente y con los demás profesionales del sistema de salud, con el fin de alcanzar resultados concretos que mejoren la calidad de vida del paciente
+
+3.1.- REACCIONES ADVERSAS A LOS MEDICAMENTOS
+
+Las reacciones adversas a los medicamentos suponen un problema de gran magnitud ya que, aun siendo la mayoría evitables, figuran como una de las diez principales causas de fallecimiento en todo el mundo.
+
+La OMS define Reacción adversa (RAM) como cualquier respuesta a un medicamento que sea nociva y no intencionada, y que tenga lugar a dosis que se apliquen normalmente en el ser humano para la prevención, el diagnóstico o tratamiento de enfermedades, o para la
+
+restauración, corrección o modificación de funciones fisiológicas.
+
+La AMPS se acoge a la definición de la EMA (European Medicines Agency) que define reacciones adversas de medicamentos como cualquier respuesta nociva y no intencionada a un medicamento.
+
+No solo incluye efectos nocivos e involuntarios derivados del uso autorizado de un medicamento en dosis normales, sino también relacionados con de errores de medicación y usos al margen de los términos de la autorización de comercialización, incluidos el uso equivocado, la sobredosis y el abuso del medicamento. Términos como efecto secundario, efecto adverso, efecto indeseable, efecto colateral, etc., son sinónimos de RAM.
+
+Características de las RAM:
+* Aparición: inmediata, durante o tras el tratamiento
+* Frecuencia: muy frecuentes (= 1/10), frecuentes (= 1/100 a < 1/10), poco frecuentes (= 1/1.000 a <1/100), raras ((=1/10.000 a <1/1.000)), muy raras (<1/10.000) y de frecuencia no conocida (no puede estimarse a partir de los datos conocidos).
+* Evitables o inherentes
+* A dosis terapéuticas o por sobredosificación
+* Gravedad de la RAM: leves, graves o mortales
+Otros conceptos de RAM:
+
+? Reacción adversa inesperada:
+se refiere a una reacción cuya naturaleza o gravedad no se corresponde con lo indicado en el prospecto o la autorización de comercialización del país en el que se produce la reacción o con lo que cabría esperar teniendo en cuenta las características del medicamento.
+   ? Reacción adversa grave: Se incluyen en esta denominación:
+o Las anomalías congénitas y los defectos de nacimiento
+o La RAM que ponen en peligro la vida
+o Las RAM que tienen como consecuencia la muerte o una discapacidad o invalidez significativa o persistente
+o Las RAM que exigen hospitalización o la prolongación de una hospitalización
+
+3.1.1.-REACCIONES ADVERSAS SEGÚN LA CAUSA
+* Clasificación de Rawlins y Thompson (año 1977): reacciones adversas tipo A y B Características de las reacciones Tipo A y Tipo B
+
+Tipo ATipo BPredeciblesNo predeciblesNormalmente dosis-dependienteRaramente dosis-dependienteAlta morbilidadBaja morbilidadBaja mortalidadAlta mortalidadResponde a una reducción de la dosisResponde a la retirada del fármaco
+Las RAM de tipo B representan uno de los objetivos principales de la Farmacovigilancia.
+* Clasificación de Edwards and Aronson (1º versión es del año 2000): establecen 6 tipos de RAM
+
+? Tipo A
+Las reacciones tipo A ("augmented") son resultado de un aumento en la acción farmacológica del medicamento cuando se administra a la dosis terapéutica habitual. Normalmente son reacciones dosis-dependientes.
+
+Los ejemplos incluyen:
+* Somnolencia por benzodiacepinas.
+* Presión arterial baja con antihipertensivos.
+* La hipoglucemia con insulina.
+* Epistaxis por anticoagulantes.
+
+Las reacciones de tipo A también incluyen aquellas que no están directamente relacionadas con la acción farmacológica deseada del fármaco (por ejemplo, boca seca, que se asocia con los antidepresivos tricíclicos, sobreinfecciones por micobacterias en pacientes de artritis reumatoide controlados por infliximab).
+
+? Tipo B
+Las reacciones de tipo B ("bizarre") son reacciones que no se esperan de las conocidas acciones farmacológicas del fármaco.
+
+Ejemplos:
+* Anafilaxia con penicilina.
+* Erupciones cutáneas con antibióticos.
+* Hipertermia maligna por anestésicos, neurolépticos.
+* Porfiria aguda por barbitúricos.
+
+
+Se pueden distinguir estas subcategorías principales de reacciones tipo B:
+
+* Reacciones alérgicas o inmunológicas: respuestas de carácter inmunológico que aparecen en individuos con susceptibilidad especial a algún componente del medicamento administrado. Para que se produzcan se requiere un contacto previo con el componente que provoca la reacción. Base inmunológica. Período de incubación de 7 a 10 días.
+* Reacciones idiosincrásicas: respuestas inesperadas que presentan ciertos individuos tras la administración de un medicamento. Están determinadas genéticamente. Sin base inmunológica. No relacionado con la actividad del fármaco.
+* Reacciones pseudoalérgicas o anafilactoides: es una reacción similar a la anafiláctica, pero por mecanismos no inmunológicos. Puede manifestarse en el primer contacto con el fármaco. Clínicamente es como una reacción alérgica pero sin base inmunológica, no mediada por inmunoglobulinas.
+
+? Tipo C
+Las reacciones tipo C (chronic), están relacionadas con el tratamiento prolongado con un fármaco. Generalmente cursan como reacciones de dependencia o de taquifilaxia y son previsibles.
+
+Ejemplos:
+* La necesidad de incrementar la dosis para alcanzar el mismo efecto terapéutico, este efecto es típico de los fármacos adrenérgicos.
+* Las discinesias en tratamientos prolongados con levodopa.
+* Los tratamientos prolongados pueden además producir depósitos de los fármacos en diferentes tejidos, las tetraciclinas en el hueso, las sulfonamidas en los túbulos renales, la amiodarona en la córnea. Otros ejemplos son la nefropatía por analgésicos o el hipotiroidismo con amiodarona
+
+? Tipo D
+Las reacciones tipo D (delayed: retardado), también se denominan retardadas, aunque no hay que confundir con lo que se conoce como reacción tardía. Pueden empezar a desarrollarse al inicio del tratamiento, pero sólo se ponen de manifiesto a largo plazo. Los ejemplos más representativos son la teratogénesis y carcinogénesis. No tienen por qué ser debidas a una exposición prolongada o continua, como en el caso anterior, sino que lo que ocurre es que aparecen tarde, incluso aunque la exposición haya sido corta o se haya producido mucho tiempo antes.
+Las más importantes son la carcinogénesis y la teratogénesis.
+
+? Tipo E
+Las reacciones tipo E (end-use) son las que se producen cuando cesa un tratamiento, el conocido "efecto rebote", es decir el síntoma por el que se había iniciado el tratamiento, al suspenderlo, aparece de forma más acentuada. Un ejemplo muy demostrativo de efecto rebote es la obstrucción nasal que se desencadena al suspender el tratamiento con vasoconstrictores tópicos o el espasmo coronario tras suspender la administración de nitratos.
+
+
+
+
+
+? Tipo F
+Las reacciones de tipo F (Failure of treatment): son aquellas reacciones originadas por agentes ajenos al principio activo del medicamento (excipientes, impurezas o contaminantes) o por interacciones
+
+3.2.-INTERACCIONES
+
+La aparición de reacciones adversas a los medicamentos está relacionada con una serie de factores, como la edad, el sexo o la polimedicación, que determinan una mayor probabilidad de presentarlas. Entre estos factores se encuentran las interacciones medicamentosas.
+Se definen las interacciones como modificaciones del efecto de un fármaco debido a la administración simultánea de otro fármaco, planta medicinal, alimento o bebida, o alguna sustancia química ambiental.
+
+Las interacciones pueden producir un aumento o disminución de la intensidad del efecto de un fármaco o la aparición de un efecto distinto al habitual. Sin embargo, en la mayoría de los casos, aunque se produzca la interacción, ésta apenas tiene influencia en la eficacia de la medicación.
+
+Los ancianos y los pacientes crónicos (trasplantados de órganos, portadores de VIH, enfermos mentales, etc.), debido a la gran cantidad de medicamentos que consumen, son las personas más susceptibles de sufrir las consecuencias de una interacción medicamentosa. Sin embargo, hay que tener en cuenta que las interacciones pueden afectar a personas de cualquier edad y condición.
+
+3.2.1-TIPOS DE INTERACCIONES INTERACCIONES FARMACOCINÉTICAS
+Las interacciones farmacocinéticas afectan a los procesos por los cuales los fármacos son absorbidos, distribuidos, metabolizados y excretados (se denominan, por ello interacciones ADME)
+
+? Interacciones de absorción
+La mayor parte de los fármacos se administran por vía oral para ser absorbidos por la mucosa gastrointestinal, y la mayoría de las interacciones que se producen en el intestino causan una reducción de esta absorción, y no un aumento. A este respecto, debe distinguirse entre las interacciones que disminuyen la velocidad de la absorción y las que modifican la cantidad total del fármaco absorbido.
+
+* Si, debido a la interacción, se aumenta la cantidad de fármaco absorbido, la consecuencia es similar a un aumento de la dosis. En cambio, si la cantidad de fármaco absorbido disminuye, la consecuencia es similar a la disminución de la dosis.
+* Una modificación en la velocidad de absorción puede variar la rapidez de aparición del efecto.
+
+Las causas más comunes son:
+
+-La modificación del pH gastrointestinal:
+El paso de los fármacos a través de las mucosas por simple difusión depende de la proporción existentes de su forma liposoluble no ionizada. Un ejemplo es la combinación de antiácidos con tetraciclinas, ya que se dificulta la absorción del antibiótico.
+
+-Adsorción, quelación y otros mecanismos de formación de complejos:
+Por ejemplo, las tetraciclinas pueden formar quelatos con varios iones metálicos como el calcio, el hierro, y formar complejos que, por un lado se absorben mal y que, además, tiene una menor actividad antibiótica. Estos iones metálicos pueden encontrarse en lácteos y antiácidos.
+Una forma de reducir los efectos de este tipo de interacción es separar la administración de ambos fármacos ó de los alimentos 2 o 3 horas.
+
+-Cambios en la motilidad intestinal:
+Los fármacos que afectan a la velocidad de vaciado gástrico también pueden modificar la motilidad intestinal. Ejemplo: los fármacos con efectos anticolinérgicos disminuyen la motilidad intestinal, en cambio la metoclopramida (procinético) ejerce el efecto opuesto.
+
+-Inducción e inhibición de la unión a proteínas transportadoras:
+Actualmente la proteína transportadora más estudiada es la glicoproteína. La digoxina es uno de los sustratos de esta proteína, y los fármacos que la inducen, como la rifampicina, pueden reducir la biodisponibilidad de la digoxina.
+
+
+
+
+? Interacciones de distribución
+Las interacciones de distribución pueden modificar la fijación de fármacos a las proteínas plasmáticas. Si se administran determinados fármacos de forma conjunta, puede que se produzca cierta competencia en la unión de los mismos a las proteínas plasmáticas, necesarias para su distribución en el organismo. La competencia por el sitio de unión puede provocar el desplazamiento de uno de los fármacos, aumentando la fracción libre del mismo y por tanto su efecto farmacológico (o sus manifestaciones tóxicas), ya que el fármaco solo se encuentra activo cuando está libre. Son importantes en fármacos con estrecho margen terapéutico.
+
+? Interacciones de metabolización
+Las interacciones de metabolismo tienen lugar fundamentalmente en el hígado y se producen cuando se administran conjuntamente medicamentos que utilizan la misma vía de metabolización.
+
+Los dos tipos más frecuentes de interacción metabólica son las de inducción e inhibición enzimática.
+¦ Inducción enzimática: se produce cuando uno de los fármacos administrados aumenta la actividad enzimática de las enzimas que metabolizan al otro. Este aumento del metabolismo tiene dos consecuencias:
+- Favorece la eliminación del fármaco del plasma, disminuyendo su concentración en el organismo y, por tanto, el efecto y su intensidad.
+- Produce metabolitos de manera más rápida, acumulándose en el plasma y pudiendo alcanzar concentraciones tóxicas.
+
+¦ Inhibición enzimática: se produce cuando uno de los fármacos administrados inhibe la actividad enzimática de las enzimas que metabolizan al otro. Como consecuencia:
+- El metabolismo del fármaco se reduce y comienza a acumularse en el organismo, con unos efectos esencialmente iguales a los que se produce al aumentar las dosis.
+- Aumenta el riesgo de toxicidad por acumulación en el plasma del fármaco cuyo metabolismo fue inhibido.
+
+? Interacciones por cambios en la excreción
+Las interacciones de excreción tienen lugar fundamentalmente en el riñón, que es el principal órgano encargado de la eliminación de fármacos y metabolitos. Si se realiza la administración conjunta de medicamentos o de alimentos y medicamentos, pueden producirse modificaciones en el pH de la orina y, por tanto, alteraciones en la reabsorción tubular del fármaco y/o sus metabolitos.
+
+INTERACCIONES FARMACODINÁMICAS
+
+Se producen cuando se administran conjuntamente fármacos que compiten por la unión al mismo receptor en el lugar donde van a ejercer su acción, o bien cuando dichos fármacos activan o inhiben sistemas fisiológicos sobre los que actúan.
+Las interacciones farmacodinámicas son aquellas en las que los efectos de un fármaco se ven alterados por acción de otro fármaco en su lugar de acción.
+
+Se clasifican en:
+? Interacciones aditivas o sinérgicas
+La administración conjunta de fármacos (con el mismo efecto farmacológico) produce como consecuencia que sus efectos se potencien, por tanto, aumenta el efecto farmacológico de los mismos y, en ocasiones, también la toxicidad.
+
+? Interacciones de tipo antagonista u opuestas.
+La administración conjunta de fármacos produce como consecuencia que sus efectos se anulen.
+?    Interacciones biofarmacéuticas
+Son aquellas que interfieren en la integridad, liberación y solubilidad de la forma farmacéutica del medicamento sujeto de la interferencia. (Incompatibilidades físico-químicas)
+Las interacciones farmacéuticas más habituales y de mayor importancia son las que se producen al administrar, por vía intravenosa, fármacos disueltos en soluciones de gran volumen.
+
+3.3. CONTRAINDICACIONES
+
+Una contraindicación es una situación específica en la cual no se debe utilizar un fármaco, un procedimiento o una cirugía, ya que puede ser dañino para el paciente, hacen referencia a todas aquellas situaciones en las que resulta aconsejable que el paciente no consuma un fármaco, ya que aumenta el riesgo de sufrir secuelas adversas. En efecto, estado de salud, historia clínica y antecedentes familiares pueden condicionar la efectividad y conveniencia de un tratamiento.
+
+Existen 2 tipos de contraindicaciones:
+* La contraindicación relativa significa que se debe tener cautela cuando se utilizan dos fármacos o procedimientos juntos. (Es aceptable hacerlo si los beneficios superan a los riesgos)
+* La contraindicación absoluta significa que el evento o sustancia podría ocasionar una situación potencialmente mortal. Un procedimiento o un medicamento que esté incluido en esta categoría se deben evitar.
+
+3. FARMACOVIGILANCIA
+La Farmacovigilancia es la actividad de la salud pública destinada a la identificación, cuantificación, evaluación y prevención de los riesgos asociados a los medicamentos una vez comercializados, permitiendo así el seguimiento de los posibles efectos adversos de los medicamentos.
+Está regulada por el Real Decreto 577/2013, de 26 de julio, por el que se regula la farmacovigilancia de medicamentos de uso humano.
+
+La estructura encargada de la supervisión del uso de los medicamentos, especialmente del seguimiento de los posibles efectos adversos de los mismos, es el Sistema Español de Farmacovigilancia (SEFV).
+
+El SEFV-H es una estructura descentralizada, integrado por 17 centros autonómicos de farmacovigilancia y la Agencia Española de Medicamentos y Productos Sanitarios. Los centros autonómicos de farmacovigilancia son unidades especializadas en farmacovigilancia que se ubican de forma heterogénea a decisión de cada Comunidad Autónoma, en unos casos se localizan en servicios clínicos de hospitales, otros en departamentos universitarios, y en otros casos como unidades técnicas en las Consejerías o Departamentos de Sanidad de la Comunidad Autónoma. Cada centro dispone de conexión electrónica, vía web, a FEDRA, la base de datos del SEFV-H, en dónde se reúnen todos los casos de sospechas de RAM que reciben los centros desde su ámbito geográfico.
+
+En diciembre de 2012 superaban los 200.000 registros de casos distintos de sospechas de RAM. En las dos Ciudades Autónomas de Ceuta y Melilla se ha diseñado un procedimiento de colaboración entre sus unidades de Farmacia y la División de Farmacoepidemiología y Farmacovigilancia de la Agencia Española de Medicamentos y Productos Sanitarios para facilitar la notificación de RAM.
+
+Los objetivos del SEFV son recoger, evaluar y registrar las sospechas de reacciones adversas a medicamentos notificadas por los profesionales sanitarios y tratar de identificar los posibles riesgos asociados con el uso de medicamentos.
+
+Los trabajos propios del SEFV-H se coordinan en un foro de discusión que es el Comité Técnico del SEFV-H, mediante el cual la AEMPS recibe las nuevas señales en farmacovigilancia que los centros identifican, siendo misión de la AEMPS determinar si es necesario modificar las condiciones de autorización del medicamento en base a esta información. Cuando en base a esta
+
+información se hace necesario volver a evaluar la relación entre los riesgos y los beneficios del medicamento, la AEMPS cuenta con el asesoramiento del Comité de Seguridad de Medicamentos de uso Humano (CSMH).
+
+La farmacovigilancia es una responsabilidad compartida por distintos agentes:
+* Las autoridades sanitarias. En el caso del sistema de farmacovigilancia español, encontramos los centros de farmacovigilancia de cada comunidad autónoma, coordinados por la AEMPS. Las agencias de los distintos países de la Unión Europea, por su parte, se coordinan con la Agencia Europea de Evaluación de Medicamentos (EMEA)
+* Los titulares de la autorización de comercialización.
+* El personal sanitario.
+Estas responsabilidades vienen definidas en el Real Decreto 577/2013 de 26 de julio, por el que se regula la farmacovigilancia de medicamentos de uso humano.
+A nivel europeo, la Directiva 2004/27/CE regula distintos aspectos de la farmacovigilancia, ya que tiene como uno de sus objetivos "incrementar la salud del paciente europeo mediante una mayor vigilancia del mercado europeo de los medicamentos".
+
+4.1. NOTIFICACIÓN ESPONTÁNEA DE REACCIONES ADVERSAS
+Programa de Notificación Espontánea: Método de farmacovigilancia basado en la comunicación, recogida, registro y evaluación de notificaciones de sospechas de reacciones adversas a los medicamentos.
+La notificación espontánea tiene numerosas ventajas: abarca a toda la población, a todos los medicamentos comercializados y durante toda la vida de los mismos, no interfiere con los hábitos de prescripción de los profesionales sanitarios y permite la identificación de las RAM raras y de las interacciones.
+Sin embargo, presenta un gran problema: la infranotificación.
+
+Con las notificaciones enviadas a la base de datos de la AEMPS, FEDRA, se establece el resultado de la valoración de causalidad: se aplica el algoritmo de Karl-Lasagna modificado por Naranjo.
+
+La asociación entre medicamento y reacción adversa puede ser:
+* definida o probada
+* probable
+* posible
+* dudosa
+
+¿Quién puede notificar?
+* Médicos
+* Farmacéuticos
+* Enfermeros
+* Odontólogos
+* Podólogos
+
+* Otros profesionales sanitarios, según la Ley 44/2003, de ordenación de las profesiones sanitarias
+* Ciudadanos (desde julio 2012)
+La notificación de sospechas de RAM permitirá identificar nuevas RAM no conocidas, o cambios en el perfil de las RAM ya identificadas en los ensayos clínicos y, en su caso, realizar los cambios necesarios para minimizar los riesgos de los medicamentos.
+
+Esta información se evalúa junto con información procedente de otras fuentes como estudios clínicos, registros, datos procedentes de otras agencias de medicamentos.
+Con todo ello se toman las medidas necesarias que abarcan desde la retirada del medicamento en casos excepcionales, hasta la inclusión de nueva información en la ficha técnica y prospecto del medicamento.
+
+Esta nueva información puede incluir:
+? nuevas contraindicaciones, advertencias y precauciones
+? 	pruebas de laboratorio para detectar la reacción adversa precozmente u otras acciones encaminadas a minimizar el riesgo
+? limitar la prescripción médica a ciertos especialistas
+? recomendar su uso como segunda elección.
+
+¿QUÉ NOTIFICAR?
+
+Se deben notificar todas las sospechas de RAM, principalmente:
+
+Principalmente debe notificar:
+
+* Medicamentos y vacunas sujetos a seguimiento adicional (  )
+* Sospechas de reacciones adversas graves identificadas con cualquier medicamento, aunque la reacción sea bien conocida. Se entiende como grave aquellas situaciones que:
+? Provoquen la muerte.
+? Amenacen la vida del paciente.
+? Provoquen su hospitalización, o la prolonguen.
+? Ocasionen incapacidad laboral o escolar.
+? Induzcan defectos congénitos, o
+? Sean clínicamente relevantes.
+
+Si no se está seguro de la gravedad de la reacción hay que notificarlo de igual modo.
+
+? Medicamentos sujetos a seguimiento adicional:
+
+Los medicamentos sujetos a seguimiento adicional deberán incluir, en su prospecto y en la información destinada a los profesionales sanitarios que se conoce como resumen de las características del producto o ficha técnica, un triángulo invertido de color negro acompañado de una frase explicativa:
+
+
+ "Este medicamento está sujeto a seguimiento adicional ".
+No aparecerá ni en el envase exterior ni en el etiquetado interior de los medicamentos.
+
+Lista europea de medicamentos sujetos a seguimiento adicional
+Existe una lista europea de medicamentos sujetos a seguimiento adicional. En abril de 2013 la Agencia Europea de Medicamentos publicó la primera lista, que será revisada mensualmente por el PRAC (Comité de Evaluación de Riesgos de Farmacovigilancia de la EMA).
+
+Un medicamento se podrá incluir en esta lista cuando reciba la autorización por primera vez o posteriormente en cualquier momento. Un medicamento permanecerá sujeto a seguimiento adicional durante cinco años, o hasta que el PRAC decida retirarlo de la lista.
+
+Podría trascurrir cierto tiempo entre el momento en que se adopta la decisión de añadir o suprimir un medicamento de la lista y el momento en el que empieza a circular el prospecto actualizado. Ello se debe a que se precisa un cierto tiempo para sustituir progresivamente los prospectos antiguos disponibles en el mercado de la UE por los actualizados.
+
+La lista actualizada de medicamentos sujetos a seguimiento adicional se puede encontrar en la página web de la Agencia Europea de Medicamentos y, además, será publicada por las autoridades sanitarias en los Estados miembros de la UE. La lista se revisa mensualmente.
+
+Siempre serán sometidos a seguimiento adicional los medicamentos en los siguientes casos:
+
+* Si contienen un nuevo principio activo autorizado por primera vez en la UE después del 1 de enero de 2011;
+* si se trata de medicamentos biológicos, como las vacunas o los medicamentos derivados de plasma (sangre), autorizados posteriormente al 1 de enero de 2011;
+* si se le ha otorgado una autorización de comercialización condicional (la compañía que lo comercializa debe aportar más datos) o se ha aprobado en circunstancias excepcionales (cuando hay razones específicas por las que la compañía que lo comercializa no puede facilitar datos exhaustivos);
+* la compañía que comercializa el medicamento debe realizar estudios adicionales con el fin de, por ejemplo, aportar más datos sobre el uso a largo plazo del medicamento o bien obtener más información sobre un efecto adverso observado durante los ensayos clínicos
+
+Otras áreas de interés específico
+* Las reacciones adversas en niños
+Se deben notificar todas las sospechas de RAM en niños, con independencia de si el medicamento está aprobado para uso en la población pediátrica. La naturaleza, el curso de la enfermedad y la RAM pueden diferir entre adultos y niños. Las características de la población pediátrica hacen que se recomiende en los casos de RAM graves o las asociadas a vacunas, la notificación aportando datos dentro de lo posible, sobre el peso, la altura y la edad exacta del niño, según las siguientes recomendaciones:
+
+o si ha sido prematuro (gestación de 28 semanas o menos),
+o si es neonato (< 28días): indicar la edad en número de 'días',
+o si es un niño de 28 días a 23 meses: indicar número de 'meses y días',
+o si es un niño de 2 a 11 años y adolescentes (12 a 18 años): indicar la edad como número de 'años y meses'.
+En general, los niños no forman parte de los ensayos clínicos de los medicamentos, por lo tanto, se conoce menos sobre las posibles reacciones adversas en este grupo de edad. En la Unión Europea, desde 2007, existe regulación específica sobre investigación del uso de los medicamentos en pediatría, con un comité específico en el seno de la Agencia Europea de Medicamentos, el denominado Paediatrician Committee (PDCO).
+
+* Biológicos y vacunas
+Incluir el nombre de la marca comercial con la denominación completa indicando el tipo de presentación, (p.e., "nombre del medicamento" jeringa precargadas 0,5ml dosis) ya que puede haber diferentes excipientes según la presentación (vial multidosis o jeringa precargada). También se debe proporcionar el número de lote y fecha de caducidad que figura en el envase. En el caso de vacunación con varias dosis, se debe indicar qué dosis se ha administrado en el momento de la reacción adversa, así como la(s) fecha(s) de las dosis anteriores administradas.
+* Reacciones adversas de los medicamentos a largo plazo
+Aunque estas reacciones adversas son más difíciles de identificar a través de la notificación espontánea, notifique cualquier sospecha de reacción adversa que pueda aparecer meses o incluso años después de la exposición al medicamento, por ejemplo, tipos de cáncer, fibrosis retroperitoneal, etc.
+
+* Anomalías congénitas
+Si un bebé nace con una anomalía congénita, o si se produce una malformación del feto durante el embarazo, incluir información sobre cualquier medicamento que se utilizaba durante el embarazo, indicando las fechas o, al menos, en el trimestre cuando se utilizó el medicamento, incluyendo la automedicación y la fecha de la última menstruación.
+
+* Los medicamentos homeopáticos y medicamentos tradicionales a base de plantas
+En la notificación de sospechas de reacciones adversas a estos medicamentos, es importante proporcionar tanta información como sea posible, incluida la lista de sus ingredientes, la fuente o el fabricante si se conocen, y la indicación del producto.
+La notificación debe realizarse en cuanto se tenga la sospecha de una posible relación causal de los signos y síntomas de una RAM en el paciente con el uso de un medicamento.
+
+Cuando se notifica, se deben aportar todos los datos que se posean de los medicamentos que utiliza el paciente. Se recomienda no esperar a notificar aunque falte algún dato o información.
+3
+
+Hay varios métodos para notificar:
+? On-line: a través del formulario electrónico al que puede acceder en el siguiente enlace:
+https://www.notificaRAM.es.
+? Mediante correo postal gratuito, utilizando la tarjeta amarilla del Centro de Farmacovigilancia de la Comunidad Autónoma donde ejerce su profesión (en Galicia: Centro de Farmacovixilancia de Galicia, Subdirección Xeral de Farmacia e Productos Sanitarios. SERGAS)
+
+Tarjeta amarilla: "Formulario para la notificación de sospechas de reacciones adversas, distribuida por los órganos competentes en materia de farmacovigilancia de las Comunidades Autónomas a los profesionales sanitarios"
+
+
+? ¿Qué incluir en la notificación?
+
+Hay cuatro secciones fundamentales de información necesaria en una notificación:
+
+1. Medicamento(s) sospechoso(s)
+
+El nombre del medicamento(s) que se sospecha que ha provocado la reacción. Si se sabe el nombre comercial, se debe comunicar la denominación completa (marca, concentración y presentación).
+También se debe añadir esta información si se conoce:
+
+* La vía de administración.
+* Dosis diaria, frecuencia de dosis y posología.
+* Fechas de administración.
+* Si se trata de una vacuna u otro medicamento biológico, el nombre de la marca comercial con la denominación completa y su número de lote y fecha de caducidad.
+
+2. Reacción(es) adversa(s)
+
+Hay que describir la reacción adversa incluyendo el diagnóstico, si procede. Incluir también:
+* Cuando se produjo la reacción.
+* Gravedad de la reacción.
+* Cualquier tratamiento dado.
+* Resultado de la reacción.
+Si la reacción ya ha sido notificada (por ejemplo, por otro profesional sanitario o el paciente), pero tenemos información adicional para comunicar, se debe informar en la notificación para poder identificar la notificación previa y agregar dicha información.
+
+3. Detalles del paciente
+
+La información básica sobre el paciente es vital en la evaluación de los casos y en la obtención de información adicional.
+
+Hay que indicar, si es posible, estos campos:
+* Sexo del paciente.
+* La edad del paciente en el momento de la reacción.
+* Si se conoce, el peso del paciente.
+* Nombre y apellidos del paciente, un número de tarjeta sanitaria o de historia clínica para ayudar a identificar al paciente en cualquier notificación futura.
+
+El intercambio de esta información no infringe acuerdos de confidencialidad entre el notificador y el paciente ya que la Ley 29/2006 de garantías y uso racional de medicamentos obliga a los profesionales a la notificación en caso de sospechas de RAM.
+
+Se puede incluir una copia de esta notificación en la historia clínica del paciente para futuras consultas.
+
+4. Detalles del notificador
+
+Este campo debe ser completado en todos los casos. Se deben incluir datos del notificador, nombre, y correo electrónico para que nos puedan enviar el acuse de recibo de su notificación y poder contactar con nosotros para obtener información adicional, si fuera necesario. Únicamente, si se notifican RAM asociadas a errores de medicación (seleccionando el campo correspondiente), sus datos personales no se admitirán en el formulario.
+
+El farmacéutico también puede colaborar con el Sistema Español de Farmacovigilancia comunicando las sospechas de RAM al Laboratorio farmacéutico titular del medicamento relacionado o al médico prescriptor.
+
+Existen otro tipo de tarjetas de farmacovigilancia para notificar reacciones adversas a:
+* Medicamentos de uso veterinario (color verde).
+* Productos sanitarios (color blanco)
+* Productos cosméticos ? Cosmetovigilancia: La cosmetovigilancia es la actividad destinada a la recogida, evaluación y seguimiento de la información sobre los efectos no deseados observados como consecuencia del uso normal o razonablemente previsible de los productos cosméticos.
+Considerando lo dispuesto en el artículo 10 del Real Decreto 85/2018, por el que se regulan los productos cosméticos, los profesionales sanitarios (médicos, odontólogos, farmacéuticos, enfermeros, etc.) tienen la obligación de notificar los efectos graves no deseados relacionados con el uso de productos cosméticos de los que tengan conocimiento.
+El Real Decreto 85/2018 establece que la AEMPS es la autoridad competente en España a la que las personas responsables y los distribuidores deben notificar los efectos graves no deseados relacionados con el uso de productos cosméticos, de los que tengan conocimiento.
+Además regula la comunicación de efectos no deseados graves por los profesionales sanitarios y establece el Sistema Español de Cosmetovigilancia, destinado a recoger, evaluar y realizar el seguimiento de los efectos no deseados observados con productos cosméticos.
+La AEMPS emite Notas informativas sobre cambios relevantes que además de publicar en su web www.aemps.gob.es se distribuyen a través de las Comunidades Autónomas, organizaciones colegiales como Colegios oficiales de Farmacéuticos (COF), sociedades científicas, etc.
+
+Actúa en estrecha colaboración con la EMA (Agencia Europea de Medicamentos) y las otras 26 agencias reguladoras de la Unión Europea.
+
+También existen los boletines de farmacovigilancia que emite cada Centro Autonómico del SEFV- H
+
+4.2. ALERTAS FARMACÉUTICAS
+
+Las alertas farmacéuticas son documentos elaborados por la Agencia Española de Medicamentos y Productos Sanitarios (AEMPS) con la finalidad de notificar un posible defecto o alteración de la calidad o seguridad de un medicamento, ya sea de uso humano o veterinario, de un producto sanitario, de un producto de higiene o de un cosmético.
+
+La AEMPS dispone de un sistema para la comunicación por parte de la industria farmacéutica, autoridades de consejerías competentes en sanidad de las comunidades autónomas, particulares u otras entidades (hospitales, oficinas de farmacia, almacenes mayoristas, colegios oficiales de farmacéuticos, etc.), de cualquier defecto de calidad que se observe en los medicamentos de uso humano comercializados.
+Tras el análisis de las comunicaciones, así como de la información adicional que proceda, cuando es preciso se emite una orden de retirada de los lotes afectados por el problema de calidad.
+
+? ¿En qué consisten las retiradas de medicamentos por defectos de calidad?
+
+Las retiradas de medicamentos por defectos de calidad son medidas preventivas.
+Las alertas farmacéuticas suelen hacer referencia a un lote o lotes de fabricación determinados.
+
+Un lote de fabricación comprende aquellas unidades de un medicamento producidas a partir de un mismo grupo de materiales de partida, en un proceso o una serie de procesos de fabricación y que se supone homogéneo.
+
+De forma habitual existen en el mercado distintos lotes de fabricación de los medicamentos comercializados.
+
+Es importante destacar que, en muchas ocasiones, el defecto de calidad detectado afecta a un único envase, sin embargo se ordena la retirada preventiva del lote de fabricación completo al que pertenece, para evitar cualquier posible riesgo para la salud en el caso, de que unidades adicionales pudiesen estar afectadas.
+
+? ¿Cómo se clasifican los defectos de calidad en las alertas farmacéuticas?
+
+La clasificación de los defectos se hace en función del posible riesgo para la salud de los pacientes y de acuerdo con los consensos internacionales establecidos entre las autoridades sanitarias.
+
+Los defectos de calidad se clasifican en tres clases (1, 2 y 3) siendo la clase 1 la que se corresponde con un posible riesgo más elevado y la clase 3 la de un menor riesgo.
+* Clase 1: cuando se trata de defectos que constituyen un peligro potencial para la vida de los usuarios o que presenten un grave riesgo para la salud.
+* Clase 2: en el caso de que los defectos puedan ocasionar una enfermedad o un tratamiento inadecuado, pero que no pertenecen a la clase I
+
+* Clase 3: son aquellas en que los defectos no presentan graves riesgos para la salud y cuya medida cautelar se ha tomado por otras razones que no pertenecen a las clases 1 y 2
+
+? ¿A quién van principalmente dirigidas las alertas?
+
+La información de estas alertas va dirigida, en general, a los agentes de la cadena de distribución y dispensación de medicamentos (entidades de distribución, oficinas de farmacia y servicios farmacéuticos).
+
+Las alertas indican además qué medidas cautelares es preciso adoptar en relación al producto farmacéutico acerca del cual se está informando. (Inmovilización, retirada, suspensión, cierre de empresas y cuantas se consideren justificadas)
+
+Existen diferentes tipos de alertas atendiendo tanto al objeto de las mismas como a la urgencia de su difusión. Dependiendo de la materia de la que tratan, las podemos clasificar en:
+? Alertas farmacéuticas de medicamentos de uso humano
+* Notas informativas
+* Notas de seguridad
+* Alerta de calidad (por defectos de calidad)
+? Alertas farmacéuticas de medicamentos de uso veterinario
+* Alerta de seguridad
+* Alerta de calidad
+? Alerta farmacéutica de comercialización de medicamentos ilegales
+? Alertas de productos sanitarios
+* Alerta de seguridad
+* Alerta de calidad
+? Alertas de productos cosméticos
+
+
+
+
+
+
+
+
+
+
+La transmisión de las alertas de cada uno de estos grupos tiene su correspondiente Procedimiento Normalizado de Trabajo (PNT)
+
+En Galicia, DECRETO 170/2002, de 2 de mayo, por el que se crea la Red Gallega de Alerta sobre Riesgos Relacionados con los Medicamentos y Productos Sanitarios de Uso Humano.
+
+A efectos de lo dispuesto en este decreto, se establecen los siguientes tipos de alerta:
+
+a) Alertas de calidad: son las situaciones relacionadas con los defectos que se producen en relación con la calidad exigida en la autorización de comercialización de los medicamentos o productos sanitarios.
+b) Alertas de seguridad: son las situaciones que surgen con la utilización de los medicamentos o productos sanitarios y que suponen una alteración del perfil de seguridad de su autorización de comercialización.
+c) Alertas de comercialización ilegal: son las situaciones relacionadas con productos que no dispongan de la correspondiente autorización del Ministerio de Sanidad y Consumo para su comercialización como medicamentos o productos sanitarios.
+
+La Red Gallega de Alerta sobre Riesgos Relacionados con los Medicamentos y Productos Sanitarios de Uso Humano realizará las siguientes funciones:
+a) La detección de situaciones potenciales de riesgo relacionados con la calidad y seguridad de los medicamentos o productos sanitarios.
+
+b) La caracterización y verificación de las situaciones de riesgo detectadas.
+c) Acordar las medidas cautelares que sean necesarias adoptar en coordinación con los órganos competentes del Ministerio de Sanidad y Consumo.
+d) La puesta en conocimiento de los profesionales sanitarios de las situaciones de riesgo así como de cualquier otra información relativa a estos.
+e) Establecer los mecanismos para llevar a cabo las medidas cautelares adoptadas y comprobar su efectividad.
+
+La Red Gallega de Alerta sobre Riesgos Relacionados con los Medicamentos y Productos Sanitarios de Uso Humano actuará bajo la coordinación de la División de Farmacia y Productos Sanitarios del Servicio Gallego de Salud, y formarán parte de ella:
+La inspección sanitaria, Delegaciones provinciales de la Consellería de Sanidad, Direcciones provinciales del Servicio Gallego de Salud, Gerencias o direcciones de los centros hospitalarios y de asistencia social públicos o privados, Gerencias de atención primaria del Servicio Gallego de Salud, Colegios oficiales de farmacéuticos, de médicos y de enfermería, y todos los demás centros, servicios y establecimientos sanitarios de Galicia.
+El órgano coordinados es la actual Subdirección de Farmacia del SERGAS.
+
+En cuanto a las alertas emitidas por la AEMPS, la información contenida es:
+
+
+5. SISTEMA DE NOTIFICACIÓN Y APRENDIZAJE PARA LA SEGURIDAD DEL PACIENTE (SINASP)
+SiNASP es el sistema de notificación y registro de incidentes y eventos desarrollada por el Ministerio de Sanidad, Consumo y Bienestar Social como parte de la Estrategia en Seguridad de Pacientes para el Sistema Nacional de Salud.
+
+El objetivo del SiNASP es mejorar la seguridad de los pacientes a partir del análisis de situaciones, problemas e incidentes que produjeron, o podrían haber producido, daño a los pacientes. El énfasis principal del sistema está en el aprendizaje para la mejora. Aunque la notificación es voluntaria, se anima encarecidamente a los profesionales a utilizar el sistema, colaborando así en el aprendizaje y la mejora de la seguridad del paciente.
+
+La información introducida en el SiNASP es totalmente confidencial y está protegida por los más avanzados sistemas de seguridad.
+
+El SiNASP está disponible para hospitales y para centros de Atención Primaria. Sólo los profesionales de los centros que están dados de alta en el sistema podrán notificar incidentes en el SiNASP.
+
+El Instituto Universitario Avedis Donabedian ha colaborado con el Ministerio en el desarrollo y la implantación del SiNASP.
+
+El SINASP ha sido específicamente desarrollado para dar respuesta a las necesidades de las organizaciones sanitarias de nuestro país, como muestra el haber implicado a los distintos grupos de interés en su diseño (pacientes, profesionales a través de las Sociedades Científicas, expertos en seguridad y representantes de las comunidades autónomas.
+
+
+5.1. OBJETIVOS DEL SINASP
+El objetivo del sistema de notificación es la mejora de la seguridad de los pacientes a partir del análisis de situaciones, problemas e incidentes que produjeron, o podrían haber producido, daño a los pacientes.
+
+El estudio de estas situaciones, del contexto en el que ocurrieron, de los riesgos latentes preexistentes y de los factores que contribuyeron a su aparición se realiza con el fin de promover los cambios necesarios en el sistema para evitar que estas situaciones vuelvan a producirse en el futuro.
+
+5.2. PRINCIPIOS BÁSICOS DEL SINASP
+? Voluntariedad: La notificación de incidentes es totalmente voluntaria, aunque se anima a los profesionales a colaborar en el aprendizaje y la mejora de la seguridad del paciente.
+? No punibilidad: Este sistema y la información que recoge está totalmente separado de cualquier sistema de sanciones, tanto a nivel de centro sanitario como fuera de éste.
+? Confidencialidad: Toda la información contenida en el sistema es confidencial y sólo los profesionales involucrados en la gestión del sistema o en la investigación de incidentes tendrán acceso a la información.
+La información introducida en los cuestionarios es codificada (encriptada) y enviada a los servidores que almacenan la información de forma segura, garantizando al notificante que sus respuestas no serán leídas por ninguna otra persona más que por las personas designadas para ello.
+? Notificación anónima o nominativa con anonimización (o de-identificación): La notificación puede ser anónima o nominativa. En el caso de las notificaciones nominativas, el sistema está diseñado para anonimizar (eliminar los datos relativos a la identidad del notificante) automáticamente la información en un periodo de quince días.
+? Orientación sistémica: Entendiendo que la aparición de incidentes relacionados con la seguridad del paciente depende, en gran medida, de múltiples factores contribuyentes, el
+análisis y las recomendaciones deben adoptar un enfoque sistémico, examinando las "condiciones latentes" que han permitido la aparición del incidente.
+? Análisis para el aprendizaje y la implementación de mejoras a nivel local: Aunque parte de la información que recoge el sistema se agrega y analiza a nivel de CCAA y SNS, el SINASP tiene una orientación eminentemente local. La implicación de los profesionales del centro en el análisis de las notificaciones se considera fundamental para alcanzar el aprendizaje y los cambios necesarios en el sistema para prevenir eventos similares.
+
+5.3. INCIDENTES QUE DEBEN NOTIFICARSE
+Se deben notificar los incidentes relacionados con la seguridad del paciente, entendiendo como tales los eventos o circunstancias que han ocasionado o podrían haber ocasionado un daño innecesario a un paciente. En este grupo se incluyen:
+? Incidentes relacionados con la seguridad que no llegaron al paciente: circunstancia o incidente con capacidad de causar error, que podría haber causado un daño pero no lo llegó a causar, bien por suerte o bien porque fue interceptado antes de llegar al paciente
+
+? Incidentes sin daño: incidentes que no llegaron a causar daño (aunque sí que llegaron al paciente)
+? Eventos adversos: incidentes que han producido daño al paciente
+Quedan excluidos del Sistema de Notificación las infracciones graves con implicaciones legales obvias, puesto que son casos de utilidad limitada desde un punto de vista del aprendizaje y la gestión de riesgos y, a su vez, podrían ser de obvio interés para jueces y fiscales. Aspectos a excluir serían, por ejemplo, abusos de pacientes o actuaciones bajo los efectos de las drogas.
+
+5.4. ESTRUCTURA Y FUNCIONAMIENTO DEL SINASP
+
+La estructura del SINASP se puede reflejar gráficamente como una pirámide invertida que comienza con la notificación de incidentes de seguridad por parte de los profesionales y continúa con cuatro niveles de agregación y acceso a la información para el análisis de incidentes:
+1. Centro sanitario
+2. Área Sanitaria
+3. Comunidad Autónoma
+4. Ministerio de Sanidad, Servicios Sociales e Igualdad
+
+Es importante destacar que ni la CCAA ni el SNS reciben toda la información de las notificaciones sino únicamente información agregada del conjunto de los centros, excluyendo datos como el nombre del centro, datos del notificante, profesionales implicados en el caso y otros datos que son importantes para el análisis del caso a nivel local pero carecen de utilidad a un nivel superior, y cuya transmisión podrían provocar inquietud en los profesionales.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5.5. CARACTERÍSTICAS DE LA APLICACIÓN INFORMÁTICA
+
+La aplicación SINASP es una aplicación Web, por lo que no requiere instalación a nivel de centro, únicamente acceso a internet. Está compuesta de un área pública (Portal SINASP) que incluye el cuestionario de notificación y un área privada (Área de gestor del Sistema) para la gestión de las notificaciones.
+
+Es el área pública del sistema, de acceso libre. El portal SINASP es el medio de difusión de las lecciones aprendidas a partir del análisis de las notificaciones, información disponible para todos los profesionales interesados en la seguridad del paciente (independientemente de si utilizan el sistema). También tiene información general del sistema y guías para su utilización. Contiene:
+? El cuestionario de notificación: es un cuestionario estructurado para recoger información de incidentes relacionados con la seguridad del paciente. Contiene diversas ayudas para facilitar su utilización. Sólo los profesionales de los centros dados de alta en el sistema acceden al cuestionario.
+? Curso online sobre Seguridad del Paciente y SINASP para hospitales. Está acreditado con 4 créditos de formación continuada y supone una ayuda importante para facilitar el
+proceso interno de formación e información de los profesionales en los centros que utilizan el sistema.
+
+
+Área de gestión
+
+Es el área restringida del sistema. A través de esta aplicación, los gestores del SINASP de los centros acceden a herramientas que facilitan la gestión de las notificaciones, su análisis y la elaboración semiautomática de informes.
+
+Contiene estos apartados:
+? Área de gestión del centro, que permite adaptar el SINASP al centro (logo, personalización de los servicios, texto de respuesta estándar, etc.).
+? Área de análisis de las notificaciones, que contiene filtros y herramientas para facilitar la gestión y el análisis, así como el seguimiento de las mejoras.
+? Área de elaboración y monitorización de planes de mejora resultantes del análisis de las notificaciones.
+
+? Área de elaboración de informes. El gestor del sistema escoge las tablas y los gráficos que desea y la herramienta los inserta automáticamente en el informe. Dispone también de editor de textos para información cualitativa.
+? Indicadores de monitorización: presenta datos del centro comparados con el resto de los centros que utilizan el sistema.
+
+La implantación del sistema en una organización sanitaria va acompañada de un proceso formativo y de soporte que se centra principalmente en los aspectos clave para alcanzar el éxito en la implantación del sistema: la formación de los profesionales, que mejora la cultura de seguridad en el centro, el apoyo al análisis de las notificaciones y la difusión de información sobre las lecciones aprendidas.
+El análisis de los incidentes notificados al SiNASP es principalmente local, es decir, se lleva a cabo internamente en la propia organización en la que ocurrió el incidente. Los centros elaboran y difunden internamente informes periódicos para informar sobre las notificaciones recibidas, los análisis realizados y las iniciativas de mejora implementadas. Las Comunidades Autónomas también elaboran y difunden informes de datos agregados de las notificaciones recibidas en el conjunto de los centros de la Comunidad que utilizan el sistema.
+
+Además de este análisis local, queremos promover el intercambio de información entre distintos centros sobre los incidentes notificados, los análisis realizados y las mejoras propuestas a partir del mismo, con el fin de poner en común recursos útiles para promover el aprendizaje en materia de seguridad del paciente.
+
+
+
+ASPECTOS DESTACADOS DE LA APLICACIÓN SiNASP
+
+• La aplicación contiene los más avanzados sistemas de protección de la información, que garantizan la confidencialidad de los datos.
+• Cada centro puede personalizar tanto la imagen como parte del contenido del sistema, para adaptarlo a sus necesidades.
+• El área del gestor cuenta con herramientas para el análisis de las notificaciones, así como una función de elaboración de informes de forma semiautomática.
+• La herramienta incluye indicadores de benchmarking que permiten a cada centro compararse con todos los demás centros que utilizan el sistema y con los centros de su propia CCAA.
+• El Portal SiNASP es un medio para difundir recomendaciones y alertas de seguridad basadas en el análisis de las notificaciones.
+• La aplicación informática centralizada con acceso on-line permite la gestión rápida de las posibles incidencias del sistema.
+• La aplicación se va mejorando continuamente gracias al feedback recibido de los usuarios del sistema.
+
+
+
+
+
+
+6. BIBLIOGRAFÍA
+* Sabela Fernández Vila; Beatriz Tojo Fernández; Montserrat Chao Millor; Fátima Calvo Rey.
+"Dispensación de Productos Farmacéuticos". Editorial MCGraw-Hill. 2013.
+* Cristina Moreno Valderrey. "Dispensación de Productos Farmacéuticos". Editorial Paraninfo. 2014.
+* Francisco J. Farfán Sedano; Mª Jesús Frutos Sastre. "La Farmacia Hospitalaria para técnicos en farmacia". AMV Ediciones.
+* Benito Hernández; Elena Martínez. "Dispensación de productos farmacéuticos". Editorial Altamar. 2013.
+* "Farmacología en Enfermería". Enfermería S21. 2003
+* www.sinasp.es
+* http://www.ismp-espana.org/
+* Farmacovigilancia: https://www.aemps.gob.es/vigilancia/medicamentosUsoHumano/home.htm
+
+7. ANEXO:
+INSTITUTO PARA EL USO SEGURO DE LOS MEDICAMENTOS: http://www.ismp-espana.org/ El Instituto para el Uso Seguro de los Medicamentos es la delegación española del Institute for Safe Medication Practices (ISMP), organización multidisciplinar sin ánimo de lucro dedicada a promover la seguridad y mejorar la calidad del proceso de utilización de los medicamentos. Su finalidad es prevenir los errores de medicación y reducir los acontecimientos adversos por medicamentos.
+
+Los objetivos del ISMP para reducir los errores de medicación son:
+• Transmitir a todos los profesionales sanitarios, organismos e instituciones vinculadas al cuidado y prevención de la salud, industria farmacéutica y a los propios pacientes la trascendencia clínica y la cultura profesional necesaria para reconocer y abordar el problema de los errores de medicación.
+• Mantener un Programa de Notificación de Errores de Medicación, adherido al programa internacional, que recoja las comunicaciones y experiencias de los profesionales sanitarios y permita la evaluación conjunta de la información.
+• Promover el desarrollo de estrategias y recomendaciones dirigidas a la prevención de los errores de medicación y a la reducción de los acontecimientos adversos a medicamentos.
+
+¿Qué es un error de medicación?
+El National Coordinating Council for Medication Error Reporting and Prevention (NCC MERP) define a los errores de medicación como: "cualquier incidente prevenible que pueda causar daño al paciente o dé lugar a una utilización inapropiada de los medicamentos, cuando éstos están bajo el control de los profesionales sanitarios o del paciente o consumidor. Estos incidentes pueden estar relacionados con la práctica profesional, con los procedimientos o con los sistemas, incluyendo fallos en la prescripción, comunicación, etiquetado, envasado, denominación, preparación, dispensación, distribución, administración, educación, seguimiento y utilización".
+Los errores de medicación se producen por fallos en el proceso de utilización de los medicamentos y se deben analizar como errores del sistema. Nunca se deben considerar como errores humanos, pensando que la solución se limita a encontrar al individuo "culpable" del error. No se trata de buscar QUIÉN causó el error, sino de analizar QUÉ circunstancias motivaron el error.
+
+El proceso de utilización de los medicamentos es muy complejo y en él intervienen diferentes colectivos. Los errores de medicación pueden ocurrir en cualquiera de las etapas de dicho proceso y en su mayoría se producen por múltiples fallos o deficiencias en el mismo. Existen, por tanto, múltiples posibilidades de prevenirlos y se necesita la participación y el esfuerzo de todos los implicados para lograr evitarlos.
+
+MEDICAMENTOS DE ALTO RIESGO
+Los medicamentos de alto riesgo son aquellos que tienen una probabilidad muy elevada de causar daños graves o incluso mortales cuando se produce un error en el curso de su utilización. Estos medicamentos son objetivo prioritario de las recomendaciones, estrategias o campañas de mejora de la seguridad desarrolladas por autoridades sanitarias y organismos expertos en
+
+seguridad del paciente. De hecho, la Organización Mundial de la Salud (OMS), en su tercer reto mundial de seguridad del paciente "Medicación sin daño", instó a los países miembros a que centraran sus actuaciones de mejora de la seguridad en tres áreas prioritarias, entre las que se encuentran las situaciones de alto riesgo, que incluyen el uso de los medicamentos de alto riesgo y la atención a los pacientes que son más vulnerables a los errores de medicación.
+
+Para ver cuales son estos medicamentos, se recomienda consultar la Relación de medicamentos de alto riesgo para hospitales, actualizada por el ISMP en 2018. Se dispone también de una Lista de medicamentos de alto riesgo en pacientes crónicos, que fue desarrollada por el ISMP-España a través del Proyecto MARC, financiado por el Ministerio de Sanidad.
+
+En 2023 el Ministerio de Sanidad y el ISMP-España publicaron un documento de Recomendaciones para el Uso Seguro de los Medicamentos de Alto Riesgo, en el que se recogen las listas anteriores y se incide en la necesidad de que los centros sanitarios desarrollen e implementen un programa de mejora de la seguridad de los medicamentos de alto riesgo. Entre las actuaciones a desarrollar en este programa se destaca la conveniencia de que cada centro elabore una lista propia de medicamentos de alto riesgo a partir de la lista de referencia y fundamentalmente que se implementen prácticas seguras de probada efectividad en todas las etapas del circuito de utilización para los medicamentos seleccionados, y que se difundan a los profesionales sanitarios.
+
+En este documento también se describen varias prácticas seguras comunes para prevenir los errores con todos los medicamentos de alto riesgo, que por extensión también son eficaces para mejorar la seguridad del resto de medicamentos, y prácticas específicas para algunos grupos farmacológicos o medicamentos.
+
+A finales de 2024 se ha publicado un documento de Recomendaciones para el Uso Seguro de los Medicamentos de Alto Riesgo en Pediatría, en el que se han adaptado y complementado las recomendaciones generales anteriores a las características de la población pediátrica. Se ha elaborado por el Ministerio de Sanidad con el ISMP-España, la Asociación Española de Pediatría y la Sociedad Española de Farmacia Hospitalaria, y en su revisión han participado los responsables de seguridad de las Comunidades Autónomas.
+
+El documento proporciona una lista de referencia de medicamentos de alto riesgo en pediatría y también destaca que los centros implementen un programa para reducir los errores con estos medicamentos, complementario al general, con la participación de pediatras, farmacéuticos y otros profesionales sanitarios, así como promover la participación activa de pacientes y cuidadores. También recoge prácticas generales de seguridad comunes y prácticas específicas para cada grupo farmacológico o medicamento prioritario, que deben combinarse para reducir riesgos y mejorar la seguridad del paciente pediátrico.
+
+
+
+
+
+
+
+Categoría de gravedad clínica del error
+
+
+
+
+
+
+Tus centres PREMIR(r) en Galicia son:
+Santiago de C • 981 59 01 98 (Central)
+Coruna • 98113 12 so
+Ferrel • 981 31 21 SO
+Lugo • 982 22 80 30
+Orense • 988 373 013
+Pontevedra • 986 847 214
+Vigo • 986 238 442
+
+
+
+
+
+
+
+
+
+
+
+CPR PREMIR	oposnet
+Ciclos Superiores	campus virtual
+Grupo PREMIR'
+
+
+
+
+
+Languages
+School
+GrupoPREMIR°  ,
+
+Academia
+PREMIR(r)
+Oposiciones
+
+
+
+
+
+

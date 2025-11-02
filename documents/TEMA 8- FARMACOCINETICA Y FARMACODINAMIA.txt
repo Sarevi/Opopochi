@@ -1,0 +1,605 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TECNICO DE FARMACIA
+SERGAS TEMA 8:
+    FARMACODINAMIA Y FARMACOCINÉTICA: ACCIÓN FARMACOLÓGICA DE LOS MEDICAMENTOS. CLASIFICACIÓN. FACTORES QUE MODIFICAN LA ACCIÓN FARMACOLÓGICA. CONCEPTO DE FARMACOCINÉTICA. LIBERACIÓN, ABSORCIÓN, DISTRIBUCIÓN, METABOLIZACIÓN Y EXCRECCIÓN O ELIMINACIÓN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INDICE:
+1. CONCEPTOS BÁSICOS DE FARMACOLOGÍA
+
+2. FARMACOCINÉTICA. PROCESO LADME
+2.1. LIBERACIÓN
+2.2. ABSORCIÓN
+2.2.1. TRANSPORTE A TRAVÉS DE LAS MEMBRANAS
+2.2.2. FACTORES QUE CONDICIONAN LA ABSORCIÓN DE UN FÁRMACO
+2.3. DISTRIBUCIÓN
+2.3.1. TRANSPORTE DEL FÁRMACO. UNIÓN A PROTEINAS PLASMÁTICAS
+2.3.2. DISTRIBUCIÓN A LOS TEJIDOS
+2.4. METABOLISMO
+2.5. EXCRECIÓN
+
+3. FARMACODINAMIA. ACCIÓN Y EFECTOS DE LOS FÁRMACOS
+3.1. MECANISMOS DE ACCIÓN DE LOS FÁRMACOS
+3.1.1. MECANISMOS DE ACCIÓN ESPECÍFICOS
+3.1.2. MECANISMOS DE ACCIÓN INESPECÍFICOS
+3.2. FACTORES QUE MODIFICAN LA ACCIÓN DE LOS FÁRMACOS
+3.2.1. FACTORES GENÉTICOS
+3.2.2. FACTORES FISIOLÓGICOS
+3.2.3. FACTORES PATOLÓGICOS
+3.2.4. FACTORES FARMACOLÓGICOS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. CONCEPTOS BÁSICOS DE FARMACOLOGÍA
+La Farmacología es la ciencia que estudia las propiedades de las drogas o fármacos, su mecanismo de acción y los efectos que producen sobre los organismos vivos.
+      Desde que se administra un medicamento hasta que aparecen los primeros efectos de su acción, va a sufrir una serie de modificaciones para poder ser asimilado en el organismo.
+
+La Farmacocinética es la rama de la farmacología que estudia los procesos y modificaciones que sufre un fármaco durante su paso por el organismo, desde que es administrado hasta su completa eliminación.
+
+La Farmacodinamia. Estudia los efectos bioquímicos y fisiológicos de los medicamentos, su mecanismo acción y la correlación entre los efectos y su estructura química.
+
+Farmalogía Aplicada: concepto similar a farmacoterapia. Abarca indicaciones, contraindicaciones, vías de administración, etc
+
+Toxicología, estudia los efectos perjudiciales de los fármacos
+
+Farmacognosia: que describe las drogas o fármacos considerando su origen, características organolépticas, características físicas y químicas
+
+La mayoría de los fármacos llegan al lugar del organismo en el que deben actuar a través del flujo sanguíneo.
+
+El tiempo necesario para el inicio de la acción de un medicamento, así como la duración de dicha acción dependen, frecuentemente, de la velocidad con la que el fármaco llega al flujo sanguíneo, la cantidad que entra, la velocidad con la que sale de la sangre, la eficacia del hígado en su descomposición (metabolismo) y la rapidez de su excreción por vía renal e intestinal.
+
+Por ello, la farmacología determina las dosis más adecuadas y el intervalo de administración en formas farmacéuticas de biodisponibilidad óptima. Permite, también, predecir y calcular la concentración de los fármacos en diferentes órganos, con el fin de instaurar un régimen terapéutico óptimo.
+
+2. - FARMACOCINÉTICA. PROCESO LADME
+La Farmacocinética es el estudio de la absorción, distribución, transformación y eliminación de un medicamento en el organismo.
+
+El acrónimo LADME hace referencia a los pasos que sigue el fármaco en el organismo: Liberación, Absorción, Distribución, Metabolismo y Excreción.
+
+Estos procesos determinan la biodisponibilidad del fármaco.
+
+
+
+Los parámetros farmacocinéticos en un medicamento administrado por vía oral son:
+
+* CMT: concentración mínima tóxica
+* Cmáx: concentración máxima
+* CME: concentración mínima eficaz
+* Tmáx: tiempo en el que se alcanza la Cmáx
+* TE: Tiempo de eficacia
+* PL: período de latencia
+* IE: Intensidad del efecto
+* AUC: área bajo la curva
+
+2.1. LIBERACIÓN primera etapa del proceso)
+
+Los medicamentos se presentan bajo una determinada forma farmacéutica (jarabe, cápsula, píldora, gragea, etc.) que es la combinación del principio activo y los excipientes.
+La forma farmacéutica es de gran importancia en el proceso de liberación. Para ser absorbido, el principio activo debe separarse de los excipientes que le sirven de vehículo.
+- Siempre que no se trate de soluciones, la fase de liberación es la que, mediante métodos y medios típicamente biofarmacéuticos, resulta más accesible modular a través de la modificación de las características de la forma de dosificación.
+
+La liberación es el proceso por el cual el principio activo se libera de la forma farmacéutica que lo contiene y queda disponible para su absorción.
+
+Se considera que un fármaco se ha liberado, cuando se ha disuelto en el lugar de absorción.
+
+La velocidad de absorción estará claramente limitada por la de liberación; en estos casos, la liberación será el factor limitativo de la absorción.
+
+Está constituida por el conjunto de procesos implicados desde la administración de la forma farmacéutica, hasta que el medicamento se encuentra disuelto en el punto de absorción
+
+Dependiendo del grado de integración del principio activo en la formulación oral, tardará más o menos tiempo en liberarse. De este modo, los fármacos que tomamos en forma de solución oral, ya van disueltos en agua, por lo que llevarán ventaja a las cápsulas y los comprimidos.
+Los excipientes, que son los compuestos inactivos que se incorporan a la formulación oral para dar cuerpo y forma (lactosa, sacarosa, sorbitol, almidón...), también pueden influir en la liberación del fármaco, retrasando o acelerando la liberación.
+
+La velocidad de liberación depende de la forma farmacéutica.
+Las FF líquidas no necesitan ser liberadas, ya que se disuelven directamente en líquidos orgánicos, y ya están disponibles para su absorción.
+Las FF sólidas deben disgregarse para poder disolverse y ser absorbidas.
+
+El principio activo debe estar disperso y disuelto en medio acuoso para poder ser absorbido, es decir, poder atravesar las membranas biológicas y llegar a circulación sistémica.
+
+En FF de liberación controlada o sostenida: están diseñadas para que la liberación del principio activo sea constante.
+
+Fases de la liberación:
+
+1.- DISGREGACIÓN:
+- Se da principalmente en administración oral. El medicamento una vez administrado se va a separar en partes o en pequeños agregados. Este paso facilita la posterior disolución.
+- En esta fase juega un papel muy importante la elección adecuada de los excipientes, que son los que modulan la velocidad del proceso de disgregación.
+- Disgregación: separación en agregados de una FF sólida. Está condicionado por los excipientes.
+
+2.-DISOLUCIÓN:
+- Es el paso a solución con el fluido gastrointestinal.
+- Lo experimentan todas las formas farmacéuticas excepto las soluciones; a veces incluso éstas, pues al ser administradas, y debido al pH ácido del estómago, puede producirse la precipitación del medicamento, el cual deberá redisolverse en el intestino.
+
+3-DIFUSIÓN:
+* Es el avance del fármaco disuelto a través del fluido o solución, desde el lugar de disolución hasta el lugar de absorción.
+* -Se considera que esta fase de la liberación no influye muy directamente en la absorción; sin embargo puede ser importante en dos casos:
+o Formas farmacéuticas adicionadas de viscosizantes: y
+o Medicamentos administrados con comidas copiosas y con elevada proporción de grasas, que confieren viscosidad al fluido gastrointestinal.
+
+Por ejemplo: las cápsulas están formadas por una cubierta que contiene el principio activo en su interior. En el tracto digestivo la cápsula se disuelve y libera el principio activo, que queda disponible para su absorción.
+
+Factores que influyen en la velocidad de liberación son:
+*   Forma y Tamaño de la partícula del fármaco: para una misma cantidad, un menor tamaño de partícula dará lugar a un aumento de la superficie de contacto entre el fármaco no disuelto y el medio de disolución y, por tanto, a una mayor velocidad de disolución.
+* Solubilidad del fármaco: es el factor más importante que determina su velocidad de disolución.
+Los fármacos suelen ser ácidos o bases débiles. Por ello, su solubilidad varía en función del pH del medio donde se encuentre. Así, los medicamentos básicos se disuelven más fácilmente en un medio ácido, como el gástrico, y los ácidos lo hacen mejor en un medio alcalino.
+Otro de los métodos más empleados para modificar la solubilidad de los fármacos es la formación de sales.
+* Formulación del medicamento: el tipo de excipientes que se incluyen en la formulación juega un importante papel, ya que pueden favorecer o dificultar el contacto entre el fármaco y los líquidos corporales y modificar, así, su velocidad de disolución. Por ejemplo la adición de viscosizantes
+
+* Técnica de elaboración: en algunas formas farmacéuticas, como en los comprimidos, puede ser un factor determinante.
+
+2.2. ABSORCIÓN o FASE II
+
+Para que un fármaco llegue desde el lugar de administración hasta su lugar de acción tiene que pasar primero a la circulación sanguínea.
+
+La absorción es el proceso por el que el principio activo es transportado a través de diferentes membranas hasta la circulación sanguínea sistémica.
+
+La absorción solo tiene lugar en los medicamentos de acción sistémica y de administración extravascular.
+En la administración intravascular no se produce ni liberación ni absorción, ya que el principio activo se administra directamente en el sistema circulatorio.
+
+TRANSPORTE A TRAVÉS DE LAS MEMBRANAS
+
+Para llegar a la circulación sanguínea, el fármaco disuelto debe atravesar una serie de membranas biológicas. Las membranas están formadas por una doble capa lipídica en la que se intercalan proteínas.
+
+El transporte de fármacos a través de los tejidos, depende de la naturaleza de las membranas de éstos, así como de la molécula que va a pasar. Existen diferentes mecanismos de transporte a través de membranas:
+-Difusión simple o pasiva: consiste en el paso de los fármacos por las membranas lipídicas celulares a favor de un gradiente de concentración, desde el lugar de mayor al de menor concentración o bien a través de poros acuosos. En el caso de las membranas lipídicas, las moléculas liposolubles atraviesan más fácilmente estas membranas. Se trata de de un proceso pasivo sin necesidad de aporte energético. Es el mecanismo de absorción mayoritario de los fármacos.
+Difusión simple o pasiva: la mayoría de los principios activos. Sin gasto energético. Se benefician mayoritariamente fármacos lipófilos.
+Las moléculas pequeñas (bajo Peso molecular) y no ionizadas son las que mejor atraviesan las membranas.
+
+A través de poros acuosos: es una forma de difusión pasiva, para principios activos hidrófilos y de pequeño tamaño y con carga negativa.
+
+En el caso de los poros acuosos, el número y tamaño de estos depende del lugar de absorción, y condicionan la entrada a la célula de sustancias hidrófilas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Difusión facilitada: a favor de gradiente pero usando transportadores. Se satura.
+Lo usan moléculas de gran tamaño no ionizadas, y con baja liposolubilidad. También se llama transporte especializado.
+
+También puede existir a través de canales.
+
+- Transporte mediado: existen fármacos de tamaño demasiado grande y con una polaridad demasiado elevad , que pasan difícilmente las membranas celulares. Para estas sustancias, existen unas proteínas que forman parte de las membranas, conocidas como portadores. Se forma un complejo fármaco-portador, que facilita el paso de estas moléculas de fármaco al interior de la célula. Este transporte es selectivo y saturable. La velocidad de paso depende de la cantidad de portadores, pudiendo saturarse el proceso si la concentración de fármaco es demasiado elevada.
+
+- Transporte activo: en contra de gradiente. Gasta energía. A través de transportadores, se satura. Para fármacos de peso molecular no muy pequeño y sin suficiente liposolubilidad. También compuestos endógenos como la bomba de Na/K.
+- Transporte por pares de iones: es el medio de transporte celular para fármacos que se encuentran en estado ionizado: estos iones se unen a compuestos de carga contraria formando una molécula sin carga que pasa más fácilmente por la membrana.
+-Endocitosis: permite el paso de moléculas de gran tamaño a través de la invaginación de la membrana. Se forma unas vesículas en la membrana que engloba el fármaco, transportándolo hacia el interior de la célula. Dentro de la endocitosis encontramos la Pinocitosis (de líquidos como fluidos extracelulares) y la Fagocitosis (de partículas grandes). Necesita energía.
+
+FACTORES QUE CONDICIONAN LA ABSORCIÓN DE UN FÁRMACO
+
+Biodisponibilidad: cantidad de fármaco inalterado que llega a circulación sistémica.
+
+Efecto de Primer paso o aclaramiento presistémico: pérdida de medicamento por metabolismo enzimático en un órgano, antes de llegar a circulación sistémica.
+Mayoritariamente se da a nivel hepático, pero también puede ocurrir a nivel pulmonar, intestinal. La solubilidad de un fármaco está condicionada por el pH del medio y el pK del fármaco.
+Los medicamentos ácidos se absorben mejor en medios ácidos, mientras que los básicos en medio básico o alcalinos. Los medicamentos alcalinos para evitar su destrucción por el medio ácido gástrico, se deberían proteger con cubiertas gastrorresistente para que se puedan absorber en duodeno.
+
+El lugar de absorción de un fármaco depende de la vía de administración. En los medicamentos que se administran por vía oral, la absorción del fármaco se produce en el tracto gastrointestinal, desde donde pasa a la circulación sistémica.
+No todo el fármaco administrado llega a la circulación general. Cuando un medicamento es administrado por vía oral, parte de la dosis administrada es metabolizada en el intestino, otra parte en el hígado y solo una porción de fármaco llega a la circulación sistémica. La cantidad de fármaco que llega a la circulación sistémica es la fracción biodisponible.
+Hay múltiples factores que influyen en el proceso de absorción. Unos se deben a las características del fármaco administrado y otros dependen de las características fisiológicas y patológicas del individuo.
+
+Por tanto, el transporte de fármacos a través de membranas celulares depende de distintos
+
+factores como son:
+* Peso molecular del fármaco: el tamaño del fármaco condiciona el proceso por el que puede atravesar las membranas celulares
+* Gradiente de concentración: cuanto mayor diferencia de concentración entre el exterior y el interior celular, más rápida será la difusión.
+* Liposolubilidad: cuanto más liposoluble más rápidamente atravesará la membrana
+* Grado de ionización: depende del carácter del fármaco, si es ácido o básico, y del pH del medio. Las moléculas ionizadas por muy pequeñas que sean, no atraviesan la membrana lipídica, si no es por pares iónicos.
+
+No todos los procesos nombrados se encuentran en todas las membranas celulares. En función del lugar de absorción se darán unos u otros procesos:
+* Mucosa gástrica: fundamentalmente se da por difusión pasiva. Aunque parece ser que también se dan procesos de transporte activo.
+* -Vía intramuscular o intradérmica: se da el paso el paso de sustancias por mecanismos de difusión de poros, ya que estos poros son grandes y abundantes en los endotelios capilares.
+* Intestino delgado: es el lugar más especializado para llevar a cabo la absorción de sustancias. Por tanto se dan prácticamente todos los fenómenos de absorción.
+* Resto	de	mucosas:	bucal,	sublingual,	nasal,	ocular,	respiratoria	y	piel.	Se	dan fundamentalmente procesos de difusión pasiva.
+
+Los factores que influyen en la absorción de fármacos se resumen en la siguiente tabla:
+
+
+
+
+2.3. DISTRIBUCIÓN O FASE III
+La distribución es el proceso por el que el fármaco disuelto en la sangre es transportado hasta los órganos o tejidos en los que ejerce su acción.
+
+TRANSPORTE DEL FÁRMACO. UNIÓN A PROTEINAS PLASMÁTICAS
+
+Las moléculas de fármaco en sangre pueden ir disueltas en plasma, fijadas a células, normalmente hematíes, ó fijadas a proteínas plasmáticas.
+* En estado libre: es la única que puede difundir hacia los tejidos, ejercer su acción y producir el efecto farmacológico.
+* Unido a eritrocitos: hay fármacos que se pueden unir a membrana celular de hematíes, pudiendo penetrar en ellos uniéndose a la hemoglobina. Ej: fenitoína, fenobarbital
+* Unidos a proteínas plasmáticas: la mayoría de los fármacos se unen a proteínas en mayor o menor medida. Es una unión reversible y éste se libera cuando se necesita fármaco libre.
+
+Tipo de proteína:
+- Albúmina: fármacos neutros. Tiene 4 puntos de unión, pero los de mayor fijación son el I y
+II. Dado que la albúmina es ligeramente básica, los fármacos ácidos o neutros se unirán con mayor afinidad.
+-  a-1 glicoproteína: fármacos básicos
+- Lipoproteínas: fármacos liposolubles
+- Globulinas: sustancias endógenas
+
+Los fármacos no producen efectos biológicos como consecuencia de su unión a proteínas sino que éstas sirven de transporte y almacenamiento, y son las responsables del mantenimiento de los niveles constantes de fármacos en el organismo.
+
+Sólo la fracción libre de fármaco difunde a los tejidos diana, se metaboliza y se excreta, ya que la fracción unida no atraviesa con facilidad los endotelios.
+
+La administración de dos fármacos con un alto grado de unión a proteínas puede causar toxicidad por aumento de exposición al fármaco con menor afinidad, al aumentar la proporción de fármaco libre, el farmacológicamente activo.
+
+Las interacciones que afectan a la distribución tienen cierta importancia cuando los fármacos desplazados tienen un intervalo terapéutico estrecho, como los anticoagulantes antagonistas de la vitamina K, antiepilépticos etc.
+
+DISTRIBUCIÓN A LOS TEJIDOS
+
+Cada órgano o tejido puede recibir cantidades diferentes de un mismo fármaco. Además, la velocidad de distribución y la duración de su efecto son también diferentes.
+Los factores que influyen en la distribución tisular de un fármaco son:
+* Las características físico-químicas del fármaco.
+* La capacidad para unirse a proteínas plasmáticas
+* La irrigación del órgano.
+* La superficie de intercambio.
+* La afinidad particular del fármaco con un tejido específico.
+* La presencia de barreras específicas (Barrera hematoencefálica, barrera feto- placentaria)
+* La situación fisiopatológica del paciente.
+Hay dos lugares corporales de difícil acceso para fármacos, que son el sistema nervioso central, gracias a la barrera hematoencefálica (BHE), y el feto, gracias a la placenta, donde no todos los fármacos pueden llegar. El cuerpo se protege de la entrada de sustancias tóxicas y de deshecho (tanto endógenas como exógenas) al interior del sistema nervioso central mediante una barrera de células (BHE)
+Por la misma razón, la barrera placentaria protege al bebé de las sustancias corporales tóxicas de la madre. A los fármacos que atraviesan la placenta y pueden producir malformaciones en el feto se les denomina teratógenos. Por eso, esta información siempre se incluye en el prospecto. Antiguamente se pensaba que la placenta era un sistema que protegía el feto de todas las sustancias que tomase la madre. Sin embargo, al descubrir el efecto que algunos PA, como la talidomida, tuvieron sobre el feto cuando la madre los tomó, hizo saltar las alarmas y comenzar a investigar para cada PA si esto ocurría.
+En la actualidad, es un estudio obligatorio que tienen que hacer los laboratorios farmacéuticos antes de comercializar un fármaco.
+
+
+Ejemplos de fármacos y categoría de la FDA
+
+Categoría X de la FDA:
+* warfarina
+* Citostáticos: metotrexato
+* Derivados de la vitamina A (vía oral): acitretina, isotretinoína
+* Benzodiacepinas: flurazepam, quazepam, triazolam son x resto son cat. D
+* Vacunas virus vivos o atenuados: sarampión, rubeola, varicela, rotavirus, polio oral, fiebre amarilla, fiebre tifoidea etc. En general, se recomienda evitar gestación hasta 1 mes después de la vacunación. Contraindicadas durante el embarazo.
+* Hormonas
+* Estatinas: atorvastatina, lovastatina
+* Rivabirina
+
+Otros medicamentos con los que hay que tener precaución:
+* AINES: la mayoría categoría C en 1º y 2º trimestre y D en 3º trimestre por riesgo cierre prematuro ductus, sangrado materno. De elección paracetamol.
+* Talidomida
+* Quinolonas (C)
+* tetraciclinas (D)
+* Macrólidos (C) excepto azitro y eritromicina (B)
+* Antiepilépticos: Valproico (D), litio y fenitoina (D)
+* Acenocumarol (D) ? en embarazo se usa HBPM
+* IECAS/ARA-2 : D en 1º trimestre y X en 2º y 3º trimestre
+
+2.4. METABOLISMO O FASE IV
+
+En el organismo los fármacos sufren una serie de transformaciones metabólicas que modifican su solubilidad, su potencia y toxicidad.
+
+El metabolismo o biotransformación es el conjunto de reacciones bioquímicas que sufre el fármaco en el organismo y que lo transforman en diferentes metabolitos.
+
+Esta modificación química que sufren los fármacos, los transforma en metabolitos activos con una acción determinada, o en metabolitos inactivos para facilitar su eliminación.
+
+El metabolismo del fármaco se lleva a cabo principalmente en el hígado y, en menor medida, en los riñones y otros tejidos (pulmón, tracto gastrointestinal...).
+
+Este órgano contiene la mayoría de las enzimas, oxidasas, reductasas, estearasas y transferasas, requeridas en las principales reacciones de degradación de fármacos, oxidación, reducción, hidrólisis y conjugación.
+
+Está irrigado por la vena porta y la arteria hepática, que garantizan que un gran flujo de sangre pasa a través de él.
+
+Las reacciones de biotransformación se pueden clasificar en función del mecanismo bioquímico
+
+en dos grandes grupos:
+* -Reacciones de Fase I: denominadas presintéticas o de conversión en grupos funcionales. Incluyen reacciones de oxidación (citocromo P-450), reducción e hidrólisis, que determinan la introducción o alteración de un grupo funcional de la molécula. Son las que primero se dan.
+* Reacciones de fase II: denominadas sintéticas o de derivación de grupos funcionales. Son procesos de conjugación, mediante los cuales fármacos o metabolitos procedentes de las reacciones de Fase I se unen a un sustrato endógeno. De esta manera aumenta el tamaño del fármaco o metabolito, lo inactiva y facilita su excreción.
+
+El metabolismo puede verse modificado por distintos factores:
+- Factores genéticos : polimorfismo, defectos congénitos,
+- Factores fisiológicos:
+* Intervenciones terapéuticas
+* Procesos patológicos: estrés (aumenta el metabolismo)
+* Edad y sexo: menor capacidad metabólica en ancianos.
+* Factores hormonales: hormonas sexuales, insulinas
+* Homeostasis interna
+- Factores ambientales o externos:
+* Medicamentos
+* Hábitos dietéticos
+* Hábitos de consumo de alcohol y tabaco
+* Exposición laboral
+* Contaminación ambiental
+Independientemente de los factores que lo modifiquen pueden darse fundamentalmente dos tipos de alteraciones del metabolismo:
+- Inducción enzimática: es el incremento del metabolismo, debido a una estimulación de los sistemas enzimáticos. Con la inducción enzimática se produce una disminución
+de la concentración del fármaco, disminuyendo por tanto su efecto terapéutico, pero también puede aumentar la formación de metabolitos tóxicos. La inducción enzimática tarda entre 1 -2 semanas. Ejemplos de medicamentos que actúan como inductores: isoniazida, rifampicina, fenitoína, fenobarbital, carbamacepina (autoinductor).
+Otras sustancias: tabaquismo crónico y el consumo crónico de alcohol e hipérico (hierba de San Juan).
+- Inhibición enzimática: es el descenso de la actividad metabólica. Produce un aumento de las concentraciones del fármaco inhibido, con el consiguiente riesgo de toxicidad.
+Es un efecto más inmediato que la inducción.
+Ejemplos: Eritromicina, Ketoconazol, ritonavir, ciprofloxacino, fluoxetina, amiodarona, ácido valproico.
+Otras sustancias inhibidoras: zumo de pomelo y la ingesta aguda de alcohol.
+
+
+
+
+2.5. EXCRECIÓN O FASE V
+
+Aclaramiento renal: cantidad de fármaco que se elimina del plasma en un período de tiempo determinado.
+
+La excreción es el proceso por el cual los restos del fármaco y sus metabolitos son eliminados del organismo y se expulsan al exterior.
+Los fármacos, una vez metabolizados, son excretados por aquellas vías que contribuyen a expulsar del organismo las sustancias orgánicas y los líquidos fisiológicos.
+
+Las principales vías de excreción de fármacos son:
+* Renal: a través de la orina. Es la vía más importante de excreción de fármacos hidrosolubles. Se realiza por filtración glomerular y secreción tubular en el túbulo proximal.
+* Digestiva, a través de las heces.
+* Biliar: el fármaco se metaboliza en el hígado, se elimina con la bilis y llega al intestino. Una vez allí, el fármaco puede reabsorberse de nuevo o eliminarse con las heces. Esto es lo que se denomina circulación enterohepática.
+* Pulmonar: por la respiración se elimina parte de algunos fármacos como los anestésicos y el alcohol. Muy rápida por la gran superficie de alveolos
+* Leche materna: durante la lactancia algunos fármacos liposolubles son excretados con la leche. Cuanto mayor es la liposolubilidad del fármaco, menor grado de ionización y menor unión a proteínas, mayor es el paso de fármaco a leche materna
+* Saliva: poco importante cuantitativamente. Los principios activos pueden deglutirse y por tanto volver a absorberse. Ej: sales de metales pesados, ioduros, clonidina, fenitoína.
+* Otras vías secundarias de eliminación son diversos fluidos como el sudor, la saliva y el semen (precaución con fármacos como la finasterida).
+
+Concepto importante: Eliminación no es igual excreción Eliminación = metabolismo + excreción
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3. FARMACODINAMIA
+La farmacodinámica o farmacodinamia es el estudio de los efectos bioquímicos y fisiológicos de los fármacos y de sus mecanismos de acción y la relación entre la concentración del fármaco y el efecto de éste sobre el organismo.
+
+* La acción de un fármaco es el proceso que se produce por la unión del fármaco a un receptor determinado o al centro activo de una enzima concreta.
+* El efecto farmacológico es el cambio fisiológico que se produce como consecuencia de la acción farmacológica. Es la respuesta del organismo a la acción del fármaco.
+
+
+Los fármacos con una sola acción pueden dar lugar a varios efectos al igual que fármacos con
+
+distinta acción pueden producir el mismo efecto, esto viene en la mayor parte de las ocasiones dictado por la fisiopatología del organismo
+Para que un medicamento desarrolle una acción farmacológica debe alcanzar las partes del organismo en una concentración determinada y a su vez, estas partes del organismo tienen que tener afinidad por ese medicamento.
+
+Tipos de acción de un fármaco:
+* Acción local: es aquella que se produce en el lugar de aplicación del medicamento.
+* Acción general o sistémica: es aquella que se produce en distintos órganos según la especificidad del medicamento sobre esos órganos.
+* Acción irreversible: se produce cuando se modifican las funciones de las células y no vuelven a su estado inicial cuando el medicamento deja de estar en contacto con ellas.
+* Acción reversible: se producen efectos temporales, de forma que cuando el medicamento deja de estar en contacto con el organismo, las funciones modificadas vuelven a su estado normal.
+
+El efecto farmacológico que produce un medicamento va a depender, por tanto, de:
+* La vía de administración y dosis administrada.
+* La velocidad de absorción y cantidad de fármaco que se absorbe.
+* La distribución del fármaco dentro del compartimento sanguíneo y su penetración en los tejidos.
+* La concentración alcanzada en el órgano efector y su unión a receptores específicos de acción.
+* Su biotransformación.
+* La eliminación del fármaco.
+
+Al administrar un fármaco se pueden conseguir diversos efectos medicamentosos que se correlacionan con la acción del fármaco.
+* Efecto primario: es el efecto fundamental terapéutico deseado del fármaco.
+* Efecto placebo: son manifestaciones que no tienen relación con alguna acción realmente farmacológica.
+* Efecto colateral: son efectos indeseados consecuencia directa de la acción principal del medicamento. Ej sequedad de boca en el curso de un tratamiento con anticolinérgicos
+* Efecto secundario: Efecto que surge como consecuencia de la acción principal, pero que no forma parte inherente de ella. Ej hipopotasemia que aparece en el curso del tratamiento con ciertos diuréticos). No siempre es fácil distinguir entre efecto secundario y colateral; en ocasiones la distinción es simplemetne académica.
+* Efecto tóxico: se distingue de los anteriores por ser una acción indeseada, generlamente consecuencia de una dosis en exceso. Es entonces dependiente de la dosis, es decir, de la cantidad de medicamento al que se expone el organismo y del tiempo de exposición.
+* Efecto letal: acción biológica medicamentosa que induce la muerte.
+
+3.1. MECANISMO DE ACCIÓN DE LOS FÁRMACOS
+
+Los fármacos actúan modificando procesos celulares: los estimulan o los inhiben.
+
+La mayoría de los fármacos producen su efecto al unirse a moléculas específicas llamadas receptores, otros actúan por mecanismos de acción inespecíficos.
+
+
+3.1.1. MECANISMOS DE ACCIÓN ESPECÍFICOS:
+
+El fármaco se une de forma específica a sistemas enzimáticos o receptores celulares.
+El fármaco reconoce la estructura de los receptores celulares específicos y se unen formando un complejo fármaco- receptor, que es el que desencadena el efecto.
+
+
+
+
+* Afinidad por el receptor
+
+Los dos requisitos básicos para que se forme el complejo fármaco-receptor son:
+
+* Especificidad para reconocer la estructura del fármaco y unirse a él.
+
+
+Para que un fármaco pueda actuar sobre un receptor, tiene que unirse perfectamente a él. Para ello el fármaco tiene que tener una estructura molecular determinada y poseer grupos funcionales concretos que le posibiliten la interacción con el receptor.
+La unión fármaco-receptor no es estática, sino dinámica, habiendo un continuo equilibrio entre fármaco libre y fármaco unido a receptor.
+
+El tipo de interacciones o unión entre fármaco y receptor pueden ser:
+* Puentes de hidrógenos: un átomo de hidrógeno media la unión entre dos elementos electronegativos.
+
+* Interacción iónica: se produce por atracción iónica entre grupos que se encuentran con cargas contrarias a pH fisiológico.
+* Interacciones de Van der Waals: se dan en todo tipo de moléculas, ya que es la producida por la armonización de los dipolos instantáneos que se generan en todas las moléculas. Esta armonización sólo tiene lugar cuando la distancia entre las moléculas es pequeña y origina que la carga parcial instantánea positiva de una, interaccione con la carga parcial instantánea negativa de otra. Aún siendo débil, es grande al darse esta interacción en varios puntos dando estabilidad a la unión fármaco-receptor.
+* Fuerzas hidrófobas: se debe al aumento de entropía que sufre el sistema cuando se desalojan al medio las moléculas de agua que rodeaban las cadenas apolares.
+* Enlaces covalentes: enlace irreversible en el que se producen modificaciones en la estructura química, tanto del fármaco como del receptor.
+
+Además de interactuar específicamente y con elevada afinidad, para que surja una acción farmacológica, es preciso que el fármaco tenga el poder de modificar la molécula receptora en la forma necesaria a fin de que se desencadene un efecto. La capacidad del fármaco para modificar el receptor e iniciar una acción es lo que define su eficacia.
+
+La formación del complejo fármaco-receptor puede producir dos tipos de respuestas: estimulación o inhibición.
+Atendiendo a la respuesta que genera esta interacción, existen dos tipos de fármacos:
+
+* Agonista: fármaco que al unirse a un receptor lo activa generando una respuesta. Puede ser puro con máxima afinidad y actividad intrínseca máxima, o parcial con afinidad pero con actividad intrínseca menor que un puro.
+* Antagonista: fármaco que al unirse a un receptor no genera respuesta. Inhibe al receptor y evita la unión de otras moléculas agonistas. Presenta afinidad pero no actividad intrínseca.
+
+
+
+
+
+Existen dos tipos de antagonistas:
+o Antagonista competitivo: aquellos que compiten con el fármaco agonista por unirse al mismo sitio receptor. La inhibición que producen los fármacos antagonistas competitivos se pueden anular aumentado la concentración del fármaco agonista.
+o Antagonista no competitivo: el antagonista se une a un sitio diferente que el agonista en el receptor, el denominado sitio complementario, al unirse el antagonista, la configuración del receptor cambia, de tal forma que la unión del agonista se hace mucho más difícil y por mucho que aumentemos la dosis del agonista no llegaremos nunca al efecto máximo.
+
+Pequeños cambios en la estructura de un fármaco modifican su eficacia y por esta razón, dentro de una familia farmacológica, unos pueden tener propiedades agonistas y otros, antagonistas.
+
+Otro concepto importante es el de Sinergia: se dice que dos fármacos actúan de forma sinérgica cuando los efectos que se obtienen al usarlos conjuntamente, son iguales o superiores a los efectos por separado.
+
+Puede ser:
+* Sinergia de sumación, es decir, igual a la suma de los efectos por separado, o
+* Sinergia de potenciación (más frecuente) donde el efecto es superior a la suma de los efectos que tendrían por separado.
+
+3.1.2. MECANISMOS DE ACCIÓN INESPECÍFICOS:
+
+Son acciones farmacológicas que no se ejercen sobre estructuras específicas.
+Algunos fármacos ejercen su acción farmacológica por mecanismos físicos o químicos, sin la intervención de receptores. Las altas concentraciones de fármaco actúan induciendo cambios en las propiedades fisicoquímicas de las células sobre las que actúan.
+
+3.2. FACTORES QUE MODIFICAN LA ACCIÓN DE LOS FÁRMACOS
+
+Cuando a un paciente se le administra un fármaco para tratar una patología, se producen además de los efectos deseados, efectos no deseados o secundarios, debido a los factores que modifican dichos procesos. Las variables que pueden modificar los efectos de los fármacos en el organismo son muchas, las más importantes son:
+
+3.2.1. FACTORES GENÉTICOS:
+
+Pueden intervenir alterando el metabolismo del fármaco (anomalías cuantitativas) o la respuesta individual (anomalías cualitativas).
+La Farmacogenética estudia los factores genéticos que determinan las distintas respuestas farmacológicas entre las personas, frente a un medicamento determinado.
+
+3.2.2. FACTORES FISIOLÓGICOS:
+
+* Sexo: las principales diferencias que determinan una respuesta farmacológica distinta entre hombres y mujeres se refieren al peso y a la distribución de la grasa, además de las diferencias hormonales.
+* Edad: los niños y ancianos requieren ajustes de las dosis, por su mayor susceptibilidad a los efectos farmacológicos.
+* Peso, es otro factor que requiere ajuste de la dosis, ya que determina el volumen de distribución (volumen de líquido en el cual el fármaco aparentemente se disuelve) del fármaco.
+* Temperatura: puede alterar la actividad del fármaco, al producirse vasodilatación o vasoconstricción.
+* Embarazo: algunos medicamentos atraviesan la barrera placentaria y pueden producir malformaciones en el feto.
+
+3.2.3. FACTORES PSICOLÓGICOS:
+
+El efecto neto de un fármaco es la suma de su acción farmacológica y de un efecto placebo inespecífico. Un placebo es una sustancia inactiva, sin efectos farmacológicos (aparentemente un medicamento), que aumenta la acción terapéutica buscada. Puede ser una cápsula de lactosa, una solución salina, etc., pero que el paciente considera un fármaco.
+
+En los efectos del placebo influye la sugestión, o creencia por parte del paciente del beneficio del tratamiento. Han sido utilizados en investigaciones clínicas controladas. Incluso se han descrito casos de pacientes adictos a placebos, alguno de los cuales al suprimirse éste, presentó síndrome de abstinencia.
+
+Por tanto, un medicamento placebo, es toda sustancia, que carece de principios activos, pero que se administra simulando que es un fármaco con efectos curativos. El efecto placebo sugestiona y tranquiliza a un determinado tipo de pacientes ejerciendo un efecto positivo sobre ellos.
+
+3.2.4. FACTORES PATOLÓGICOS:
+
+Algunas enfermedades como la insuficiencia hepática y renal, el hipertiroidismo, el hipotiroidismo... modifican el efecto de los fármacos.
+
+3.2.5. FACTORES FARMACOLÓGICOS:
+
+* Vía y momento de administración: la velocidad de absorción y de acción de un fármaco depende de la vía utilizada para su administración. El momento en el que se administra, puede variar el efecto farmacológico.
+
+* Interacciones farmacológicas: los efectos de un fármaco pueden ser alterados por la administración previa o simultánea de otro fármaco. Esta alteración puede suponer el aumento (efecto aditivo), la disminución (efecto de inhibición) o la modificación de la actividad farmacológica. El tratamiento con fármacos combinados se utiliza en ocasiones por producir interacciones beneficiosas. En algunos procesos, como el sida, la terapia combinada es más efectiva que la terapia con un único fármaco, pero también puede ser más probable la aparición de reacciones adversas o efectos secundarios.
+Algunos fármacos son incompatibles con ciertos tipos de alimentos, como la ampicilina y la eritromicina con los zumos de frutas, la tetraciclina con productos que contengan calcio (leche y antiácidos) y los antihistamínicos con el alcohol.
+
+* Toxicidad de los fármacos: es el conjunto de efectos nocivos, o reacciones adversas que un fármaco provoca en el organismo. Pueden ser triviales, graves, e incluso mortales.
+
+El margen de seguridad en la utilización de un medicamento se define como la diferencia entre la dosis con la que se alcanza el efecto terapéutico y la dosis con la que aparece toxicidad. Pero en algunos casos, los efectos tóxicos pueden aparecer con dosis menores que las terapéuticas (hipersensibilidad), y en otras ocasiones el efecto tóxico y el terapéutico son continuación uno del otro (como los citostáticos, que producen la lisis de células tumorales y no tumorales). Por ello, el médico debe prestar atención a unos principios (relación beneficio- riesgo) y vigilar el tratamiento.
+
+4. BIBLIOGRAFÍA
+
+* Sabela Fernández Vila; Beatriz Tojo Fernández; Montserrat Chao Millor; Fátima Calvo Rey.
+"Dispensación de Productos Farmacéuticos". Editorial MCGraw-Hill. 2013.
+
+* Cristina Moreno Valderrey. "Dispensación de Productos Farmacéuticos". Editorial Paraninfo. 2014.
+
+* Francisco J. Farfán Sedano; Mª Jesús Frutos Sastre. "La Farmacia Hospitalaria para técnicos en farmacia". AMV Ediciones.
+
+* Benito Hernández; Elena Martínez. "Dispensación de productos farmacéuticos". Editorial Altamar. 2013.
+
+* "Farmacología en Enfermería". Enfermería S21. 2003
+
+
+
+
+
+
+Tus centres PREMIR(r) en Galicia son:
+Santiago de C • 981 59 01 98 {Central}
+Coruna • 98113 12 so
+Ferrel • 981 31 21 SO
+Lugo • 982 22 80 30
+Orense • 988 373 013
+Pontevedra • 986 847 214
+Vigo • 986 238 442
+
+
+
+
+
+
+
+
+
+
+
+CPR PREMIR	oposnet
+Ciclos Superiores	campus virtual
+Grupo PREMIR"
+
+
+
+
+
+Languages
+School
+GrupoPREMIR"  /
+
+
+Academia
+PREMIR"
+Oposiciones
+
+
+
+
+
+

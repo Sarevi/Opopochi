@@ -1,0 +1,2301 @@
+          TÉCNICO DE FARMACIA
+                                 SERGAS
+               TEMA 13-2ª PARTE:
+
+
+
+
+  13   LABORATORIO FARMACÉUTICO: CONCEPTOS
+GENERALES. MATERIAL DE USO FRECUENTE.EQUIPOS
+            DE LABORATORIO. PUESTA A PUNTO Y
+       MANTENIMIENTO DE LOS EQUIPAMIENTOS Y
+     MATERIALES. PROCEDIMIENTOS DE LIMPIEZA,
+  DESINFECCIÓN, CONSERVACIÓN Y ESTERILIZACIÓN
+DEL MATERIAL Y EQUIPOS. CONTROL DE CALIDAD DE
+                           MATERIAL Y EQUIPOS
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+                                              TÉCNICO FARMACIA SERGAS 3
+                                                        Tema 13-2ª parte
+
+                                                           www.premir.es
+
+
+INDICE:
+1. EL LABORATORIO GALÉNICO
+
+
+
+
+                                                                     TEC. FARMACIA SERGAS
+   1.1. MATERIAL Y APARATAJE GENERAL Y ESPECÍFICO
+      1.1.1. Material y aparataje general
+               • Procedimiento normalizado de funcionamiento, mantenimiento
+                   y calibración de aparatos
+         1.1.1.1. Clasificación del material de laboratorio
+            1.1.1.1.1.    Material volumétrico
+            1.1.1.1.2.    Material no volumétrico
+            1.1.1.1.3.    Material de uso específico
+            1.1.1.1.4.    Material de soporte o sostén
+         1.1.1.2. Aparataje general de laboratorio
+      1.1.2. Material y aparataje específico
+   1.2. TIPOS DE LABORATORIOS GALÉNICOS
+      1.2.1. Nivel I
+      1.2.2. Nivel II
+      1.2.3. Nivel III
+
+2. LIMPIEZA, DESINFECCIÓN Y ESTERILIZACIÓN DEL MATERIAL DE LABORA-
+   TORIO
+   2.1. METODOS O PROCEDIMIENTOS DE LIMPIEZA
+      2.1.1. Métodos de limpieza manual
+      2.1.2. Métodos de limpieza mecánicos
+   2.2. MÉTODOS DE DESINFECCIÓN
+      2.2.1. Desinfección por métodos físicos
+      2.2.2. Desinfección por métodos químicos
+   2.3. MÉTODOS DE ESTERILIZACIÓN
+      2.3.1. Esterilización por agentes físicos
+      2.3.2. Esterilización por agentes químicos
+      2.3.3. Controles de esterilización
+         2.3.3.1. Controles físicos
+         2.3.3.2. Controles químicos
+         2.3.3.3. Controles biológicos
+
+3. CONTROL DE CALIDAD DE MATERIAL Y EQUIPOS EN EL LABORATORIO GA-
+   LÉNICO
+
+BIBLIOGRAFIA
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+1.1.2. Material y aparataje específico
+
+A) PEACHÍMETRO
+El peachímetro es un instrumento que determina el pH.
+El ph-metro mide la actividad del ión hidrógeno en soluciones acuosas, midiendo la diferencia de
+potencial eléctrico entre un electrodo de pH y un electrodo de referencia. Este electrodo detecta
+los iones de hidrógeno (H+) presentes en la solución y genera una señal eléctrica proporcional al
+nivel de acidez o alcalinidad. Esta señal se muestra en la pantalla del dispositivo como un valor
+numérico que representa el pH de la solución. Esta diferencia de potencial se relaciona con el pH
+de la solución.
+El ph se mide en una escala del 0 al 14. Dicha escala es logarítmica, lo cual indica que en cada
+punto los niveles son 10 veces mayores que en el anterior.
+
+Se comercializan en equipos de sobremesa y portátiles. Igualmente hay phmetros con
+funcionamiento analógico y digital e incluso tipos que combinan ambos.
+
+En cuanto a los componentes clave de un PHmetro podemos diferenciar:
+• Electrodo de pH: Esta es la parte más importante del PHmetro. Este electrodo especializado
+    se sumerge en la solución que se está midiendo y detecta la concentración de iones de
+    hidrógeno, que es lo que determina el pH. Los electrodos de pH pueden ser de vidrio o de otro
+    material, dependiendo del tipo y modelo del PHmetro.
+• Referencia interna: En el electrodo, hay una referencia interna que se utiliza para compensar
+    cualquier cambio en el voltaje que no se deba a los iones de hidrógeno.
+• Circuito eléctrico: El pHmetro contiene un circuito eléctrico que conecta los electrodos y
+    mide la diferencia de potencial (voltaje) entre ellos. Esta diferencia de potencial es el resultado
+    de la interacción entre los iones de hidrógeno y la membrana del electrodo de vidrio.
+• Pantalla digital: Esta pantalla muestra la lectura de pH. Puede ser tan simple como un
+    conjunto de números o puede incluir otros datos útiles, como la temperatura.
+• Controles: Los controles permiten al usuario realizar ajustes, como cambiar el rango de pH,
+    compensar la temperatura o realizar una calibración.
+Para asegurar mediciones precisas, es importante calibrar el pHmetro utilizando soluciones de
+referencia conocidas, así como seguir las instrucciones del fabricante para su correcto
+mantenimiento.
+La calibración es un paso crucial para asegurar la precisión de un pHmetro. Para entender cómo
+calibrar un PHmetro, es importante saber que la calibración implica ajustar la lectura del pHmetro
+para que coincida con el valor conocido de una solución tampón.
+Las soluciones tampón son soluciones cuyo pH es conocido y estable. Se utilizan para ajustar el
+PHmetro para que las lecturas correspondan exactamente con el pH real. Por lo general, se utiliza
+más de una solución tampón para calibrar un PHmetro, ya que esto permite una calibración más
+precisa en un rango más amplio de pH.
+La calibración de un pHmetro debe realizarse de manera regular con el objetivo de asegurarse de
+que el medidor sigue proporcionando lecturas precisas. La frecuencia de la calibración dependerá
+del uso específico del pHmetro y de los requerimientos de precisión.
+
+Hay equipos que usan 1 sólo punto de calibración, otros 2 y otros 3 (mientras más mejor, pero los
+equipos son más caros). La calibración de 2 puntos suele ser suficiente. Algunos equipos usan 4.01
+y 7.01 (la diferencia no es importante y puede ser ignorada, usando 4 y 7). Pueden comprarse ya
+                                                           TÉCNICO FARMACIA SERGAS 5
+                                                                     Tema 13-2ª parte
+
+                                                                             www.premir.es
+
+
+hechos o venir en forma de sobres en polvo y tener que disolverlos en agua destilada o
+desionizada.
+Si se hace a tres puntos, se suele usar para la calibración tampones de pH 4.01, 7.01 y 10.01.
+Siempre se empieza la calibración desde el pH más ácido al más básico o alcalino
+
+
+
+
+                                                                                          TEC. FARMACIA SERGAS
+Una calibración de un punto no puede garantizar una gran precisión. Si sólo realiza una
+calibración en un punto, el resultado de medición que se obtenga debe encontrarse dentro del
+rango de esta solución de calibración. Si se deben realizan las mediciones tanto en rango ácido y
+en rango básico, el aparato debe ser calibrado en 3 puntos.
+Las diferencias dependerán de la tecnología del pHmetro y el tipo de sensor que utiliza.
+
+Uso de pHmetro
+  • Encender el pHmetro
+  • Esperar un lapso de tiempo, aproximadamente media hora (el tiempo lo marca el
+      fabricante)
+  • Retirar el electrodo de su almacenado.
+  • Pasar el electrodo por agua destilada.
+  • Presionar el botón de calibrar y esperar que deje de
+      parpadear para presionar nuevamente.
+  • Sumergir en una solución de ph 4 (y en resto de
+      soluciones tampón en función de si es a 1,2 ó 3
+      calibraciones). Si no marca el pH de la solución tampón
+      habrá que proceder al ajuste manual (con rosca o
+      destornillador) o automático. Lavar siempre con agua
+      destilada entre las diferentes soluciones tampón.
+  • Luego sumergir nuevamente en agua destilada.
+  • Ahora puedes proceder a medir tu muestra.
+
+Precauciones y recomendaciones:
+A la hora de manipular e peachímetro hay que respetar las siguientes indicaciones:
+
+   ü Si el pHchímetro viene seco, habrá que sumergirlo en una solución tampón, indicada por
+     fabricante, o en una solución de conservación, unas 2 horas, antes de su uso.
+   ü Nunca usar el electrodo en soluciones calientes (se recomienda enfriar a menos de 30ºC)
+   ü Tener en cuenta la temperatura con que se trabaja, porque el pH varía en función de la
+     misma. La temperatura modifica la actividad de los iones en solución y por tanto el valor
+     que indica el electrodo. Si queremos medidas precisas debemos hacer la calibración a la
+     temperatura indicada. Los phmetros modernos disponen de la opción de compensación
+     de la temperatura (CAT), en estos casos la sonda de temperatura debe introducirse en la
+     solución junto al electrodo para que el equipo realice los ajustes. En otros casos debe
+     introducirse el valor manualmente.
+   ü Muchos medidores de pH incorporan sensores de vidrio y tubos de referencia que deben
+     ser almacenados en soluciones especialmente formuladas. Si se utiliza un medidor de
+     mano, la solución de almacenamiento suele encontrarse en la tapa del medidor. Para la
+     mayoría de los sensores de pH, es fundamental que el sensor sea almacenado húmedo en
+     la solución apropiada.
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+  ü El pHmetro tiene una vida limitada que puede estimarse de 12-18 meses dependiendo del
+     mantenimiento y las condiciones de uso. Las temperaturas altas y los medios alcalinos
+     acortan significativamente la vida del electrodo. Los electrodos tienen una vida útil que
+     depende de su uso. Un electrodo de uso diario debería durar aproximadamente 1 año. Los
+     electrodos tienen un desgaste natural aun cuando no se usan.
+  ü Para limpiar los medidores de pH, puede usar soluciones limpiadoras, a continuación,
+     volveremos a colocar el sensor en su solución de almacenamiento.
+  ü El electrodo debe mantenerse húmedo para evitar que se dañe. Se debe guardar en una
+     solución saturada de KCI (por ejemplo 3 M) o en un buffer de solución de pH 4 o 7. (algunos
+     electrodos raros usan otras soluciones)
+  ü No se debe guardar el electrodo en agua destilada porque eso causaría que los iones
+     resbalaran por el bulbo de vidrio y el electrodo quedaría inutilizado.
+  ü Nunca tocar un electrodo sensor o celda de referencia con los dedos: la grasa de la piel
+     afecta a las lecturas y puede dañar permanentemente el sensor de pH
+  ü Mover siempre el medidor de pH en el agua o la solución para eliminar burbujas de aire.
+  ü La materia orgánica es enemiga de los electrodos, por lo que hay que limpiarlos mucho e
+     inmediatamente después de su uso. Nunca frotar el bulbo de vidrio porque podemos
+     generar cargas eléctricas que rompen el electrodo.
+  ü Guardar el medidor de pH en un lugar fresco y seco.
+  ü Pueden aparecer adheridos al electrodo restos de sal alrededor del tapón protector
+     cuando se va a utilizar de nuevo, lo cual es normal. Para eliminar esta sal, sumergir en agua
+     del grifo el extremo del electrodo.
+
+B) SALAS BLANCAS
+
+Una sala blanca es, según se recoge en la UNE-EN ISO 14644-1:
+“local en el que se controla la concentración de partículas contenidas en el aire y que además su
+construcción y utilización se realiza de forma que el número de partículas introducidas o
+generadas y existentes en el interior del local sea lo menor posible y en la que además se puedan
+controlar otros parámetros importantes como: temperatura, humedad y presión”.
+
+También debe ser objetivo primordial de las salas blancas la exclusión de cualquier contaminación
+cruzada para prevenir la contaminación de un material o producto con otro.
+
+¿Qué persigue una sala blanca?
+
+Objetivos:
+   • Minimizar riesgos de contaminación
+   • Facilitar la limpieza
+   • Facilitar la validación de los proceso.
+                                                            TÉCNICO FARMACIA SERGAS 7
+                                                                      Tema 13-2ª parte
+
+                                                                              www.premir.es
+
+
+ESTRUCTURA DE UNA SALA BLANCA
+El diseño de las salas se realizará de forma que se cree una caja estanca y hermética, con juntas
+selladas. Los cerramientos y techos para salas blancas deben ser también inertes a los
+microorganismos y presentar un buen comportamiento frente a la acción de diferentes agentes
+
+
+
+
+                                                                                            TEC. FARMACIA SERGAS
+químicos.
+Las salas blancas deben tener juntas selladas y cierres adecuados. Estas características deberán
+verificarse una vez instaladas, y de forma periódica. Las paredes y las uniones de los distintos
+elementos deben rematarse mediante perfil sanitario de mediacaña que faciliten la limpieza.
+Los cerramientos, paredes, suelos y techos para salas blancas deben estar hechos de materiales
+que reúnan las siguientes características:
+    • Inertes a los microorganismos
+    • Buen comportamiento frente a la acción de agentes -químicos
+    • No ceder partículas
+Los ventanales: por seguridad de los manipuladores, el interior de las salas debe ser visible
+desde las salas colindantes. Para ello se instalarán ventanales fijos en los paneles y puertas con
+doble vidrio laminado contra impacto, adaptado al espesor del panel utilizado, logrando una
+continuidad con la superficie del mismo.
+
+De forma general, las salas blancas se dividen en:
+
+Zonas críticas
+   • Zonas críticas especiales
+   • Sala fabricación / zona de pesadas
+   • Sala envasado:
+       o Son costosas: deben ser lo más reducidas posible para garantizar operatividad.
+       o La circulación de personas y materiales está restringida.
+
+Zonas semicríticas
+   • Pasillos
+   • Sas / esclusas
+   • Zona de vestuario para acceso a zona crítica: se diferencia entre la zona limpia (de
+       entrada) y zona sucia (de salida)
+
+Zonas no críticas
+   • Almacenes y despachos
+   • Sala de envasado secundario
+   • Zona de vestuario general
+
+El acceso a estas zonas debe realizarse a través de esclusas reservadas para el personal y/o los
+equipos y materiales.
+Los vestuarios han de estar diseñados como esclusa.
+La preparación estéril de medicamentos incluye la preparación aséptica de productos a partir de
+medicamentos y materias primas estériles o la preparación de productos a partir de principios
+activos no estériles que requieren una esterilización final.
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+Las salas blancas deben mantener un nivel de limpieza adecuado y han de estar dotadas de aire
+filtrado a través de filtros de una eficacia apropiada.
+
+LOCALES Y EQUIPO
+- Las instalaciones y los equipos deben ser adecuados a las operaciones de preparación de
+  medicamentos y no deben suponer un riesgo para su calidad.
+- Para reducir el riesgo de contaminación (p. ej. contaminación cruzada, polvo, suciedad) el
+  diseño de las instalaciones y equipos debe ser adecuado y permitir su fácil limpieza. Cuando
+  se lleven a cabo operaciones de reparación o mantenimiento de los equipos debe realizarse la
+  limpieza y desinfección posterior.
+- Se deben tomar medidas de precaución frente a la entrada de insectos y otros animales
+  (control de plagas).
+- Las actividades de lavado y limpieza no deben ser una fuente de contaminación en sí mismas.
+- Las zonas de preparación, almacenamiento y control de calidad han de ser de acceso
+  restringido a personal autorizado.
+- Las condiciones ambientales durante la preparación, el control de calidad y el
+  almacenamiento deben estar definidas y controladas. Los resultados del control deben
+  registrarse, evaluarse y conservarse. Cuando los resultados estén fuera de los límites
+  establecidos deben adoptarse medidas correctoras.
+- Todas las zonas deben estar limpias, ordenadas y bien iluminadas.
+- Las áreas de distinto nivel de limpieza deben estar separadas por esclusas con el fin de
+  controlar la circulación de aire entre ellas.
+- La preparación de medicamentos debe realizarse de forma centralizada en los servicios de
+  farmacia del hospital. No obstante, algunas operaciones de preparación de medicamentos
+  pueden llevarse a cabo en las unidades de enfermería en planta.
+
+Preparación de medicamentos dentro del servicio de farmacia
+
+Área de preparación
+- El área de preparación de medicamentos ubicada en los servicios de farmacia tiene que estar
+   diseñada, construida y mantenida de forma adecuada, garantizando que es apta para las
+   actividades previstas.
+- La capacidad del área de preparación debe ser suficiente para permitir un flujo de trabajo
+   lógico y una adecuada separación de las actividades en distintas zonas, de tal modo que se
+   minimice el riesgo de confusión entre medicamentos o sus componentes, se evite la
+   contaminación cruzada y se disminuya el riesgo de omisión o ejecución errónea de cualquier
+   fase del proceso.
+- El acceso al área de preparación de medicamentos debe estar restringido al personal
+   implicado en la preparación. Se deben cumplir los requerimientos de vestimenta e higiene
+   para el acceso.
+- El área de preparación se divide en diferentes zonas: las zonas de pesada y muestreo deben
+   estar lo suficientemente separadas de las de preparación, de manera que se evite la
+   contaminación cruzada. Si no es posible disponer de zonas dedicadas para realizar las
+   actividades de control de calidad, estas pueden llevarse a cabo en la zona de preparación
+   siempre que se adopten las medidas necesarias para evitar errores y contaminaciones.
+- La zona de preparación de estériles debe estar separada del resto. Esta zona debe ser una sala
+   blanca, mantener un nivel de limpieza adecuado y estar dotada de aire filtrado a través de
+   filtros de eficacia apropiada. El acceso a esta zona debe realizarse a través de esclusas.
+                                                            TÉCNICO FARMACIA SERGAS 9
+                                                                      Tema 13-2ª parte
+
+                                                                             www.premir.es
+
+
+-   Las preparaciones que por sus especiales características puedan entrañar un peligro para el
+    personal y el medio ambiente (citotóxicos y biopeligrosos) deben realizarse en las unidades
+    centralizadas del servicio de farmacia del hospital. Para este tipo de preparaciones se debe
+    disponer de una zona confinada y exclusiva que asegure la manipulación segura y minimice
+
+
+
+
+                                                                                          TEC. FARMACIA SERGAS
+    los riesgos bajo cabinas de seguridad biológica.
+
+Almacenamiento
+- Las zonas de almacenamiento deben tener la suficiente capacidad como para permitir el
+   almacenamiento ordenado de las diversas categorías de materiales y productos.
+- Los materiales de partida y de acondicionamiento se deben almacenar fuera de las áreas o
+   salas donde están ubicadas las cabinas de flujo laminar de preparación de estériles. El acceso
+   de estos materiales para cada preparación estéril se debe realizar a través de esclusas.
+- Se debe evitar la presencia de materiales que desprenden partículas (p. ej. papel, cartón,
+   madera) dentro de la sala blanca. Los almacenes de cada zona deberán disponer de un stock
+   limitado suficiente para cubrir la actividad de ese día, procediendo a la reposición controlada
+   desde otros almacenes exteriores. Los medicamentos de partida se pueden almacenar de
+   forma ordenada en armarios o cajoneras evitando su exposición.
+- Se ha de disponer de frigoríficos y congeladores para el almacenamiento de los materiales de
+   partida que lo precisen manteniendo el stock adecuado para la actividad controlada y una
+   reposición ordenada desde almacenes exteriores.
+- Los productos biopeligrosos y citotóxicos deben ubicarse en un almacén separado del resto
+   de materiales de partida.
+- Las materias primas pueden almacenarse dentro de la zona de preparación de no estériles de
+   forma ordenada en sus envases dentro de armarios o cajoneras que eviten su exposición y la
+   posible emisión de partículas al ambiente exterior.
+- En el caso de que existan materiales o productos en cuarentena, rechazados, retirados o
+   devueltos debe disponerse de zonas separadas para su almacenamiento y estar claramente
+   identificadas como tales.
+- Se han de especificar y monitorizar las condiciones de almacenamiento (temperatura,
+   protección de la luz y humedad relativa si procede) necesarias para que los materiales o la
+   calidad de las preparaciones no se vean afectadas negativamente.
+- Los controles deben estar enfocados a procurar tales condiciones en todas las áreas de las
+   zonas de almacenamiento.
+
+Zonas auxiliares
+- Las zonas de descanso deben estar separadas de las zonas de preparación de medicamentos.
+- Los aseos, vestuarios y lavabos deben ser de fácil acceso y adecuados al número de usuarios.
+   Los aseos no deben estar en comunicación directa con las zonas de preparación o
+   almacenamiento.
+
+Equipos
+- Los equipos deben estar diseñados, emplazados y mantenidos de forma adecuada a su uso
+   previsto.
+- Deben estar diseñados de forma que puedan limpiarse a fondo de forma fácil. Se han de
+   conservar en estado limpio y seco.
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+- Los equipos de medición, pesada y control deben calibrarse y comprobarse su correcto
+  funcionamiento y recalibrase a intervalos definidos.
+- Las instrucciones de funcionamiento y de mantenimiento han de estar siempre disponibles
+  junto al equipo.
+- Los equipos defectuosos deben retirarse, a ser posible, de las zonas de preparación y control
+  de calidad, o, al menos, deben quedar rotulados claramente como defectuosos.
+- Los locales han de estar en un entorno que, junto con las medidas que se adopten para la
+  protección de la preparación de medicamentos, presenten los menores riesgos posibles para
+  la contaminación de productos o materiales. En el caso de la preparación de citostáticos o
+  radiofármacos, las medidas también deben estar enfocadas a la protección de quienes los
+  manipulan.
+- El nivel de la clasificación de la sala se ha de corresponder con las actividades y los productos
+  a preparar.
+- Las condiciones de cada sala blanca pueden estar especificadas en dos situaciones: “en
+  funcionamiento”, es decir, cuando la sala está funcionando en la forma definida de trabajo y
+  con el número de personas definidas trabajando y “en reposo”, cuando la sala está completa
+  y operativa, con los equipos instalados, pero sin que esté presente el personal.
+
+    En la tabla siguiente se muestra para cada grado la máxima concentración de partículas
+    permitidas en el aire, la filtración y el número de cambios de aire necesario:
+
+
+
+
+-   Las condiciones del estado de “en reposo” se deben alcanzar tras un corto “periodo de
+    limpieza” de 15-20 minutos (valor orientativo), en ausencia de personal, tras la finalización de
+    las operaciones.
+-   Se debe tener en consideración la ubicación y la utilización de los sumideros por su potencial
+    de causar contaminación microbiana. Los sumideros y los lavabos no pueden estar dentro de
+    las salas de preparaciones estériles ni en la última fase de los vestuarios. Si están en las zonas
+    adyacentes, hay que controlarlos y desinfectarlos de forma regular.
+-   Los procedimientos se deben escribir e implementar para todos los equipos utilizados en las
+    operaciones. Cuando corresponda, el equipo se ha de calibrar de forma regular y se ha de
+    comprobar la precisión de los dispositivos de medida de volumen.
+                                                              TÉCNICO FARMACIA SERGAS 11
+                                                                        Tema 13-2ª parte
+
+                                                                                www.premir.es
+
+
+Filtros salas blancas
+
+-   HEPA (High Efficiency Particulate Air Filter). Ej: HEPA 14
+-   ULPA (Ultra Low Particulate Air Filter). Ej: U17
+
+
+
+
+                                                                                             TEC. FARMACIA SERGAS
+-   La filtración es el corazón de las salas blancas. De las diferentes denominaciones a nivel
+    internacional que tienen los filtros absolutos, HEPA es la más conocida.
+-   El control de la temperatura y la humedad en estos espacios es clave. Mediante sistemas de
+    climatización centralizados o distribuidos se controla la temperatura y humedad para
+    conseguir un buen confort, número de renovaciones necesarias por hora y un mínimo
+    consumo. Los sistemas más empleados son mediante bombas de calor o intercambiadores
+    con circulación de vapor, agua (fría/caliente) o expansión directa y sistemas de humidificación
+    o deshumidificación.
+
+Iluminación
+
+          GRADO                 A                 B                 C                 D
+      ILUMINACIÓN        1000 LUX ±25      500 LUX ±25       500 LUX ±25       300 LUX ±25
+
+Vestimenta
+
+-   El tipo de ropa de trabajo y su calidad serán adecuadas al proceso y al grado de la zona de
+    trabajo. Deberá llevarse de forma que proteja al producto de la contaminación. En las áreas en
+    las que se procesen productos biopeligrosos se llevará vestimenta dedicada.
+-   Grado D: debe quedar cubierto el cabello, los brazos y cuando proceda, la barba y el bigote.
+    Debe llevarse un traje protector general y zapatos o cubrezapatos adecuados. Deben tomarse
+    medidas para evitar la entrada en la zona limpia de contaminación procedente del exterior.
+-   Grado C: debe quedar cubierto el cabello, los brazos y cuando proceda, la barba y el bigote.
+    Debe llevarse un traje de una o dos piezas, recogido en las muñecas y con cuello alto, y zapatos
+    o cubrezapatos adecuados. La vestimenta no puede liberar prácticamente ninguna fibra o
+    partícula.
+-   Grado A o B: el cabello y, en su caso, la barba y el bigote se cubren totalmente; hay que llevar
+    una máscara para evitar la caída de gotitas, guantes estériles (de goma o plástico, sin polvos
+    de talco) y calzado esterilizado o desinfectado cubierto con calzas o cubrezapatos adecuados.
+    Debe llevarse un traje de una o dos piezas, recogido en las muñecas y con cuello alto. Las
+    partes inferiores de los pantalones se introducen en el calzado y las mangas en los guantes. La
+    vestimenta no puede liberar fibras o partículas y debe retener las partículas desprendidas por
+    el cuerpo.
+-   La vestimenta de la calle no puede introducirse en los vestuarios que llevan a las salas de grado
+    B y C. Cada vez que un trabajador acceda a las salas de grado A/B debe recibir su vestimenta
+    protectora (traje protector) limpia y estéril y haberse cambiado adecuadamente los cubre
+    zapatos, gorro, mascarilla y recibirá guantes estériles nuevos para cada sesión.
+-   Se recomienda cambiar los guantes estériles de forma periódica (idealmente cada 30
+    minutos), entre preparaciones de lotes de sustancias diferentes, y siempre que se haya
+    comprometido su esterilidad por rotura, contaminación, etc. Solo los guantes estériles de
+    materiales certificados para su desinfección que certifiquen su integridad, capacidad aislante
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+  tras su limpieza con soluciones alcohólicas podrán esterilizarse de forma periódica dentro de
+  la zona A de preparación.
+- Antes de ponerse unos guantes estériles, es necesario realizar un lavado de las manos con
+  soluciones hidroalcohólicas. Si se sale de la cabina, se debe hacer un lavado de manos
+  completo y aplicar posteriormente una solución hidroalcohólica antes de iniciar la nueva
+  preparación.
+- Hay que cambiar las máscaras al menos en cada sesión diaria de trabajo.
+
+MONITORIZACIÓN DE SALAS BLANCAS:
+- La monitorización se realiza para demostrar que el proceso, el personal y las instalaciones
+  están bajo control.
+                                                             TÉCNICO FARMACIA SERGAS 13
+                                                                       Tema 13-2ª parte
+
+                                                                               www.premir.es
+
+
+
+
+                                                                                            TEC. FARMACIA SERGAS
+CLASIFICACIÓN DE CABINAS DE SEGURIDAD BIOLÓGICA (CSB)
+
+Estarán ubicadas dentro de la sala de trabajo de la sala blanca.
+
+"Es una cabina proyectada para ofrecer protección al usuario y al ambiente de los riesgos
+asociados al manejo de material infeccioso y otros materiales biológicos peligrosos, excluyendo
+materiales radiactivos, tóxicos y corrosivos."
+
+                Tipo de CSB         Nivel de        Flujo de aire        Filtros
+                                   protección
+               Clase I           Protección al     Flujo de aire     Filtro HEPA en
+                                 personal y al     hacia el          la salida
+                                 ambiente, no al   interior, no
+                                 producto          estéril
+               Clase II          Protección al     Flujo laminar     Filtros HEPA
+                                 personal,         vertical,         en entrada y
+                                 producto y        parcialmente      salida
+                                 ambiente          recirculado
+               Clase III         Máxima            Sistema           HEPA entrada
+                                 protección a      cerrado y         y doble HEPA
+                                 todo nivel        presurizado       o incinerador
+                                                   negativamente     en salida
+
+— Clase I: Su fundamento es similar al de una campana de humos, es una cabina que trabaja a
+presión negativa y está abierta frontalmente. El uso de estas cabinas no previene la exposición
+por contacto a materiales peligrosos. Así como tampoco garantizan la protección, en caso de que
+se requiera, del producto manipulado.
+
+— Clase II: Este tipo de cabinas se desarrolló para proteger a los trabajadores de los materiales
+manipulados y para al mismo tiempo, proteger dichos materiales de la contaminación externa.
+El área de trabajo es recorrida por un flujo descendente de aire filtrado estéril (Flujo Laminar
+Vertical). El sistema de filtración (Filtros HEPA) del aire puede variar según los fabricantes, pero
+tanto el aire recirculado como el extraído deben ser filtrados al menos una vez.
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+El aire que entra en la cabina no pasa directamente sobre el área de trabajo, se aspira mediante
+presión negativa, es filtrado y vuelve a circular hacia abajo, hacia el área de trabajo que queda de
+este modo limpia.
+Existen varios tipos de cabinas de Clase II:
+
+• Tipo A1: Recircula el 70% del aire circulante y expulsan el 30% restante al propio recinto donde
+está la cabina.
+• Tipo A2: Recircula el 70% del aire y extrae el 30% al exterior.
+• Tipo B1: Recircula el 30% del aire circulante y expulsa el 70% al exterior.
+• Tipo B2: No hay recirculación de aire, expulsan el 100% del aire circulante.
+Las Cabinas de seguridad Biológicas deberán ir provistas de algún sistema de alarma para la
+detección de colmatación de filtros absolutos HEPA.
+
+
+ Subtipo clase II         % Aire                  % Aire                   Observaciones
+                        recirculado             expulsado
+ Tipo A1                    70%                    30%               No apta para químicos
+                                                                     tóxicos o volátiles
+ Tipo A2                       70%                     30%           Adecuada para citostáticos
+                                                    (filtrado)       con filtros HEPA adecuados
+ Tipo B1                       30%                     70%           Útil con algunos químicos;
+                                                                     parte del aire va al exterior
+ Tipo B2                       0%                     100%           Recomendada                para
+                                                                     citostáticos o NIOSH; todo el
+                                                                     aire se expulsa al exterior
+— Clase III: Aisladores. Son compartimentos de trabajo totalmente cerrados de forma que la zona
+de trabajo queda completamente aislada. Deberán estar dotadas de exclusas para la entrada y
+salida de materiales. Se utilizan para trabajar con agentes del grupo de riesgo como biopeligrosos
+o citostáticos. Precio elevado.
+
+Para la manipulación de medicamentos peligrosos como los citostáticos o los incluidos en la lista
+NIOSH, se recomienda emplear cabinas Clase II tipo B2, clase 100, que expulsen el 100% del aire
+al exterior, o como alternativa mínima, Clase II tipo A2 con filtros adecuados y sistema de
+extracción externo. Las Clase III pueden usarse en situaciones de alto riesgo o producción
+industrial. Las Clase I no son adecuadas para este tipo de medicamentos.
+
+Selección de la cabina de seguridad biológica
+Las Cabinas de Seguridad Biológica constituyen el principal elemento del equipo de contención
+física, actuando como barreras que evitan el paso de los aerosoles generados en su interior al
+ambiente del local de trabajo. Así pues, la selección del tipo de cabina más adecuado deberá
+basarse en los siguientes criterios:
+
+   •   Riesgos que presenta el material manipulado.
+   •   Posible generación de aerosoles debidos a las técnicas manipulativas empleadas.
+   •   Grado de protección a obtener frente a la contaminación ambiental.
+                                                              TÉCNICO FARMACIA SERGAS 15
+                                                                        Tema 13-2ª parte
+
+                                                                                 www.premir.es
+
+
+Cabinas de flujo laminar horizontal: Salas de preparación de medicamentos estériles NO
+peligrosos. En la cabina de flujo laminar horizontal el aire filtrado proviene de la parte posterior,
+pues es ahí donde se encuentra el filtro HEPA. El aire atraviesa la cámara principal en una corriente
+unidireccional horizontal y es expulsado por la abertura frontal.
+
+
+
+
+                                                                                              TEC. FARMACIA SERGAS
+El sistema de flujo laminar horizontal permite trabajar en condiciones de esterilidad y ausencia de
+partículas mediante el principio de barrido continuo de la zona de trabajo, garantizando la total
+protección del producto.
+Se emplea en preparaciones de nutrición parenteral, colirios, y cualquier preparación que exija la
+esterilidad de la misma, ensayos de microorganismos no patógenos o patógenos, controles
+microbiológicos, cultivos celulares, ensayos con virus…
+
+Cabinas de flujo laminar vertical: Salas de preparación de medicamentos estériles peligrosos. El
+aire limpio proviene del techo ya que es donde se ubica el filtro del aire, y este atraviesa la cámara
+hacia el suelo. Posteriormente es expulsado por la abertura delantera del recinto tal y como ocurre
+con las cabinas de flujo laminar horizontal.
+El aire circula de arriba hacia abajo con el fin de conseguir la esterilidad en el interior y no sale
+nunca hacia fuera, para proteger al operador y al medio ambiente.
+Estas cámaras se emplean para la preparación de cistostáticos y medicamentos biopeligrosos
+(hazardaus drugs).
+
+Las cabinas deben estar encendidas las 24 horas. Si esto no es posible, antes de pagar se cerrará
+el frontal. Al encenderla, se espera un mínimo de 15 minutos antes de empezar a trabajar.
+
+Salas blancas y presión en interior de salas y presalas:
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+Limpieza
+
+-   Las salas blancas deben limpiarse con regularidad según procedimientos escritos y aprobados.
+    El personal que realice tareas de limpieza debe haber recibido formación adecuada y se debe
+    evaluar su competencia antes de comenzar a trabajar
+-   Los equipos dedicados deben emplearse y guardarse de tal modo que se minimice la
+    contaminación microbiológica. Las mopas deben desecharse o volver a esterilizarse después
+    de cada sesión de limpieza.
+-   Los agentes de limpieza y desinfección deben estar libres de microrganismos viables y los que
+    se utilizan en las salas de grado A y B deben ser estériles y estar libres de esporas.
+-   La eficacia de la limpieza debe demostrarse sistemáticamente mediante muestreo
+    microbiológico de las superficies (p. ej. con placas de contacto o hisopos).
+-   Periódicamente deben utilizarse productos esporicidas para reducir la contaminación de los
+    microorganismos que forman esporas.
+-   Para la limpieza periódica de paredes estanterías y techos de las salas blancas se recomienda
+    el uso de paños estériles que no liberen partículas y soluciones acuosas como agua estéril.
+-   Deben utilizarse agentes de limpieza específicos frente virus para descontaminar las zonas
+    donde se manipulen productos sanguíneos o víricos.
+-   Los envases de alcohol estériles y otros productos introducidos en las salas limpias deben
+    tener definida una caducidad tras su apertura.
+-   Lavarse las manos antes de entrar en la sala.
+-   La limpieza debe realizarse desde las zonas más limpias a las más sucias.
+-   Sala no peligrosos: gorro, guantes desechables, bata, calzas y mascarilla.
+-   Sala fármacos peligrosos: EPI (equipos de protección individual).
+-   Hincapié en zonas de contacto frecuente por el personal: pomos puertas, interruptores…
+-   Las superficies deben quedar secas sin rastro de humedad.
+-   El mobiliario, mesa de trabajo y suelo debe limpiarse diariamente
+-   Paredes, techos y exterior de la cabina semanal (a definir por el Servicio de Farmacia).
+-   Limpieza del suelo: con agua y detergente con hipoclorito sódico 0,1%
+-   Superficies horizontales y verticales: rociar con agua y detergente con hipoclorito sódico 0,1%
+    y utilizar soluciones de amonio cuaternario a las zonas metálicas.
+
+Limpieza por arrastre
+
+    •   Eliminar la materia orgánica, reducir la carga microbiana, y eliminar por arrastre los
+        posibles restos de medicamento.
+    •   Agente limpiador adecuado para acero inoxidable y demás materiales empleados en las
+        cabinas. Se debe realizar con la cabina encendida y sin retirar las partes móviles.
+    •   Los detergentes (catiónicos o alcalinos) deben diluirse correctamente según las
+        indicaciones del fabricante.
+    •   Aclarar abundantemente utilizando agua destilada, o al menos desmineralizada, en el
+        último aclarado.
+    •   Se debe evitar la limpieza directa con pulverizadores para evitar dañar los filtros HEPA.
+    •   Por otro lado, algunos centros incluyen una limpieza semanal con un limpiador enzimático
+    •   Periódicamente deben utilizarse productos esporicidas, (no se especifica frecuencia) y
+        agentes de limpieza específicos frente virus para descontaminar las zonas donde se
+        manipulen productos sanguíneos o víricos.
+                                                          TÉCNICO FARMACIA SERGAS 17
+                                                                    Tema 13-2ª parte
+
+                                                                           www.premir.es
+
+
+Desinfección
+     • Tras limpieza de arrastre y aclarado
+     • Envases del menor volumen posible
+     • Especificar la fecha de caducidad una vez abiertos.
+
+
+
+
+                                                                                        TEC. FARMACIA SERGAS
+     • Estos desinfectantes deben ser estériles como alcohol de 70 º (En el mercado hay varios
+         proveedores de mopas o toallitas impregnadas, y desinfectantes esterilizados como
+         Sanit Surfa®, IPA Premium®, Clearklean®).
+     • Los paños también deben ser estériles y no liberar partículas.
+     • Debe realizarse antes y después de cada sesión de trabajo
+
+
+En caso de derrames
+      • Arrastre siguiendo sentido flujo del aire y desde las áreas de menor a mayor
+         contaminación
+      • La limpieza se realizará con la cabina encendida y las partes móviles se limpiarán sin
+         extraerlas del interior
+Procedimientos periódicos
+Procedimientos periódicos, más profundos, y que pueden variar según los controles de limpieza
+u otras características del centro.
+Disminuir contaminación ambiental fármacos peligrosos
+   • Limpieza de arrastre con detergente alcalino.
+   • Algunos centros, incorporan una limpieza por arrastre adicional con solución alcalina
+      previamente a la desinfección.
+   • Esta limpieza no debe sustituir en ningún caso la limpieza con detergente.
+Derrames
+   • Riesgo elevado de exposición a fármacos peligrosos
+   • El personal debe de conocer el procedimiento establecido
+   • Fácil acceso al kit de derrames
+   • Debe registrarse
+
+Procedimiento de derrame en cabina
+- Evitar formación de aerosoles:
+    · Líquidos: gasas secas
+    · Sólidos y polvo: gasas húmedas con alcohol
+- Si hay restos de vidrio, recoger con pinzas a contenedor rígido con cuidado de no cortarse
+- Limpiar la CSB
+- Filtro HEPA: interrumpir la utilización de la cabina hasta que se remplace el filtro
+
+Procedimiento de derrame en Sala
+- Zona de paso: aislar la zona
+- Vestimenta con la ropa del EPI
+- Si hay restos de vidrio, recoger con pinzas
+- Evitar formación de aerosoles:
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+   · Líquidos: polvo coagulante o talla absorbente
+   · Sólidos y polvo: gasas húmedas
+- Limpieza de zona menos contaminada a más contaminada
+- Recoger los residuos con la ayuda de escobilla y recogedor. Tratar como material
+  contaminado.
+- Lavar las áreas afectadas tres veces con una solución detergente seguida de agua limpia
+
+Manejo de Cabina seguridad y precauciones
+
+-   Encender la cámara 20 minutos antes de empezar a trabajar para que se cree en el interior una
+    zona de aire estéril.
+-   El técnico debe realizar un lavado quirúrgico de manos y colocarse prendas de protección
+    adecuadas para acceder a la zona de la cámara: calzas, gorro, bata cerrada y guantes estériles.
+-   Limpiar con gasa estéril impregnada en productos adecuados (el fabricante de la cabina de
+    flujo laminar indicará cuales, generalmente, una solución detergente-esterilizante, alcohol 70ª
+    y/o hipoclorito sódico 1%) desde la zona del fondo hacia fuera y de arriba abajo, aclarando
+    finalmente o entre cada paso con agua destilada.
+-   No se debe colocar ningún objeto delante de la entrada de aire ni bloquear la rejilla de salida.
+-   Los derrames que se produzcan en la cabina deben limpiarse inmediatamente, y se debe
+    esperar 10 minutos desde que se finaliza la limpieza, antes de continuar el trabajo.
+-   Cuando se ha terminado el trabajo, se recoge todo el material y se lavan las superficies con
+    alcohol de 70º o cualquier otro desinfectante adecuado para los agentes utilizados.
+-   Finalmente, antes de salir del laboratorio, se debe quitar la bata, los guantes y cualquier otro
+    material de protección personal y lavarse minuciosamente las manos.
+-   El trabajo en cabina de flujo laminar vertical supone una serie de características especiales en
+    cuanto a la vestimenta del operador, para garantizar su protección frente los medicamentos
+    que manipula: es lo que se denomina EPI o equipo de protección individual, que está formado
+    por (y en este orden):
+    • calzas
+    • gorro
+    • Mascarilla homologada de protección respiratoria contra aerosoles y partículas, tipo FFP3
+         (Filtran partículas de tamaño igual o superior a 0.6 µm). No son válidas las de tipo
+         quirúrgico.
+    • Lavado quirúrgico de manos y secado
+    • Bata de alta protección: Bata estéril, desechable, de baja permeabilidad, apertura trasera y
+         con el cuello y puños elásticos y ajustables, impermeable en zona delantera (pecho y
+         vientre) y mangas.
+    • Ya dentro de sala: desinfección de manos con antiséptico, dejar secar
+    • Guantes estériles de protección exentos de talco tapando las mangas de la bata. El material
+         pueden ser látex u otro material de baja permeabilidad (nitrilo, neopreno, entre otros),
+         pero no nunca cloruro de polivinilo por ser permeable a algunos citotóxicos. Debe
+         utilizarse doble par de guantes, intercalándolos con el puño de la manga de la bata: el
+         primer par por debajo de la manga de la bata y el segundo por encima de ésta. Durante el
+         proceso de elaboración continuado en CFL deben sustituirse cada 30 minutos por unos
+         nuevos.
+                                                            TÉCNICO FARMACIA SERGAS 19
+                                                                      Tema 13-2ª parte
+
+                                                                              www.premir.es
+
+
+           1.1.2.- Material y aparataje específico
+
+Podemos definir las operaciones básicas galénicas como los procedimientos para la preparación
+
+
+
+
+                                                                                           TEC. FARMACIA SERGAS
+u obtención de las materias primas necesarias para elaborar las distintas formas farmacéuticas, así
+como las técnicas empleadas para elaborar éstas a partir de aquéllas. Cada una de ellas tiene un
+objetivo y equipos específicos que permiten realizarla.
+
+
+      OPERACIÓN GALÉNICA    EQUIPO
+                              o Mortero
+       DIVISIÓN DE SÓLIDOS
+                              o Molinos
+                              o Tamiz
+           TAMIZACIÓN
+                              o Tamizadora
+ HOMOGENEIZACIÓN DE SÓLIDOS   o Mortero y pistilo
+                              o Mezcladores, homogeneizadores o bombos
+      HOMOGENEIZACIÓN DE      o Agitadores
+             LÍQUIDOS         o Reactores
+                              o Equipos de secado:
+                                     • Transmisión de calor por conducción
+           DESECACIÓN
+                                     • Transmisión de calor por convección
+                                     • Transmisión de calor por radiación
+                              o Lixiviadores o percoladores
+           EXTRACCIÓN
+                              o Sohxlet o extractor por contacto múltiple
+      OPERACIÓN GALÉNICA      o EQUIPO
+           DESTILACIÓN        o Destilador
+          EVAPORACIÓN         o Evaporador
+          LIOFILIZACIÓN       o Liofilizador
+                              o Filtros de celulosa
+                              o Filtros de membrana
+                              o Filtros de vidrio poroso
+            FILTRACIÓN        o Filtros de materiales plásticos
+                              o Filtros de lana de vidrio
+                              o Filtros prensa
+                              o Filtros rotatorios
+         ESTERILIZACIÓN       o Autoclave
+(Más ampliado en tema 14)
+
+       1.2.- TIPOS DE LABORATORIO GALÉNICO
+
+      El utillaje mínimo del laboratorio galénico de cualquier oficina de farmacia o servicio
+farmacéutico dependerá de las preparaciones y de la tecnología empleada.
+Según el RD 175/2001, es necesario tener:
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+A. Equipamiento general:
+   a) Balanza con precisión de 1 mg.
+   b) Aparatos de medida de volumen de 0,5 ml hasta 500 ml (matraces aforados de distintas
+      capacidades, probetas, pipetas etc.).
+   c) Mortero de vidrio y/o porcelana.
+   d) Sistema de baño de agua.
+   e) Agitador.
+   f) Espátulas de metal y de goma.
+   g) Termómetro.
+   h) Material de vidrio diverso (vasos de precipitados, matraces cónicos, embudos, vidrio de
+      reloj, etc.).
+   i) Lente de aumento.
+   j) Sistema de producción de calor.
+
+B. Equipamiento específico.
+   1. Se corresponderá con el necesario, según la forma galénica y tipo de preparación.
+      a) Tamices para polvo grueso, fino y muy fino.
+      b) Sistema para determinar el pH.
+      c) Sistema para medir el punto de fusión.
+      d) Si se elaboran cápsulas se dispondrá de, al menos, una capsuladora con un juego
+          completo de placas.
+      e) Si se elaboran óvulos o supositorios, se deberá disponer de los correspondientes
+          moldes.
+   2. Si se elaboran comprimidos y/o grageas será obligatorio el utillaje siguiente:
+      a) Mezcladora.
+      b) Máquina de comprimir.
+      c) Bombo de grageado.
+   3. Si se elaboran preparaciones oftálmicas, inyectables u otros preparados estériles, será
+      necesario disponer de:
+      a) Autoclave.
+      b) Dosificadores de líquidos.
+      c) Equipo de filtración esterilizante.
+      d) Campana de flujo laminar.
+      e) Horno esterilizador y despirogenador de calor seco.
+      f) Homogeneizador.
+      g) Equipo para cerrar ampollas y capsular viales.
+      h) Sistema de lavado de material adecuado.
+      i) Estufa.
+      j) Placas Petri.
+   4. Si se elaboran liofilizados, ha de tener:
+      a) Liofilizador.
+      b) Nevera con congelador.
+   5. Si se elaboran píldoras, se dispondrá de un pildorero.
+   6. Para la elaboración de gránulos o glóbulos de homeopatía, se deben tener sistemas de
+      impregnación y dinamización.
+   7. Si se elaboran fórmulas magistrales con productos fácilmente oxidables, deberá disponer
+      de una campana para trabajar con gas inerte.
+                                                              TÉCNICO FARMACIA SERGAS 21
+                                                                        Tema 13-2ª parte
+
+                                                                                www.premir.es
+
+
+    8. Para realizar las determinaciones analíticas de las materias primas y productos elaborados,
+       se dispondrá de los aparatos necesarios para cada caso, en conformidad con lo establecido
+       en la Real Farmacopea Española y el Formulario Nacional.
+Se pueden distinguir varios niveles de elaboración:
+
+
+
+
+                                                                                             TEC. FARMACIA SERGAS
+              1.2.1. NIVEL I
+
+       El nivel I corresponde a aquellos laboratorios galénicos que preparan formas farmacéuticas
+de uso tópico.
+
+Utillaje mínimo:
+        - Balanza de precisión de 1 mg
+        - Agitador magnético o de hélice con/sin calefacción
+        - Mortero de vidrio y/o porcelana
+        - Espátulas de metal y de goma
+        - Sistema de baño de agua/baño María
+        - Sistema de producción de calor/placa calefactora
+        - Sistema para la determinación del pH
+        - Material de vidrio diverso (vasos de precipitados, matraces cónicos, embudos, vidrio de
+            reloj, …)
+        - Aparatos de medida de volumen de 0,5 mL hasta 500 ml (matraces aforados de distinta
+            capacidad, probetas, pipetas, …)
+        - Filtros adecuados
+        - Lente de aumento
+        - Termómetro
+
+              1.2.2. NIVEL II: “Formas farmacéuticas orales y rectales líquidas”
+
+         Además de los requisitos establecidos para el nivel 1, deberán disponer del siguiente
+utillaje y material específico:
+         - Bibliografía específica para este tipo de formas farmacéuticas
+         - Tamices para polvo grueso, fino y muy fino
+
+              1.2.3. NIVEL III: “Formas farmacéuticas orales, rectales y vaginales sólidas”
+
+         Además de los requisitos establecidos para los niveles 1 y 2, deberán disponer del siguiente
+utillaje y material específico:
+         - Bibliografía específica para este tipo de formas farmacéuticas
+         - Capsulador manual, semiautomático o automático, con juego completo de placas.
+            Material y utillaje opcional:
+         - Supositorios: molde de supositorios, baño termostático y sistema para medir el punto
+            de fusión
+         - Óvulos: molde de óvulos, baño termostático y sistema para medir el punto de fusión
+         - Píldoras: pildorero
+         - Comprimidos: máquina de comprimir y mezcladora
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+     - Grageas: máquina de comprimir, mezcladora y bombo de grageado
+     - Gránulos o glóbulos de homeopatía: sistemas de impregnación y dinamización
+
+               1.2.4. NIVEL IV: “Formas farmacéuticas estériles”
+
+    1. Además de los requisitos establecidos para los niveles 1 y 2, deberán disponer del siguiente
+       utillaje y material específico:
+        - Autoclave
+        - Dosificadores de líquidos
+        - Equipo de filtración esterilizante
+        - Campana de flujo laminar
+        - Horno esterilizador y despirogenizador de calor seco
+        - Homogeneizador
+        - Equipo para cerrar ampollas y capsular viales
+        - Sistema de lavado de material adecuado
+        - Estufa
+        - Placas petri
+        - Liofilizador y nevera con congelador (opcional, si se elaboran o pretenden elaborar
+            liofilizados)
+
+
+
+
+2. LIMPIEZA, DESINFECCIÓN Y ESTERILIZACIÓN DEL MATERIAL DE
+    LABORATORIO.
+Definiciones generales relacionadas con la limpieza, desinfección y esterilización:
+
+-   Condiciones limpias: condiciones en las que las superficies han sido limpiadas
+    satisfactoriamente y presentan mínimos niveles de materia orgánica o inorgánica.
+-   Desinfección: proceso por el que se destruyen los microorganismos de los objetos inanimados,
+    excepto las esporas bacterianas. Puede realizarse por métodos químicos o físicos.
+-   Desinfectante de alto nivel: desinfectante que destruye todos los microorganismos excepto
+    las esporas bacterianas.
+-   Desinfectante de bajo nivel: desinfectante que destruye la mayor parte de formas vegetativas
+    bacterianas y hongos y los virus lipofílicos.
+-   Desinfectante de nivel intermedio: desinfectante que destruye todas las formas vegetativas
+    bacterianas, los hongos y todo tipo de virus.
+-   Desinfectante: agente antimicrobiano aplicado a objetos inanimados con el fin de destruir los
+    microorganismos existentes.
+-   Detergente: compuesto o mezcla de compuestos utilizados para la limpieza de objetos
+    inanimados.
+-   Enzimas: proteínas que descomponen catalíticamente albúminas, carbohidratos y grasas en
+    condiciones de aplicación suaves y los con vierten en materiales hidrosolubles.
+-   Esterilización: proceso por el que se destruye toda forma de vida microbiana, incluidas las
+    esporas.
+-   Limpieza: acción de arrastre de la materia ajena al objeto que se desea limpiar mediante agua,
+    detergente y acción mecánica.
+                                                                 TÉCNICO FARMACIA SERGAS 23
+                                                                           Tema 13-2ª parte
+
+                                                                                    www.premir.es
+
+
+-   Material crítico: material en contacto con tejidos estériles o el sistema vascular. Requiere
+    esterilización para su uso clínico.
+-   Material no crítico: material en contacto únicamente con piel intacta. Requiere desinfección
+    de nivel intermedio o bajo para su uso clínico.
+
+
+
+
+                                                                                                  TEC. FARMACIA SERGAS
+-   Material quirúrgico reutilizable: instrumento destinado a fines quirúrgicos para cortar,
+    perforar, serrar, escarificar, raspar, pinzar, retraer, recortar u otros procedimientos similares, sin
+    estar conectado a ningún producto sanitario activo, y que puede volver a utilizarse una vez
+    efectuados todos los procedimientos pertinentes.
+-   Material semicrítico: material en contacto con mucosas o piel no intacta. Requiere
+    desinfección de alto nivel para su uso clínico.
+-   Pre-limpieza: enjuagado o insuflación con detergente dirigido a eliminar de modo mecánico
+    la materia orgánica y a evitar la desecación de la misma.
+-   Producto de un solo uso: producto destinado a ser utilizado una sola vez en un único paciente.
+-   Producto invasivo: producto que penetra parcial o completamente en el interior del cuerpo,
+    bien por un orificio corporal o bien a través de la superficie corporal.
+
+La limpieza es el proceso mecánico a través del cual se elimina por arrastre la suciedad visible y la
+materia orgánica o inorgánica adherida a una superficie u objeto.
+En el laboratorio hay que trabajar en las mejores condiciones de limpieza y asepsia posibles para
+evitar interferencias de restos de suciedad como materia orgánica, grasa, sustancias químicas o
+microorganismos que se pudieran encontrar en el material y en el ambiente.
+Así, se entiende por asepsia la ausencia de contaminación o suciedad y por antisepsia la técnica
+utilizada para combatir la suciedad, como el empleo de sustancias químicas para inhibir o reducir
+el número de microorganismos, sobre todo patógenos o materia orgánica.
+Decimos que un medio es séptico cuando en él pueden estar presentes microorganismos
+patógenos, mientras que aséptico cuando está exento de ellos.
+La asepsia es el conjunto de técnicas que garantizan la ausencia de gérmenes o microorganismos
+infecciosos, tanto en la superficie de los materiales expuestos o de los seres vivos, como en la
+profundidad.
+
+Es imprescindible lograr la desaparición de restos orgánicos y/o químicos sobre la superficie del
+material, ya que su presencia impide el contacto de los agentes microbicidas con la superficie del
+mismo. Es por ello que todo material que no pueda ser previamente lavado, no podrá ser
+desinfectado ni esterilizado.
+Debemos tener en cuenta una serie de factores que afectan al proceso de limpieza como son el
+agua (cuya calidad y pureza debe ser óptima), los detergentes (con los que se deberán cumplir sin
+falta las indicaciones del fabricante referentes a concentración, temperatura
+y tiempo que se ha de mantener la misma) y la acción mecánica que se aplica con el frotado,
+cepillado o rociado a presión, además del uso de sistemas de ultrasonido que se utilizan en
+ocasiones de forma complementaria para material determinado material.
+
+El lavado debe realizarse en áreas destinadas a este fin, separadas de las zonas de asistenciales y
+de almacenamiento de material limpio y/o estéril.
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+Los detergentes son sustancias químicas de poder surfactante con capacidad para emulsionar
+aceites y arrastrar la suciedad adherida a la superficie de los objetos inanimados o los tejidos vivos.
+Se utilizan para reducir la presencia de agentes contaminantes sobre un
+producto sanitario en la medida que sea necesario para el siguiente paso del tratamiento o
+para la utilización. Los productos químicos que se utilicen para el tratamiento de productos
+sanitarios en Europa, deben haber sido desarrollados, comprobados y fabricados de acuerdo con
+la Directiva europea de productos sanitarios. Son productos sanitarios de clase I, y deben llevar
+marcado CE.
+
+Productos para el pre-tratamiento: pueden ser productos de limpieza o antimicrobianos (p. ej.
+bacteriostáticos), o también desinfectantes, que se utilizan antes del procedimiento de limpieza y
+desinfección manual o preferentemente mecánico: geles pulverizados, productos de evacuación
+en húmedo, etc.
+Los productos que se utilizan tanto para lavado manual como mecánico, se distinguen
+básicamente en los siguientes tipos:
+● Productos de limpieza con pH neutro con/sin enzimas. Para el lavado manual de material clínico,
+se recomienda el uso de detergentes neutros enzimáticos (proteasa, amilasa, lipasa y celulasa en
+detergentes de última generación).
+● Productos de limpieza ligeramente alcalinos con/sin enzimas.
+● Productos de limpieza alcalinos con/sin tensioactivos: suelen utilizarse para el lavado
+automático
+● Productos de limpieza con efecto antimicrobiano (productos combinados de limpieza y
+desinfección).
+
+Además, en el lavado automático se puede añadir:
+• Neutralizadores: ácidos a base de ácido cítrico o fosfórico, para neutralizar la alcalinidad y
+   facilitar la eliminación del producto de limpieza.
+• Productos de aclarado: se añaden al agua del último aclarado para facilitar el secado
+   reduciendo la tensión superficial del agua.
+• Productos de conservación: aceites de parafina y emulsionantes para lubricar las superficies
+   de fricción del material articulado.
+
+   2.1. MÉTODOS O PROCEDIMIENTOS DE LIMPIEZA
+
+En principio la limpieza de todo aquel instrumental sanitario deberá
+comprender los siguientes pasos fundamentales:
+   • Limpieza.
+   • Desinfección.
+   • Enjuague o aclarado.
+   • Secado.
+   • Lubrificación, cuando sea necesario.
+Para proceder a la desinfección, por norma general, se debe sumergir
+todo el instrumental directamente en una solución desinfectante
+adecuada y durante un período suficiente (cuando se trata de un producto comercializado es
+necesario seguir las recomendaciones del fabricante).
+                                                            TÉCNICO FARMACIA SERGAS 25
+                                                                      Tema 13-2ª parte
+
+                                                                              www.premir.es
+
+
+La limpieza propiamente dicha, no es un proceso que pueda sustituir a los procesos de
+desinfección y esterilización, pero al disminuir en gran medida la carga microbiana, hace que éstos
+sean más rápidos y efectivos.
+
+
+
+
+                                                                                           TEC. FARMACIA SERGAS
+La limpieza del instrumental puede llevarse a cabo de dos formas básicas: manual y mecánica, con
+las mismas precauciones que las adoptadas para la limpieza del material en general.
+
+El enjuague es una operación que debe realizarse a fondo y no habrá una buena limpieza si no se
+lleva a cabo un aclarado en profundidad.
+
+Con objeto de evitar la corrosión, el instrumental debe de ser secado lo antes posible.
+
+Mediante el lubrificado final, se acondiciona y prolonga la vida del instrumental que lo requiera.
+La comprobación de si el material ha sido deteriorado durante el proceso de limpieza y
+descontaminación es necesaria, y debe realizarse cuando éste se encuentre a temperatura
+ambiente.
+
+              2.1.1. Métodos de limpieza manual
+
+La limpieza manual debe llevarse a cabo con agua y sustancias detergentes. Se pueden utilizar
+cepillos para facilitar el proceso.
+Es el método de elección para centros en los que no se dispone de equipos de lavado automático
+y para productos que no pueden procesarse por este método por indicación del
+fabricante (no permiten inmersión o son termolábiles).
+Limpieza manual con inmersión: sumergir el material inmediatamente después de su uso.
+Utilizar equipos de protección universales: guantes (preferiblemente de nitrilo anti-corte), bata
+impermeable, pantallas protectoras de ojos.
+Eliminar previamente bajo chorro de agua fría los restos macroscópicos antes de la inmersión.
+Sumergir completamente el instrumental respetando las indicaciones del fabricante en cuanto a
+bio-compatibilidad y condiciones de aplicación. Se suele recomendar el uso de detergentes
+enzimáticos a una temperatura del agua entre 40° y 50°.
+Una vez abierto y desmontado el material, cepillar ranuras y articulaciones con cepillos no
+abrasivos. Irrigar con jeringa conductos y tubuladuras. Aclarar abundantemente en otro
+recipiente con agua limpia los restos de detergente. Secar inmediatamente con paños limpios sin
+pelusa o con pistola de aire. Guardar en lugar seco y protegido hasta realizar su inspección previa
+a su desinfección y/o esterilización.
+Limpieza manual sin inmersión: utilizar equipos de protección universales: guantes
+(preferiblemente de nitrilo anti-corte), bata impermeable, pantallas protectoras de ojos. Sumergir
+una compresa limpia en la solución de detergente enzimático. Posteriormente escurrirla al
+máximo. Frotar la superficie en sentido unidireccional descendente, del extremo más limpio al
+más sucio. Utilizar para el aclarado otra compresa escurrida de agua limpia en el mismo sentido.
+Para secar utilizar otra compresa limpia y seca en sentido unidireccional y descendente.
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+           2.1.2. Métodos de limpieza mecánicos
+
+• Lavadoras:
+La limpieza mecánica del instrumental se realiza mediante máquinas lavadoras. En ellas, durante
+el proceso de lavado, el material debe estar colocado lo suficientemente holgado, y evitando el
+exceso de carga, para evitar roces y choques que puedan deteriorarlo garantizando así la limpieza
+de todas las superficies.
+Si el material que se va a lavar a máquina contiene abundantes restos orgánicos (mezcla crómica
+o agua regia), es necesario proceder previamente a una limpieza con cepillo manual para
+conseguir buenos resultados finales. La mezcla crómica es útil para limpieza y desengrasado de
+material de vidrio. Es muy corrosiva. Requiere aclarado exhaustivo repetidas veces.
+La lavadora es el mejor método para estandarizar la limpieza y la desinfección, evitando la
+manipulación, riesgos del operario y la dispersión de microorganismos.
+Ofrece la posibilidad de hacer desinfección tras la fase de lavado ya sea térmica o termo-química.
+Aporta calidad de limpieza, ecológico por el ahorro de agua y detergente.
+
+Si el instrumental ha requerido de un tratamiento previo por suciedad problemática, a
+mano o en ultrasonidos, habrá que realizar un aclarado minucioso.
+Colocar la carga correctamente en las bandejas (piezas insertables, soportes, etc.), de
+modo que todos los objetos queden expuestos al rociado de las toberas. Los instrumentos
+articulados deben colocarse abiertos.
+Las bandejas no deben sobrecargarse; solo así queda garantizado que el instrumental recibe
+suficiente agua por todas partes. Los instrumentos muy grandes deben colocarse en las bandejas
+de forma que no proyecten «sombras de lavado» sobre el resto del instrumental e impidan su
+limpieza. El instrumental más sucio se debe colocar en la parte más baja de la lavadora.
+
+• Sistemas de ultrasonidos:
+La limpieza por ultrasonidos se realiza en cubas específicas con solución de detergente, como
+complemento de la limpieza. Actúan por el principio de cavitación (fenómeno físico donde se
+forman y colapsan burbujas de vapor en un líquido debido a cambios rápidos en la presión),
+facilitando el desprendimiento de los restos orgánicos de la superficie del instrumental.
+Su uso está indicado:
+     • Como método mecánico de apoyo de los procesos de limpieza manuales.
+     • Para eliminar los restos de suciedad incrustados antes o después del lavado automático.
+     • Para la desinfección en tiempo reducido con una limpieza intensiva simultánea.
+Procedimiento
+Utilizar equipos de protección universales: guantes (preferiblemente de nitrilo anti-corte), bata
+impermeable, pantallas protectoras de ojos.
+Utilizar detergentes con baja formación de espuma. Respetar las indicaciones del fabricante en
+cuanto a bio-compatibilidad y condiciones de aplicación. Cambiar la solución frecuentemente y
+siempre que tenga restos evidentes de suciedad. Llenar la cuba hasta la señalización del nivel
+(2/3 aproximadamente). Abrir y/o desmontar el instrumental y cubrir completamente por la
+solución. Las articulaciones, si las poseen, abiertas y evitando que los de mayor tamaño
+produzcan zonas de “sombra” donde las ondas ultrasónicas no puedan acceder.
+El material debe colocarse en cestillos metálicos multiperforados, sin sobrecargar la cuba.
+El tiempo del ciclo se programará en base al grado de suciedad, oscilando normalmente entre los
+3 y 15 minutos, en torno a los 35 kHz.
+                                                             TÉCNICO FARMACIA SERGAS 27
+                                                                       Tema 13-2ª parte
+
+                                                                               www.premir.es
+
+
+Realizar siempre un aclarado del material con agua limpia (preferiblemente desmineralizada).
+Secar inmediatamente con paños limpios sin pelusa o con pistola de aire. Guardar en lugar seco y
+protegido hasta realizar su inspección previa a su desinfección y/o esterilización. La cuba debe
+permanecer tapada durante el ciclo.
+
+
+
+
+                                                                                            TEC. FARMACIA SERGAS
+No utilizar nunca para procesar instrumentos ópticos, endoscopios, motores, materiales plásticos,
+siliconas ni espejos. Tampoco para vidrio ni material acodado.
+
+
+
+
+Limpieza del material de vidrio
+Podemos distinguir entre el material de vidrio que tiene poca suciedad y el que la tiene incrustada
+y difícil de retirar.
+
+Así, en el caso del material de vidrio que no está muy sucio y que no hay que descontaminarlo
+previamente, hay que proceder del siguiente modo:
+    o Lavar con agua y jabón con ayuda de esponjas y escobillas que no rallen.
+    o Aclarar con abundante agua del grifo varias veces.
+    o Enjuagar el material, por arrastre, con agua destilada o desionizada, realizando un mínimo
+        de tres enjuagues.
+
+Para la limpieza se puede utilizar agua tibia o caliente, excepto con el material volumétrico, con
+el que no debe ser caliente, ya que el calor lo dilataría y dañaría, ni si existen restos de sangre,
+porque ésta se coagula con el calor y se adhiere al material de tal forma que luego es muy difícil
+de retirar. Para materia orgánica y sangre se puede usar ácido nítrico, ácido sulfúrico fumante o
+agua regia, todos muy corrosivos.
+Para comprobar que el material está perfectamente limpio, en el enjuague final con agua
+destilada no deben quedar adheridas gotas, ya que, si quedasen, sería indicativo de que hay restos
+de suciedad.
+
+Cuando se trata de material vidrio muy sucio y en el que la limpieza anterior no resulta adecuada
+por tratarse de una suciedad más resistente, además de agua y jabón deben emplearse agentes
+limpiadores más específicos o más energéticos.
+
+Finalmente, para el secado, se coloca en soportes o escurridores de material. Si se necesita un
+secado rápido, una vez limpio se introducirá en la estufa a unos 60-70ºC. Las estufas no son aptas
+para material volumétrico ni de plástico. El material se debe meter en la estufa sin tapones ni
+llaves.
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+Limpieza de pipetas:
+
+Para limpiar las pipetas hay que introducirlas en recipientes con agua jabonosa durante un
+tiempo. A continuación, aclararlas con agua del grifo hasta retirar todo el jabón y, por último,
+llenarlas con agua destilada hasta la tercera parte de su capacidad e, inclinándolas, agitar el tubo
+hasta mojar todo el interior de la pipeta, operación que debe realizarse tres o cuatro veces.
+
+Otro modo de limpiarlas es utilizando el pipeteo, que consta de dos recipientes y un cestillo
+perforado donde se colocan las pipetas. Uno de los recipientes contiene la solución jabonosa y el
+otro sirve para aclarar, para lo cual contiene dos tubuladuras: una conectada a un grifo y la otra
+para que salga el agua del aclarado. Tras su uso, se sacan las pipetas y se enjuagan tres veces con
+agua destilada. Finalmente, para secarlas se deben colocar en posición invertida, con la boquilla
+hacia abajo en el portapipetas.
+
+En todo caso, antes de utilizar la pipeta, se debe de realizar el curado de la misma, que consiste en
+llenar la tercera parte de la misma con la solución o líquido que se vaya a medir, inclinarla o girarla
+para hacer pasar dicha solución o líquido por todo su interior, operación que debe efectuarse tres
+veces. Así, lo que se consigue es sustituir algún posible resto del agua destilada por la solución a
+medir y evitar interferencias del agua destilada.
+
+   2.2. MÉTODOS DE DESINFECCIÓN
+
+La desinfección puede definirse como el proceso de destrucción de los microorganismos
+patógenos y no patógenos, a excepción de virus y esporas bacterianas o formas de resistencia de
+las bacterias presentes en un objeto o superficie, con objeto de impedir su transmisión.
+
+En una primera clasificación basada en la naturaleza del proceso por el que se consigue la
+desinfección, puede hablarse de métodos físicos y químicos.
+
+
+               2.2.1. Desinfección por métodos físicos
+
+De entre todos los métodos físicos, los basados en el empleo del calor y las radiaciones
+ultravioletas como agentes desinfectantes son los más asiduamente utilizados por ser los más
+fáciles de aplicar, proporcionando además un aceptable rendimiento. Dicho rendimiento se verá
+muy mermado si previamente a la desinfección no se lleva a cabo una limpieza adecuada.
+    a) Hervido o ebullición: se sumerge en agua a temperatura de ebullición el material. Es
+        bastante efectivo, pero no garantiza la eliminación de esporas. Se está dejando de emplear
+        pues hay materiales que no resisten las temperaturas (100ºC).
+    b) Pasteurización: es un método físico de desinfección por medio de calor que permite
+        destruir la mayor parte de los gérmenes existentes. En él la temperatura alcanzada oscila
+        entre 65 y 95ºC. El tiempo necesario varía entre un minuto y una hora, siendo más largo
+        cuanto menor es la temperatura utilizada. No obstante, la mayor parte de los procesos se
+        lleva a cabo durante unos diez minutos a una temperatura de 65 a 75ºC. En estas
+        condiciones de tiempo y temperatura, la pasteurización suprime las bacterias y la mayor
+        parte de virus y hongos.
+                                                             TÉCNICO FARMACIA SERGAS 29
+                                                                       Tema 13-2ª parte
+
+                                                                               www.premir.es
+
+
+   c) Radiación ultravioleta (UV): es la radiación que oscila entre aproximadamente 2.000 y 3000
+      Aº (Armstrong), de longitud de onda, y tiene un efecto letal sobre los microorganismos que
+      se encuentran a una cota distancia del foco emisor. La radiación ultravioleta únicamente
+      será efectiva sobre aquellas superficies expuestas directamente a ella y por consiguiente,
+
+
+
+
+                                                                                            TEC. FARMACIA SERGAS
+      las zonas de “sombra”, (rugosidades del material, el polvo y todas aquellas zonas sobre las
+      que incide la luz directamente), dificultan y limitan su efectividad.
+
+              2.2.2. Desinfección por métodos químicos
+
+Se definen como aquellos métodos de desinfección que utilizan sustancias químicas de
+naturaleza y propiedades muy diversas para conseguir la eliminación de los gérmenes
+indeseables.
+
+Los desinfectantes son sustancias que se aplican sobre objetos inanimados como el material de
+laboratorio, paredes, suelos y mobiliario (mesas, sillas, vitrinas…) y que destruyen los gérmenes o
+microorganismos patógenos y no patógenos, a excepción de virus y esporas bacterianas o formas
+de resistencia de las bacterias.
+
+Los desinfectantes químicos son sustancias líquidas, que pueden aplicarse mediante inmersión,
+fricción o vaporización.
+    ü La inmersión consiste en sumergir el objeto en una solución desinfectante durante un
+        tiempo especificado por el fabricante; con ello se consigue una desinfección de nivel bajo.
+        Se utiliza para desinfección de alto nivel y debe realizarse siguiendo escrupulosamente las
+        indicaciones del fabricante.
+    ü La fricción consiste en empapar el objeto frotándolo con una bayeta o esponja mojadas
+        en un desinfectante adecuado y dejar actuar. Se aplica a los objetos grandes.
+        En la actualidad, existen en el mercado desinfectantes con presentación de spray o toallitas
+        pre-impregnadas de un solo uso que aportan como principal ventaja la facilidad de
+        aplicación al evitar la preparación manual de la solución. Si bien la técnica de fricción se
+        utiliza mayormente en desinfección de nivel bajo o intermedio, también permite su uso
+        para la aplicación de desinfectantes de alto nivel.
+    ü En la vaporización el desinfectante se proyecta uniformemente en pequeñas gotas sobre
+        la superficie del objeto que quiere tratarse, y se deja actuar.
+        Esta tecnología tiene su principal aplicación en la desinfección de superficies.
+
+Un desinfectante óptimo, además de eliminar el mayor número posible de gérmenes (amplio
+espectro), debería cumplir las siguientes condiciones:
+   ü Ser soluble en agua o alcohol
+   ü No ser corrosivo ni tóxico para los tejidos
+   ü Tener un precio comercial bajo
+   ü Ser inodoro o tener un olor agradable
+   ü Ser incoloro
+   ü Rápida acción
+   ü Estable
+   ü Respetuoso con el medio ambiente.
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+  ü Fácil de usar.
+  ü Que no se incruste.
+Entre los factores que afectan a la efectividad del desinfectante se encuentran:
+   ü Configuración física del objeto.
+   ü pH (catiónicos más efectivos a pH alcalino)
+   ü Temperatura: a mayor temperatura, mayor potencia.
+   ü Naturaleza de microorganismos.
+   ü Presencia de materiales extraños como materia orgánica.
+Principales desinfectantes:
+Los desinfectantes de uso más frecuente son:
+   Ø Hipoclorito sódico: es un desinfectante de amplio espectro, ya que posee acción
+        bactericida y fungicida gracias al cloro que libera, pero se inactiva ante la materia orgánica.
+        La solución acuosa de hipoclorito sódico que contiene 50 g/l de cloro libre es la lejía de uso
+        doméstico. Cuando esta solución se diluye al 2% contiene 1g/l de cloro libre y se utiliza
+        como desinfectante del material de laboratorio, y si se diluye al 10%, contendrá 5g/l de
+        cloro libre y se considerará como desinfectante de nivel alto.
+        Sus principales ventajas son ser amplio espectro, bastante efectivo, y de acción rápida. En
+        cuanto a sus inconvenientes, que es corrosivo de los metales, inestable a la luz y que,
+        cuando se diluye, se desestabiliza y pierde poder germicida al cabo de unas horas. Además,
+        en presencia de materia orgánica también se inactiva. La lejía debe almacenarse y utilizarse
+        en zonas ventiladas, porque el cloro libre es un gas tóxico, y hay que evitar mezclarla con
+        ácidos, porque se emite cloro gaseoso rápidamente.
+   Ø Alcohol etílico: su concentración más efectiva es el 70%, ya que es la que entra mejor en
+        el protoplasma bacteriano. Aplicado al 70% elimina muchas bacterias y algunos virus
+        (incluido VIH) y hongos, pero no las esporas. Su desventaja es que tiene un espectro
+        antibacteriano limitado. Con todo, es uno de los productos de uso más común para la
+        desinfección de superficies de trabajo en los laboratorios.
+   Ø Detergentes catiónicos: se usan diluidos al 1% para desinfectar manos o material y
+        diluidos al uno por mil o al uno por diez mil para inmersión de ropas y objetos. Suelen
+        añadirse a los productos de limpieza ambiental para aumentar su poder desinfectante. Ej:
+        sales de amonio cuaternario.
+   Ø Clorofenoles: son muy eficaces para la limpieza de las paredes, sobre todo asociados a
+        detergentes catiónicos. Se usa también para la desinfección de las manos. Ej: fenoles,
+        cresoles, hexaclorofeno.
+   Ø Aldehídos (formaldehido y glutaraldehido): La actividad de los aldehídos, básicamente
+        formaldehído y glutaraldehído, está ligada a la desnaturalización de las proteínas y de los
+        ácidos nucléicos por reducción química. Los aldehídos destruyen muy bien las bacterias,
+        los hongos microscópicos y tienen también una excelente acción virucida. Se emplean
+        para desinfectar superficies, aparatos e instrumentos.
+   Ø Ácido peracético: Las soluciones de ácido peracético (peroxiacético) al 35%, que pueden
+        ser diluidas hasta un mínimo del 0,2%, se emplean como sustitutos del glutaraldehído, que
+        es el desinfectante más ampliamente usado. El ácido peracético es una substancia
+        corrosiva y comburente
+   Ø Yodo y Yodóforos( povidona-Yodada): La acción de estos desinfectantes es parecida a
+        la del hipoclorito.
+   Ø Agua oxigenada (peróxido de hidrógeno).
+                                                             TÉCNICO FARMACIA SERGAS 31
+                                                                       Tema 13-2ª parte
+
+                                                                               www.premir.es
+
+
+
+
+Categorías de desinfección:
+La desinfección se clasifica en tres niveles o categorías: alta, intermedia o baja, dependiendo del
+
+
+
+
+                                                                                            TEC. FARMACIA SERGAS
+espectro de acción del desinfectante y de la intensidad de su acción.
+    o Desinfección alta: destruye todos los microorganismos, incluido el bacilo de la
+       tuberculosis, con excepción de algunas esporas bacterianas. Ej: Ácido peracético ≤ 1%
+       (0,2%-0,35% son las concentraciones más utilizadas), Glutaraldehído 2%, Peróxido de
+       hidrógeno al 30%, Formaldehido. Necesita un tiempo de contacto de mínimo 20 minutos
+       hasta horas.
+    o Desinfección intermedia: la que inactiva bacterias vegetativas, hongos y casi todos los
+       virus, pero no las esporas bacterianas. Ej. alcohol etílico 70%, alcohol isopropílico 70-90%,
+       fenoles
+    o Desinfección baja: destruye la mayoría de las bacterias, algunos virus y algunos hongos,
+       pero no afecta a organismos más resistentes como el bacilo de la tuberculosis o las esporas
+       bacterianas. Ej: Peróxido de hidrógeno al 3%, Hipoclorito sódico a 1000 ppm, Compuesto
+       de amonio cuaternario.
+       Los desinfectantes intermedia y baja necesitan un tiempo de contacto de unos 10 minutos.
+
+En cuanto al tipo de material habría que distinguir entre:
+    a) Material crítico o de alto riesgo, que están en contacto con sangre o tejidos estériles y
+       requiere una desinfección alta o una esterilización (ej: material quirúrgico y dental,
+       implantes, prótesis, etc)
+    b) Material semicrítico: en contacto con mucosas o piel no intacta. Requieren desinfección de
+       alto nivel. Ej: endoscopios, equipos de respiración asistida, laringoscopios, etc
+    c) Material no crítico o de bajo riesgo, que está en contacto con piel intacta y por tanto
+       requerirá una desinfección intermedia o baja. Ej: termómetros, tensiómetros,
+       fonendoscopios, etc
+
+   2.3. MÉTODOS DE ESTERILIZACIÓN
+
+La OMS define la esterilización como la técnica de saneamiento cuya finalidad es la destrucción
+de toda forma de vida, aniquilando todos los microorganismos, tanto patógenos como no
+patógenos, incluidas sus formas esporuladas, altamente resistentes.
+La esterilización supone el nivel más alto de seguridad (y por lo tanto de letalidad, o eficacia
+biocida) en la destrucción de microorganismos o de sus formas de resistencia.
+La resistencia de los microorganismos presenta diferentes grados y está relacionada con su
+estructura, con su capacidad de producir esporas, o con la presencia de ciertos componentes en
+su pared celular (lípidos, proteínas) o de su grosor.
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+Otros factores que influyen en la mayor o
+menor resistencia frente a los medios de
+esterilización son los siguientes:
+        • carga bacteriana total
+        • presencia de materia orgánica
+        • presencia de sales minerales
+        • pH
+         Temperatura
+
+Grados de resistencia microbiana:
+
+Cuando una carga microbiana se expone a un método de esterilización, la velocidad a la que se
+produce su muerte es proporcional a la aplicación de eses método, durante un tiempo
+determinado. En función de esto, experimentalmente se determinan las curvas de muerte de los
+microorganismos, que permiten evaluar los métodos de esterilización.
+Este estudio incluye dos parámetros: Valor Z y valor D.
+
+   •    Valor Z: temperatura requerida para reducir en un 90% los microorganismos, sobre un
+        objeto determinado en un tiempo concreto.
+   •    Valor D: tiempo necesario para destruir el 90% de los microorganismos, en un objeto
+        determinado, a una temperatura concreta.
+
+Se utiliza el concepto de que ningún método de esterilización puede asegurar la esterilización
+completa de los microorganismos. Lo que se consigue es que la probabilidad sea
+extremadamente baja (1/1.000.000=0,000001). La FDA denomina a este indicador SAL = nivel de
+garantía de esterilidad.
+
+En función del agente esterilizante, los sistemas de esterilización pueden clasificarse en físicos,
+químicos y mecánicos, pudiendo incluir los sistemas mecánicos (filtración) dentro de los físicos.
+
+       AGENTE          SISTEMA DE ESTERILIZACIÓN                           MÉTODO
+                                                        Autoclave (Vapor de agua a presión).
+                              Calor húmedo
+                                                        Tindalización
+                                                        Flameado
+                                 Calor seco             Incineración.
+                                                        Estufa Pasteur, horno Poupinell
+       FÍSICO
+                                                        Ionizantes
+                                Radiaciones             No ionizantes (infrarrojos, UV)
+                  Filtración del aire o líquidos        Membranas filtrantes
+                                                        Filtros laminares en bancos       de   trabajo,
+                                                        quirófanos o salas “blancos”.
+                                                        Formaldehído
+                                                        Óxido de etileno
+                                 Gases y                Formol
+    QUÍMICO
+                                 Líquidos               Glutaraldehído
+                                                        Ácido peracético
+                                                        Pastillas de trioximetileno
+                                                             TÉCNICO FARMACIA SERGAS 33
+                                                                       Tema 13-2ª parte
+
+                                                                               www.premir.es
+
+
+              2.3.1. Esterilización por agentes físicos
+
+    A) Esterilización por calor húmedo o vapor:
+
+
+
+
+                                                                                            TEC. FARMACIA SERGAS
+Es la primera alternativa a tener en cuenta en la esterilización.
+El calor húmedo o vapor de agua es el método de elección para la esterilización de casi todo el
+material sanitario no desechable, excepto aquel que puede ser alterado por la elevada
+temperatura.
+Los aparatos de esterilización mediante calor húmedo se denominan autoclaves o estufas de
+vapor. Son recipientes cerrados, normalmente de acero inoxidable con paredes gruesas y una
+superficie donde se coloca el material a esterilizar. El tamaño y los sistemas de acceso al interior
+dependen de su ámbito de aplicación. Van desde los
+autoclaves de un laboratorio de análisis con un
+tamaño mediano hasta los autoclaves de una
+central de esterilización de un hospital, de un
+tamaño considerable.
+
+El     mecanismo         de    destrucción    de    los
+microorganismos mediante la aplicación de calor
+húmedo o vapor saturado se produce a través de la
+desnaturalización y posterior lisis de sus proteínas.
+Esto se produce por dos motivos:
+    • El agua es una especie química muy reactiva
+         y muchas estructuras biológicas, como DNA, RNA, proteínas, son producidas por
+         reacciones que eliminan agua.
+    • El vapor de agua posee un coeficiente de transferencia de calor mucho más elevado que
+         el aire, por lo que los materiales húmedos conducen el calor más rápido que los secos.
+Los microorganismos en estado vegetativo, es decir, cuando poseen capacidad infectante, se
+reproducen a temperaturas comprendidas entre -5ºC y 80ºC. Por encima de esta temperatura, la
+destrucción es rápida en la mayoría de los casos. No obstante, las esporas son capaces de resistir
+más allá de esta temperatura durante un tiempo prolongado.
+Se usan temperaturas de 135 ºC durante 7-10 min, o 121ºC durante 15-20 min.
+Los ciclos de 140 ºC son una excelente alternativa a la esterilización de priones, relacionados con
+la enfermedad de Creutzfeldt-Jacob (vacas locas) que presentan resistencia a los ciclos de
+esterilización habituales. Hay que eliminar el aire del interior de la cámara antes del proceso, por
+incompatibilidad entre aire y vapor.
+El autoclave se usa para esterilizar: instrumental metálico, textil, vidrios, líquidos, gomas y
+plásticos termorresistentes.
+La prueba de Bowie-Dick es un test de control químico diseñado específicamente para verificar
+la eficacia del sistema de vacío y la correcta penetración del vapor en los autoclaves de tipo pre-
+vacío. Fue desarrollada en los años 60 por J. Bowie y J. Dick en el Reino Unido como una forma
+sencilla y económica de detectar fallos en la eliminación de aire antes de la entrada de vapor.
+No es un indicador biológico ni un test de esterilización per se, sino un test de funcionamiento del
+autoclave que detecta fugas de aire, bolsas de aire residuales o insuficiente penetración del vapor
+que comprometerían el proceso. Es complementario, no sustituye a indicadores biológicos o
+químicos de proceso.
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+Debe realizarse:
+   • Diariamente, antes de iniciar el primer ciclo de esterilización del día.
+   • Tras reparaciones, mantenimiento o validación del autoclave.
+   • Cuando se sospecha mal funcionamiento del sistema de vacío.
+
+Miniclaves: son autoclaves de pequeñas dimensiones, de uso en centros de salud, consultas de
+odontología, podología, etc. Posibilitan la esterilización de instrumental de pequeño volumen de
+forma rápida y eficaz.
+
+Funcionamiento del autoclave:
+
+La estufa de vapor o autoclave consta de un dispositivo que permite la inyección o entrada
+de vapor de agua a su interior, penetrando en toda la carga de material que contiene,
+adecuadamente preparado (limpio, seco y empaquetado en bolsas o contenedores).
+
+
+
+
+Las etapas fundamentales del proceso o ciclo de esterilización son: la preparación, el
+ascenso, la esterilización, el descenso, el secado y el final de ciclo.
+    Ø Preparación: es la etapa en la que se elimina el aire del interior del autoclave con el
+        material limpio, seco y adecuadamente empaquetado. Se provocan 5 vacíos y 5 entradas
+        de vapor. El tiempo que tarda en vaciarse el autoclave se conoce como “tiempo de
+        preparación”. (Tp)
+    Ø Ascenso o calentamiento: etapa en la que la temperatura del vapor inyectado en el
+        interior del autoclave aumenta hasta la temperatura de esterilización (110-134ºC). En esta
+        etapa, el vapor entra en contacto con todas las superficies de la carga y éstas alcanzan la
+        temperatura seleccionada que depende del tipo de material. El tiempo que tarda en
+        alcanzar la temperatura de esterilización se denomina “tiempo de calentamiento” (Tc).
+    Ø Esterilización o exposición: etapa en la que se destruye toda forma de vida del material.
+        El “tiempo de esterilización” (Te) varía según el programa y el tipo de autoclave.
+    Ø Descenso o desvaporización: es la etapa en la que después de esterilizarse el material, la
+        presión desciende durante el período denominado “tiempo de descenso” (Td).
+    Ø Secado por vacío o vaciado final: es la etapa en la que se elimina el vapor del interior del
+        autoclave y se denomina “tiempo de secado” (Ts), de duración aproximada de 10 minutos,
+        que acondiciona el aparato y permite su apertura.
+    Ø Final del ciclo: consiste en la apertura del autoclave, por el acceso o puerta por donde se
+        vacía la carga.
+Si se valora este sistema de esterilización, observaremos las siguientes ventajas:
+    o Gran poder de penetración del vapor en el material.
+    o Elevada acción en un tiempo corto.
+    o Bajo coste económico.
+    o No deja residuos tóxicos.
+                                                               TÉCNICO FARMACIA SERGAS 35
+                                                                         Tema 13-2ª parte
+
+                                                                                  www.premir.es
+
+
+   o Fácil manejo de los aparatos de esterilización.
+   o Fácil control de la eficacia del proceso.
+
+Aunque también presenta algunos inconvenientes:
+
+
+
+
+                                                                                                TEC. FARMACIA SERGAS
+   o Necesidad de una temperatura relativamente elevada (110-134º).
+   o Degradación de materiales termolábiles (plásticos, gomas, componentes electrónicos)
+   o Corrosión de materiales metálicos (oxidación).
+   o Deterioro de los filos cortantes.
+   o Puede dañar textiles delicados.
+   o No es útil para grasas, polvos y vaselinas.
+   o Requiere secado y manipulación posterior en condiciones asépticas.
+
+TINDALIZACIÓN O ESTERILIZACIÓN DISCONTINUA O FRACCIONADA:
+Consiste en calentamientos intermitentes a 100ºC durante 15-20 minutos, con períodos de
+incubación entre calentamientos para que germinen las esporas y poder destruirlas como formas
+vegetativas en el siguiente calentamiento. La operación se repite durante tres días consecutivos,
+no abriendo el autoclave en ese intervalo de tiempo.
+
+ESTERILIZACIÓN POR VAPOR FLUENTE:
+Es un tipo de esterilización cuya temperatura no sobrepasa los 100ºC. Se utiliza para materiales
+que no soporten temperaturas mayores. Consiste en mantener durante treinta minutos al
+autoclave emitiendo de forma continua vapor de agua por la llave de purga, que siempre
+permanecerá abierta, con lo cual no puede aumentar la presión ni la temperatura.
+
+B) Esterilización por calor seco:
+
+Este tipo de esterilización se realiza básicamente mediante la incineración, el flameado y el uso de
+los hornos Pasteur.
+Hornos Pasteur, estufa Poupinel: elevadas Tª (180º a 121º), proceso lento (a menor Tª, mayor
+tiempo). Ejemplo: 180º son 30 minutos; 170º son 60 minutos; 140 º son 180 minutos; 121 º son 360
+minutos.
+
+Incineración y flameado:
+La incineración se realiza en hornos crematorios o incineradores que esterilizan y a la vez
+destruyen el material. Se emplea para material infeccioso residual o biopeligroso.
+En los laboratorios de análisis se utiliza el flameado que consiste en la aplicación directa de la llama
+del alcohol o del mechero Bunsen durante unos minutos al material. Se usa para asas de siembra,
+tubos de vidrio o pipetas.
+
+Hornos o estufas:
+Este proceso está basado en la circulación de aire caliente en el interior de un aparato de acero
+inoxidable sometido a una elevada temperatura regulada por un termostato. A estos
+esterilizadores se les denomina hornos Pasteur o estufas Poupinelle.
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+El mecanismo de destrucción de los microorganismos mediante la aplicación de calor seco se basa
+en la desecación de los mismos por el calor, oxidación y desnaturalización de proteínas. Se
+requieren tiempos de exposición largos para garantizar que las formas de resistencia que se
+adaptan a condiciones desfavorables extremas sean destruidas.
+Con este sistema se puede esterilizar material de vidrio, material de acero inox, porcelana, grasas,
+aceites y soluciones no acuosas, petrolatos y polvos. El material de vidrio esterilizado de este
+modo, debe estar seco y no estar graduado. No es apto para sustancias acuosas ni alcohólicas,
+textiles, caucho. Las altas temperaturas también pueden deteriorar objetos articulados.
+
+No toxicidad residual. Posibilidad de esterilizar objetos en cajas metálicas al actuar por
+conducción, y no por penetración.
+Es un sistema menos recomendable que el calor húmedo, ya que, debido a las elevadas
+temperaturas que se alcanzan, el material introducido tiene mayores posibilidades de
+deteriorarse.
+
+
+
+
+C) Esterilización por radiaciones
+Las radiaciones empleadas para esterilizaciones pueden ser ionizantes y no ionizantes:
+
+Las radiaciones ionizantes que se utilizan para la esterilización son:
+
+Rayos gamma:
+Con las radiaciones gamma, se logra la denominada esterilización en frío o radioesterilización.
+Su efecto letal se debe, a la formación de radicales libres entre los componentes celulares de gran
+reactividad.
+Inhibe la división celular incidiendo directamente sobre los ácidos nucleicos.
+Son instalaciones de gran rendimiento, donde se aplica sobre un material, radiaciones emitidas
+por isótopos radioactivos. Existen dos formas de aplicación de estas radiaciones:
+            • Bomba de radio-cobalto 60.
+            • Acelerador lineal de partículas atómicas.
+
+La dosis de rayos necesaria para producir dicha esterilización es muy elevada (2,5 millones de rads;
+tan sólo bastan 7000 rads para matar a un hombre). Por su poder penetrante esterilizan todo el
+material envuelto en envases de plástico e introducido en cajones de cartón o madera de forma
+que la radiación no incida directamente sobre el material a esterilizar. La operación se vigila por
+televisores conectados con el interior de la cámara y la operación se dirige automáticamente
+desde el exterior.
+                                                              TÉCNICO FARMACIA SERGAS 37
+                                                                        Tema 13-2ª parte
+
+                                                                                www.premir.es
+
+
+En la actualidad se utiliza a nivel industrial para la esterilización de material. Éste va envuelto
+individualmente o en pequeños lotes, en envases de plástico o material específico, y se mantiene
+estéril, mientras que no se abra, durante varios meses.
+
+
+
+
+                                                                                             TEC. FARMACIA SERGAS
+Material esterilizable: prácticamente cualquier tipo de material: soluines IV, suturas querúrgicas,
+material de implantación (prótesis), instrumental quirúrgico, jeringas, agujas, catéteres y sondas.
+Ventajas: actúa a bajas temperaturas. Por su gran poder de penetración, es un medio idóneo para
+esterilizar elementos de pequeño calibre y gran longitud.
+Inconvenientes: alto coste de instalaciones por lo que quedan relegadas a laboratorios
+fabricantes, fuera del ámbito hospitalario.
+Requiere prolongados tiempos de exposición.
+Las instalaciones deben de cumplir estrictas medidas de seguridad, según legislación vigente.
+
+Rayos Beta:
+
+Se usan para esterilizar material quirúrgico, medicamentos y otros materiales termolábiles. Sus
+principales ventajas son que el material se puede esterilizar a temperatura ambiente y que puede
+esterilizarse previamente empaquetado, ya que estas radiaciones penetran en el interior del
+material aún estando envuelto.
+
+También existen radiaciones alfa y X
+Las radiaciones no ionizantes que, al incidir sobre la materia, no producen ionización Se usan en
+esterilización son los rayos ultravioleta (UV). Se emplean para lograr ambientes de trabajo
+asépticos cuando se requieren en los laboratorios o en quirófanos.
+
+D)Esterilización por filtración
+
+La filtración es una operación farmacéutica por la que se separan las partículas sólidas del fluido
+(líquido o gas) donde están contenidas al hacer pasar éste a través de unas estructuras porosas
+llamadas filtros.
+Si se utilizan sistemas de filtración estériles (0,22 µm) capaces de retener partículas del tamaño de
+los microorganismos (bacterias, virus y mycoplasma) que se quieren eliminar, la filtración resulta
+un procedimiento efectivo de esterilización.
+
+Aplicaciones:
+   1- Para la esterilización de productos en estado líquido que contienen sustancias
+       termolábiles (que no resisten esterilización por calor).
+   2- Para filtrar aire en zonas de procesamiento aséptico (zonas limpias y cabinas de flujo
+       laminar)
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+           2.3.2. Esterilización por agentes químicos
+
+Esterilización por líquidos:
+Glutaraldehído:
+Para esterilizar el material se requiere la inmersión en soluciones del agente esterilizante en
+concentraciones cercanas al 2% y durante tiempos que oscilan entre 10 minutos y varias horas. El
+breve período de caducidad de la solución (2 semanas) y el
+empleo del óxido de etileno como agente esterilizante del
+material termosensible, hace que, en la actualidad esté casi en
+desuso.
+
+Potente acción antimicrobiana. Agente alquilante que ejerce su
+acción sobre proteínas y ácidos nucleicos. Hay que sumergir los
+objetos entre 8-10 horas, luego aclararlos con agua destilada
+estéril.
+Es utilizado como desinfectante de alto nivel de equipos médicos como endoscopios,
+laparoscopios, equipos de anestesia, etc
+
+Ventajas: esterilización a abaja temperatura. Instalaciones no costosas.
+Inconvenientes: irritante y tóxico, por lo que hay que tomar precauciones al usarlo. Evitar la
+inhalación y el contacto con piel y mucosas, por lo que hay que tapar los recipientes usados para
+la inmersión.
+Hay que aclarar el producto esterilizado con agua.
+Esterilización por gases:
+     • Óxido de etileno (OE)
+
+El óxido de etileno es un gas o líquido incoloro puro o en mezcla (dióxido de carbono o R124, que
+son menos tóxicos para el medio ambiente), soluble en agua y en disolventes orgánicos, con bajo
+punto de condensación, es inflamable y explosivo mezclado con aire en concentraciones
+superiores o iguales al 3%.
+El mecanismo de acción esterilizante se basa en la capacidad de alterar la estructura de proteínas
+y ácidos nucleicos de los microorganismos (acción alquilante).
+Penetra con facilidad en materiales de goma y plástico. En materiales porosos penetra con
+facilidad, pero luego se desprende con lentitud.
+Es importante que el material que se vaya a esterilizar esté seco, ya que el óxido de etileno en
+presencia de agua se hidroliza a etilenglicol. Además si se combina con cloruros en medio ácido
+se hidroliza a 2-cloroetanol (etilenclorhidrina), sustancia muy tóxica que no se elimina con el
+proceso de la aireación.
+Ciclos
+    ü Temperatura de 37ºC durante 5 – 5.5 h (ciclo frío).
+    ü Temperatura de 55ºC durante 2 - 4h (ciclo caliente).
+
+Necesita una humedad entre 40 - 70%.
+Todos los objetos esterilizados necesitan aireación posterior. Es mutagénico, cancerígeno,
+teratógeno y altamente irritante.
+Los aparatos de esterilización por este sistema se denominan autoclaves o cámaras de óxido de
+etileno.
+                                                              TÉCNICO FARMACIA SERGAS 39
+                                                                        Tema 13-2ª parte
+
+                                                                                www.premir.es
+
+
+Su elevada toxicidad a nivel celular le convierte en un eficaz agente esterilizante. No obstante,
+como cualquier otra sustancia química y tóxica para los microorganismos, es igualmente
+perniciosa para las personas, por lo que es necesario adoptar medidas de seguridad en su
+aplicación.
+
+
+
+
+                                                                                             TEC. FARMACIA SERGAS
+Están diseñados para realizar ciclos automáticos, en los que se incluyen las condiciones
+apropiadas de concentración del gas, temperatura, humedad y tiempo de exposición.
+
+Características del OE como agente esterilizante:
+   o Eficacia en su acción esterilizante.
+   o Posibilidad de acción a bajas temperaturas.
+   o Elevada afinidad por los microorganismos.
+   o Elevada capacidad de acceso, difusión y penetración en la carga independientemente del
+       tipo de empaquetado del material.
+   o No es corrosivo ni deteriora el material con filo.
+   o Necesidad de combinarse con otros gases para formar mezclas no inflamables.
+   o Necesidad de aplicar estrictas medidas de seguridad, para su elevada toxicidad.
+   o Los “cartuchos” que contienen el gas estarán debidamente etiquetados, con frases
+       R(riesgos) frases S (medidas de seguridad) y pictogramas de peligrosidad.
+   o Necesidad de airear (10-12 horas en cabinas de aireación) el material poroso, plástico o de
+       caucho esterilizado durante un tiempo determinado para eliminar los productos
+       residuales tóxicos.
+
+
+
+
+Efectos tóxicos: de tipo crónico, como posibles efectos mutagénicos, cancerígenos y
+teraogénicos. Pero, además, puede producir irritación de ojos, piel y vías respiratoprias, trastornos
+digestivos y neumológicos.
+Material esterilizable: todo el material que no soporte Tª superiores a 50ºC, como materiales de
+plástico, polietileno, catéteres y sondas reutilizables, endoscopios rígidos termosensibles,
+sistemas ópticos, cables de luz de endoscopios y motores neumáticos termosensibles.
+Ventajas: apto para material termosensible y objetos delicados como son los punzantes o de corte.
+Excelente penetración: alcanza zonas inaccesibles, como lúmenes y envases sellados.
+Compatibilidad amplia: polímeros, plásticos, dispositivos combinados (metal, vidrio, resinas);
+cubre unos 50-70 % de instrumental biomédico.
+Inconvenientes: gas muy tóxico, irritante, carcinogénico e inflamable. El proceso es largo, presenta
+toxicidad residual, Inflamable y altamente reactivo. Son necesarios protocolos e instalaciones que
+garanticen la seguridad personal y medioambiental.
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+
+
+
+
+ESTERILIZACIÓN A BAJAS TEMPERATURAS
+
+o Formaldehído:
+  La solución de formaldehído entre el 2 y el 8%, en alcohol de 70º es esterilizante de formas
+  vegetativas (Bacilos tuberculosos, pseudomonas…), de esporas y de virus, pero por su olor,
+  precio, etc… no es utilizado en la práctica.
+  Esterilización de material termosensible (no resistente a temperaturas > a 60ºC).
+  Indicada en la esterilización de material plástico, catéteres y sondas reutilizables, endoscopios
+  rígidos termosensibles, sistemas ópticos, cables de luz de endoscopios, motores neumáticos
+  termosensibles y cualquier material compatible con la esterilización por formaldehído. Se ha
+  demostrado que el material de látex absorbe más el formaldehído que otros materiales, por lo
+  que es preferible no esterilizarlo por este sistema.
+  Necesita una humedad muy elevada, en torno al 90%, por lo que no es apto para material que
+  se degrade con ese nivel de humedad.
+   El formol gas, obtenido a partir de pastillas de trioximetileno o en polvo, también puede
+   utilizarse como esterilizante. Gas de fuerte olor, germicida. Se usa en cámaras de formalización,
+   controlando la Presión, Temperatura, concentración de producto y humedad. Esteriliza formas
+   vegetativas, esporas y virus. No se usa por su olor, precio y toxicidad.
+   Es potencialmente cancerígeno y mutagénico, y requiere de instalaciones especiales.
+   Este método se utiliza para esterilizar sondas de caucho o goma, material de endoscopias,
+   tubos de drenaje, bolsas de goma, tiendas de oxígeno e instrumentos cortantes, como tijeras
+   o escalpelos.
+
+   El formol puede utilizarse en:
+           •   Frío:
+                   ü Esterilizador de Gross.
+                   ü Tubo de Desnos, cuyo tapón perforado contiene las pastillas de
+                     trioximetileno.
+                                                          TÉCNICO FARMACIA SERGAS 41
+                                                                    Tema 13-2ª parte
+
+                                                                           www.premir.es
+
+
+          •   Caliente:
+                 ü Estufa de Marion, estufa eléctrica en la que el calentamiento a 25 o 50ºC,
+                     produce la emisión de vapores de formol, tiene efecto desinfectante
+
+
+
+
+                                                                                        TEC. FARMACIA SERGAS
+                     profundo.
+o Esterilización por vapor de baja temperatura de peróxido de hidrógeno VHP (peróxido de
+  hidrógeno a baja temperatura).
+  Se utiliza como alternativa al óxido de etileno y al glutaraldehído.
+  Se emplea una solución al 30% de peróxido de hidrógeno, que es vaporizada dentro de la
+  cámara. El proceso se realiza a baja temperatura (38ºC-50ºC) y dura 45-60 minutos.
+  No deja residuos tóxicos (se descompone en H₂O y O₂). No requiere fase de plasma, lo que
+  simplifica el equipo.
+
+   Se pasa por diferentes fases que incluyen:
+       • Deshumidificación.
+       • Acondicionamiento.
+       • Esterilización.
+       • Desgasificación.
+   Los inconvenientes que presentan son:
+       • El material debe de estar limpio antes del proceso, ya que se inactiva con la materia
+          orgánica.
+       • El proceso no puede ser utilizado para la celulosa y sus derivados ya que impiden la
+          penetración del agente, ni para líquidos.
+       • Es corrosivo con metales, caucho y nylon.
+       • Puede haber condensación si hay demasiada humedad o materiales porosos.
+       • Menor capacidad de penetración que el óxido de etileno.
+       • No apto para lúmenes muy largos o estrechos.
+
+o Esterilización por gas-plasma de peróxido de hidrógeno
+  El plasma es un estado de la materia que se produce mediante temperaturas altísimas o fuertes
+  campos electromagnéticos.
+  La esterilización por gas-plasma, emplea plasma a baja temperatura. Se genera a partir de 1,8
+  ml de peróxido de hidrógeno al 58% que es vaporizado y expuesto a ondas de radiofrecuencia.
+  Emplea temperaturas inferiores a 50ºC con una humedad ambiental mínima. La duración del
+  proceso es de unos 75 minutos .
+  Se introduce peróxido de hidrógeno en forma líquida en la cámara.
+   Se vaporiza como en el VHP (peróxido de hidrógeno a baja temperatura). Luego se aplica un
+   campo eléctrico de alta frecuencia, que ioniza el vapor → se forma plasma de H₂O₂. El plasma
+   destruye los microorganismos y neutraliza los residuos.
+              q El material no requiere aireación posterior.
+              q El material debe lavarse previamente y debe envolverse en embalajes
+                especiales.
+              q Requiere envoltorios especiales de polietileno (Tyvek®)
+              q El proceso no deteriora las superficies de los objetos.
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+             q No sirve para materiales de celulosa (papel), ropa, ni para polvos y líquidos.
+             q No produce residuos tóxicos.
+             q Ciclos más cortos que el óxido de etileno
+             q Elevado coste.
+       Característica                 VHP                     Plasma H₂O₂ (STERRAD®)
+Temperatura              45-50 °C                       <50 °C
+Estado del peróxido      Vapor                          Vapor + plasma
+                         Peróxido de hidrógeno en
+Agente esterilizante                                    Radicales libres del plasma de H₂O₂
+                         vapor
+Residuos                 Agua y oxígeno                 Agua y oxígeno
+                                                        Mayor (requiere generador de
+Complejidad técnica      Menor
+                                                        plasma)
+Tiempo de ciclo          45-90 minutos                  45-75 minutos
+Eficiencia               Alta                           Muy alta
+Materiales incompatibles Algunos materiales porosos Celulosa, textiles, líquidos
+
+      El ácido peracético es un potente germicida que puede emplearse tanto en fase líquida
+   como en fase de vapor (Perafase®), combinado con gas plasma (Plazlyte®).
+      v La forma líquida al 35%, se emplea como desinfectante y esterilizante de instrumental
+          médico, sobre todo endoscopios. Se usa a temperatura que oscila entre 50ºC y 56ºC
+          durante 12 minutos (tiempo meseta). La duración total del proceso varia entre 20 y 30
+          minutos, en función de la temperatura inicial, la presión del agua estéril (necesaria para
+          diluir el ácido peracético y para aclarar el material esterilizado) y el estado del filtro del
+          agua.
+   El material debe lavarse previamente para luego:
+               • Introducir el instrumental 5 minutos: DESINFECCIÓN.
+               • Introducir el instrumental 10 minutos: ESTERILIZACIÓN.
+   No requiere ventilación, pero sí aclarado, y es irritante de la piel, de mucosas y de los ojos.
+   Permite la esterilización 'in situ' de material termosensible que no puede ser procesado por
+   falta de tiempo en un método habitual de esterilización, por ejemplo endoscopios rígidos,
+   trocares, pinzas, separadores, cables de fibra de vidrio y endoscopios flexibles (cámaras,
+   ópticas, accesorios,...)
+
+Ventajas
+
+
+   •   Eficaz a baja temperatura, ideal para materiales termosensibles.
+   •   Rápida acción esterilizante (20 minutos).
+   •   Biodegradable (se descompone en ácido acético, oxígeno y agua). Es uno de los
+       compuestos que menos residuos tóxicos acumula, minimizando, por tanto, su impacto
+       medioambiental.
+   •   No deja residuos tóxicos si se enjuaga bien.
+   •   Compatible con sistemas automatizados cerrados.
+                                                             TÉCNICO FARMACIA SERGAS 43
+                                                                       Tema 13-2ª parte
+
+                                                                               www.premir.es
+
+
+Inconvenientes
+   •   Corrosivo: puede dañar algunos metales o materiales mal resistentes.
+   •   Sólo sirve para material sumergible.
+
+
+
+
+                                                                                          TEC. FARMACIA SERGAS
+   •   Necesita sistema de enjuague con agua estéril posterior.
+   •   Riesgo de irritación si hay contacto directo (piel, mucosas, inhalación).
+   •   No apto para cargas grandes o muy porosas.
+   •   Vida útil corta del preparado una vez activado. No puede almacenarse.
+
+       v La forma vapor emplea gas plasma y ácido peracético. El proceso se lleva a cabo a una
+         temperatura entre 50 y 56ºC, durante un tiempo entre 4 y 6 horas. No requiere
+         aireación posterior. Se pueden emplear los envoltorios de papel para el empaquetado.
+
+
+
+
+       2.3.3.    Controles de la esterilización
+
+La esterilización es un concepto absoluto y supone la destrucción total de toda forma de vida del
+material que se somete a dicho proceso.
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+Para garantizar la efectividad del proceso de esterilización debe comprobarse que en el material
+esterilizado no queda ninguna forma de vida.
+
+El único proceso para garantizar la condición de esterilidad consiste en diseñar, validar y controlar
+sistemas de comprobación de la esterilización mediante ensayos físicos, químicos y/o biológicos
+aplicados en las diferentes etapas del proceso de esterilización de material.
+
+Los sistemas de control de esterilización son valoraciones, elementos o dispositivos ajenos al
+esterilizador que se emplean para comprobar la eficacia del proceso.
+
+    2.3.3.1.- Controles físicos:
+
+Registros gráficos y/o numéricos integrados en el esterilizador de parámetros físicos del ciclo:
+temperatura, presión, humedad relativa, tiempo. Antes de cada proceso de esterilización estos
+parámetros se ajustan a las especificaciones requeridas y, gracias a los controles físicos, se
+comprueba que han sido correctos durante todo el ciclo.
+El control de esterilización por indicadores físicos se lleva a cabo mediante su colocación en el
+interior del paquete. Estos indicadores, son calibrados, pudiendo detectar cualquier fallo. Son
+instrumentos mecánicos para el control de los parámetros físicos del ciclo y la observación
+continua del proceso de esterilización.
+Estos controles son orientativos de calidad e insuficientes por sí solos para validar el proceso
+de esterilización. La información que aportan no se refiere a la presencia/ausencia de unidades
+contaminadas sino a las características y condiciones físicas del proceso, o, lo que es lo mismo, al
+funcionamiento del esterilizador.
+
+Registros gráficos: representaciones gráficas circulares estandarizadas que registran la evolución
+de los parámetros de presión y temperatura a lo largo del ciclo de esterilización.
+
+
+
+
+    2.3.3.2.- Controles químicos:
+Son sustancias químicas que cambian de color (indicadores colorimétricos) con propiedades
+indicadoras que se sitúan en soportes de papel. Varían su color en unas condiciones ambientales
+determinadas de presión, temperatura y tiempo de exposición al agente esterilizante. Las normas
+ISO recogen seis categorías de indicadores químicos. Cambian de color tras el contacto con el agente
+esterilizante y dentro de un parámetro estandarizado de tiempo, temperatura y humedad.
+                                                            TÉCNICO FARMACIA SERGAS 45
+                                                                      Tema 13-2ª parte
+
+                                                                              www.premir.es
+
+
+Estas condiciones, se ha comprobado que son letales para los microorganismos y sus formas de
+resistencia, por lo que, aunque no se consideran verdaderos controles de esterilidad, al informar
+sobre los parámetros del ciclo, hacen suponer la destrucción de toda forma de vida.
+
+
+
+
+                                                                                           TEC. FARMACIA SERGAS
+Debido a la rapidez con la que se obtienen los resultados, se emplean como referencia de la
+calidad de la esterilización sin esperar los resultados de otros sistemas de control.
+Se pueden colocar:
+
+    o En el interior del autoclave sin carga.
+    o En el interior de los paquetes, bolsas y contenedores.
+    o En el exterior de los paquetes, bolsas y contenedores.
+Los integradores están diseñados para reaccionar a los parámetros críticos de la esterilización
+(tiempo, temperatura y vapor) y proporcionar una confirmación visual de que el proceso ha sido
+efectivo.
+
+Clases de Indicadores Químicos según la ISO
+
+Clase           Nombre                                       Función principal
+                                    Muestran si un paquete ha sido expuesto al proceso de
+   1 Indicadores de proceso
+                                    esterilización (ej.: etiquetas, cintas).
+       Indicadores específicos Diseñados para pruebas específicas, como la prueba Bowie-
+   2
+       de ensayo                    Dick para sistemas de vacío.
+       Indicadores de un solo Detectan un único parámetro crítico (por ejemplo,
+   3
+       parámetro                    temperatura o tiempo).
+       Indicadores                  Detectan dos o más parámetros críticos del proceso (ej.:
+   4
+       multiparámetro               temperatura y tiempo).
+                                    Simulan la resistencia de los microorganismos, y detectan
+   5 Integradores
+                                    todos los parámetros críticos del proceso.
+       Emuladores o Indicadores Diseñados para un ciclo específico de esterilización,
+   6
+       de ciclo                     responden a un rango muy preciso de parámetros.
+Las clases 5 y 6 son las más avanzadas y fiables, usadas dentro de los paquetes para verificar que
+el material ha sido correctamente esterilizado. La clase 1 solo indica exposición al proceso, no
+asegura esterilización. Los indicadores clase 2, como el de la prueba de Bowie-Dick, son esenciales
+en esterilización por vapor para comprobar la penetración del agente esterilizante.
+    2.3.3.3.- Controles biológicos:
+Se consideran el único medio de garantía definitivo para confirmar la esterilización.
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+Mediante ellos se determina la viabilidad de un microorganismo después de ser sometido a un
+proceso de esterilización. Se utilizan portadores inoculados con 106 microorganismos vivos y
+resistentes al método de esterilización. Los portadores se preparan en paquetes prueba,
+colocados en el lugar del esterilizador donde el agente esterilizante accede con mayor dificultad.
+Los paquetes se procesan en un ciclo de esterilización con carga completa. Una vez ha finalizada
+la esterilización el portador se cultiva.
+Los sistemas biológicos deben aplicarse en cada ciclo de esterilización de material implantable; se
+efectúan de forma rutinaria semanalmente, diariamente o en cada proceso, según el sistema de
+esterilización y su frecuencia de uso.
+Puede determinarse tras 7 días de cultivo (el procedimiento de incubación y lectura se efectúa en
+el laboratorio de Microbiología), tras 48 horas (este sistema permite incubar y leer en la propia
+central de esterilización, utilizando incubadoras de mesa) o tras 3 horas (previa calibración del
+sistema de incubación; se incuba y se lee en la propia central de esterilización).
+Los controles biológicos han de utilizarse siempre en combinación con controles físicos y
+químicos para demostrar con seguridad la eficacia del proceso de esterilización.
+Los fabricantes deben proporcionar las instrucciones suficientes sobre la correcta utilización e
+interpretación de los resultados de cada uno de los indicadores establecidos para determinar la
+calidad del proceso de esterilización.
+
+                              Espora utilizada (microorga-
+    Método de esterilización                                             Tiempo lectura
+                                           nismo)
+Vapor saturado (autoclave)   Geobacillus stearothermophilus 24-48 h o lectura rápida (1 h)
+Óxido de etileno (EtO)       Bacillus atrophaeus (B. subtilis var.) 48 h
+Peróxido de hidrógeno plasma Geobacillus stearothermophilus 24 h o 20 min
+Calor seco                   Bacillus atrophaeus                    48 h
+Radiación gamma              Bacillus pumilus                       —
+
+Los indicadores biológicos pueden ser:
+- Tiras de papel inoculadas: en envases individuales, que requieren procesamiento en el
+   laboratorio.
+- Ampollas: con tiras de papel inoculadas en su interior y provistas de un medio de cultivo. Son
+   las más empleadas.
+- Pruebas de lectura rápida: sustrato que tiene la peculiaridad de que al detectar une enzima
+   activa asociada a esporas de microorganismos, pasa a ser fluorescente, indicando un error en
+   la esterilización.
+
+
+
+
+De nada serviría la cuidadosa manipulación del material antes y durante el ciclo de esterilización
+si después del proceso se destruyen las condiciones de esterilidad alcanzadas.
+Algunas de las precauciones más importantes a adoptar en lo referente a la manipulación del
+material son:
+                                                           TÉCNICO FARMACIA SERGAS 47
+                                                                     Tema 13-2ª parte
+
+                                                                               www.premir.es
+
+
+   o   Almacenamiento en correctas condiciones ambientales.
+   o   Transporte que garantice la integridad y hermeticidad del envoltorio.
+   o   Respeto a las fechas de caducidad del material.
+   o   Desechar el material a la mínima evidencia de contaminación.
+
+
+
+
+                                                                                             TEC. FARMACIA SERGAS
+Frecuencia del uso de indicadores
+
+  Tipo de
+                      Ejemplo                  Frecuencia de uso                 Finalidad
+ indicador
+            Registrador de temperatura,
+                                                                        Verifica parámetros del
+  Físicos   presión, tiempo del                     Cada ciclo
+                                                                        proceso
+            autoclave
+ Químicos Cinta testigo, etiquetas                                      Confirma que el paquete
+                                        Cada paquete
+  externos indicadoras                                                  ha pasado por el proceso
+            Indicadores multivariable o
+ Químicos                                                               Verifica que se alcanzaron
+            integradores dentro del     Cada paquete o bandeja
+  internos                                                              condiciones en el interior
+            paquete
+                                        • 1 vez por semana
+            Esporas resistentes como G.   (recomendado por CDC y OMS)
+ Biológicos                                                             Valida la eficacia total del
+            stearothermophilus o B.     • En cada carga que contenga
+     (BI)                                                               proceso (el más fiable)
+            atrophaeus                    implantes (obligatorio)
+                                        • En cada validación de ciclo
+
+Vida de anaquel o vida de estante: hace referencia a la caducidad del material esterilizado.
+No depende del método de esterilización usado, sino del envoltorio en el que se conserve y
+condiciones de almacenamiento.
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+
+3. CONTROL DE CALIDAD DE MATERIAL Y EQUIPOS EN EL
+LABORATORIO GALÉNICO.
+
+En el laboratorio galénico se define procedimiento como el conjunto de operaciones que deben
+realizarse, precauciones que han de tomarse y medidas que tienen que aplicarse relacionadas,
+directa e indirectamente, con la preparación y el control de calidad de un preparado farmacéutico
+elaborado en una oficina de farmacia o farmacia hospitalaria.
+
+Los procedimientos normalizados de trabajo son los procedimientos escritos y aprobados,
+según normas de correcta elaboración y control de calidad (Real Decreto 175/2001, de 23 de
+febrero), que describen de forma específica las actividades que se llevan a cabo en la elaboración
+de preparados farmacéuticos, así como su control de calidad.
+
+Se puede decir que la implantación de procedimientos normalizados de trabajo es sinónimo
+de implantación de sistemas de calidad y sinónimo de una mejora en la forma de operar en
+un laboratorio de farmacia o de farmacia hospitalaria.
+La documentación constituye una parte fundamental del sistema de garantía de calidad de los
+preparados farmacéuticos elaborados en la oficina de farmacia o servicio farmacéutico
+hospitalario para evitar:
+   • Errores de comunicación oral
+   • Errores para operar con datos retenidos en la memoria.
+
+Dentro de la documentación general de un laboratorio galénico se encuentran:
+   • Procedimiento normalizado de trabajo de limpieza de la zona o local de preparación,
+      indicando frecuencia y tipos de productos a utilizar.
+   • Procedimiento normalizado de higiene del personal
+   • Procedimiento normalizado de atribuciones del personal del laboratorio galénico
+   • Procedimiento normalizado de trabajo de limpieza del material fungible y aparataje
+      de laboratorio, indicando frecuencia y tipo de producto a utilizar.
+   • Procedimiento normalizado de trabajo de mantenimiento y calibración de distintos
+      equipos, así como sus programas de ejecución.
+TÉCNICO FARMACIA SERGAS 49
+          Tema 13-2ª parte
+
+           www.premir.es
+
+
+
+
+                     TEC. FARMACIA SERGAS
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+
+
+
+
+                                      B
+                                                       TÉCNICO FARMACIA SERGAS 51
+                                                                 Tema 13-2ª parte
+
+                                                                        www.premir.es
+
+
+BIBLIOGRAFÍA
+  •   SEFH. Esterilización. Disponible en :
+      https://www.sefh.es/bibliotecavirtual/antisepticos/6esterilizacion.pdf
+
+
+
+
+                                                                                    TEC. FARMACIA SERGAS
+  •   Guía de buenas prácticas de preparación de medicamentos en servicios de farmacia
+      hospitalaria. MINISTERIO DE SANIDAD. 2024. Disponible en:
+      https://www.sanidad.gob.es/areas/farmacia/publicaciones/GuiaBPMedicamentosServFar
+      mHosp/Docs/04GuiaMedicamentos2024Accesible.pdf
+  •   Manual de farmacotecnia. 2023. SEFH. SOCIEDAD ESPAÑOLA DE FARMACIA
+      HOSPITALARIA. ISBN: 978-84-09-50880-8
+  •   Mª Isabel Fernández Cerezo; Ana Mª de la Jara Gordo; Carmen Merino Jiménez, Beatriz
+      Gómez Peña; Mª Luisa Ruíz Montero. “Formulación Magistral” Mc Graw Hill 2010
+  •   Benito Hernández; Elena Martínez. “Formulación Magistral”. Altamar SA 2010
+  •   Merino Jiménez, C; De la Jara Gordo, A Mª; Gómez Peña, B; “Operaciones Básicas de
+      Laboratorio”- Mc Graw Hill 2009.
+  •   Luis, C D; Camacho, Mª A; Sánchez-Cascado, G; J. Mingo, Gonzalo; “Elaboración de
+      preparados farmacéuticos y parafarmacéuticos”. Mc Graw Hill 2005.
+  •   FAULÍ I TRILLO, C. Tratado de Farmacia galénica. Madrid. Ed. Luzán 5.
+  •   VILA JATO, J.L. Tecnología Farmacéutica. Vol I: Aspectos fundamentales de los
+      sistemas farmacéuticos y operaciones básicas. Madrid. Ed. Síntesis.
+  •   VILA JATO, J.L. Tecnología Farmacéutica. Vol II: Formas Farmacéuticas. Madrid. Ed.
+      Síntesis.
+  •   BARBÉ ROCABERT, C. Preparados farmacéuticos y parafarmacéuticos. Bases
+      tecnológicas y documentales. Barcelona 2001. Masson.
+  •   Prieto, S; Amich, S; Salve ML.” Principios Generales de Laboratorio Clínico”. MCGRAW-
+      HILL-Interamericana.
+  •   Mª José García García – Saavedra, José Carlos Vicente García. “Higiene del medio
+      hosptalario y limpieza de material”. CUIDADOS AUXILIARES DE ENFERMERÍA. Editorial
+      Thomson-Paraninfo.
+TÉC. FARMACIA Y PARAFARMACIA SERGAS
+Tema 13-2ª parte
+
+www.premir.es
+

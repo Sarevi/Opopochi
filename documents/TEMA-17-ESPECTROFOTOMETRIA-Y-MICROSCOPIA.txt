@@ -1,0 +1,1318 @@
+   TÉCNICOS DE FARMACIA
+                         SERGAS
+
+                     TEMA 17:
+
+
+
+
+17
+INSTRUMENTOS DE MEDIDAS ÓPTICAS:
+ CONCEPTO DE ESPECTROFOTOMETRÍA.
+ FOTÓMETRO Y ESPECTROFOTÓMETRO.
+ MICROSCOPIO ÓPTICO: FUNDAMENTO,
+        CARACTERÍSTICAS Y MANEJO.
+2 TÉCNICOS DE FARMACIA
+  Tema 17
+
+  www.premir.es
+                                              TÉCNICOS DE FARMACIA 3
+                                                            Tema 17
+
+                                                       www.premir.es
+
+
+
+
+I.-  INSTRUMENTOS    DE  MEDIDAS     ÓPTICAS: CONCEPTO             DE
+ESPECTROFOTOMETRÍA. FOTÓMETRO Y ESPECTROFOTÓMETRO
+
+
+
+
+                                                                 TÉCNICOS FARMACIA - SERGAS
+II.- MICROSCOPIO ÓPTICO: FUNDAMENTO, CARACTERÍSTICAS Y MANEJO.
+
+III.- BIBLIOGRAFÍA.
+4 TÉCNICOS DE FARMACIA
+  Tema 17
+
+  www.premir.es
+
+
+
+  I.- INSTRUMENTOS DE MEDIDAS ÓPTICAS: CONCEPTO DE
+  ESPECTROFOTOMETRÍA. FOTÓMETRO Y ESPECTROFOTÓMETRO.
+
+  INTRODUCCIÓN.
+
+  Toda la materia conocida tiene la capacidad de absorber una parte de la luz enviada hacia ella y de
+  reflejar la otra parte, de esta forma el hombre puede observar formas y colores, dependiendo de la
+  cantidad de luz que absorba y la cantidad que refleje una materia determinada.
+  Podemos considerar las radiaciones electromagnéticas como un conjunto de fotones que presentan
+  asociada una onda. Las ondas electromagnéticas se comportan como estímulos de la visión, y cumplen
+  las siguientes características:
+       • Se propagan en el vacío
+       • Transportan energía en forma de cuantos
+       • Presentan una velocidad de 300.000 Km/s, aunque esta velocidad disminuye al entrar en
+           contacto con el medio material
+
+  Cuando una molécula absorbe un fotón aumenta la energía de la molécula. Se dice que la
+  molécula ha pasado a un estado excitado. Si una molécula emite un fotón,
+  disminuye la energía de la molécula. El estado de mínima energía de una molécula se
+  llama estado fundamental.
+
+
+
+
+  Podemos relacionar la energía transportada por estas ondas con su longitud de onda a través de la
+  siguiente ecuación:
+
+  E= h*c/‫ג‬
+
+  h= constante de Plank (6,62*10-27 erg/s=6,62*10-34 J.s)
+  C= velocidad de la luz-molécula
+  ‫ = ג‬longitud de onda
+  Al conjunto de radiaciones electromagnéticas se le denomina espectro electromagnético, y dependiendo
+  de su longitud de onda este espectro puede ser dividido en varias clases.
+                                                                           TÉCNICOS DE FARMACIA 5
+                                                                                         Tema 17
+
+                                                                                          www.premir.es
+
+
+
+
+                                                                                                       TÉCNICOS FARMACIA - SERGAS
+Si observamos una disolución acuosa de Cu2+ al trasluz percibimos un color azulado. Esta coloración se
+debe a la interacción de los iones cobre con la radiación lumínica que atraviesa la disolución. Más
+concretamente, se debe a la absorción de algunas radiaciones lumínicas que corresponden al “color
+complementario” (en este caso el amarillo). Las radiaciones no absorbidas son las que atraviesan la
+disolución sin obstáculo alguno y llegan a nuestro ojo. Estas radiaciones transmitidas corresponden al
+color azul.
+
+Además, si comparamos el color de dos disoluciones de Cu2+ con diferente concentración, observamos
+que a mayor concentración corresponde una mayor intensidad del color azul de la disolución. Por lo
+tanto podemos adivinar la sustancia que hay en una disolución, según el color de esta y además
+podremos saber la cantidad de esa sustancia según la intensidad de ese color.
+
+Esta propiedad de interacción de la luz con una gran cantidad de especies químicas nos permitirá
+identificar y cuantificar analitos, dando lugar a una rama de la Química Analítica denominada
+espectrofotometría. Espectrofotometría significa medida del espectro de la luz y se refiere a la medida
+del tipo y cantidad de luz que se obtiene de una disolución.
+
+La espectrofotometría es el conjunto de técnicas que utilizan la luz para medir concentraciones
+químicas.
+
+EL ESPECTRO ELECTROMAGNÉTICO.
+La luz se puede explicar como un conjunto de radiaciones que se mueven por todo el espacio. Aquellas
+detectables por nuestro ojo corresponden a la luz visible, pero la mayoría son invisibles para nosotros.
+
+Estas radiaciones se pueden describir como partículas y como ondas. La descripción como onda se basa
+en que la luz se compone de campos eléctricos y magnéticos que oscilan perpendicularmente a la
+dirección de traslación por el espacio dando lugar a ondas transversales.
+Una radiación electromagnética (cualquier fenómeno ondulatorio) se define generalmente mediante dos
+parámetros:
+
+1) Longitud de onda ( l ): distancia recorrida por un ciclo completo. De cresta a cresta de la onda.
+2) Frecuencia ( u ): número de oscilaciones completas que realiza la onda por segundo.
+6 TÉCNICOS DE FARMACIA
+  Tema 17
+
+  www.premir.es
+
+
+
+
+                                  - RADIACIÓN ELECTROMAGNÉTICA.
+
+
+  En el vacío, el producto de estos dos parámetros es constante e igual a la velocidad de traslación de la luz:
+
+  l u = c
+
+  donde c es la velocidad de la luz en el vacío (3108 m/s)
+
+  La longitud de onda se expresa en unidades de longitud y varía entre décimas de nanómetro a varios
+  metros. La frecuencia se expresa en ciclos por segundo (s-1) o Hertzios (Hz) Un Hz es igual a 1 ciclo/s.
+
+  Por otro lado, la luz se puede describir como una partícula. En este caso se dice que es una partícula de
+  energía llamada fotón. También se puede describir como un paquete de energía. La energía que tiene un
+  fotón es proporcional a la frecuencia de la radiación que forma mediante la ecuación:
+
+  E=h* u
+
+  donde h es la constante de Planck (=6,610-34 Js)
+
+  y también se puede relacionar con la longitud de onda
+
+           c
+  E = h
+           l
+  Por lo tanto la energía es inversamente proporcional a la longitud de onda y directamente proporcional a
+  la frecuencia. La luz roja (con mayor l y menor u ) es menos energética que la luz azul (con menor l y
+  mayor u ).
+
+  El conjunto de radiaciones electromagnéticas se llama espectro electromagnético y es conveniente
+  agruparlas en regiones para poder conocer sus propiedades. En la figura siguiente se observan las
+                                                                          TÉCNICOS DE FARMACIA 7
+                                                                                        Tema 17
+
+                                                                                         www.premir.es
+
+distintas zonas del espectro electromagnético. Como se puede observar, la zona visible (radiaciones
+percibidas por nuestro ojo) es muy pequeña en comparación con la gran amplitud del espectro. Hay que
+tener en cuenta que aunque hablamos de una radiación determinada ( l ) físicamente es imposible aislar
+dicha radiación. Siempre podremos obtener un rango de radiaciones pequeño según la exactitud del
+dispositivo de selección (difractores de radiación y filtros), pero nunca una sola.
+
+
+
+
+                                                                                                     TÉCNICOS FARMACIA - SERGAS
+                    -ESPECTRO DE RADIACIONES ELECTROMAGNÉTICAS.
+
+
+Las radiaciones más importantes con aplicación al análisis químico son:
+
+Rayos X                    0,1-10 nm                 fluorescencia
+Ultravioleta (UV)          10-380 nm                 absorción/emisión
+Visible (VIS)              380-780 nm                absorción/emisión/colorimetrías
+Infrarrojo (IR)            780 nm- 300 mm            infrarrojos
+Microondas                 300 mm – 0,01 m
+Radio                      0,01 – 10 m               Resonancia electrónica /nuclear
+
+ABSORCIÓN DE RADIACIÓN ELECTROMAGNÉTICA.
+
+Cuando una molécula absorbe un fotón su energía interna aumenta y pasa a un estado inestable, por lo
+que rápidamente vuelve a liberar esa energía “sobrante” y vuelve al estado inicial que es más estable. El
+estado inicial se denomina estado fundamental y el estado más energético se llama estado excitado.
+La absorción de radiación produce un paso del estado fundamental al excitado (excitación) y en el
+proceso contrario (llamado relajación) hay una liberación de energía. Esta energía liberada en la
+relajación puede ser en forma de calor o en forma de radiación electromagnética otra vez. Este último
+proceso de desprendimiento de radiación se llama emisión.
+
+El aumento del nivel energético interno de la molécula produce unos cambios en los enlaces
+intramoleculares y/o en el movimiento de los electrones alrededor del átomo. Estos cambios se llaman
+transiciones y se clasifican en tres tipos: electrónicas, vibracionales y rotacionales (de mayor a menor
+energía necesaria, respectivamente).
+
+Así, las radiaciones más energéticas (VIS, UV y mayores) comunican suficiente energía como para alterar
+el movimiento orbital de los electrones, tanto alrededor de un átomo solo como de los orbitales de
+enlace entre dos átomos. Las radiaciones menos energéticas (IR) producen cambios en los movimientos
+de vibración y rotación de la molécula. Estas últimas son muy específicas de cada enlace y por lo tanto de
+cada molécula por lo que se utilizan como técnica de identificación.
+8 TÉCNICOS DE FARMACIA
+  Tema 17
+
+  www.premir.es
+
+  Los rayos X rompen enlaces químicos y ionizan a las moléculas. Los rayos X que se utilizan en medicina
+  pueden ser perjudiciales para el cuerpo humano, y deben ser reducidos al mínimo.
+
+  Para realizar una identificación generalmente se hace incidir sobre la sustancia estudiada radiaciones
+  electromagnéticas de diferente energía. Normalmente se estudia un rango de radiaciones y se va
+  aumentando (o disminuyendo) la longitud de onda de las radiaciones incidentes desde un extremo del
+  rango hasta el extremo opuesto. Así se obtiene un espectro de absorción de la sustancia, que se puede
+  representar gráficamente como se muestra en la figura:
+
+
+
+
+                        - ESPECTRO DE INFRARROJOS DEL AGUA PURA.
+
+
+  Cada uno de los picos del espectrograma corresponde aproximadamente a una transición energética de
+  un enlace molecular, por lo tanto el espectro es único de cada molécula. Es como una huella digital de
+  esa molécula donde quedan registrados todos los enlaces y sus transiciones correspondientes. De esta
+  manera, si tenemos el espectro de absorción de una molécula podemos identificarla con exactitud.
+
+  CUANTIFICACIÓN DE UNA SUSTANCIA EN DISOLUCIÓN.
+
+  LEY DE BEER
+
+  Cuando un rayo electromagnético incide sobre un cuerpo, éste refleja una parte, absorbe otra y, si el
+  cuerpo es transparente, dejará que una tercera parte lo atraviese.
+  Cuando una muestra absorbe luz, la irradiancia (potencia radiante) del haz de luz disminuye. La
+  irradiancia, P, es la energía por segundo y por unidad de área del haz de luz.
+
+  La cantidad de radiación electromagnética absorbida por un analito se puede relacionar
+  cuantitativamente con la concentración de dicha sustancia en disolución.
+  Se define la transmitancia (T) como la fracción de radiación incidente transmitida
+  por la disolución. Si la potencia radiante que incide sobre la disolución es Po y P la
+  potencia radiante que sale, entonces:
+                                                                        TÉCNICOS DE FARMACIA 9
+                                                                                      Tema 17
+
+                                                                                       www.premir.es
+
+
+
+
+                                                                                                   TÉCNICOS FARMACIA - SERGAS
+      P
+  T =
+      P0
+Además, se observa que la potencia de la energía transmitida disminuye geométricamente
+(exponencialmente) con la concentración c y con la distancia b recorrida a través de la disolución.
+
+
+
+
+donde k y k’ son constantes de proporcionalidad, y combinando ambas y aplicando
+logaritmos se obtiene que:
+
+
+
+T = 10- a b  c        - logT = abc = A
+Beer estableció una relación directa entre la absorbancia y la concentración de una disolución, a través
+de la suposición de igualdad en la unidad de espesor de la disolución atravesada por la radiación. La
+fórmula que relaciona estos dos parámetros es:
+
+
+                                       A= ε.b.c=log P0/P
+
+A= Absorbancia
+ε = absortividad molar
+b = camino óptico (cm)
+C= concentración de la disolución expresada en Mol/l
+
+que es la expresión matemática de la Ley de Beer y que indica la relación directa entre la absorbancia
+de un analito y su concentración en disolución.
+10 TÉCNICOS DE FARMACIA
+   Tema 17
+
+   www.premir.es
+
+   - Absortividad molar (ε): La absortividad molar es la característica de una sustancia que nos dice cuánta
+   luz absorbe a una longitud de onda determinada. Se expresa en L/mol.cm.
+
+
+
+
+   En la práctica esta ley no se cumple exactamente y para determinar la concentración de un analito a
+   partir de las medidas de absorbancia, es preciso realizar un proceso de calibración.
+
+
+
+
+   ERRORES DE MEDIDA. DESVIACIONES DE LA LEY DE BEER.
+
+   La ley de Beer se cumple para una radiación monocromática que atraviesa una disolución
+   diluida, cuando la especie absorbente no participa en un equilibrio que depende de su concentración.
+
+      a) Desviaciones instrumentales:
+
+   Hay dos errores de lectura inherentes al detector espectrométrico.
+   El primero se produce cuando hay una gran cantidad de analito y, por lo tanto, una gran absorbancia de
+   radiación. Al detector llega muy poca potencia radiante y se encuentra en la zona límite de detección,
+   con lo que no responde bien a pequeñísimas variaciones de absorbancia.
+   El segundo se produce cuando hay muy poco analito y, por tanto, muy poca absorbancia. Esto implica
+   que casi toda la potencia incidente atraviesa la disolución y llega al detector. Entonces, el detector
+   espectrométrico está en la zona de saturación y no aprecia bien pequeñas variaciones en la absorción.
+   En la gráfica se muestra el error (en %) que se calcula matemáticamente para toda
+   la escala del espectro:
+                                                                          TÉCNICOS DE FARMACIA 11
+                                                                                        Tema 17
+
+                                                                                          www.premir.es
+
+
+
+
+                                                                                                      TÉCNICOS FARMACIA - SERGAS
+                                     -ERROR RELATIVO DEL ESPECTROMETRO.
+
+
+En la figura se observa que hay un error mínimo entre el 20 y el 65% de T (0,200 a 0,700 unidades de
+absorbancia). Los espectrofotómetros más sensibles permiten medidas con un error aceptable entre
+0,100 y 1,500 unidades de absorbancia.
+
+La ley de Beer aplica estrictamente solo cuando las mediciones son realizadas con fuentes
+de radiación monocromática. En la práctica, las fuentes policromáticas que tienen una
+distribución continua de longitudes de onda se utilizan en conjunto con una rejilla o un
+filtro para aislar una banda casi simétrica de longitudes de onda alrededor de la longitud
+de onda que será empleada. En la medida que el aparato sea más exacto en la selección de la longitud de
+onda, este error se minimiza.
+
+    b) Desviaciones químicas:
+
+Aparecen cuando las especies absorbentes experimentan asociación, disociación o reacción con el
+disolvente para dar lugar a productos que absorben de manera distinta al analito.
+Si la molécula absorbente participa en un equilibrio químico que depende de la concentración, la
+absortividad cambia con la concentración.
+Hay analitos que tienen una ionización parcial y la especie ionizada puede tener diferente absorbancia
+que la especie molecular. Esto condiciona la absorbancia al desplazamiento del equilibrio.
+Un ejemplo puede ser un ácido débil, AH, que en disolución concentrada predomina la especie no
+disociada AH. Cuando se diluye la disolución, aumenta la disociación. Si la absortividad de A no es la
+misma que la de HA, la disolución no obedecerá a la ley de Beer cuando se diluya.
+
+
+                AH (absorbe) Ä A- + H + (transparente)
+En este caso el error se puede evitar fijando el pH de la disolución con un tampón.
+
+Otro error está relacionado con las variaciones en el índice de refracción de la disolución. Este efecto es
+significativo en disoluciones de elevada concentración.
+En estos casos una manera de evitar el error es realizar la calibración de la técnica
+con patrones que se mezclan con la disolución problema. De esta manera los efectos afectan por igual al
+analito que a los patrones.
+12 TÉCNICOS DE FARMACIA
+   Tema 17
+
+   www.premir.es
+
+      c) Calibración:
+
+   Dado que hay una serie de fenómenos que no permiten la aplicación de la ley de Beer, en la
+   práctica se realiza siempre una calibración de la técnica de medida, con la cual obtenemos una
+   relación matemática entre la concentración y la absorbancia.
+
+   El procedimiento de la calibración se basa en medir la absorbancia de varias disoluciones patrón
+   (de máximos y mínimos de absorción conocidos) en las mismas condiciones que se mide la
+   absorbancia de la disolución problema, y se hace una interpolación.
+
+      d) Parámetros de Calidad.
+
+   La calidad de una técnica espectrofotométrica expresada en términos de incertidumbre, se basa
+   esencialmente en tres parámetros: sensibilidad, límite de
+   detección y rango de linealidad.
+
+   - Sensibilidad: Es la concentración requerida para dar un 1% de absorbancia (99% de transmitancia o lo
+   que es lo mismo 0,0044 unidades de absorbancia). A medida que esta concentración es menor, la
+   sensibilidad de la técnica es mayor porque es necesaria menos concentración para producir una señal en
+   el detector.
+
+   - Límite de detección: Es la mínima concentración que se puede medir con la técnica y con un elevado
+   nivel de certidumbre. Está relacionado con el ruido de fondo del aparato, es decir la señal que mide el
+   aparato cuando se introduce un blanco. Una manera de calcularlo es multiplicar por tres la señal
+   correspondiente al ruido de fondo.
+
+   - Rango de linealidad: Es el intervalo de concentraciones dentro del cual podemos medir una muestra
+   problema con un elevado nivel de certidumbre. Generalmente a partir del valor máximo de este rango, la
+   señal (absorbancia) deja de tener una relación lineal con la concentración y la curva se hace horizontal,
+   tendiendo a un valor máximo de absorbancia. Las muestras o patrones que están fuera de este rango no
+   se pueden medir con seguridad con la técnica empleada.
+                                                                           TÉCNICOS DE FARMACIA 13
+                                                                                         Tema 17
+
+                                                                                          www.premir.es
+
+
+CUANTIFICACIÓN  DE                    UNA         SUSTANCIA            EN       DISOLUCIÓN:                EL
+ESPECTROFOTÓMETRO.
+
+Un espectrómetro o espectrofotómetro es un instrumento que descompone la radiación
+policromática en distintas longitudes de onda.
+
+
+
+
+                                                                                                       TÉCNICOS FARMACIA - SERGAS
+Espectrofotómetro es el nombre genérico de todos los aparatos basados en esta técnica. El
+espectrofotómetro tiene un generador de radiación lúmínica (policrómica), un separador para obtener la
+radiación adecuada y luego mide la potencia radiante obtenida. Los componentes fundamentales que
+tienen todos los espectrómetros son:
+
+
+
+
+1) Fuente: es el dispositivo emisor de radiación electromagnética. Generalmente emite una banda muy
+amplia de radiaciones continuas alrededor de la longitud de onda deseada.
+
+Según la zona del espectro que emite hay tres tipos:
+
+-Visible: Lámparas de filamento de Tungsteno incandescente o de Wolframio (halógeno). Son similares a
+las bombillas comunes.
+-Ultravioleta: Tubo de descarga de hidrógeno o de deuterio a baja presión. Las fuentes de ultravioleta
+deben tener una ventana de cuarzo, porque el vidrio no es transparente a esa radiación. A veces están
+refrigerados con agua para disipar el elevado calor que producen.
+-Infrarrojos: Alambres calientes, focos luminosos o cerámicas incandescentes que son fuentes especiales
+de óxidos de tierras raras (disprosio, holmio, erbio.) o carburos (de silicio). Estos emiten radiación en IR
+(1,5 a 2,0 mm) a elevadas temperaturas (1000-2000ºC).
+- Fluorescencia: Para excitar la fluorescencia se usan diversas fuentes de UV continuas
+
+2) Monocromador o selector de longitud de onda: tiene como objetivo controlar la pureza de la
+radiación emitida consiguiendo el menor ancho de banda de longitud de onda posible. Consta de un
+conjunto de lentes, espejos y rendijas para dispersar y separar, enfocar y restringir la radiación no
+deseada.
+14 TÉCNICOS DE FARMACIA
+   Tema 17
+
+   www.premir.es
+
+
+   Los componentes de los monocromadores son:
+
+   - PRISMAS: producen la refracción de la luz (“dispersar” la radiación en sus diferentes longitudes de onda),
+   siendo el ángulo de refracción mayor cuanto menor es la intensidad de la radiación. Al girar el prisma se
+   puede hacer que por una rendija de salida pasen diferentes longitudes de onda y lleguen a la muestra.
+   Dispersión no lineal.
+
+
+
+
+   Según el tipo de radiaciones se usan prismas de vidrio (VIS), cuarzo o sílice (UV) y cristales de NaCl para IR.
+
+   - REJILLAS DE DIFRACCION: Es una lámina metálica (Al) altamente pulida sobre la que se han hecho una
+   gran cantidad de ranuras (líneas paralelas) que actúan como centros de dispersión de todas las
+   radiaciones incidentes. Hay una dispersión lineal de las longitudes de onda de una determinada banda
+   cromática, por lo tanto se puede usar en todas las regiones del espectro. Funciona mejor que el prisma en
+   el IR.
+   El poder de resolución depende de la cantidad de ranuras trazadas, pero en general el poder de
+   resolución de las rejillas es mejor que el de los prismas. Dispersión lineal.
+
+   - FILTROS ÓPTICOS: Para aislar ciertas longitudes de ondas luminosas se pueden usar
+   diversos tipos de filtros. Hay filtros de banda angosta, filtros de corte fino y filtros de
+   interferencia
+
+   3) Celdas para la muestra: recipientes donde se coloca la muestra a analizar. Varían mucho según la
+   técnica a utilizar, pero como característica común deben ser transparentes en la región de longitud de
+   onda que se va a medir.
+
+   VIS y UV: cubetas cuadradas de vidrio, cuarzo de 1 cm de lado.
+   IR: cubetas de NaCl, AgCl.
+                                                                         TÉCNICOS DE FARMACIA 15
+                                                                                       Tema 17
+
+                                                                                         www.premir.es
+
+
+
+
+                                                                                                    TÉCNICOS FARMACIA - SERGAS
+El disolvente no debe atacar las ventanas de la celda.
+
+Cuando se tienen muestras en forma de líquidos puros se corren sin diluirlas en la
+región del infrarrojo.
+Los sólidos no son lo bastante solubles en los disolventes disponiblescomo para producir una
+concentración suficientemente alta con la que se pueda medir enla región infrarroja. Sin embargo,
+pueden usarse polvos en suspensión o un lodo espeso en un líquido viscoso que tenga más o menos el
+mismo índice de refracción para reducir la dispersión de la luz.
+Los gases se pueden analizar con espectrometría infrarroja, para lo cual se usa una
+celda de trayectoria larga
+
+4) Detector (transductor): Produce una señal eléctrica cuando recibe un fotón. Esta señal eléctrica luego
+es convertida en unidades de potencia radiante transmitida o absorbida.
+
+Los detectores también dependen de la región de longitud de onda en la que se trabaja:
+
+- FOTOTUBO: Para la zona del VIS y UV. Con el mismo principio de funcionamiento que la célula
+fotoeléctrica (cátodo y ánodo).
+Un tubo fotomultiplicador es más sensible que un fototubo en las regiones VIS y UV.
+- FOTODIODO ARRAY: Sobre un semiconductor se fabrican diodos de silicio en serie paralelos, de manera
+que al incidir sobre él una radiación difractada, se puede tener una señal instantánea para un amplio
+rango de longitudes de onda. Se registra todo un espectro.
+- INFRARROJOS: Los detectores de infrarrojos se basan en la propiedad térmica de estas radiaciones y
+traducen el calor asociado a la radiación transmitida en una señal eléctrica. Los más utilizados son los
+termopares, bolómetros y termistores, formados por metales cuya resistencia eléctrica cambia con la
+temperatura.
+
+5) Registrador: Es un display digital, en el que aparece el valor numérico de absorbancia o el valor de
+concentración cuando puede realizar automáticamente los cálculos de calibración. En el caso de obtener
+el espectro de absorción (en un intervalo de longitud de onda) de una sustancia, el registrador nos
+muestra un gráfico con el valor de longitud de onda en abscisas y la absorbancia en ordenadas.
+16 TÉCNICOS DE FARMACIA
+   Tema 17
+
+   www.premir.es
+
+
+
+
+   TIPOS DE ESPECTROFOTOMETRÍAS.
+   En la tabla siguiente se muestra una clasificación de los principales tipos de espectrofotometrías
+   agrupados según el tipo de interacción luz-molécula (absorción o emisión) y según la zona del espectro
+   en la que se trabaja:
+
+
+
+
+   ESPECTROFOTOMETRIA DE ABSORCIÓN MOLECULAR VIS-UV.
+   Hay un proceso de absorción de radiación por parte de las moléculas pasando a un estado excitado.
+   M + hu ¾¾¾¾
+            absorción
+                      ®M*
+
+   y en un tiempo muy breve se produce la relajación con emisión de energía en forma de calor
+   M * ¾¾¾¾
+        relajación
+                   ® M + calor
+
+   El aumento de energía interna conlleva transiciones electrónicas. Estas transiciones son de electrones
+   compartidos que forman enlaces o de electrones de orbitales atómicos externos (no compartidos).
+
+   Los principales tipos de moléculas que experimentan este fenómeno son:
+   - Compuestos orgánicos con grupos no saturados (dobles y triples enlaces), donde hay electrones de
+   enlace que pueden saltar a otros orbitales de enlace. Estos grupos funcionales que absorben en VIS o UV
+   se llaman cromóforos.
+   - Compuestos de coordinación (complejos) de metales de transición. Ej. Fe(SCN)2- rojo intenso.
+   - Iones de metales de transición, de lantánidos y de actínidos. Ej. color azul de la disolución de Cu2+
+                                                                           TÉCNICOS DE FARMACIA 17
+                                                                                         Tema 17
+
+                                                                                          www.premir.es
+
+Generalmente la absorción de estos compuestos se produce en varias longitudes de onda o amplias
+bandas de absorción, por lo que no hay picos bien definidos. Sobre todo cuando hay interacciones con el
+disolvente. Esto confiere poca selectividad a la técnica para identificación de especies, siendo más útil en
+análisis cuantitativo.
+
+El instrumento utilizado en la técnica es el espectrofotómetro visible-ultravioleta y permiten trabajar
+con una gran cantidad de longitudes de onda, incluso hay algunos que hacen un barrido en una región
+
+
+
+
+                                                                                                       TÉCNICOS FARMACIA - SERGAS
+del espectro dando un gráfico del espectro de absorción de una sustancia. Estos aparatos constan de un
+selector de longitud de onda y una cubeta transparente de 1 cm de lado y 3 cm de alto donde se coloca
+la disolución a medir. Normalmente hay dos huecos para dos cubetas, uno para la muestra y otra para
+una disolución de referencia o blanco, frente a la cual se hacen todas las medidas.
+
+
+
+
+                                    ESPECTROFOTÓMETRO UV-ULTRAVIOLETA.
+
+
+Cuando la especie química a medir absorbe en el visible (y la disolución tiene color) la técnica se llama
+vulgarmente colorimetría y los aparatos utilizados se llaman colorímetros. También se comercializan
+kits de análisis rápidos que tienen unas tablas de comparación de colores (o disoluciones preparadas y de
+color estable) en lugar de un aparato como el descrito. La disolución problema se mezcla con los
+reactivos adecuados en un pequeño tubo de ensayo y se compara con la tabla de colores. En esta tabla
+está asignada la concentración de analito que corresponde a cada color, con lo cual es puede determinar
+la concentración en el problema. Este método no tiene una gran exactitud pero en muchas aplicaciones
+es suficiente (cloro en piscinas, nitratos en aguas de embalses, NaCl en aguas para riego, etc).
+En muchos casos la especie estudiada no absorbe en el VIS-UV, pero sí un complejo formado con otro
+compuesto. Por ej. el ión fosfato no absorbe en el VIS, pero forma un complejo con el ión molibdato y el
+vanadato (fosfomolibdovanadato) que tiene una gran intensidad de absorción a 430 nm (azul), y se
+emplea para análisis de fósforo en aguas, suelos, etc. En estos casos la determinación espectrométrica no
+es directa, sino que previamente se hace reaccionar la muestra con unos reactivos adecuados (reacción
+colorimétrica) y posteriormente se mide la absorbancia de la mezcla.
+
+Aplicaciones: análisis cuantitativo y cualitativo de sustancias químicas en investigación biológica y
+bioquímica, en la industria farmacéutica, en el monitoreo ambiental, en la industria alimentaria y en la
+ciencia de materiales. Permite identificar y cuantificar compuestos, determinar la pureza de fármacos,
+monitorear la calidad del agua y alimentos, y caracterizar materiales.
+Ventajas:
+- Gran aplicabilidad, ya que hay muchas especies absorbentes y posibilidades de formar complejos con
+las que no lo son.
+- Elevada sensibilidad, se pueden determinar concentraciones hasta 10-5 M.
+18 TÉCNICOS DE FARMACIA
+   Tema 17
+
+   www.premir.es
+
+   - Selectividad media, interacciones cuando hay grupos que absorben a la misma longitud de onda.
+   - Permite automatización del proceso, se usa en sistemas de análisis en continuo.
+   - Sistema no destructivo en medidas directas.
+   Como principal desventaja de la técnica las interacciones por partículas que interfieran el paso de luz. Las
+   disoluciones han de ser exentas de sólidos en suspensión.
+
+   FOTÓMETRO vs. ESPECTROFOTÓMETRO
+
+   La diferencia fundamental entre un espectrofotómetro y un fotómetro o fotocolorímetro, consiste en que
+   el fotocolorímetro trabaja únicamente en el espectro de luz visible y selecciona una longitud de onda
+   determinada mediante filtros fijos.
+   En cambio, un espectrofotómetro es capaz de trabajar, no solo con la luz visible sino que en otras
+   regiones del espectro electromagnético (ultravioleta e infrarroja). Por otro lado posee un monocromador
+   para seleccionar la longitud de onda deseada.
+
+   ESPECTROFOTOMETRIA DE ABSORCIÓN MOLECULAR IR.
+   La absorción molecular de radiaciones de esta zona del espectro produce transiciones vibracionales y
+   rotacionales. Por lo tanto, todas las moléculas absorben en IR, excepto algunas diatómicas (O2, N2, Cl2) de
+   elevada simetría.
+
+   Las bandas de absorción son muy estrechas y corresponden a enlaces muy específicos, y a menudo
+   dependen de los átomos más próximos. Un espectro de IR es como una huella dactilar de la molécula y
+   esto implica que es una técnica idónea para identificar compuestos orgánicos o inorgánicos puros, pero
+   no es tan adecuada para cuantificar.
+
+   Los instrumentos más utilizados son:
+   -Espectrofotométros IR: Similares al VIS-UV, pero con componentes diferentes. Hacen un barrido de l y
+   recogen el espectro. Los más utilizados son los llamados NIR (near infrared) que trabajan con zonas del
+   espectro en el infrarrojo cercano.
+   -Espectrometros de transformada de Fourier: Recoge datos de una zona del espectro simultáneamente y
+   en varias pasadas, posteriormente por un proceso matemático muy complejo se resuelven los picos del
+   espectro con una gran sensibilidad. Son los más usados actualmente.
+   -Fotómetros de filtro: Con un filtro adecuado se selecciona una l deseada. Sirven para monitorizar la
+   concentración de una especie química en un punto fijo. Se usan mucho para contaminantes
+   atmosféricos: CO, nitrobenceno, cloruro de vinilo, HCN, piridina... En algunos instrumentos se usan para
+   determinar CO2, SO2, etc.
+
+   Aplicaciones: análisis de identificación y estructura de compuestos y es útil en el análisis cuantitativo de
+   mezclas complejas de compuestos similares. Se usa en la identificación de compuestos en investigación
+   de medicamentos, bioquímica, biología, fisiología. En la industria farmacéutica, pesticidas, alimentación,
+   contaminantes, etc.
+
+   ESPECTROFOTOMETRIA DE ABSORCIÓN Y DE EMISIÓN ATÓMICA.
+
+   Permite la determinación (cuantificación) de unos 70 elementos químicos en concentraciones que
+   oscilan entre ppb a ppm. La medida de los elementos químicos se hace en estado atómico mediante una
+   atomización de la muestra en estado gaseoso.
+                                                                            TÉCNICOS DE FARMACIA 19
+                                                                                          Tema 17
+
+                                                                                            www.premir.es
+
+Estos átomos experimentan absorción, emisión o fluorescencia de radiaciones VIS, UV o rayos X, debidas
+a transiciones electrónicas entre orbitales atómicos. Esta técnica no da información sobre enlaces
+moleculares en absoluto y nos da información específica sobre un elemento químico.
+La principal diferencia con las otras espectrometrías es la atomización, proceso por el cual la muestra se
+introduce en un mechero, junto con el combustible, y se quema a elevada temperatura. Las moléculas
+del analito se rompen totalmente liberando los elementos químicos en estado atómico, y estos pueden
+experimentar fenómenos de absorción, emisión o fluorescencia.
+
+
+
+
+                                                                                                        TÉCNICOS FARMACIA - SERGAS
+Según el sistema de atomización, y la temperatura a la que se produce, se tienen los siguientes métodos
+de espectrofotometría atómica: llama, electrotérmico, plasma, arco voltaico y chispa eléctrica.
+
+ESPECTROFOTOMETRÍA DE ABSORCIÓN ATÓMICA CON FLAMA
+
+Es el método más utilizado de la espectrofotometría atómica. Se basa en la absorción de luz por átomos
+en estado gaseoso
+Muy adecuado para la determinación de ppm de elementos metálicos como Fe, Cd, Au, Pb, Zn, Cu, Mn en
+disoluciones acuosas de aguas, fertilizantes, suelos, extractos vegetales, etc.
+
+Los átomos en la llama absorben radiación de determinadas l (VIS y UV) según su naturaleza, por lo que
+es una técnica muy específica para cada elemento. La absorción en la llama sigue la ley de Beer, pero en
+la práctica es necesario hacer un que permiten calcular la recta de calibrado.
+El instrumento se denomina Espectrofotómetro de Absorción Atómica (EAA).
+
+Como fuente de radiación se usa una lámpara de cátodo hueco que contiene el mismo metal que se va a
+analizar y que emite una radiación con una banda del entorno a la que se va a absorber.
+
+En lugar de una cubeta o recipiente para poner la muestra lleva un mechero donde se produce la llama
+con la que se atomiza la muestra. Esta llama suele ser de propano, acetileno o hidrógeno y oxígeno o
+óxido nitroso (N2O). Las temperaturas que alcanza varían entre 1500 y 3000ºC.
+
+ESPECTROFOTOMETRÍA DE EMISIÓN ATÓMICA CON FLAMA
+
+Es una técnica muy utilizada para la determinación de metales alcalinos y alcalinotérreos: Na, K, Li, Ca, etc,
+en concentraciones del orden de ppm. Se utiliza con los mismos materiales ya comentados: aguas,
+fertilizantes, suelos, material vegetal, alimentos, contaminantes, etc.
+
+Se basa en el mismo principio que la absorción, pero en este caso la temperatura de la llama es suficiente
+para que haya una excitación atómica y una emisión posterior de luz.
+
+Los instrumentos utilizados en esta técnica se denominan Espectrofotómetros de Emisión Atómica (EEA)
+y en ingles con las siglas AES. A diferencia de los anteriores (absorción) no tienen fuente de radiación. El
+resto de los componentes es igual, así como el procedimiento de calibración y cálculo de resultados son
+iguales.
+20 TÉCNICOS DE FARMACIA
+   Tema 17
+
+   www.premir.es
+
+
+
+
+   ESPECTROFOTOMETRÍA CON ATOMIZADORES ELECTROTÉRMICOS
+
+   Se utiliza para determinar concentraciones muy pequeñas (ppb) de metales contaminantes: Pb, Cd, Cr,
+   Zn, Cu, Co, Mn, Pt, Hg, etc.
+
+   En las técnicas anteriores el rendimiento de la atomización (moléculas atomizadas con respecto al total)
+   es muy bajo, aproximadamente del 0,1%. Esto hace que la sensibilidad de la técnica sea baja. El
+   atomizador electrotérmico consta de un pequeño minihorno, que es un cilindro de grafito de
+   50mm×10mm f, que se calienta con una resistencia eléctrica hasta 3000ºC. Con una pequeña cantidad de
+   muestra (varios mL) se obtiene una gran cantidad de partículas atomizadas (eficiencia del 100%) y una
+   gran señal que da una gran sensibilidad a la técnica. Por el contrario la precisión no es tan buena y hay un
+   gran número de interferencias. El proceso de calibrado es muy delicado y solo es útil en determinaciones
+   de concentraciones muy bajas de algunos metales. El instrumento utilizado se llama Espectrometria con
+   Horno de Grafito o GFS (Graphit Furnace Spectrometry).
+
+   ESPECTROFOTOMETRIA DE EMISIÓN CON PLASMA
+   Se consigue una llama de altísima temperatura que transforma la mezcla de combustible y muestra al
+   estado de plasma: una mezcla gaseosa con una concentración muy alta de cationes y electrones. Esto
+   permite una elevada eficiencia en la atomización, una intensa emisión de los átomos y la determinación
+   de una gran cantidad de elementos químicos metálicos (y algunos no metales) con algo menos de
+   sensibilidad que el Horno de Grafito, pero con más precisión. Además la combinación de esta técnica con
+   un sistema informático potente, permite la determinación de la concentración de varias decenas de
+   elementos químicos en unos segundos.
+                                                                          TÉCNICOS DE FARMACIA 21
+                                                                                        Tema 17
+
+                                                                                         www.premir.es
+
+Los diferentes aparatos se basan en la fuente de energía para obtener el plasma en el mechero. Los más
+comunes son:
+
+- DCP: plasma generado por una corriente continua.
+- ICP-OES: (induced coupled plasm) plasma acoplado por inducción de un generador de radiofrecuencias.
+- Plasma generado por frecuencias de microondas.
+Entre los no metales que pueden ser determinados por esta técnica se encuentra el P y el B. Se obtienen
+
+
+
+
+                                                                                                     TÉCNICOS FARMACIA - SERGAS
+límites de detección entre 0,1 y 100 ppm, y el acoplamiento de esta técnica con otras muy sensibles
+permite llegar hasta 1 ppb. Ej. ICP-EM o ICP espectrometro de masas.
+
+ESPECTROFOTOMETRIA DE FLUORESCENCIA MOLECULAR
+
+Se basa en el fenómeno que experimentan algunas moléculas de absorber una radiación determinada y
+en el proceso de relajación, liberar parte de la energía como calor (radiación térmica) y otra parte como
+radiación electromagnética de una longitud de onda mayor a la incidente. Este fenómeno se produce en
+un intervalo de tiempo muy pequeño después de la absorción (10-5 s) a diferencia de la fosforescencia
+que puede durar minutos y horas.
+Este fenómeno permite una técnica muy sensible ya que no todas las moléculas fluorescen y las l pueden
+cambiar según las condiciones. Los límites de detección son inferiores a la absorción molecular VIS-UV. El
+instrumento más usado es el espectrofluorómetro, y la técnica más común se denomina Fluorescencia de
+Rayos X, ya que son éstos los utilizados como fuente de energía.
+
+Tiene una gran aplicabilidad en la cuantificación de moléculas orgánicas en productos alimenticios,
+farmacéuticos, clínicos y naturales.
+
+OTROS MÉTODOS.
+
+Resonancia Magnética Nuclear (RMN)
+
+Se produce una absorción de radiación electromagnética por los núcleos atómicos.
+Estos tienen un movimiento de giro, que es cambiado en el proceso de absorción.
+
+El tipo de radiaciones que se utilizan son de gran l (microondas de baja energía), y la absorción depende
+de la configuración electrónica que rodea al núcleo y de las interacciones intramoleculares. Por lo tanto
+da información sobre los enlaces que tiene un átomo, y el tipo de molécula que se estudia. Las
+radiaciones involucradas en esta técnica no alteran los materiales estudiados (dada su baja energía), por
+lo que tiene una gran aplicación en seres vivos, productos fácilmente alterables, etc.
+
+Los elementos químicos que se detectan por esta técnica son H, F, P, B, Cl, N. Mientras que el C y el O no
+tienen un momento cinético de giro nuclear.
+
+Esto hace que la técnica sea muy interesante para identificar moléculas orgánicas, obteniendo espectros
+de los átomos de H, de los que se deduce todos los enlaces del H en la molécula.
+Esta técnica tiene una gran aplicación en medicina (estudios no destructivos de tejidos de órganos del
+cuerpo humano), determinación de humedad, estudios de aceites y grasas, estudios de F en plásticos,
+etc.
+
+La RMN usada en medicina, utiliza un potente campo magnético, y ondas de radiofrecuencia. Consta de
+un imán muy potente (p.ej. aleación de niobio-titanio) y varios secundarios, bobinas emisoras de ondas
+22 TÉCNICOS DE FARMACIA
+   Tema 17
+
+   www.premir.es
+
+   de radio, una antena que recoge la señal de radiofrecuencia que emite nuestro cuerpo y un ordenador
+   que procesa las señales recibidas y las convierte en imágenes.
+
+   De esta forma, por contraste, se crean imágenes del interior del cuerpo denominados “cortes”.
+   Cada tejido responde de forma diferente a la excitación. Variando el campo magnético se puede
+   seleccionar de forma progresiva distintas zonas del cuerpo humano con diferentes cortes. Se usa para
+   imágenes del SNC, abdomen, mama, lesiones musculoesqueléticas. A veces, se usan contrastes como el
+   de gadolinio, para que las imágenes sean más claras.
+   Es una técnica segura.
+
+   Espectroscopia de masas (MS).
+
+   No es una técnica espectrofotométrica propiamente dicha, pero se utiliza mucho en conjunto con
+   algunos de los instrumentos citados.
+
+   Se basa en obtener una nube de moléculas gaseosas ionizadas, de manera que quedan los elementos
+   químicos en forma iónica (cationes) en estado gaseoso. Esta nube se acelera mediante un campo
+   eléctrico y pasa por un potente imán que separa los iones según su masa, y finalmente choca sobre un
+   detector sensible a todos los iones. El detector es como una pantalla alargada y los átomos de un mismo
+   elemento chocan en una misma zona, distinguiéndose varias regiones o rayas en el detector relacionadas
+   con la masa de los átomos presentes en la muestra.
+
+   Al final se obtiene una gráfica llamada espectrograma o espectro de masas, con los pesos atómicos en
+   abcisas y la frecuencia o cantidad en ordenadas. En este aparecen rayas indicando los elementos
+   químicos presentes y son más o menos largas según la cantidad de átomos que hay.
+
+   La instrumentación de esta técnica es muy sofisticada y solo disponible en muy buenos laboratorios. Da
+   un grado de exactitud muy bueno, siendo la técnica más sensible para determinar algunos elementos
+   químicos. Permite determinar ppb de algunos metales en combinación con la técnica ICP.
+
+   II.- MICROSCOPIO ÓPTICO: FUNDAMENTO, CARACTERÍSTICAS Y
+   MANEJO.
+   MICROSCOPIO
+
+   El microscopio es el instrumento básico del laboratorio clínico utilizado para observar cristales,
+   microorganismos, parásitos y células. Permite observar objetos muy pequeños gracias a las lentes que
+   amplifican la imagen. El principio de funcionamiento de un microscopio óptico se basa en la propiedad
+   de algunos materiales que permiten cambiar la dirección de los rayos de luz.
+   En función de la fuente utilizada pueden ser ópticos o electrónicos.
+
+   El microscopio óptico consiste en una o varias lentes que permiten ampliar un objeto colocado en su
+   trayectoria. Los microscopios ópticos o fotónicos se dividen en dos tipos: microscopio simple,
+   estereoscópico o lupa, y microscopio compuesto también llamado microscopio común.
+   Cuando existe una única lente colocada entre el ojo del observador y el objeto observado, el microscopio
+   se llama microscopio simple.
+   Cuando existen varias lentes colocadas en un objetivo se llama microscopio compuesto.
+                                                                        TÉCNICOS DE FARMACIA 23
+                                                                                      Tema 17
+
+                                                                                      www.premir.es
+
+El más complejo es el microscopio electrónico capaz de aumentar la resolución hasta 0,001 µm. En éste,
+se sustituye la luz VIS por un haz de electrones como fuente de iluminación, las lentes son
+electromgnéticas y una cámara de vacío. El detector es una pantalla fluorescente. Todo esto resulta en
+una mayor ampliación de la muestra. Se clasifican en microscopios de transmisión y de barrido
+
+                                      Campo brillante         Preparaciones húmedas
+                  Microscopía                                 Preparaciones teñidas
+
+
+
+
+                                                                                                  TÉCNICOS FARMACIA - SERGAS
+                    óptica            Campo oscuro
+                                      Luz ultravioleta
+Microscopía                           Contraste de fases
+                                      Fluorescencia           Inmunofluorescencia
+                                      M.E. de transmisión
+                   Microscopía        M.E. de barrido         Preparaciones muy finas
+                   electrónica        Inmunomicroscopía       teñidas    con     tinciones
+                                      electrónica             electrodensas
+
+1.- MICROSCOPIO SIMPLE O LUPA:
+
+Es el instrumento óptico más sencillo. El aumento habitual de una lupa es de 4-6 aumentos, aunque
+también las hay de 8, 10 o de hasta 20 aumentos.
+Constan de una base que sirve de soporte a la parte óptica que se sitúa en una columna que descansa en
+la base.
+
+Sobre la base existe una platina sobre la que sitúa el objeto que se va a observar. Una vez colocado el
+objeto en la platina se desplaza la parte óptica hasta situarla a una distancia de 5-6 cm del objeto.
+Posteriormente se enfoca el mando correspondiente.
+Existen lupas monoculares o binoculares.
+
+2.- MICROSCOPIO ÓPTICO COMÚN O COMPUESTO
+En este tipo de microscopio se combinan los poderes amplificantes de dos lentes o sistemas de lentes,
+ambos convergentes que se encuentran colocados en los extremos de un tubo: el objetivo, situado cerca
+del objeto que se observa, y el ocular, colocado cerca del ojo.
+
+Con este microscopio se logran aumentos de 50, 100 o 1000 veces, o algo más, según la combinación de
+lentes y la longitud de inda que se emplea para su iluminación.
+
+La imagen resultante es virtual e invertida.
+24 TÉCNICOS DE FARMACIA
+   Tema 17
+
+   www.premir.es
+
+
+
+
+   Al igual que el microscopio simple, el microscopio compuesto posee una parte mecánica y una parte
+   óptica:
+
+
+   a)    Parte mecánica:
+
+   1.- Pie o base del microscopio que suele ser una plataforma rectangular. Sostienen un brazo inclinado
+   del que sale la platina y el tubo del microscopio.
+   2.- Platina: Placa horizontal que sostiene las preparaciones que posee una obertura central y circular por
+   la cual penetran los rayos luminosos. El objeto a observar debe quedar sobre la platina y ésta debe dejar
+   pasar la luz que llega desde el condensador La platina tiene tornillos para desplazamientos antero-
+   posterior y lateral.
+   3.- Tubo porta oculares: en su parte superior lleva los oculares y en su parte inferior lleva un revólver
+   con los objetivos. Dicho tubo puede elevarse o bajarse mediante el tornillo macrométrico o mediante el
+   tornillo micrométrico para apreciar el enfoque.
+   4.- Brazo: Une el tubo con la platina
+   5.- Revólver porta objetivos: Tiene movimiento de rotación alrededor de su eje, lo que permite colocar
+   en posición de trabajo el objetivo correspondiente.
+   6.- Tornillo macromético: De avance rápido. Mueve la platina hacia arriba o hacia abajo, acercando el
+   objetivo a la preparación.
+   7.- Tornillo micromético: De ajuste fino. Permite enfocar con precisión moviendo muy lentamente la
+   platina o el tubo hacia arriba o hacia abajo.
+   b)    Parte óptica:
+
+   1.- Fuente de iluminación: Está localizado en el pie, y es una lámpara de luz visible. El microscopio en el
+   pie lleva un regulador de intensidad luminosa. En los microscopio existe un espejo situado debajo de la
+   platina que recoge tanto la luz natural como la eléctrica y las lámparas incorporadas al pie.
+   2.- Condensador: Suelen ser dos lentes (Condensador de Abbé) que deben tener la misma apertura
+   numérica que los objetivos que van a usarse. Este sistema de lentes concentra la luz hacia la preparación.
+   El condensador está situado debajo de la platina y el cono de luz condensada se puede separar o acercar
+   a la platina.
+   3.- Diafragma: Es un dispositivo ajustable acoplado al condensador que regula el cono de luz que pasa a
+   través del objeto. Abriéndolo o cerrándolo se puede aumentar o disminuir la luz que llega al objeto.
+                                                                           TÉCNICOS DE FARMACIA 25
+                                                                                         Tema 17
+
+                                                                                         www.premir.es
+
+4.- Objetivos: Son sistemas de lentes de diferentes aumentos. Se clasifican según la distancia focal o
+distancia entre el frente del objetivo y la superficie superior del cubre o portaobjetos, cuando la imagen
+se ha enfocado. Los objetivos se adaptan al tubo del microscopio mediante el revólver que lleva 3 o más
+objetivos intercambiables.
+
+Los objetivos pueden ser:
+
+
+
+
+                                                                                                     TÉCNICOS FARMACIA - SERGAS
+a)    Objetivos secos:
+No necesitan interponer ninguna sustancia entre el objetivo y la preparación. La preparación y la lente
+están separadas por el aire. Son objetivos secos los de 4, 10, y 40 aumentos.
+
+b)     Objetivos de la inmersión:
+Son los que necesitan un líquido transparente entre la lente y el objeto, con un índice de refracción
+superior al del aire.
+A igualdad de aumento, permite mayor luminosidad que los objetivos secos ya que el líquido interpuesto
+impide la desviación de los rayos más oblicuos y la lente frontal recoge muchos más rayos para formar la
+imagen. Pueden ser de inmersión en agua (n = 1,33), de inmersión en aceite (n = 1,515) o de inmersión en
+monobromuro de naftaleno (n = 1,66). Tradicionalmente el más utilizado fue el objetivo de aceite de
+cedro que por su índice de refracción aumenta su luminosidad, aunque al tener el inconveniente de que
+se endurece fácilmente ha sido sustituido por los nuevos aceites sintéticos. El objetivo de 100 aumentos
+es de inmersión. Es el más utilizado en bacteriología.
+
+Los objetivos secos se limpian con agua destilada y los de inmersión con alcohol-xilol, ayudándose de un
+papel de lente o tela suave.
+
+5.- Oculares: Se encuentran en la parte superior del tubo. Son unas lentes que captan la imagen formada
+por el objetivo y la amplían más. El ocular recoge la imagen suministrada por el objetivo y la transforma
+en una imagen virtual, aumentada y derecha.
+Realmente en el tubo adaptado a la parte superior del microscopio existen dos lentes: la lente superior es
+la que se denomina lente ocular, y la inferior se llama lente colectora o lente de campo.
+Los primeros microscopios eran monoculares, pero actualmente todos los microscopios son binoculares,
+lo cual requiere un sistema de prismas que desdoblen los rayos luminosos.
+
+Los oculares son lentes que multiplican 8, 10, 12 o más veces la imagen.
+AMPLIACIÓN CONSEGUIDA POR COMBINACIÓN DE
+
+                                    VARIOS OBJETIVOS Y OCULARES.
+
+     OBJETIVOS                                    OCULARES
+                      8X                      10X                   12X
+                   4X 32X                     40X                   48X
+                  10X 80X                     100X                  120X
+                  40X 320X                    400X                  480X
+
+PROPIEDADES OPTICAS DEL MICROSCOPIO
+
+§ Aumento total: Es función del objetivo y del ocular, según la capacidad de amplificación de
+ambas lentes (aumentos).
+26 TÉCNICOS DE FARMACIA
+   Tema 17
+
+   www.premir.es
+
+   § Poder de resolución o de separación: Es la capacidad de un lente para presentar dos puntos
+   cercanos como puntos diferentes y separados o también, la capacidad de distinguir dos puntos
+   adyacentes, lo cual influirá en la apreciación de los objetos observados. Cuanto mayor sea el poder de
+   resolución de un microscopio mayor será la definición de un objeto. El poder de resolución del
+   microscopio radica en el objetivo.
+   La resolución máxima teórica de un microscopio óptico es de aproximadamente 0.2 micrómetros (µm).
+   § El límite de resolución: es la distancia mínima a la que pueden estar situados dos puntos para su
+   perfecta discriminación y dependerá de la longitud de onda de la luz utilizada y de una propiedad óptica
+   de las lentes denominada apertura numérica. Ambos factores vienen relacionados por la expresión:
+
+                                           Longitud de onda ( l)
+             Límite de resolución = -----------------------------------
+                                           2 x apertura numérica
+
+   El poder de resolución o de separación será mayor cuanto menor sea el valor del límite de
+   resolución.
+
+   Así para la longitud de onda constante, el límite de resolución será menor cuanto mayor sea la apertura
+   numérica, o lo que es lo mismo, será posible distinguir entre pequeños detalles separados por menor
+   distancia entre ellos, y se tendrá un mayor poder de resolución.
+
+   El valor de la apertura numérica es igual al producto del índice de refracción (n) del medio existente entre
+   la lente frontal y el objeto observado, por el seno de la mitad del ángulo máximo formado por los rayos
+   luminosos que penetran en la lente frontal del objetivo, a partir de un objeto puntiforme situado en el eje
+   óptico, según la expresión:
+
+            Apertura numérica = n x seno a
+
+                                          Longitud de onda (l)
+             Límite de resolución = -----------------------------------
+                                            2 x n x seno a
+                                                                                TÉCNICOS DE FARMACIA 27
+                                                                                              Tema 17
+
+                                                                                                www.premir.es
+
+
+
+
+                                                                                                             TÉCNICOS FARMACIA - SERGAS
+Un factor que afecta a la apertura numérica además de la construcción de la lente es el medio a través del
+cual pasa la luz. Si el medio interpuesto es el aire (objetivo seco), el valor del índice de refracción es 1; si es
+de aceite de cedro (objetivo de inmersión) el valor del índice de refracción es de 1,515. Esto explica
+porqué los objetivos de inmersión tienen mayor apertura numérica que los objetivos secos.
+
+En conclusión el poder de resolución de un microscopio se consigue cuando se disminuye el valor del
+límite de resolución de dos formas:
+
+- Disminuyendo la longitud de onda incidente: algo que normalmente es constante porque usamos
+una fuente de luz visible
+- Aumentando la apertura numérica.
+
+Normalmente cuanto mayor es el aumento de una lente, mayor apertura numérica tiene.
+        Aumentos lentes             Límite resolución          Apertura numérica
+       10x                          1,34                       0,25
+       20x                          0,83                       0,40
+       40x                          0,51                       0,65
+       100x                         0,26                       1,30
+
+La imagen que de un objeto se obtiene en un microscopio es virtual e invertida.
+
+En conclusión para obtener una imagen de mayor aumento, más nítida y con mayor poder de resolución
+se debe:
+    • Disponer de lentes de máxima calidad
+    • Disponer de oculares de gran aumento
+    • Trabajar con el objetivo de inmersión
+    • Utilizar aceites de inmersión de buena calidad
+28 TÉCNICOS DE FARMACIA
+   Tema 17
+
+   www.premir.es
+
+   TIPOS DE MICROSCOPIOS ÓPTICOS.
+   1.- MICROSCOPIO DE CAMPO CLARO Y BRILLANTE: CAMPO LUMINOSO.
+
+   Funciona con un haz de luz que atraviesa un tejido coloreado y
+   transmite la imagen de la estructura definida al objetivo.
+   Es el más utilizado. En este tipo de microscopía el campo está
+   intensamente iluminado y los objetos en estudio aparecen más
+   oscuros que el campo. En ellos el cono de luz visible enfocado
+   sobre el objeto es recogido por la lente del objetivo.
+
+   Este tipo de microscopía se usa en la observación de muestras y
+   cultivos en preparaciones húmedas o teñidas. Se emplean las
+   preparaciones húmedas para poner de relieve la presencia de
+   células sanguíneas y microorganismos en orinas, heces y líquidos
+   orgánicos. También es útil para detectar movilidad de
+   organismos teñidos en dichas muestras.
+
+   2.- MICROSCOPIO DE CAMPO OSCURO.
+
+   Es igual al anterior, pero se sustituye el condensador por otro
+   especialmente fabricado para hacer que la luz, en lugar de incidir
+   perpendicularmente sobre la preparación, lo haga de forma oblicua. Así se consigue que sólo la luz
+   difractada penetre en el objetivo, y por tanto, se observen los cambios de índice de refracción. Si en toda
+   la muestra o preparación no hay ninguna partícula con índice de refracción diferente, todo se verá
+   oscuro, pero si existen partículas como bacterias, aparecerán muy brillantes sobre fondo oscuro.
+
+   Permite analizar elementos transparentes sin emplear pigmentos o sin fijarlos.
+   Esto se consigue reemplazando el condensador común por otro de campo oscuro que solo deja pasar un
+   cilindro hueco de luz. Los rayos periféricos y paralelos que constituyen este cilindro se reflejan y se
+   pueden visualizar objetos brillantes sobre el campo oscuro.
+   El contraste se produce al observar la muestra sobre un fondo oscuro. Los objetos se iluminan mediante
+   rayos de luz oblicuos que no atraviesan el objetivo gracias a que se ha colocando en el condensador un
+   disco opaco que refracta la luz. De este modo en el objetivo no penetra a luz directa de la fuente sino
+   únicamente la luz difundida por el objeto, que aparece como una mancha brillante sobre el fondo
+   oscuro.
+
+   La microscopía de campo oscuro es particularmente útil en bacteriología con preparaciones húmedas,
+   para detectar espiroquetas u otros microorganismos con movilidad. También se utiliza para ver
+   preparaciones de microorganismos en gota pendiente.
+
+   Con este tipo de microscopio, no se obtienen datos morfológicos, sino que ayuda a detectar la presencia
+   de una determinada partícula, su movilidad (p.ej. espiroquetas)…
+                                                                           TÉCNICOS DE FARMACIA 29
+                                                                                         Tema 17
+
+                                                                                          www.premir.es
+
+
+
+
+                                                                                                       TÉCNICOS FARMACIA - SERGAS
+3.-MICROSCOPIO DE LUZ ULTRAVIOLETA
+
+El poder de resolución de un microscopio está en razón inversa a la longitud de onda de la luz utilizada. El
+uso de luz ultravioleta (180-400 nm) de longitud de onda más corta que la luz visible (400-700 nm)
+produce un aumento en el poder de resolución de alrededor del doble del obtenido con luz visible. Por
+otra parte como muchas sustancias biológicas poseen bandas de absorción en la zona UV del espectro,
+su observación con un microscopio UV es posible sin necesidad de recurrir a la tinción.
+
+El uso de la radiación ultravioleta exige que el microscopio utilizado posea determinadas características
+en cuanto a la construcción de las lentes que suelen ser de cuarzo. Además al ser invisible para el ojo
+humano, la imagen ultravioleta debe convertirse en una imagen visible por fotografía, fluorescencia o
+técnica de fotoemisión.
+
+La fuente luminosa corresponde a lámparas de arco de mercurio o xenón y lentes de cuarzo. En términos
+generales es un microscopio costoso. Las imágenes que se obtienen son similares a las del microscopio
+de fluorescencia, las estructuras marcadas aparecen brillantes contrastando con un fondo negro.
+
+En la práctica surgen numerosas dificultades al usar este tipo de microscopio por lo que no se trata de un
+método que haya tenido gran difusión.
+Usos microscopios UV:
+    • En ciencia forense para el estudio o análisis de ADN, drogas y estudios de evidencias.
+    • Estudio de la distribución intracelular de las moléculas.
+    • Estudios biológicos.
+    • Investigación científica
+30 TÉCNICOS DE FARMACIA
+   Tema 17
+
+   www.premir.es
+
+
+   4.- MICROSCOPIO DE CONTRASTE DE FASES.
+
+   La luz viaja a distintas velocidades dependiendo del medio de propagación. Esta propiedad es utilizada
+   en el microscopio de contraste de fases ya que la luz atraviesa la muestra con distintas velocidades en
+   distintas secciones. Este efecto es amplificado para generar la imagen de la muestra. Mediante esta
+   técnica no hace falta utilizar tintes y, por lo tanto, pueden observarse células vivas.
+
+   La preparación microscópica normal es observable fundamentalmente a causa de las diferencias de
+   densidad y de índice de refracción de los distintos elementos estructurales que la constituyen. Por eso
+   con la iluminación normal, resulta difícil el estudio de las preparaciones de densidad homogénea y
+   transparentes tales como bacterias, células etc. con capacidad de absorción tan pequeña que la imagen
+   no presenta diferencias de luminosidad entre sus elementos y los detalles prácticamente invisibles. Un
+   procedimiento para aumentar el contraste consiste en teñir la preparación, aunque esto no es posible en
+   algunos casos como en el estudio de los elementos in vivo.
+
+   Componentes clave: el condensador anular y el anillo de fase, que traducen las diferencias en el índice de
+   refracción de la muestra, en una diferencia de intensidades que podemos percibir.
+   A diferencia del microscopio ordinario, el microscopio de contraste de fases hace visibles algunos objetos
+   transparentes y no coloreados aprovechando, mediante dispositivos especiales, las pequeñas diferencias
+   de espesor e índice de refracción entre el objeto y el medio que lo rodea, así como las diferencias de
+   densidad óptica y espesor entre las diversas partes del objeto.
+
+   Las preparaciones microscópicas suelen tener variaciones en su índice de refracción entre las distintas
+   partes de la preparación.
+
+   En este microscopio la muestra aparece brillante sobre fondo oscuro. Se utiliza para observar material
+   vivo no teñido (a veces no se pueden teñir) muestras in vivo, y muestras fijadas. Es especialmente útil
+   para el examen de preparaciones húmedas y de gota pendiente.
+
+   Debido a la difracción incompleta de la luz, aparecen a menudo aureolas en los márgenes entre muestras
+   y medio, y en áreas de diferente densidad óptica. Para evitarlo se puede utilizar una forma de microscopía
+   de fase especial llamada microscopía de interferencia.
+
+   En el microscopio de interferencia la luz se polariza y se divide en rayos principales y de interferencia,
+   separados por medio de una placa birrefringente o de prismas. Un rayo pasa a través del objeto y el otro
+   a través del medio. Cuando se unen los dos rayos en condiciones adecuadas, se originan interferencias y
+   se obtienen en las imágenes variaciones de color.
+
+   5.- MICROSCOPIO DE FLUORESCENCIA.
+
+   Se basan en la fluorescencia de ciertos compuestos, es decir, en la capacidad de sustancias para absorber
+   luz de una determinada longitud de onda (radiaciones de onda corta) y emitir luz de longitud de onda
+   mayor (menor energía). La fuente luminosa es la luz UV y las sustancias emiten luz visible que es captada
+   por el ojo humano, por lo que se observan puntos fluorescentes sobre un fondo oscuro.
+
+   El microscopio de fluorescencia incorpora una lámpara de alta intensidad y un filtro UV. LA luz incide
+   sobre la preparación y, si existen sustancias fluorescentes, éstas emitirán luz visible.
+                                                                          TÉCNICOS DE FARMACIA 31
+                                                                                        Tema 17
+
+                                                                                         www.premir.es
+
+Para ello la muestra es habitualmente iluminada con una lámpara xenón o con una lámpara de vapor de
+mercurio. Estos microscopios incorporan además filtros de luz para aislar la luz correspondiente a la
+muestra.
+
+Además de la fuente luminosa los microscopios de fluorescencia tienen filtros selectivos de excitación
+que seleccionan la longitud de onda que absorbe el compuesto fluorescente, y filtros selectivos de
+emisión que seleccionan la longitud de onda de la luz emitida por el compuesto fluorescente.
+
+
+
+
+                                                                                                      TÉCNICOS FARMACIA - SERGAS
+Sus componentes básicos son una fuente de luz que emite en una banda de longitudes de onda desde el
+ultravioleta al infrarrojo, a continuación de la cual se encuentra un filtro que delimita la banda de
+excitación, que es generalmente la ultravioleta, después de encuentra la muestra fluorescente
+(generalmente es una muestra marcada con fluorocromos) y después de ella un segundo filtro de barrera
+que corta los restos de la luz de excitación dejando pasar sólo la fluorescencia.
+
+Algunas sustancias fluorescentes frecuentemente empleadas en este tipo de microscopía para marcar
+estructuras específicas en las muestras y permitir su visualización son:
+    • Auramina: usada para teñir el bacilo tuberculoso. Al iluminar con radiación UV, este compuesto
+        presenta fluorescencia, detectándose así el bacilo
+    • Naranja de acridina
+    • Actualmente se combinan sustancias fluorescentes como fluoresceína (FITC), proteína verde
+        fluorescente o rodamina con anticuerpos marcados para poder poner de manifiesto
+        determinados antígenos.
+        También se emplean antígenos marcados (para detectar anticuerpos). Esto es la
+        inmunofluorescencia.
+
+Tipos de microscopio de fluorescencia:
+- De transmisión: En ellos la radiación excitante llega a la muestra desde abajo.
+- De incidencia: La radiación se concentra sobre el objeto desde arriba, usando la lente de su objetivo
+como su propio condensador.
+
+Además la microscopía de fluorescencia puede ser:
+- Primaria: la propia muestra posee fluorescencia.
+- Secundaria: la muestra está marcada con colorantes fluorescentes (fluorocromos).
+- Inmunofluorescencia: la fijación del colorante fluorescente se realiza con un anticuerpo marcado.
+32 TÉCNICOS DE FARMACIA
+   Tema 17
+
+   www.premir.es
+
+   6.- MICROSCOPIO INVERTIDO
+   Es un microscopio cuya estructura está invertida en comparación al microscopio convencional o vertical.
+   La fuente de luz está ubicada por encima de la platina, y el objetivo se encuentra debajo de ella. El
+   principio de funcionamiento y formación de la imagen es el mismo que el del microscopio tradicional.
+   La ventaja principal de los microscopios invertidos es que permiten observar las muestras situadas en el
+   fondo de un recipiente. Esto es muy útil para mantener las muestras hidratadas y permite hacer
+   observaciones que no son posibles con los microscopios convencionales.
+
+   También para muestras en cápsulas de Petri o frascos,
+   estudios de líquidos amnióticos, virología, fertilización in
+   vitro, observación de objetos gruesos en vacío, en cámara
+   estéril...
+   Se utiliza principalmente asociado a las técnicas de campo
+   claro, contraste de fases y el contraste diferencial de
+   interferencia (DIC), el cual permite la observación de
+   materiales sin solución colorante o vivos por medio de la
+   transformación del camino óptico y las diferencias de
+   absorción de la muestra en variaciones de contraste y/o
+   colores.
+
+   En comparación con los otros tipos de microscopio, los
+   microscopios invertidos permiten observar muestras vivas
+   durante largos periodos de tiempo. Esto permite analizar
+   procesos biológicos que tienen lugar a una escala de tiempo de horas e incluso días.
+
+   Son muy caros por la complejidad óptica.
+
+   7.- MICROSCOPIOS DE IMAGEN 3D
+
+   - Estereomicroscopio: Proporciona una imagen estereoscópica del espécimen por medio de lentes
+   dispuestos en ángulos ligeramente inclinados, que son interpretadas por el observador de forma
+   coherente. Es muy útil para observar elementos sin corte o preparación previa, o para realizar
+   microsección.
+
+   - Contraste DIC: Permite visualizar estructuras transparentes aprovechando los cambios del índice de
+   refracción. Requiere de varios componentes ópticos: un polarizador, prisma y condensador especial; es
+   ideal para muestras vivas sin teñir.
+
+   - Microscopio confocal: Basado en el microscopio de fluorescencia, este permite enfocar únicamente un
+   plano determinado del espécimen, eliminando la luz procedente de las regiones de desenfoque. Utiliza
+   fuentes de luz concentrada y espejos controlados por computadora.
+                                                                    TÉCNICOS DE FARMACIA 33
+                                                                                  Tema 17
+
+                                                                                www.premir.es
+
+III.-BIBLIOGRAFÍA:
+
+ - FUNDAMENTOS DE QUÍMICA ANALÍTICA. D.A. Skoog. 9ª ed. Ed. Reverté. 2022.
+
+ - QUÍMICA ANALÍTICA. Gary D. Christian. 6ª ed. McGrawHill. 2009.
+
+
+
+
+                                                                                        TÉCNICOS FARMACIA - SERGAS
+ - ANÁLISIS QUÍMICO CUANTITATIVO. Daniel C. Harris. 3ª ed. Ed. Reverté. 2016.
+34 TÉCNICOS DE FARMACIA
+   Tema 17
+
+   www.premir.es
+TÉCNICOS DE FARMACIA 35
+              Tema 17
+
+         www.premir.es
+
+
+
+
+                 TÉCNICOS FARMACIA - SERGAS
+36 TÉCNICOS DE FARMACIA
+   Tema 17
+
+   www.premir.es
+

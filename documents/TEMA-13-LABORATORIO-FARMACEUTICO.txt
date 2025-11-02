@@ -1,0 +1,1493 @@
+         TECNICO DE FARMACIA
+                                SERGAS
+              TEMA 13-1ª PARTE:
+
+
+
+
+ 13
+      LABORATORIO FARMACÉUTICO: CONCEPTOS
+                  GENERALES. MATERIAL DE USO
+ FRECUENTE.EQUIPOS DE LABORATORIO. PUESTA A
+               PUNTO Y MANTENIMIENTO DE LOS
+EQUIPAMIENTOS Y MATERIALES. PROCEDIMIENTOS
+   DE LIMPIEZA, DESINFECCIÓN, CONSERVACIÓN Y
+       ESTERILIZACIÓN DEL MATERIAL Y EQUIPOS.
+   CONTROL DE CALIDAD DE MATERIAL Y EQUIPOS
+2    TEC. FARMACIA Y PARAFARMACIA SERGAS
+    Tema 13-1ª parte
+
+    www.premir.es
+                                      TEC. FARMACIA Y PARAFARMACIA SERGAS 3
+                                                            Tema 13-1ª parte
+
+                                                                  www.premir.es
+
+INDICE:
+1. EL LABORATORIO GALÉNICO
+   1.1. MATERIAL Y APARATAJE GENERAL Y ESPECÍFICO
+      1.1.1. Material y aparataje general
+
+
+
+
+                                                                        TEC. FARMACIA SERGAS
+               • Procedimiento        normalizado      de     funcionamiento,
+                   mantenimiento y calibración de aparatos
+         1.1.1.1. Clasificación del material de laboratorio
+            1.1.1.1.1.  Material volumétrico
+            1.1.1.1.2.  Material no volumétrico
+            1.1.1.1.3.  Material de uso específico
+            1.1.1.1.4.  Material de soporte o sostén
+         1.1.1.2. Aparataje general de laboratorio
+      1.1.2. Material y aparataje específico
+   1.2. TIPOS DE LABORATORIOS GALÉNICOS
+      1.2.1. Nivel I
+      1.2.2. Nivel II
+      1.2.3. Nivel III
+
+2. LIMPIEZA, DESINFECCIÓN Y ESTERILIZACIÓN DEL MATERIAL DE
+   LABORATORIO
+   2.1. METODOS O PROCEDIMIENTOS DE LIMPIEZA
+      2.1.1. Métodos de limpieza manual
+      2.1.2. Métodos de limpieza mecánicos
+   2.2. MÉTODOS DE DESINFECCIÓN
+      2.2.1. Desinfección por métodos físicos
+      2.2.2. Desinfección por métodos químicos
+   2.3. MÉTODOS DE ESTERILIZACIÓN
+      2.3.1. Esterilización por agentes físicos
+      2.3.2. Esterilización por agentes químicos
+      2.3.3. Controles de esterilización
+         2.3.3.1. Controles físicos
+         2.3.3.2. Controles químicos
+         2.3.3.3. Controles biológicos
+
+3. CONTROL DE CALIDAD DE MATERIAL Y EQUIPOS EN EL LABORATORIO
+   GALÉNICO
+
+4. BIBLIOGRAFIA
+4    TEC. FARMACIA Y PARAFARMACIA SERGAS
+    Tema 13-1ª parte
+
+    www.premir.es
+                                                  TEC. FARMACIA Y PARAFARMACIA SERGAS 5
+                                                                        Tema 13-1ª parte
+
+                                                                                       www.premir.es
+
+1. EL LABORATORIO GALÉNICO
+
+Aspectos a tener en cuenta en la planificación del Área de farmacotecnia
+
+En la planificación de las instalaciones y equipos del área de farmacotecnia (AFT) hay que tener
+
+
+
+
+                                                                                                TEC. FARMACIA SERGAS
+en cuenta diversos factores como son:
+    § La actividad prevista.
+    § Limitaciones arquitectónicas y presupuestarias.
+    § Las normativas estatales y autonómicas.
+    § Medidas de seguridad y prevención de riesgos laborales.
+
+Dentro de la oficina de farmacia o servicio farmacéutico, la zona de preparación es el lugar
+destinado a la elaboración de fórmulas magistrales y preparados oficinales,
+acondicionamiento, etiquetado y control de materia prima y de producto acabado.
+
+Básicamente, la zona de preparación debe adaptarse a las formas galénicas que se preparen
+(pomadas, cremas, formas estériles…) el tipo de preparación (individualizada o por lotes) y el
+número de unidades elaboradas.
+
+Principales requisitos de las instalaciones para la preparación de medicamentos exigidas en la
+GBPP:
+
+ Para reducir el riesgo de contaminación (p. ej. contaminación cruzada, polvo, suciedad) el diseño de las
+ instalaciones y equipos debe ser adecuado y permitir su fácil limpieza. Cuando se lleven a cabo
+ operaciones de reparación o mantenimiento de los equipos debe realizarse la limpieza y desinfección
+ posterior.
+ Se deben tomar medidas de precaución frente a la entrada de insectos y otros animales.
+ Las actividades de lavado y limpieza no deben ser una fuente de contaminación en sí mismas.
+ Las zonas de preparación, almacenamiento y control de calidad han de ser de acceso restringido a
+ personal autorizado.
+ Se deben cumplir los requerimientos de vestimenta e higiene para el acceso a las distintas zonas.
+ Las condiciones ambientales durante la preparación, el control de calidad y el almacenamiento deben
+ estar definidas y controladas. Los resultados del control deben registrarse, evaluarse y conservarse.
+ Cuando los resultados estén fuera de los límites establecidos deben adoptarse medidas correctoras.
+ Las áreas de distinto nivel de limpieza deben estar separadas por esclusas con el fin de controlar la
+ circulación de aire entre ellas.
+ La preparación de medicamentos debe realizarse de forma centralizada en los AFT. Sólo las
+ preparaciones extemporáneas de bajo riesgo pueden realizarse fuera del servicio de farmacia.
+ Las zonas de pesada y muestreo deben estar lo suficientemente separadas de las de preparación, de
+ manera que se evite la contaminación cruzada. Si no es posible disponer de zonas dedicadas para
+ realizar las actividades de control de calidad, estas pueden llevarse a cabo en la zona de preparación
+ siempre que se adopten medidas para evitar errores y contaminaciones.
+ Las preparaciones que por sus especiales características puedan entrañar un peligro para el personal y
+ el medio ambiente deben realizarse en los AFT. Para este tipo de preparaciones se debe disponer de una
+ zona confinada y exclusiva que asegure la manipulación segura y minimice los riesgos bajo cabinas de
+ seguridad biológica, y deben ubicarse en almacenes separados.
+6     TEC. FARMACIA Y PARAFARMACIA SERGAS
+     Tema 13-1ª parte
+
+     www.premir.es
+
+     Los materiales de partida y de acondicionamiento se deben almacenar fuera de las áreas o salas donde
+     están ubicadas las cabinas de flujo laminar de preparación de estériles. El acceso de estos materiales para
+     cada preparación estéril se debe realizar a través de esclusas o SAS.
+     Se debe evitar la presencia de materiales que desprendan partículas (p. ej. papel, cartón, maderas)
+     dentro de la sala blanca. Los almacenes de cada zona deberán disponer de un stock limitado suficiente
+     para cubrir la actividad de ese día, procediendo a la reposición controlada desde otros almacenes
+     exteriores. Los medicamentos de partida se pueden almacenar de forma ordenada en armarios o
+     cajoneras evitando su exposición.
+     Se debe disponer de zonas separadas para el almacenamiento de materiales o productos en cuarentena,
+     rechazados, retirados o devueltos y estar claramente identificadas como tales.
+     Se han de especificar y monitorizar las condiciones de almacenamiento (temperatura, protección de la
+     luz y humedad relativa si procede) necesarias para que los materiales o la calidad de las preparaciones
+     no se vean afectadas negativamente. Dichas zonas deben disponer de registros o dispositivos de control
+     de temperatura de tal modo que toda situación fuera de especificaciones pueda evaluarse.
+     Las zonas de descanso deben estar separadas de las zonas de preparación de medicamentos.
+     Los aseos, vestuarios y lavabos deben ser de fácil acceso y adecuados al número de usuarios. Los aseos
+     no deben estar en comunicación directa con las zonas de preparación o almacenamiento.
+
+    Los componentes mínimos de un local de elaboración son los siguientes:
+       ü Superficie de trabajo de material liso e impermeable, fácil de desinfectar, inerte a
+          colorantes y sustancias agresivas.
+       ü Pila lisa con agua potable, fría y caliente, de material liso y resistente con zona para
+          colocar los utensilios sucios hasta su limpieza, provisto de sifón antirretorno .
+       ü Soporte horizontal que evite vibraciones y garantice una correcta pesada.
+       ü Espacio para consulta y lectura de libros y redacción de documentos.
+       ü Mobiliario para guardar, protegido del polvo y de la luz, material limpio, materias primas
+          o material de acondicionamiento. Mobiliario donde colocar y separar materias primas,
+          material de acondicionamiento, productos intermedios y a granel en cuarentena.
+       ü Frigorífico con termómetro de temperatura máxima y mínima donde almacenar los
+          productos termolábiles, ya sean materias primas, productos a granel o productos
+          terminados.
+
+    El material e instrumental empleado en un laboratorio de farmacia galénica lo podemos
+    separar en dos grandes grupos:
+       • Material e instrumental de uso general que podríamos encontrar en cualquier otro
+           laboratorio.
+       • Material y aparataje propio para la preparación de cada forma farmacéutica y por lo
+           tanto con exclusividad de encontrarse en el laboratorio de Farmacia Galénica.
+
+       1.1. MATERIAL Y APARATAJE GENERAL Y ESPECÍFICO
+
+    Las principales características del material general y específico del laboratorio galénico están
+    recogidas en el Real Decreto 175/2001, de 23 de febrero.
+        ü El material general y específico debe ser adecuado para el uso que se destina y, si
+           procede, estar debidamente calibrado. Antes de empezar cualquier elaboración, se
+           recomienda revisar los medios de que se dispone y la adecuación al tipo de preparación
+           que se va a realizar.
+                                           TEC. FARMACIA Y PARAFARMACIA SERGAS 7
+                                                                 Tema 13-1ª parte
+
+                                                                             www.premir.es
+ü El material debe estar diseñado para que pueda ser lavado, desinfectado y esterilizado
+  si fuera necesario. Hay que tener en cuenta que ninguna de las superficies que entren
+  en contacto con el producto puede afectar a la calidad del medicamento ni de sus
+  componentes.
+
+
+
+
+                                                                                      TEC. FARMACIA SERGAS
+ü Ningún producto utilizado para el funcionamiento o para el mantenimiento de los
+  aparatos (lubricantes, tintas…) puede contaminar los productos elaborados.
+ü Todos los elementos del utillaje en contacto con los productos deben limpiarse
+  convenientemente con el fin de evitar contaminaciones cruzadas.
+ü Las operaciones de limpieza y mantenimiento se realizarán siguiendo los
+  Procedimientos normalizados de trabajo, que deberán establecerse por escrito
+  según el tipo de utillaje y los productos utilizados. La limpieza se realizará lo más
+  rápidamente posible después de su utilización.
+ü Los aparatos de medida han de ser controlados y calibrados periódicamente para
+  asegurar la exactitud de los datos leídos o registrados. Se deben registrar los resultados
+  de estos controles periódicos. Antes de iniciar cualquier operación, se deben revisar los
+  aparatos de medida que lo precisen, especialmente las balanzas.
+8     TEC. FARMACIA Y PARAFARMACIA SERGAS
+     Tema 13-1ª parte
+
+     www.premir.es
+
+
+
+
+    Calibración: conjunto de operaciones que determinan, bajo condiciones específicas, la relación
+    entre los valores indicados por instrumentos o sistemas de medición y los valores conocidos
+    correspondientes a un patrón de referencia.
+
+    Procedimiento normalizado de funcionamiento, mantenimiento y calibración de
+    aparatos:
+       1. El PNT deberá llevar una portada con un encabezamiento en el que figuren:
+              a) Datos de la oficina de farmacia o servicio hospitalario.
+              b) Grupo al que pertenece el procedimiento normalizado
+              c) Título del PNT
+              d) Nº de código
+              e) Fecha de aprobación
+              f) Paginación individual respecto al total de páginas
+              g) Versión y/o procedimiento al que sustituye.
+       2. Además, en esta primera página figurará:
+          ▪ Índice.
+          ▪ Persona que lo ha redactado, firma y fecha.
+          ▪ Persona que lo ha revisado y aprobado, firma y fecha.
+       3. En el resto de las hojas sólo deberá indicarse el título, número de código y la paginación
+          individual respecto al total. También se incluye, si procede, referencia a los
+          procedimientos relacionados con el que se está redactando o leyendo.
+                                                 TEC. FARMACIA Y PARAFARMACIA SERGAS 9
+                                                                       Tema 13-1ª parte
+
+                                                                                   www.premir.es
+   1.1.1. MATERIAL Y APARATAJE GENERAL
+
+El utillaje debe reunir las siguientes características generales:
+
+a) Ser adecuado al uso a que se destina y, si procede, estar convenientemente calibrado. Antes
+de iniciar cualquier elaboración conviene evaluar los medios de que se dispone y su adecuación
+
+
+
+
+                                                                                            TEC. FARMACIA SERGAS
+al tipo de preparación que va a realizarse.
+b) Estar diseñado de forma que pueda ser fácilmente lavado, desinfectado e incluso
+esterilizado si fuese necesario. Ninguna de las superficies que puedan entrar en contacto con
+el producto ha de ser susceptible de afectar a la calidad del medicamento o de sus
+componentes.
+c) Estar fabricado de forma que ningún producto utilizado para el funcionamiento o para el
+mantenimiento de los aparatos (lubricantes, tintas, etc.) pueda contaminar a los productos
+elaborados.
+
+El laboratorio está equipado con una gran variedad de materiales y aparatos para poder realizar
+las distintas operaciones, determinaciones analíticas y técnicas.
+El mobiliario de laboratorio debe incluir:
+     o Mesas de laboratorio adecuadas, con superficie impermeable fácilmente lavable y con
+         todas las conexiones necesarias de luz, gas y agua.
+     o Sillas o taburetes cómodos para el personal.
+     o Armarios y vitrinas (cristal u opacas en función de lo que se vaya a guardar) para
+         material y reactivos.
+     o Encimeras para disponer los aparatos en un lugar fijo y adecuado.
+     o Pilas para limpiar el material.
+     o Utensilios propios del mismo, aunque la dotación dependerá de sus necesidades y
+         aplicaciones.
+     o Equipamiento de emergencia: elementos de protección y equipamiento de
+         protección individual. Ej: lavaojos, ducha de emergencia, extintores, manta ignífuga etc
+
+    1.1.1.1. CLASIFICACIÓN DEL MATERIAL DE LABORATORIO
+En el laboratorio existe una gran variedad de material, por lo que es conveniente clasificarlo
+para ir conociendo sus propiedades y saber su utilidad, aplicación y manejo.
+El material se puede clasificar de varias formas:
+
+   a) Según la naturaleza o composición del material:
+Los materiales que más se utilizan son: vidrio, plástico, porcelana, y metal.
+VIDRIO: presenta gran estabilidad y resistencia térmica.
+Tipos de vidrio:
+   • Vidrio sódico-cálcico (vidrio común): está formado por sílice, sodio y calcio
+       principalmente. La sílice es parte de la materia prima básica, el sodio le da cierta
+       facilidad de fusión y el calcio la provee de estabilidad química. Este tipo de vidrio es el
+       que se funde con mayor facilidad y el más barato. Por eso la mayor parte del vidrio
+       incoloro y transparente tiene esta composición. Se usa para la fabricación de fabricación
+       de pipetas aforadas y graduadas
+   • Vidrio borosilicato (vídrio tipo Pyrex®): está formado por sílice y óxido de boro. Es
+       prácticamente inerte, más difícil de fundir y de trabajar. Se usa para la fabricación de
+10     TEC. FARMACIA Y PARAFARMACIA SERGAS
+      Tema 13-1ª parte
+
+      www.premir.es
+
+              matraces aforados, probetas graduadas y buretas. Aunque es resistente al calor y a los
+              cambios bruscos de temperatura, puede ser atacado por ácido fluorhídrico y a elevadas
+              temperaturas por bases o álcalis fuertes y ácido fosfórico concentrado.
+         • Vidrio de sílice (como el aluminosilicato): formado con 96% de sílice. Los vidrios que
+              contienen 96% de sílice tienen una estabilidad tan grande y una temperatura de
+              reblandecimiento tan elevada (1 500ºC) que soportan temperaturas hasta de 900ºC
+              durante largo tiempo. Es aún más resistente a la rotura y al rayado.
+     Se caracteriza por tener una gran resistencia química frente al agua, ácidos y bases, superior al
+     que tienen la mayoría de los plásticos, así como por su gran estabilidad y transparencia.
+     Al trabajar con vidrio debemos de tener una serie de precauciones:
+         ü No someterlo a cambios bruscos de temperatura, ya que estos pueden provocar
+              tensiones térmicas que conduzcan a la rotura del material.
+         ü No aplicar fuerza sobre llaves, tapones…
+         ü No someter el material de vidrio a variaciones bruscas de presión.
+         ü No conservar soluciones concentradas de álcalis en vidrio de borosilicato (Pyrex®,
+              Kimax®,) ya que las condiciones cáusticas de la solución destruyen la calibración del
+              vidrio.
+     PLÁSTICO:
+     El material de plástico tiene la ventaja de tener resistencia a la rotura y tener poco peso.
+     Algunos plásticos pueden contener líquidos a 130ºC, pero no resisten la llama directa y pueden
+     ser atacados por disolventes orgánicos y ácidos fuertes.
+     Hay diversos tipos de plástico como el teflón, polímero de tetrafluoretileno ,de gran resistencia,
+     que soporta hasta 300ºC. El polietileno (PE),polímero de etileno, es inerte a la mayoría de los
+     reactivos químicos, pero puede reaccionar con disolventes orgánicos si está en contacto
+     prolongado con ellos más de 24 horas a temperatura ambiente.
+     Las puntas de las pipetas desechables se fabrican en plástico.
+     Hay material plástico que resiste altas temperaturas, e incluso resiste métodos de esterilización
+     como autoclave y calor seco.
+     PORCELANA:
+     El material de porcelana está compuesto de cerámica vitrificada de gran resistencia térmica y
+     mecánica, por ello se utiliza en la fabricación de morteros y embudos
+     Se utiliza principalmente cuando se necesitan materiales que resistan altas temperaturas. Estos
+     instrumentos están vidriados totalmente o por su parte interna, para evitar la adherencia de
+     partículas a sus paredes. Es menos económica que los dos anteriores.
+     METAL:
+     El material metálico suele utilizarse como soporte o sujeción y recoger sólidos. Por ejemplo
+     cucharillas o espátulas de metal.
+     CORCHO
+     Es un material que procede del alcornoque. Se empleó en la fabricación de tapones, sin
+     embargo, para los tapones ahora se emplea la goma, el caucho o el plástico.
+
+     Elección de material ¿vidrio o de plástico?
+     No existe un material universal que cumpla con todos los requerimientos del laboratorio. Se
+     tiene que elegir entre vidrio y plástico según la aplicación, el tipo de producto, así como las
+     propiedades específicas de estos materiales y el aspecto económico. Las ventajas decisivas del
+     material de plástico son su alta resistencia a la rotura y su bajo peso.
+                                                 TEC. FARMACIA Y PARAFARMACIA SERGAS 11
+                                                                       Tema 13-1ª parte
+
+                                                                                     www.premir.es
+Clases de material en función de la calidad:
+
+Clase A/AS: designa siempre a la mejor clase de exactitud. Por regla general, estos son
+alcanzados sólo por aparatos volumétricos de vidrio. La excepción son los matraces aforados
+de plástico de alguna marca de prestigio reconocido como BRAND®. En los aparatos
+volumétricos de la clase AS con ajuste por vertido 'Ex', la adición de 'S' significa vaciado rápido
+
+
+
+
+                                                                                               TEC. FARMACIA SERGAS
+(como pipetas y buretas).
+Clase B: normalmente el doble de los límites de error de la clase A/AS. El material volumétrico
+de la clase B está disponible en vidrio o en plástico. Para la clase B, en general se acepta el doble
+de los límites de error que para la clase A/AS. Los aparatos de medición de la clase B con ajuste
+por vertido ‘Ex’ no tienen tiempos de espera especificados.
+
+    b) Por su peso:
+En función de su peso el material de laboratorio puede ser:
+    o Material ligero: se traslada sin dificultad por pesar poco.
+    o Material pesado: difícil de trasladar y por ello es conveniente que ocupe un lugar fijo
+       en el laboratorio.
+    c) Según precise de reposición continua:
+De acuerdo con el período de uso, el material de laboratorio puede ser:
+    o Material fungible: tiene un período de uso más o menos limitado. Puede ser
+       desechable, es decir, de un solo uso y se elimina tras su utilización; o recuperable, ya
+       que tras su empleo no se elimina y se vuelve a usar.
+    o Material inventariable: aquel material que no tiene un rápido deterioro y debe de
+       estar registrado en un inventario. Ocupa un lugar fijo en el laboratorio y cuando queda
+       en desuso o se cambia, hay que darlo de baja por escrito. En este grupo se incluyen los
+       aparatos, elementos de protección y el mobiliario.
+
+           MATERIAL FUNGIBLE                       MATERIAL INVENTARIABLE
+
+
+           Pipetas graduadas de vidrio             Balanzas, centrífugas
+
+
+           Probetas de plástico o vidrio           Baños termostatizados, estufas
+
+
+           Pipetas Pasteur                         Duchas de seguridad, lavaojos
+
+
+           Gafas, guantes, mascarillas             Sillas, mesas, armarios
+
+
+    d) Por su función o uso:
+Los materiales de laboratorio también se pueden clasificar por la función que van a
+desempeñar o la utilidad y las aplicaciones que se van a llevar a cabo con cada uno de ellos. Se
+distinguen cuatro grupos principales:
+    o Material volumétrico: sirve para realizar medidas exactas.
+12     TEC. FARMACIA Y PARAFARMACIA SERGAS
+      Tema 13-1ª parte
+
+      www.premir.es
+
+        o Material no volumétrico: mide volúmenes aproximados y se utiliza principalmente
+          para calentar líquidos, disolver distintos componentes etc.…
+        o Material de uso específico: tiene funciones muy diversas, variadas y concretas.
+        o Material de soporte o sostén: sirve como elemento auxiliar de sujeción y soporte para
+          otros materiales.
+
+         1.1.1.1.1. MATERIAL VOLUMÉTRICO
+     El material volumétrico es aquel que mide el volumen con cierto grado de exactitud, a
+     diferencia de otros materiales que cogen cantidades aproximadas y no se utilizan para medir
+     volúmenes.
+     La temperatura de referencia normalizada, o sea la temperatura a la cual el aparato volumétrico
+     debe contener o verter el volumen nominal indicado, es de 20 °C. En el caso de que el ajuste o
+     la calibración se realicen a una temperatura diferente, los valores medidos deberán corregirse
+     correspondientemente.
+     Debido al pequeño coeficiente de dilatación del vidrio, en el uso práctico la temperatura de
+     referencia tiene escasa importancia, pues las desviaciones de las mediciones causadas por la
+     dilatación del volumen de los aparatos de medición, por regla general son inferiores al límite
+     de error.
+
+     Se considera material volumétrico: la probeta, la pipeta, la bureta y matraz aforado.
+     Podemos encontrar materiales volumétricos con distintos tipos de calibración:
+         a) Instrumentos calibrados para verter (“vert”/”Ex”/”TD”). En este material la cantidad
+            de líquido vertido corresponde exactamente al volumen indicado, ya que la cantidad
+            de líquido que permanece adherido a la pared del vidrio (remanente) debido a la
+            humectación, se ha tenido en cuenta al realizar la calibración. A este tipo de aparatos
+            volumétricos pertenecen por ej. las pipetas graduadas, las pipetas aforadas y las
+            buretas. Se puede indicar el tiempo que hay que esperar para que libere el líquido. No
+            se debe forzar para que salga el líquido remanente (como agitar, soplar, apoyar en
+            paredes…)
+         b) Instrumentos calibrados para contener (“cont”/”In”/”TC”).
+            La cantidad de líquido contenida corresponde exactamente al volumen indicado o
+            impreso, sobre el aparato. No queda líquido remanente en interior. A este tipo de
+            aparatos volumétricos pertenecen por ej. las probetas graduadas, los matraces aforados
+            y las pipetas capilares hasta 200 μl.
+
+     El término 'menisco' se utiliza para describir la curvatura de la superficie del líquido.
+     El menisco adopta forma convexa o cóncava. La formación de la curvatura resulta de la relación
+     de fuerzas entre adhesión y cohesión.
+     Si las moléculas del líquido experimentan mayor atracción hacia la pared de vidrio (fuerza de
+     adherencia) que entre si mismas (fuerza de cohesión), el menisco adoptará forma cóncava.
+     Es decir: hay un pequeño aumento en el ángulo de contacto del líquido con la pared. Esto
+     ocurre en el caso de las soluciones acuosas, por ejemplo.
+     Si el diámetro de una pipeta es adecuadamente pequeño, por ej. el de una pipeta capilar, la
+     fuerza de adherencia es suficiente no solamente para elevar el líquido en los puntos de
+     contacto con la pared, sino también para hacer ascender el nivel del líquido (efecto capilar). Un
+     prerrequisito para la medición exacta de volúmenes es el ajuste exacto del menisco.
+                                               TEC. FARMACIA Y PARAFARMACIA SERGAS 13
+                                                                     Tema 13-1ª parte
+
+                                                                                 www.premir.es
+En el caso de un menisco cóncavo, la lectura del volumen se realiza a la altura del punto más
+bajo de la superficie del líquido. El punto más bajo del menisco debe tocar el borde superior de
+la división de la escala.
+En el caso de un menisco convexo, la lectura del volumen se realiza a la altura del punto más
+alto de la superficie del líquido. El punto más alto del menisco debe tocar el borde inferior de
+la división de la escala.
+
+
+
+
+                                                                                          TEC. FARMACIA SERGAS
+En la utilización de material volumétrico, hay que tener en cuenta el llamado error de paralaje:
+Consiste en una lectura errónea debido a un defecto de posición del operario. Debemos de
+tener en cuenta que la superficie de un líquido contenido en un tubo estrecho (pipeta,
+bureta…) presenta una marcada curvatura o menisco. El fondo de esta curvatura se utiliza
+como punto de referencia en la calibración y uso del material volumétrico (línea de enrase). Al
+leer el volumen, el ojo debe de estar al mismo nivel que la superficie del líquido, ya que si el
+menisco se observa por encima, se leerá un volumen menor, mientras que si se observa por
+debajo, el volumen será mayor. Es lo que se denomina error de paralaje (desplazamiento
+aparente de un objeto cuando se observa desde diferentes puntos).
+14     TEC. FARMACIA Y PARAFARMACIA SERGAS
+      Tema 13-1ª parte
+
+      www.premir.es
+
+
+     Para leer el menisco sin error de paralaje, el aparato volumétrico debe estar en posición
+     vertical y los ojos del operador deben encontrarse a la altura del menisco. En esta posición, el
+     aforo se visualiza como una línea. Colocando un papel oscuro inmediatamente por debajo del
+     aforo, o una división de la escala detrás del aparato, el menisco se observará más oscuro y podrá
+     leerse más fácilmente contra un fondo claro.
+
+
+
+
+         a) PROBETAS:
+     Son recipientes graduados, de forma cilíndrica, con una base ancha para apoyarlos en su parte
+     inferior. Se utilizan para medidas de volumen que requieran poca precisión.
+     Pueden estar hechas de vidrio o de plástico. Las de plástico tienen la ventaja de ser resistentes
+     al ácido fluorhídrico y no romperse. Las de plástico son menos exactas que las de vidrio.
+     Se pueden encontrar de tamaños muy variados y pueden ser utilizadas para dispensar
+     (presentan un pico en la parte superior para favorecer el vertido del líquido) o para contener el
+     líquido (con tapón).
+
+                                      Manejo de probetas graduadas: para pasar un líquido a la
+                                      probeta y medir su volumen hay que ajustar el menisco
+                                      (curvatura que forma la superficie del líquido) a la línea de
+                                      graduación deseada (aforo) y realizar la lectura a la altura de
+                                      los ojos para evitar el error de paralaje. No deben de quedar
+                                      mojadas las paredes de la probeta por encima del aforo.
+                                                   TEC. FARMACIA Y PARAFARMACIA SERGAS 15
+                                                                         Tema 13-1ª parte
+
+                                                                                      www.premir.es
+       b) PIPETAS:
+    Utensilios de laboratorio que se emplean para transferir volúmenes de líquidos medidos
+    exactamente. En las paredes se refleja la capacidad, y temperatura a la que deben ser usadas.
+
+
+
+
+                                                                                               TEC. FARMACIA SERGAS
+•   Pipetas graduadas:
+    Son tubos de vidrio de sección uniforme que terminan en una punta fina, y que tienen grabada
+    en las paredes del cristal una graduación que divide su volumen total en mililitro y en décimas
+    o centésimas de mililitro, según la capacidad de las mismas. Permiten medir diferentes
+    volúmenes o un volumen único hasta su capacidad máxima.
+
+•   Pipetas aforadas:
+    Están diseñadas para medir un solo volumen de líquido. Son tubos largos de vidrio con un
+    ensanchamiento en su parte central, donde generalmente viene indicada su capacidad y la
+    temperatura de uso. En la parte superior, por encima del ensanchamiento central, encontramos
+    la línea de aforo, que indica el nivel que tiene que alcanzar el líquido.
+
+    Micropipetas:
+    Es una pipeta que mide volúmenes muy pequeños (microlitros). La micropipeta mide desde 1
+    microlitro a 1000 microlitros (1ml).
+    La micropipeta consta de diferentes partes:
+        - En la parte superior lleva una rueda para seleccionar el volumen y un émbolo para
+           aspirar el volumen. A un lado se encuentra un botón que al apretarlo expulsa las puntas.
+        - En la parte media tiene una pantalla analógica o digital.
+        - En la parte inferior se coloca la punta de plástico que aspira el líquido. El uso de
+           micropipetas permite emplear distintos líquidos sin tener que lavar el aparato: para ello,
+           se emplean puntas desechables, de plástico, que habitualmente son estériles.
+16     TEC. FARMACIA Y PARAFARMACIA SERGAS
+      Tema 13-1ª parte
+
+      www.premir.es
+
+     Existen dos tipos de micropipetas: manuales y automáticas
+         ü Manuales: llevan una rueda en la parte superior conectada a un sistema analógico que
+            sirve para fijar el volumen a aspirar.
+         ü Automáticas o electrónicas: en las cuales dicho sistema es digital
+
+     Las hay de volumen fijo y de volumen variable. Hay micropipetas simples, que sólo acogen una
+     punta cada vez, y multicanales, que permiten incorporar múltiples puntas (por ejemplo, ocho),
+     absorbiendo el mismo volumen en todas ellas.
+
+     Manejo de pipetas:
+
+     Antes de llenar una pipeta, debemos comprobar que esta se encuentra limpia. Además
+     inspeccionar sus extremos en caso de que haya defectos o se encuentre rota.
+     Las pipetas se llenan o cargan por succión y se usarán siempre con prepipetas, de las cuales
+     uno de los más utilizados es el aspirador de cremallera. Con el aspirador de cremallera hay que
+     acoplar la pipeta en la parte inferior, y al girar la rueda, sube la cremallera y sube el líquido. Para
+     vaciarlo lentamente, se debe girar la rueda despacio en sentido contrario a cuando ascendía el
+     líquido y para vaciarlo con rapidez, presionar la palanca lateral.
+     Una vez empleada una pipeta, este debe colocarse en los recipientes especiales para pipetas
+     sucias.
+
+                           Manejo de micropipetas:
+
+                         Lo primero que se debe de hacer es ajustar el volumen solicitado, si la
+                         micropipeta es de volumen variable. Después se debe insertar la punta con
+                         firmeza en la parte inferior de la micropipeta. Presionar el botón del
+                         émbolo hasta la primera parada o tope. A continuación introducir la punta
+                         por debajo de la superficie del líquido y suavemente liberar el émbolo
+                         hasta la posición inicial, en este momento se ha aspirado el volumen del
+                         líquido solicitado. Después, dispensar el líquido presionando el émbolo
+                         hasta la primera parada y, tras una corta interrupción, presionar hasta la
+                         segunda parada para expulsar todo el líquido y vaciar por completo la
+                         punta. Liberar el émbolo hasta la posición inicial. Finalmente, retirar la
+     punta, con el expulsor de puntas, a un contenedor específico e insertar una nueva punta si se
+     va a continuar pipeteando.
+                                                 TEC. FARMACIA Y PARAFARMACIA SERGAS 17
+                                                                       Tema 13-1ª parte
+
+                                                                                    www.premir.es
+    c) BURETA:
+La bureta es un tubo cilíndrico de vidrio que en la parte
+inferior se estrecha y llave de válvula lateral que permite
+regular la salida de líquido. Tiene una escala graduada.
+Sirve para dispensar volúmenes con gran precisión y
+exactitud. Las buretas se emplean para valoraciones y
+
+
+
+
+                                                                                              TEC. FARMACIA SERGAS
+volumetrías. Además, se colocan verticales y van sujetas con
+ayuda de pinzas a un soporte de pie o soporte universal.
+
+Manejo de la bureta:
+Antes de cada uso, hay que realizar el curado. Consiste en
+enjuagarla varias veces (3 veces) llenándolas 1/3 de su
+capacidad con el líquido que se va a utilizar. El objetivo es asegurar que no quede ningún
+residuo de agua o solución previa que pueda afectar las mediciones. Este proceso ayuda a
+eliminar burbujas de aire y a mojar las paredes internas de la bureta, garantizando resultados
+más precisos.
+Con la mano izquierda abrir y cerrar la llave o rueda, y con la mano derecha sujetar y agitar el
+recipiente que va a recoger el líquido contenido en la bureta (los zurdos lo harán al revés).
+Colocar un embudo en la parte superior de la bureta y la llave vertical para que quede abierta.
+Llenar la bureta añadiendo el líquido a través del embudo. Cuando comienza a caer líquido por
+el extremo inferior, cerrar la llave. La zona no graduada que hay entre la llave y la boca de salida
+debe quedar completamente llena de líquido. A esto se le llama cebar la bureta.
+
+    d) MATRAZ AFORADO:
+Se caracteriza por tener forma de pera con el fondo plano o ligeramente convexo, y con un
+cuello largo y estrecho. El cuello de estos matraces lleva marcada una línea delgada (línea de
+aforo) que indica la capacidad del mismo. En las paredes de éstos se indica, además la
+temperatura a que deben utilizarse. Como la graduación rodea todo el cuello del matraz, es
+fácil evitar los errores de paralaje cuando se lleva el líquido hasta el aforo, alineando el ojo de
+forma que los lados más cercanos y más lejano del anillo sean tangentes al borde
+inferior del menisco. Es indispensable que el matraz esté libre de grasa, especialmente
+en la señal de aforo o cerca de ésta.
+Mide un único volumen que viene indicado en éste y se encuentra expresado en ml. Se
+usan principalmente para la preparación de disoluciones y para diluir muestras hasta
+un volumen fijo.
+Los matraces aforados con forma trapezoidal: tienen una superficie de apoyo mucho
+mayor, y por lo mismo mayor estabilidad.
+
+    1.1.1.1.2. MATERIAL NO VOLUMÉTRICO
+Se trata de un tipo de material que mide volúmenes aproximados y sirve principalmente para
+calentar o contener líquidos.
+Se considera material no volumétrico: matraz Erlenmeyer, matraz Kitasato y vaso de
+precipitados.
+18     TEC. FARMACIA Y PARAFARMACIA SERGAS
+      Tema 13-1ª parte
+
+      www.premir.es
+
+        a) VASO DE PRECIPITADOS:
+     Es un vaso de vidrio o plástico de forma cilíndrica, fondo plano con un pico para facilitar el
+     vertido de líquidos. Estos vasos pueden ser altos o bajos y con distintos volúmenes. Pueden
+     presentarse graduados o sin graduar.
+     Es muy importante tener en cuenta que los vasos de precipitados nos darán un volumen
+     aproximado, ya que los vasos, al tener un diámetro muy ancho, nunca proporcionarán
+     volúmenes exactos ni precisos.
+     Estos vasos sirven para contener líquidos y realizar agitaciones no violentas. Se pueden calentar
+     pero no directamente a la llama. También se utilizan en la preparación de disoluciones.
+
+        b) MATRAZ ERLENMEYER:
+     Recipiente de vidrio que resiste altas temperaturas y que tiene, además, forma esférica o cónica
+     con un cuello cilíndrico y estrecho. Se utilizan, sobre todo, para contener, calentar líquidos y
+     hacer agitaciones violentas de líquidos sin que se derramen, gracias a que estos tienen la boca
+     estrecha.
+     Este matraz puede llevar graduaciones que sirven para contener un volumen aproximado.
+
+        c) MATRAZ KITASATO
+     Los matraces Kitasato tienen una forma similar al matraz Erlenmeyer pero poseen, además, una
+     salida tubular lateral, cerca del cuello por donde se conecta a una línea de vacío. El vacío que
+     genera se utiliza para realizar filtraciones con succión.
+
+
+
+
+        1.1.1.1.3. MATERIAL DE USO ESPECÍFICO
+
+     En el laboratorio se necesitan materiales muy diversos para realizar las diferentes técnicas u
+     operaciones. Los materiales que se detallan a continuación se utilizan para operaciones
+     determinadas y, por ello, cada uno tiene una función específica que hay que conocer para
+     poderlos manejar adecuadamente y así desarrollar los distintos procedimientos.
+
+     EMBUDOS
+     Los embudos son de vidrio o de plástico y constan de un cuerpo cónico y un tubo estrecho. Se
+     emplean en operaciones de filtración para trasvasar líquidos, pero también hay embudos para
+     trasvasar sólidos en polvo de un recipiente a otro. Se pueden encontrar diferentes tipos de
+     embudos:
+                                               TEC. FARMACIA Y PARAFARMACIA SERGAS 19
+                                                                     Tema 13-1ª parte
+
+                                                                                  www.premir.es
+   ü Embudos Buchner: Es un embudo en forma cilíndrica con una placa horadada como
+     piso que sostiene el papel de filtro para filtración por succión. Se hace tradicionalmente
+            de porcelana, sin embargo, también está disponible en vidrio y plástico. En la
+            zona superior cilíndrica del embudo existe una placa circular que posee un
+            conjunto de perforaciones. Se necesita colocar un papel de filtro circular, que se
+            acople perfectamente para realizar la filtración. Posee una buena resistencia
+
+
+
+
+                                                                                           TEC. FARMACIA SERGAS
+            térmica por lo que se puede calentar hasta 1400 C, posee un coeficiente
+            de dilatación bastante pequeño por lo que puede soportar cambios bruscos de
+            temperatura sin resquebrajarse.
+            ü       Embudos esmerilados cónicos: ideales para introducir reactivos
+            líquidos o sólidos en polvo en matraces con varias bocas.
+            ü       Embudo o ampolla de decantación o Gibson: recipiente de vidrio con
+            forma de pera o cónica. En la parte superior de este tipo de embudo se puede
+     acoplar otro embudo para verter los líquidos. En la parte inferior lleva una llave de vidrio
+     o teflón para abrir y cerrar.
+
+TUBOS DE ENSAYO Y TUBOS DE CENTRÍFUGA
+Son tubos cilíndricos de vidrio o plástico, de dimensiones variables de diámetro y de longitud.
+Hay que tener en cuenta que siempre se deben de colocar en una gradilla. Asimismo, si para
+realizar alguna prueba se quiere guardar el contenido, los tubos se cierran con tapón de rosca
+o parafilm. Pueden ser graduados o no y llevar o no tapón.
+
+PESASUSTANCIAS
+Son recipientes de cristal o plástico, en cuyo interior se coloca la sustancia a pesar.
+Existen dos tipos: el llamado zapatito o pesasustancias y el pesasustancias con tapa o pesa
+filtros para pesar líquidos volátiles, filtros, etc
+
+VIDRIO DE RELOJ
+Es una lámina redondo convexo que permite contener las sustancias para luego pesarlas en la
+balanza. Se denomina vidrio de reloj ya que es muy similar a uno de ellos. Se encuentran de
+diferentes diámetros y materiales como vidrio, teflón/polipropileno. El borde puede estar
+esmerilado para evitar cortes.
+Usos
+    • Para pesar sustancias
+    • Para tapar vasos de precipitados
+    • Evaporar cantidades pequeñas de un líquido.
+
+FRASCO CUENTAGOTAS CON TETINA
+Puede ser de vidrio normal o vidrio color topacio. Normalmente, los frascos cuentagotas con
+tetina se utilizan para contener disoluciones recién preparadas. Se acompañan de cuentagotas
+para añadir gota a gota.
+El gotero también es conocido con el nombre de cuentagotas. Es un tubo hueco terminado en
+su parte inferior en forma cónica y cerrado por la parte superior por una
+perilla o dedal de goma.
+El gotero es un instrumento de laboratorio, el cual se usa para trasvasar pequeñas cantidades
+de líquido vertiéndolo gota a gota.Se utilizan los goteros para añadir reactivos, líquidos
+indicadores o pequeñas cantidades de producto de un recipiente a otro.
+20     TEC. FARMACIA Y PARAFARMACIA SERGAS
+      Tema 13-1ª parte
+
+      www.premir.es
+
+     El uso de los goteros o cuentagotas está limitado cuando se requiere precisión en la cantidad
+     de líquido vertido. Para esos casos existen instrumentos más apropiados como la pipeta o la
+     bureta.
+     Maneja cantidades muy pequeñas de líquido. 20 gotas son aproximadamente 1 mL.
+     Es importante tener en cuenta que cuando sean soluciones fotosensibles, se utilizarán siempre
+     frascos de vidrio topacio para que no las altere la luz.
+
+     MORTERO Y PISTILO
+     Los morteros constan de un cuenco con o sin pico y de un pistilo, mano, mango o pilón.
+     Normalmente se encuentran hechos de Madera, Porcelana, Piedra y Mármol.
+     Se utilizan para triturar, mezclar o pulverizar sólidos, así como también para triturar vegetales,
+     añadir un disolvente adecuado y posteriormente extraer los pigmentos.
+
+     FRASCOS LAVADORES
+     Los frascos lavadores son recipientes elaborados generalmente en plástico y que cuentan con
+     un tapón y un tubo fino y acodado. Se emplean para contener agua destilada o desionizada,
+     nunca otro tipo de líquidos. Es muy importante tener en cuenta que el frasco solo se abre para
+     rellenarlo. También se utilizan para dar el último enjuague al material de vidrio después de
+     lavado, y en la preparación de disoluciones.
+
+     CUCHARA ESPÁTULA
+     La cuchara espátula puede ser de metal, porcelana o plástico. Presenta por un lado una lámina
+     plana (espátula) y por el otro lleva la cuchara. Sirve para pasar el material sólido de un recipiente
+     a otro y para pesar pequeñas cantidades de sólido.
+
+     VARILLA AGITADORA
+     Instrumento de vidrio y no hueco por dentro. Sirve para mezclar sustancias al moverla con
+     vueltas giratorias y también pueden ayudar cuando se transvasan líquidos para que estos no
+     se derramen.
+
+     PIPETA PASTEUR
+     Las pipetas Pasteur son utilizadas para el pipeteado de pequeñas cantidades de líquido de
+     forma fácil y económica. Se encuentran en plástico, con pera de pipeteado integrada. Las
+     encontramos también de vidrio, generalmente desechables; éstas utilizan una tetina de goma
+     como auxiliar de pipeteado.
+
+     PLACA PETRI
+     Recipiente redondo, hecho de vidrio o de plástico, posee diferentes diámetros, es de fondo
+     bajo, con una cubierta de la misma forma que la placa, pero un poco más grande de diámetro,
+     ya que se puede colocar encima y cerrar el recipiente, como una tapa.
+
+     Usos
+     ▪Para poder observar diferentes tipos de muestras tanto biológicas como químicas. Las cuales
+     se encuentran encerradas dentro de la placa.
+     ▪ Para el cultivo experimental de hongos, bacterias y otras especies.
+     ▪ Para pesar sólidos en una balanza.
+                                              TEC. FARMACIA Y PARAFARMACIA SERGAS 21
+                                                                    Tema 13-1ª parte
+
+                                                                                www.premir.es
+
+▪ Para contener o cristalizar sustancias
+
+Precauciones
+▪ Se deben utilizar con precaución, ya que se debe evitar el contacto con organismos
+biológicos, en caso de trabajar con ellos.
+▪ Utilizar implemento de protección antes de trabajar con organismos biológicos (antiparras,
+
+
+
+
+                                                                                         TEC. FARMACIA SERGAS
+bata, guantes, etc).
+
+PORTAOBJETOS Y CUBREOBJETOS
+El portaobjetos es una placa rectangular de vidrio que sirve para poner sobre ella la muestra y
+observarla por el microscopio.
+El cubreobjetos es una lámina cuadrada y muy fina de vidrio. Sirve para proteger la muestra
+que está sobre el portaobjetos y así observarla mejor.
+
+CUBETA DE ESPECTROFOTÓMETRO
+La cubeta de espectrofotómetro puede ser de vidrio, plástico o cuarzo, y también de varios
+tamaños. Se emplea para contener la muestra que se va a analizar por espectrofotometría.
+
+CRISTALIZADORES.
+Son recipientes de forma cilíndrica con base plana, tienen poca altura y gran diámetro, por lo
+que su superficie abierta es grande. Se usan cuando se desea evaporar rápidamente el líquido
+de una solución facilitando la cristalización del soluto que se encontraba formando dicha
+solución (cuando éste es de naturaleza sólida).
+También es usado para depositar cantidades de hielo y realizar los enfriamientos para los baños
+de hielo.
+
+    1.1.1.1.4. MATERIAL DE SOPORTE O SOSTÉN
+El material de soporte y sostén va a permitir sujetar otros instrumentos de laboratorio para
+poder realizar diversas operaciones.
+
+GRADILLA
+Puede ser de metal, plástico o madera. Sirven para colocar y transportar distintos tipos de
+tubos.
+
+PINZAS
+Son instrumentos generalmente de dos brazos que se emplean para coger o sujetar materiales.
+
+SOPORTE UNIVERSAL O PIE SOPORTE
+Este instrumento consta de una base o pie y unas barras metálicas. Sobre la barra se acopla la
+pinza doble, que a su vez van a sujetar a las pinzas o a un aro metálico. Así, el conjunto va a
+servir para preparar un montaje con distintos materiales.
+
+ARO SOPORTE
+El aro es metálico y va sujeto al soporte por una pinza. Sirve para sostener materiales que se
+van a calentar, por esa razón también se le conoce con el nombre de aro Bunsen. Además, se
+puede poner la rejilla justo encima del aro para que no haya contacto directo de la llama con
+el recipiente que se va a calentar.
+22     TEC. FARMACIA Y PARAFARMACIA SERGAS
+      Tema 13-1ª parte
+
+      www.premir.es
+
+
+     REJILLA Y TRÍPODE
+     La rejilla es una red formada por finas barras de metal. Se coloca encima del trípode, que es un
+     soporte metálico de tres patas. La rejilla sirve para calentar indirectamente y para que la llama
+     llegue uniforme a toda la superficie de los materiales que coloquemos sobre ella.
+
+     TRIÁNGULO DE PIPA
+     El triángulo de pipa es metálico, de porcelana o silimarita, y está recubierto de una sustancia
+     refractaria. Se emplea para colocar el recipiente que acabamos de calentar o retirar del fuego,
+     protegiendo la mesa de trabajo.
+
+        1.1.1.2.   APARATAJE GENERAL DE LABORATORIO
+
+     El laboratorio debe de disponer de un equipamiento mínimo, en cuanto a materiales y
+     aparatos, para poder realizar las distintas operaciones.
+
+     Los aparatos que hay en el laboratorio dependen de las técnicas y procedimientos que se
+     realicen en él. De este modo, no es lo mismo un laboratorio de dietética, donde se analizan los
+     alimentos, que un laboratorio en una oficina de farmacia, que elabora fórmulas magistrales y/o
+     realiza análisis de sangre.
+
+     No obstante, los laboratorios están equipados con una serie de aparatos generales que se
+     emplean en todo tipo de laboratorios, además de disponer de otros específicos para
+     determinadas pruebas, las cuales también son propias y específicas.
+
+     AGITADOR MAGNÉTICO
+
+                                                                Plato de agitación con toma
+                                                                          eléctrica
+
+
+
+     Regulador de la velocidad de
+              agitación
+
+
+     Un agitador de laboratorio es un instrumento, dotado o no de calefacción, que utiliza
+     superficies que vibren para poder realizar pruebas con soluciones químicas. Las bandas
+     magnéticas hacen que las soluciones de un matraz o vaso de precipitado se mezcle bien con
+     otro soluto.
+     El agitador magnético sirve para facilitar la dispersión de soluciones, suspensiones o
+     mezclas poco viscosas. Puede llevar como accesorios una placa calefactora y el mando
+     regulador de la temperatura, de tal modo que, a la vez que se agita la mezcla puede calentarla
+     para favorecer su dispersión.
+                                              TEC. FARMACIA Y PARAFARMACIA SERGAS 23
+                                                                    Tema 13-1ª parte
+
+                                                                                www.premir.es
+Funcionamiento del agitador magnético:
+Para un correcto funcionamiento del agitador magnético, debemos tener en cuenta las
+siguientes pautas:
+    ü Colocar el vaso de precipitados con el contenido que se quiere agitar sobre el plato de
+       agitación.
+    ü Introducir el imán en el interior del vaso para agitar el líquido.
+
+
+
+
+                                                                                         TEC. FARMACIA SERGAS
+    ü Conectar a la red eléctrica y encender con el interruptor, en posición ON.
+    ü Ajustar la velocidad comenzando siempre por la más baja e ir aumentándola,
+       progresivamente, hasta alcanzar la adecuada.
+    ü Finalizada la agitación se gira el mando de velocidad hasta la posición cero.
+    ü Apagar el interruptor poniéndolo en posición OFF.
+    ü Sacar el imán de su interior con ayuda de una varilla con otro imán en su extremo.
+
+Precauciones:
+Antes de manipular el agitador magnético, debemos considerar algunas precauciones:
+   ü Antes de enchufar a la corriente, se debe verificar que es correcta la conexión eléctrica
+       (voltaje que se indica en la placa de características del aparato).
+   ü Además, antes de comenzar la agitación, hay que comprobar que el cable de conexión
+       a la red eléctrica está conectado y el interruptor general se encuentra en posición de
+       encendido.
+   ü El agitador se debe regular empezando siempre por una velocidad baja, que se irá
+       aumentando progresivamente hasta alcanzar la adecuada.
+   ü Asimismo, hay que controlar que el líquido no se salga del recipiente; para ello, se puede
+       tapar con papel parafinado o de aluminio.
+
+AGITADOR DE TUBOS
+                                                                                    Cabezal
+Agitador de tubos de un solo cabezal
+
+
+                             Carcasa
+
+                                                                                         Interruptor
+
+
+
+                               Regulador
+
+El agitador de tubos sirve, tal como su nombre indica, para agitar mezclas contenidas en
+tubos de ensayo de modo rápido, gracias a su movimiento vibratorio.
+
+Funcionamiento:
+Al utilizar el agitador de tubos, debemos seguir estos pasos:
+    ü Conectarlo a la red eléctrica y encenderlo con el interruptor.
+    ü Colocar el tubo de ensayo con el contenido que se quiere agitar sobre el cabezal.
+    ü Regular la velocidad comenzando siempre por la más baja e ir aumentándola,
+         progresivamente, hasta alcanzar la adecuada.
+    ü Finalizada la agitación, se gira el mando de velocidad hacia la posición cero.
+24     TEC. FARMACIA Y PARAFARMACIA SERGAS
+      Tema 13-1ª parte
+
+      www.premir.es
+
+        ü Apagar el interruptor poniéndolo en posición cero.
+
+     Precauciones:
+        ü Antes de enchufar a la corriente, se debe verificar que es correcta la conexión eléctrica
+           (voltaje que se indica en la placa de características del aparato).
+        ü Antes de comenzar la agitación, comprobar que el cable de conexión a la red eléctrica
+           está conectado y el interruptor general se encuentra en posición de encendido.
+        ü Tapar con tapón o cubrir el tubo de ensayo con papel parafilm.
+
+     Otros agitadores:
+        - Agitador rotatorio: Un agitador rotatorio es un tipo de agitador químico que se utiliza
+            sobre todo para la agitación por rotación. Este tipo de agitadores básicamente se
+            utilizan para muestras de sangre, orina u otros líquidos que se suelen analizar en tubos,
+            también para mezclas de sustancias y polvos secos.
+            Se utilizan agitadores rotatorios porque son más cómodos para colocar los tubos de las
+            muestras y tiene una velocidad regulable y constante para llevar a cabo la agitación.
+            El agitador tipo Vortex, produce oscilación veloz en movimiento circular; creando un
+            vórtice en el líquido que es agitado.
+        - Agitador orbital: se llama así por el movimiento que hace con su bandeja para
+            conseguir el movimiento del recipiente. Estos agitadores de movimiento orbital se
+            suelen utilizar para hacer pruebas en laboratorios bioquímicos clínicos. Sirve para
+            mezclar componentes, con el fin de ver la emulsión y la reacción de ciertas soluciones y
+            poder así aplicarlas para usos médicos o en investigación.
+        - Agitadores de rodillos: rodillos paralelos muy juntos que giran en un plano horizontal.
+        - Agitador de bandeja: bandeja con un motor debajo que efectúa un movimiento
+            circular. En la superficie tiene un dispositivo para sujetar los recipientes que se vayan a
+            agitar. Se usa para mezclar cultivos de medio líquido.
+
+     LA BALANZA
+     La balanza es un instrumento que sirve para determinar la masa de las sustancias. La masa
+     es una magnitud fundamental en el Sistema Internacional de Magnitudes, característica de
+     cada sustancia y, además es constante.
+
+     Por su parte, el peso es la fuerza con que es atraído un cuerpo hacia el centro de la Tierra por
+     la fuerza de gravedad. P= masa (masa) . gravedad (g).
+
+     Por tanto, la masa y el peso son dos magnitudes proporcionales pero diferentes. Por eso, pesar
+     dos cuerpos en un mismo lugar es comparar sus masas, porque la gravedad es la misma para
+     los dos.
+                                                 TEC. FARMACIA Y PARAFARMACIA SERGAS 25
+                                                                       Tema 13-1ª parte
+
+                                                                                    www.premir.es
+Tipos de balanzas:
+1. Balanzas mecánicas
+                                                 Balanza de dos platos
+                                                 La balanza de dos platos es una palanca de
+                                                 primer género porque tiene un punto de apoyo
+                                                 en medio de dos platillos. En ella, además, se
+
+
+
+
+                                                                                              TEC. FARMACIA SERGAS
+                                                 emplea un método de pesada simple, que es el
+                                                 más sencillo, y consiste en que uno de sus
+                                                 platillos se coloca el cuerpo o sustancia que
+                                                 queremos pesar, mientras que en el otro platillo
+                                                 se ponen las pesas hasta equilibrar la oscilación
+                                                 producida cuando se coloca la masa del cuerpo
+                                                 sobre el platillo. Hay una aguja llamada fiel que
+                                                 indica cuando los dos platillos están en
+                                                 equilibrio
+
+
+
+Balanzas granatario: tiene dos platillos que cuelgan de un soporte, llamado «cruz», que a su
+vez cuelga de un eje vertical central, denominado «astil». Conectado a la cruz hay una aguja
+(que se llama «fiel»). Con el objeto en un platillo, se van poniendo pesas en el otro platillo hasta
+que se encuentra el equilibrio. Permiten pesar gases.
+
+Balanzas de platillo único: en el lado izquierdo de la balanza se observa un platillo, mientras
+que, en el derecho, hay unos brazos con pesas que pueden moverse por ellos. Además, se
+dispone de pesas flotantes que se usan cuando el peso supera determinados valores y que
+cuelgan de los brazos.
+
+Balanzas mecánicas analíticas: son las que permiten averiguar la masa con mayor precisión
+y sensibilidad. El modelo más conocido es la balanza de sustitución de platillo único. En el lado
+del platillo existe una serie de pesas contrabalanceadas al otro lado por un peso único. Cuando
+en el platillo no existe nada, los pesos a ambos lados son iguales y la balanza se encuentra en
+el punto cero. Pero, cuando se pone algo en el platillo, se produce un desequilibrio que termina
+cuando son retiradas las pesas apropiadas del lado del platillo, mediante un sistema mecánico.
+La masa de las pesas retiradas es ofrecida por el aparato como la masa del objeto que estamos
+pesando. Característicamente, estas balanzas se encuentran dentro de una cámara en forma
+de vitrina y deben estar en un lugar del laboratorio sin vibraciones ni corrientes de aire y sobre
+un soporte muy estable.
+26     TEC. FARMACIA Y PARAFARMACIA SERGAS
+      Tema 13-1ª parte
+
+      www.premir.es
+
+     2. Balanzas electrónicas. Se consideran las más difundidas en la actualidad. Disponen de un
+        plato en el que se coloca el objeto cuya masa se quiere saber. El peso se mide mediante un
+        mecanismo electrónico.
+
+     Características de las balanzas:
+     o EXACTITUD: definimos la exactitud de una balanza como la capacidad que tiene para que
+        los valores medidos se correspondan con el valor verdadero.
+     o PRECISIÓN: es la capacidad que tiene para dar resultados, de mediciones consecutivas,
+        iguales o muy próximas, efectuadas bajo las mismas condiciones, es decir: con el mismo
+        procedimiento de pesada, el mismo observador, el mismo lugar de pesada, bajo las mismas
+        condiciones ambientales y cuando la repetición de las medidas se ha realizado en un
+        período de tiempo corto.
+     o SENSIBILIDAD: capacidad que tienen para apreciar cantidades mínimas de masa. Las
+        balanzas tendrán tanta mayor sensibilidad a medida que las cantidades de masa que
+        detecten sean menores. Capacidad para distinguir dos medidas cercanas. Por ejemplo, es
+        más sensible la balanza que distingue 1 g de 1,5 g, que la que es capaz de distinguir 1 g de
+        2 g. La primera tiene una sensibilidad de 0,5 g y la segunda de 1 g.
+
+
+
+
+            BALANZA ANALÍTICA (d= 0,1 mg)                 SEMIMICROBALANZA (d= 0,01 mg)
+
+
+
+
+       MICROBALANZA (d= 0,001 mg = 1µ)             ULTRAMICROBALANZA (d= 0,1 µ)
+
+     o ESTABILIDAD: capacidad que tiene la balanza de volver a su posición inicial al quitar el
+       producto que se ha pesado. En las balanzas electrónicas deben aparecer los ceros.
+     o CARGA MÁXIMA: peso máximo que puede soportar el sistema sin sufrir daños. El producto
+       y su recipiente de pesada no deben sobrepasar la carga máxima para que la pesada se
+       pueda efectuar.
+     o CARGA MÍNIMA: mínimo peso que la balanza puede registrar con exactitud. El conjunto
+       de papel fino de pesada y producto a pesar debe de sobrepasar esta carga mínima para que
+       el registro de la balanza se pueda efectuar y sea fiable.
+                                                TEC. FARMACIA Y PARAFARMACIA SERGAS 27
+                                                                      Tema 13-1ª parte
+
+                                                                                   www.premir.es
+
+
+BALANZAS MÁS UTILIZADAS EN EL LABORATORIO DE FARMACIA. TÉCNICA DE PESADA
+Hoy en día en el laboratorio de las oficinas de farmacia, así como en las farmacias hospitalarias,
+se utilizan balanzas electrónicas monoplano que son rápidas y que ofrecen gran exactitud,
+precisión y sensibilidad. Con ellas se logra una rapidez sin precedente y, además, son más
+fáciles de manejar.
+
+
+
+
+                                                                                            TEC. FARMACIA SERGAS
+Las balanzas se deben proteger de las variaciones de temperatura, humedad y exposición a la
+luz solar. En general, no se deben colocar cerca de hornos o fuentes de calor.
+Se deben colocar en mesas que sean firmes y se deben proteger de vibraciones (de ser posible
+una mesa exclusiva para ellas). Si se derrama algún reactivo sobre ellas, se debe limpiar de
+inmediato con un paño limpio y seco. La balanza se debe proteger de corrientes de aire, pues
+estas producen inestabilidad.
+
+Tipos:
+Las balanzas electrónicas monoplano de uso más frecuente son:
+    Ø Balanzas electrónicas de precisión: la precisión de indicación oscila entre los 0,1 g
+       0,001 g.
+    Ø Balanzas electrónicas analíticas: la precisión de indicación es de 0,0001 g, mientras su
+       carga máxima varía entre 100 y 200 g. En ellas, el platillo se halla protegido del entorno
+       por una urna de cristal y preservado de la humedad por un agente desecador.
+
+El mecanismo de medición de estas balanzas es un mecanismo electromagnético. Cuando se
+coloca un producto en el platillo de pesada, este cambiará de posición con una fuerza
+proporcional al peso que se haya puesto sobre él. El mecanismo interno de la balanza detecta
+este cambio de posición del platillo y genera entonces (por un sistema electromagnético) una
+fuerza que devuelve al platillo a su posición inicial. La energía eléctrica que se necesita para
+generar esta fuerza es proporcional al peso del objeto que se haya puesto en el platillo y es
+fácilmente medida, digitalizada y mostrada.
+
+
+
+
+NORMAS DE USO CORRECTO DE LAS BALANZAS ELECTRÓNICAS UTILIZADAS EN FARMACIA
+
+La pesada es una operación esencial, ya que de ella va a depender la correcta elaboración de
+preparados farmacéuticos y su correcto control de calidad. Por eso, la exactitud y fiabilidad de
+los resultados de pesada no solo depende de un trabajo de medida preciso, por parte del
+técnico en farmacia, sino que también guarda relación con el lugar y las condiciones de
+emplazamiento de la balanza.
+28    TEC. FARMACIA Y PARAFARMACIA SERGAS
+     Tema 13-1ª parte
+
+     www.premir.es
+
+      A. Lugar de emplazamiento de la balanza
+      o Deben colocarse alejadas de ventanas y radiadores para evitar, respectivamente, que
+         los rayos solares o la radiación térmica las calienten.
+      o La habitación donde se monta la balanza no debe de ser de paso y los rincones son los
+         mejores lugares para instalarlas, ya que son los lugares más firmes y con las menores
+         vibraciones.
+      o No deben montarse cerca de equipos de aire acondicionado ni de ventiladores, así
+         como tampoco muy cerca de las ventanas para evitar turbulencias de aire.
+      o Los aparatos de iluminación deben de estar instalados no muy cerca de la mesa de
+         pesada, con el fin de evitar radiaciones térmicas perturbadoras para el sistema de
+         pesada. No deben instalarse lámparas de gran potencia. Son recomendables los tubos
+         fluorescentes.
+      o Los cambios de temperatura de la habitación provocan cambios en el interior de la
+         balanza repercutiendo en su correcto funcionamiento. Se recomienda trabajar a
+         temperaturas de entre 10ºC y los 40ºC.
+      o Cuanto mayor sea la sensibilidad de las balanzas, más repercusión sobre ella tendrán las
+         variaciones de humedad, por lo que se hace necesario controlarla. Se recomienda una
+         humedad entre el 40% y 65%.
+
+
+
+
+      B.Mesa de pesar
+      o La mesa de pesar no debe de estar sometida a oscilaciones y vibraciones.
+      o No debe ceder cuando se trabaja en ella.
+      o Debe estar protegida contra la carga estática.
+      o Es conveniente que no esté fijada a la pared y suelo simultáneamente, ya que las
+        vibraciones de uno se transmiten al otro.
+      o Durante la pesada no hay que apoyarse, mover o golpear la zona de trabajo.
+
+      C. Cuidados durante el manejo de la balanza
+      o No hay que demorarse mucho en el tiempo cuando se realiza una pesada, ya que cuanto
+         más tiempo se pierda, mayor es el peligro de que ciertas influencias externas, como
+         vibraciones, turbulencias de aire, variaciones de temperatura, humedad … falseen el
+         resultado de la pesada.
+      o No tocar con los dedos los recipientes de pesada ni los productos a pesar, para evitar
+         que haya variaciones de temperatura y de humedad en ambos.
+      o A veces el resultado de la lectura es inestable, por lo que aumenta o disminuye
+         lentamente o aparecen valores erróneos. La temperatura y la humedad pueden
+         producir estos efectos al igual que la electricidad estática con la que se cargan algunos
+         recipientes de vidrio o plástico por efecto de la fricción durante la manipulación o el
+         transporte.
+                                                TEC. FARMACIA Y PARAFARMACIA SERGAS 29
+                                                                      Tema 13-1ª parte
+
+                                                                                   www.premir.es
+    D. Control de calidad
+El chequeo del buen estado de las balanzas es obligatorio, ya que de esta manera nos
+aseguramos de que los valores de pesada obtenidos son exactos y, por tanto, la pesada, que es
+un procedimiento esencial en la elaboración correcta de preparados farmacéuticos queda
+garantizada.
+
+
+
+
+                                                                                            TEC. FARMACIA SERGAS
+Existen varios tipos de controles:
+    o Control diario:
+Es necesario comprobar que la balanza está limpia y nivelada. Asimismo, comprobar que se
+estabilizan los ceros después de encender la balanza.
+
+
+    o Control mensual:
+Una vez al mes se recomienda comprobar la exactitud de la balanza utilizando una pesa de
+referencia. Al colocar la pesa en la balanza, el peso que indica la pantalla debe de coincidir con
+el peso teórico de la pesada. Si esto no ocurriera, hay que recalibrarla empleando para ello las
+instrucciones del fabricante o llamando al servicio técnico. En el PNT tiene que estar
+establecido.
+
+    o Otros controles
+Existe una gran variedad de pruebas para verificar el buen estado de las balanzas. Algunas de
+estas son:
+
+Control de sensibilidad:
+    o Sin carga: esta prueba consiste en colocar, utilizando unas pinzas, una pesa de
+        referencia en el centro del platillo sin ejercer presión, cuyo valor nominal sea menor o
+        igual a la mitad de la división mínima de la balanza. No debe de haber variación en la
+        escala de la balanza. Después se añaden pesas de referencia de pequeño valor nominal
+        hasta que se rompa el equilibrio del instrumento y muestre variación en la escala.
+        Sumando las masas empleadas conoceremos la sensibilidad de la balanza sin carga.
+    o Con carga: consiste en colocar en el centro del platillo de la balanza, previamente
+        nivelada y estabilizados los ceros, una pesa de referencia cuyo valor nominal sea igual
+        o mayor de la mitad de la carga máxima que es capaz de soportar el sistema de medida.
+        Después, es importante esperar a que se estabilice la medida que aparece en pantalla y
+        añadir en el centro del platillo la pesa de referencia que corresponde a la sensibilidad
+        determinada en la prueba anterior. Si se aprecia variación, entonces se verifica el valor
+        de sensibilidad.
+Control de excentricidad:
+Consiste en colocar una pesa de referencia cuya masa nominal sea 1/3 de la carga máxima de
+la balanza en distintas posiciones el platillo receptor de la pesa, con el fin de conocer las
+variaciones de medida en función de la posición de la carga colocada.
+Dependiendo del tamaño y de la forma del platillo, la pesa se colocará en cinco o nueve puntos
+distintos.
+La finalidad del control de excentricidad es ver si la sensibilidad de la balanza es
+suficientemente insensible a cambios de emplazamiento de la carga sobre el platillo receptor
+de la misma.
+30     TEC. FARMACIA Y PARAFARMACIA SERGAS
+      Tema 13-1ª parte
+
+      www.premir.es
+
+     Control de carga máxima
+     Consiste en colocar sobre el platillo, de forma sucesiva y ascendente, las pesas de referencia
+     hasta el punto en que la balanza no registre valor ninguno, siendo el valor registrado
+     anteriormente la carga máxima que puede soportar el sistema de pesada.
+
+     BAÑO TERMOSTATIZADO
+     Baño de agua o Baño María: Consiste en una caja metálica de hierro esmaltado, lleno de agua.
+
+
+                                                                          Carcasa exterior
+
+
+
+
+     Indicador luminoso                                                 Interruptor
+                                    Selector de temperatura
+
+     El baño termostatizado permite calentar agua mediante una resistencia eléctrica que lleva en
+     el fondo del depósito, a la temperatura que se desee, gracias a un termostato. Además, puede
+     llevar un dispositivo de recirculación del agua que hace que esta se mantenga a temperatura
+     uniforme en cualquier punto del depósito.
+     Su principal función es la de mantener las muestras a una temperatura determinada y se
+     puede clasificar por su tamaño en grande, pequeño o mediano.
+
+     Funcionamiento y precauciones:
+     Para un correcto funcionamiento del baño termostatizado, debemos seguir algunas pautas:
+        ü Llenar con agua destilada hasta la señal indicada por el fabricante, es decir, no
+            sobrepasarla.
+        ü Encender el baño termostatizado con el interruptor.
+        ü Al seleccionar la temperatura requerida, se encenderá el indicador luminoso.
+        ü Cuando el indicador luminoso se apaga, significa que se ha alcanzado la temperatura
+            seleccionada y que, por tanto, ya está preparado el baño para poner las muestras.
+
+     Existen también baños de arena y de aire.
+
+     DESTILADOR:
+     El destilador se utiliza principalmente para separar componentes líquidos que se
+     encuentran en una mezcla homogénea. Se utilizan para obtener agua purificada.
+     Gracias a sus distintos puntos de ebullición puede también separar líquidos de impurezas
+     sólidas, y así estos se purifican.
+                                               TEC. FARMACIA Y PARAFARMACIA SERGAS 31
+                                                                     Tema 13-1ª parte
+
+                                                                                 www.premir.es
+
+
+
+       Destilador        para
+obtención de agua destilad
+
+
+
+
+                                                                                          TEC. FARMACIA SERGAS
+ESTUFA:
+Recipiente tesrmostatizado, con cierre hermético y aislamiento del exterior, en los que la
+temperatura del aire del interior puede ajustarse y mantenerse. Los hay de diversos tipos según
+el rango de temperatura que se pueda alcanzar
+
+La estufa es un aparato que sirve para proporcionar un ambiente aislado a temperaturas
+más o menos altas; es decir, desde los 30º C hasta temperaturas muy elevadas. Podemos
+encontrar distintos tipos de estufas según la temperatura que alcancen y la finalidad para la
+que se utiliza:
+
+Estufa de secado: sirve para la esterilización o secado de materiales y puede alcanzar
+temperaturas muy elevadas. También se denomina horno de secado o Poupinel.
+Estufa de cultivo o bacteriológica: se utiliza en Microbiología para el cultivo y crecimiento de
+microorganismos.
+
+Estufa de secado
+
+     Salida de aire
+
+                                                              Bandejas perforadas
+
+
+
+Funcionamiento:
+Para un adecuado funcionamiento de una estufa, debemos seguir estos pasos:
+   ü Abrir cogiendo por el asa e introducir los materiales dejando espacio entre ellos para
+       que circule el aire correctamente y la temperatura se distribuya homogéneamente.
+   ü Conectar a la red eléctrica, encender con el interruptor ON y seleccionar la temperatura.
+       Cuando el termómetro indique que se ha alcanzado dicha temperatura, se contabiliza
+       el tiempo que debe durar el proceso.
+   ü Al finalizar, apagar con el interruptor OFF, y desenchufar de la corriente.
+
+Precauciones:
+Las principales precauciones que se deben adoptar al manipular una estufa son:
+    ü No colocar los materiales sobre el suelo interior, sino encima de las bandejas.
+    ü Los materiales no deben tocar las paredes ni el techo de la estufa, de manera que se
+        debe dejar espacio suficiente para la libre circulación del aire y del calor.
+    ü No poner ningún objeto encima de la estufa, sobre todo en la salida del aire, la cual se
+        encuentra en la parte superior.
+    ü No introducir material que no resista el calor.
+32     TEC. FARMACIA Y PARAFARMACIA SERGAS
+      Tema 13-1ª parte
+
+      www.premir.es
+
+
+     MICROSCOPIO
+     El microscopio se utiliza en el laboratorio y con él se pueden observar muestras u objetos que,
+     a simple vista, no veríamos, como células, bacterias, cristales…
+     Podemos encontrar dos tipos de microscopios según la fuente de iluminación.
+         • MICROSCOPIO ÓPTICO:
+     Este tipo de microscopio emplea luz visible y, además, puede utilizar una serie de dispositivos
+     para mejorar su visibilidad. En un microscopio óptico típico podemos distinguir una parte
+     mecánica y otra óptica. La parte mecánica está constituida por el soporte, la pletina y el tubo.
+     Y la parte óptica la componen un sistema de amplificación y un sistema de iluminación. Por su
+     parte, el sistema amplificador se encuentra formado por los objetivos y oculares, mientras que
+     el de iluminación lo constituyen el foco de luz,el espejo, el condensador y el diafragma.
+         • MICROSCOPIO ELECTRÓNICO:
+     Este tipo de microscopio utiliza un haz de electrones, por ello es muy costoso y se encuentra
+     en muy pocos laboratorios
+
+     Precauciones y mantenimiento:
+
+     Para el buen funcionamiento del microscopio
+     habrá que seguir las siguientes precauciones:
+     - El foco de iluminación se mantendrá
+        encendido exclusivamente durante el
+        tiempo de observación, evitando así el
+        recalentamiento de la lámpara.
+     - Cuando no se use el microscopio durante
+        mucho tiempo se debe tapar con su funda.
+     - Nunca hay que tocar las lentes con las
+        manos. Si se ensucian, hay que limpiarlas
+        muy suavemente con un papel de óptica
+        (se pasará el papel por la lente en un solo sentido y con suavidad), y una vez por semana.
+     - El objetivo de inmersión se limpiará con el papel impregnado en xilol o alcohol-xilol. Sin
+        embargo el uso continuo de disolventes como el xilol no es recomendable ya que puede
+        destruir el cemento que fija la lente a la montura.
+     - Los oculares pueden quitarse y limpiarse, pero sin desarmarlos. El ocular puede invertirse y
+        usarse como lente de aumento para examinar la superficie del objetivo, que a menudo está
+        sucia por retención del aceite de inmersión.
+
+     Es importante seguir algunas precauciones durante y después del manejo de un microscopio:
+         ü Una vez que se haya puesto aceite de inmersión sobre la preparación, ya no se puede
+           volver a usar el objetivo 40 x sobre esa zona, pues se mancharía. Por tanto, si se desea
+           enfocar otro campo, hay que bajar la platina y repetir la operación.
+         ü Una vez finalizada la observación de la preparación, se baja la platina y se coloca el
+           objetivo de menor aumento girando el revólver. En este momento ya se puede retirar
+           la preparación de la platina. Nunca se debe retirar con el objetivo de inmersión en
+           posición de observación.
+         ü Es importante no forzar nunca los tornillos giratorios del microscopio.
+                                               TEC. FARMACIA Y PARAFARMACIA SERGAS 33
+                                                                     Tema 13-1ª parte
+
+                                                                                  www.premir.es
+   ü El cambio de objetivo se hace girando el revólver y dirigiendo la mirada hacia la
+     preparación para prevenir el roce de la lente con la muestra.
+   ü Mantener limpia y seca la platina.
+
+CENTRÍFUGA
+La centrífuga sirve para separar componentes de una mezcla heterogénea formada por uno
+
+
+
+
+                                                                                           TEC. FARMACIA SERGAS
+varios sólidos que se encuentran en un líquido. Sirven para separar sustancias de diferentes
+densidades.
+
+Tipos de centrífugas:
+   • Centrífuga de capilares: se utiliza en el laboratorio de hematología para una prueba
+       específica llamada microhematocrito, y en lugar de tubos de centrífuga se emplean
+       unos capilares que se llenan de sangre para, posteriormente, separarla en suero y
+       células sanguíneas.
+   • Centrífuga de tubos: sirve para separar células o precipitados de sales insolubles. La
+       centrífuga de tubos consta de una tapa que tiene una apertura manual o automática
+       para abrir e introducir los tubos con las muestras y cerrar durante el proceso de la
+       centrifugación. Además, cuenta con una carcasa exterior y base que da estabilidad al
+       aparato. Una cámara interna contiene el cabezal y el rotor que lleva un motor. El cabezal,
+       que va unido al rotor, dispone de los portatubos donde se van a colocar los tubos de de
+       centrífuga con la muestra que queremos separar.
+
+
+
+
+Manejo de la centrífuga de tubos:
+Para un adecuado manejo de las centrífugas de tubos, debemos tener claros algunos aspectos:
+   ü Se debe conectar a la corriente eléctrica.
+   ü Después, hay que abrir la tapa de forma manual si no tiene apertura automática. De lo
+       contrario, apretar el botón adecuado.
+   ü Situar en la cámara los tubos de centrífuga que ya contienen la muestra. Es necesario
+       que los tubos sean de igual tamaño y, cuando contienen la muestra, deben pesar lo
+       mismo. Por otro lado, si no se ocupan todos los portamuestras, se deben colocar los
+       tubos enfrentados con el fin de mantener el equilibrio de aparato.
+   ü A continuación, hay que cerrar la tapa con cuidado, de forma que el indicador de tapa
+       abierta se apague.
+   ü Después se debe seleccionar la velocidad de centrifugación con el selector de velocidad
+       a las revoluciones deseadas, por lo que se encenderá el indicador de que el rotor está
+       girando.
+   ü Accionar el control de tiempo si dispone de esta función.
+   ü Finalmente, volver el mando del selector de velocidad a la posición O una vez terminado
+       el tiempo de centrifugación.
+34     TEC. FARMACIA Y PARAFARMACIA SERGAS
+      Tema 13-1ª parte
+
+      www.premir.es
+
+
+     Precauciones y mantenimiento
+     Hay que tomar ciertas precauciones en el momento de manipular una centrífuga de tubos, así
+     como algunas pautas para un correcto mantenimiento:
+        ü Comprobar que los tubos encajan perfectamente y permiten cerrar correctamente la
+           tapa de la centrífuga.
+        ü Identificar los tubos antes de introducirlos para saber de qué muestra se trata.
+        ü Comprobar que los tubos están bien colocados y cerrar con suavidad la tapa.
+        ü No abrir la tapa durante el proceso.
+        ü Si el modo de apertura de la tapa es automático, hay que accionar un botón para abrirla
+           y no forzarla.
+
+     MECHERO BUNSEN
+     Se utiliza para esterilización de asas de simbra en el laboratorio.
+     Consta de tres partes:
+       • Un pie de hierro muy pesado en el cual se ha adaptado la entrada de gas
+       • Un collarín de hierro que se adapta a rosca al interior, y que posee dos orificios cuya
+           finalidad es la que por ellos pueda circular el aire
+       • El interior del collarín va adosado al tubo que es el cuello del mechero. Se introduce a
+           rosca y va dotado también de otros dos orificios en su parte más baja y que corresponden
+           exactamente con los descritos en el collarín, estableciéndose una corriente de aire
+           directa.
+
+
+     Funcionamiento:
+     Al abrir la llave de gas, éste entra y arrastra el aire que pasa por lo orificios, mezclándose con él,
+     y aumentando su fuerza y poder calorífico por la combustión del oxígeno.
+
+     La llama
+     La llama es producto de los gases en combustión, originados al descomponerse la materia
+     orgánica sometida a altas temperaturas. Los gases utilizados pueden ser: natural, o licuados
+     procedentes del petróleo (butano, propano o mezclas).
+     Si la proporción entre carbono, oxígeno e hidrógeno es la adecuada, la combustión es
+     completa, y la llama es apenas visible.
+     Si la proporción de carbono es excesiva, y no se quema del todo quedarán en libertad pequeñas
+     partículas que se vuelven incandescentes y brillantes. Esto sucede en las llamas producidas por
+     gasolina, ceras y otras materias orgánicas.
+     Si la llama produce humo, es debido a la gran cantidad de carbono no quemado.
+
+     Tipos de llama
+     - luminosa: amarilla, hay más combustión de los deseado. Sirve para iluminar
+     - calórica: azulada. Es la más efectiva, y la deseable.
+
+     LÁMPARA DE ALCOHOL
+     La lámpara de alcohol es un recipiente de vidrio con forma redonda y fondo plano, cuenta con
+     un saliente cilíndrico en la parte superior, donde se enrosca un tubo metálico de pocos
+     centímetros de diámetro, y a través de este se inserta una mecha cuyo extremo se encuentra
+                                                 TEC. FARMACIA Y PARAFARMACIA SERGAS 35
+                                                                       Tema 13-1ª parte
+
+                                                                                    www.premir.es
+en contacto con el alcohol que se encuentra en el recipiente. Se utiliza para calentar o esterilizar
+muestras o reactivos químicos sin necesitar un gran poder calorífico.
+La lámpara de alcohol utiliza alcohol etílico o alcohol como combustible. Generalmente está
+hecho de vidrio, latón o aluminio.
+
+
+
+
+                                                                                              TEC. FARMACIA SERGAS
+36    TEC. FARMACIA Y PARAFARMACIA SERGAS
+     Tema 13-1ª parte
+
+     www.premir.es
+
