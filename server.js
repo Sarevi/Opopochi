@@ -186,7 +186,7 @@ async function callClaudeWithImprovedRetry(fullPrompt, maxTokens = 700, question
         model: "claude-haiku-4-5-20251001", // Claude Haiku 4.5 - Rápido, económico y capaz
         max_tokens: maxTokens, // Variable según tipo de pregunta
         temperature: 0.2,  // Temperatura baja para eficiencia máxima
-        /* COSTO OPTIMIZADO - SISTEMA 3 NIVELES (30% Simple / 50% Media / 20% Elaborada):
+        /* COSTO OPTIMIZADO - SISTEMA 3 NIVELES (30% Simple / 60% Media / 10% Elaborada):
          *
          * PREGUNTAS SIMPLES (30% - 3 por llamada) - DIRECTAS:
          * - Chunk: 1200 caracteres (~480 tokens)
@@ -195,30 +195,31 @@ async function callClaudeWithImprovedRetry(fullPrompt, maxTokens = 700, question
          * - Output: ~70 tokens × 3 = 210 tokens × $4.00/1M = $0.000840
          * - Total: $0.001312 ÷ 3 = $0.000437 USD/pregunta
          *
-         * PREGUNTAS MEDIAS (50% - 3 por llamada) - CONTEXTO CORTO:
+         * PREGUNTAS MEDIAS (60% - 3 por llamada) - CONTEXTO CORTO:
          * - Chunk: 1200 caracteres (~480 tokens)
          * - Prompt: ~120 tokens
          * - Input total: ~600 tokens × $0.80/1M = $0.000480
          * - Output: ~110 tokens × 3 = 330 tokens × $4.00/1M = $0.001320
          * - Total: $0.001800 ÷ 3 = $0.000600 USD/pregunta
          *
-         * PREGUNTAS ELABORADAS (20% - 2 por llamada) - CASOS LARGOS:
+         * PREGUNTAS ELABORADAS (10% - 2 por llamada) - CASOS LARGOS:
          * - Chunk: 1200 caracteres (~480 tokens)
          * - Prompt: ~140 tokens
          * - Input total: ~620 tokens × $0.80/1M = $0.000496
          * - Output: ~160 tokens × 2 = 320 tokens × $4.00/1M = $0.001280
          * - Total: $0.001776 ÷ 2 = $0.000888 USD/pregunta
          *
-         * COSTO PROMEDIO PONDERADO (30/50/20):
-         * (0.30 × $0.000437) + (0.50 × $0.000600) + (0.20 × $0.000888)
-         * = $0.000131 + $0.000300 + $0.000178
-         * = $0.000609 USD (~0.00056 EUR) por pregunta
+         * COSTO PROMEDIO PONDERADO (30/60/10):
+         * (0.30 × $0.000437) + (0.60 × $0.000600) + (0.10 × $0.000888)
+         * = $0.000131 + $0.000360 + $0.000089
+         * = $0.000580 USD (~0.00054 EUR) por pregunta
          *
-         * 🎉 RESULTADOS:
-         * • Con 1€ generas ~1,790 preguntas
-         * • Mejor balance: 50% contexto corto (calidad media-alta)
-         * • 30% directas rápidas + 20% casos complejos
-         * • REDUCCIÓN TOTAL: 68.5% vs sistema original
+         * 🎉 RESULTADOS FINALES:
+         * • Con 1€ generas ~1,840 preguntas (era 518 originalmente)
+         * • Mejor balance: 60% contexto corto (sweet spot calidad/costo)
+         * • 30% directas + 10% casos complejos (lo justo)
+         * • REDUCCIÓN TOTAL: 70% vs sistema original
+         * • Ahorro mensual (10k): $5.80 vs $19.30 = $13.50/mes ahorrado
          */
         messages: [{
           role: "user",
@@ -344,7 +345,7 @@ function parseClaudeResponse(responseText) {
   }
 }
 
-// PROMPTS OPTIMIZADOS - 3 NIVELES: Simple (30%), Media (50%), Elaborada (20%)
+// PROMPTS OPTIMIZADOS - 3 NIVELES: Simple (30%), Media (60%), Elaborada (10%)
 
 // PROMPT SIMPLE (30% - Genera 3 preguntas por llamada) - PREGUNTAS DIRECTAS
 const CLAUDE_PROMPT_SIMPLE = `Genera 3 preguntas test DIRECTAS de Técnico Farmacia. Solo JSON.
@@ -889,17 +890,17 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
     const topicId = topics.join(','); // Combinar topics si son múltiples
     let allGeneratedQuestions = [];
 
-    // SISTEMA 3 NIVELES: 30% simples / 50% medias / 20% elaboradas
+    // SISTEMA 3 NIVELES: 30% simples / 60% medias / 10% elaboradas
     const totalNeeded = questionCount;
     const simpleNeeded = Math.round(totalNeeded * 0.30); // 30% simples
-    const mediaNeeded = Math.round(totalNeeded * 0.50); // 50% medias
-    const elaboratedNeeded = totalNeeded - simpleNeeded - mediaNeeded; // 20% elaboradas (resto)
+    const mediaNeeded = Math.round(totalNeeded * 0.60); // 60% medias
+    const elaboratedNeeded = totalNeeded - simpleNeeded - mediaNeeded; // 10% elaboradas (resto)
 
     const simpleCalls = Math.ceil(simpleNeeded / 3); // 3 preguntas simples por llamada
     const mediaCalls = Math.ceil(mediaNeeded / 3); // 3 preguntas medias por llamada
     const elaboratedCalls = Math.ceil(elaboratedNeeded / 2); // 2 preguntas elaboradas por llamada
 
-    console.log(`🎯 Plan (30/50/20): ${simpleNeeded} simples (${simpleCalls} llamadas) + ${mediaNeeded} medias (${mediaCalls} llamadas) + ${elaboratedNeeded} elaboradas (${elaboratedCalls} llamadas)`);
+    console.log(`🎯 Plan (30/60/10): ${simpleNeeded} simples (${simpleCalls} llamadas) + ${mediaNeeded} medias (${mediaCalls} llamadas) + ${elaboratedNeeded} elaboradas (${elaboratedCalls} llamadas)`);
 
     // Generar preguntas SIMPLES (30%)
     for (let i = 0; i < simpleCalls; i++) {
