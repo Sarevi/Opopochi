@@ -5,10 +5,12 @@
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs').promises;
+const fsSync = require('fs');
 const path = require('path');
 const session = require('express-session');
 const SQLiteStore = require('connect-sqlite3')(session);
 const { Anthropic } = require('@anthropic-ai/sdk');
+const pdfParse = require('pdf-parse');
 require('dotenv').config();
 
 // Importar sistema de base de datos
@@ -366,12 +368,23 @@ TEXTO DEL DOCUMENTO:
 
 async function readFile(filePath) {
   try {
-    if (path.extname(filePath).toLowerCase() === '.txt') {
+    const ext = path.extname(filePath).toLowerCase();
+
+    if (ext === '.txt') {
       return await fs.readFile(filePath, 'utf8');
     }
+
+    if (ext === '.pdf') {
+      console.log(`📄 Extrayendo texto de PDF: ${path.basename(filePath)}`);
+      const dataBuffer = fsSync.readFileSync(filePath);
+      const data = await pdfParse(dataBuffer);
+      console.log(`✅ PDF extraído: ${data.numpages} páginas, ${data.text.length} caracteres`);
+      return data.text;
+    }
+
     return '[FORMATO NO SOPORTADO]';
   } catch (error) {
-    console.error(`Error leyendo ${filePath}:`, error.message);
+    console.error(`❌ Error leyendo ${filePath}:`, error.message);
     throw error;
   }
 }

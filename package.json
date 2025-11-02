@@ -16,7 +16,8 @@
     "better-sqlite3": "^11.0.0",
     "bcrypt": "^5.1.1",
     "express-session": "^1.18.0",
-    "connect-sqlite3": "^0.9.13"
+    "connect-sqlite3": "^0.9.13",
+    "pdf-parse": "^1.1.1"
   },
   "engines": {
     "node": ">=18.0.0"
