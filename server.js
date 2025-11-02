@@ -175,34 +175,46 @@ function calculateDelay(attempt, config = IMPROVED_CLAUDE_CONFIG) {
   return Math.round(finalDelay);
 }
 
-async function callClaudeWithImprovedRetry(fullPrompt, config = IMPROVED_CLAUDE_CONFIG) {
+async function callClaudeWithImprovedRetry(fullPrompt, maxTokens = 700, questionType = 'elaborada', config = IMPROVED_CLAUDE_CONFIG) {
   let lastError = null;
-  
+
   for (let attempt = 1; attempt <= config.maxRetries; attempt++) {
     try {
-      console.log(`🤖 Intento ${attempt}/${config.maxRetries} - Generando preguntas...`);
-      
+      console.log(`🤖 Intento ${attempt}/${config.maxRetries} - Generando pregunta ${questionType}...`);
+
       const response = await anthropic.messages.create({
         model: "claude-haiku-4-5-20251001", // Claude Haiku 4.5 - Rápido, económico y capaz
-        max_tokens: 700, // OPTIMIZADO: Suficiente para preguntas elaboradas
+        max_tokens: maxTokens, // Variable según tipo de pregunta
         temperature: 0.3,  // Balance calidad/variedad
-        /* COSTO POR PREGUNTA OPTIMIZADO:
-         * Chunk: 1600 caracteres (~640 tokens input)
-         * Input: ~640 tokens × $0.80/1M = $0.000512
-         * Output: ~180 tokens × $4.00/1M = $0.00072
-         * Total: ~$0.001232 USD (~0.00114 EUR) por pregunta
-         * Con 1€ puedes generar ~877 preguntas
-         * Reducción del 33% en costos manteniendo calidad elaborada
+        /* COSTO OPTIMIZADO CON SISTEMA MIXTO:
+         *
+         * PREGUNTA SIMPLE (70%):
+         * - Chunk: 1600 caracteres (~640 tokens input)
+         * - Input: ~640 tokens × $0.80/1M = $0.000512
+         * - Output: ~120 tokens × $4.00/1M = $0.00048
+         * - Total: ~$0.000992 USD por pregunta simple
+         *
+         * PREGUNTA ELABORADA (30%):
+         * - Chunk: 1600 caracteres (~640 tokens input)
+         * - Input: ~640 tokens × $0.80/1M = $0.000512
+         * - Output: ~180 tokens × $4.00/1M = $0.00072
+         * - Total: ~$0.001232 USD por pregunta elaborada
+         *
+         * COSTO PROMEDIO MIXTO:
+         * (0.7 × $0.000992) + (0.3 × $0.001232) = $0.001064 USD (~0.00098 EUR)
+         * Con 1€ puedes generar ~1,020 preguntas
+         * Reducción adicional del 14% sobre el sistema anterior
+         * REDUCCIÓN TOTAL: 45% respecto al sistema original
          */
         messages: [{
           role: "user",
           content: fullPrompt
         }]
       });
-      
-      console.log(`✅ Pregunta generada en intento ${attempt}`);
+
+      console.log(`✅ Pregunta ${questionType} generada en intento ${attempt}`);
       return response;
-      
+
     } catch (error) {
       lastError = error;
       console.error(`❌ Intento ${attempt} fallido:`, {
@@ -222,7 +234,7 @@ async function callClaudeWithImprovedRetry(fullPrompt, config = IMPROVED_CLAUDE_
       await new Promise(resolve => setTimeout(resolve, waitTime));
     }
   }
-  
+
   throw lastError;
 }
 
@@ -318,8 +330,25 @@ function parseClaudeResponse(responseText) {
   }
 }
 
-// PROMPT OPTIMIZADO - Máxima eficiencia manteniendo calidad elaborada
-const CLAUDE_PROMPT = `Genera 1 pregunta tipo test de Técnico de Farmacia. Solo JSON, sin markdown.
+// PROMPTS OPTIMIZADOS - Sistema mixto para reducir costos
+
+// PROMPT SIMPLE (70% de preguntas) - Optimizado para bajo costo
+const CLAUDE_PROMPT_SIMPLE = `Genera 1 pregunta tipo test de Técnico de Farmacia. Solo JSON.
+
+REGLAS:
+- Usa solo info del texto
+- Pregunta directa sobre concepto clave
+- 4 opciones (A,B,C,D), 1 correcta
+- Explicación breve
+
+JSON:
+{"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"media","page_reference":""}]}
+
+TEXTO:
+{{CONTENT}}`;
+
+// PROMPT ELABORADO (30% de preguntas) - Máxima calidad con casos prácticos
+const CLAUDE_PROMPT_ELABORADO = `Genera 1 pregunta tipo test de Técnico de Farmacia. Solo JSON, sin markdown.
 
 REGLAS:
 - Usa solo info del texto
@@ -798,11 +827,19 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
     console.log(`✅ Generando pregunta de ${documentChunk.length} caracteres (chunk aleatorio)`);
     console.log(`📝 Primeros 200 chars del chunk: ${documentChunk.substring(0, 200)}...`);
 
-    const fullPrompt = CLAUDE_PROMPT.replace('{{CONTENT}}', documentChunk);
+    // SISTEMA MIXTO: 70% preguntas simples, 30% elaboradas
+    const useSimpleQuestion = Math.random() < 0.7; // 70% probabilidad
+    const prompt = useSimpleQuestion ? CLAUDE_PROMPT_SIMPLE : CLAUDE_PROMPT_ELABORADO;
+    const maxTokens = useSimpleQuestion ? 400 : 700; // Simples: 400 tokens, Elaboradas: 700 tokens
+    const questionType = useSimpleQuestion ? 'simple' : 'elaborada';
+
+    console.log(`🎯 Tipo de pregunta seleccionado: ${questionType.toUpperCase()}`);
+
+    const fullPrompt = prompt.replace('{{CONTENT}}', documentChunk);
 
     console.log(`🔍 Prompt length: ${fullPrompt.length} caracteres`);
 
-    const response = await callClaudeWithImprovedRetry(fullPrompt);
+    const response = await callClaudeWithImprovedRetry(fullPrompt, maxTokens, questionType);
     
     let questionsData;
     try {
