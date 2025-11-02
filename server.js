@@ -124,42 +124,42 @@ const TOPIC_CONFIG = {
   "tema-12-almacenamiento": {
     "title": "TEMA 12 - ALMACENAMIENTO Y CONSERVACION",
     "description": "Almacenamiento y Conservación",
-    "files": ["TEMA 12- ALMACENAMIENTO Y CONSERVACION.txt"]
+    "files": ["TEMA-12-ALMACENAMIENTO-Y-CONSERVACION.txt"]
   },
   "tema-13-laboratorio": {
     "title": "TEMA 13 - LABORATORIO FARMACEUTICO",
     "description": "Laboratorio Farmacéutico",
-    "files": ["TEMA 13- LABORATORIO FARMACEUTICO.txt"]
+    "files": ["TEMA-13-LABORATORIO-FARMACEUTICO.txt"]
   },
   "tema-13-parte-2": {
     "title": "TEMA 13 (2ª parte) - LABORATORIO FARMACEUTICO",
     "description": "Laboratorio Farmacéutico - Parte 2",
-    "files": ["TEMA 13-2ª parte- LABORATORIO FARMACEUTICO.txt"]
+    "files": ["TEMA-13-2ª-parte-LABORATORIO-FARMACEUTICO.txt"]
   },
   "tema-14-operaciones": {
     "title": "TEMA 14 - OPERACIONES FARMACEUTICAS BASICAS",
     "description": "Operaciones Farmacéuticas Básicas",
-    "files": ["TEMA 14 - OPERACIONES FARMACEUTICAS BASICAS.txt"]
+    "files": ["TEMA-14-OPERACIONES-FARMACEUTICAS-BASICAS.txt"]
   },
   "tema-14-parte-2": {
     "title": "TEMA 14 (2ª parte) - LABORATORIO FARMACEUTICO",
     "description": "Laboratorio Farmacéutico - Parte 2",
-    "files": ["TEMA 14 -2ª parte- LABORATORIO FARMACEUTICO.txt"]
+    "files": ["TEMA-14-2ª-parte-LABORATORIO-FARMACEUTICO.txt"]
   },
   "tema-15-analisis-clinicos": {
     "title": "TEMA 15 - ANALISIS CLINICOS",
     "description": "Análisis Clínicos",
-    "files": ["TEMA 15- ANALISIS CLINICOS.txt"]
+    "files": ["TEMA-15-ANALISIS-CLINICOS.txt"]
   },
   "tema-17-espectrofotometria": {
     "title": "TEMA 17 - ESPECTROFOTOMETRIA Y MICROSCOPIA",
     "description": "Espectrofotometría y Microscopía",
-    "files": ["TEMA 17- ESPECTROFOTOMETRIA Y MICROSCOPIA.txt"]
+    "files": ["TEMA-17-ESPECTROFOTOMETRIA-Y-MICROSCOPIA.txt"]
   },
   "tema-18-parafarmacia": {
     "title": "TEMA 18 - PARAFARMACIA",
     "description": "Parafarmacia",
-    "files": ["TEMA 18- PARAFARMACIA.txt"]
+    "files": ["TEMA-18-PARAFARMACIA.txt"]
   }
 };
 
@@ -186,6 +186,12 @@ async function callClaudeWithImprovedRetry(fullPrompt, config = IMPROVED_CLAUDE_
         model: "claude-haiku-4-5-20251001", // Claude Haiku 4.5 - Rápido, económico y capaz
         max_tokens: 1000, // Suficiente para pregunta completa
         temperature: 0.3,  // Balance calidad/variedad
+        /* COSTO POR PREGUNTA:
+         * Input: ~1000 tokens × $0.80/1M = $0.0008
+         * Output: ~250 tokens × $4.00/1M = $0.001
+         * Total: ~$0.0018 USD (~0.0017 EUR) por pregunta
+         * Con 1€ puedes generar ~588 preguntas
+         */
         messages: [{
           role: "user",
           content: fullPrompt
@@ -216,6 +222,44 @@ async function callClaudeWithImprovedRetry(fullPrompt, config = IMPROVED_CLAUDE_
   }
   
   throw lastError;
+}
+
+// ========================
+// FUNCIÓN PARA ALEATORIZAR OPCIONES
+// ========================
+
+function randomizeQuestionOptions(question) {
+  // Guardar la opción correcta original
+  const correctOption = question.options[question.correct];
+
+  // Crear array de índices [0, 1, 2, 3]
+  const indices = [0, 1, 2, 3];
+
+  // Algoritmo Fisher-Yates para barajar aleatoriamente
+  for (let i = indices.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [indices[i], indices[j]] = [indices[j], indices[i]];
+  }
+
+  // Reordenar las opciones según los índices barajados
+  const shuffledOptions = indices.map(i => question.options[i]);
+
+  // Encontrar la nueva posición de la opción correcta
+  const newCorrectIndex = shuffledOptions.indexOf(correctOption);
+
+  // Actualizar las letras de las opciones (A, B, C, D)
+  const letters = ['A', 'B', 'C', 'D'];
+  const reorderedOptions = shuffledOptions.map((option, index) => {
+    // Remover la letra anterior y agregar la nueva
+    const optionText = option.substring(3); // Quitar "A) ", "B) ", etc.
+    return `${letters[index]}) ${optionText}`;
+  });
+
+  return {
+    ...question,
+    options: reorderedOptions,
+    correct: newCorrectIndex
+  };
 }
 
 // ========================
@@ -272,30 +316,41 @@ function parseClaudeResponse(responseText) {
   }
 }
 
-// PROMPT OPTIMIZADO (balance velocidad-claridad)
-const CLAUDE_PROMPT = `Genera 1 pregunta tipo test de oposición judicial basada en el texto. Responde SOLO con JSON, sin markdown.
+// PROMPT OPTIMIZADO - Estilo Examen de Oposición Real
+const CLAUDE_PROMPT = `Genera 1 pregunta tipo test de oposición de Técnico de Farmacia basada en el texto. Responde SOLO con JSON, sin markdown.
 
-INSTRUCCIONES:
+INSTRUCCIONES CRÍTICAS:
 - Usa únicamente información del texto proporcionado
 - Dificultad: 10% muy difícil, 60% difícil, 20% media, 10% fácil
 - Crea 4 opciones (A, B, C, D) donde solo 1 es correcta
 - Las opciones incorrectas deben distorsionar números, plazos o conceptos del texto real
-- Incluye referencia al artículo/página
+
+ESTILO DE PREGUNTA:
+- NO uses frases como "Según el texto", "Como indica el documento", "De acuerdo con los apuntes"
+- Formula la pregunta de forma directa y profesional, como en un examen oficial
+- Ejemplo BUENO: "¿Cuál es el plazo de conservación de los medicamentos termolábiles?"
+- Ejemplo MALO: "Según el texto, ¿cuál es el plazo de conservación...?"
+
+FORMATO DE OPCIONES:
+- NO incluyas referencias entre paréntesis en las opciones: (Art. X), (Tema Y), etc.
+- Las opciones deben ser limpias y profesionales
+- Ejemplo BUENO: "A) Entre 2°C y 8°C en frigorífico"
+- Ejemplo MALO: "A) Entre 2°C y 8°C en frigorífico (Art. 45)"
 
 Responde con este formato JSON exacto:
 {
   "questions": [{
-    "question": "texto de la pregunta aquí",
+    "question": "texto de la pregunta directa aquí",
     "options": [
-      "A) primera opción con referencia",
-      "B) segunda opción con referencia",
-      "C) tercera opción con referencia",
-      "D) cuarta opción con referencia"
+      "A) primera opción limpia sin paréntesis",
+      "B) segunda opción limpia sin paréntesis",
+      "C) tercera opción limpia sin paréntesis",
+      "D) cuarta opción limpia sin paréntesis"
     ],
     "correct": 0,
     "explanation": "La correcta es A porque...",
     "difficulty": "difícil",
-    "page_reference": "Art. X"
+    "page_reference": "Referencia del tema"
   }]
 }
 
@@ -775,8 +830,8 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
         throw new Error('No se generaron preguntas válidas');
       }
       
-      // Validar cada pregunta
-      questionsData.questions.forEach((q, index) => {
+      // Validar y aleatorizar cada pregunta
+      questionsData.questions = questionsData.questions.map((q, index) => {
         if (!q.question || !Array.isArray(q.options) || q.options.length !== 4) {
           console.log(`⚠️ Corrigiendo pregunta ${index + 1}`);
           q.options = q.options || [
@@ -787,24 +842,33 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
         q.explanation = q.explanation || "Explicación no disponible.";
         q.difficulty = q.difficulty || "media";
         q.page_reference = q.page_reference || "Referencia no disponible";
+
+        // ALEATORIZAR ORDEN DE LAS OPCIONES
+        const randomizedQuestion = randomizeQuestionOptions(q);
+        console.log(`🎲 Pregunta ${index + 1}: Respuesta correcta aleatoriamente asignada a opción ${['A', 'B', 'C', 'D'][randomizedQuestion.correct]}`);
+
+        return randomizedQuestion;
       });
       
     } catch (parseError) {
       console.error('❌ Error parsing:', parseError.message);
+      const fallbackQuestion = {
+        question: "¿Cuál es la temperatura de conservación de los medicamentos termolábiles?",
+        options: [
+          "A) Entre 2°C y 8°C en frigorífico",
+          "B) Entre 15°C y 25°C a temperatura ambiente",
+          "C) Entre -18°C y -25°C en congelador",
+          "D) Entre 8°C y 15°C en cámara fría"
+        ],
+        correct: 0,
+        explanation: "Correcto: A. Los medicamentos termolábiles deben conservarse entre 2°C y 8°C en frigorífico.",
+        difficulty: "media",
+        page_reference: "Tema de Farmacia"
+      };
+
+      // Aleatorizar también la pregunta de fallback
       questionsData = {
-        questions: [{
-          question: "¿Cuál es el órgano de gobierno del Poder Judicial según la Constitución?",
-          options: [
-            "A) El Consejo General del Poder Judicial (art. 122 CE)",
-            "B) El Ministerio de Justicia",
-            "C) El Tribunal Supremo",
-            "D) Las Audiencias Provinciales"
-          ],
-          correct: 0,
-          explanation: "Correcto: A. El artículo 122 CE establece que el CGPJ es el órgano de gobierno del Poder Judicial.",
-          difficulty: "media",
-          page_reference: "Artículo 122 CE"
-        }]
+        questions: [randomizeQuestionOptions(fallbackQuestion)]
       };
     }
 
