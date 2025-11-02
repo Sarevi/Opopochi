@@ -203,41 +203,41 @@ function calculateDelay(attempt, config = IMPROVED_CLAUDE_CONFIG) {
   return Math.round(finalDelay);
 }
 
-async function callClaudeWithImprovedRetry(fullPrompt, config = IMPROVED_CLAUDE_CONFIG) {
+async function callClaudeWithImprovedRetry(fullPrompt, maxTokens = 2000, config = IMPROVED_CLAUDE_CONFIG) {
   let lastError = null;
-  
+
   for (let attempt = 1; attempt <= config.maxRetries; attempt++) {
     try {
-      console.log(`🤖 Intento ${attempt}/${config.maxRetries} - Generando preguntas...`);
-      
+      console.log(`🤖 Intento ${attempt}/${config.maxRetries} - Generando preguntas (max_tokens: ${maxTokens})...`);
+
       const response = await anthropic.messages.create({
         model: "claude-3-5-sonnet-20241022",
-        max_tokens: 2000,
+        max_tokens: maxTokens,
         temperature: 0.2,
         messages: [{
           role: "user",
           content: fullPrompt
         }]
       });
-      
+
       console.log(`✅ Pregunta generada en intento ${attempt}`);
       return response;
-      
+
     } catch (error) {
       lastError = error;
       console.log(`❌ Intento ${attempt} fallido:`, error.status || 'Unknown', error.message);
-      
+
       if (attempt === config.maxRetries) {
         console.log(`💀 Todos los ${config.maxRetries} intentos fallaron`);
         break;
       }
-      
+
       const waitTime = calculateDelay(attempt, config);
       console.log(`⏳ Esperando ${waitTime/1000}s antes del siguiente intento...`);
       await new Promise(resolve => setTimeout(resolve, waitTime));
     }
   }
-  
+
   throw lastError;
 }
 
@@ -295,55 +295,70 @@ function parseClaudeResponse(responseText) {
   }
 }
 
-// PROMPT OPTIMIZADO PARA CLAUDE
-const CLAUDE_PROMPT = `Eres un experto en redacción de preguntas de examen para oposiciones técnicas en el ámbito judicial.
+// ========================
+// PROMPTS OPTIMIZADOS PARA REDUCIR COSTES
+// ========================
 
-INSTRUCCIONES CRÍTICAS:
-1. Responde ÚNICAMENTE con JSON válido
-2. NO incluyas texto adicional fuera del JSON
-3. NO uses bloques de código markdown
-4. Genera exactamente {{QUESTION_COUNT}} pregunta(s)
+// PROMPT SIMPLE: 70% de las veces (menor coste, preguntas directas)
+const CLAUDE_PROMPT_SIMPLE = `Genera {{QUESTION_COUNT}} pregunta(s) de examen sobre oposiciones judiciales.
 
-CONDICIONES GENERALES OBLIGATORIAS:
-- NO inventes ni extrapoles información: todas las preguntas y opciones deben estar explícitamente fundamentadas en los documentos adjuntos
-- Las respuestas incorrectas deben ser plausibles pero contrastadas como falsas o inexactas según el texto
-- Cada pregunta debe tener una sola opción correcta claramente identificada
-- No repitas enunciados, busca variedad en la formulación y el enfoque
-- Incluye entre paréntesis tras cada respuesta el número de página o sección del documento donde se fundamenta
+REGLAS:
+1. Solo JSON válido, sin markdown
+2. Preguntas directas basadas en el contenido
+3. Una opción correcta por pregunta
+4. Incluye referencia entre paréntesis
 
-DISTRIBUCIÓN DEL NIVEL DE DIFICULTAD:
-- Cuando generes preguntas: 60% difíciles, 30% medias, 10% sencillas 
-- Si generas más de 10: mantén proporción 60% difíciles, 30% medias, 10% sencillas
-
-DEFINICIÓN DE NIVELES:
-- DIFÍCIL: Requieren análisis, comparación, integración de conceptos o atención a detalles técnicos específicos
-- MEDIA: Preguntan hechos, clasificaciones, procedimientos con alguna complejidad conceptual
-- SENCILLA: Pregunta directa sobre definiciones, conceptos básicos claramente establecidos
-
-FORMATO JSON OBLIGATORIO (responde solo con esto):
-
+FORMATO:
 {
-  "questions": [
-    {
-      "question": "Texto de la pregunta",
-      "options": [
-        "A) Opción 1 (referencia específica del documento)",
-        "B) Opción 2 (referencia específica del documento)", 
-        "C) Opción 3 (referencia específica del documento)",
-        "D) Opción 4 (referencia específica del documento)"
-      ],
-      "correct": 2,
-      "explanation": "La respuesta correcta es C porque... (página/artículo X). Las otras opciones son incorrectas porque: A) ...  B) ...  D) ...",
-      "difficulty": "difícil",
-      "page_reference": "Artículo X, página Y del documento"
-    }
-  ]
+  "questions": [{
+    "question": "Texto pregunta",
+    "options": ["A) ...", "B) ...", "C) ...", "D) ..."],
+    "correct": 0,
+    "explanation": "Respuesta correcta porque...",
+    "difficulty": "media",
+    "page_reference": "Art. X"
+  }]
 }
 
-CONTENIDO A ANALIZAR:
+CONTENIDO:
+{{CONTENT}}`;
+
+// PROMPT ELABORADO: 30% de las veces (mayor coste, preguntas complejas)
+const CLAUDE_PROMPT_ELABORADO = `Eres experto en preguntas de oposiciones judiciales.
+
+INSTRUCCIONES:
+1. JSON válido únicamente
+2. {{QUESTION_COUNT}} pregunta(s)
+3. Basa todo en el contenido proporcionado
+4. Respuestas incorrectas plausibles
+5. Incluye referencias específicas
+
+DISTRIBUCIÓN:
+- 50% difíciles (análisis, comparación, detalles técnicos)
+- 30% medias (hechos, procedimientos)
+- 20% sencillas (definiciones básicas)
+
+FORMATO:
+{
+  "questions": [{
+    "question": "Texto de la pregunta",
+    "options": [
+      "A) Opción 1 (ref)",
+      "B) Opción 2 (ref)",
+      "C) Opción 3 (ref)",
+      "D) Opción 4 (ref)"
+    ],
+    "correct": 2,
+    "explanation": "La respuesta correcta es C porque... Las otras son incorrectas porque: A)... B)... D)...",
+    "difficulty": "difícil",
+    "page_reference": "Artículo X, pág Y"
+  }]
+}
+
+CONTENIDO:
 {{CONTENT}}
 
-IMPORTANTE: Basa todas las preguntas y opciones EXCLUSIVAMENTE en el contenido proporcionado. No agregues información externa. Responde SOLO con el JSON válido para {{QUESTION_COUNT}} pregunta(s).`;
+Responde SOLO con JSON válido para {{QUESTION_COUNT}} pregunta(s).`;
 
 // ========================
 // FUNCIONES DE ARCHIVOS OPTIMIZADAS
@@ -466,26 +481,33 @@ app.get('/api/topics', (req, res) => {
 app.post('/api/generate-exam', async (req, res) => {
   try {
     const { topics, questionCount = 1 } = req.body;
-    
+
     if (!topics?.length) {
       return res.status(400).json({ error: 'Selecciona al menos un tema' });
     }
-    
+
     console.log('📚 Procesando temas:', topics);
-    
+
     const documentContent = await getDocumentsByTopics(topics);
-    
+
     if (!documentContent.trim()) {
-      return res.status(404).json({ 
-        error: 'No se encontró contenido para los temas seleccionados' 
+      return res.status(404).json({
+        error: 'No se encontró contenido para los temas seleccionados'
       });
     }
-    
-    const fullPrompt = CLAUDE_PROMPT
+
+    // OPTIMIZACIÓN DE COSTES: 70% preguntas simples, 30% elaboradas
+    const useSimplePrompt = Math.random() < 0.70;
+    const selectedPrompt = useSimplePrompt ? CLAUDE_PROMPT_SIMPLE : CLAUDE_PROMPT_ELABORADO;
+    const maxTokens = useSimplePrompt ? 1000 : 1600; // Reducido también el elaborado
+
+    console.log(`💡 Usando prompt ${useSimplePrompt ? 'SIMPLE' : 'ELABORADO'} (max_tokens: ${maxTokens})`);
+
+    const fullPrompt = selectedPrompt
       .replace('{{CONTENT}}', documentContent.substring(0, 50000)) // Limitar contenido
       .replace(/{{QUESTION_COUNT}}/g, questionCount);
-    
-    const response = await callClaudeWithImprovedRetry(fullPrompt);
+
+    const response = await callClaudeWithImprovedRetry(fullPrompt, maxTokens);
     
     let questionsData;
     try {
