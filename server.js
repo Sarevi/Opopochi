@@ -84,82 +84,82 @@ const TOPIC_CONFIG = {
   "tema-4-organizaciones-farmaceuticas": {
     "title": "TEMA 4 - ORGANIZACIONES FARMACEUTICAS",
     "description": "Organizaciones Farmacéuticas",
-    "files": ["TEMA 4- ORGANIZACIONES FARMACEUTICAS.pdf"]
+    "files": ["TEMA 4- ORGANIZACIONES FARMACEUTICAS.txt"]
   },
   "tema-5-medicamentos": {
     "title": "TEMA 5 - MEDICAMENTOS",
     "description": "Medicamentos",
-    "files": ["TEMA 5- MEDICAMENTOS.pdf"]
+    "files": ["TEMA 5- MEDICAMENTOS.txt"]
   },
   "tema-6-formulas-magistrales": {
     "title": "TEMA 6 - FORMULAS MAGISTRALES Y PREPARADOS OFICINALES",
     "description": "Fórmulas Magistrales y Preparados Oficinales",
-    "files": ["TEMA 6- FORMULAS MAGISTRALES Y PREPARADOS OFICINALES.pdf"]
+    "files": ["TEMA 6- FORMULAS MAGISTRALES Y PREPARADOS OFICINALES.txt"]
   },
   "tema-7-acondicionamiento": {
     "title": "TEMA 7 - ACONDICIONAMIENTO DE LOS MEDICAMENTOS",
     "description": "Acondicionamiento de los Medicamentos",
-    "files": ["TEMA 7- ACONDICIONAMIENTO DE LOS MEDICAMENTOS.pdf"]
+    "files": ["TEMA 7- ACONDICIONAMIENTO DE LOS MEDICAMENTOS.txt"]
   },
   "tema-8-farmacocinetica": {
     "title": "TEMA 8 - FARMACOCINETICA Y FARMACODINAMIA",
     "description": "Farmacocinética y Farmacodinamia",
-    "files": ["TEMA 8- FARMACOCINETICA Y FARMACODINAMIA.pdf"]
+    "files": ["TEMA 8- FARMACOCINETICA Y FARMACODINAMIA.txt"]
   },
   "tema-9-administracion": {
     "title": "TEMA 9 - ADMINISTRACION DE MEDICAMENTOS",
     "description": "Administración de Medicamentos",
-    "files": ["TEMA 9- ADMINISTRACION DE MEDICAMENTOS.pdf"]
+    "files": ["TEMA 9- ADMINISTRACION DE MEDICAMENTOS.txt"]
   },
   "tema-10-formas-farmaceuticas": {
     "title": "TEMA 10 - FORMAS FARMACEUTICAS Y VIAS DE ADMINISTRACION",
     "description": "Formas Farmacéuticas y Vías de Administración",
-    "files": ["TEMA 10- FORMAS FARMACEUTICAS Y VIAS DE ADMINISTRACION.pdf"]
+    "files": ["TEMA 10- FORMAS FARMACEUTICAS Y VIAS DE ADMINISTRACION.txt"]
   },
   "tema-11-farmacia-hospitalaria": {
     "title": "TEMA 11 - FARMACIA HOSPITALARIA",
     "description": "Farmacia Hospitalaria",
-    "files": ["TEMA 11- FARMACIA HOSPITALARIA.pdf"]
+    "files": ["TEMA 11- FARMACIA HOSPITALARIA.txt"]
   },
   "tema-12-almacenamiento": {
     "title": "TEMA 12 - ALMACENAMIENTO Y CONSERVACION",
     "description": "Almacenamiento y Conservación",
-    "files": ["TEMA 12- ALMACENAMIENTO Y CONSERVACION.pdf"]
+    "files": ["TEMA 12- ALMACENAMIENTO Y CONSERVACION.txt"]
   },
   "tema-13-laboratorio": {
     "title": "TEMA 13 - LABORATORIO FARMACEUTICO",
     "description": "Laboratorio Farmacéutico",
-    "files": ["TEMA 13- LABORATORIO FARMACEUTICO.pdf"]
+    "files": ["TEMA 13- LABORATORIO FARMACEUTICO.txt"]
   },
   "tema-13-parte-2": {
     "title": "TEMA 13 (2ª parte) - LABORATORIO FARMACEUTICO",
     "description": "Laboratorio Farmacéutico - Parte 2",
-    "files": ["TEMA 13-2ª parte- LABORATORIO FARMACEUTICO.pdf"]
+    "files": ["TEMA 13-2ª parte- LABORATORIO FARMACEUTICO.txt"]
   },
   "tema-14-operaciones": {
     "title": "TEMA 14 - OPERACIONES FARMACEUTICAS BASICAS",
     "description": "Operaciones Farmacéuticas Básicas",
-    "files": ["TEMA 14 - OPERACIONES FARMACEUTICAS BASICAS.pdf"]
+    "files": ["TEMA 14 - OPERACIONES FARMACEUTICAS BASICAS.txt"]
   },
   "tema-14-parte-2": {
     "title": "TEMA 14 (2ª parte) - LABORATORIO FARMACEUTICO",
     "description": "Laboratorio Farmacéutico - Parte 2",
-    "files": ["TEMA 14 -2ª parte- LABORATORIO FARMACEUTICO.pdf"]
+    "files": ["TEMA 14 -2ª parte- LABORATORIO FARMACEUTICO.txt"]
   },
   "tema-15-analisis-clinicos": {
     "title": "TEMA 15 - ANALISIS CLINICOS",
     "description": "Análisis Clínicos",
-    "files": ["TEMA 15- ANALISIS CLINICOS.pdf"]
+    "files": ["TEMA 15- ANALISIS CLINICOS.txt"]
   },
   "tema-17-espectrofotometria": {
     "title": "TEMA 17 - ESPECTROFOTOMETRIA Y MICROSCOPIA",
     "description": "Espectrofotometría y Microscopía",
-    "files": ["TEMA 17- ESPECTROFOTOMETRIA Y MICROSCOPIA.pdf"]
+    "files": ["TEMA 17- ESPECTROFOTOMETRIA Y MICROSCOPIA.txt"]
   },
   "tema-18-parafarmacia": {
     "title": "TEMA 18 - PARAFARMACIA",
     "description": "Parafarmacia",
-    "files": ["TEMA 18- PARAFARMACIA.pdf"]
+    "files": ["TEMA 18- PARAFARMACIA.txt"]
   }
 };
 
