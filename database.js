@@ -76,6 +76,19 @@ function initDatabase() {
     )
   `);
 
+  // Tabla de chunks usados (para evitar repeticiones - Opción B)
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS chunk_usage (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL,
+      topic_id TEXT NOT NULL,
+      chunk_index INTEGER NOT NULL,
+      used_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+      UNIQUE(user_id, topic_id, chunk_index)
+    )
+  `);
+
   // MIGRACIÓN: Arreglar tabla failed_questions si existe con user_answer NOT NULL
   try {
     // Intentar verificar si la tabla necesita migración
@@ -500,6 +513,83 @@ function getTodayActivity() {
 }
 
 // ========================
+// FUNCIONES DE TRACKEO DE CHUNKS (Sin repetición - Opción B)
+// ========================
+
+// Obtener chunk no usado para un usuario y tema
+function getUnusedChunkIndex(userId, topicId, totalChunks) {
+  // Obtener chunks ya usados
+  const usedStmt = db.prepare(`
+    SELECT chunk_index
+    FROM chunk_usage
+    WHERE user_id = ? AND topic_id = ?
+  `);
+
+  const usedChunks = usedStmt.all(userId, topicId).map(r => r.chunk_index);
+
+  // Si ya usó todos los chunks, resetear (empezar de nuevo)
+  if (usedChunks.length >= totalChunks) {
+    console.log(`♻️ Usuario ${userId} completó todos los chunks del tema ${topicId}. Reseteando...`);
+    resetChunkUsage(userId, topicId);
+    return Math.floor(Math.random() * totalChunks);
+  }
+
+  // Crear array de chunks disponibles
+  const availableChunks = [];
+  for (let i = 0; i < totalChunks; i++) {
+    if (!usedChunks.includes(i)) {
+      availableChunks.push(i);
+    }
+  }
+
+  // Seleccionar uno aleatorio de los disponibles
+  const randomIndex = Math.floor(Math.random() * availableChunks.length);
+  const selectedChunk = availableChunks[randomIndex];
+
+  console.log(`🎲 Chunks disponibles: ${availableChunks.length}/${totalChunks}, seleccionado: ${selectedChunk}`);
+
+  return selectedChunk;
+}
+
+// Marcar chunk como usado
+function markChunkAsUsed(userId, topicId, chunkIndex) {
+  try {
+    const stmt = db.prepare(`
+      INSERT OR IGNORE INTO chunk_usage (user_id, topic_id, chunk_index)
+      VALUES (?, ?, ?)
+    `);
+
+    stmt.run(userId, topicId, chunkIndex);
+    console.log(`✅ Chunk ${chunkIndex} marcado como usado para usuario ${userId}, tema ${topicId}`);
+  } catch (error) {
+    console.error('Error marcando chunk como usado:', error);
+  }
+}
+
+// Resetear chunks usados (cuando se completan todos)
+function resetChunkUsage(userId, topicId) {
+  const stmt = db.prepare(`
+    DELETE FROM chunk_usage
+    WHERE user_id = ? AND topic_id = ?
+  `);
+
+  stmt.run(userId, topicId);
+  console.log(`🔄 Chunks reseteados para usuario ${userId}, tema ${topicId}`);
+}
+
+// Obtener estadísticas de cobertura de chunks por usuario
+function getChunkCoverage(userId, topicId) {
+  const stmt = db.prepare(`
+    SELECT COUNT(*) as used_chunks
+    FROM chunk_usage
+    WHERE user_id = ? AND topic_id = ?
+  `);
+
+  const result = stmt.get(userId, topicId);
+  return result.used_chunks || 0;
+}
+
+// ========================
 // EXPORTAR FUNCIONES
 // ========================
 
@@ -524,5 +614,9 @@ module.exports = {
   getUserActivity,
   getUserAverageSessionTime,
   getTodayActivity,
+  getUnusedChunkIndex,
+  markChunkAsUsed,
+  resetChunkUsage,
+  getChunkCoverage,
   db
 };
