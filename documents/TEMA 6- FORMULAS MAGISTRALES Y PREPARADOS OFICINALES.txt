@@ -1,0 +1,1979 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+TÉCNICO DE FARMACIA
+SERGAS
+
+TEMA 6:
+          FÓRMULAS MAGISTRALES Y PREPARADOS OFICINALES: CONCEPTOS GENERALES. NORMAS DE CORRECTA ELABORACIÓNY CONTROL DE LA CALIDAD. ABREVIATURAS UTILIZADAS EN FORMULACIÓN MAGISTRAL. FORMULARIO NACIONAL. MATERIAS PRIMAS. EXCIPIENTES DE USO FRECUENTE EN FARMACIA GALÉNICA. ENSAYOS PARA EL RECONOCIMIENTO Y CONTROL DE CALIDAD DE FÓRMULAS MAGISTRALES Y PREPARADOS OFICINALES. ENVASES PARA FORMAS FARMACÉUTICAS: TIPOS, USOS Y SIMBOLOGÍA. ENVASADO Y ETIQUETADO. IDENTIFICACIÓN, CONSERVACIÓN Y REGISTRO DE FÓRMULAS MAGISTRALES Y
+PREPARADOS OFICINALES.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INDICE:
+1.- EVOLUCIÓN DE LA FORMULACIÓN MAGISTRAL
+
+2.- NORMATIVA QUE REGULA LA FORMULACIÓN MAGISTRAL
+
+3.- FÓRMULAS MAGISTRALES Y PREPARADOS OFICINALES: CONCEPTOS GENERALES
+3.1.- DEFINICIONES EN FORMULACIÓN MAGISTRAL.
+
+4.- NORMAS DE CORRECTA ELABORACIÓN Y CONTROL DE CALIDAD
+4.1.- NORMAS DE CORRECTA FABRICACIÓN DE MEDICAMENTOS (GMP)
+4.2.- NORMAS DE BUENAS PRÁCTICAS DE LABORATORIO DE ANÁLISIS (GCLP)
+4.3.- NORMAS DE BUENAS PRÁCTICAS DE LABORATORIO (GLP)
+4.4.- NORMAS DE CORRECTA ELABORACIÓN Y CONTROL DE CALIDAD DE FÓRMULAS MAGISTRALES Y PREPARADOS OFICINALES
+
+5.- ABREVIATURAS UTILIZADAS EN FORMULACIÓN MAGISTRAL
+
+6.- FORMULARIO NACIONAL
+6.1.- ESTRUCTURA DEL FORMULARIO NACIONAL
+6.2.- PROCEDIMIENTOS NORMALIZADOS DE TRABAJO
+6.3.- MONOGRAFÍAS DE MATERIAS PRIMAS
+6.4.- MONOGRAFÍAS DE FÓRMULAS MAGISTRALES TIPIFICADAS Y PREPARADOS OFICINALES
+6.5.- FITOTERAPIA
+
+7.- MATERIAS PRIMAS
+7.1.- CONCEPTO DE MATERIA PRIMA. CLASIFICACIÓN
+7.2.- CONTROL DE CALIDAD DE MATERIAS PRIMAS
+7.3.- ETIQUETADO DE MATERIAS PRIMAS
+7.4.- MATERIAL DE ACONDICIONAMIENTO
+7.5.- CONTROL DE CALIDAD DEL MATERIAL DE ACONDICIONAMIENTO
+
+8.- EXCIPIENTES DE USO FARMACÉUTICO. CLASIFICACIÓN, UTILIZACIÓN Y PROPIEDADES
+8.1.- EXCIPIENTE.
+8.2.- PLACEBO
+8.3.- EXCIPIENTES DE DECLARACIÓN OBLIGATORIA
+8.4- TIPOS DE EXCIPIENTES SEGÚN SU FUNCIÓN
+8.4.1.- EL AGUA
+A-. Agua purificada.
+B Agua altamente purificada
+C Agua para preparaciones inyectables
+
+8.4.2.- EXCIPIENTES NO ACUOSOS, HIDROSOLUBLES E HIDROMISCIBLES
+A. Etanol.
+B. Isopropanol.
+C. Polialcoholes
+D. Polietilenglicoles.
+
+8.4.3.- EXCIPIENTES GRASOS Y PRODUCTOS LIPOIDEOS
+A. Triglicéridos naturales
+B. Triglicéridos sintéticos
+C. Ceras.
+D. Productos lipoideos.
+8.4.4.- EMULGENTES, TENSIOACTIVOS Y COSOLVENTES
+A. Tensioactivos y emulgentes aniónicos.
+B. Tensioactivos y emulgentes catiónicos.
+C. Tensioactivos y emulgentes anfóteros.
+D. Tensioactivos y emulgentes no iónicos.
+8.4.5 EXCIPIENTES DE USO EN FORMAS FARMACÉUTICAS SÓLIDAS ORALES
+A. Almidones y derivados.
+B. Azúcares y similares.
+C. Celulosa y derivados.
+D. Productos inorgánicos y minerales.
+E. Productos de síntesis.
+8.4.6 CONSERVANTES, COLORANTES, EDULCORANTES Y AROMATIZANTES DE USO FARMACÉUTICO.
+A. Conservantes.
+B. Colorantes.
+C. Edulcorantes.
+D. Aromatizantes.
+
+9.- ENSAYOS PARA EL CONTROL DE CALIDAD FÓRMULAS MAGISTRALES Y PREPARADOS OFICINALES.
+9.1.- DETERMINACIÓN DEL VALOR PH
+9.2.- VERIFICACIÓN DE PESO/VOLUMEN
+9.3.- CONTROL DE UNIFORMIDAD DE MASA
+9.4.- DETERMINACIÓN DEL SIGNO DE LA EMULSIÓN
+9.5.- CONTROL DE LA EXTENSIBILIDAD
+9.6.- CONTROL DE CARACTERES ORGANOLÉPTICOS
+
+10.- ELABORACIÓN, ENVASADO, ETIQUETADO Y DISPENSACIÓN DE FÓRMULAS MAGISTRALES Y PREPARADOS OFICINALES
+10.1.- ELABORACIÓN
+10.2.- DISPENSACIÓN
+
+11.-IDENTIFICACIÓN, CONSERVACIÓN Y REGISTRO DE FÓRMULAS MAGISTRALES Y PREPARADOS OFICINALES
+
+12.- BIBLIOGRAFÍA
+
+13.- ANEXO
+
+
+1.- EVOLUCIÓN DE LA FORMULACIÓN MAGISTRAL
+Desde tiempos inmemoriales, el hombre ha recolectado plantas para la preparación de remedios contra la enfermedad.
+
+Veamos los grandes periodos en la evolución de la formulación magistral.
+? Mundo arcaico. No existía separación entre el cuidado de la salud, las creencias religiosas y la magia. Así, la preparación de los remedios para la salud solía estar en manos de hechiceros o sacerdotes.
+? Mundo clásico. Poco a poco se produce una separación entre la medicina y los tratamientos mágico- religiosos. El cuidado de la salud es asumida por personas con una doble función, la de médico y la de farmacéutico, y preparan sus propios remedios curativos. Claudio Galeno alcanzo gran fama en su época. Hoy en día recibe el nombre de farmacia galénica la ciencia que estudia los métodos técnicos para la elaboración de medicamentos, así como las características de estos.
+Entre los aportes de Galeno a la Medicina destacan:
+o Demostró que el cerebro es el órgano encargado de controlar la voz.
+o Demostró las funciones del riñón y de la vejiga.
+o Demostró que por las arterias circula sangre y no aire (como se pensaba entonces).
+o Descubrió diferencias estructurales entre venas y arterias.
+o Dio gran importancia a los métodos de conservación y preparación de fármacos.
+
+? Edad Media. El farmacéutico empieza su actividad al margen del médico y se asocian en gremios. Realiza preparaciones magistrales en su botica.
+? Renacimiento. Las figuras del farmacéutico y del médico se distancian más claramente. Comienza una revolución en los conocimientos farmacéuticos, que se consolidara como ciencia en la Edad Moderna.
+? Edad Moderna. Nacen y proliferan farmacopeas y formularios. La formulación magistral se constituye como base de la actividad farmacéutica junto con la formulación oficinal. En la segunda mitad del siglo XX, se crean los primeros medicamentos de síntesis y surgen los primeros laboratorios farmacéuticos. A partir de este momento, la fabricación industrial de medicamentos gana terreno a la formulación magistral.
+? Actualidad. La formulación magistral se mantiene como una actividad farmacéutica de notable interés a pesar de que el volumen de dispensaciones de fórmulas magistrales y de preparados oficinales en la oficina de farmacia y en los servicios farmacéuticos hospitalarios no es grande con respecto al número de medicamentos industriales dispensados y utilizados. Si la elaboración de un medicamento individualizado para un enfermo se entiende como ideal terapéutico y se acepta que no hay dos enfermos iguales, el futuro de la formulación como sistema de preparación.
+
+2.- NORMATIVA QUE REGULA LA FORMULACIÓN MAGISTRAL
+Listado cronológico de la legislación española sobre formulación magistral:
+
+* Real Decreto 294/1995, de 24 febrero (modificado por Real Decreto 249/2001, de 9 de marzo): Se regulan la Real Farmacopea Española (RFE) y el Formulario Nacional (FN) y los órganos consultivos del Ministerio de Sanidad y Consumo (MSC) en esta materia. Decreta que el FN contendrá las fórmulas magistrales tipificadas (FMT) y los preparados oficinales (PO) reconocidos como medicamentos. Establece que su utilización permitirá que los profesionales dispongan de un instrumento moderno adaptado a las nuevas exigencias del ejercicio tradicional de la preparación de FM o PO.
+
+* Orden de 14 de febrero de 1997, por la que se establecen determinados requisitos en la prescripción y dispensación de fórmulas magistrales y preparados oficinales para tratamientos peculiares (BOE núm. 49, de 26-02-1997)
+
+* Real Decreto 175/2001, de 23 de febrero: se aprueban las Normas de Correcta Elaboración y Control de calidad de las Fórmulas Magistrales (FM) y preparados oficinales (PO), en las que se contempla que la aplicación de dicha normativa se entenderá sin perjuicio de las especiales condiciones que se prevean en el Formulario Nacional para la correcta elaboración y control de calidad de determinadas FM Y PO. Estas normas escritas se suelen denominar "Normas GMP", del inglés Good Manufacturing Practices. El Real Decreto 905/2003 de 11 de julio, modifica la disposición transitoria única de este Real Decreto 175/2001.
+
+* Real Decreto Legislativo 1/2015, de 24 de julio, por el que se aprueba el texto refundido de la Ley de garantías y uso racional de los medicamentos y productos sanitarios. En el artículo 8 se define fórmula magistral y preparado oficinal. En el CAPÍTULO IV. De las garantías sanitarias de las fórmulas magistrales y preparados oficinales. En los artículos 42 y 43 recogen los requisitos que deben cumplir las fórmulas magistrales (FM) y los preparados oficinales (PO).
+? Artículo 44: indica que el Formulario Nacional contendrá la FMT y los PO reconocidos como medicamentos.
+? Artículo 67: establece las condiciones legales para realizar, por terceros, alguna fase de la producción de una preparación y de su control analítico.
+
+* Real Decreto 1015/2009, de 19 de junio, por el que se regula la disponibilidad de medicamentos en situaciones especiales. Capítulo III Acceso a medicamentos en condiciones diferentes a las autorizadas (BOE núm.174, de 20-7-2009)
+
+* Normas sobre el Formulario Nacional (FN):
+? Orden SCO/3262/2003, de 18 de noviembre, por el que se aprueba el Formulario Nacional. En diciembre de 2003 se publicó la primera edición por mandato de la Ley del medicamento.
+? Orden SCO/3123/2006, de 29 de septiembre, por la que se actualiza el Formulario Nacional. En abril de 2007 se publicó la primera edición revisada y actualizada.
+? Orden SPI/2891/2010, de 3 de noviembre, por la que se aprueba la cuarta edición de la Real Farmacopea Española (BOE núm.273, de 1111-2010)
+? Orden SSI/23/2015, de 15 de enero, aprueba la quinta edición de la Real Farmacopea Española y la segunda edición del Formulario Nacional.
+
+* Real Farmacopea Española: se publica exclusivamente en formato electrónico. El acceso se realiza, mediante suscripción de pago, a través de la tienda del BOE.
+
+* Formulario Nacional (acceso gratuito a través de la web de la AEMPS) Segunda edición (primera en línea): diciembre de 2014
+Tercera edición: noviembre de 2020 Última actualización: noviembre de 2022
+
+
+
+3.-FÓRMULAS MAGISTRALES Y PREPARADOS OFICINALES: CONCEPTOS GENERALES
+3.1.- DEFINICIONES EN FORMULACIÓN MAGISTRAL
+Las definiciones esenciales en formulación magistral se recogen en el Real Decreto 175/2001, de 23 de febrero.
+Sus requisitos se indican en productos sanitarios: el Real Decreto Legislativo 1/2015, de 24 de julio, por el que se aprueba el texto refundido de la Ley de garantías y uso racional de los medicamentos y productos sanitarios.
+
+FORMULA MAGISTRAL (FM):
+Medicamento destinado a un paciente individualizado, preparado por el farmacéutico o bajo su dirección, para cumplimentar expresamente una prescripción facultativa detallada de los principios activos que incluye, según las normas de correcta elaboración y control de calidad establecidas al efecto, dispensado en oficina de farmacia o servicio farmacéutico, y con la debida información al usuario.
+
+En el RD1/2015 se recogen los artículos sobre las fórmulas magistrales:
+
+Artículo 42. Requisitos de las fórmulas magistrales.
+1. Las fórmulas magistrales serán preparadas con sustancias de acción e indicación reconocidas legalmente en España, de acuerdo con el artículo 44.1 y según las directrices del Formulario Nacional.
+2. Las fórmulas magistrales se elaborarán en las oficinas de farmacia y servicios farmacéuticos legalmente establecidos que dispongan de los medios necesarios para su preparación de acuerdo con las exigencias establecidas en el Formulario Nacional.
+No obstante, las oficinas de farmacia y servicios farmacéuticos que no dispongan de los medios necesarios, excepcionalmente y sin perjuicio de lo establecido en el artículo 66.2,
+podrán encomendar a una entidad de las previstas en esta ley, autorizada por la Administración sanitaria competente, la realización de una o varias fases de la elaboración y/o control de fórmulas magistrales.
+3. En la preparación de fórmulas magistrales se observarán las normas de correcta elaboración y control de calidad de fórmulas magistrales y preparados oficinales.
+4. Las fórmulas magistrales destinadas a los animales estarán prescritas por un veterinario y se destinarán a un animal individualizado o a un reducido número de animales de una explotación concreta que se encuentren bajo el cuidado directo de dicho facultativo.
+Se prepararán por un farmacéutico, o bajo su dirección, en su oficina de farmacia.
+5. Las fórmulas magistrales irán acompañadas del nombre del farmacéutico que las prepare y de la información suficiente que garantice su correcta identificación y conservación, así como su segura utilización.
+6. La formulación magistral de sustancias o medicamentos no autorizados en España se ajustará al régimen previsto en el artículo 24
+
+FÓRMULA MAGISTRAL TIPIFICADA (FMT)
+Recogida en el FN por su frecuente uso y utilidad.
+Por ejemplo: gotas óticas de ácido acético, jarabe de ipecacuana, colodión con ácido salicílico y ácido láctico...
+Ver anexo al final del tema.
+
+PREPARADO OFICINAL (PO)
+Medicamento elaborado según las normas de correcta elaboración y control de calidad establecidas al efecto y garantizado por un farmacéutico o bajo su dirección, dispensado en oficina de farmacia o servicio farmacéutico, enumerado y descrito por el FN, destinado a su entrega directa a los enfermos que abastece dicha farmacia o servicio farmacéutico
+
+En el RD 1/2015, también se diferencian los requisitos de los preparados oficinales en el Artículo 43:
+1. Los preparados oficinales deberán cumplir las siguientes condiciones:
+a) Estar enumerados y descritos en el Formulario Nacional.
+b) Cumplir las normas de la Real Farmacopea Española.
+c) Ser elaborados y garantizados por un farmacéutico de la oficina de farmacia o del servicio farmacéutico que los dispense.
+d) Presentarse y dispensarse necesariamente bajo principio activo o, en su defecto, bajo una denominación común o científica o la expresada en el formulario nacional y, en ningún caso, bajo marca comercial.
+e) Ir acompañados del nombre del farmacéutico que los prepare y de la información suficiente que garantice su correcta identificación y conservación, así como su segura utilización.
+2. Excepcionalmente, y sin perjuicio de lo establecido en el artículo 66.2, las oficinas de farmacia y servicios farmacéuticos que no dispongan de los medios necesarios podrán encomendar a una entidad legalmente autorizada para tal fin por la Administración sanitaria competente la realización de una o varias fases de la elaboración y/o control de, exclusivamente, aquellos preparados oficinales que respondan a una prescripción facultativa.
+3. Los preparados oficinales destinados a los animales serán elaborados en oficinas de farmacia de acuerdo con las indicaciones de un formulario y serán entregados directamente al usuario final.
+
+MATERIA PRIMA:
+Toda sustancia, activa o inactiva, empleada en la fabricación de un medicamento, ya permanezca inalterada, se modifique o desaparezca en el transcurso del proceso.
+Por tanto, materias primas se consideran tanto los principios activos o sustancias medicinales (con actividad farmacológica) como los excipientes (sin actividad farmacológica) incluidos en la formulación. La Guía de buenas prácticas de preparación de medicamentos en los servicios de farmacia hospitalaria define material de partida como cualquier sustancia o materia utilizada en la preparación de un medicamento, con exclusión de los materiales de acondicionamiento. Se suele consideran materiales de partida no solo las materias primas propiamente dichas si no también los medicamentos comercializados que se empleen en la elaboración.
+
+El Real Decreto 824/2010 por el que se regulan los laboratorios farmacéuticos, los fabricantes de principios activos de uso farmacéutico y el comercio exterior de medicamentos y medicamentos en investigación establece que las empresas fabricantes, importadoras o distribuidoras de principios activos deberán estar inscritas en el registro establecido a tal efecto en la Agencia Española de Medicamentos y Productos Sanitarios (AEMPS), que será público. Este registro se publicó en julio de 2014 como "Registro Unificado de Empresas de Sustancias Activas (RUESA)", donde es posible localizar la relación de dichas empresas y las materias primas que suministran. A nivel europeo, la Agencia Europea del Medicamento (EMA) tiene un registro público centralizado (EudraGMDP) con la información de las empresas autorizadas que le suministran los diferentes países miembros.
+
+Los laboratorios fabricantes o importadores de excipientes garantizarán que estos son aptos para su utilización en un medicamento y que se aplican las normas de correcta fabricación pertinentes. Las Directrices 2015/C 95/02 establecen que los fabricantes de excipientes deben hacer una evaluación formal de riesgos de sus procesos de producción a efectos de determinar las prácticas correctas de fabricación apropiadas. Para ello, en dichas directrices se recomienda clasificar a los excipientes en riesgo de adulteración de la calidad bajo, medio o alto siguiendo la guía ICHQ9 que, dependiendo de si su origen es
+
+
+animal, vegetal o sintético, estará determinada también por el riesgo de transmisión de ciertos contaminantes.
+Por ejemplo, en el caso de los excipientes de origen animal (muy poco utilizados a día de hoy) sería recomendable evaluar la posibilidad de transmisión de encefalopatía espongiforme bovina en los mismos, en los de origen vegetal, por otro lado, el riesgo de presencia de aflatoxinas o plaguicidas, o en los de origen sintético el riesgo de presencia de cantidades residuales de catalizadores o disolventes Es recomendable, por tanto, que el farmacéutico solicite a los proveedores de excipientes la documentación relativa a los productos que fabrican para poder evaluar también el riesgo de contaminaciones cruzadas, priorizando la adquisición de dichos excipientes a proveedores exclusivos del mercado farmacéutico.
+
+La adquisición de materias primas, tanto si se trata de principios activos como de excipientes, es una operación importante y un punto crítico en el proceso de preparación de los medicamentos ya que el mercado de las materias primas es muy heterogéneo y ofrece una gran diversidad de calidades, muchas de las cuales no cumplen con las especificaciones descritas en la Farmacopea.
+
+El Real Decreto 175/2001 establece que el farmacéutico responsable debe confirmar
+que las materias primas han sido fabricadas y manipuladas siguiendo las normas de correcta fabricación que garanticen el cumplimiento de los requisitos de pureza, identidad, riqueza y toxicidad aguda definidos.
+
+Las posibilidades de aprovisionamiento del farmacéutico son:
+1. Materias primas adquiridas a un centro autorizado (en la actualidad, esta referencia se corresponde con los fabricantes, importadores o distribuidores de materias primas registrados en RUESA, Registro Unificado de Empresas de Sustancias Activas, de la AEMPS o en EudraGMDP). La responsabilidad en relación con el control de conformidad de las materias primas recae en el laboratorio que hace el análisis completo de calidad del principio activo en la Unión Europea eximiendo por tanto al farmacéutico de su realización, quién sí deberá comprobar en el certificado de análisis que los resultados son acordes a los establecidos en la Farmacopea que se indique.
+El Real Decreto 175/2001 indica además que, dado que la responsabilidad de la calidad de la fórmula magistral o del preparado oficinal corresponde al farmacéutico preparador, se considera conveniente que éste verifique, como mínimo, la identidad de las materias primas suministradas mediante alguna prueba de identificación, además de comprobar las características organolépticas. Esta prueba de identificación puede ser sencilla como la determinación del pH, punto de fusión o solubilidad, ya que en los servicios de farmacia hospitalaria y oficinas de Farmacia habitualmente se carece de aparataje y otros recursos para hacer pruebas más complejas.
+2. Materias primas adquiridas a otras entidades. El farmacéutico responsable deberá
+realizar el control analítico completo de las materias primas suministradas, para verificar que cumplen con las especificaciones de Farmacopea y elaborar la ficha de control de calidad. También podrá encargar el análisis a un laboratorio debidamente acreditado. En cualquier caso, es importante garantizar que los métodos analíticos con los que se realizan los análisis estén validados de acuerdo con lo establecido en la guía ICH Q2 sobre validación de procedimientos analíticos (para ensayos de identificación, riqueza y determinación de impurezas). En el caso de que dichos controles sean externalizados a un laboratorio debidamente acreditado, el farmacéutico debe disponer de los certificados de la validación de dichos métodos analíticos, por lo que se considera necesario que el farmacéutico se familiarice con la guía ICH Q2. En el caso de los preparados "semielaborados" utilizados como excipientes dado que no se recogen en la RFE, los controles se harán en base los datos del boletín de análisis aportado por el proveedor. Por ejemplo, para el jarabe simple o el gel de hidroxietilcelulosa se pueden comprobar el pH o la densidad.
+
+PRODUCTO A GRANEL
+Producto que ha pasado todas las fases de preparación, excepto el acondicionamiento final. Ejemplo: cápsulas de gelatina dura de metamizol más excipientes sin acondicionamiento primario
+
+
+PRODUCTO TERMINADO
+Medicamento que ha pasado por todas las fases de preparación, incluyendo su acondicionamiento en el envase final.
+
+ACONDICIONAMIENTO
+Todas las operaciones, incluido el envasado y etiquetado, a que debe someterse un producto a granel para convertirse en producto terminado.
+
+MATERIAL DE ACONDICIONAMIENTO
+Cualquier material empleado en el acondicionamiento de medicamentos, a excepción de los embalajes utilizados para el transporte o envío.
+El material de acondicionamiento se clasifica en primario o secundario según esté o no en contacto con el producto.
+
+CUARENTENA
+Situación de las materias primas, de los productos intermedios, a granel o terminados, y de los materiales de acondicionamiento que se encuentran aislados físicamente, o de otra forma efectiva, mientras se toma la decisión de su aprobación o rechazo.
+
+LOTE
+Cantidad definida de una materia prima, de material de acondicionamiento o de un producto elaborado en un proceso o serie de procesos determinados, bajo condiciones constantes.
+La cualidad esencial de un lote es su homogeneidad.
+
+DOCUMENTACIÓN DE UN LOTE
+Conjunto de datos relativos al lote preparado, que constituyen la historia de su elaboración, acondicionamiento y control, que deben estar disponibles para cada lote en cualquier momento.
+
+NÚMERO DE LOTE
+Combinación característica de números, letras o ambos que identifica específicamente un lote.
+
+PROCEDIMIENTO
+Conjunto de operaciones que deben realizarse, precauciones que han de tomarse y medidas que deberán aplicarse, relacionadas directa o indirectamente con la elaboración de un medicamento (Real Decreto 175/2001)
+PROCEDIMIENTOS NORMALIZADOS DE TRABAJO
+Procedimientos escritos y aprobados según las normas de correcta elaboración y control de calidad que describen, de forma específica, las actividades que se llevan a cabo tanto en la elaboración de una fórmula magistral o preparado oficinal como en su control de calidad.
+(Real Decreto 175/2001)
+
+REGISTRO
+Recopilación manual o informática de todos los datos relativos a las materias primas, productos intermedios y productos terminados, ya sean fórmulas magistrales o preparados oficinales.
+
+CONTAMINACIÓN CRUZADA
+Situación que se produce cuando una materia prima se contamina con otra materia prima o producto como excipientes.
+
+
+Por otra parte, la Ley 25/1990, de 20 de diciembre, del Medicamento hace referencia en su artículo 55 a la Real Farmacopea Española y al Formulario Nacional.
+
+REAL FARMACOPEA ESPAÑOLA (RFE)
+Es el compendio legal de calidad de medicamentos, código de referencia para todos los ámbitos relacionados con el medicamento.
+Recopila las normas específicas, redactadas en forma de monografías, que describen la calidad física, química y biológica que deben observar las sustancias medicinales y excipientes destinados a uso humano y veterinario, así como los métodos analíticos para su control.
+La RFE incluye monografías convenientemente ordenadas y codificadas con las especificaciones de identidad, pureza y riqueza de, como mínimo, los principios activos y excipientes, así como los métodos analíticos oficiales y textos generales necesarios para la
+correcta aplicación de las monografías. Las especificaciones definidas en las monografías constituyen exigencias mínimas de obligado cumplimiento.
+Toda materia prima presentada bajo su denominación científica o común de la Farmacopea
+debe responder a las especificaciones de la misma. En las Normas de Correcta Fabricación de medicamentos de uso humano y veterinario se establece que el certificado de análisis debe enumerar cada ensayo realizado de acuerdo con las especificaciones de la Farmacopea o del cliente, incluyendo los límites de aceptación y los resultados numéricos obtenidos (si los resultados del ensayo son numéricos).
+La quinta edición de la Real Farmacopea Española recopila en un texto la séptima edición de la Farmacopea Europea así como la única monografía española que no figura en la citada Farmacopea Europea.
+La Real Farmacopea Española (RFE) consta de 3.246 monografías y 332 métodos generales.
+
+FORMULARIO NACIONAL
+Libro oficial que contiene las fórmulas magistrales tipificadas y los preparados oficinales reconocidos como medicamentos, sus categorías, indicaciones y materias primas que intervienen en su composición o preparación, así como las normas de correcta preparación y control de aquellos.
+En esta misma ley se pone de manifiesto que tanto la Real Farmacopea Española como el Formulario Nacional serán actualizados periódicamente, así como la obligatoriedad para las oficinas de farmacia, servicios farmacéuticos, entidades de distribución y laboratorios de fabricación de especialidades farmacéuticas de poseer un ejemplar actualizado de ambos.
+
+En el Real Decreto 1/2015, se define el compendio de fórmulas magistrales tipificadas y estandarizadas en el ámbito nacional dentro del Artículo 44: Formulario Nacional:
+a. El Formulario Nacional contendrá las fórmulas magistrales tipificadas y los preparados oficinales reconocidos como medicamentos, sus categorías, indicaciones y materias primas que intervienen en su composición o preparación, así como las normas de correcta preparación y control de aquéllos.
+b. Las oficinas de farmacia y servicios farmacéuticos deben garantizar que disponen de acceso a la documentación correspondiente al Formulario Nacional.
+c. Queda expresamente prohibida la publicidad de fórmulas magistrales y preparados oficinales.
+El compendio de formulaciones y preparaciones oficinales recogidas en el formulario desde el 2015 ha tenido una fase de actualización y trabajo coordinado entre la Agencia Española del Medicamento y el grupo de trabajo de expertos de la Sociedad Española de Farmacia Hospitalaria SEFH con gran experiencia en Farmacotecnia y Pediatría. En noviembre del año 2020 se ha publicado la tercera edición del Formulario Nacional que ha incluido un nuevo subapartado "Fórmulas magistrales tipificadas pediátricas" con el objetivo de estandarizar las formulaciones orales líquidas destinadas a la población pediátrica y facilitar la continuidad de tratamiento entre los diferentes niveles asistenciales.
+En todos los casos los servicios de farmacia y oficinas de farmacia que no dispongan de estas actividades de formulación magistral podrán optar por la Fabricación a terceros como indica el Artículo 66 del Real Decreto 1/2015: Excepcionalmente, y cuando así lo requiera la atención a sus pacientes, los servicios de
+
+farmacia hospitalaria y oficinas de farmacia podrán encomendar a una entidad legalmente autorizada por la Agencia Española de Medicamentos y Productos Sanitarios la realización de alguna fase de la producción de una preparación concreta o de su control analítico.
+
+USP (UNITED STATES PHARMACOPEIA)
+Entidad no gubernamental que establece las normas oficiales que regulan los medicamentos, recetados y de venta libre, y productos sanitarios fabricados o vendidos en los Estados Unidos.
+La USP establece los estándares de calidad, pureza, "fuerza" y consistencia de estos productos fundamentales para la salud pública.
+Estas normas se reconocen y utilizan en más de 130 países de todo el mundo
+
+4.-NORMAS DE CORRECTA ELABORACIÓN Y CONTROL DE CALIDAD
+4.1.- NORMAS DE CORRECTA FABRICACIÓN DE MEDICAMENTOS (GMP)
+Las Normas de Correcta Fabricación (GMP o NCF) se definen como "la parte de la garantía de calidad que asegura que los medicamentos son elaborados y controlados de acuerdo con las normas de calidad apropiadas para el uso al que están destinados".
+Estos principios y directrices se establecieron en la Directiva 2003/94/CE de la Comisión, de 8 de octubre de 2003, para los medicamentos de uso humano y los medicamentos en investigación de uso humano, y en la Directiva 91/412/CEE de la Comisión de 23 de julio de 1991 para los medicamentos veterinarios. Su cumplimiento es obligado dentro del Espacio Económico Europeo y por tanto todos los fabricantes de medicamentos deben velar por que las operaciones de fabricación de medicamentos que lleven a cabo sean de conformidad con las Normas de Correcta Fabricación y con la autorización de comercialización del medicamento.
+
+Las premisas básicas de calidad y de la aplicación de las buenas prácticas son las siguientes:
+* Correcto diseño de la planta farmacéutica.
+* Compra de materiales.
+* Control de proceso.
+* Formación de los empleados.
+* Normativas y procedimientos escritos.
+
+Para el cumplimiento de las Normas de Correcta Fabricación, es esencial considerar las características de diseño de la planta, con objeto de evitar contaminaciones cruzadas y errores en la posible mezcla de materiales.
+
+Otros capítulos que se han de considerar son:
+* Adquisición de materiales: la calidad comienza por la materia prima correcta que va a utilizarse en el proceso de fabricación.
+* Control del proceso: la calidad se crea durante el proceso de fabricación.
+* Formación de los empleados mediante cursos en las buenas prácticas de fabricación y formación constante de los profesionales implicados en todos los procesos.
+* Normativas y procedimientos escritos: soporte básico para el cumplimiento de las buenas prácticas de fabricación.
+
+
+Todas las normativas de las buenas prácticas de fabricación, en relación al proceso de fabricación de medicamentos, se pueden resumir en 10 reglas básicas:
+1. Asegurarse de tener instrucciones de fabricación correctas y escritas antes de empezar el trabajo.
+2. Seguir las instrucciones exactamente.
+3. Asegurarse que se utilizan los materiales correctos.
+4. Asegurarse de que se utiliza el equipo correcto y que está limpio.
+5. Prevenir contaminación cruzada.
+6. Estar alerta frente a errores de etiquetado.
+7. Trabajar con la máxima precisión y exactitud.
+8. Conservar la maquinaria, objetos y personas implicados en los procesos limpios y ordenados.
+9. Vigilar los errores y malas prácticas y comunicarlo por escrito.
+10. Tener la documentación del lote clara y sistematizada, incluyendo todas las operaciones y verificaciones realizadas.
+
+La elaboración de distintas formas farmacéuticas implica una serie sucesiva de procesos, los cuales pueden tener influencia sobre la calidad de la forma farmacéutica. En cualquier momento, pueden producirse graves errores del proceso de transformación: desde la recepción de materias primas, pasando por las diferentes fases de fabricación y envasado, hasta el análisis final del producto.
+Los posibles errores que influyen en la calidad se pueden resumir en: materias primas, maquinaria, metodología y humanos.
+
+4.2.- NORMAS DE BUENAS PRÁCTICAS DE LABORATORIO DE ANÁLISIS (GCLP)
+El objetivo de estas normas es aportar directrices para establecer sistemas y procedimientos, con el fin de asegurar la validez y reproducibilidad de los datos obtenidos dentro del laboratorio de análisis. Entre ellas:
+* Calibración y mantenimiento de los equipos:
+La calibración de instrumentos, aparatos, sistemas de medición y dispositivos de registro deberá ser llevada a cabo a intervalos adecuados de acuerdo a un programa establecido por escrito.
+* Reactivos, soluciones estándar y estándar de referencia:
+Las disoluciones se preparan según una norma escrita y se contrastan por un proceso, establecido también por escrito, para determinar su concentración. Se dispondrá de sustancias patrón para fines comparativos, así como de productos de referencia (estándar).
+* Planes de muestreo:
+Los planes de muestreo habrán de ser documentados. Cada materia prima, material de envasado y producto terminado deberá tener un plan de muestreo que especifique el método de muestreo, equipo a emplear para el muestreo y calidad de la muestra.
+* Procedimientos y métodos:
+Se tendrán a mano instrucciones detalladas por escrito, que serán seguidas al pie de la letra. Las instrucciones citadas serán elaboradas por personas cualificadas, haciendo constar el fundamento bibliográfico o experimental conducente a la puesta a punto del método. El procedimiento será validado y contrastado (resultados iguales obtenidos por distintas personas).
+* Registros por escrito:
+Se han de anotar en una ficha de trabajo, de forma detallada, todas las operaciones que se realizan.
+
+4.3.- NORMAS DE BUENAS PRÁCTICAS DE LABORATORIO (GLP)
+Son aquellas normas en las que se describen documentalmente los sistemas de organización y los procedimientos que deben llevarse a cabo en los laboratorios, principalmente en los dedicados a la investigación. Tienen como objetivo asegurar la calidad de los datos obtenidos durante un estudio determinado, fundamentalmente en las investigaciones toxicológicas.
+Las nomas GCLP y GLP tienen los mismos fines y su desarrollo es similar; la diferencia estriba en que las primeras se aplican tan sólo en el laboratorio de análisis y las segundas especialmente en los laboratorios de investigación.
+
+Estas normas contienen dos secciones en las que se contemplan los siguientes aspectos:
+* Sección I: se incluyen el objetivo y unas definiciones relacionadas con la terminología utilizada.
+* Sección II : se contemplan, entre otros, aspectos relacionados con:
+? Organización y personal de laboratorio.
+? Programa de garantía de calidad: el laboratorio deberá contar con un programa de garantía de calidad documentado, a fin de asegurar que los estudios realizados cumplen los principios de buenas prácticas de laboratorio.
+? Instalaciones.
+? Aparatos, materiales y reactivos.
+? Sistemas experimentales.
+? Procedimientos Normalizados de Trabajo.
+
+4.4.- NORMAS DE CORRECTA ELABORACIÓN Y CONTROL DE CALIDAD DE FÓRMULAS MAGISTRALES Y PREPARADOS OFICINALES
+Antes de iniciar con las normas hay que clasificar los niveles de elaboración de las oficinas y servicios de Farmacia
+Clasificación de OF o servicios de Farmacia según el nivel de elaboración de Fórmulas magistrales:
+
+
+
+
+
+
+
+
+Los niveles de elaboración serán acumulativos, de tal manera que la pertenencia o inclusión en un nivel determinado, implica el cumplimiento de los requisitos y condiciones establecidos en el nivel o niveles de elaboración anteriores.
+Por tanto, las oficinas y servicios de farmacia que pretendan realizar preparaciones del nivel 4, deberán cumplir con los requisitos exigidos para todos los niveles de elaboración anteriores.
+El nivel donde elaboración debe estar comunicado y autorizado por la autoridad correspondiente de la Comunidad autónoma donde esté ubicado la OF o servicio de Farmacia.
+
+En Galicia, y según la Ley 3/2019, de ordenación Farmacéutica de Galicia, ya no es obligatorio en las Oficinas de Farmacia, el nivel 1 de elaboración y por tanto la tenencia de laboratorio. Sí será obligatorio la dispensación de las fórmulas.
+
+Las normas que regulan todos los aspectos y actividades relacionadas con la elaboración magistral y oficinal de medicamentos, concretamente personal, locales y utillaje, documentación, materias primas
+
+
+y material de acondicionamiento, elaboración y dispensación, con el fin de asegurar la calidad de estas preparaciones farmacéuticas.
+
+En España están reguladas por el REAL DECRETO 175/2001, de 23 de febrero de 2001 y también viene recogido en el Formulario Nacional en los Procedimientos Generales:
+* PN/L/PG/002/00 INDUMENTARIA
+* PN/L/PG/003/00 HIGIENE DEL PERSONAL
+* PN/L/PG/004/00 ATRIBUCIONES DEL PERSONAL
+
+CAPÍTULO I: PERSONAL
+Todo el personal que participe en la preparación de medicamentos en las oficinas de farmacia o servicios farmacéuticos debe tener la cualificación y experiencia necesarias.
+Responsabilidades y cualificación del personal de preparación.
+De acuerdo con la legislación vigente, el farmacéutico tiene responsabilidad sobre las preparaciones que se realicen en su oficina de farmacia o en los servicios farmacéuticos a su cargo.
+
+La elaboración de cualquier preparado sólo puede realizarla un farmacéutico o, bajo su control directo, otra persona cualificada, con la formación necesaria.
+Las operaciones de control (identificación, valoración...) que exigen una formación técnica particular sólo puede efectuarlas el farmacéutico o, bajo su responsabilidad, personal que posea dicha formación.
+
+Organización del trabajo.
+El farmacéutico debe valorar, para una mejor organización del trabajo, la competencia y experiencia necesarias para cada etapa de la preparación y del control, precisando en función de esta valoración, por escrito, las atribuciones de su personal. La supervisión de las operaciones puede delegarse en un farmacéutico adjunto.
+
+Formación y motivación.
+El farmacéutico deberá promover y actualizar la formación de las personas que intervienen en las operaciones de elaboración y control.
+Además de procurar que el personal alcance un nivel científico y técnico adecuado, esta formación también debe ir dirigida a destacar la importancia del estricto conocimiento y cumplimiento de estas normas de correcta elaboración y control de calidad de fórmulas magistrales y preparados oficinales, para conseguir el nivel de calidad exigido.
+
+Atribuciones del personal (PN/L/PG/004/00 Formulario Nacional) De cada puesto de trabajo debe indicarse:
+1. Denominación del puesto.
+2. Cualificación necesaria para ocupar el puesto: titulación, cursos y experiencia práctica y/o entrenamiento.
+3. Posición en el organigrama: se indicará el área o sección que ocupa (si procede) y su inmediato superior.
+4. Funciones básicas: definición de las funciones que debe desempeñar en el puesto de trabajo.
+5. Tareas específicas: descripción detallada de cada una de las tareas a desarrollar.
+6. Criterios de sustitución en caso de ausencia.
+
+Reconocimiento de firmas:
+Se elaborará un registro de firmas reconocidas de todo el personal que proceda a realizar cualquier operación relacionada con la elaboración y control de calidad de fórmulas magistrales y preparados oficinales.
+En el registro figurará el cargo y nombre completo junto con la firma.
+
+
+Indumentaria (PN/L/PG/002/00 Formulario Nacional)
+El acceso a la zona de elaboración, acondicionamiento, laboratorio etc., deberá realizarse con la correcta indumentaria:
+- Bata blanca.
+- Pantalón blanco, si procede.
+- Zapatos de zona o cubrezapatos.
+- Gorro cubriendo todo el cabello.
+
+? Se emplearán guantes y cubrebarbas (si procede) cuando se realice cualquier operación que suponga entrar en contacto directo con el producto (principios activos y/o excipientes). Éstos se sustituirán cada vez que se cambie de actividad o en caso de deterioro de los mismos.
+? Emplear mascarilla y gafas, siempre que existan operaciones pulverulentas.
+? La limpieza y sustitución de la indumentaria se realizará con regularidad (el farmacéutico deberá especificar exactamente la regularidad).
+
+Higiene del personal (Real Decreto 175/2001)
+Las normas de higiene del personal deben ser elaboradas y escritas por el farmacéutico y recoger al menos:
+a) La prohibición de comer, fumar y mascar chicle, así como de realizar prácticas antihigiénicas o susceptibles de contaminar el local de preparación.
+b) La necesidad de utilizar armarios para guardar la ropa y efectos personales.
+c) El uso de ropa adecuada en función de los tipos de preparación (batas, gorros, calzado, guantes, mascarillas...).
+d) La limpieza y renovación de esta ropa de forma regular y siempre que sea necesario.
+e) La separación temporal del trabajo de preparación de aquellas personas con afecciones o lesiones en la piel o que sufran cualquier enfermedad transmisible.
+
+Higiene del personal (PN/L/PG/003/00 Formulario Nacional) Las normas mínimas que el personal debe cumplir son:
+* Antes de entrar en la zona de elaboración el personal deberá cambiarse de ropa según el procedimiento general de indumentaria (PN/L/PG/002/00). Debe guardar sus efectos personales y su ropa de calle en los armarios destinados para ello.
+* En la superficie de trabajo nunca debe haber alimentos, tabaco o medicamentos distintos a los que se están elaborando.
+* Está prohibido comer, fumar y mascar chicle en la zona de elaboración, así como realizar prácticas antihigiénicas o susceptibles de contaminar la zona.
+* Después de cambiar de trabajo o de ir al servicio el personal deberá lavarse meticulosamente las manos.
+* La indumentaria será la descrita en el procedimiento general de indumentaria (PN/L/PG/002/00).
+* La limpieza y sustitución de la indumentaria se realizará regularmente (el farmacéutico deberá especificar en este apartado la periodicidad del cambio) y siempre que sea necesario.
+* El personal que sufra cualquier enfermedad o lesión en la piel debe comunicárselo al farmacéutico responsable.
+* El farmacéutico responsable decidirá, en función de la enfermedad o de la lesión, la medida a tomar (uso de guantes, separación temporal de trabajo u otras).
+
+Se recomienda situar carteles de precaución y prohibición en la zona de elaboración de la oficina de farmacia o servicio farmacéutico sobre las normas de higiene.
+
+
+CAPÍTULO II: LOCALES Y UTILLAJE
+El local se utilizará exclusivamente para este fin, no pudiéndose realizar en el mismo otras actividades.
+En cuanto a la superficie destinada, debe de ser suficiente para evitar los riesgos de confusión y contaminación durante las operaciones de fabricación dependiendo de las cantidades o de la naturaleza de los productos que se manejan puede ser necesario disponer de un espacio cerrado, totalmente reservado para las operaciones de preparación.
+
+En general, los locales y el utillaje han de adaptarse a:
+? La forma galénica.
+? Tipo de preparación.
+? Número de unidades, peso o volumen a preparar.
+
+Las operaciones de elaboración, acondicionamiento, etiquetado y control de una forma farmacéutica deben efectuarse en un local, o en una zona diferenciada del local, llamado de "preparación", diseñado o concebido para estos fines y situado en el interior de la oficina de farmacia o servicio farmacéutico, para permitir una eficaz supervisión por parte
+del farmacéutico.
+
+En la zona también se podrán elaborar aquellos otros preparados cuya elaboración es competencia del farmacéutico según la normativa vigente, no pudiéndose realizar en la misma otras actividades que puedan producir contaminación en las fórmulas que se preparen.
+Las condiciones que debe reunir estarán en función de las preparaciones que se pretendan realizar y de la tecnología necesaria para ello.
+El tamaño debe ser suficiente para evitar los riesgos de confusión y contaminación durante las operaciones de preparación. Dependiendo de las cantidades o de la naturaleza de los productos que se manejen, puede ser necesario disponer de un espacio cerrado, totalmente reservado, para las operaciones de preparación.
+
+Si se elaboran preparados estériles, será necesario que la zona destinada a tal fin se encuentre aislada, con suelos, techos y paredes que hagan posible la limpieza con agentes antisépticos, y con los mecanismos de filtración del aire adecuados. Los requisitos de la zona, en cuanto a contaminación microbiana y de partículas, se establecerán por cada responsable en función del tipo de preparado, proceso de fabricación y tecnología de esterilización que minimice el riesgo de contaminación cruzada.
+
+Las superficies (suelos, paredes, techos) deben ser lisas y sin grietas y permitir una fácil limpieza y desinfección. La zona de preparación contará con adecuada protección contra insectos y otros animales. El local de preparación contará con agua potable y con las fuentes de energía necesarias. Deberá estar bien ventilado e iluminado y su temperatura y humedad relativa ambientales se fijarán de acuerdo con la naturaleza de los productos que vayan a manejarse.
+Las operaciones de mantenimiento y limpieza deberán realizarse de acuerdo con instrucciones escritas. Los residuos de cualquier tipo se evacuarán regularmente en recipientes adecuados. Asimismo, es necesario extremar el orden para evitar confusiones.
+
+Para realizar las preparaciones se contará, al menos, con los elementos siguientes:
+a) Una superficie de trabajo suficiente, de material liso e impermeable, fácil de limpiar y desinfectar, inerte a colorantes y sustancias agresivas.
+b) Una pila con agua fría y caliente, de material liso y resistente, provista de un sifón antirretorno.
+c) Una zona diferenciada donde colocar los recipientes y utensilios pendientes de limpieza.
+d) Un soporte horizontal que evite en lo posible las vibraciones, con espacio suficiente para la/s balanza/s, y que garantice una correcta pesada.
+
+e) Un espacio reservado para la lectura y redacción de documentos en el que se encuentre a mano toda la documentación reglamentaria, incluida la Real Farmacopea Española, el Formulario Nacional y libros de consulta útiles para las preparaciones.
+f) Armarios y estanterías con suficiente capacidad para colocar, protegido del polvo y de la luz (si procede), todo aquello que es necesario para las preparaciones.
+g) Un frigorífico dotado de termómetro de temperatura máxima y mínima para almacenar los productos termolábiles, ya sean materias primas, producto a granel o producto terminado.
+
+El utillaje debe reunir las siguientes características generales:
+a) Ser adecuado al uso a que se destina y, si procede, estar convenientemente calibrado. Antes de iniciar cualquier elaboración conviene evaluar los medios de que se dispone y su adecuación al tipo de preparación que va a realizarse.
+b) Estar diseñado de forma que pueda ser fácilmente lavado, desinfectado e incluso esterilizado si fuese necesario. Ninguna de las superficies que puedan entrar en contacto con el producto ha de ser susceptible de afectar a la calidad del medicamento o de sus componentes.
+c) Estar fabricado de forma que ningún producto utilizado para el funcionamiento o para el mantenimiento de los aparatos (lubricantes, tintas, etc.) pueda contaminar a los productos elaborados.
+- A fin de evitar contaminaciones cruzadas, todos los elementos del utillaje en contacto con los productos deben limpiarse de forma conveniente
+- El utillaje ha de mantenerse limpio y en buen estado de funcionamiento. Las operaciones de limpieza y mantenimiento se realizarán siguiendo procedimientos normalizados de trabajo que deberán establecerse por escrito en función del tipo de utillaje y de los productos utilizados. La limpieza se efectuará lo más rápidamente posible después de su utilización.
+-Los aparatos de medida han de ser controlados y calibrados periódicamente para asegurar la exactitud de los datos leídos o registrados. Se deben conservar los resultados de estos controles periódicos. Antes de iniciar cualquier operación, se recomienda efectuar una verificación de los aparatos de medida que lo precisen, especialmente las balanzas
+
+- UTILLAJE MÍNIMO PARA LA ELABORACIÓN Y CONTROL DE FÓRMULAS MAGISTRALES Y PREPARADOS OFICINALES
+A. Equipamiento general
+a) Balanza con precisión de 1 mg.
+b) Aparatos de medida de volumen de 0,5 ml hasta 500 ml (matraces aforados de distintas capacidades, probetas, pipetas etc.).
+c) Mortero de vidrio y/o porcelana.
+d) Sistema de baño de agua/Baño María
+e) Agitador (magnético o de hélice con/sin calefacción)
+f) Espátulas de metal y de goma.
+g) Termómetro.
+h) Material de vidrio diverso (vasos de precipitados, matraces cónicos, embudos, vidrio de reloj, etc.).
+i) Lente de aumento.
+j) Sistema de producción de calor.
+B. Equipamiento específico
+1. º Se corresponderá con el necesario, según la forma galénica y tipo de preparación.
+a) Tamices para polvo grueso, fino y muy fino.
+b) Sistema para determinar el pH.
+c) Sistema para medir el punto de fusión.
+d) Si se elaboran cápsulas se dispondrá de, al menos, una capsuladora con un juego completo de placas.
+
+
+e) Si se elaboran óvulos o supositorios, se deberá disponer de los correspondientes moldes (y de baño termostático para medir punto de fusión).
+2. º Si se elaboran comprimidos y/o grageas será obligatorio el utillaje siguiente:
+a) Comprimidos: Máquina de comprimir y mezcladora.
+b) Grageas: Máquina de comprimir, mezcladora y bombo de grageado
+  3. º Si se elaboran preparaciones oftálmicas, inyectables u otros preparados estériles, será necesario disponer de:
+a) Autoclave
+b) Dosificadores de líquidos.
+c) Equipo de filtración esterilizante.
+d) Campana de flujo laminar.
+e) Horno esterilizador y despirogenador de calor seco.
+f) Homogeneizador.
+g) Equipo para cerrar ampollas y capsular viales.
+h) Sistema de lavado de material adecuado.
+i) Estufa.
+j) Placas Petri.
+4. º Si se elabora liofilizados, ha de tener:
+a) Liofilizador.
+b) Nevera con congelador.
+5. º Si se elaboran píldoras, se dispondrá de un pildorero.
+  6. º Para la elaboración de gránulos o glóbulos de homeopatía, se deben tener sistemas de impregnación y dinamización.
+  7. º Si se elaboran fórmulas magistrales con productos fácilmente oxidables, deberá disponer de una campana para trabajar con gas inerte.
+  8. º Para realizar las determinaciones analíticas de las materias primas y productos elaborados, se dispondrá de los aparatos necesarios para cada caso, en conformidad con lo establecido en la Real Farmacopea Española y el Formulario Nacional.
+
+Locales anejos.
+Se vigilará el mantenimiento y limpieza regular de los vestuarios, sanitarios y lavabos. El retrete no tendrá acceso directo desde la zona de preparación.
+Para evitar la contaminación por el personal durante las operaciones de preparación se tomarán medidas adecuadas, tales como la utilización de toallas de un solo uso, jabón líquido, etc.
+
+CAPÍTULO III: DOCUMENTACIÓN
+La documentación constituye una parte fundamental del sistema de garantía de calidad de los medicamentos preparados en la oficina de farmacia o servicio farmacéutico, con ella:
+* Se evitan los malentendidos propios de la comunicación oral.
+* Se evitan errores al operar con datos memorizados.
+* Se pueden reconstruir la historia de cada preparación al finalizar las operaciones.
+
+Los documentos han de ser confeccionados, fechados y firmados por el farmacéutico responsable de la oficina de farmacia o servicio farmacéutico.
+Este capítulo establece que la documentación básica está constituida por:
+
+* DOCUMENTACIÓN GENERAL: como mínimo constará de:
+? PNT de limpieza de la zona de trabajo y del material.
+? PNT de mantenimiento y calibración de material y equipos.
+? Normas de higiene del personal
+
+
+PNT (Procedimiento normalizado de trabajo): documento escrito que establece las pautas a seguir para implantar las prácticas de calidad de la empresa. Son exigidos por la legislación y las GMP.
+
+* DOCUMENTACIÓN RELATIVA A MATERIAS PRIMAS: como mínimo constará:
+? Registro de materias primas: formado por los datos mínimos que permiten identificar cada materia prima que exista en la oficina de farmacia o servicio farmacéutico. Este documento de control de calidad se llama Boletín o certificado de análisis, y, en general, viene avalado por el director técnico del laboratorio suministrador de la materia prima, no siendo habitual que se realice en las propias oficinas o servicios farmacéuticos. El boletín de análisis es único para cada lote de fabricación, es decir, materias idénticas, pero de distintos lotes de fabricación tienes boletines de análisis diferentes.
+? Especificaciones o libro de especificaciones: está formado por unos documentos que describen detalladamente las características fisicoquímicas, biológicas, toxicológicas, posibles riesgo de manipulación, métodos de eliminación... de las distintas materias primas. Estos documentos se denominan fichas técnicas o de seguridad y son únicos y perdurables para cada materia prima y son únicos y perdurables para cada materia prima, a diferencia de los boletines de análisis; es decir, son independientes del lote de fabricación.
+? Ficha de control de calidad: esta ficha recogerá los controles efectuados por la propia farmacia o servicio farmacéutico, si es el caso.
+
+* DOCUMENTACIÓN  RELATIVA  AL  MATERIAL  DE  ACONDICIONAMIENTO:	el	material	de
+acondicionamiento primario deberá cumplir las especificaciones que exija la Real Farmacopea Española.
+
+* DOCUMENTACIÓN RELATIVA A LAS FÓRMULAS MAGISTRALES Y PREPARADOS OFICINALES:
+constará de los siguientes documentos:
+? Procedimientos normalizados de elaboración y control: contendrá toda la información necesaria para elaborar correctamente una fórmula magistral determinada. Sólo será necesario en el caso de fórmulas no tipificadas; en las fórmulas magistrales tipificadas y preparados oficinales será el descrito en el Formulario Nacional. Estos procedimientos deben contener unos datos mínimos, los cuales aparecen recogidos en las GMP.
+? Guía de elaboración, control y registro: Debe contener toda la información necesaria que permita conocer cómo se efectuó cada fórmula y poder reconstruir la historia cronológica de ese preparado en caso de que sea necesario, por ejemplo, ante un error en la elaboración. Este seguimiento se denomina trazabilidad, y permite detectar y corregir los posibles errores existentes. Los datos mínimos vienen reconocidos en las GMP.
+
+5.- ABREVIATURAS UTILIZADAS EN FORMULACIÓN MAGISTRAL
+Tanto en la prescripción facultativa como en la elaboración de un preparado magistral es frecuente encontrarnos con una serie de abreviaturas que todo el personal relacionado con este tipo de elaboración, debe conocer e interpretar correctamente. Las más frecuentes son:
+
+
+
+
+
+6. FORMULARIO NACIONAL
+El Real Decreto Legislativo 1/2015, de 24 de julio, por el que se aprueba el texto refundido de la Ley de garantías y uso racional de los medicamentos y productos sanitarios define el Formulario Nacional, como el libro oficial que contiene, en forma de monografías, las fórmulas magistrales tipificadas y los preparados oficinales reconocidos como medicamentos, sus categorías, indicaciones y materias primas que intervienen en su composición o preparación, así como las normas de correcta elaboración y control de calidad de aquellos.
+Además de las monografías descritas, el Formulario Nacional también incluye toda la normativa legal relativa a la formulación magistral.
+Se entiende por monografía una descripción especial de algún aspecto científico. Ejemplo: Materias primas, métodos de elaboración de formas farmacéuticas, métodos normalizados de trabajo de operaciones básicas...
+
+6.1.- ESTRUCTURA DEL FORMULARIO NACIONAL
+Este libro está organizado en dos grandes bloques:
+1. Marco Jurídico, donde se recoge toda la legislación que regula la formulación magistral:
+* Texto refundido de la Ley de garantías y uso racional de los medicamentos y productos sanitarios aprobado por Real Decreto Legislativo 1/2015, de 24 de julio.
+* Real Decreto 294/1995, de 24 de febrero, por el que se regula la Real Farmacopea Española, el formulario nacional y los órganos consultivos del Ministerio de Sanidad y Consumo en esta materia.
+* Real Decreto 175/2001, de 23 de febrero, por el que se aprueban las normas de correcta elaboración y control de calidad de fórmulas magistrales y preparados oficinales.
+* Real Decreto 905/2003, de 11 de julio, por el que se modifica la disposición transitoria única del Real Decreto 175/2001, de 23 de febrero.
+* Estatuto de la Agencia Española de Medicamentos y Productos Sanitarios, aprobado por Real Decreto 1275/2011, de 16 de septiembre, por el que se crea la Agencia estatal "Agencia Española de Medicamentos y Productos Sanitarios" y se aprueba su Estatuto.
+* Orden de 14 de febrero de 1997 por la que se establecen determinados requisitos en la prescripción y dispensación de fórmulas magistrales y preparados oficinales para tratamientos peculiares.
+2. Monografías, descripción detallada de los aspectos científicos concretos que estudia el FN.
+- Procedimientos Normalizados de Trabajo
+- Monografías de materias primas
+
+- Monografías de fórmulas magistrales tipificadas y de preparados oficinales
+- Fitoterapia
+
+6.2.- PROCEDIMIENTOS NORMALIZADOS DE TRABAJO (PNT)
+Tras la aprobación de las normas de correcta elaboración y control de calidad de fórmulas magistrales y preparados oficinales, se hace necesaria, en la oficina de farmacia y servicios farmacéuticos, la implantación de un sistema de garantía de calidad.
+Los procedimientos describen de manera específica, las actividades relacionadas, directa o indirectamente con la elaboración de una fórmula magistral o preparado oficinal como su control de calidad.
+
+Para eso, el farmacéutico elaborador debe desenvolver Procedimientos Normalizados de Trabajo que garanticen la calidad del producto final. Con el de facilitar este objetivo la Agencia Española de Medicamentos y Productos Sanitarios introduce en el Formulario Nacional cuatro grupos de Procedimientos Normalizados de Trabajo:
+- Procedimientos generales (PG).
+- Procedimientos de elaboración de formas farmacéuticas (FF).
+- Procedimientos de operaciones farmacéuticas (OF).
+- Procedimientos de controles de producto (CP).
+
+Estos procedimientos, a excepción de los generales que son orientativos, son de obligado cumplimiento para toda la formulación, teniendo en cuenta que constituyen exigencias mínimas y pueden ser adaptados según las particularidades de cada oficina de farmacia o servicio farmacéutico.
+La estructura de estos procedimientos es común para todos, explicándose su contenido y codificación en el primero de los generales (PN/L/PG/001/00), titulado ELABORACIÓN DE LOS PROCEDIMIENTOS NORMALIZADOS DE TRABAJO, que sirve de guía para la elaboración de los demás.
+Todos ellos tendrán el mismo formato, con una primera página o portada y a continuación el número de páginas que sean necesarias.
+
+Portada y encabezamiento
+Como encabezamiento de la primera página debe aparecer:
+? Datos de la oficina de farmacia o servicio farmacéutico.
+? Grupo al que pertenece el procedimiento normalizado.
+? Título del PNT.
+? Número de código. Por ejemplo, en el Formulario Nacional se usa la siguiente codificación: Dos letras, "PN", de procedimiento normalizado / Una letra, "L", de laboratorio de formulación / Dos letras que indican el tipo de procedimiento de que se trata / Tres números que identifican el procedimiento / Dos números para la versión. Así:
+- PN/L/PG/***/**, procedimientos generales: describen las operaciones generales y las actividades relacionadas indirectamente con la elaboración y control de fórmulas magistrales y preparados oficinales.
+- PN/L/OF/***/**, procedimientos de operaciones farmacéuticas: describen las operaciones básicas implicadas en la formulación.
+- PN/L/FF/***/**, procedimientos de elaboración de formas farmacéuticas: describen las operaciones a realizar en la elaboración de una forma farmacéutica.
+- PN/L/CP/***/**, procedimientos de controles de productos: describen las operaciones para realizar los controles de calidad.
+
+Ejemplo: PN/L/OF/001/01: primera versión del primer procedimiento del grupo de operaciones farmacéuticas que corresponde al de pesada.
+? Fecha de aprobación.
+? Paginación individual respecto al total de páginas.
+
+
+? Versión y/o procedimiento al que sustituye.
+
+Además, en esta primera página figurará:
+? Índice.
+? Persona que lo ha redactado, firma y fecha.
+? Persona que lo ha revisado y aprobado, firma y fecha.
+
+En el resto de las hojas sólo deberá indicarse el título, número de código y la paginación individual respecto al total. También se incluye, si procede, referencia a los procedimientos relacionados con el que se está redactando o leyendo.
+
+Redacción de los procedimientos
+? Los procedimientos se redactarán de forma clara y concisa, debiendo ser fácilmente comprensibles por el personal que los va a aplicar.
+? Se han de evitar dudas en su interpretación.
+? Cuando alguno de los apartados descritos no sea necesario, se indicará "No procede" o "No aplica".
+? Los procedimientos son de lectura obligatoria y deben estar en todo momento a disposición del personal que los va a aplicar.
+
+Distribución
+Se emitirán tantas copias como sea necesario, el mínimo será dos (una para archivar y otra para el personal). Todas deben ir firmadas y fechadas y se dispondrá de un anexo en el que se registrará el número de copias distribuidas y el nombre y cargo del que ha recibido la copia. Aquellas copias no registradas en el anexo anterior, deberán ser identificadas como "Copia no controlada". No serán válidas las copias no controladas. Las versiones obsoletas deberán ser identificadas como tal y retiradas.
+
+Revisión y control de cambios
+? Los procedimientos serán revisados periódicamente.
+? Se recomienda la inclusión de un cuadro para el control de cambios, donde se indicarán las distintas versiones del procedimiento, una descripción general de los cambios realizados y la fecha de aprobación de cada versión.
+
+6.3.- MONOGRAFÍAS DE MATERIAS PRIMAS
+Describen materias primas, principios activos y excipientes, componentes de las fórmulas magistrales tipificadas o preparados oficinales. Todas responden a la misma estructura y están codificadas con una combinación de letras y números específica para cada substancia, diferenciando principios activos de excipientes.
+
+En el apartado correspondiente a la calidad de estas materias primas se toma como referencia, siempre que exista, la Real Farmacopea Española. En su defecto otras farmacopeas como la francesa, la británica ola americana.
+a) Monografías de principios activos Hay 39 monografías de principios activos. Ejemplo:
+- Ácido salicílico FN/2003/PA/033, código que se explica como sigue: FN: monografía del Formulario Nacional
+2003: año de publicación
+
+PA: monografía de principio activo
+033: número identificativo que le corresponde al ácido salicílico.
+b) Monografías de excipientes Hay 30 monografías de excipientes Ejemplo:
+- Sacarosa FN/2003/EX/024, código con la siguiente explicación:
+FN: monografía del Formulario Nacional 2003: año de publicación
+EX: monografía de excipiente
+024: número identificativo que le corresponde a la sacarosa.
+
+Último incorporado: FN/2023/EX/030 GEL DE CARMELOSA SODICA ORAL AL 1%
+
+6.4.- MONOGRAFÍAS DE FÓRMULAS MAGISTRALES TIPIFICADAS Y PREPARADOS OFICINALES
+a) Monografías de fórmulas magistrales tipificadas
+Hay 21 fórmulas magistrales tipificadas y 21 FMT de pediatría. Ejemplo:
+- Colodión con ácido láctico y salicílico: FN/2003/FMT/006, con la siguiente explicación: FN: monografía del Formulario Nacional
+2003: año de publicación
+FMT: monografía de fórmula magistral tipificada.
+006: número identificativo que le corresponde al colodión con ácido láctico y ácido salicílico.
+
+Últimas FMT de pediatría:
+FN/2024/FMT/040 HIDROCORTISONA 1 MG/ML SUSPENSIÓN ORAL FN/2024/FMT/041 GABAPENTINA 50 MG/ML SOLUCIÓN ORAL FN/2024/FMT/042 CITRATO SÓDICO Y ACIDO CÍTRICO SOLUCIÓN ORAL
+
+b) Monografías de preparados oficinales
+Hay 42 preparados oficinales. Ejemplo:
+- Vaselina salicílica FN/2003/PO/032, la cual se explica:
+FN: monografía del Formulario Nacional 2003: año de publicación
+PO: monografía del preparado oficinal.
+032: número identificativo que le corresponde a la vaselina salicílica.
+
+6.5.- FITOTERAPIA
+La fitoterapia es la parte de la farmacognosia (ciencia que se ocupa del estudio de las sustancias medicamentosas de origen natural) que se encarga del estudio de plantas con acción terapéutica. Las monografías correspondientes tratan sobre principios activos en fitoterapia y sobre preparados oficinales elaborados con los mismos. Al igual que las monografías anteriores se identifican con un código de letras y cifras.
+a)   Principios activos en Fitoterapia
+Hay 15 monografías de principios activos de fitoterapia. Ejemplo:
+- Cáscara sagrada FN/2003/PAF/003, que se explica como sigue:
+
+
+FN: monografía del Formulario Nacional 2003: año de publicación
+PAF: monografía de principio activo de fitoterapia
+003: número identificativo que le corresponde a la cáscara sagrada
+b) Monografías de preparados oficinales Hay 15 preparados oficinales de fitoterapia. Ejemplo:
+- Cápsulas de cáscara sagrada FN/2003/POF/002, equivalente a:
+FN: monografía del Formulario Nacional 2003: año de publicación
+POF: monografía del preparado oficinal de fitoterapia
+002: número identificativo que le corresponde a las cápsulas de cáscara sagrada
+
+
+7.-MATERIAS PRIMAS Y MATERIAL DE ACONDICIONAMIENTO
+Toda sustancia que se vaya a emplear en la elaboración de productos farmacéuticos debe tener acción e indicación reconocidas legalmente en España y debe ser sometida a una serie de análisis rigurosos que acrediten su identificación, perfecto estado y que garanticen los requisitos de pureza, riqueza y toxicidad.
+
+7.1.- CONCEPTO DE MATERIA PRIMA. CLASIFICACIÓN
+Las materias primas representan la base de una de las dedicaciones más antiguas desempeñadas por el farmacéutico: la Formulación Magistral.
+Con ella hemos cubierto un importante vacío terapéutico, destacable en la población pediátrica, nos ha permitido individualizar las dosis y evitar excipientes innecesarios que comprometan la seguridad del paciente.
+
+La ley 29/2006, de 26 de julio, de garantías y uso racional de los medicamentos y productos sanitarios define materia prima: es toda sustancia, activa o inactiva, empleada en la fabricación de un medicamento, ya permanezca inalterada, se modifique o desaparezca en el transcurso del proceso y establece que deben ser sustancias reconocidas legalmente en España según lo dispuesto en ella.
+
+Denominación de la materia prima
+La DCI o Denominación Común Internacional es la denominación oficial con que se reconoce a un principio activo farmacológico. Este tipo de denominación está regulado por la Organización Mundial de la Salud (OMS) para identificar a cada medicamento con un nombre específico y reconocido en todos los países.
+Las DCI se publican en latín y en inglés, pero existen versiones para las principales lenguas que han sido adoptadas oficialmente por los países donde tales lenguas tienen carácter oficial.
+En el caso de España, la responsabilidad de la versión española está en el Ministerio de Sanidad y Consumo, que emplea el término DOE, o Denominación Oficial Española.
+
+Las materias primas que intervienen en la composición de un medicamento pueden clasificarse de diversas formas:
+* Según su función:
+Principios activos, excipientes, materiales de acondicionamiento.
+* Según su naturaleza:
+Productos químicamente definidos: sustancias químicas caracterizadas por sus constantes físicas y sus propiedades químicas. Ejemplo: ácido salicílico.
+
+Productos no definidos: sustancias obtenidas por extracción a partir de plantas, animales, microorganismos, por reacciones químicas efectuadas sobre éstos, o incluso, por tratamiento de diversos minerales. Se trata de mezclas de características variables según el origen y el método de obtención. Si se desea obtener productos de calidad constante en todas las muestras, será necesario caracterizarlas mediante un método de elaboración preciso o, incluso, por sus propiedades físicas, químicas o biológicas comprendidas entre límites bien determinados. Ejemplo: la vaselina es un excipiente para pomadas constituido por una mezcla de hidrocarburos pesados saturados de origen mineral (petróleo).
+Tejidos animales o vegetales, animales o plantas enteras: estos productos deben ser sometidos a diversos tipos de tratamientos con el fin de garantizar su conservación y utilización adecuadas. Se definen en función de sus características morfológicas y, si es preciso, de las histológicas (estructura celular). Ejemplo: hojas de tilo, raíces de regaliz, glándulas de hipófisis...
+* Según su origen:
+Origen biológico: sustancias extraídas de seres vivos (animales, vegetales, microorganismos).
+Origen mineral: sustancias obtenidas a partir de productos naturales (minerales, productos fosilizados).
+Origen sintético: sustancias elaboradas artificialmente mediante reacciones químicas concretas.
+
+7.2.- CONTROL DE CALIDAD DE MATERIAS PRIMAS
+La Real Farmacopea Española es el libro oficial que recopila las normas específicas, redactadas en forma de monografías, que describen la calidad física, química y biológica que deben presentar las materias primas (sustancias medicinales y excipientes) destinados a uso humano y veterinario, así como los métodos analíticos para su control.
+
+Toda materia prima presentada bajo una denominación científica o común de la Farmacopea debe responder a las especificaciones de la misma:
+* Denominación
+* Características.
+* Identificación
+* Métodos de ensayo y analíticas que aseguren su calidad.
+* Conservación
+
+Según el Real Decreto 175/2001, de 23 de febrero por el que se aprueban las normas de correcta elaboración y control de calidad de fórmulas magistrales y preparados oficinales, las materias primas utilizadas en la preparación de fórmulas magistrales y de preparados oficinales cumplirán con los requisitos exigidos por la Real Farmacopea Española o, en su defecto, con una farmacopea de reconocido prestigio.
+
+En el Formulario Nacional (última actualización noviembre de 2024) se recoge el Procedimiento normalizado , PN/L/PG/005/00, sobre recepción, control de conformidad y almacenamiento de materias primas con el objetivo de describir los pasos a seguir para una correcta recepción de las materias primas y aceptación de las mismas previo control de conformidad, así como establecer un sistema de organización de la zona de la oficina de farmacia o servicio farmacéutico destinada a almacenamiento, que nos permita una localización rápida y fácil, así como un máximo aprovechamiento del espacio respetando las condiciones de conservación.
+Las materias primas pueden adquirirse tanto a distribuidores como fabricantes, los cuales pueden estar catalogados por el Ministerio de Sanidad y Consumo como centros autorizados o no autorizados, para dispensar productos aptos para el consumo humano y veterinario.
+
+
+El Real Decreto 175/2001 (NCE) permite al farmacéutico tres posibilidades de aprovisionamiento:
+1. Materias primas controladas por un centro autorizado (definido por RD 2259/1994, de 25 de noviembre)
+Para asegurar la calidad del producto, se considerará suficiente el número de referencia de control y el boletín de análisis suministrado por el centro autorizado, debidamente firmado por el director técnico. El boletín o certificado de análisis incluye como mínimo los siguientes datos:
+? Nombre y cantidad de la materia prima
+? fecha de caducidad
+? número de lote de fabricación
+? nombre del proveedor
+? ensayos realizados y resultados
+Este documento es único para cada lote de fabricación, es decir, materias primas idénticas, pero de diferentes lotes de fabricación, tienen boletines distintos.
+Estos documentos deben registrarse y archivarse dentro del proceso de recepción de materias primas mientras estas estén en posible uso, retirándose y archivándose el tiempo correspondiente (mínimo 1 año) una vez que la materia prima caducó o se agotó.
+En todo caso, dado que la responsabilidad de la calidad de la fórmula magistral o del preparado oficinal corresponde al farmacéutico preparador, se considera conveniente que éste verifique, como mínimo, la identidad de las materias primas suministradas mediante alguna prueba de identificación.
+2. Materias primas no controladas por un centro autorizado
+El farmacéutico responsable deberá realizar el control analítico completo de las materias primas suministradas, para verificar que cumplen con las especificaciones de la Real Farmacopea Española y elaborar la ficha de control de calidad. También podrá encargar el análisis a un laboratorio debidamente acreditado por la autoridad sanitaria competente, de conformidad con lo establecido en el Real Decreto 2259/1994, de 25 de noviembre, por el que se regula los almacenes farmacéuticos y la distribución al por mayor de medicamentos de uso humano y productos farmacéuticos.
+En todo caso los envases que contengan las materias primas deben estar etiquetados según lo dispuesto en la legislación vigente.
+3. Suministro centralizado por la administración: se realizará con carácter excepcional, únicamente
+cuando haya dificultades de abastecimiento.
+
+RECEPCIÓN, REGISTRO Y CUARENTENA
+Recepción: el personal que recepciona la materia prima debe realizar la comprobación
+de que lo recepcionado se corresponde con el material pedido. Para ello debe comprobar que:
+- El albarán de entrega coincide con el material pedido.
+- El material recibido se corresponde con lo indicado en el albarán de entrega.
+- El estado de envases, embalajes y etiquetado es el correcto.
+
+Después de esta primera inspección, las materias primas aceptables deberán registrarse inmediatamente. Los documentos que debemos tener relativos a las materias primas son:
+1. Registro: estará permanentemente actualizado. Contiene los datos mínimos que identifican cada materia prima que existe en la oficina de farmacia o servicio farmacéutico Deberá contener al menos los siguientes datos:
+a. Número de registro interno.
+b. Nombre de la materia prima, expresada en D.O.E. o, en su defecto, en D.C.I.
+c. Proveedor.
+d. Número de lote: el indicado por el proveedor.
+e. Número de control de calidad de la oficina de farmacia o servicio farmacéutico, del proveedor o de un laboratorio acreditado.
+f. Fecha de recepción: fecha en la que se recibe el producto.
+
+g. Cantidad y número de envases.
+h. Fecha de caducidad (la del proveedor) o, en su defecto, del próximo control analítico.
+i. Decisión de aceptación o rechazo, fechada y firmada por el farmacéutico.
+Cuarentena: una vez registradas las materias primas se colocarán en la zona destinada a materias primas "en cuarentena" hasta su conformidad definitiva o rechazo. Para evitar
+confusiones, cada envase irá correctamente identificado con una pequeña etiqueta que permite distinguir los productos "en cuarentena" de los aceptados, además se deberá conservar siempre la etiqueta del proveedor.
+2. Especificaciones: descripción detallada de las características de calidad de las materias primas, incluyendo las condiciones para su manipulación, cuando proceda.
+Deberá contener al menos los siguientes datos:
+a. Los requisitos que debe satisfacer la materia prima, según se establece en la Real Farmacopea Española o, en su defecto, en una farmacopea de reconocido prestigio:
+identificación de la materia prima, su riqueza, si procede, posibles impurezas y descripción de los procedimientos analíticos que permitan la definición de las mencionadas características.
+b. Las condiciones de conservación.
+   c. Las características específicas de peligrosidad y toxicidad y las precauciones a tomar durante su manipulación.
+En el caso de materias primas incluidas en la RFE será suficiente con la mención al número de monografía.
+3. Ficha de control de calidad: deberá contener al menos los siguientes datos:
+a. Número de control interno.
+b. Nombre de la materia prima.
+c. Número de lote.
+d. Proveedor.
+e. Cantidad.
+f. Fecha de caducidad o de repetición del control analítico.
+g. Ensayos realizados, métodos de análisis y resultados obtenidos.
+h. Decisión de aceptación o rechazo, fechada y firmada por el farmacéutico.
+Además de toda esta documentación, la Guía de buenas prácticas de preparación de medicamentos en los servicios de farmacia indica que se debe disponer de procedimientos
+normalizados de trabajo relativos a la recepción, muestreo y aprobación de materiales de
+partida (y de acondicionamiento). El Formulario Nacional describe entre sus procedimientos generales el de recepción, control de conformidad y almacenamiento de materias
+primas.
+
+
+
+
+
+En todo momento deben estar perfectamente separadas físicamente las materias aceptadas y en cuarentena.
+
+Una vez aceptadas, las materias primas se deben almacenar en condiciones que aseguren su buena conservación fisicoquímica y microbiológica y la ausencia de contaminación cruzada. El farmacéutico debe velar particularmente por que haya una adecuada rotación de los productos almacenados.
+Para la adecuada conservación de las materias primas se deberán tener en cuenta aspectos como su naturaleza y características. Por ejemplo, aquellas de naturaleza higroscópica (tienden a captar humedad del aire), delicuescente (absorben humedad y pueden llegar a licuarse) y eflorescente (pierden agua de cristalización al ser expuestas al aire) deberán almacenarse en contenedores herméticamente cerrados para evitar la pérdida o ganancia de humedad.
+En general solo deben mantenerse abiertos sus envases durante el corto espacio de tiempo que duran las operaciones de pesada para evitar variaciones en el peso de las mismas y su alteración. Las materias primas termolábiles, como la nistatina, deberán conservarse en nevera con registro de temperatura. Las sustancias fotosensibles se conservarán en envases opacos o color topacio. Las de naturaleza inflamable, como el fenol, se conservarán en una habitación ignífuga. Los principios activos considerados estupefacientes se deberán almacenar y custodiar conforme a la legislación vigente. Y las sustancias peligrosas que puedan producir carcinogenicidad, teratogenicidad, toxicidad reproductiva, toxicidad en órganos a dosis bajas o genotoxicidad, deberán almacenarse en una zona diferenciada y estar debidamente identificadas como peligrosas.
+Las monografías de la RFE suelen indicar las condiciones de conservación de cada sustancia.
+
+Las materias primas rechazadas deberán devolverse al proveedor o ser eliminadas lo antes posible, utilizando un método adecuado a sus características de peligrosidad. Esta operación de eliminación debe de quedar registrada.
+
+CONDICIONES DE ALMACENAMIENTODeben almacenarse sobre estanterías, nunca sobre el suelo o sobre la mesa de trabajo.Evitar almacenar en sitios de pasoLas temperaturas recomendadas son:
+* Local: inferior a 30º C
+* Nevera o refrigerador: 5+/- 3º C (2 -8º C)
+* Congelador: inferior a -15º CDebe estar bien ventiladaDeben mantenerse libres de basura, plagas y polvoNo almacenar productos peligrosos, voluminosos o pesados en alturaMedios de acceso adaptados a productos y al mantenimientoNo deben recibir luz natural directaControl del tiempo de estancia y almacenamiento: normas de recepción y prioridad, retirar productos caducados o inútilesSeparación por incompatibilidadesEtiquetado legible y dispuesto hacia el usuarioAlejar productos sensibles al agua de tomas o conducciones y de material inflamable.
+Al menos una vez al año el farmacéutico realizará una evaluación del estado de los productos almacenados, quedando registrada dicha comprobación, por ejemplo, en el registro de materias primas, en el campo de observaciones.
+Se tendrá en cuenta la legislación vigente aplicable a productos químicos.
+
+7.3.- ETIQUETADO DE MATERIAS PRIMAS
+El etiquetado de las materias primas deberá ser perfectamente legible y preciso. En la etiqueta constará como mínimo (RD175/2001 NCF):
+a) Nombre de la materia prima, expresada en D.O.E. o, en su defecto, en D.C.I
+b) Número de registro interno que indicará que la materia prima ha sido controlada y aceptada y que permitirá constatar en cualquier momento, acudiendo al registro, el origen y la calidad de la materia prima considerada.
+c) Fecha de caducidad o, en su defecto, del próximo control analítico
+d) Condiciones especiales de almacenaje, si las precisa
+e) Cantidad y riqueza
+
+El registro de las materias primas deberá ser perfectamente legible y preciso. En el registro constará como mínimo:
+* Nombre y datos del proveedor
+* Nombre de la materia prima: expresada en D.O.E. o en D.C.I., denominación INCI, o sinónimos si procede
+* Riqueza, si procede.
+* Farmacopea que cumple.
+* Número de lote.
+* Número de control de calidad o análisis efectuado a dicho lote.
+* Cantidad neta de producto contenido en el envase.
+* Fecha de envasado.
+* Fecha de apertura.
+* Fecha de caducidad.
+* Indicaciones gráficas y pictogramas de las condiciones de almacenaje y precauciones de uso y manipulación.
+
+
+* Firma del responsable que recepciona la materia prima.
+
+Además, se deberá adjuntar:
+* Boletín de análisis de lote: a cada lote le corresponde un boletín de análisis, donde figurarán el resto de las características del producto, la firma aprobatoria del responsable de análisis y del Director Técnico del almacén.
+* Ficha de seguridad del producto: en ella se describe, la peligrosidad del producto, la correcta manipulación y almacenamiento, medidas de protección personal, información toxicológica y eliminación de los residuos.
+
+7.4.- MATERIAL DE ACONDICIONAMIENTO
+Los productos obtenidos tras el proceso de elaboración, no se consideran terminados hasta que no son sometidos a la fase de acondicionamiento.
+Cuando se piensa en formulación magistral muchas veces no se considera el material de acondicionamiento, a pesar de ser éste el encargado de asegurar la integridad, calidad, estabilidad, seguridad, y esterilidad si procede, de las fórmulas magistrales.
+
+El Real Decreto 175/2001, por el que se aprueban las normas de correcta elaboración y control de calidad de fórmulas magistrales y preparados oficinales, en su capítulo V, determina que el material de acondicionamiento utilizado será el adecuado, en función de la naturaleza, forma farmacéutica y estabilidad de la fórmula magistral o preparado oficinal, para garantizar su correcta conservación hasta la fecha de caducidad. Además, debe proporcionar una presentación aceptable que contribuya a mejorar el aspecto final del medicamento y conferirle características adecuadas de identificación e información para prevenir la aparición de errores de medicación.
+
+En el Formulario Nacional, Procedimiento Normalizado, PN/L/PG/006/00, sobre recepción y almacenamiento del material de acondicionamiento se describen los pasos a seguir para una correcta recepción del material de acondicionamiento, así como establecer un sistema de organización de la zona de la oficina de farmacia o servicio farmacéutico destinada a almacenamiento, que nos permita una localización rápida y fácil, así como un máximo aprovechamiento del espacio respetando las condiciones de conservación.
+El acondicionamiento son todas las operaciones, incluido el envasado y etiquetado, a que debe someterse un producto a granel para convertirse en un producto terminado (Real Decreto 175/2001).
+
+A grandes rasgos, se distinguen dos tipos de acondicionamiento de medicamentos, que tal y como son definidos en el Real Decreto 1345/2007, de 11 de octubre, por el que se regula el procedimiento de autorización, registro y condiciones de dispensación de los medicamentos de uso humano fabricados industrialmente, son los siguientes:
+* Acondicionamiento primario: El envase o cualquier otra forma de acondicionamiento que se encuentre en contacto directo con el medicamento. Involucra también al etiquetado del medicamento.
+* Acondicionamiento secundario: El embalaje en el que se encuentra el acondicionamiento primario. Involucra también al prospecto.
+
+En el caso de las fórmulas magistrales y preparados oficinales elaborados en los servicios de farmacia hospitalaria, el acondicionamiento secundario tiene una importancia menor al no ser apenas utilizado, a excepción del prospecto, que sí es entregado junto con la fórmula magistral al paciente o personal sanitario encargado de la administración junto con la información transmitida de forma verbal.
+
+Ejemplos de diferentes defectos que puede presentar el material de acondicionamiento
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+No obstante, teniendo en cuenta que sería conveniente verificar por parte del farmacéutico elaborador la idoneidad del material de acondicionamiento primario recibido y que en este caso la realización de pruebas analíticas de verificación con tal fin no resulta viable, se recomienda la adquisición de dicho material a proveedores con certificación ISO 15378.
+La norma ISO 15378 identifica los principios de las Normas de Correcta Fabricación (NCF) y especifica los requisitos para un sistema de gestión de la calidad aplicable a los materiales de acondicionamiento primario (vidrio, plástico, caucho, aluminio, etc) para los medicamentos.
+
+Acondicionamiento de distintas formas farmacéuticas de administración por vía oral:
+Los líquidos de administración oral son normalmente disoluciones, suspensiones o emulsiones que contienen uno o más fármacos en un vehículo apropiado y que están destinadas a ser ingeridas sin diluir o previa dilución.
+
+Los líquidos orales suelen acondicionarse en recipientes multidosis (frascos o viales) o unidosis ampollas, viales o sobres), los cuales deben llenarse completamente hasta su boca para minimizar la cámara de aire, reduciendo así las posibilidades de alteración del fármaco. Los recipientes multidosis van acompañados de dispositivos auxiliares que permiten medir el volumen prescrito (dosis) con cucharas, jeringas, vasos graduados, cuentagotas...
+Al envasar suspensiones o emulsiones se recomienda dejar vacío aproximadamente un 20-30% del espacio para facilitar su agitación, mientras que las soluciones deben ocupar totalmente el envase para minimizar las alteraciones que pudieran surgir del espacio ocupado por el aire.
+
+Las cápsulas son preparaciones de consistencia sólida formadas por un receptáculo duro o blando, de forma y capacidad variable, que contienen una unidad posológica de medicamento (contenido).
+
+Al contener gelatina son muy sensibles a la humedad y a la temperatura, por lo que se conservarán en envases herméticos, a temperatura no superior a 30ºC. El acondicionamiento de estas formas farmacéuticas suele ser en blisters.
+
+
+Los comprimidos son formas farmacéuticas sólida orales, de dosificación unitaria y mayoritariamente acción sistémica, existiendo algún tipo reacción local (ciertos comprimidos bucales), de uno o más principios activos y, en general, excipientes, obtenidos por compresión de un granulado.
+Son de elaboración industrial y su acondicionamiento prioritario es en "blíster" de plástico y/o metal
+termosellados, aunque en algún caso se envasan en frascos de vidrio o plástico y tubos de metal o plástico.
+
+Polvos: El principio activo puede estar disperso o no en un excipiente pulverulento inerte (lactosa o sacarosa). Cada dosis se administra previa preparación de una solución extemporánea en agua u otra bebida. La dosificación se realiza en recipientes multidosis o en dosis unitarias (bolsas y papelillos). Muchos principios activos se dispensan de esta forma: antibióticos, fermentos lácticos, antiácidos etc.
+
+Liofilizados: Son preparaciones farmacéuticas que se acondicionan en forma de dosis unitarias y se liofilizan a continuación. Son formas muy porosas e hidrófilas y fácilmente dispersables en agua.
+
+ALGUNAS DENOMINACIONES DE LOS ENVASESENVASE MONODOSISEs un envase que contiene una unidad de preparación destinada a ser usada una única vez, en su totalidad o en parte.ENVASE MULTIDOSISEs un envase que contiene una cantidad de la preparación suficiente para suministrar
+al menos dos dosis.ENVASE BIEN CERRADOProtege al producto de la contaminación por materias extrañas sólidas o líquidas, así como de la pérdida de contenido en condiciones normales de manejo, conservación, almacenamiento y transporte.ENVASE HERMÉTICOEs impermeable a los sólidos, a los líquidos y a los gases en condiciones normales de manejo, conservación, almacenamiento y transporte. Si el envase está destinado a ser abierto más de una ve, debe estar diseñado de manera que recupere su
+hermeticidad cada vez que se vuelva a cerrar.ENVASE SELLADOEs un envase cerrado por fusión del material que constituye el envase.ENVASE	CON	CIERRE INVIOLABLEEs un envase cerrado provisto inequívocamente que ha sido abierto.deundispositivoespecialquerevelaENVASE	CON	CIERRE	A
+PRUEBA DE NIÑOSEs un envase provisto de un cierre que previene ser abierto por los niños.
+7.5.- CONTROL DE CALIDAD DEL MATERIAL DE ACONDICIONAMIENTO
+El material de acondicionamiento debe cumplir una serie de requisitos:
+o Adecuada resistencia física.
+o Adecuada resistencia química.
+o Adecuada resistencia biológica.
+o Composición sencilla y constante.
+o Ser inerte.
+o Ser fácilmente transportable.
+
+Los pasos que se siguen como método de control son:
+• RECEPCIÓN DEL MATERIAL:
+El personal que recepciona los materiales realiza la comprobación de que lo recepcionado se corresponde con el material pedido. Para ello debe comprobar que:
+- El albarán de entrega coincide con el material pedido.
+- El material recibido se corresponde con lo indicado en el albarán de entrega.
+- El estado de envases, embalajes y etiquetado es el correcto.
+Las pruebas relativas a la calidad de los materiales no son necesarias ya que las empresas proveedoras garantizan el cumplimiento de las especificaciones de la RFE.
+
+Después de esta inspección, los materiales aceptados deberán registrarse inmediatamente. Los no aceptados se devolverán al proveedor.
+* REGISTRO:
+Debe contener al menos:
+- Número de registro interno.
+- Identificación del producto: tipo de envase.
+- Proveedor.
+- Número de lote, en el caso del acondicionamiento primario.
+- Fecha de recepción.
+- Cantidad y número de envases.
+- Fecha de caducidad, si procede.
+- Condiciones de conservación, si procede.
+- Decisión de aceptación o rechazo, fechada y firmada por el farmacéutico.
+* ALMACENAMIENTO
+El almacén deberá contar con áreas perfectamente delimitadas para los productos aceptados y los rechazados.
+Se tendrán en cuenta estos principios básicos de almacenamiento para el material de acondicionamiento:
+- Deben almacenarse sobre estanterías, nunca sobre el suelo o sobre la mesa de trabajo.
+- Medios de acceso adaptados a productos y al mantenimiento.
+- Evitar almacenar en sitios de paso.
+- No deben recibir luz natural directa.
+- Deben mantenerse libres de basura, plagas y polvo.
+- Deberá estar bien ventilado.
+- No almacenar envases voluminosos o pesados en altura.
+- Control del tiempo de estancia y almacenamiento: reglas de recepción y prioridad, retirar productos caducados o inútiles.
+- Etiquetado legible y dispuesto hacia el usuario.
+Al menos una vez al año el farmacéutico realizará una evaluación del estado de los productos almacenados, quedando registrada dicha comprobación, por ejemplo, en el registro de material de acondicionamiento, en el campo de observaciones.
+En este mismo campo se debe registrar la eliminación de los materiales de acondicionamiento primario o impresos que hayan quedado caducos u obsoletos.
+
+FRASCOS DE VIDRIOTUBOS DE ALUMINIOFRASCOS DE PLÁSTICOPROSPECTOS• Aspecto
+• Capacidad
+• Dimensiones
+• Idoneidad con tapones• Apertura de tapón
+• Aspecto
+• Capacidad
+• Esmalte interior
+• Estanqueidad• Aspecto
+• Capacidad
+• Cenizas
+• Dimensiones• Color
+• Dimensiones
+• Texto
+• Espesor
+• USO: durante el acondicionamiento de los preparados se debe controlar:
+- Que el envase se ha llenado correctamente y que el cierre es perfecto.
+- Que el etiquetado está correctamente situado.
+- Que los datos de información sean legibles y correctos.
+- Que el acondicionamiento secundario contiene todos los materiales que debe de contener (acondicionamiento primario, prospecto, dispensadores, cucharillas)
+
+
+8.- EXCIPIENTES DE USO FARMACÉUTICO. CLASIFICACIÓN, UTILIZACIÓN Y PROPIEDADES
+8.1.- EXCIPIENTE:
+El Real Decreto Legislativo 1/2015 define excipiente como todo componente de un medicamento distinto del principio activo y del material de acondicionamiento.
+Los excipientes se añaden a los principios activos o a sus asociaciones para servirles de vehículo, posibilitar su preparación y estabilidad, modificar sus propiedades organolépticas o determinar las propiedades fisicoquímicas del medicamento y su biodisponibilidad.
+
+Desde el punto de vista de la seguridad, las formulaciones deben ser lo más simples posible, reduciendo al máximo el número de excipientes a emplear. El excipiente ideal deberá cumplir las siguientes características:
+• Inercia química y biológica.
+• Inocuidad.
+• Compatibilidad con el resto de las componentes de la fórmula.
+• No interferir en la valoración del principio activo.
+• Buenas características organolépticas
+
+Desde el punto de vista de la seguridad, las formulaciones deben ser lo más simple posibles, reduciendo al máximo el número de excipientes a emplear. Por ello la utilización de un determinado excipiente no es arbitraria, sino que obedece a la necesidad de alguna función concreta.
+La elección del excipiente más adecuado se efectúa teniendo en cuenta diversos factores como la biodisponibilidad del principio activo, la compatibilidad entre principio activo y excipiente y estabilidad del principio activo:
+• La biodisponibilidad de los principios activos depende sus características fisicoquímicas (pureza, solubilidad...), la forma farmacéutica, la vía de administración etc. La solubilidad del principio activo depende a su vez de diferentes factores, pero aquellos sobre los que se puede influir mediante la selección del excipiente adecuado son:
+? Polaridad: el mejor solvente será aquel cuya polaridad sea lo más parecida a la del soluto. Para sustancias hidrófilas se puede utilizar como solvente tanto agua como disolventes no acuosos pero hidrosolubles o hidromiscibles. Por el contrario, se utilizarán solventes no polares para sustancias liposolubles.
+? pH: la solubilidad de las sustancias activas puede modificarse mediante el uso de sustancias que varíen el pH, ya que la mayoría de los principios activos son bases ácidos débiles.
+• También se deben tener en cuenta los problemas de compatibilidad que pueden producirse entre principio activo y excipiente. Como ejemplos, se deben evitar la asociación de excipientes hidratados con principios activos con elevada susceptibilidad a la hidrólisis como ésteres o amidas, o de disacáridos como la lactosa o sacarosa con principios activos con algún grupo amino libre que puede reaccionar con sus grupos aldehído o cetona (reacción de Maillard), provocando oscurecimiento de la formulación.
+• En otras ocasiones, el excipiente elegido puede contribuir a la estabilidad del principio
+activo en la formulación protegiendo a la sustancia activa frente a reacciones de degradación como la hidrólisis, oxidación o reducción, entre otras.
+
+TIPOS DE EXCIPIENTES
+Existen diversos tipos de excipientes según su función:
+* Vehículos: Posibilitan la administración de principios activos. El más utilizado es el agua. También se utilizan como vehículos los alcoholes (Ej: etanol), polialcoholes (Ej: propilenglicol, glicerol, sorbitol), polietilenglicoles (en estado líquido con pesos moleculares entre 200-600 y sólido los de pesos moleculares superiores).
+* Excipientes para posibilitar la correcta dosificación: Con función diluyente (almidones
+sacarosa, lactosa, celulosa microcristalina, talco...); absorbente (facilitan la incorporación de fluidos a su estructura interna); adsorbente (incorporan las moléculas únicamente en su superficie); aglutinante (mantienen la cohesión de partículas componentes del sólido); disgregante, lubricante o deslizante.
+* Estabilizantes: tensioactivos y emulgentes; viscosizantes; tampones o buffers, isotonizantes, conservantes (anitimicrobianos y antioxidantes).
+* Correctivos: colorantes, saborizantes, edulcorantes, aromatizantes.
+La función de los excipientes es muy amplia y por ello existe un amplio abanico de productos de características muy variadas que se emplean con este fin, pero en todo caso debe de cumplir determinadas condiciones respecto al organismo, al principio activo y al material de acondicionamiento (envase):
+* Respecto al organismo: debe ser inerte, esto es carecer de actividad farmacológica, e inocuo por la vía de administración usada, así ciertos excipientes, pueden emplearse por unas vías de administración pero no por otras (alcohol etílico, aceites, ceras,... no son válidos para todas las vías), y presentar un grado de pureza determinado en función de la vía de administración, así, por ejemplo, las exigencias de pureza del agua no son las mismas para un preparado oral que parenteral.
+* Respecto al principio activo y al material de acondicionamiento: debe ser inerte para ambos, concretándose en los siguientes aspectos:
+==> INERCIA RESPECTO AL PRINCIPIO ACTIVO: el excipiente no debe inhibir ni incrementar la actividad del principio activo. Sin embargo, existe la posibilidad de que la existencia de determinado excipiente dificulte o acelere la liberación del principio activo en el medio.
+Por ello, no puede substituirse un excipiente por otro hasta que no esté comprobada la bioequivalencia de ambas formulaciones.
+Deben de ser compatibles con resto de componentes de la Fórmula magistral y no deben interferir en la determinación del principio activo.
+==> INERCIA RESPECTO AL MATERIAL DE ACONDICIONAMIENTO: existe la posibilidad de que algunos componentes de las formulaciones, como los conservantes, sean adsorbidos por algunos plásticos o que algunos excipientes de pomadas o jabones puedan alterar los envases de plástico. Por esta razón, los estudios de estabilidad de los medicamentos se utilizan en los envases en que serán comercializados.
+
+Deben de tener buenas características organolépticas
+Las características de pureza y calidad que deben cumplir los excipientes están legalmente establecidas en la Real Farmacopea Española, en la cual se recogen los métodos de análisis que deben emplearse para la realización de los ensayos que las aseguran.
+La variedad de excipientes de uso farmacéutico es numerosa, tratándose en este tema los de uso más frecuente.
+
+8.2.- PLACEBO
+Cabe destacar que recibe el nombre de placebo "aquella forma farmacéutica de aspecto idéntico a determinado medicamento, que se elabora exclusivamente con los excipientes que lo constituyen y, por tanto, sin el/los principio(s) activo(s)".
+Los placebos se emplean en farmacología clínica para conseguir un efecto psicoterapéutico a fin de diferenciar el efecto real del medicamento que se ensaya frente al efecto debido a la sugestión.
+
+
+8.3.- EXCIPIENTES DE DECLARACIÓN OBLIGATORIA
+Por definición los excipientes son sustancias inertes e inocuas para el paciente, pero existe la posibilidad de que sean perjudiciales en personas con determinadas patologías o en ciertos estados fisiológicos normales como la infancia, la gestación o edades geriátricas, son los denominados excipientes de declaración obligatoria aquellos que pueden suponer algún tipo de riesgo en ciertos casos, los cuales deben especificarse en el prospecto para el paciente y en el material de acondicionamiento .Ejemplos: Sacarosa en caso enfermos diabéticos, lactosa en personas intolerantes, almidón e trigo en celíacos, etanol en niño...
+Algunos excipientes sólo hay que declararlos a partir de un valor umbral, ya que sólo muestran efecto por encima de una determinada cantidad
+
+Tabla con excipientes de declaración obligatoria de uso frecuente en formulación magistral:
+
+
+EXCIPIENTES EN PEDIATRÍA
+La población pediátrica es uno de los grupos más vulnerables a la acción de los excipientes, especialmente los neonatos. La adecuada selección de excipientes en pediatría es un paso crítico debido a que algunos son aceptables en formulaciones para adultos y pueden no ser adecuados para su uso pediátrico. El contenido en estos excipientes habrá que valorarlos también en los medicamentos que se emplean como material de partida consultando las fichas técnicas correspondientes. En la tabla se recogen los excipientes con consideraciones especiales en pediatría que habrá que tener en cuenta a la hora de incluir en la formulación.
+
+
+8.4.- TIPOS DE EXCIPIENTES SEGÚN SU FUNCIÓN
+Atendiendo a las funciones de excipientes, se puede clasificar a los mismos en distintos grupos para facilitar su abordaje.
+
+VEHÍCULOS
+La administración de la sustancia activa se realiza mediante su inclusión en un vehículo apropiado, constituyendo soluciones, suspensiones o emulsiones.
+Estos vehículos son empleados habitualmente para posibilitar la adaptación posológica de medicamentos a la población pediátrica y a pacientes con problemas de deglución.
+
+8.4.1 EL AGUA
+El disolvente más utilizado en farmacia es el agua, debido a:
+* sus propiedades fisicoquímicas (se trata de un excelente disolvente de sustancias iónicas y polares)
+
+
+* su compatibilidad fisiológica, ya que es el vehículo mejor tolerado por el organismo, interviniendo en la casi totalidad de las formas farmacéuticas (inyectables, comprimidos, pomadas, geles, colirios, supositorios, aerosoles...)
+
+En ningún caso puede utilizarse el agua potable para la elaboración industrial o magistral de formas farmacéuticas, sino que debe someterse a técnicas de purificación química y bacteriológica previamente a su uso. Excepcionalmente se emplea para la reconstitución extemporánea de disoluciones o suspensiones, generalmente para uso vía oral.
+
+CLASIFICACIÓN DE AGUA PARA USO FARMACÉUTICO
+Los requisitos de calidad del agua para uso farmacéutico establecidos por la Farmacopea Europea (Ph. Eur.) se determinan en función del tipo de preparación. En este sentido, el análisis de la calidad microbiológica representa uno de los principales aspectos de control, teniendo en cuenta la susceptibilidad de muchos procesos a este tipo de contaminación, así como las importantes consecuencias sanitarias que ésta puede tener, especialmente en preparaciones inyectables.
+La Agencia Europea de Medicamentos ha elaborado una directriz específica sobre la calidad del agua para uso farmacéutico (EMA, 2020) teniendo como base las monografías específicas contenidas en la Farmacopea Europea.
+
+En el caso del agua potable, la Ph. Eur. no contiene una monografía específica, sino que ésta
+debe cumplir con los requisitos establecidos para el agua de consumo humano. El agua potable podrá usarse durante la fabricación de principios activos y en los equipos de limpieza que operen en las primeras etapas de fabricación, salvo que existan requisitos técnicos o de calidad que exijan el uso de agua de otra calidad. Es el tipo de agua que sirve como materia prima para fabricar el resto de los tipos de agua, entre los que se encuentran, de acuerdo a la 5ª edición de la Real Farmacopea Española (RFE):
+* Agua para preparaciones inyectables (API): se utiliza para medicamentos de administración parenteral cuando el agua actúa como vehículo, y para disolver o diluir sustancias o preparaciones de administración parenteral. Puede presentarse a granel o como agua esterilizada para preparaciones inyectables, en envases esterilizados. Se obtiene a partir de agua que satisface las normativas sobre agua destinada al consumo humano o a partir de agua purificada por destilación en un aparato en el cual las partes en contacto con el agua son de vidrio neutro, de cuarzo o de un metal adecuado. La primera porción del destilado obtenida cuando el aparato empieza a
+funcionar se descarta y a continuación se recoge el destilado.
+El control microbiológico del agua para preparaciones inyectables: se establece un límite de intervención en un recuento de microorganismos de 10 UFC por 100 ml
+determinado mediante filtración por membrana con un tamaño de poro nominal no superior a 0,45 µm, utilizando al menos 200 ml de agua para preparaciones inyectables a granel e incubando a 30-35°C durante como mínimo 5 días. En el caso de tratamientos asépticos, se pueden aplicar límites de alerta más estrictos.
+* Agua altamente purificada: se utiliza para preparar medicamentos cuando se necesita agua de alta calidad biológica, excepto cuando se requiere agua para preparaciones inyectables. Se obtiene por ósmosis inversa de doble paso acoplada con otras técnicas adecuadas, tales como ultrafiltración y desionización.
+El control microbiológico del agua altamente purificada: similar al del agua para preparaciones inyectables.
+* Agua purificada: se emplea en medicamentos que no deben cumplir los requisitos de esterilidad y apirogenicidad, salvo excepción justificada y autorizada. Puede presentarse a granel o envasada. Este tipo de agua se obtiene por destilación, por intercambio iónico, por ósmosis inversa o por cualquier otro procedimiento adecuado, a partir de agua que satisface las normativas sobre agua destinada al consumo humano.
+
+El control microbiológico del agua purificada: se establece un límite de intervención en un recuento de microorganismos de 100 UFC/ml, determinado mediante filtración por membrana con un tamaño de poro nominal no superior a 0,45 µm.
+* Agua para la preparación de extractos: se trata de agua purificada o de agua que cumple los requisitos del agua para el consumo humano, destinada a la preparación de extractos herbales. Cuando el agua destinada al consumo humano se utiliza como agua para la preparación de extractos es un líquido límpido, incoloro. Se conserva (si es necesario) y se distribuye en condiciones diseñadas para evitar el crecimiento de
+microorganismos y para evitar cualquier otra contaminación.
+
+Otras aguas:
+* Agua para Hemodiálisis: El Agua para Hemodiálisis (monografía de la USP ) se utiliza para aplicaciones de hemodiálisis, principalmente para la dilución de soluciones concentradas.
+
+8.4.2 EXCIPIENTES NO ACUOSOS, HIDROSOLUBLES E HIDROMISCIBLES
+Los disolventes no acuosos, hidrosolubles e hidromiscibles se usan cuando los principios activos son insolubles en agua o sufren degradación por hidrólisis.
+Sus características generales son: elevada capacidad disolvente, ausencia de actividad farmacológica, estabilidad y escasa de toxicidad.
+Todos estos excipientes son higroscópicos, por lo que deben conservarse en recipientes herméticos bien cerrados para evitar la captación de agua y, por tanto, la alteración de su concentración y características.
+
+Estos excipientes se usan con frecuencia en la preparación de medicamentos en fórmula oral líquida (FOL) para cubrir las necesidades específicas de un determinado paciente o grupos de pacientes. Esto es debido principalmente a dos motivos:
+* Ausencia de medicamentos disponibles en una forma farmacéutica líquida, o en una concentración adecuada para el paciente.
+* Necesidad de elaborar una preparación apropiada para nuestro paciente debido a intolerancia, alergia o contraindicación de excipientes que contienen los medicamentos comerciales.
+
+A.-ETANOL
+Con el nombre de alcohol, alcohol etílico, alcohol deshidratado o etanol, se conoce al compuesto químico, de fórmula empírica y estructura C2H5OH, más importante de la serie de los alcoholes desde el punto de vista de aplicación farmacéutica, de tal manera que cuando se habla de alcohol, sin especificar, se sobreentiende alcohol etílico (99,5% v/v, según farmacopea europea.
+
+Su función principal es la de solvente para principios activos insolubles en agua o que sufren hidrólisis, aunque también tiene propiedades antimicrobianas. Se recomienda evitarlo, especialmente en pediatría, o utilizarlo en la mínima cantidad posible debido a los efectos adversos que conlleva su uso. El etanol tiene efectos sobre el sistema nervioso central (SNC) cuando sobrepasa la dosis máxima, produciendo depresión respiratoria y del SNC, así como toxicidad cardiovascular. Además, puede alterar la absorción y/o metabolismo de fármacos, por lo que podría interaccionar con otros medicamentos que esté tomando el paciente.
+A efectos prácticos, podemos minimizar el contenido de etanol añadiendo otro solvente que sea menos tóxico, como la glicerina.
+
+En función de la edad del paciente al que vaya destinada la fórmula oral existe una cantidad límite de etanol en la fórmula que no debe excederse:
+• Adultos y niños >12 años: no debe exceder el 10%.
+• Niños 6-12 años: no debe exceder el 5%.
+• Niños < 6 años: no debe ser superior al 0,5%.
+
+
+
+La EMA establece un límite recomendado de 75 mg/kg/día para niños > 6 años y de 6mg/kg/día para niños
+< 6 años.
+
+Además, hay poblaciones en las que debe utilizarse con precaución o está contraindicado como es el caso de diabéticos o pacientes alcohólicos o en tratamiento con medicamentos que den lugar a una reacción tipo disulfiram.
+Se obtiene por fermentación, síntesis o como subproducto de síntesis, pero cualquiera que sea su origen es necesario proceder a un refinamiento posterior a fin de obtener un producto adecuado a los requisitos exigidos para uso en farmacia.
+
+El grado alcohólico en volumen de un líquido es el contenido en etanol expresado como el número de volúmenes de etanol, contenidos en 100 volúmenes de líquido, medidos a 20 ± 0,1 ºC
+Por vía parenteral se pueden emplear mezclas que contengan hasta un 50% de etanol, sin embargo, debido a que puede producir dolor en la inyección intramuscular, se prefieren concentraciones que oscilen entre 5-10%.
+
+Clases de etanol
+A nivel galénico se diferencian tres tipos en base a su concentración:
+* Alcohol absoluto=alcohol anhidro
+Características: Líquido muy móvil, de olor agradable, sabor pungente que se suaviza al diluir, inflamable y muy higroscópico, lo que requiere precauciones en su manipulación y reposición y su almacenamiento en envases bien cerrados. Esta extraordinaria avidez de agua le lleva a disolverse en ella en todas proporciones observándose en las disoluciones tres fenómenos:
+- Contracción de volumen, al mezclar A ml de etanol y B ml de agua se obtienen C ml de solución, siendo C < A + B. Este fenómeno debe tenerse en cuenta en la preparación de diluciones alcohólicas de uso frecuente en la práctica farmacéutica.
+- Desprendimiento de calor por solvatación de moléculas de agua.
+- Desprendimiento de gas (aire) con enturbiamiento, debido a que el aire es diez veces más soluble en el alcohol que en el agua y, en consecuencia, al hacer mezclas de ambos se desprende de la disolución.
+Es un excipiente de declaración obligatoria porque puede ser causa de riesgo en casos de hepatopatías, epilepsia, alcoholismo, embarazadas y niños
+* Alcohol oficinal=alcohol de 95º=alcohol de 96º
+Denominado así por ser el etanol utilizado en la práctica farmacéutica. Se le califica como alcohol de 95 (o alcohol de 96, grado que posee a la salida de fábrica y que pasa a 95 al ser manipulado).
+Las características físicas del alcohol oficinal son semejantes al del etanol absoluto, variando ligeramente en la densidad y punto de ebullición. Se disuelve en agua en todas proporciones y se mezcla también en todas proporciones con éter, cloroformo, glicerol, propilenglicol...
+* Mezclas hidroalcohólicas
+El alcohol oficinal se emplea en Farmacia como tal o como mezclas de menor concentración. Tales mezclas se identifican por el grado centesimal.
+El grado alcohólico es la unidad internacional que expresa la riqueza en etanol puro de un alcohol.
+
+Usos farmacéuticos del alcohol:
+En distintas concentraciones las aplicaciones galénicas más relevantes son:
+* Disolvente para procesos de extracción de principios activos de origen vegetal.
+* Disolvente en formas farmacéuticas de administración oral, elixires.
+* Disolvente en películas de recubrimiento de formas farmacéuticas sólidas.
+
+* Conservante, ya que inhibe el crecimiento de bacterias y mohos.
+* Desinfectante bactericida.
+
+B.- ISOPROPANOL
+El isopropanol o alcohol isopropílico posee propiedades disolventes parecidas a las del alcohol etílico y se utiliza como disolvente en algunas fórmulas tópicas y de algunos productos utilizados para el recubrimiento de formas farmacéuticas sólidas. Su uso interno está contraindicado.
+
+C.-POLIALCOHOLES=POLIOLES=ALCOHOLES  POLIHÍDRICOS
+Las soluciones que se obtienen con ellos son más estables, puesto que no están sujetos a los fenómenos de hidrólisis que ocurren en las soluciones acuosas.
+1- PROPILENGLICOL
+Es uno de los polialcoholes de mayor uso farmacéutico por tener un alto poder disolvente y una baja viscosidad.
+Se emplea como disolvente/cosolvente de soluciones orales, tópicas y parenterales.
+Presenta propiedades conservantes y cuando se utiliza conjuntamente con parabenos potencia la acción de los mismos.
+Sus ventajas sobre el glicerol son su mayor poder disolvente (por ejemplo, para corticoides, barbitúricos...) y su menor viscosidad.
+Es un líquido viscoso, transparente, higroscópico e incoloro. Es miscible con agua, etanol y glicerina, formando mezclas químicamente estables, de utilidad para estabilizar emulsiones para uso tópicp. Tiene acción emoliente y protectora de la piel.
+
+Propiedades:
+* Disolvente ampliamente utilizado en farmacia para vehiculizar principios activos inestables insolubles en agua.
+* Presenta propiedades humectantes y antimicrobianas.
+* Humectante.
+* Aporta menor viscosidad a las fórmulas que la glicerina.
+* Incrementa la absorción de los principios activos.
+
+El propilenglicol se metaboliza a través del enzima lactato deshidrogenasa por lo que se recomienda evitarlo en niños < 4 años porque todavía no pueden metabolizarlo completamente y puede producir toxicidad a nivel del SNC.
+Además, también puede tener un efecto laxante debido a la elevada osmolaridad.
+Hay que evitar la administración simultánea con otros excipientes que se metabolicen por la misma vía metabólica, como el etanol, ya que ambos son sustratos del alcohol deshidrogenasa.
+La cantidad límite recomendada por vía oral y parenteral, es de 1 mg/kg/día en neonatos, es disolvente, cosolvente, y humectante, con propiedades conservantes.
+A concentración elevada tiene acción queratolítica, que puede favorecer la absorción de los principios activos, aunque puede producir irritación. No se ha demostrado su relación con la sensibilización alérgica.0 mg/kg/día en niños < 5 años y 500 mg/kg/día en adultos.
+
+Aplicaciones:
+? Antiséptico en forma de aerosol tipo niebla, por lo que se utiliza como desinfectante en espacios como quirófanos, salas blancas...
+? Disolvente o codisolvente (disolvente que potencia la capacidad de disolución de otros disolventes como el agua o el etanol) en formas farmacéuticas orales, tópicas, parenterales y soluciones aerosol.
+? Como disolvente y vehículo, especialmente para fármacos inestables o insolubles en agua.
+
+
+? Humectante en preparados tópicos, pues su capacidad higroscópica favorece su correcto estado de conservación, evitando que la forma se reseque.
+? Conservante en preparados sólidos y semisólidos.
+2- GLICEROL=PROPANOTRIOL=GLICERINA
+El glicerol o glicerina se presenta como un líquido incoloro, de consistencia siruposa y cierto sabor azucarado, por lo que se emplea como:
+? Por su poder higroscópico: evitando la desecación de cápsulas de gelatina, supositorios, óvulos, pomadas, cremas, pastas.
+? Elevado poder humectante y emoliente: en FF tópicas
+? Por su poder edulcorante y conservante: colutorios, gargarismos, soluciones orales, jarabes, elixires, como alternativo a los azúcares glucogénicos.
+? Como disolvente: colirios, gotas oftálmicas, inyectables.
+
+A altas concentraciones puede provocar molestias gastrointestinales como mucositis en el estómago o diarrea, por lo que se debe limitar la dosis en pediatría.
+Se recomienda una cantidad límite de 1 - 1,5 g/kg/día sin exceder los 10 g/dosis.
+3- SORBITOL (SOLUCIÓN 70%)
+Sustitutivo de glicerina y propilenglicol, puede constituir por sí mismo vehículo de preparaciones líquidas orales, con interés como edulcorante en preparaciones para diabéticos. Debe ser ingerido en pequeñas cantidades (no más de 20g/día en adultos) por su efecto osmótico.
+4- GLUCOSA LÍQUIDA=JARABE DE MAIZ
+La glucosa líquida, también llamada jarabe de maíz, jarabe de almidón o jarabe de glucosa, es una solución acuosa de varios compuestos obtenidos por hidrólisis del almidón.
+Líquido muy espeso, filante al estirado, prácticamente incoloro y de sabor muy débilmente azucarado, que se emplea como agente de granulación, en recubrimiento de comprimidos y como vehículo de jarabes.
+
+D.-POLIETILENGLICOLES:
+Los polietilenglicoles son éteres de polialcoholes, que se forman por adición de óxido de etileno y agua. Es una sustancia polar e hidrosoluble que se utiliza como cosolvente, agente suspensor y viscosizante. El más utilizado en formulaciones líquidas es el PEG 400. Se debe utilizar con precaución en pediatría, especialmente en neonatos y lactantes, ya que puede tener un efecto laxante y producir nefrotoxicidad. Su estado físico depende de su peso molecular, siendo líquidos aquellos comprendidos entre 200-600; y sólidos los que tengan pesos moleculares superiores. Presentan numerosas aplicaciones en una gran variedad de formulaciones destinadas a
+La vía parenteral, oral, tópica, oftálmica y rectal. Se trata de sustancias hidrosolubles y de naturaleza polar que se utilizan como cosolventes en vehículos acuosos, agentes suspensores en soluciones y viscosizantes. Por ser fácilmente lavables y no absorberse rápidamente a través de la piel, son muy útiles como bases en pomadas.
+También se usan como bases de supositorios.
+
+El más utilizado en formulaciones líquidas, tanto de uso interno como externo, es el polietilenglicol 400. Aquellos de pesos moleculares más elevados, alrededor de 6000, presentan aplicaciones como lubrificantes.
+Puede producir picor o hipersensibilidad por vía tópica y efecto laxante por vía oral. La dosis oral máxima diaria se establece en 10 mg/kg/día
+
+           8.4.3.- EXCIPIENTES GRASOS Y PRODUCTOS LIPOIDEOS A.- TRIGLICÉRIDOS NATURALES:
+No existe una distinción clara entre los términos grasa y aceite, denominándose grasa a un producto pastoso (semisólido) y el término aceite se aplica a la forma líquida, definición muy imprecisa pues una grasa en nuestras latitudes, puede ser un aceite en zonas tropicales.
+Los aceites que se consideran medicinales son los obtenidos de semillas vegetales por primera expresión y a temperatura ambiente. En cambio, se reserva la denominación de manteca para las grasas procedentes del reino animal, con la excepción de la manteca de cacao.
+
+Las grasas naturales presentan las siguientes características:
+? Insolubles en agua y solubles en la mayor parte de los disolventes orgánicos.
+? Poseer un cierto carácter oleaginoso.
+? Presentar pesos específicos menores que el agua.
+? Fácilmente saponificables con álcalis.
+
+Se utilizan en numerosas formas farmacéuticas de diferentes vías de administración con diversas aplicaciones: vehículos o disolventes, espesantes, abrillantadores, integrantes de jabones, emolientes,... Entre los más utilizados podemos citar:
+? Aceite de oliva, de almendras dulces, de cacahuete, de coco, de girasol, de semillas de frutas (albaricoque, melocotón, ciruela), etc.
+? Manteca de cacao.
+? Manteca de cerdo.
+
+B.- TRIGLICÉRIDOS SINTÉTICOS
+Se obtienen por aplicación de reacciones sobre los triglicéridos naturales, teniendo sus mismas aplicaciones. Entre los más utilizados tenemos:
+* Aceite de cacahuete hidroxenado.
+* Ácido esteárico.
+* Miristato de isopropilo.
+* Alcohol cetílico.
+* Alcohol estearílico.
+* Alcohol cetoestearílico
+
+C.- CERAS
+Su aplicación galénica mayoritaria es en preparados de vía tópica, como espesante y abrillantador, y como endurecedor y abrillantador en las técnicas de grageado, para conseguir la cobertura característica de las grageas, formas farmacéuticas de vía oral. Entre las más utilizadas destacan:
+? Cera blanca de abeja, espesante de pomadas.
+? Cera de carnauba, para grageado.
+? Lanolina, además de las propiedades espesantes y abrillantadoras, se utiliza como hidratante en cremas, por su alto poder hidrófilo.
+
+D.- PRODUCTOS LIPOIDEOS
+Los productos lipoideos son aquellas sustancias, que tienen aspecto de grasa, pero científicamente no lo son. Su principal aplicación galénica es como vehículo en preparados de vía tópica. Los de utilidad farmacéutica son las parafinas y siliconas:
+? Parafinas: son mezclas complejas de hidrocarburos saturados obtenidos por destilación del petróleo bruto.
+La Farmacopea establece tres tipos según su consistencia:
+* Parafina sólida ou parafina: sólido blanco de estructura cristalina. Se utiliza en pomadas y para regular preparaciones demasiado fluidas o compactas.
+
+
+* Parafina branda ou vaselina filante: sustancia de consistencia untuosa y pastosa, blanquecina, insípida e inodora. Por su consistencia puede usarse como único excipiente.
+* Parafina líquida ou aceite de vaselina: líquido inmiscible en agua. Por vía oral propiedades laxantes
+? Siliconas: Las más utilizadas se presentan en forma de aceites y se conocen con el nombre de
+dimetilconas o aceites de silicona.
+
+8.4.4.- EMULGENTES, TENSIOACTIVOS Y COSOLVENTES
+Las emulsiones requieren la presencia de un agente tensoactivo, que mejore la tendencia a la inestabilidad que caracteriza a estos sistemas dispersos, a través de la reducción de la tensión interfacial de los líquidos que componen las emulsiones.
+Los agentes tensoactivos son moléculas anfifílicas, es decir, contienen una porción hidrófila y otra lipófila. Los emulgentes, además de reducir la tensión interfacial, forman películas uniformes gracias al predominio del polo hidrófobo o hidrófilo de la molécula, que estabiliza las emulsiones W/O y O/W respectivamente.
+
+El comportamiento de los tensoactivos o surfactantes se predice a través del índice HLB, que evalúa de 0 a 20 el predominio de la parte hidrófila y lipófila de la molécula.
+
+
+La elección del agente emulsificante depende del tipo de emulsión a formar y de la vía de administración. La Regla de Bancroft permite predecir el signo de la emulsión en función del agente emulsificante empleado "aquel líquido en el que el agente emulsificante sea más soluble formará la fase continua".
+La toxicidad de los tensoactivos va a condicionar la vía de administración de la emulsión: por vía parenteral sólo pueden administrarse tensoactivos no iónicos y anfóteros, mientras que los tensoactivos catiónicos y aniónicos, que son los que poseen mayor toxicidad, quedan restringidos a la vía tópica.
+
+De acuerdo con estas propiedades, los tensioactivos resultan de gran interés en la formulación galénica
+en los siguientes campos:
+* Solubilización micelar de fármacos poco solubles que interesa incorporar en formas farmacéuticas líquidas.
+* Acción humectante de fármacos poco solubles o hidrófobos en formas farmacéuticas sólidas. Su presencia en las formulaciones facilita la solubilización de fármacos en fluidos biológicos, y en consecuencia, su absorción.
+* Formulación de emulsiones (fluidas o cremas) de estabilidad físico-química aceptable para su empleo como formas farmacéuticas de administración parenteral, oral o tópica.
+* Formulación de preparados de higiene tales como jabones, geles de baño, champús...
+
+La diferencia conceptual que existe entre los términos tensioactivo, emulgente y cosolvente es que el primero es mucho más amplio y engloba a la totalidad de las moléculas anfifílicas. De estas, las de HLB más extremos se emplean preferentemente como cosolventes, ya que representan una solubilidad muy preferencial por una de las fases, y su acción de limita exclusivamente a reducir la tensión interfacial, pero no son capaces de constituir películas uniformes que estabilicen el sistema en forma de emulsión. Para ello, se requiere el empleo de moléculas en las que, aunque haya un cierto predominio de un polo sobre otro,
+
+son más equilibradas y además de actuar como tensioactivos, estabilicen las emulsiones que los integran por formación de películas interfaciales, coherentes, continuas y flexibles.
+Los tensioactivos y emulgentes empleados en formulación galénica se clasifican en base al carácter iónico de los mismos en:
+
+A. -TENSIOACTIVOS Y EMULGENTES ANIÓNICOS
+Moléculas que al disolverse se disocian, siendo el anión (-) el responsable del efecto tensioactivo o emulgente, se utilizan preferentemente en preparados destinados a la higiene corporal por su gran poder detergente. Entre los más utilizados destacan:
+* Jabones
+* Sales alcalinas de ácidos biliares
+* Laurisulfato sódico.
+
+B.-TENSIOACTIVOS Y EMULSIONANTES CATIÓNICOS
+Están integrados por moléculas que se protonizan (+) cuando se encuentran en medio acuoso. Los más frecuentemente empleados están constituidos por sales de amonio cuaternario. Son emulgentes de menor poder detergente que los aniónicos, cuyas propiedades antibacterianas conllevan su empleo en numerosos preparados antisépticos, germicidas y fungicidas. También presentan unas notables propiedades acondicionadoras.
+Únicamente se permite su empleo en preparados de aplicación y acción tópica, y entre los más comúnmente empleados cabe destacar el bromuro de cetiltrimetilamonio (Cetrimide(r)) y los cloruros de benzalconio.
+
+C.- TENSIOACTIVOS Y EMULSIONANTES ANFÓTEROS
+Están integrados por moléculas que poseen dos o más grupos funcionales que pueden, en función del pH del medio externo (acuoso) ionizarse negativa o positivamente.
+* Derivados de las betaínas: Se emplean para la formulación de cosméticos y preparados dermatológicos (emulsiones, champús, geles de baño) destinados al tratamiento de pieles sensibles, envejecidas...
+* Lecitinas: Es un emulgente muy adecuado para preparaciones destinadas a uso interno (emulsiones orales) y uno de los pocos autorizados para preparaciones inyectables.
+
+D.- TENSIACTIVOS Y EMULGENTES NO IÓNICOS
+Están integrados por sustancias que en medio acuoso no se ionizan; en consecuencia, la acción tensioactiva o emulgente es debida a la propia estructura molecular. Son muy bien tolerados por la piel.
+* Derivados de la lanolina
+* Derivados de siliconas
+
+
+
+
+
+8.4.5.- EXCIPIENTES DE USO EN FORMAS FARMACÉUTICAS SÓLIDAS ORALES
+Los excipientes que forman parte habitualmente de formas farmacéuticas sólidas orales, independientemente de que también formen parte de otras formas (formas líquidas orales, dérmicas, vaginales, aerosoles,...) con otros objetivos, tienen las siguientes funciones prioritarias:
+
+DILUYENTES:
+Los excipientes con función diluyente son sustancias de relleno, cuya función es ayudar a aumentar el volumen o masa de las sustancias activas, para facilitar el manejo, que de otra manera no sería posible debido a su reducida cantidad.
+Generalmente son utilizados como materiales de relleno como en cápsulas de gelatina. Se usan por ejemplo: almidones, sacarosa, lactosa, celulosa microcristalina, talco...
+Los diluyentes hidrosolubles (como la lactosa) se añaden a los principios activos no solubles en agua para favorecer la disolución de estos en los fluidos biológicos, y los excipientes insolubles (como el almidón) se mezclan con principios activos hidrosolubles.
+
+Si la cantidad de principio activo es lo suficientemente elevada, no se necesitan, en principio, diluyentes. Pero, si las propiedades de flujo son deficientes, en general, sería suficiente, la adición de un agente lubrificante (como sílice coloidal y estearato de magnesio).
+
+AGLUTINANTES: mantienen la cohesión de las partículas componentes del sólido.
+Son sustancias que unen las partículas sólidas entre sí cuando la mera presión no basta para mantenerlas agrupadas en gránulos.
+Además, aumentan la resistencia a la rotura de los comprimidos, pero reducen su velocidad de disolución. Ejemplos: goma arábica, gelatina, polivinilpirrolidona y ciertos derivados de la celulosa (metilcelulosa).
+También los almidones de maíz, arroz, patata y trigo: usados como aglutinantes debido a su capacidad higroscópica. Son solubles y muy económicos. Por contra, presentan una mala reología, y la posibilidad de presentar intolerancias o alergias pese a que están exentos de gluten. También hay que tener precaución con los diabéticos, que aunque si pueden tomar los almidones, deben moderar su ingesta, o al menos, ser conocedores de que las cápsulas que están tomando lo contiene.
+
+
+LUBRIFICANTES Y DESLIZANTES:
+Lubrificantes: incrementan la fluidez de sólidos pulverulentos.
+Deslizantes: reducen la fricción interparticular y la tendencia a la adhesión.
+Aumentan la capacidad deslizante de las partículas sólidas, es decir, favorecen su flujo (reología) y disminuyen la fricción entre las mismas, función que favorece la homogeneización de las mezclas farmacéuticas pulverulentas, su deslizamiento
+o durante los procesos de elaboración y evita las adherencias de la mezcla medicamentosa con todos los útiles y equipos necesarios para su preparación.
+Ejemplos de deslizantes: dióxido de silicio coloidal
+Ejemplos de lubricantes: estearato de magnesio, de calcio, talco, sílice coloidal o almidones.
+
+En el Formulario Nacional se describen dos tipos de excipientes para cápsulas que ya incorporan agentes deslizantes y lubricantes para garantizar la correcta fluidez de la mezcla:
+
+
+
+
+
+
+DISGREGANTES: se utilizan para acelerar la disgregación, rotura, de los comprimidos en contacto con el agua y los jugos digestivos, facilitando la liberación del principio activo y, por tanto, su disolución y absorción. Debido a las intentas fuerzas de compactación con las que están fabricados los comprimidos, la penetración de líquidos en los mismos en ausencia de disgregantes sería incompleta y con ello también la liberación y absorción del principio activo. Su mecanismo de acción se basa en su capacidad de hinchar al captar agua, favoreciendo la penetración de los líquidos en el comprimido y la disgregación de los gránulos. Cuando los comprimidos son efervescentes, el mecanismo de acción consiste en fomentar la liberación de gases al contacto del comprimido con el agua, lo que conduce a su disgregación. Disgregantes de uso frecuente son el almidón de maíz o de patata, la croscarmelosa y el glicolato sódico de almidón.
+
+
+En función de su naturaleza química tenemos:
+* Almidones y derivados.
+* Azúcares y similares.
+* Celulosa y derivados.
+* Productos inorgánicos y minerales.
+* Productos de síntesis.
+
+
+A.- ALMIDONES Y DERIVADOS
+Los almidones más usados proceden de maíz, trigo, patata y arroz. Se presentan en forma de polvos blancos, inodoros compuestos de pequeñas partículas esféricas. Son insolubles en agua fría pero se hinchan en ella por encima de 80ºC, dando un gel (engrudo de almidón). Absorben rápidamente la humedad ambiental.
+Son excipientes de declaración obligatoria porque al contener gluten pueden ser perjudiciales para
+celíacos.
+
+Como excipientes se emplean en forma de engrudo o en polvo. Sus funciones son:
+? Diluyente para formas farmacéuticas sólidas.
+? Disgregante no soluble.
+? Aglutinante.
+? Lubrificante (como polvo seco).
+? Los almidones modificados o tratados son almidones naturales que han sido modificados a tratamientos físicos y químicos, cuyas funciones son semejantes a la de los naturales.
+
+B.- AZÚCARES Y SIMILARES
+? SACAROSA O AZÚCAR BLANCO OFICINAL
+Es un disacárido, constituido por glucosa y fructosa y desempeña múltiples funciones en la formulación farmacéutica, de sabor muy dulce es muy hidrosoluble e higroscópica, por lo que debe almacenarse en recipientes bien cerrados. Se presenta bajo diversas formas: cristales incoloros, polvo blanco cristalino o bloques de cristales. Su empleo es múltiple y variado:
+* En las formas farmacéuticas líquidas: componente mayoritario de los jarabes para mejorar su palatabilidad y aumentar su viscosidad.
+* En las formas sólidas: diluyente, aglutinante, disgregante soluble, incluyéndose preferentemente en comprimidos masticables y destinados a disolverse en la boca, y componente de las coberturas de grageas y edulcorante. Es un excipiente de declaración obligatoria por las consecuencias negativas en pacientes diabéticos. Tiene carácter cariogénico.
+? LACTOSA O AZÚCAR DE LECHE
+Es un disacárido de glucosa y galactosa que se obtiene del suero de la leche. Es un polvo o partículas cristalinas, blanca o cremosa, inodora y de sabor dulce, soluble en agua. Es un azúcar reductor, lo que hay que tener en cuenta cuando se trata de un principio activo oxidable que interesa proteger.
+En personas con insuficiencia de lactasa intestinal se produce intolerancia a la lactosa que conduce a dolor abdominal, diarreas... Por ello, la lactosa es de declaración obligatoria en aquellas especialidades en que se utilice como excipiente.
+Sus funciones como excipiente en formulación farmacéutica son:
+* Diluyente: es su aplicación principal y característica. Se utiliza para polvos, comprimidos, cápsulas.
+* Disgregante soluble.
+* En el grageado de comprimidos se utiliza junto con la sacarosa.
+* Constituye un buen absorbente de líquidos, lo que permite manipularlos como sólidos, a efectos de su manipulación como formas farmacéuticas.
+* Se añade a las soluciones que van a ser modificadas para facilitar el proceso.
+* Como excipiente para compresión directa se utilizan varios tipos de lactosa obtenidas por modificación química (Lactosa Spray-Dried).
+? OTROS AZÚCARES
+Glucosa y fructosa: se emplean como diluyentes de cápsulas y comprimidos. La fructosa es el azúcar de las formas para diabéticos.
+Hexitoles: entre ellos destacan sorbitol, manitol e inositol que son sólidos cristalinos blancos, en general empleados como diluyentes y disgregantes. El sorbitol puede reemplazar a la sacarosa en los preparados
+
+para diabéticos, pero presenta el inconveniente de ser ligeramente laxante. El manitol se utiliza fundamentalmente en comprimidos para desleírse en la boca, porque tiene calor de disolución negativo, lo que produce sensación de frescor bucal al disolverse. El inositol se incluye en comprimidos masticables.
+
+C.- CELULOSA Y DERIVADOS
+Es un carbohidrato de elevado peso molecular.
+? CELULOSAS NATURALES
+La celulosa microcristalina es un polvo fino, cristalino, blanco, inodoro e insípido, insoluble en agua y en la mayoría de disolventes orgánicos.
+Son unos productos estables, compatibles con la mayoría de los excipientes y principios activos. Poseen numerosas ventajas como buena compresibilidad, fluidez adecuada, acción disgregante...
+Sus funciones como excipiente son:
+* Como diluyente de cápsulas.
+* Como diluyente y aglutinante para compresión seca y granulación húmeda de comprimidos.
+* Disgregante.
+* Lubrificante, deslizante y antiadherente.
+? DERIVADOS SEMISINTÉTICOS DE CELULOSA
+Éteres de celulosa (Carboximetil celulosa sádica): de gran aplicación en tecnología farmacéutica, cosmética y de alimentación:
+* En la elaboración de formas líquidas se utilizan como viscosizante y estabilizante de suspensiones.
+* En las formas semisólidas, son la base de hidrogeles y modificadores reológicos de pomadas.
+* En las formas sólidas como disgregante, aglutinante y modificadores de la velocidad de liberación de los fármacos.
+Ésteres de celulosa (Acetato de celulosa): se han convertido en los últimos años en polímeros usados para
+los nuevos sistemas de liberación de fármacos, recubrimiento entérico de comprimidos y microcápsulas.
+
+D.- PRODUCTOS INORGÁNICOS Y MINERALES
+Estos excipientes, por su propia naturaleza, tienen diversas funciones en las composiciones medicamentosas, destacando: alto poder de adsorción, lo que se aprovecha para la elaboración de polvos tópicos, capacidad lubrificante y diluyente, estabilizante de suspensiones y aerosoles y poder viscosizante. Entre ellos podemos citar:
+* SALES INORGÁNICAS: fosfato cálcico, fosfato cálcico dibásico, carbonato magnésico...
+* SÍLICE COLOIDAL O GEL DE SÍLICE
+* SILICATOS: talco, caolín, arcillas
+
+E.- PRODUCTOS DE SÍNTESIS
+Son muy numerosos, destacando entre los más usados
+* POLÍMEROS DEL ÁCIDO ACRÍLICO
+Se utilizan como espesantes y gelificantes de soluciones, suspensiones y emulsiones de diferentes vías y como componentes de formas de liberación controlada, siendo los más usados: Carbomer(r) y Carbopol(r)
+* DERIVADOS VINÍLICOS
+Se utilizan preferentemente como espesantes y gelificantes, destacando:
+Alcohol polivinílico (PVA), Polivinilpirrolidona.
+
+8.4.6. CONSERVANTES, COLORANTES, EDULCORANTES Y AROMATIZANTES DE USO FARMACÉUTICO
+A.- CONSERVANTES
+Se emplean para conservar o mantener las características del medicamento el mayor tiempo posible, evitando contaminaciones microbianas y/o fúngicas, oxidaciones y otras alteraciones, para lo cual se
+
+
+emplean, respectivamente sustancias antimicrobianas, antifúngicas, antioxidantes y agentes complejantes.
+
+ANTIMICROBIANOS Y/O ANTIFÚNGICOS
+El uso de antimicrobianos, sustancias que se añaden a las fórmulas para revenir el crecimiento microbiológico, no debe suponer la eliminación de la manipulación aséptica.
+La posibilidad de que se produzca la contaminación microbiológica de las fórmulas es uno de los mayores problemas a evitar.
+Deben emplearse para preparados multidosis, especialmente aquellos que contengan agua, ya que ésta favorece el crecimiento microbiano, sin obviar aquellas fórmulas orales que contienen polímeros naturales, ya que estos pueden ser fuente de microorganismos.
+No son necesarios en fórmulas extemporáneas para uso inmediato, ni cuando el pH del medio es <3 ó >9; y están formalmente contraindicados en neonatos y en soluciones oftálmicas destinadas al uso en cirugía ocular, administración intraocular o cuando la córnea está dañada, ya que pueden producir irritación.
+Cuando la situación no permite la incorporación de antimicrobianos, la alternativa consiste en la preparación de la mínima cantidad posible de la fórmula, asignarle una fecha de caducidad reducida y, si es posible, mantenerla refrigerada.
+Algunos agentes conservantes pueden interaccionar con otros componentes de la fórmula. Tal es el caso de los parabenos.
+
+Ejemplos: ácido benzoico, ácido sórbico, alcohol bencílico, alcohol etílico, cloruro de benzalconio, metilparabeno, propilparabeno.
+El ácido benzoico y benzoatos no están recomendados en neonatos debido al riesgo de producir kernicterus por desplazar la bilirrubina de la albumina, con el consiguiente aumento de la bilirrubinemia y riesgo de kernicterus. La ingesta admitida en niños es de 5mg/kg/día.
+El alcohol bencílico está contraindicado en neonatos y se recomienda evitar en niños < 3 años debido a su toxicidad en SNC. La cantidad límite en adultos es de 5 mg/kg/día.
+
+Es frecuente su utilización en forma de sales, ya que suelen poseer mayor solubilidad. Es el caso, por ejemplo del ácido benzoico, que normalmente se utiliza como benzoato sódico, ya que es más soluble en agua
+En abril de 2013 la EMA publicó un documento sobre el uso de metilparaben y propilparaben como excipiente en productos medicinales para uso oral. En dicho documento concluían que el uso de metilparaben en concentraciones hasta 0,2% no suponía ningún riesgo para humanos incluyendo a toda la población pediátrica independientemente del grupo de edad.
+En cambio, propilparaben se recomienda evitar en neonatos porque puede producir hiperbilirrubinemia. La cantidad límite recomendada de propilparaben es de 2 mg/kg/día.
+
+ANTIOXIDANTES:
+En formulación magistral el uso de sustancias antioxidantes está justificado en el caso de principios activos susceptibles de perder su actividad farmacológica por fenómenos de oxidación.
+Estos excipientes, capaces de proporcionar protección frente a la oxidación, se clasifican en función de su mecanismo de acción:
+• Antioxidantes primarios (bloqueantes): se incorporan a fase oleosa. Bloquean el proceso oxidativo al inhibir la reacción en cadena. Son los tocoferoles, butilhidroxianisol (BHA) y butilhidroxitoluol (BHT).
+• Reductores: sustancias con mayor susceptibilidad a la oxidación que los principios activos, por lo que consumen el oxígeno de la reacción. Ácido ascórbico, sulfitos, bisulfitos y metabisulfitos.
+• Sinérgicos: potencian la actividad de otros antioxidantes. Actúan como quelantes o secuestrantes: EDTA, ácido cítrico y ácido tartárico
+
+B.- COLORANTES
+Son agentes que confieren color a ciertas formas farmacéuticas con distintos fines: obtener una presentación más agradable, evitar confusiones tanto en el momento de su administración como durante el acondicionamiento industrial de diferentes realizadas con una forma galénica idéntica.
+Químicamente, son sustancias que se fijan a otras, para dotarlas de color. Su función principal consiste en mejorar la apariencia del preparado, para favorecer el cumplimiento terapéutico, en poblaciones como la pediátrica. Sin embargo, en el campo de la formulación magistral, en el cual se tiende cada vez más a la simplificación de las fórmulas, especialmente en cuánto a excipientes se refiere, el uso de los colorantes persigue otros fines.
+Más allá de su valor estético, los colorantes se utilizan en fórmulas, o preparados líquidos para la tinción de superficies específicas del cuerpo en diversas técnicas diagnósticas:
+
+
+
+
+
+
+Pueden clasificarse según su origen en: colorantes naturales y colorantes sintéticos, estando legislado los autorizados para uso farmacéutico, así como su concentración, que siempre será mínima.
+Algunos ejemplos son: Curcumina, tartracina (de declaración obligatoria, por causar alergia en determinados pacientes), amaranto, clorofilas, xantofilas, plata y oro.
+No se recomienda el uso de colorantes en medicamentos pediátricos porque se han asociado a reacciones de hipersensibilidad y otros efectos adversos.
+
+C.- EDULCORANTES
+Se definen como aquellas sustancias con capacidad para transmitir a otras un sabor similar a la sacarosa. El edulcorante ideal debe ser: incoloro, inodoro, soluble en agua, estable en el rango de temperaturas y pH necesarios para su uso y conservación, no tóxico y no cariogénico.
+Sustancias naturales o artificiales capaces de transmitir un sabor similar al de la sacarosa.
+Se denomina poder edulcorante de una sustancia a los gramos de sacarosa que se han de disolver en agua para obtener un líquido con igual sabor que la disolución de un gramo de edulcorante en el mismo volumen.
+Los edulcorantes son muy empleados en la formulación de medicamentos, ya que, en la mayoría de los casos los principios activos tienen sabor desagradable que debe ser enmascarado para su administración oral. Suelen utilizarse combinados.
+
+En función del poder edulcorante se pueden clasificar en:
+* Bajo poder edulcorante: sorbitol y glicerina. El sorbitol sustituye a la sacarosa en pacientes diabéticos, pero está contraindicado en pacientes con intolerancia a la fructosa porque el sorbitol se metaboliza a fructosa. Al no absorberse en el tracto digestivo puede provocar efectos adversos gastrointestinales.
+La cantidad límite recomendada es de 5 mg/kg/día en = 2 años y de 140 mg/kg en > 2 años.
+* Poder medio-alto: sacarina sódica (en concentraciones del 0,02% 0,5%). Su poder edulcorante es 300- 600 veces superior a la sacarosa, pero si no se utiliza de manera correcta puede dejar un sabor residual amargo. La intensidad del poder edulcorante a bajas concentraciones se puede potenciar añadiendo una sal sódica, ya que bloquea el sabor amargo. Se recomienda limitar la dosis en mujeres embarazadas y niños. Puede producir urticaria, eczema, fotosensibilización y molestias gastrointestinales, y la cantidad límite diaria es de 2,5 mg/kg.
+* Poder edulcorante alto: Aspartamo: de declaración obligatoria (100 gr aspartamo ???56,13 g de fenilalanina). No apto para fenilcetonúricos. Tiene el doble de poder edulcorante que la sacarosa. La cantidad límite diaria es de 40 mg/kg ya que puede producir reacciones de hipersensibilidad.
+
+
+
+D.- AROMATIZANTES Y SABORIZANTES
+Se utilizan para enmascarar el olor y el sabor, pues como ya se mencionó, el sabor depende en un 80% del olfato.
+Son sustancias y mezclas de productos de origen natural y sintético, destinadas a enmascarar o mejorar el sabor o el olor.
+La legislación farmacéutica regula los tipos y concentraciones autorizados. Los aromatizantes se clasifican en:
+Productos de origen natural:
+? Aromas: zumos de frutas, especies y plantas aromáticas.
+? Materias aromatizantes naturales: aceites esenciales, concentrados de zumos de frutas.
+? Sustancias aromatizantes naturales químicamente definidas: mentol natural. Productos de origen sintético:
+? Sustancias aromatizantes sintéticas idénticas a las sustancias naturales químicamente definidas: citral, acetato de etilo, mentol.
+? Sustancias aromatizantes sintéticas artificiales químicamente definidas: etilvainillina. Mezclas:
+? Material aromatizantes reforzadas: materias aromatizantes en las cuales el olor y el sabor se aumentan por la adición de materias o sustancias aromatizantes naturales o sintéticas idénticas a las sustancias naturales: zumo de frambuesa concentrado y reforzado.
+? Composiciones aromatizantes: mezclas de una o varias materias o sustancias aromatizantes naturales o sintéticas a las que se le adiciona uno o varios conservantes, uno o varios colorantes o excipientes diversos: aroma compuesto de frambuesa.
+
+El sabor de un componente en solución está asociado a ciertas estructuras químicas. Las aminas, amidas y otros componentes nitrogenados como los alcaloides suelen tener un gusto amargo, mientras que ciertas imidas tienen un gusto dulce. El objetivo consiste en obtener un equilibrio entre los cuatro sabores: ácido, dulce, salado y amargo.
+A la hora de elegir el saborizante más adecuado, hay que tener en cuenta tanto el sabor que queremos enmascarar como la patología a tratar.
+En el tratamiento del dolor, fiebre, alergia e infecciones se prefiere la cereza, fresa, plátano o caramelo. En cambio, en el tratamiento de déficits de vitaminas y en patología digestiva es preferible el sabor cítrico.
+
+A continuación, se muestran los saborizantes de elección según el sabor que queremos enmascarar:
+
+
+
+
+
+
+Los saborizantes para administración oral vienen especificados en su descripción y etiqueta como "uso oral" y también, en su mayoría, la edad pediátrica a partir de la cual se pueden utilizar (> de 4 años y > de 6 años) ya que suelen contener etanol y/o alcohol.
+
+9.-ENSAYOS	PARA	EL	CONTROL	DE	CALIDAD	FÓRMULAS MAGISTRALES Y PREPARADOS OFICINALES.
+El RD 175/2001 establece legalmente como controles mínimos de producto terminado, solamente los siguientes:
+- Fórmulas magistrales: examen de los caracteres organolépticos
+- Fórmulas magistrales tipificadas y preparados oficinales: los controles serán los establecidos en el Formulario nacional para cada una de ellas.
+
+De los preparados oficinales la farmacia guardará y conservará, en un lugar apropiado, hasta un año después de la fecha de caducidad, una muestra de cada lote preparado, de tamaño suficiente para permitir un examen completo.
+Fecha de caducidad: en los preparados oficinales y en las fórmulas magistrales tipificadas se establecerá, de acuerdo con la caducidad que figure en la monografía correspondiente del Formulario Nacional. En el resto de las fórmulas magistrales la fecha se establecerá en función de la duración del tratamiento prescrito.
+De conformidad con lo establecido en la legislación vigente, cuando la realización de alguna fase de la producción de una preparación o de su control analítico se encomiende a otra entidad, se hará bajo un contrato en el que deberán establecerse claramente las obligaciones de cada parte.
+
+En el Formulario Nacional y dentro de los procedimientos de control de producto (CP), aparecen tres procedimientos de obligado cumplimiento:
+* PN/L/CP/001/00 Determinación de PH
+* PN/L/CP/002/00 Determinación del signo de la emulsión
+* PN/L/CP/003/00 Determinación de la extensibilidad
+
+Además de estos tres, revisaremos en el tema:
+* Verificación de peso/volumen
+* Uniformidad de peso
+* Control de caracteres organolépticos
+
+9.1.- DETERMINACIÓN DEL VALOR PH
+El pH es la medida que expresa convencionalmente la concentración de iones hidrógeno de una disolución acuosa. Su valor oscila entre 1 y 14 y no tiene unidades. La medición se puede realizar de varios modos: tiras o papel con sustancias químicas que cambian de color según el pH del medio y ph-metro.
+
+
+En el PN/L/CP/001/00 Determinación de PH figura:
+* Material y equipo
+? Sistema de medida de pH.
+? Papel que no libere fibras.
+? Agua desionizada.
+
+
+* Determinación con tiras reactivas:
+Las tiras reactivas se utilizarán cuando la determinación del pH no requiera gran exactitud. Estas tiras reactivas serán capaces de determinar intervalos de pH lo más estrechos posible.
+1. Preparación de la muestra. Salvo excepciones, en cuyo caso se especificará en la correspondiente monografía, la lectura del pH se realizará sobre la muestra problema sin previo tratamiento.
+2. Introducir una varilla de vidrio en la muestra problema.
+3. Humedecer la tira reactiva de pH.
+4. Esperar el tiempo indicado en las instrucciones del fabricante y comparar el color de la tira reactiva con los estándares de la caja de tiras.
+5. Anotar el resultado en la correspondiente guía de elaboración, control y registro o en la ficha de control de calidad, en el caso de las materias primas.
+* Determinación potenciométrica del pH.
+Seguir el método analítico 2.2.3 descrito en la Real Farmacopea Española.
+
+9.2.- DETERMINACIÓN DEL SIGNO DE LA EMULSIÓN PN/L/CP/002/00
+Objetivo:
+Definir el procedimiento para comprobar el signo de la emulsión preparada, ya que puede haber inversiones de fase que alteren las características y la estabilidad de la emulsión.
+El signo de la emulsión viene definido por la naturaleza de la fase externa.
+Las emulsiones oleo-acuosas (O/A) son aquellas cuya fase interna es oleosa (aceite mineral o vegetal) y la fase externa es acuosa (agua).
+Las emulsiones acuo-oleosas (A/O) son aquellas cuya fase interna es acuosa y la externa es oleosa.
+
+MÉTODO DE CONDUCTIVIDAD
+Determinar la conductividad del preparado, siguiendo el método analítico 2.2.38 descrito en la Real Farmacopea Española.
+- Si la fase externa es oleosa, no conduce la electricidad.
+Este método puede conducir a conclusiones erróneas debido a que algunas emulsiones O/A tienen baja conductividad, mientras la conductividad de emulsiones A/O aumenta con la concentración de la fase dispersada.
+
+MÉTODO DEL COLORANTE:
+Se utiliza un colorante hidrosoluble (por ejemplo, azul de metileno). Si la emulsión es de tipo O/A el colorante se dispersa, pero si la emulsión es del tipo A/O el colorante no se extiende, lo repele.
+En un porta se deposita una pequeña cantidad de la emulsión problema. A continuación se añade una gota de azul de metileno, sin mezclar.
+- Si la emulsión es O/A el colorante se dispersa.
+- Si la emulsión es A/O el colorante no se extiende, lo repele.
+
+MÉTODO DE LA DILUCIÓN:
+Las emulsiones de fase externa acuosa pueden diluirse con agua, pero si la fase externa es oleosa la emulsión no se diluye.
+En una probeta con agua se añade una pequeña cantidad de emulsión sin agitar:
+• Si la fase externa es acuosa el agua se enturbia.
+• Si la fase externa es oleosa, el agua permanece inalterada, no se enturbia.
+
+9.3-CONTROL DE LA EXTENSIBILIDAD PN/L/CP/003/00
+Objetivo: determinar la extensibilidad de preparaciones semisólidas y verificar que la elaboración de una determinada preparación ha sido correcta.
+La valoración del índice de extensibilidad se hará basándose en el aumento de la superficie de una cantidad de muestra al ser sometida, progresivamente, a presiones crecientes en idénticos intervalos.
+Se representa la extensibilidad sobre un eje de coordenadas, tomando en abscisas los pesos empleados (en gramos), y en ordenadas los valores de las áreas medidas (en mm2).
+Como el área del preparado no es circular, sino más bien elíptica, se determina el área media.
+
+Para realizar este ensayo utilizamos dos placas de cristal entre las cuales se coloca, por ejemplo, 4 g del preparado.
+• Colocar la placa inferior de cristal sobre una hoja de papel milimetrado. Se recuadra la placa y se trazan las diagonales.
+• Colocar la muestra del preparado sobre el punto de intersección.
+• Se pesa la placa superior y se sitúa sobre la inferior. Pasado 1 minuto, por ejemplo, y por efecto de la presión, la preparación se habrá extendido de forma aproximadamente circular.
+• Se anotan los valores de los dos diámetros y se calcula el diámetro medio, y a partir de este, la superficie del círculo formado.
+• Se repite esta operación con sucesivos pesos (por ejemplo, 50, 100, 200 y 500 g) colocados en el centro de la placa.
+• Se representa la extensibilidad en mm2 frente a los pesos empleados.
+
+
+
+
+
+
+
+Con esta técnica de control no existen valores de referencia para comparar, es el propio farmacéutico quien crea los suyos y su intervalo de confianza.
+
+9.4-VERIFICACIÓN DE PESO/VOLUMEN
+Objetivo: describir el proceso para la realización del control o verificación del peso o volumen de las fórmulas magistrales y preparados oficinales.
+* Calcular el peso o volumen teórico que se debe obtener según la fórmula desarrollada del preparado.
+* Pesar o medir la cantidad obtenida.
+* Calcular el rendimiento de la preparación expresado en %, aplicando la siguiente fórmula: Rendimiento % = cantidad real preparada/cantidad teórica X 100.
+Se acepta cuando el rendimiento se encuentra entre 100 +- X%; siendo X% el error previsto.
+
+9.5.- CONTROL DE UNIFORMIDAD DE MASA
+Este control se lleva a cabo para determinar si todas las unidades posológicas tienen un peso adecuado.
+• Tomar una muestra al azar de 20 unidades (comprimidos, cápsulas, supositorios...)
+• Pesar individualmente cada una de las 20 unidades.
+• Determinar la masa media.
+• Valorar el resultado.
+
+
+
+
+9.6.- CONTROL DE CARACTERES ORGANOLÉPTICOS
+Objetivo: describir los procedimientos para realizar el control general de los caracteres organolépticos de diferentes formas farmacéuticas.
+
+Los caracteres organolépticos son aquellas propiedades que podemos percibir y valorar con los sentidos.
+? Color: los factores que van a determinar el color son el tipo de principio activo, concentración a la que se encuentre y tipo de excipiente. Un cambio brusco o gradual de coloración, suele indicar generalmente la existencia de fenómenos de oxidación.
+? Olor: dependerá del tipo de principio activo, de la concentración a la que se encuentre y del excipiente utilizado.
+? Brillo: suele influir en el brillo el método seguido en la elaboración de la forma farmacéutica. Así, si la elaboración es manual presentará menos brillo que si es mecánica (empleo de agitadores ...)
+? Aspecto externo en general: este ensayo es muy importante cuando se elaboran soluciones. Consiste en verificar, por observación directa, características como:
+* Grado de transparencia.
+* Ausencia de partículas en suspensión.
+* Ausencia de coloraciones o de precipitados inesperados.
+? Consistencia aparente: el ensayo consiste en agitar con varilla la forma farmacéutica elaborada y hacer una sencilla e intuitiva clasificación cualitativa a partir de la resistencia que oponga a ser agitada. Así, podremos hablar de:
+* Formas farmacéuticas de consistencia fluida: su agitación no opone ninguna resistencia.
+* Formas farmacéuticas de consistencia semifluida: su agitación apenas ofrece resistencia.
+* Formas farmacéuticas de consistencia media: su agitación ofrece una resistencia moderada.
+* Formas farmacéuticas de consistencia alta: su agitación ofrece una gran resistencia, siendo necesario a veces utilizar un agitador.
+Las suspensiones suelen ser de dos tipos según su consistencia: líquidas o semilíquidas. El ensayo que se va a realizar consiste en examinar su facilidad de agitación una vez envasada. Si tenemos:
+* Suspensiones líquidas: no oponen resistencia a ser agitadas.
+* Suspensiones semilíquidas: oponen cierta resistencia a ser agitadas.
+? Extensibilidad aparente: el ensayo consiste en tomar entre 0,5-1 gramo de preparado y depositarlo en el dorso de la muñeca extendiéndolo con suavidad hacia el antebrazo con la yema de los dedos. Según su capacidad para extenderse, se clasifican en formas farmacéuticas de baja, media y alta extensibilidad aparente.
+? Homogeneidad: el ensayo consiste en extender una pequeña porción de la forma farmacéutica problema (pomada, crema, gel...) sobre un porta, que se deposita después sobre una superficie de color negro para proceder a su visualización con una lupa. Si se observan numerosos grumos, gotículas de agua, microburbujas de aire... será indicativo de una deficiente homogeneización durante el proceso de elaboración.
+
+En suspensiones, una vez agitada, se deposita una gota sobre un portaobjeto, que se coloca sobre una superficie negra. Después se procede a observar el grado de homogeneidad con una lupa. Si hay homogeneidad, debe de existir un reparto uniforme del material pulverulento.
+? Oclusividad aparente: el ensayo consiste en aplicar una pequeña porción entre 0,5 y 1 gramos de la
+forma farmacéutica en el dorso de la mano, extendiéndola suavemente sobre la yema de los dedos hasta que se consiga la máxima absorción. Hay que observar si queda o no residuo graso no absorbible y frecuentemente brillante: si existe residuo, se dice que la forma farmacéutica es altamente oclusiva; si no queda residuo graso, se dice que la forma farmacéutica tiene una baja oclusividad. Los preparados elaborados (crema, pomada...) se clasifican en alta, media o baja oclusividad.
+? Evanescencia aparente: el grado de evanescencia de un preparado farmacéutico se mide por la mayor o menor cantidad de residuo graso que deja en la piel. Una forma farmacéutica es evanescente cuando apenas deja residuo graso. El ensayo es idéntico al explicado en el caso de la determinación del grado de oclusividad. En geles, el grado de evanescencia viene dado por el mayor o menor residuo de agente gelificante depositado sobre la piel una vez aplicado el gel (menor residuo, mayor el grado de evanescencia del gel).
+? Poder refrescante: el ensayo consiste en aplicar una pequeña porción sobre el antebrazo y al extenderla con la yema de los dedos. Si al cabo de unos segundos se aprecia un considerable efecto refrescante en la piel por evaporación del agua, se dice entonces que el preparado elaborado tiene alto poder refrescante. Los geles gozan de esta característica. Si es de fase externa oleosa pero constituida básicamente por sistemas lanolina-vaselina, apenas sí existirá efecto refrescante.
+
+10.- ELABORACIÓN, ENVASADO, ETIQUETADO Y DISPENSACIÓN DE FÓRMULAS MAGISTRALES Y PREPARADOS OFICINALES
+10.1.- ELABORACIÓN
+Para garantizar, de forma documentada, la calidad del producto elaborado, deberán anotarse todas las operaciones realizadas durante la elaboración, que deben efectuarse siempre de acuerdo con las técnicas y procedimientos normalizados de trabajo en conformidad con el Formulario Nacional u otros formularios de reconocido prestigio y con las presentes normas de correcta elaboración y control de calidad.
+Antes de la preparación de una fórmula magistral o preparado oficinal se revisarán los procedimientos de trabajo relacionados con su elaboración.
+Es de especial importancia la organización del proceso de manera que se eviten errores, confusiones, omisiones o contaminaciones. Deberá prestarse especial atención a todos aquellos factores que puedan afectar a la estabilidad del preparado.
+
+? COMPROBACIONES PREVIAS
+Antes de iniciar la elaboración de un producto, el responsable deberá evaluar la idoneidad de la preparación desde el punto de vista farmacéutico y además deberá comprobar los siguientes aspectos:
+* La inexistencia, en la zona de trabajo, de cualquier producto, material o documento que sea ajeno a la preparación que se va a llevar a cabo.
+* La disponibilidad, en la zona de trabajo, de la documentación y del utillaje necesario, así como de las materias primas, de las que verificará el etiquetado, las condiciones de peligrosidad o toxicidad y la caducidad.
+* El funcionamiento adecuado del utillaje a emplear. Comprobará previamente las fechas del último control y calibrado de los aparatos de medida y análisis, especialmente las balanzas, actualizándolas si fuese necesario.
+* La limpieza adecuada del utillaje y del local.
+
+
+? ELABORACIÓN
+* Las materias primas deberán pesarse o medirse por el farmacéutico o bajo su control directo. Cuando se trate de sustancias tóxicas o de elevada actividad farmacológica, el farmacéutico efectuará una comprobación de la pesada o medida.
+Las materias primas poco estables y las peligrosas o tóxicas se deberán manipular con las precauciones necesarias. En todo caso, la elaboración se llevará a cabo siguiendo los procedimientos descritos en la monografía específica del Formulario Nacional u otros formularios de reconocido prestigio y los criterios establecidos en las presentes normas.
+* Durante la elaboración, los recipientes y utillaje deben estar correctamente etiquetados, permitiendo, en todo momento, la identificación completa de las materias primas, productos intermedios o terminados y la fase en que se encuentra la elaboración.
+* Durante la fase de elaboración ha de cumplimentarse la correspondiente guía de elaboración y control que permitirá en todo momento la reconstrucción del historial de la elaboración, siendo necesario reflejar en dicha guía el estricto cumplimiento de todos los procesos.
+* El material de acondicionamiento utilizado será el adecuado, en función de la naturaleza, forma farmacéutica y estabilidad de la fórmula magistral o preparado oficinal, para garantizar su correcta conservación hasta la fecha de caducidad. Las operaciones de etiquetado se llevarán a cabo teniendo especial cuidado para evitar errores o confusiones.
+* Se establecen como controles mínimos de producto terminado los siguientes:
+a) Fórmulas magistrales: examen de los caracteres organolépticos.
+b)   Fórmulas magistrales tipificadas y preparados oficinales: los controles serán los establecidos en el Formulario Nacional.
+* De los preparados oficinales la farmacia guardará y conservará, en un lugar apropiado, hasta un año después de la fecha de caducidad, una muestra de cada lote preparado, de tamaño suficiente para permitir un examen completo.
+* Fecha de caducidad: en los preparados oficinales y en las fórmulas magistrales tipificadas se establecerá, de acuerdo con la caducidad que figure en la monografía correspondiente del Formulario Nacional. En el resto de las fórmulas, la asignación de los plazos de validez y fecha de máxima utilización deben basarse en estudios de estabilidad fisicoquímicos. En el caso de no disponer de esta información, el farmacéutico responsable debe asignar plazos de validez conservadores de acuerdo con las recomendaciones de la GBPP, siempre que la estabilidad física de los componentes y los resultados de la validación lo permitan.
+* De conformidad con lo establecido en la legislación vigente, cuando la realización de alguna fase de la producción de una preparación o de su control analítico se encomiende a otra entidad, se hará bajo un contrato en el que deberán establecerse claramente las obligaciones de cada parte.
+
+10.2.- DISPENSACIÓN
+La dispensación de fórmulas magistrales y preparados oficinales se ajustará a lo dispuesto en la legislación vigente.
+Las fórmulas magistrales y preparados oficinales se dispensarán en envases adecuados a su naturaleza y al uso al que estén destinados, de forma que garanticen la protección del contenido y el mantenimiento de la calidad del mismo durante el tiempo de validez establecido por el farmacéutico elaborador.
+La dispensación irá acompañada de la información suficiente que garantice su correcta identificación, conservación y utilización. Esta información estará constituida por los datos que figuren en la etiqueta y por los que se incluyan en el prospecto, que deberán ser conformes al contenido de las monografías del Formulario Nacional.
+
+? ETIQUETADO
+El etiquetado se define como, "las informaciones que constan en el embalaje exterior y en el acondicionamiento primario".
+De acuerdo a lo establecido en el Real Decreto 175/2001, de 23 de febrero, por el que se aprueban las normas de correcta elaboración y control de calidad de fórmulas magistrales y preparados oficinales, las etiquetas de los envases de fórmulas magistrales y preparados oficinales se ajustarán a los modelos establecidos en el Formulario Nacional, estarán expresados en caracteres fácilmente legibles, claramente comprensibles e indelebles y contendrán los siguientes datos en el acondicionamiento primario:
+a) Denominación del preparado oficinal o, en su caso, de la fórmula magistral tipificada, que deberá coincidir con la establecida en el Formulario Nacional.
+b) Composición cualitativa y cuantitativa completa, al menos, de los principios activos y de los excipientes de declaración obligatoria.
+c) Forma farmacéutica, vía de administración y cantidad dispensada.
+d) Número de registro en el Libro Recetario o soporte que lo sustituya, de acuerdo con la legislación vigente.
+e) Número de lote, en el caso de preparados oficinales.
+f) Fecha de elaboración y plazo de validez o fecha de caducidad.
+g) Condiciones de conservación, si procede.
+h) Nombre y número de colegiado del facultativo-prescriptor, para las preparaciones que precisen receta.
+i) Nombre del paciente en el caso de las fórmulas magistrales.
+j) Oficina de farmacia o servicio farmacéutico dispensador: nombre, dirección y número de teléfono.
+k) Advertencia: "manténgase fuera del alcance de los niños".
+
+Cuando la dimensión del envase no permita la inclusión en su etiqueta de todos los datos anteriores, figurarán, como mínimo, los siguientes:
+a) Denominación del preparado oficinal o, en su caso, de la fórmula magistral tipificada, que deberá coincidir con la establecida en el Formulario Nacional.
+b) Composición cualitativa y cuantitativa completa, al menos, de los principios activos y de los excipientes de declaración obligatoria.
+c) Vía de administración, si puede existir confusión.
+d) En el caso de fórmulas magistrales, número de registro del Libro Recetario o del soporte que lo sustituya de conformidad con la legislación vigente.
+e) Número de lote, en caso de preparados oficinales.
+f) Fecha de elaboración y plazo de validez o fecha de caducidad.
+g) Identificación de la oficina de farmacia o servicio farmacéutico dispensador.
+
+El resto de los datos que no se hayan podido incluir en el etiquetado se entregarán junto con la información escrita o prospecto dirigido al paciente que deberá acompañar a la dispensación de la fórmula magistral o preparado oficinal.
+Etiqueta del formulario nacional:
+
+
+En el caso de las preparaciones extemporáneas de elaboración centralizada en el servicio de farmacia, como son los preparados de quimioterapia intravenosa, las soluciones de anticuerpos monoclonales, los preparados de terapia celular y otras mezclas parenterales, se recomienda que la etiqueta de dichas preparaciones contenga la siguiente información:
+a) Nombre, número de historia y ubicación del paciente.
+b) Nombre de la preparación y forma farmacéutica.
+c) Materiales de partida (medicamentos y materias primas de declaración obligatoria).
+d) Dosis expresada como cantidad total del principio activo y/o concentración de la solución.
+e) Vía de administración.
+f) Modo de administración, velocidad y duración de la administración, cuando proceda.
+g) Volumen final, cuando proceda.
+h) Fecha y hora de preparación.
+i) Fecha máxima de utilización.
+j) Modo de conservación y precauciones de la manipulación.
+
+Además, dependiendo del área de hospitalización a la que vaya destinada dicha preparación extemporánea y del tipo de medicamento del que se trate, es importante disponer de protocolos de etiquetado distintivo (por colores, fundamentalmente) de dichas preparaciones para evitar errores de administración de medicación y garantizar la seguridad también del personal sanitario que se encargue de su administración y la posterior destrucción del material de acondicionamiento.
+
+Por ejemplo, en el protocolo interno del Hospital Universitario de la Princesa de Madrid se ha establecido que todos los medicamentos antineoplásicos elaborados en el servicio de farmacia sean etiquetados con etiquetas de fondo color naranja. En el caso de las vías de administración, es también muy habitual disponer de etiquetas identificativas de cada vía con diferente color.
+
+Es importante también que las etiquetas sean colocadas en el envase de acondicionamiento primario sin ocultar otro tipo de marcadores útiles para su administración ni dificultar su apertura, adaptando su tamaño siempre al tamaño del envase. Por ejemplo, en el caso de las jeringas, la etiqueta se debe colocar con su eje largo alineado con el eje de la jeringa, sin que impida leer las líneas de graduación. En el caso de las bolsas para perfusión, la etiqueta se debe colocar en el lado de la bolsa que no contenga líneas de graduación ni de composición. En el caso de los tarros y frascos, no debe franquear su apertura.
+En algunos servicios de farmacia se está implantando el sistema de identificación de medicamentos a través de códigos de barras y códigos bidimensionales como QR, BIDI y Datamatrix.
+Lo más habitual actualmente es que este tipo de códigos estén incorporados a la etiqueta del medicamento de las preparaciones de medicamentos citostáticos, pero en el caso de que se incorporen a las fórmulas magistrales es importante también verificar que no presenten defectos de impresión y no sean indelebles, así como que a través del lector de códigos se corresponda la información incluida en el programa informático de gestión con la información real de la fórmula magistral.
+
+? INFORMACIÓN AL PACIENTE
+En el acto de la dispensación de la fórmula magistral o preparado oficinal, el farmacéutico proporcionará al paciente la información oral y escrita, necesaria y suficiente, para garantizar su correcta identificación, conservación y utilización, así como la adecuada observancia del tratamiento.
+En el caso de preparados oficinales y fórmulas magistrales tipificadas se ajustará esta información a la contenida en el Formulario Nacional.
+
+Además, la información escrita, que se deberá proporcionar siempre que se dispense una fórmula magistral no tipificada, contendrá los siguientes datos:
+a) Oficina de farmacia o servicio farmacéutico dispensador: nombre, dirección y número de teléfono.
+b) Composición cualitativa y cuantitativa completa, al menos, de los principios activos y de los excipientes de declaración obligatoria.
+c) Forma farmacéutica, dosis unitaria y número de dosis.
+d) Vía de administración.
+e) Posología y frecuencia de administración según lo indicado en la receta.
+f) Normas para la correcta administración.
+g) Condiciones de conservación, si procede.
+h) Advertencia: los medicamentos deben mantenerse fuera del alcance de los niños.
+
+Si la naturaleza del medicamento lo requiere, se deberán incluir, además, advertencias especiales, tales como:
+a) Duración del tratamiento, cuando tenga que ser limitado.
+b) Precauciones de empleo en grupos especiales de población (niños, mujeres embarazadas o en período de lactancia, ancianos, deportistas, patologías específicas).
+c) Posibles efectos sobre la capacidad de conducción de vehículos o de manipulación de determinadas máquinas.
+d) Medidas que se deben adoptar en caso de sobredosis.
+
+11.-IDENTIFICACIÓN, CONSERVACIÓN Y REGISTRO DE FÓRMULAS MAGISTRALES Y PREPARADOS OFICINALES
+Conservación y caducidad de las fórmulas magistrales
+
+? La importancia del almacenamiento en la conservación de una fórmula magistral.
+Cuando las condiciones de almacenamiento y conservación de una fórmula magistral no son las adecuadas, la eficacia y seguridad del medicamento pueden verse seriamente comprometida.
+Una conservación incorrecta puede provocar la pérdida de la eficacia terapéutica o la formación de productos tóxicos no deseados lo que podría significar un riesgo elevado para la salud del paciente.
+Los tres factores ambientales a tener en cuenta para garantizar una adecuada conservación del producto son la luz, la humedad y la temperatura.
+
+• Luz: muchos medicamentos son sensibles a la luz y sufren deterioro en su calidad cuando son expuestos a un exceso de luz ya que ésta puede acelerar los procesos de degradación, por esta razón deben colocarse alejados de radiaciones directas del sol o de fuentes artificiales. Para la Real Farmacopea Española la expresión "protegido de la luz" significa que el producto se mantiene en un envase de un material que absorbe suficientemente la luz actínica, a fin de proteger el contenido de toda alteración inducida por ella, o en un envase provisto de un envoltorio exterior que asegure tal protección, o bien que el producto se conserve en un lugar del que se ha excluido este tipo de luz.
+
+
+• Humedad: es otro de los factores importantes a controlar en las áreas de almacenamiento de los medicamentos. Un ambiente con alta humedad puede favorecer el crecimiento de microorganismos como hongos y bacterias, así como precipitar reacciones químicas como la oxidación de los componentes del medicamento. Para la Real Farmacopea Española "protegido de la humedad" significa que el producto se conserva en un envase hermético y que deben tomarse las precauciones adecuadas cuando el envase se abra en atmósfera de humedad elevada. Si fuera necesario puede mantenerse en un ambiente de baja humedad, incorporando un desecante en el envase, siempre que se evite todo contacto directo entre éste y el producto en cuestión.
+
+• Temperatura: la temperatura juega un papel crítico en el proceso de conservación de los medicamentos. Incrementos de la misma aceleran los procesos de degradación, produciéndose cambios físicos y químicos en la composición y propiedades del medicamento. Mantener las condiciones adecuadas de temperatura es esencial para su estabilidad. Los principales riesgos de deterioro a los que se exponen los medicamentos por acción de la temperatura, son la pérdida de potencia o la degradación en productos tóxicos. Algunas formas farmacéuticas (supositorios y cremas) son bastante sensibles a elevaciones de temperatura. En estos casos un cambio en el aspecto del producto en el momento de la apertura nos indicará una alteración de la estabilidad de la forma farmacéutica
+
+La Farmacopea Europea, al igual que la Real Farmacopea Española, señala que si en un procedimiento analítico se menciona la temperatura sin un valor numérico, los términos generales que se utilizan tienen el siguiente significado:
+
+Significado de términos:
+
+
+Para los preparados oficinales y fórmulas magistrales tipificadas la fecha de caducidad de establecerá, de acuerdo con la caducidad que figura en la monografía correspondiente del Formulario Nacional.
+En el resto de las fórmulas magistrales la fecha se establecerá en función de la duración del tratamiento prescrito (Real Decreto 175/2001, de 23 febrero por el que se aprueban las normas de correcta elaboración y control de calidad de fórmulas magistrales y preparados oficinales)
+No obstante, cuando la duración del tratamiento sea prolongada, se tomarán como referencia los siguientes plazos de caducidad.
+Estos plazos se basan en el tipo de forma farmacéutica que vamos a elaborar, suponiendo que la temperatura de conservación será inferior a 25ºC y que el resto de las condiciones de conservación, como humedad, correcto envase, protección de la luz, estén controladas correctamente.
+
+Para cada tipo de productos se establecen las siguientes recomendaciones:
+
+Forma farmacéuticaCaducidad recomendadaampolla6 mesescápsulas6 mesesChampús3 mesesEmulsiones en tarro con conservante3 mesesEmulsiones en tubo con conservante6 mesesenemas6mesesGeles sin conservantes en tubo (hidroalcohólico)6 meses
+
+Geles sin conservantes en tarro3 mesesGeles con conservantes en tubo6mesesGotas nasales3 mesesGotas óticas estériles, acuosas1 mesInfusiones, cocimiento sin conservante2 semanasInfusiones, cocimiento con conservante3 mesesPapeles, sellos6 mesesPastas6 mesesPolvos6 mesesPomadas anhidras6 mesesPomadas oftálmicas acuosas1 mesPomadas oftálmicas anhidras6 mesesSoluciones oftálmicas para lavado sin conservante24 horasSoluciones para vía oral o lavado bucal sin conservante2 semanasSoluciones para vía oral o lavado bucal con conservante6 mesesSoluciones uso externo sin conservante2 semanasSoluciones uso externo con conservante6 mesesSupositorios6 mesesSuspensiones sin conservante2 semanasSuspensiones con conservante3 meses
+El establecimiento de estas recomendaciones no implica que en ciertos casos, puedan llegar a conservarse durante un tiempo más prolongado.
+
+Otras fórmulas magistrales tienen un período de caducidad aún más reducido:
+
+soluciones de permanganato potásico5-7 díassoluciones de glutaraldehido activadasno más de 15 díasenemas de mesalazina7 días
+Para fórmulas magistrales que contengan alguno de los siguientes principios activos, se recomienda un período de caducidad de un mes:
+- Ácido ascórbico
+- Ácido azeláico
+- Ditranol
+- Espironolactona
+- Hidroquinina
+- Tetrionoina e isotretinoina
+- Ketoconazol
+- Permanganato potásico
+- Urea
+- Vitamina E
+
+RECOMENDACIONES SOBRE LA CADUCIDAD Y CONSERVACIÓN DE FÓRMULAS MAGISTRALES:
+1. Siempre que se disponga de estudios de estabilidad para una fórmula determinada, se aplicará la caducidad del estudio original respetando al máximo las condiciones del estudio: concentración del principio activo, excipientes, vehículo, pH, tipo de envase y condiciones de almacenamiento y conservación.
+2. En caso de que no se disponga de información específica antes de tomar una decisión sobre la caducidad, hay que considerar y valorar todos aquellos factores que puedan afectar la estabilidad química, física, microbiológica, terapéutica y toxicológica de cada componente de la fórmula, aplicando criterios basados en la experiencia y conocimientos profesionales.
+
+
+3. La elección del tipo de envase es primordial para favorecer las condiciones óptimas de almacenamiento y conservación y evitar la degradación de los componentes de la fórmula: interacción con los materiales del envase, temperatura, humedad, luz y contacto con el aire.
+4. Cuando la caducidad de una fórmula magistral es superior a la duración de tratamiento se establecerá como fecha de caducidad el tiempo de finalización del mismo para evitar almacenamientos innecesarios y la utilización posterior fuera del tratamiento prescrito.
+En estos casos la cantidad dispensada debe ajustarse para cubrir la duración de tratamiento.
+5. En ningún caso la caducidad de una fórmula magistral podrá superar la caducidad de alguno de sus componentes.
+6. Las fórmulas con elevado porcentaje de agua serán más susceptibles de sufrir contaminaciones a no ser que se incluyan uno o más conservantes en su composición.
+7. Las formas líquidas tienen una estabilidad más limitada que las sólidas. Una vez abiertas, pueden perder estabilidad.
+8. Por norma general todas las fórmulas magistrales deben permanecer el menor tiempo posible para evitar la degradación de la luz, humedad y temperatura.
+9. Todo producto cuya apariencia exterior hubiera sido visiblemente modificada no debería ser consumido, ya que dicha alteración podría ser un indicador de una modificación de las propiedades de la forma farmacéutica.
+10. Para aquellas fórmulas magistrales que deban conservarse a Tª entre 2 y 8ºC es muy importante que no se rompa la cadena de frío desde el momento de su elaboración hasta la utilización por el paciente, para así poder garantizar la actividad del preparado.
+11. Las características de conservación y mantenimiento de una fórmula magistral deberán aparecer perfectamente descritas en el envase y en el prospecto.
+
+? REGISTRO
+Para una correcta gestión es necesario llevar a cabo el registro de las dispensaciones, tal como se hace en el caso de los medicamentos fabricados industrialmente:
+* La dispensación de las fórmulas magistrales se debe anotar en el libro recetario, así como la de los preparados oficinales que requieran receta médica.
+Después de la dispensación, la receta correspondiente se conserva en la oficina de farmacia o en el servicio farmacéutico tres meses.
+* La dispensación de fórmulas magistrales y preparados oficinales que contengan sustancias estupefacientes, psicótropas o principios activos de ECM deben anotarse en el libro de estupefacientes. Se conservará 2 años la de psicótropos y 5 años las de estupefacientes.
+Los plazos de conservación han quedado relegados a recetas privadas ya que, del resto de entidades, si son en papel se facturan antes, y actualmente, la mayor parte de las recetas son en formato electrónico, incluidas las de formulación magistral.
+
+La información que se registra en el libro recetario es:
+* Fecha: indicando día, mes y año
+* Número de receta: las recetas se van numerando de forma correlativa, a medida que se van anotando.
+* Nombre del facultativo o facultativa que ha realizado la prescripción.
+* Prescripción
+* Precio
+* Observaciones
+
+12.- BIBLIOGRAFÍA
+* Fernández Cerezo, Mª I. De la Jara Gordo, Ana Mª. Merino Jimenez, C. Gómez Peña, B. Ruíz Montero, Mª
+L. "Formulación Magistral". Editorial MCGraw-Hill. 2010
+* Benito Hernández. Elena Martínez. "Formulación Magistral". Editorial Altamar.
+* Sabela Fernández Vila; Beatriz Tojo Fernández; Montserrat Chao Millor; Fátima Calvo Rey.
+"Dispensación de Productos Farmacéuticos". Editorial MCGraw-Hill. 2013.
+* Cristina Moreno Valderrey. "Dispensación de Productos Farmacéuticos". Editorial Paraninfo. 2014.
+* Francisco J. Farfán Sedano; Mª Jesús Frutos Sastre. "La Farmacia Hospitalaria para técnicos en farmacia". AMV Ediciones.
+* Benito Hernández; Elena Martínez. "Dispensación de productos farmacéuticos". Editorial Altamar. 2013.
+* FAULÍ I TRILLO, C. Tratado de Farmacia galénica. Madrid. Ed. Luzán 5.
+* VILA JATO, J.L. Tecnología Farmacéutica. Vol I: Aspectos fundamentales de los sistemas farmacéuticos y operaciones básicas. Madrid. Ed. Síntesis.
+* VILA JATO, J.L. Tecnología Farmacéutica. Vol. II: Formas Farmacéuticas. Madrid. Ed. Síntesis.
+* BARBÉ ROCABERT, C. Preparados farmacéuticos y parafarmacéuticos. Bases tecnológicas y documentales. Barcelona 2001. Masson.
+* LUIS, C.D; CAMACHO, Mª.A; SANCHEZ-CASCADO, G; MINGO, G.J. Elaboración de preparados farmacéuticos y parafarmacéuticos. Madrid. 2005 McGrawHill.
+* Real Decreto 175/2001, de 23 de febrero por el que se aprueban las normas de correcta elaboración y control de calidad de fórmulas magistrales y preparados oficinales
+* La ley 29/2006, de 26 de julio, de garantías y uso racional de los medicamentos y productos sanitarios
+* Real Decreto 1345/2007 de 11 de octubre, por el que se regula el procedimiento de autorización, registro y condiciones de dispensación de los medicamentos de uso humano fabricados industrialmente.
+
+
+13.-ANEXO
+
+
+
+
+
+El acondicionamiento primario cumplirá con las especificaciones de la Real Farmacopea Española. Además, habrá un registro que contenga, como mínimo, los datos siguientes:
+? Número de registro interno.
+? Identificación del producto.
+? Proveedor.
+? Número de lote.
+? Fecha de recepción.
+? Cantidad y número de envases.
+
+
+? Fecha de caducidad, si procede.
+? Condiciones de conservación, si procede.
+? Decisión de aceptación o rechazo, fechada y firmada por el farmacéutico.
+
+
+PROCEDIMIENTO NORMALIZADO DE ELABORACIÓN Y CONTROL
+Contendrá toda la información necesaria para elaborar correctamente una determinada fórmula magistral. Deberá contener, como mínimo, los datos siguientes:
+? Identificación del preparado: nombre y/o composición cualitativa, forma farmacéutica.
+? Método de elaboración y su referencia bibliográfica.
+? Controles analíticos a efectuar, métodos seguidos y límites establecidos.
+? Material de acondicionamiento necesario.
+? Información al paciente.
+? Condiciones de conservación.
+? Caducidad.
+
+GUÍA DE ELABORACIÓN, CONTROL Y REGISTRO
+Contendrá toda la información necesaria que permita conocer cómo se efectuó cada preparación. Deberá contener, como mínimo, los datos siguientes:
+? Nombre de la fórmula magistral o preparado oficinal.
+? Composición.
+? Modus operandi.
+? Número de registro/lote de la fórmula magistral o preparado oficinal.
+? Forma farmacéutica.
+? Cantidad preparada (peso, volumen o número de unidades).
+? Fecha de elaboración.
+? Datos identificativos de las materias primas empleadas: nombre, cantidades, proveedor y lote.
+? Identificación del personal elaborador y utillaje utilizado.
+? Control de calidad: pruebas realizadas, personal, aparataje y reactivos empleados y su lote.
+? Fecha de caducidad.
+? Datos de dispensación: fecha (se comprobará, en los preparados oficinales, que la fecha de la última dispensación está dentro del límite de caducidad), cantidad, facultativo prescriptor y paciente.
+? Observaciones.
+? Decisión de aceptación o rechazo, fechada y firmada por el farmacéutico responsable.
+
+
+
+
+FORMULARIO NACIONAL. Última actualización: noviembre de 2022
+
+CODIFICACIÓN DE FÓRMULAS MAGISTRALES TIPIFICADAS
+Se introducen con una codificación de letras y números.
+Por ejemplo: Colodión con ácido láctico y salicílico FN/2003/FMT/006
+
+FN: monografía del Formulario Nacional. 2003: año de publicación.
+FMT: monografía de fórmula magistral tipificada.
+006: número identificativo que le corresponde al colodión con ácido láctico y salicílico.
+
+FN/2003/FMT/001 ACETATO DE ALUMINIO, SOLUCIÓN DE FN/2003/FMT/002 ACETATO DE HIDROCORTISONA Y FENOL, CREMA DE FN/2003/FMT/003 ÁCIDO ACÉTICO, GOTAS ÓTICAS DE
+FN/2003/FMT/004 ÁCIDO SALICÍLICO Y TRIAMCINOLONA ACETÓNIDO, CREMA DE FN/2003/FMT/005 ÁCIDO SALICÍLICO Y TRIAMCINOLONA ACETÓNIDO, GEL DE FN/2003/FMT/006 COLODIÓN CON ÁCIDO SALICÍLICO Y ÁCIDO LÁCTICO FN/2003/FMT/007 ERITROMICINA, CREMA DE
+FN/2003/FMT/008 GEL ANESTÉSICO DE LIDOCAÍNA
+FN/2003/FMT/011 HIDROCLORURO DE METADONA, SOLUCIÓN AL 1% DE FN/2003/FMT/012 HIDROCLORURO DE MORFINA, SOLUCIÓN ORAL DE FN/2003/FMT/013 HIDROCORTISONA, CREMA DE
+FN/2003/FMT/014 IPECACUANA, JARABE DE
+FN/2003/FMT/015 LIDOCAÍNA COMPUESTA, SUSPENSIÓN BUCAL DE
+
+FN/2003/FMT/016 LIDOCAÍNA VISCOSA
+FN/2003/FMT/017 LUGOL DÉBIL, SOLUCIÓN DE. Modificado 2025 FN/2003/FMT/018 LUGOL FUERTE, SOLUCIÓN DE. Modificado 2024 FN/2003/FMT/019 METRONIDAZOL, GEL DE
+FN/2003/FMT/020 NITRATO DE PLATA, SOLUCIÓN AL 2% DE FN/2003/FMT/021 TRETINOÍNA, GEL DE
+
+CODIFICACIÓN DE FÓRMULAS MAGISTRALES TIPIFICADAS PEDIÁTRICAS
+Se introducen con una codificación de letras y números.
+Por ejemplo: Colodión con ácido láctico y salicílico FN/2003/FMT/006
+
+FN: monografía del Formulario Nacional. 2003: año de publicación.
+FMT: monografía de fórmula magistral tipificada.
+006: número identificativo que le corresponde al colodión con ácido láctico y salicílico.
+
+FN/2014/FMT/022 HIDROCLOROTIAZIDA 2 MG/ML SUSPENSIÓN ORAL FN/2018/FMT/024 CAPTOPRIL 1 MG/ML SOLUCIÓN ORAL FN/2018/FMT/025 FUROSEMIDA 2 MG/ML SOLUCIÓN ORAL
+FN/2019/FMT/026 CLONIDINA CLORHIDRATO 20 MICROGRAMOS (MCG)/ML SOLUCIÓN ORAL FN/2020/FMT/027 ISONIAZIDA 50 MG/ML SOLUCIÓN ORAL
+FN/2020/FMT/028 ETAMBUTOL CLORHIDRATO 50 MG/ML SOLUCIÓN ORAL FN/2020/FMT/029 PIRIDOXINA CLORHIDRATO 25 MG/ML SOLUCIÓN ORAL FN/2020/FMT/030 DEXAMETASONA 1 MG/ML SOLUCIÓN ORAL FN/2021/FMT/031 FENOBARBITAL 10 MG/ML SOLUCIÓN ORAL FN/2021/FMT/032 HIDRALAZINA CLORHIDRATO 10 MG/ML SOLUCIÓN ORAL FN/2021/FMT/033 ÁCIDO FÓLICO 1 MG/ML SOLUCIÓN ORAL FN/2021/FMT/034 TIAMINA CLORHIDRATO 100 MG/ML SOLUCIÓN ORAL FN/2021/FMT/035 RIBOFLAVINA 25 MG/ML SOLUCIÓN ORAL FN/2021/FMT/036 ENALAPRIL MALEATO 1 MG/ML SOLUCIÓN ORAL FN/2003/FMT/037 HIDRATO DE CLORAL, ENEMA DE. Modificado 2022 FN/2022/FMT/038 AMLODIPINO 0,5 MG/ML SOLUCIÓN ORAL FN/2003/FMT/039 HIDRATO DE CLORAL, JARABE DE. Modificado 2022 FN/2024/FMT/040 HIDROCORTISONA 1 MG/ML SUSPENSIÓN ORAL FN/2024/FMT/041 GABAPENTINA 50 MG/ML SOLUCIÓN ORAL FN/2024/FMT/042 CITRATO SÓDICO Y ACIDO CÍTRICO SOLUCIÓN ORAL
+
+CODIFICACIÓN DE PREPARADOS OFICINALES
+Se introducen con una codificación de letras y números. Por ejemplo: Vaselina salicílica FN/2003/PO/032
+
+FN: monografía del Formulario Nacional. 2003: año de publicación.
+PO: monografía de preparado oficinal.
+032: número identificativo que le corresponde a la vaselina salicílica.
+
+FN/2003/PO/001 ACEITE ALCANFORADO FN/2003/PO/002 ACEITE GOMENOLADO FN/2003/PO/003 ACEITE SALICILADO CON ALCOHOL FN/2003/PO/004 ACEITE SALICILADO SIN ALCOHOL FN/2003/PO/005 ÁCIDO TÁNICO, SOLUCIÓN DE
+
+
+FN/2003/PO/006 AGUA BORICADA FN/2003/PO/007 AGUA DE CAL, SOLUCIÓN DE FN/2003/PO/008 AGUA TIMOLADA FN/2003/PO/009 ALCOHOL ALCANFORADO
+FN/2003/PO/010 ALCOHOL BORICADO (A SATURACIÓN) FN/2003/PO/011 ALCOHOL IODADO
+FN/2003/PO/012 ALCOHOL MENTOLADO AL 5% FN/2003/PO/013 ALCOHOL TÁNICO FN/2003/PO/014 CALAMINA, LOCIÓN DE
+FN/2003/PO/015 CLORHEXIDINA, SOLUCIÓN ACUOSA AL 0,1% DE FN/2003/PO/016 GLICEROLADO DE ALMIDÓN
+FN/2003/PO/017 PASTA AL AGUA FN/2003/PO/018 PASTA LASSAR
+FN/2003/PO/019 PERMANGANATO DE POTASIO, SOLUCIÓN AL 1/10.000 DE FN/2003/PO/020 POLVOS DE ÓXIDO DE ZINC MENTOLADOS FN/2003/PO/021 POMADA ALCANFORADA
+FN/2003/PO/022 POMADA ANALGÉSICA DE MENTOL Y SALICILATO DE METILO FN/2003/PO/023 POVIDONA IODADA, SOLUCIÓN DE
+FN/2003/PO/024 SALIVA ARTIFICIAL FN/2003/PO/025 SOLUCIÓN PARA GARGARISMOS FN/2003/PO/026 SOLUCIÓN RUBEFACIENTE
+FN/2003/PO/027 SULFATO DE COBRE, SOLUCIÓN AL 0,1% DE FN/2003/PO/028 TALCO MENTOLADO
+FN/2003/PO/029 UREA, CREMA AL 15% DE FN/2003/PO/030 VASELINA BORICADA FN/2003/PO/031 VASELINA MENTOLADA FN/2003/PO/032 VASELINA SALICÍLICA FN/2006/PO/034 AGUA DE ALIBOUR FN/2006/PO/035 ALCOHOL DE ROMERO AL 5% FN/2006/PO/036 ALCOHOL GLICERINADO
+FN/2006/PO/037 CREMA ANALGÉSICA DE SALICILATO DE METILO, MENTOL Y ALCANFOR FN/2006/PO/038 EOSINA AL 2%, SOLUCIÓN ACUOSA DE
+FN/2006/PO/039 MINOXIDIL AL 2%, SOLUCIÓN DE. Modificado 2024 FN/2006/PO/040 POLVOS PÉDICOS
+FN/2006/PO/041 POMADA DE BÁLSAMO DE PERÚ FN/2006/PO/042 SULFATO DE ZINC, SOLUCIÓN AL 0,1% DE
+
+CODIFICACIÓN DE PREPARADOS OFICINALES DE FITOTERAPIA
+Se introducen con una codificación de letras y números.
+Por ejemplo: Cápsulas de cáscara sagrada FN/2003/POF/002
+
+FN: monografía del Formulario Nacional. 2003: año de publicación.
+POF: monografía de preparado oficinal de fitoterapia.
+002: número identificativo que le corresponde a las cápsulas duras de cáscara sagrada.
+
+FN/2003/POF/001 ÁLOE DE BARBADOS, CAPSULAS DURAS DE FN/2003/POF/002 CÁSCARA SAGRADA, CÁPSULAS DURAS DE FN/2003/POF/003 CORTEZA DE FRÁNGULA, CÁPSULAS DURAS DE FN/2003/POF/004 CUTÍCULA DE ISPÁGULA, POLVO PARA SUSPENSIÓN ORAL DE
+
+FN/2003/POF/005 EXTRACTO SECO DE CORTEZA DE FRÁNGULA, CÁPSULAS DURAS DE FN/2003/POF/006 EXTRACTO SECO DE HOJA DE SEN, CÁPSULAS DURAS DE FN/2003/POF/007 FRUTO DE HINOJO, CÁPSULAS DURAS DE
+FN/2003/POF/008 HOJA DE GAYUBA, CÁPSULAS DURAS DE FN/2003/POF/009 HOJA DE ORTOSIFÓN, CÁPSULAS DURAS DE FN/2003/POF/010 HOJA DE ROMERO, CÁPSULAS DURAS DE FN/2003/POF/011 HOJA DE SEN, CÁPSULAS DURAS DE FN/2003/POF/012 POLVO DE AJO, CÁPSULAS DURAS DE FN/2003/POF/013 RAÍZ DE HARPAGOFITO, CÁPSULAS DURAS DE FN/2003/POF/014 RAÍZ DE VALERIANA, CÁPSULAS DURAS DE
+FN/2003/POF/015 SEMILLA DE ZARAGATONA, POLVO PARA SUSPENSIÓN ORAL DE
+
+
+
+
+
+
+
+
+
+PREMIR(r)
+opos1c1ones
+
+Tus centros PREMIR(r) en Galicia son: Santiago • 981 59 01 98 Coruna•981131250
+Ferrol • 981 31 21 50
+Lugo • 982 22 80 30
+Orense • 988 37 30 13
+Vigo • 986 23 84 42
+Pontevedra • 986 84 72 14
+
+
+
+
+
+
+
+Grupo
+PREMIR	esta formado por:
+
+
+
+
+
+
+
+
+
+
+
+CPR PREMIR
+Ciclos Superiores
+Grupo PREMIR"
+
+Languages
+School
+GrupoPREMIR"@,
+
+
+
+
+
+
+
+
+PREMIR(r)
+oposiciones
+
+oposnet
+campus virtual
+
+
+
+
+
+

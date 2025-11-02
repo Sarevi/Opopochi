@@ -1,0 +1,994 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+TECNICO DE FARMACIA
+SERGAS
+
+TEMA 10:
+           FORMAS FARMACÉUTICAS Y VÍAS DE ADMINISTRACIÓN DE LOS MEDICAMENTOS:
+                           CONCEPTOS GENERALES. VÍAS DE ADMINISTRACIÓN DE MEDICAMENTOS: ORAL, TÓPICA, PARENTERAL, RESPIRATORIA, RECTAL,
+  VAGINAL, URETRAL, OFTÁLMICA Y ÓPTICA.
+FORMAS FARMACÉUTICAS SEGÚN LA VÍA DE
+ADMINISTRACIÓN.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GUIÓN:
+1- FORMAS FARMACÉUTICAS Y VÍAS DE ADMINISTRACIÓN DE LOS MEDICAMENTOS: CONCEPTOS GENERALES
+1.1. TIPOS DE VÍAS
+2. VÍA ORAL.
+2.1 FORMAS FARMACÉUTICAS UTILIZADAS POR VÍA ORAL
+2.1.1. Formas orales líquidas
+2.1.2. Formas orales sólidas
+3. VÍA SUBLINGUAL.
+4. VÍA RECTAL
+4.1.-FORMAS DE ADMINISTRACION RECTAL: VIA RECTAL
+5. VÍA INHALATORIA:
+5.1.-FORMAS DE ADMINISTRACION ESPECIALES: VIA INHALATORIA.
+6. VÍA NASAL
+7. VÍA VAGINAL
+8. VÍA URETRAL
+9. VÍA TÓPICA
+9.1.- VÍA CUTÁNEA O DERMATOLÓGICA
+9.2.- VÍA TÓPICA BUCAL
+9.3.-VÍA TRANSDÉRMICA
+9.4.- VÍA CONJUNTIVAL Y OFTÁLMICA
+9.5. VÍA ÓTICA
+10. VÍAS PARENTERALES
+10.1.-FORMAS	DE	ADMINISTRACIÓN	PARENTERAL:	VÍA	PARENTERAL INYECTABLES
+11.- BIBLIOGRAFÍA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1.- FORMAS FARMACÉUTICAS Y VÍAS DE ADMINISTRACIÓN DE LOS MEDICAMENTOS: CONCEPTOS GENERALES
+Administración de medicamentos: procedimiento a través del cual, un medicamento entra en contacto con el organismo del paciente, en el modo adecuado, ya sea con fines preventivos, diagnósticos o terapéuticos.
+
+El personal de enfermería es el responsable de la correcta administración de cada medicamento, y a él le compete tanto la responsabilidad legal como la capacitación profesional.
+
+Regla de los 5 puntos:
+* Paciente correcto
+* Hora correcta
+* Medicamento correcto
+* Dosis correcta
+* Vía de administración correcta
+
+Los medicamentos hay que administrarlos a la hora pautada, con una diferencia no superior a los
+30 minutos, excepto los fármacos de estrecho margen terapéutico (acenocumarol, inmunosupresores, algunos antiepilépticos,...) que deben administrarse a la hora ordenada para que sus niveles en sangre permanezcan estables.
+Las órdenes de medicación, realizadas por el médico, deben ser por escrito, salvo casos de urgencia, que serán verbales, ratificadas después por escrito.
+
+En la orden de medicación debe figurar:
+* Datos paciente
+* Fecha y hora de prescripción
+* Nombre, dosis del fármaco (DCI preferentemente) y forma farmacéutica
+* Vía de administración
+* Pauta de administración y duración de tratamiento
+* Instrucciones especiales (si las hubiese)
+* Datos del médico con firma
+
+Si algún dato es ilegible, está incompleto o se pide un fármaco u dosis inapropiado, se debe aclarar con prescriptor antes de administrar el fármaco.
+Vía de administración: ruta de entrada del medicamento en el organismo. Ésta va a influir en la rapidez, intensidad y duración del efecto farmacológica, por lo que es de suma importancia conocer las ventajas y desventajas de cada una de ellas.
+
+Factores que determinan que un fármaco se administre por una o por otra vía:
+
+Características FQ de los fármacos: los aminoglucósidos, vancomicina o heparina no se pueden absorber por la vía oral debido a su elevado PM. Otros son tan irritantes que no se deben administrar por vía IM por riesgo de necrosis.
+
+
+Velocidad de respuesta: Si se quiere una acción inmediata sería necesario utilizar la vía intravenosa.
+
+Acción local: En algunos casos es necesario minimizar al máximo las cantidades de fármaco que se absorban con el fin de evitar efectos adversos sistémicos. La vía tópica gotas oftálmicas, óticas...) es la que se suele utilizar para lograr una acción localizada.
+
+Facilidad de administración: Es interesante conocer las características de las diferentes vías de administración porque la velocidad de absorción de cada una de ellas es determinante a la hora de producir el efecto o los efectos secundarios.
+
+Como norma general se debe tener presente y aplicar en todo tratamiento las conocida como 5 premisas correctas: FARMACO exacto, DOSIS exacta, VÍA exacta, HORA exacta y PACIENTE exacto.
+
+
+
+
+
+
+
+
+
+
+
+Diferentes vías de administración de los medicamentos
+
+1.1. TIPOS DE VÍAS.
+Las diferentes vías de administración se pueden clasificar en:
+
+A.- VÍAS INDIRECTAS O MEDIATAS: el medicamento atraviesa la piel o mucosas intactas. Son las siguientes:
+Vía oral.
+Vía sublingual. Vía rectal.
+Vía vaginal.
+Vía uretral.
+Vía transdérmica Vía tópica
+
+
+Vía dérmica o cutánea.
+Vía oftálmica.
+Vía óptica.
+Vía nasal.
+Vía inhalatoria.
+
+B.- VÍAS DIRECTAS O INMEDIATAS: el fármaco no tiene que atravesar ninguna barrera, ya que se pone en contacto directo con el medio interno mediante inyección. También se conoce como vía PARENTERAL O INYECTABLE.
+
+Vías parenterales.
+
+      Son aquellas en las que la administración de fármacos se realiza mediante inyección a través de una o más capas de la piel o mucosas, pudiéndose clasificar en:
+Vía subcutánea o hipodérmica. Vía intradérmica.
+Vía intramuscular.
+Vía intravascular. Se clasifican en función del lugar de acceso:
+- Vía central: yugular interna, subclavia, femoral.
+- Vía periférica: dorso mano, antebrazo (radial y cubital), brazo. O del tipo de vaso:
+- Vía intravenosa
+- Vía intraarterial: gasometrías, administración de contrastes, ciertos citostáticos...
+Vía intraperitoneal. La superficie de absorción es grande y la velocidad comparable a la de la vía intravenosa pero puede resultar peligrosa por el riesgo de peritonitis, adherencias e infecciones, por lo que se reserva para farmacología experimental y para diálisis.
+Vía intrapleural. Se utiliza sólo para tratamientos de la propia membrana.
+Vía intraarticular. Es la administración de un medicamento directamente en la cavidad sinovial de una articulación con la intención de mitigar el dolor, ayudar a proteger la función, evitar las contracturas y disminuir la atrofia muscular, p. Ej.: corticosteroides, analgésicos...
+Vía intraósea.
+Vía intrarraquídea. Se utiliza para la administración de fármacos que no atraviesan la BHE. En función del acceso se diferencian:
+
+* V. subaracnoidea, intratecal o espinal. El lugar de la administración es por debajo de la aracnoides (meninge media). La difusión es lenta y el volumen de absorción pequeño. Es usada para la administración de antibióticos y anestésicos incapaces de atravesar la barrera hematoencefálica.
+* V. epidural. Con menos riesgos que la anterior, ya que se administra el fármaco entre la meninge más externa (duramadre) y la pared del canal raquídeo, su uso se reserva sólo para administración de anestésicos.
+Vía intraneural. Se utiliza para administrar el medicamento a nivel ganglionar con la intención de bloquear la transmisión del impulso nervioso (normalmente el nociceptivo), que puede ser reversible o irreversible.
+Vía intracardíaca. Su uso está restringido a la administración de adrenalina en casos de urgencia crítica, practicándose a nivel del cuarto o quinto espacio intercostal, separado entre 1 y 1'5 cm. del borde esternal izquierdo.
+
+       Las distintas vías de administración pueden pretender un efecto o una acción local que es cuando el medicamento ejerce su acción allí donde se coloca (p.ej. una pomada sobre la piel, un colirio sobre el ojo...), o un efecto o acción sistémica cuando el fármaco alcanza la circulación sistémica para producir sus efectos. Así mismo, cuando pretendemos administrar un medicamento para que ejerza un efecto local, el hecho de que se absorba en parte (pase a circulación sistémica) y se produzcan efectos sistémicos, estos son considerados como un efecto indeseable del medicamento.
+
+
+2. VÍA ORAL.
+
+      Es la vía de administración de medicamentos más utilizada, ya que, a través de ella, se pueden administrar tanto fármacos líquidos (soluciones, suspensiones,..) como sólidos (cápsulas, comprimidos, polvos,..). Es especialmente útil como vía de administración ya que es cómoda, es la más natural, es barata, sencilla y por lo general segura (en casos de sobredosificación se puede recurrir al lavado gástrico o a la inducción del vómito), permitiendo la autoadministración. Además, presenta una buena aceptación por parte del paciente, y pocos requisitos por su parte (voluntad de cumplimiento y capacidad de deglución). Por el contrario, entre sus inconvenientes destaca el hecho de no ser útil en pacientes inconscientes (la consciencia y voluntad son un requisito), con vómitos o sometidos a intervenciones en las que esta vía esté contraindicada. Tampoco se puede utilizar con sustancias desagradables o irritantes, o aquellas que puedan ser inactivadas por las secreciones ácidas. Además, es una vía lenta para la emergencia, los fármacos así administrados sufren en alguna medida el efecto del primer paso hepático y está muy influenciada por la presencia o no de alimentos.
+
+
+      La mayoría de los fármacos administrados por vía oral se absorben por difusión pasiva en la fracción inicial del intestino delgado, ya que es la zona del tracto digestivo con mayor superficie útil de absorción debido a la presencia de las válvulas conniventes, villi y microvilli, que se encuentran en mayor proporción en esta zona. Además, la perfusión sanguínea es más elevada en esta zona, lo que favorece el drenaje hacia el plasma sanguíneo.
+
+Entre los factores que limitan la absorción por esta vía se encuentran:
+* pH del medio. Variaciones en el pH del estómago e intestino pueden provocar cambios en la solubilidad y el grado de ionización de numerosos fármacos y por lo tanto, la velocidad de absorción será distinta a diferente pH.
+Por otro lado, determinados fármacos sufren procesos de descomposición no metabólica, total o parcialmente, en contacto con los fluidos gástricos, debido a su propia reactividad química. Para evitar la degradación del fármaco en el medio ácido del estómago, en algunos casos puede ser necesario protegerlo con una cubierta entérica, que retrasará el comienzo de su liberación pero no su velocidad de acción.
+* La presencia o ausencia de alimentos modifica la absorción y la velocidad de vaciamiento gástrico.
+* Enzimas proteolíticos inactivan medicamentos de naturaleza proteica: insulina, adrenalina, etc.
+* La presencia de otros medicamentos en el tubo digestivo.
+* La motilidad intestinal (acelerada o ralentizada).
+* Otras patologías como son el síndrome de malabsorción, cirrosis, hepatitis, ausencia de secreciones o deficiencias en la perfusión e irrigación de mucosas.
+* EFECTO DEL PRIMER PASO. Es la metabolización que sufre un medicamento antes de que se distribuya por el organismo y pueda alcanzar el lugar de acción. Aunque hay distintos órganos implicados (pulmón, intestino,...) el principal órgano es el hígado, y la vía más común sería a través de la circulación enterohepática que drena en la porta. Como consecuencia de este metabolismo, se puede producir una pérdida de medicamento previa a su paso a circulación sistémica, aunque para algunos es un paso necesario para su activación, en cuyo caso nos referiremos a un profármaco.
+
+2.1. FORMAS FARMACÉUTICAS UTILIZADAS POR VÍA ORAL
+
+Formas sólidas
+Las formas sólidas, presentan una mayor estabilidad química debido a la ausencia de agua, lo que les confiere tiempos de reposición más largos. Además, estas formas galénicas permiten resolver posibles problemas de incompatibilidades, enmascarar sabores desagradables, e incluso regular la liberación de los principios activos.
+
+En función de la forma farmacéutica podemos hablar de: Comprimidos (convencionales o efervescentes), tabletas, cápsulas, grageas.
+
+En función de su forma de liberación podemos hablar de:
+
+      *Formas farmacéuticas de liberación convencional. Preparaciones en las que la liberación de la sustancia o sustancias activas no está deliberadamente modificada por un diseño de formulación particular ni por un método de fabricación especial.
+      *Formas farmacéuticas de liberación modificada. Preparaciones en las que la velocidad y el lugar de liberación de la sustancia o sustancias activas son diferentes de los de forma farmacéutica de liberación convencional administrada por la misma vía. Esta modificación deliberada se consigue por una formulación particular o por un método de fabricación especial. Entre las formas farmacéuticas de liberación modificada se incluyen las formas farmacéuticas de liberación prolongada, de liberación retardada y de liberación pulsátil.
+
+2.1.1. Formas orales líquidas
+
+En función de la forma farmacéutica podemos hablar de jarabes, suspensiones, emulsiones, soluciones (presentados en forma líquida o bien en comprimidos o polvo para suspender o disolver). Las formas líquidas no plantean problemas de disgregación o de disolución en el tubo digestivo, lo que condiciona una acción terapéutica más rápida. Por el contrario no están protegidas, en caso de reactividad, frente a los jugos digestivos. Resultan de elección particularmente en niños.
+Los líquidos para administración oral contienen uno o más principios activos disueltos en un vehículo apropiado. Los vehículos pueden ser:
+
+Acuosos: sirven para disolver principios activos hidrosolubles. Los más comunes son los jarabes
+(que contienen una alta concentración de azúcar, hasta un 64% en peso).
+Mucílagos: líquidos viscosos resultantes de la dispersión de sustancias gomosas (goma arábiga, tragacanto, agar, metilcelulosa) en agua. Se usan, sobre todo, para preparar suspensiones y emulsiones.
+Hidroalcohólicos: los elixires son soluciones hidroalcohólicas edulcoradas utilizadas para disolver sustancias solubles en agua y alcohol.
+
+Componentes de una solución oral:
+* Principio activo
+* Disolvente/vehículo: agua, etanol, glicerina
+* Viscosizantes: celulosa, gomas, pectinas, alginatos, povidonas, almidón
+* Conservantes: fenol, ácido benzoico, alcohol bencílico, timerosal, cloruro del benzalconio
+* Correctores organolépticos: edulcorantes(sacarosa)
+
+
+* Estabilizantes: antioxidantes (ácido ascórbico, bisulfito), reguladores de ph (ácido acético, ácido cítrico, ácido fosfórico)
+Las formas farmacéuticas líquidas para administración oral más usuales son: jarabe (solución), elixir (solución), suspensión, suspensión extemporánea (aquella que, por su poca estabilidad, se prepara en el momento de ser administrada), gotas (principio activo concentrado), viales bebibles y tisanas (baja concentración de principios activos).
+
+2.1.2 Formas orales sólidas:
+
+A) Comprimidos: Formas farmacéuticas sólidas que contienen, en cada unidad, uno o varios principios activos. Se obtienen aglomerando, por compresión, un volumen constante de partículas. Se administran generalmente por deglución, aunque algunos de ellos deben disolverse previamente en agua (p. e. comprimidos efervescentes) o bien deben permanecer en la cavidad bucal con el fin de ejercer una acción local sobre la mucosa.
+Existen otros tipos de comprimidos que van a administrarse por una vía diferente a la entérica. Entre ellos se encuentran aquellos que, vía sublingual, van a permitir el tránsito directo del principio activo a la circulación sistémica. También existen comprimidos destinados a situarse en otras cavidades naturales del organismo, e incluso subcutáneamente (implantes). Todos estos comprimidos tendrán unas exigencias específicas, dependientes de su vía de administración.
+
+Los comprimidos destinados a la administración oral pueden clasificarse en:
+
+? Comprimidos no recubiertos: Obtenidos por simple compresión. Están compuestos por el fármaco y los excipientes (diluyentes, aglutinantes, disgregantes, lubrificantes).
+? Comprimidos de capas múltiples: obtenidos por múltiples compresiones con lo que se obtienen varios núcleos superpuestos, con distinta compactación en cada uno de ellos. Este tipo de comprimidos se utiliza bien para administrar dos o más fármacos incompatibles entre sí, o bien para obtener una acción más prolongada de uno de ellos. Otras veces, se pretende administrar un solo fármaco, pero compactados en núcleos concéntricos de diferente velocidad de liberación (ver fig. 1a).
+? Comprimidos recubiertos o grageas: El recubrimiento puede ser de azúcar o de un polímero que se rompe al llegar al estómago. Sirven para proteger al fármaco de la humedad y del aire, así como para enmascarar sabores y olores desagradables.
+? Comprimidos bucodispersables o liotabs: se trata de formas sólidas que se disuelven instantáneamente en la cavidad bucal sin necesidad de administración de líquidos. Ejemplo de estos sistemas son los comprimidos/tabletas liofilizadas.
+En este grupo se pueden encontrar diferentes sistemas en función del mecanismo de liberación, como los comprimidos de disgregación rápida en contacto con la saliva (Odis(r)) o los liotabs bucodispersables (tipo Zydis(r), Flas(r) o Velotab(r)).
+
+En algunos casos se presentan como sistemas que permiten aumentar la biodisponibilidad de determinados fármacos.
+? Comprimidos con cubierta gastrorresistente o entérica: Resisten las secreciones ácidas del estómago, disgregándose finalmente en el intestino delgado. Se emplean para proteger fármacos que se alteran por los jugos gástricos o para proteger a la mucosa gástrica de fármacos irritantes.
+? Comprimidos de liberación controlada:
+Algunos autores hablan también de liberación controlada o sostenida. Se trata de sistemas diseñados principalmente para prolongar el efecto terapéutico o bien, disminuir los picos de concentración característicos de los sistemas convencionales.
+Estos sistemas se llevan utilizando varias décadas, aunque siguen apareciendo novedades diseñadas para facilitar la posología o aportar un mejor perfil farmacocinético.
+OROS: sistemas osmóticos con un mecanismo de liberación del fármaco basado en la utilización de comprimidos con una membrana semipermeable que permite el paso del agua y produce la expansión de un hidrogel que hay en su interior y la salida continua del principio activo.
+OCAS: se trata de matrices lipídicas, hidrofílicas o de polímeros insolubles que permiten la difusión o liberación del principio activo de manera más uniforme y prolongada.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Otros ejemplo son las formas: Ocas(r), Retard(r), Continus(r)
+
+Comprimidos efervescentes: Se obtienen por compresión de un granulado de sales efervescentes, generalmente un ácido (ácido cítrico) y un álcali (bicarbonato sódico). Estas sustancias, en contacto con el agua, originan anhídrido carbónico que va descomponiendo la masa del comprimido y liberando el principio activo. Se suele emplear para administrar analgésicos (aspirina efervescente), preparados antigripales y sales de calcio y potasio.
+Comprimidos bucales: Son comprimidos destinados a disolverse íntegramente en la boca, con
+objeto de ejercer una acción local sobre la mucosa. Se administran así fármacos antifúngicos (anfotericina B), antisépticos (clorhexidina), antiinflamatorios (succinato de hidrocortisona
+
+
+
+
+
+En la figura 2 se muestra una representación comparativa de los niveles plasmáticos alcanzados tras la absorción oral de diversos tipos de comprimidos: a) comprimidos no recubiertos, b) comprimidos de capas múltiples y c) sistema OROS de liberación controlada.
+
+B) Cápsulas: Las cápsulas son preparaciones de consistencia sólida formadas por un receptáculo duro o blando, de forma y capacidad variable, que contienen una unidad posológica de medicamento (contenido). En la mayoría de los casos la base del receptáculo suele ser de gelatina aunque, en ciertos casos, se añaden sustancias como glicerol o sorbitol para ajustar la consistencia. El contenido puede ser de consistencia sólida, líquida o pastosa y está constituido por uno o más principios activos, acompañados o no de excipientes. El contenido no debe provocar el deterioro del receptáculo, el cual se alterará por la acción de los jugos digestivos, produciéndose la liberación del contenido (a excepción de las cápsulas de cubierta gastrorresistente). En la mayoría de los casos, las cápsulas se destinan a la administración oral, distinguiéndose las siguientes categorías:
+
+Cápsulas duras: Formadas por 2 valvas cilíndricas que encajan entre sí, pero que se pueden separar. Son las más usadas.
+Ventajas de las cápsulas duras:
+* Proteger al sistema digestivo de medicamentos irritantes
+* Enmascarar olores o sabores desagradables
+   * Proteger al medicamento de la luz, humedad Normalmente contienen polvos o granulados.
+
+Formas retard de las cápsulas: contienen "pellets" o esferas con diferentes principios activos o con velocidades de liberación diferentes. Los pellets se irán liberando poco a poco y la acción se mantendrá un período de tiempo mayor que las cápsulas convencionales.
+
+Cápsulas blandas o perlas: receptáculo de una sola pieza; resultan interesantes para administrar líquidos oleosos (p. e. vitaminas liposolubles)
+
+Cápsulas de cubierta gastrorresistente: se obtienen recubriendo cápsulas duras o blandas con una película gastrorresistente, o bien rellenando las cápsulas con granulados o partículas recubiertas con una película resistente a los jugos gástricos.
+
+Cápsulas de liberación modificada: cápsulas duras o blandas cuyo proceso de fabricación, o bien su contenido y/o recubrimiento, integran en su composición sustancias auxiliares destinadas a modificar la velocidad o el lugar de liberación del o los principios activos (ver fig. 3). Ej: Sistema Pulsincap(r)
+
+
+
+
+
+
+Con criterios de fabricación y composición totalmente distintos existen también cápsulas para administrar por vías distintas a la oral: cápsulas vaginales o cápsulas rectales.
+
+C) Otras formas orales sólidas:
+
+Polvos: El principio activo puede estar disperso o no en un excipiente pulverulento inerte (lactosa o sacarosa). Cada dosis se administra previa preparación de una solución extemporánea en agua u otra bebida. La dosificación se realiza en recipientes multidosis o en dosis unitarias (bolsas y papelillos). Muchos principios activos se dispensan de esta forma: antibióticos, fermentos lácticos, antiácidos etc.
+
+Granulados: Agregados de partículas de polvos que incluyen principios activos, azucares y coadyuvantes diversos. Se presentan en forma de pequeños granos de grosor uniforme, forma irregular y más o menos porosidad. Existen granulados de distintos tipos: efervescentes, recubiertos, gastrorresistentes y de liberación modificada.
+
+Sellos: Son cápsulas con un receptáculo de almidón. Prácticamente, han sido desplazados por las cápsulas duras.
+
+Píldoras: Preparaciones sólidas y esféricas, destinadas a ser deglutidas íntegramente. Se encuentran en franco desuso habiendo sido desplazadas por los comprimidos y cápsulas.
+
+Tabletas: Son pastillas para desleír en la cavidad bucal. Se diferencian de las píldoras por el tamaño y de los comprimidos por la técnica de elaboración. Sus constituyentes principales son la sacarosa, un aglutinante y uno o más principios activos.
+
+
+Pastillas oficinales: Presentan una consistencia semisólida y están constituidas primordialmente por los principios activos y goma arábiga como aglutinante. Suelen recubrirse, para su mejor conservación, con parafina o azúcar en polvo (escarchado). Se emplean para la vehiculización de antitusígenos y antisépticos pulmonares
+
+Liofilizados: Son preparaciones farmacéuticas que se acondicionan en forma de dosis unitarias y se liofilizan a continuación. Son formas muy porosas e hidrófilas y fácilmente dispersables en agua.
+
+
+3. VÍA SUBLINGUAL.
+
+      En esta vía, el medicamento se sitúa bajo la lengua y se absorbe a través de la mucosa sublingual, en los capilares de la cara inferior de la lengua, de tal forma que cuando el fármaco pasa a sangre se incorpora vía vena yugular directamente a la circulación general, evitando con ello el efecto de primer paso (evadiendo la vena porta). Se trata además de una absorción rápida, lo que es especialmente útil en casos urgentes (crisis anginosa con nitroglicerina, crisis hipertensiva con captoprilo o crisis de ansiedad con alprazolam).
+      La vía sublingual está limitada a ciertos fármacos debido a que la mucosa sublingual presenta una superficie de absorción pequeña y sólo permeable al paso de sustancias no iónicas y muy liposolubles.
+
+En su administración, hay que tener en cuenta que:
+? Se debe evitar tragar el medicamento, ya que en ese caso, no sería una administración sublingual sino oral.
+? Se recomienda administrar después de las comidas al presentar en esos momentos una mayor irrigación.
+? Los comprimidos deben ser pequeños, con forma de lenteja y sin aristas para evitar una excesiva secreción de saliva.
+
+
+4. VÍA RECTAL
+
+      Es más incómoda que la oral, sin embargo, es útil en fármacos que no pueden ser administrados por vía oral (fármacos irritantes gastrointestinales, sensibles a los diferentes pH del tubo digestivo o a los enzimas, y fármacos con olor o sabor desagradable) o en pacientes con vómitos, inconscientes y pediátricos.
+Se administra en posición de Sims. Se recomienda evacuar antes de la administración, para aumentar la absorción.
+
+       La absorción se realiza a través del plexo hemorroidal, el cual evita en parte el paso por el hígado antes de incorporarse a la circulación sistémica. Las hemorroidales inferiores no drenan en la porta, por tanto, se puede evitar hasta en un 50 % el efecto de primer paso hepático aunque es imposible conocer la fracción absorbida en cada tramo.
+Se utiliza para conseguir efectos locales o sistémicos en pacientes que no toleran el medicamento por vía oral (vómitos) o que están inconscientes.
+
+      Sus inconvenientes son la irritación mucosa, la incomodidad de la administración, las irregularidades en la absorción administración y la posible estimulación del nervio vago por distensión de los esfínteres anales, por lo que debe emplearse con precaución en pacientes cardíacos. Eluden parcialmente el paso por el hígado, ya que las venas hemorroidales inferior y media son afluentes de la vena cava inferior.
+Uno de los pocos ejemplos en los que esta forma farmacéutica tiene una indicación preferente es el tratamiento de las crisis convulsivas en niños pequeños (diacepam).
+
+Estos fármacos se administran en forma de supositorios, pomada y enemas
+
+4.1.-FORMAS DE ADMINISTRACION RECTAL: VIA RECTAL
+
+Supositorios:
+Persiguiendo una acción mecánica, local o sistémica, los supositorios son preparados de consistencia sólida y forma cónica y redondeada en un extremo. Tienen una longitud de 3-4 cm y un peso de entre 1-3 g. Cada unidad incluye uno o varios principios activos, incorporados en un excipiente que no debe ser irritante, el cual debe tener un punto de fusión inferior a 37ºC. Los excipientes de esta forma farmacéutica pueden clasificarse en dos categorías principales:
+
+-Triglicéridos (excipiente lipófilo). Son los más utilizados; entre ellos se encuentran la manteca de cacao, los glicéridos semisintéticos y los aceites polioxietilenados saturados.
+- Excipientes hidrosolubles: polietilenglicoles (PEG), mezclas de glicerina y gelatina.
+
+Su peso debe ser:
+* Para los lactantes: 0'5 g.
+* Para los niños: 1 g.
+* Para los adultos: 2-3 g.
+    Con respecto a la administración del supositorio, se deben de tener en cuenta los siguientes aspectos:
+* Un supositorio blando se adhiere al envoltorio y es más difícil de introducir en el ano. Para aumentar la consistencia del medicamento podemos colocarlo unos minutos en el frigorífico o bajo el chorro de agua fría.
+
+
+* En caso de que haya que administrar medio supositorio, éste se partirá siempre en sentido longitudinal. Los supositorios tienen una forma cónica u ovoidea alargada, de tal modo que si se partieran transversalmente, no se estaría introduciendo el 50% de la dosis.
+
+Los supositorios no se deben guardar en la nevera salvo que así lo indique el acondicionamiento secundario.
+
+Los de forma de torpedo son para ser introducidos en intestino.
+
+    Existen dos tipos de formas farmacéuticas rectales principales, una sólida (supositorios) y otra líquida (enemas).
+
+Enemas:
+Se define como enema la introducción de una disolución en el recto o en la parte inferior del colon. Pueden utilizarse para limpiar, extraer sólidos o gases de la parte inferior del intestino y administrar soluciones que deben ser retenidas. Según la finalidad con que se apliquen, los enemas pueden clasificarse en enemas: 1. De limpieza: cuyo objetivo es eliminar las heces impactadas (Cassen);
+2. Medicamentosos: Resin Calcio (se utiliza para disminuir el potasio sérico);
+3. Diagnósticos: por ejemplo el enema de Bario.
+? Enemas de limpieza:
+Pretende eliminar las heces, fundamentalmente para:
+- Evitar el escape de heces durante la cirugía.
+-Preparar el intestino para determinadas pruebas diagnósticas, RX o pruebas de visualización (colonoscopía).
+- Extraer heces en caso de estreñimiento o retención fecal.
+- Cuando el volumen que se va a administrar es pequeño se denominan microenemas.
+? Enema de medicación: Puede tener efecto local o sistémico.
+? Enema opaco o baritado: Tiene finalidad diagnóstica. Es radiopaco, por lo que permite visualizar el intestino grueso para su estudio radiológico.
+
+Otras formas de administración rectal:
+- Cápsulas rectales
+- Pomadas rectales
+
+
+5. VÍA INHALATORIA:
+
+      Esta vía se utiliza para la administración en el aparato respiratorio de un gas (como el oxígeno), un líquido vaporizado (gases anestésicos), o un sólido pulverizado, mediante inspiración profunda. Cuanto más pequeñas sean las partículas a introducir y mayor sea la inspiración, más profundamente penetran los fármacos, que pueden ser broncodilatadores, mucolíticos, etc. Su absorción es muy rápida, debido a la gran vascularización de la mucosa respiratoria.
+
+      Se puede conseguir un efecto local (vía muy utilizada en el tratamiento de las enfermedades pulmonares que cursan con obstrucción crónica de las vías aéreas) o sistémico (corticoides inhalados con reducida absorción sistémica, anestésicos inhalatorios).
+
+       Existen distintos métodos para facilitar la administración por esta vía: inhalaciones con pulverizador o nebulizador, aerosoles, cartucho presurizado, cámara espaciadora o de inhalación, dispositivos de polvo seco, etc.
+
+5.1.-FORMAS DE ADMINISTRACION ESPECIALES: VIA INHALATORIA.
+
+Existen distintos dispositivos para la administración de principios activos por vía inhalatoria como los: aerosoles, nebulizadores e inhaladores.
+
+      Además de los gases, como el oxígeno o el óxido nitroso (anestésico general) que se expenden en tubos de acero a presión, la forma farmacéutica más común para preparados gaseosos, es el aerosol. Los aerosoles son sistemas dispersos heterogéneos formados por una fase líquida o sólida en el seno de un gas. Se dividen en:
+* Aerosoles niebla: líquido disperso en un gas.
+* Aerosoles humo: sólido disperso en un gas.
+
+       En los aerosoles de administración pulmonar, muy utilizados en asma y EPOC, las partículas del líquido o del sólido deben tener un tamaño determinado para alcanzar los bronquios, entre 2 y 5 µm, puesto que si su tamaño es superior queda depositado en la cavidad orofaríngea y si es inferior se eliminan con el aire espirado. Es muy importante para conseguir la eficacia del tratamiento que el paciente al administrarlo coordine la descarga del aerosol con la inhalación, para lo cual es preciso que el personal sanitario eduque al paciente en dicha técnica.
+
+
+A) Los aerosoles son dispositivos que contienen soluciones o suspensiones de un principio activo, envasadas en un sistema a presión de manera que, al accionar la válvula, se produce la liberación del principio activo impulsado gracias a un agente propelente.
+B) Los nebulizadores son dispositivos que al hacer pasar una corriente de aire generan partículas uniformes y muy finas del principio activo (líquido) en un gas. Este sistema permite que el fármaco penetre más profundamente en las vías aéreas.
+C) Los inhaladores de polvo seco, a partir del medicamento en estado sólido, se liberan partículas suficientemente pequeñas de forma sincrónica con la inspiración; la fuerza de la inhalación arrastra el producto.
+La mayoría de las veces se emplea la vía inhalatoria para conseguir una acción local del fármaco en diversos procesos patológicos pulmonares, de esta forma se consigue una acción rápida del fármaco y la disminución de sus efectos adversos. Sin embargo, en otras ocasiones, la vía inhalatoria es utilizada con el fin de que el fármaco alcance la circulación sistémica, ya que está zona está muy vascularizada, evitándose el efecto primer paso hepático.
+Los grupos farmacológicos que más se utilizan para ser inhalados pertenecen al grupo de los antiasmáticos (agonistas B2-adrenérgicos, corticoides...), los antibióticos (kanamicina), los preparados antianginosos (nitroglicerina, dinitrato de isosorbide) y agentes inmunizantes, etc.
+
+      Es una vía segura y bastante rápida, en la que el medicamento evita el efecto de primer paso hepático, aunque sufre un efecto de primer paso pulmonar. Permite la fácil dosificación a través de los sistemas de administración, sin embargo, una parte del fármaco se suele perder en otras partes del árbol respiratorio y los sistemas de administración son molestos.
+
+Factores que más influyen en la absorción por vía inhalatoria:
+* La técnica y el dispositivo utilizado.
+* El tamaño de las partículas.
+* La existencia de patologías respiratorias (EPOC), la forma y frecuencia de la respiración.
+
+      A través de esta vía, se administran tanto fármacos que pueden actuar localmente en las vías respiratorias (B2-adrenérgicos, corticoides,..) como a nivel sistémico (gases y anestésicos volátiles).
+      En cuanto a las distintas formas farmacéuticas utilizadas en esta vía se pueden encontrar en forma de gases, cartuchos presurizados, sistemas liberadores de polvos micronizados activados por la inspiración del paciente (ACCUHALER, TURBOHALER,...), y sus técnicas de aplicación son diferentes.
+
+Aerosoles presurizados
+
+Los cartuchos presurizados se definen como sistemas que dependen de la fuerza de un gas comprimido o licuado para expulsar el contenido del envase. Las sustancias terapéuticas pueden estar disueltas, suspendidas o emulsionadas en un propulsor o mezcla de propulsor/disolvente. Estos dispositivos disponen de una carcasa, una boquilla y una válvula dosificadora o pulsador que permite la administración uniforme y dosificada del medicamento.
+Ventajas: son baratos, transportables y resistentes al agua.
+Inconvenientes: la técnica de uso es compleja, no es adecuado para niños, no respeta el medio ambiente, no es adecuado en situaciones de broncoespasmo intenso y produce un elevado depósito orofaríngeo.
+
+
+
+
+
+
+
+
+
+
+
+Aerosol presurizado
+
+       Las cámaras espaciadoras son dispositivos que aumentan la distancia entre el cartucho presurizado y la boca del paciente. Esto produce una disminución en la velocidad de salida del aerosol. Están diseñadas para facilitar la coordinación del disparo del cartucho y la inspiración del paciente.
+
+      Las más recomendables son las denominadas de alto volumen, que en el caso de los adultos son de unos 750 ml y en niños hasta ± 6 años de 150-350 ml, en los cuales hasta los 4 años se recomienda el uso de cámara con mascarilla y a partir de esta edad sin ella.
+Las cámaras deben lavarse con agua templada, dejándolas secar al aire, sin usar papel ni paño de tela porque se quedan adheridas partículas que después se inhalarían. Se guarda en una bolsa limpia y seca.
+      Ventajas: son baratos, no es necesaria la inspiración coordinada, es adecuado en situaciones de broncoespasmo intenso y obstrucción habitual al flujo aéreo, adecuado para niños, depósito orofaríngeo reducido y periférico aumentado y es de elección para administrar dosis elevadas de esteroides inhalados.
+
+
+      Inconvenientes: son menos transportables, no respetan el medio ambiente, es necesario adiestramiento exigente, disminución intensa de fármaco administrado (si no se sigue la metódica) y el aumento de la biodisponibilidad pulmonar puede incrementar los efectos secundarios.
+
+
+Inhaladores de polvo seco
+
+      Estos sistemas contienen el principio activo en forma de polvo. Son dispositivos accionados por la inspiración. Aparecen como alternativa a los cartuchos presurizados, con la intención de solucionar los problemas de coordinación entre inhalación y activación del dispositivo.
+
+      Ventajas: son fáciles de usar, respetan el medio ambiente, incrementan el depósito pulmonar (central), disminuyen los efectos secundarios locales y sistémicos y son adecuados para niños a partir de 6 años.
+
+      Inconvenientes: encarece el tratamiento, la eficacia en condiciones extremas es mala, activados por el flujo inspiratorio (difícil de conseguir en niños y pacientes con EPOC) y se necesita un flujo aéreo inspiratorio mínimo de 30-60 litros/minuto.
+      En función del número de dosis del fármaco que proporcionan, se clasifican en: inhaladores de polvo seco unidosis e inhaladores de polvo multidosis.
+
+Inhaladores de polvo seco unidosis.
+
+      Son cápsulas u óvalos con una sola dosis de medicamento que deben perforarse para su inhalación. Cada uno lleva su dispositivo específico.
+
+Distintos dispositivos unidosis son:
+      Spinhaler(r): Está compuesto por un tubo que y pulsador que se aprieta afondo para perforar la cápsula.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      Rotahaler(r): La cápsula de gelatina se inserta en un orifico de la parte trasera del dispositivo, al girar las dos secciones; una aleta del tambor interno divide a la cápsula en dos mitades.
+
+
+
+
+
+
+Handihaler(r):	Consta
+de una tapa que se abre, que recubre un tubo que también se abre para dejar al descubierto el lugar donde se coloca la cápsula, que debe ser agujereada apretando un botón que desplaza un pincho.
+Breezhaler(r): Similar al anterior.
+
+
+Aerolizer(r): Similar a los anteriores.
+
+
+
+Inhaladores de polvo seco multidosis.
+
+      Actualmente existen tres tipos de sistemas comercializados de polvo seco en multidosis: Accuhaler(r), Easihaler(r) y Turbuhaler(r).
+
+Accuhaler(r)
+
+      Dispositivo que contiene 60 dosis de medicamento, cubiertas y protegidas individualmente en blísteres de aluminio termosellados. Está provisto de un contador de dosis, para facilitar al paciente el número de dosis que le quedan disponibles.
+Contiene como excipiente lactosa, por lo que el paciente percibe la inhalación del fármaco.
+Turbuhaler(r)
+
+Es un dispositivo que contiene 100-200 dosis de fármaco micronizado en un depósito.
+
+      Está provisto de un disco giratorio dosificador que al girar deposita la dosis del fármaco para la inhalación. Dispone de un indicador que avisa al paciente cuando quedan 20 dosis, y en
+
+algunas de sus presentaciones contador de dosis. No contiene aditivos, inhalándose el fármaco puro por lo que el paciente no percibe la inhalación del mismo.
+      Al estar el fármaco en un depósito, es más sensible a la humedad, pudiendo apelmazarse la medicación.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6. VÍA NASAL
+
+      Se trata de una vía de fácil utilización y de absorción rápida, gracias a la elevada vascularización de la zona de aplicación, y es útil tanto para el tratamiento local (rinitis), como para la administración sistémica (hormonas, triptanes,...).
+
+       Las formas farmacéuticas que se pueden aplicar a través de esta vía son las gotas nasales, nebulizadores y pomadas.
+
+      Con las pomadas se busca un efecto local sobre la mucosa y no requieren una técnica de aplicación especial, sin embargo, las soluciones nasales son formas farmacéuticas líquidas que se diferencian en el modo de aplicación en función de si se presentan en forma de gotas nasales o nebulizadores. Las primeras se administran por instilación sobre cada fosa nasal y se envasan en frascos cuentagotas, mientras que los segundos se aplican presionando el nebulizador de un recipiente en cada fosa nasal.
+
+Pueden aplicarse mediante instilación de gotas y pulverización:
+       ? Instilación de gotas: dirigir el cuentagotas hacia la línea media del cornete superior, para evitar que el medicamento vaya directamente a la garganta. Pedir al paciente que respire por la boca, para prevenir la sensación de estornudo, y que mantenga la posición unos minutos después de la aplicación
+
+
+      ? Pulverización: con la punta introducida un centímetro en la fosa nasal y sin que respire el paciente, apretar para que salga el medicamento. Repetir en la otra fosa nasal. Pedirle que mantenga la posición unos minutos.
+
+7. VÍA VAGINAL
+
+   La mucosa vaginal absorbe gran número de fármacos que se aplican tópicamente, pueden ser anestésicos locales, antisépticos y antifúngicos.
+
+   Se utiliza tanto para la aplicación local de algunos medicamentos (antiinfecciosos) como para fines sistémicos (algunos anticonceptivos hormonales).
+   Entre los factores que influyen en la absorción por esta vía, tenemos que recordar que existe una importante variabilidad derivada de los cambios en el espesor del epitelio a lo largo del ciclo menstrual, además de la importancia de la higiene personal y la actividad sexual.
+
+   Se presentan en forma de cremas, geles, óvulos, supositorios vaginales y anillos vaginales y cápsulas y comprimidos vaginales.
+
+   Son formas farmacéuticas de consistencia blanda o sólida, de forma esférica u ovoidea, capaces de fundir a la temperatura fisiológica vaginal o de solubilizarse en los líquidos orgánicos correspondientes. Están destinadas generalmente a conseguir una acción local en la cavidad vaginal. Presentan un peso entre 5 y 10 g.
+
+8. VÍA URETRAL
+
+       Se pueden introducir por la uretra ciertos medicamentos para tratar patologías de las vías urinarias. Ej. Candelillas o bujías uretrales: Formas farmacéuticas sólidas a modo de bastoncillos cilíndricos destinados a ser introducidos en el canal uretral. Se recomienda orinar antes de la administración uretral.
+
+Actualmente su uso está muy restringido.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9. VÍA TÓPICA
+
+       Se aplica el fármaco directamente sobre la piel y/o mucosas. Sus efectos pueden ser locales o sistémicos (parches transdérmicos). Se producen menos efectos indeseables que con otras vías sistémicas, pero la dificultad principal es administrar cantidades exactas a través de ella.
+
+      Se presentan en forma de polvos, pomadas, pastas, lociones, cremas, líquidos, espumas, geles...
+
+9.1.- VÍA CUTÁNEA O DERMATOLÓGICA:
+
+      Con ella se busca el efecto local. Los medicamentos tópicos se aplican directamente sobre la superficie de la piel o las mucosas. Las formas farmacéuticas utilizadas en esta vía son, entre otras las cremas, pomadas, ungüentos, lociones, pastas, geles, polvos, champús, linimentos y aerosoles.
+
+
+Formas líquidas:
+      Lociones.: son soluciones acuosas o hidroalcohólicas, suspensiones o emulsiones. Se aplican sobre la piel, con o sin fricción.
+       Linimentos: líquidos oleosos, aunque también pueden ser emulsiones. Se aplican sobre la piel mediante fricción, pero nunca sobre heridas abiertas.
+
+Formas semisólidas:
+       Son formas farmacéuticas de consistencia semisólida que permiten su aplicación sobre la piel o ciertas mucosas para conseguir una acción local, permitan la penetración percutánea de los principios activos o simplemente ejerzan una acción emoliente o protectora.
+a. Cremas: son emulsiones de fase externa acuosa (o/w) u oleosa (w/o). Son las más fluidas.
+Las cremas hidrófilas se usan para incorporar fármacos hidrosolubles y las lipófilas para incorporar fármacos liposolubles.
+b. Pomadas: sistemas semisólidos de mayor consistencia que las cremas.
+c. Pastas: son suspensiones similares a las pomadas de gran consistencia debido a que presentan un alto contenido de polvos insolubles. Son siempre suspensiones. Existen pastas grasas con vaselinas o aceites, y pastas aquosas como glicerina, sorbitol o polioles.
+d. Ungüentos: sistemas semisólidos en suspensión de elevada consistencia y difícil extensibilidad que permiten obtener un cierto grado de oclusión. Emplean como vehículos grasas o resinas.
+e. Geles: Emulsiones semisólidas de polímeros orgánicos en agua. Consistencia fácilmente extensible. Llevan gelificantes, que los hace aptos para pieles y zonas grasas como cara y cuero cabelludo.
+
+Formas sólidas: Polvos dérmicos, óvulos, tabletas.
+
+Además de la absorción local, puede conllevar la absorción sistémica lo que depende, en gran medida del estado de la piel.
+      Existen distintos factores que influyen en la penetración de los medicamentos a través de la piel, entre los que se encuentran:
+* La liposolubilidad de la molécula.
+* La extensión de la superficie sobre la que son aplicados.
+* El flujo sanguíneo y la temperatura. Así, a mayor riego, mayor temperatura y mayor absorción.
+* La hidratación. La piel hidratada es más permeable que la seca.
+* El lugar de aplicación, ya que el espesor, la vascularización y la temperatura varían de un lugar a otro.
+
+* El estado y edad de la piel. La piel de los bebés y niños es más permeable que la de los adultos, al igual que una piel lesionada (psoriasis, eczemas, dermatitis) donde la absorción está aumentada.
+
+      Sin embargo, teniendo en cuenta un mismo medicamento y una misma zona de aplicación, también podemos modificar la absorción de un fármaco variando la técnica de aplicación (con un vendaje oclusivo o la fricción podemos forzar la absorción de un fármaco) o el excipiente de la forma farmacéutica (cuanto más graso sea, mayor cesión del principio activo a la piel: ungüento > pomada ??pasta> crema > gel > loción).
+
+9.2.- VÍA TÓPICA BUCAL
+
+Para la administración bucal en la que se pretende una acción local sobre la mucosa oral, encontramos preparaciones en forma de colutorios, pastas, comprimidos como soluciones.
+Colutorios: soluciones acuosas o hidroalcohólicas empleadas para efectuar enjuagues
+bucales.
+Gargarismos: soluciones acuosas destinadas a tratar la zona orofaríngea. Se aplican manteniendo la cabeza inclinada hacia atrás, expulsando la solución después de un contacto más o menos prolongado con las mucosas. No debe ingerirse.
+
+9.3.-VÍA TRANSDÉRMICA
+
+       Se pretenden efectos sistémicos. Los parches transdérmicos aportan percutáneamente los principios activos del fármaco a una velocidad programada, y de forma constante.
+Hasta hace poco, la piel sólo era considerada una zona de aplicación de fármacos de acción local. La aparición de intoxicaciones por sustancias de administración tópica puso de manifiesto el interés de utilizar fármacos que, atravesándola piel, produzcan una acción sistémica (vía percutánea). Así, cada vez son más los fármacos que, administrados tópicamente mediante distintos dispositivos (oclusión, sistemas transdérmicos, etc), son capaces de proporcionar niveles sistémicos suficientemente altos como para lograr efectos analgésicos, antihipertensivos, antianginosos o de sustitución hormonal.
+
+Sistema o parches transdérmicos o TTS: contienen un reservorio de principio activo del cual se libera el producto, así como una membrana que puede regular la velocidad de cesión, una capa adhesiva para fijarlo a la piel y una cubierta oclusiva. Se emplea para la escopolamina, nitroglicerina, fentanilo, buprenorfina, algunos medicamentos para tratar el Alzheimer (rivastigmina) o el Parkinson (rotigotina).
+
+
+Los parches transdérmicos. Los componentes básicos de los dos tipos de parches que existen en el mercado farmacéutico (tipo reservorio y tipo matriciales) consisten en: a) una lámina protectora externa, b) un depósito con el principio activo y c) una membrana microporosa que permite la liberación continua del fármaco que se encuentra en su interior mediante un mecanismo de difusión pasiva. Estos parches proporcionan niveles plasmáticos terapéuticos constantes del fármaco, siempre que la piel permanezca intacta. La liberación del fármaco desde el parche se realiza durante un periodo de tiempo que fluctúa entre 24 horas y una semana.
+Por lo general, un parche no se debe cortar, salvo que la ficha técnica indique lo contrario. Deben colocarse sobre piel intacta, limpia, seca y no irritada. Si hay vello en la zona, se cortarán los pelos, pero no se afeitarán (por la irritación que produce), Tampoco se pueden usar cremas en la zona de aplicación. Se deben lavar las manos antes de extraer en parche, colocarlo de forma inmediata tras extraerlo, y volverse a lavar las manos tras la colocación.
+Cuando se cambia el parche, éste debe doblarse sobre sí mismo.
+
+9.4.- VÍA CONJUNTIVAL Y OFTÁLMICA
+
+Los fármacos aplicados por esta vía se emplean principalmente para lograr un efecto local sobre patologías oculares. Sin embargo, también pueden aparecer efectos sistémicos no deseables (B- bloqueantes) como consecuencia del drenaje a través del conducto lacrimal.
+
+    Las formas farmacéuticas oftálmicas han de ser productos neutros, isotónicos y sobre todo preparados mediante métodos que aseguren su esterilidad, lo cual evita tanto la introducción de contaminantes como el crecimiento de microorganismos en el interior del envase. Por ello, es conveniente respetar de forma muy estricta las normas de conservación y caducidad establecidas por el fabricante.
+
+Existen tres tipos de formas farmacéuticas oftálmicas:
+* Las pomadas oftálmicas. Preparaciones semisólidas destinadas a su aplicación sobre la conjuntiva y los párpados.
+* Los colirios. Soluciones o suspensiones acuosas u oleosas destinadas a la instilación ocular.
+* Los baños oculares. Soluciones acuosas destinadas a ser instiladas o aplicadas en el ojo, habitualmente para el lavado ocular.
+
+Con respecto a los colirios es conveniente señalar que:
+* Su periodo de caducidad una vez abiertos es de un mes, algunos 20 días.
+- Sistema ABAK: no lleva conservantes (cloruro de benzalconio). Dispersa el contenido a través de una membrana filtrante de 0,2 micras que impide la contaminación. Su caducidad es de entre 2-3 meses, una vez abierto. No permite dosificar ni sustancias viscosas ni geles
+
+-	Sistema COMOD: libre de conservantes. Caduca a los 6 meses de abrirse. Sólo comercializadas lágrimas artificiales.
+
+* Cada gota de colirio posee un volumen de 25-50 microlitros, mientras que, dependiendo del parpadeo, el volumen que puede retener el ojo es de entre 10 y 30 microlitros. Por lo tanto, la instilación de dosis de más de una gota en cada ojo es de dudosa eficacia, de hecho, cuando se prescribe más de una gota, se pretende asegurar una correcta administración ( ya sea por alteración de la destreza motora, ancianos, discapacitados, etc.).
+* En cuanto a pacientes polimedicados con diferentes colirios, la administración de cada uno de ellos se debe realizar con al menos un intervalo de separación de 5 a 10 minutos.
+
+    Si hay que administrar varios colirios hay que separar la administración al menos 5 minutos, y si hay que administrar colirios y pomada, se administrará siempre la pomada en último lugar.
+    La eficacia de las formas medicamentosas oftálmicas depende de su capacidad de penetración a través de las capas y anexos del globo ocular. Así, en general, las preparaciones oftálmicas (sobre todo las líquidas) se mezclan con el líquido lacrimal, extendiéndose rápidamente por la superficie de la córnea y conjuntiva. Sin embargo, como consecuencia de la elevada eficacia de los sistemas de limpieza del ojo, la mayor parte de la dosis se drena rápidamente a través del conducto lacrimal, lo que hace necesario una elevada repetición de las aplicaciones para lograr niveles adecuados.
+
+      ? Si es un colirio: pedir al paciente que mire hacia arriba, a un punto fijo; colocar el dedo índice sobre el pómulo, tirando ligeramente de la piel hacia abajo, con la otra mano, depositar las gotas de colirio en el centro del saco conjuntival, procurando no tocar nada con el recipiente; retirar el dedo y permitir al paciente que parpadee. Retirar el exceso de medicamento con una gasa estéril para cada ojo.
+? Si es una pomada: en la misma posición que para el colirio, se deposita la pomada a
+lo largo del saco conjuntival (del ángulo interno al externo), procurando no tocar nada con el recipiente; pedir al paciente que mantenga los ojos cerrados por unos minutos; retirar el exceso de pomada con una gasa estéril para cada ojo.
+? Si es una irrigación: recostar al paciente sobre el lado del ojo afectado, colocando
+una riñonera o batea debajo de la cara. Limpiar suavemente los bordes de los párpados y de las pestañas con una gasa empapada en suero fisiológico o la solución indicada desde el borde interno al externo. Dirigir la solución de lavado al interior del saco conjuntival inferior en dirección al borde exterior.
+
+
+
+
+Vía conjuntival. A la izquierda, aplicación de gotas. A la derecha, aplicación de pomada.
+
+9.5. VÍA ÓTICA.
+
+Se busca conseguir un efecto a nivel local, sobre el conducto auditivo. Se administran formas farmacéuticas líquidas que lleguen hasta el interior del oído.
+      Se usa para el control de infecciones o inflamaciones locales en los conductos auditivos y demás estructuras del oído, ya que el fácil acceso al oído hace que muchos procesos otológicos sean susceptibles de ser tratados tópicamente.
+
+       En cuanto a los medicamentos que se aplican a través de esta vía, se pueden encontrar en forma de gotas otológicas y pomadas:
+*Las pomadas se suelen aplicar para afecciones en el pabellón auditivo externo.
+      *Las gotas óticas son preparados líquidos destinados a ser aplicados en el conducto auditivo externo para ejercer una acción local. Sin embargo, antes de aplicar las gotas es imprescindible conocer el estado de la membrana timpánica ya que, en caso de estar perforada, la medicación pasaría al oído medio y se podrían producir la estimulación del sistema cócleo-vestibular o la reagudización de un proceso otítico previo.
+Para administrar un colirio el paciente debe estar en decúbito lateral del lado contrario al oído que hay que tratar, o sentado con la cabeza inclinada del lado contraria.
+Alinear el conducto auditivo:
+* Adultos: cara arriba y cara atrás
+* Niños: cara abajo y cara atrás
+Hay que instilar las gotas en el oído a Tª corporal porque una instilación fría puede provocar en el paciente vértigo, náuseas o dolor.
+No aplicar ni algodón ni gasas porque absorberían por capilaridad el líquido administrado.
+
+
+
+Vía ótica
+
+
+10. VÍAS PARENTERALES
+
+La vía parenteral implica la administración del medicamento a través de la piel mediante inyección.
+La biodisponibilidad de un fármaco administrado vía parenteral depende de sus características fisicoquímicas, de la forma farmacéutica y de las características anatomofisiológicas de la zona de inyección:
+
+1.- Vía intradérmica: La punción se hace en la dermis, perforando la epidermis. Es una vía de absorción lenta. El volumen de líquido administrado es muy pequeño (de 0'05 a 0'2 ml). Su absorción es más lenta que en las vías subcutánea o intramuscular, por lo que es frecuente la aparición de una pápula que va desapareciendo a medida que difunde el líquido administrado en este depósito. Se administran volúmenes entre 0,05 y 0,2 ml.
+
+      Se utiliza para realizar pruebas alérgicas, aplicación de vacunas y con fines diagnósticos (prueba de Mantoux ó prueba de la tuberculina).
+
+
+
+2.- Vía subcutánea: La punción se realiza en el tejido subcutáneo. La absorción es rápida pero no tanto como en la vía intramuscular, ya que presenta menos irrigación sanguínea. Sin embargo,
+
+
+dicha velocidad puede ser incrementada por distintos medios (p. e. añadiendo hialuronidasa o dando un masaje), o también disminuida (p. e. utilizando un vasoconstrictor como la adrenalina junto a un anestésico local). Se emplea para la administración de vacunas, insulinas y heparinas. Se usa para administrar volúmenes entre 0,1 ml y 2 ml.
+
+Las zonas de elección más frecuentes son: cara externa del brazo, cara anterior del muslo y zona periumbilical (pared abdominal)
+
+Para aplicar la inyección se forma un amplio pliegue de la piel y se inserta la aguja montada en la jeringa, formando un ángulo de 45º. Se inyecta lentamente.
+
+Las zonas de mayor absorción son Abdomen> Deltoides> Muslo> Nalga o Glúteo
+
+3.- Vía intramuscular: Se utiliza para fármacos no absorbibles por vía oral o ante la imposibilidad de administración del fármaco al paciente por otra vía. Numerosos factores van a influir en la biodisponibilidad del fármaco por vía IM (vascularización de la zona de inyección, grado de ionización y liposolubilidad del fármaco, volumen de inyección, etc.). Esta vía es muy utilizada para la administración de preparados de absorción lenta y prolongada (preparados "depot") como los de penicilina G procaína, o preparados hormonales.
+
+
+Las zonas de elección para la punción son:
+- Las nalgas o el cuadrante superior externo de los glúteos. Se evitan así las lesiones del nervio ciático y de la arteria femoral.
+- El muslo, en la cara anterolateral del cuádriceps (vasto externo y recto femoral)
+- El brazo, en la cara externa del deltoides.
+
+   La punción se realiza en posición perpendicular a la piel, formando un ángulo de 90º. Puede hacerse con la aguja separada de la jeringa o teniendo la aguja montada en la misma.
+
+4.- Vía intravenosa: Es la vía utilizada en casos de urgencia, consiste en la punción directa de una vena y exige gran habilidad y asepsia. Se utiliza para inyectar medicamentos, para la administración de fluídoterapia y hemoderivados, extracción de muestras sanguíneas y mantenimiento de una vía venosa para su uso en situaciones de emergencia. Se clasifica en:
+- Inyección IV directa: se administra el medicamento tal y como viene presentado (ampolla) o previa reconstitución (vial con polvo) directamente en vena. Como norma general, la velocidad de administración debe ser lenta (3-5 minutos)
+- Inyección IV intermitente: cuando el medicamento se administra diluido en 50-100 ml de diluyente en un período de 3-60 minutos.
+- Inyección IV continua: el medicamento se diluye en soluciones de gran volumen (50-1.000 ml) y se administra de forma continuada, también puede realizarse en pequeños volúmenes mediante bombas perfusoras.
+
+      Los sitios más habituales para practicar la inyección IV son las venas superficiales del antebrazo (cefálica, basílica y cubital) y el dorso de la mano.
+
+5.- Vía arterial: La punción se hace en una arteria, como la radial (de elección), la cubital o la femoral. Se utiliza para administrar sustancias radiopacas, vasodilatadores, quimioterapia, monitorizaciones o determinación de gases (gasometrías). La necesidad de inyectarlo a presión supone la utilización de un equipo especial (bomba de perfusión, bomba con jeringa o bolsa de presión). El test de Allen es un procedimiento clínico utilizado para evaluar la circulación colateral entre las arterias radial y cubital en la mano. Esta prueba es esencial para determinar la funcionalidad de estas arterias antes de realizar procedimientos invasivos como la colocación de un catéter arterial o una extracción de sangre arterial para gases sanguíneos. Es una herramienta sencilla, no invasiva y ampliamente utilizada en la práctica clínica.
+
+6.-Vía intraósea: Su alta velocidad de absorción, comparable a la intravenosa, permite ser usada como acceso vascular de urgencia para la infusión de fármacos y líquidos.
+      Su utilización se basa en el hecho de que la cavidad medular de los huesos largos está ocupado por una rica red de capilares sinusoides que drenan a un gran seno venoso central, que no se colapsa ni siquiera en situación de PCR, pasando los fármacos y líquidos a la circulación general con una rapidez similar a como lo harían por cualquier otra vena periférica.
+
+
+       La vía intraósea está indicada en aquellas situaciones en las que la infusión intravenosa de medicamentos o líquidos no puede demorarse en el tiempo, pero en las que, bien por el colapso circulatorio o por la edad, el acceso vascular es difícil o imposible de conseguir. La punción intraósea está indicada tanto en niños (incluidos neonatos y pretérminos) como en adultos cuando están en shock descompensado (sea cual fuere su etiología, pero sobre todo el hipovolémico y el séptico) y no se puede conseguir una vía venosa en 3-5 min. Las dosis de los medicamentos usadas por vía intraósea son las mismas que las usadas por vía intravenosa.
+       Las zonas usadas para insertar una vía intraósea son la tibia proximal (<6 años), tibia distal, esternón, húmero proximal etc. Depende del dispositivo que se use en la inserción.
+      Contraindicaciones absolutas de esta vía: hueso fracturado, con prótesis o tornillos, o previamente puncionado; extremidad con interrupción vascular (pensar en ello también si hay trauma abdominal importante).
+      Contraindicaciones relativas: Infección o quemadura en la extremidad; osteogénesis imperfecta, osteopenia u osteopetrosis.
+Por esta vía se pueden administrar sueros y extraer sangre para analizar.
+7.- Vías para acceder al sistema nervioso: vía epidural (anestésicos durante el parto), intratecal o intraespinal (inyección de anestésicos en el espacio subaracnoideo) e intraventricular.
+8.- Vías específicas menos utilizadas: vía intraperitoneal, intraarticular, intralinfática, vesical.
+
+10.1.-FORMAS DE ADMINISTRACION PARENTERAL: VIA PARENTERAL INYECTABLES
+
+       Formas farmacéuticas líquidas para la administración de medicamentos por vía parenteral. Su acción es inmediata y segura. Para administrarlas necesitan personal especializado. Pueden ser:
+o Soluciones.
+o Polvos secos que con el vehículo adecuado originan soluciones o suspensiones.
+o Suspensiones.
+o Emulsiones con fase externa acuosa (O/W).
+      Los envases para estas formas parenterales pueden ser, en ampollas, viales, jeringas precargadas o dispositivos de plástico o vidrio:
+* Las ampollas se caracterizan por tener un cuello largo que presenta una constricción en
+su base, mientras que los viales tienen un cuello corto coronado por un tapón de plástico duro que está forrado externamente por un metal. Las ampollas constituyen un sistema cerrado que, una vez roto el cuello, pasan a ser un sistema abierto, esto es, se puede aspirar el líquido fácilmente a través de la abertura que hemos creado.
+* Los viales constituyen un sistema cerrado, por lo que, para poder extraer sin dificultad su
+contenido, se debe de inyectar previamente en su interior un volumen de aire igual al volumen de la sustancia que albergan y que queremos extraer.
+
+* Jeringas precargadas: Contienen un volumen pequeño destinado casi siempre a dosis únicas. Se suelen utilizar para administración subcutánea.
+* Dispositivos de plástico o vidrio: contienen el medicamento disuelto para su uso intravenoso en goteo.
+
+Los requisitos que deben cumplir los inyectables son:
+? Deben ser estériles y apirógenos. Los pirógenos son sustancias proteicas que proceden del metabolismo bacteriano, que actúan sobre el hipotálamo produciendo fiebre.
+? Deben ser isotónicos (solo vía endovenosa) y límpidos (sin partículas en suspensión), aunque también pueden administrarse soluciones hipo o hipertónicas.
+
+      Los preparados para administración parenteral son formulaciones estériles destinadas a ser inyectadas o implantadas en el cuerpo humano. A continuación, se enumeran cinco de las más representativas:
+-Preparaciones inyectables. Son preparaciones del principio activo disuelto (solución),
+emulsionado (emulsión) o disperso (dispersión) en agua o en un líquido no acuoso apropiado.
+-Preparaciones para diluir previamente a la administración parenteral. Soluciones concentradas y estériles destinadas a ser inyectadas o administradas por perfusión tras ser diluidas en un líquido apropiado antes de su administración.
+-Preparaciones inyectables para perfusión. Son soluciones acuosas o emulsiones de fase externa acuosa, exentas de pirógenos, estériles y, en la medida de lo posible, isotónicas con respecto a la sangre.
+-Polvo para preparaciones inyectables extemporáneas. Sustancias sólidas estériles, dosificadas y acondicionadas en recipientes definidos que, rápidamente tras agitación, en presencia de un volumen prescrito de líquido estéril apropiado, dan lugar a soluciones prácticamente límpidas, exentas de partículas, o bien a suspensiones uniformes.
+-Implantes o pellet. Pequeños comprimidos estériles de forma y tamaño adecuados que
+garantizan la liberación del principio activo a lo largo de un tiempo prolongado.
+
+      Las tres vías principales para administración de preparaciones inyectables son la intravenosa (IV), la subcutánea (SC) y la intramuscular (IM). Otras vías parenterales de uso menos frecuente son la intradérmica, la intraaracnoidea o intratecal, epidural, intraósea, intraarticular, intraarterial, intracardiaca etc.
+Por vía parenteral (generalmente intramuscular, intraarticular o subcutánea) es posible la
+liberación retardada o prolongada de los principios activos a partir del punto de inyección. Esto se puede conseguir realizando diversas manipulaciones galénicas. Una de ellas consiste en sustituir una solución acuosa por una oleosa, en el caso de que el principio activo sea liposoluble. El método más clásico consiste en inyectar derivados poco hidrosolubles del principio activo, en forma de suspensiones amorfas o cristalinas (p. e., preparaciones retard de insulina). A veces, el principio activo puede también adsorberse sobre un soporte inerte desde el que será liberado, o bien fijarse en forma de microcápsulas, o incorporarse en liposomas para vectorizar algunos
+
+
+fármacos e, incluso ser tratado químicamente (profármaco) a fin de modificar sus propiedades fisicoquímicas. La utilización de implantes o pellet, citados anteriormente, colocados asépticamente bajo la piel, garantiza un efecto aún más duradero que las formas anteriores, aunque es todavía una técnica poco frecuente.
+
+Por vía IV (sueros, viales y ampollas) no podrán administrarse preparados oleosos (posibilidad de embolia grasa) ni aquellos que contengan componentes capaces de precipitar algún componente sanguíneo o hemolizar los hematíes. La vía SC (viales y comprimidos hipodérmicos) no puede utilizarse para sustancias irritantes (puede producir necrosis del tejido).
+La vía IM admite el ser utilizada para sustancias irritantes (viales y ampollas). Los preparados para administración intratecal deben estar exentos de neurotoxicidad, tanto "per se" como por el pH de la forma farmacéutica.
+
+11.- BIBLIOGRAFÍA
+
+* GUIAS FEMORA. SERVIZO GALEGO DE SAÚDE. Disponible en: https://femora.sergas.es/
+* DEPARTAMENTO DE GALENICA. FACULTAD DE FARMACIA. SANTIAGO DE COMPOSTELA.
+"Galénica Especial, tomos I y II".
+* FAULI TRILLO, C. "Tratado de Farmacia Galénica". Ed. Luzan 1993.
+* LABAUNE, J.P. "Manual de Farmacocinética" Ed. Masson, 1991.
+* LITTER, M. "Compendio de Farmacología" E. El Ateneo, 1983.
+* MOTA RODRÍGUEZ, C; PUCHE CAÑAS, E; " Enfermería: Farmacología clínica". Ed Masson, 1992.
+* VELASCO, A. LORENZO, P, SERRANO, J.S.; ANDRES-TRELLES F; "Velázquez: Farmacología". E.
+Interamericana, 1993.
+* FLOREZ, J; ARMIJO, J.A, MEDIAVILLA, A: FARMACOLOGÍA HUMANA. 1ª edición. Tomo I. Eunsa. 1987
+* BOTELLA,	C	"Administración parenteral de medicamentos"	Atención	primaria	en	la red.www.fisterra.com
+* CASTELLS MOLINA, S; HERNANDEZ PEREZ, N. "Farmacología en enfermería" El Servier España S.A, 2007.
+* EDITORIAL MAD: Técnico en Farmacia del Servicio Andaluz de Salud. Temario específico. 2015.
+* EDITORIAL CEP: Técnico en Farmacia del Servicio Gallego de Salud. Temario específico. 2015.
+
+
+
+
+
+
+Tus centres PREMIR(r) en Galicia son:
+Santiago de C • 9815901 98 (Central) Coruna • 98113 12 so
+Ferrol • 981 31 21 SO
+Lugo • 982 22 80 30
+Orense • 988 373 013
+Pontevedra • 986 847 214
+Vigo • 986 238 442
+
+
+
+
+
+
+
+
+
+
+
+CPR PREMIR	oposne
+Ciclos Superiores	campus virtual
+Grupo PREMIR'
+
+
+
+
+
+Languages
+School
+GrupoPREMIR"  /
+
+Academia
+PREMIR(r)
+Oposiciones
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

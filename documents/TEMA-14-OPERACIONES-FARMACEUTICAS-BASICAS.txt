@@ -1,0 +1,1574 @@
+       TÉCNICOS DE FARMACIA
+                                SERGAS
+              TEMA 14-1ª PARTE:
+
+
+
+
+14
+       OPERACIONES FARMACÉUTICAS BÁSICAS:
+CONCEPTOS GENERALES. PESADA CON BALANZAS
+      ELECTRÓNICAS DE PRECISIÓN. DIVISIÓN DE
+   SÓLIDOS. TAMIZADO. HOMOGENEIZACIÓN DE
+        COMPONENTES. EXTRACCIÓN MEDIANTE
+    DISOLVENTES. DESTILACIÓN. EVAPORACIÓN.
+         PULVERIZACIÓN. TAMIZACIÓN. MEZCLA.
+       DESECACIÓN.LIOFILIZACIÓN. FILTRACIÓN.
+      GRANULACIÓN. ESTERILIZACIÓN. SISTEMAS
+      DISPERSOS HOMOGÉNEOS: DISOLUCIONES.
+          SISTEMAS DISPERSOS HETEROGÉNEOS:
+     EMULSIONES, SUSPENSIONES Y AEROSOLES.
+2 TÉCNICOS DE FARMACIA
+  Tema 14-1ª PARTE
+
+  www.premir.es
+                                                                           TÉCNICOS DE FARMACIA 3
+                                                                                 Tema 14-1ª PARTE
+
+                                                                                           www.premir.es
+
+1. OPERACIONES                      FARMACÉUTICAS                    BÁSICAS:            CONCEPTOS
+GENERALES.
+La farmacia galénica se encarga de la transformación de los PA en medicamentos con una forma
+farmacéutica determinada, la cual permite su fácil administración.
+
+
+
+
+                                                                                                          TÉCNICOS FARMACIA - SERGAS
+Podemos definir las operaciones básicas galénicas como los procedimientos empleados para que la
+preparación u obtención de las materias primas dé lugar a la elaboración de una forma farmacéutica
+eficaz, es decir, con una buena acción terapéutica, a bajo coste y de baja toxicidad.
+Las operaciones descritas en el Formulario Nacional (3ª edición, actualizado a Noviembre 2024) son pesada,
+mezclado de polvos, desagregación y tamización.
+
+
+2. PESADA CON BALANZA ELECTRÓNICA DE PRECISIÓN.
+No debemos confundir masa/peso: la masa mide la cantidad de materia de un objeto y el peso mide la
+fuerza con la que ese objeto es atraído hacia el centro de la tierra. La relación entre ellos es P= m x g, por
+ello, el peso de un objeto varía en función del lugar geográfico donde se encuentre mientras que la masa
+será invariable.
+
+2.1 CARACTERÍSTICAS DE LAS BALANZAS
+
+•   EXACTITUD: capacidad que tiene para que los valores medidos se correspondan con el valor
+    verdadero.
+
+•   PRECISIÓN: capacidad que tiene para dar resultados, de mediciones consecutivas, iguales o muy
+    próximas, efectuadas bajo las mismas condiciones, es decir: con el mismo procedimiento de pesada, el
+    mismo observador, el mismo lugar de pesada, bajo las mismas condiciones ambientales y cuando la
+    repetición de las medidas se han realizado en un período de tiempo corto.
+
+•   SENSIBILIDAD: capacidad que tienen para apreciar cantidades mínimas de masa. Las balanzas tendrán
+    tanta mayor sensibilidad a medida que las cantidades de masa que detecten sean menores. También
+    podríamos definirlo como la medida de la pendiente de la curva característica de pesada. Se determina
+    a partir de la variación de la indicación dividida por la carga puesta.
+
+•   PRECISIÓN DE INDICACIÓN (d): es la mínima diferencia entre dos medidas que se puede leer en el
+    indicador. En un indicador digital esa diferencia es el menor paso de cifras, también llamado valor de
+    escala.
+4 TÉCNICOS DE FARMACIA
+  Tema 14-1ª PARTE
+
+     www.premir.es
+
+                                                          SEMIMICROBALANZA (d= 0,01 mg)
+     BALANZA ANALÍTICA (d= 0,1 mg)
+
+
+
+
+     MICROBALANZA (d= 0,001 mg = 1µ)                      ULTRAMICROBALANZA (d= 0,1 µ)
+
+
+
+ •     ESTABILIDAD: capacidad que tiene la balanza de volver a su posición inicial al quitar el producto que
+       se ha pesado. En las balanzas electrónicas deben aparecer los ceros.
+
+ •     CARGA MÁXIMA: peso máximo que puede soportar el sistema sin sufrir daños. El producto y su
+       recipiente de pesada no deben sobrepasar la carga máxima para que la pesada se pueda efectuar.
+
+ •     CARGA MÍNIMA: mínimo peso que la balanza puede registrar con exactitud. El conjunto de papel fino
+       de pesada y producto a pesar debe de sobrepasar esta carga mínima para que el registro de la balanza
+       se pueda efectuar y sea fiable.
+
+ 2.2. BALANZAS MÁS UTILIZADAS EN EL LABORATORIO DE FARMACIA
+ Hoy en día en el laboratorio de las oficinas de farmacia, así como en las farmacias hospitalarias, se utilizan
+ balanzas electrónicas monoplato que son rápidas y que ofrecen gran exactitud, precisión y sensibilidad.
+
+ Las balanzas electrónicas monoplato de uso más frecuente son:
+ Balanzas electrónicas de precisión: la precisión de indicación oscila entre los 0,1 g 0,001g.
+ Balanzas electrónicas analíticas: la precisión de indicación es de 0,0001 g, mientras su carga máxima varía
+ entre 100 y 200 g. En ellas, el platillo se halla protegido del entorno por una urna de cristal y preservado de
+ la humedad por un agente desecador.
+
+ El mecanismo de medición de estas balanzas es un mecanismo electromagnético. Cuando se coloca un
+ producto en el platillo de pesada, éste cambiará de posición con una fuerza proporcional al peso que se
+ haya puesto sobre él. El mecanismo interno de la balanza detecta este cambio de posición del platillo y
+ genera entonces (por un sistema electromagnético) una fuerza que devuelve al platillo a su posición inicial.
+ La energía eléctrica que se necesita para generar esta fuerza es proporcional al peso del objeto que se haya
+ puesto en el platillo y es fácilmente medida, digitalizada y mostrada.
+                                                                            TÉCNICOS DE FARMACIA 5
+                                                                                  Tema 14-1ª PARTE
+
+                                                                                            www.premir.es
+
+2.3. FORMULARIO NACIONAL: PESADA PN/L/OF/001/00.
+1. Objetivo
+Definir el procedimiento para la pesada de producto.
+
+
+
+
+                                                                                                           TÉCNICOS FARMACIA - SERGAS
+2. Responsabilidad de aplicación y alcance
+La responsabilidad de aplicación y alcance de este procedimiento recae sobre todo el personal (técnico
+y/o auxiliar) que proceda a pesar cualquier producto (principios activos y/o excipientes).
+Las materias primas deberán pesarse o medirse por el farmacéutico o bajo su control directo. Cuando se
+trate de sustancias tóxicas o de elevada actividad farmacológica, el farmacéutico efectuará una
+comprobación de la pesada o medida (Real Decreto 175/2001).
+
+3. Definiciones
+No aplica.
+
+4. Descripción
+   4.1 Material y equipo
+   Balanza de precisión, como mínimo de 1 mg (RD 175/2001)
+   Vidrio de reloj.
+   Cápsula para pesada
+   Papel que no libere fibras.
+   Pincel.
+
+4.2 Entorno y requisitos previos
+•Evitar fluctuaciones bruscas de temperatura.
+• Evitar la exposición directa al sol.
+• Evitar las corrientes de aire.
+• Situar la balanza en una base fija y firme.
+• Comprobar la nivelación de la balanza; si tiene burbuja de aire, esta debe estar en el centro del círculo del
+nivel. Si no lo está, se centrará girando las patas de ajuste.
+
+4.3 Funcionamiento de la balanza
+Conectar la balanza a la red y dejar 30 minutos de calentamiento previo.
+   Encender la balanza y consultar el manual de instrucciones, ya que, dependiendo del modelo, la balanza
+   puede incluir autochequeo electrónico que termina con la indicación cero.
+   Dependiendo de la balanza y modelo se realiza un ajuste interno o externo, siguiendo las instrucciones
+   del fabricante. La periodicidad de los ajustes las establecerá el técnico responsable.
+
+   4.4. Desarrollo de la operación de pesada
+    1. Localizar en el almacén todas las materias primas de acuerdo con la hoja de elaboración.
+    Comprobar la vigencia de las mismas.
+    2. Trasladar las materias primas a la zona de pesadas y situarlas todas al mismo lado de la balanza.
+    3. Verificar la correcta limpieza de la balanza.
+    4. Realizar la puesta a cero de la balanza.
+    5. Anotar en la guía de elaboración, control y registro el lote o número de control del producto a
+    pesar.
+    6. Colocar en el plato de la balanza el recipiente de pesada adecuado que permita identificar la
+    materia prima y garantizar la integridad de la pesada. Tarar.
+    7. Abrir el envase correspondiente de la materia prima a pesar.
+6 TÉCNICOS DE FARMACIA
+  Tema 14-1ª PARTE
+
+  www.premir.es
+
+     8. Pesar la cantidad de materia prima indicada en la guía de elaboración y anotar en la misma la
+     cantidad pesada.
+     9. Cerrar el envase del producto (en la zona de pesadas no debe haber más de un envase abierto) y
+     situarlo al otro lado de la balanza (de esta forma se diferencian las materias primas pendientes de
+     pesar de las ya pesadas).
+     10. La materia prima pesada debe estar siempre identificada.
+     11. Anotar en la guía de elaboración fecha y firma de la persona que ha realizado la pesada.
+
+ En caso de vertidos accidentales de productos, limpiar inmediatamente el plato de pesada y/o las
+ diferentes partes de la balanza según el apartado 4.5 del presente procedimiento.
+ Una vez pesadas todas las materias primas (correctamente identificadas) y cumplimentada la guía de
+ elaboración, trasladarlas a la zona de elaboración correspondiente.
+ Los envases originales de las materias primas se trasladarán al almacén y se colocarán en su ubicación
+ correspondiente.
+ Finalizada la operación de pesada proceder a la limpieza de la balanza y utensilios de pesada según el
+ apartado 4.5 del presente procedimiento.
+
+    4.5 Limpieza
+    •Balanza.
+    Retirar de la balanza todos los restos de producto con ayuda de un pincel o de un papel que no libere
+    fibras.
+    Pasar por el plato de pesada un papel que no libere fibras humedecido en etanol.
+    • Utensilios de pesada.
+    Lavar todos los utensilios de pesada con agua y detergente apropiado, aclarando con abundante agua.
+ En caso de utilizar un sistema automático de lavado, el farmacéutico responsable deberá desarrollar un
+ procedimiento basándose en las indicaciones del fabricante.
+
+    5. Registros
+
+
+ 3. DIVISIÓN DE SÓLIDOS
+ La división de sólidos consiste en la reducción del tamaño de las partículas mediante procedimientos
+ mecánicos que requieren un aporte de energía.
+ Ejemplos:
+ • Fragmentación: se obtienen partículas gruesas.
+ • Pulverización: se obtienen partículas finas pero distinguibles a simple vista.
+ • Micronizado: se obtienen partículas muy finas no distinguibles a simple vista.
+
+ La operación más se aplica en farmacia es la pulverización, y es de la que hablaremos en este apartado.
+
+ Los objetivos de esta operación básica son:
+ o Aumentar la superficie específica del producto, para:
+     • Aumentar la dispersabilidad del sólido en un líquido.
+     •   Aumentar la velocidad de disolución del sólido en un líquido.
+     •   Facilitar la reacción química entre dos productos.
+     •   Mejorar la biodisponibilidad.
+                                                                             TÉCNICOS DE FARMACIA 7
+                                                                                   Tema 14-1ª PARTE
+
+                                                                                             www.premir.es
+
+    •   Mejorar la capacidad cubriente del sólido para hacer recubrimientos.
+    •   Facilitar un proceso extractivo.
+
+o Obtener formas de dosificación con una adecuada uniformidad de contenido en principio activo,
+  particularmente en el caso de fármacos cuya dosis terapéutica es pequeña = elevada potencia
+
+
+
+
+                                                                                                             TÉCNICOS FARMACIA - SERGAS
+  farmacológica.
+o Mejorar la esfericidad y facilitar la manipulación de los sólidos (por ejemplo, los de tipo acicular, es decir,
+  con forma de aguja).
+o Dotar a los sólidos de un tamaño similar, para mejorar su mezclado y evitar la segregación.
+o Obtención de preparados galénicos: polvos simples (formados por un solo principio activo) y polvos
+  compuestos (obtenidos por mezcla de dos o más polvos simples).
+
+Los inconvenientes de esta operación básica son:
+o Aumento de la temperatura (degradación de productos termolábiles).
+o La reducción del tamaño de partícula de los sólidos suele ir acompañada de un marcado
+   empeoramiento de sus propiedades de flujo (al tener menor tamaño de partícula caen más lentos =>
+   flujo más lento).
+
+3.1. MÉTODOS DE PULVERIZACIÓN.
+Para realizar la pulverización se utilizan distintos métodos, según el tipo de material que se va a pulverizar
+(tabla). Las características que se deben tener en cuenta son: dureza, elasticidad, superficie,
+erosionabilidad, humedad y termolabilidad.
+
+  Tipo de material                                        Método de pulverización
+
+  Duro                                                    -   compresión (apretar)
+  (Que se resiste a la rotura)                            -   Percusión o choque (golpear)
+
+  Blando
+                                                          - desgarramiento (rotura)
+  (Que cede facilmente al tacto)
+
+
+                                                          -   abrasión o fricción (desgaste por rozamiento)
+  Frágil
+  (Que se hace pedazos con facilidad)                     -   Cizallamiento (corte con cizalla. Cizalla:
+                                                              instrumento a modo de tijeras grandes)
+
+
+
+3.2. EQUIPOS PARA LA PULVERIZACIÓN
+Además de las características del material, existen otros muchos factores que condicionan la elección del
+aparato para la pulverización, como por ejemplo:
+• Forma de las partículas.
+• Porcentaje de humedad de la materia prima.
+• Cantidad de material que se va a pulverizar.
+• Proporción de finos a que da origen.
+8 TÉCNICOS DE FARMACIA
+  Tema 14-1ª PARTE
+
+  www.premir.es
+
+ • Relación entre cantidad de materia y tamaño del aparato.
+ • Coste del proceso y mantenimiento del aparataje.
+
+ Por todo ello, no existe un aparato universal. Los equipos más utilizados son el mortero (en farmacia,
+ pequeñas cantidades) y los molinos (en industria, cantidades más grandes). Dentro de los molinos, los
+ podemos clasificar en función del tamaño de partícula del producto final:
+
+   Pulverización gruesa                               - Molino de cuchillas
+
+                                                      -   Molino de cuchillas
+   Pulverización intermedia                           -   Molino de rodillos
+                                                      -   Molino de martillos
+
+                                                      -   Molino de bolas
+   Pulverización fina                                 -   Molino vibratorio
+                                                      -   Molino de púas o de caja de ardilla
+
+                                                      -   Micronizador de placas
+   Pulverización ultrafina                            -   Molino coloidal
+                                                      -   Micronizador de recirculación
+
+
+
+
+   Mortero: compuesto por el Molino de cuchillas:                 para Molino         de      rodillos:
+   pistilo (o mano) y el mortero en si. productos húmedos.             pulverización por compresión.
+   Existen morteros con tapadera y
+   orificio central para el pistilo para
+   la pulverización de sustancias
+   irritantes/tóxicas.
+                                                                   TÉCNICOS DE FARMACIA 9
+                                                                         Tema 14-1ª PARTE
+
+                                                                               www.premir.es
+
+
+
+
+                                                                                             TÉCNICOS FARMACIA - SERGAS
+  Molino       de     martillos: Molino de bolas: pulverización Molino vibratorio: pulverización
+  pulverización por percusión o por percusión o impacto (cuando por fricción. Fuerza de molienda
+  impacto.                       las bolas son grandes) y por muy superior al molino de bolas.
+                                 fricción (cuando las bolas son
+                                 pequeñas).
+
+
+
+
+  Molino de púas: pulverización Molinos              coloidales:
+  por fricción y cizalladura.   cizallamiento de un líquido con
+                                un sólido en suspensión.
+
+
+
+
+3.3. CONTROL DEL PRODUCTO. TAMIZACIÓN.
+(Se explicará el en siguiente apartado)
+10 TÉCNICOS DE FARMACIA
+   Tema 14-1ª PARTE
+
+   www.premir.es
+
+  4. TAMIZADO
+  A menudo, una vez realizada la pulverización, quedan partículas de tamaño muy diverso, obteniendo
+  sólidos pulverulentos poco homogéneos y es necesario utilizar técnicas de separación o clasificación de
+  las partículas que los componen según el tamaño.
+  El Formulario Nacional define tamización como la operación básica galénica que tiene por objeto
+  separar las distintas fracciones de una mezcla pulverulenta o granulado en función de su tamaño.
+  Para este fin, se utilizan tamices y tamizadoras, siendo el tamiz un dispositivo que permite separar
+  partículas de diferentes tamaños y la tamizadora una máquina que utiliza tamices para realizar esta
+  separación.
+
+  4.1. TAMICES Y TAMIZADORAS
+  Los tamices son dispositivos formados por chapas perforadas o hilos (textiles o metálicos) entrecruzados
+  sujetos a un bastidor.
+  Se determina el diámetro de cribado = diámetro equivalente de tamización = dimensión de la partícula
+  más grande que pasa a través de una apertura cuadrada.
+
+                                El espacio que queda libre entre los hilos se llama “luz” o abertura de malla
+                               (L) y teniendo en cuenta que los hilos que constituyen el tamiz tienen un
+                               diámetro “D”, se tiene que la unidad básica de todo tamiz es la suma de
+                               ambos elementos a la que se denomina “anchura de malla” M= L+D.
+                               A la fracción de producto que pasa a través del tamiz se le denomina
+                               cribado, peneirado o cernido, mientras que a la fracción que no pasa a
+                               través del tamiz y se queda sobre él se la denomina rechazo.
+                               Se denomina eficiencia de un tamiz (Et) a la relación o cociente existente
+                               entre el porcentaje de producto que experimentalmente ha pasado a través
+                               de él y el porcentaje de producto que teóricamente es capaz de atravesarlo.
+                               Cuanto más próximo a 1 sea este valor mayor será la efectividad y la
+                               exactitud de la tamización.
+                               Cada tamiz se identifica por un número que se corresponde con una
+  determinada abertura de malla expresada en mm o micrómetros.
+                                                                        TÉCNICOS DE FARMACIA 11
+                                                                              Tema 14-1ª PARTE
+
+                                                                                       www.premir.es
+
+4.2. TAMIZACIÓN EN SERIE Y CASCADA
+
+
+
+
+                                                                                                      TÉCNICOS FARMACIA - SERGAS
+                                                     En serie: tamices colocados uno tras de otro.
+                                                     Tamaño creciente de luz de malla. El rechazo del
+                                                     primer tamiz se tamiza en el segundo. Obtenemos
+                                                     tantos cernidos (o finos) como tamices y un solo
+                                                     rechazo (o grueso), el del último tamiz.
+
+                                                     En cascada: tamices colocados uno encima del
+                                                     otro. Tamaño decreciente de luz de malla. El
+                                                     cernido (o fino) del primer tamiz se tamiza en el
+                                                     segundo y así sucesivamente. Obtenemos tantos
+                                                     rechazos (o gruesos) como tamices y un solo
+                                                     cernido (o fino), el del último tamiz.
+
+
+
+
+4.3. FORMULARIO NACIONAL: TAMIZACIÓN PN/L/OF/004/001
+1. Objetivo
+Definir el procedimiento para el tamizado de productos pulverulentos.
+
+2. Responsabilidad de aplicación y alcance
+La responsabilidad de aplicación y alcance de este procedimiento recae sobre todo el personal (técnico
+y/o auxiliar) que proceda a la tamización de cualquier producto (principios activos y/o excipientes).
+
+3. Definiciones
+Tamización: operación básica galénica que tiene por objeto separar las distintas fracciones de una mezcla
+pulverulenta o granulado en función de su tamaño.
+
+4. Descripción
+4.1 Material y equipo
+   Tamices de acero inoxidable de luz de malla adecuada (RFE 2.1.4).
+   Tamizadora oscilante o equivalente, si procede.
+   Bandeja de acero inoxidable.
+   Papel que no libere fibras.
+4.2 Desarrollo de la operación de tamización
+   4.2.1 Procedimiento manual
+      1. Elegir el tamiz de luz de malla adecuada para el producto a tamizar, según se especifique en la
+          formulación correspondiente.
+      2. Comprobar la correcta limpieza del tamiz.
+12 TÉCNICOS DE FARMACIA
+   Tema 14-1ª PARTE
+
+   www.premir.es
+
+         3. Colocar el tamiz sobre un papel que no libere fibras o sobre una bandeja de acero inoxidable
+             limpia y seca.
+         4. Colocar sobre el tamiz, en su parte central, una parte del producto. Proceder a su tamización,
+             mediante movimientos adecuados, con el fin de conseguir que el producto pase por la malla.
+         5. Evitar, en lo posible, que el producto se quede retenido en los márgenes del tamiz.
+         6. Proceder con el resto del producto de igual modo que en los puntos 4 y 5 del presente apartado,
+             hasta tener la totalidad del producto tamizado.
+         7. Retirar el tamiz de la bandeja o del papel, evitando que los restos se mezclen con el producto
+             tamizado.
+         8. Proceder a la limpieza del tamiz según el apartado 4.3 del presente procedimiento.
+      4.2.2 Procedimiento mecánico
+         1. Comprobar la correcta limpieza de la tamizadora.
+         2. Comprobar que esté instalada la malla adecuada para el producto a tamizar, según se especifique
+             en la formulación correspondiente.
+         3. Colocar una bandeja de acero inoxidable al final de la rampa de caída del producto.
+         4. Poner en funcionamiento la tamizadora, previa comprobación de que esté conectada a la red
+             eléctrica.
+         5. Incorporar el producto a procesar en la tamizadora, controlando que no se obture la malla
+             durante todo el proceso. Parar, si es necesario, desobturar sin forzar la malla y continuar el
+             tamizado.
+         6. Recoger el producto tamizado en la bandeja de acero inoxidable.
+         7. Finalizado el tamizado desconectar la tamizadora de la red eléctrica.
+         8. Retirar el producto tamizado, desmontar la tamizadora y limpiar según el apartado 4.3 del
+             presente procedimiento.
+  4.3 Limpieza
+  1. Retirar del tamiz y/o la malla de la tamizadora automática todos los restos de producto con ayuda de
+  papel que no libere fibras.
+  2. Lavar con agua jabonosa el tamiz y/o la malla de la tamizadora automática. No utilizar cepillos que
+  puedan modificar la luz de malla.
+  3. Limpiar con agua jabonosa, si procede, todas aquellas partes de la tamizadora que han estado en
+  contacto con el producto.
+  4. Aclarar con abundante agua. El último aclarado se realizará con agua desionizada.
+  5. Humedecer con etanol de limpieza el tamiz y/o la malla y todas las piezas de la tamizadora.
+  6. Secar el tamiz y/o la malla y todas las piezas de la tamizadora, y proceder, en su caso, a montar la
+  tamizadora.
+
+  5. Registros
+
+  4.4. FORMULARIO NACIONAL: DESAGREGACIÓN PN/L/OF/003/00
+  1. Objetivo
+  Definir el procedimiento para el desagregado de productos pulverulentos.
+
+  2. Responsabilidad de aplicación y alcance
+  La responsabilidad de aplicación y alcance de este procedimiento recae sobre todo el personal (técnico
+  y/o auxiliar) que proceda a la desagregación de cualquier producto (principios activos y/o excipientes).
+                                                                            TÉCNICOS DE FARMACIA 13
+                                                                                  Tema 14-1ª PARTE
+
+                                                                                           www.premir.es
+
+3. Definiciones
+Desagregación: operación básica galénica que tiene por objeto deshacer los aglomerados que se
+producen por fuerzas de atracción de tipo secundario o mecánico (adhesión, atracción electrostática,
+rozamiento) en los productos pulverulentos.
+
+
+
+
+                                                                                                           TÉCNICOS FARMACIA - SERGAS
+4. Descripción
+4.1 Material y equipo
+   Tamices de acero inoxidable de luz de malla adecuada (RFE 2.1.4).
+   Tamizadora oscilante o equivalente, si procede.
+   Bandeja de acero inoxidable.
+   Papel que no libere fibras.
+   Espátula de acero inoxidable.
+4.2 Desarrollo de la operación de desagregación
+   4.2.1 Procedimiento manual
+      1. Elegir el tamiz de luz de malla adecuada para el producto a desagregar, según se especifique en
+          la formulación correspondiente.
+      2. Comprobar la correcta limpieza del tamiz.
+      3. Colocar el tamiz sobre un papel que no libere fibras o sobre una bandeja de acero inoxidable
+          limpia y seca.
+      4. Colocar sobre el tamiz, en su parte central, una parte del producto. Proceder a su desagregación
+          con una espátula de acero inoxidable y presionar ligeramente sobre el tamiz.
+      5. Evitar, en lo posible, que el producto se quede retenido en los márgenes del tamiz.
+      6. Proceder de igual modo que en los puntos 4 y 5 del presente apartado, hasta tener la totalidad
+          del producto desagregado.
+      7. Retirar el tamiz de la bandeja o del papel. Evitar que restos del producto sin desagregar se
+          mezclen con el producto desagregado.
+      8. Proceder a la limpieza del tamiz según el apartado 4.3 de este procedimiento.
+   4.2.2 Procedimiento mecánico
+      1. Comprobar la correcta limpieza de la tamizadora.
+      2. Comprobar que esté instalada la malla adecuada para el producto a desagregar, según se
+          especifique en la formulación correspondiente.
+      3. Colocar una bandeja de acero inoxidable al final de la rampa de caída del producto.
+      4. Poner en funcionamiento la tamizadora, previa comprobación de que esté conectada a la red
+          eléctrica.
+      5. Adicionar el producto a procesar en la tamizadora, controlando que no se obture la malla durante
+          todo el proceso. Parar, si es necesario, desobturar sin forzar la malla y continuar la desagregación.
+      6. Recoger el producto desagregado en la bandeja de acero inoxidable.
+      7. Finalizada la desagregación desconectar la tamizadora de la red eléctrica.
+      8. Retirar el producto desagregado, proceder a desmontar la tamizadora y limpiar según el apartado
+          4.3 del presente procedimiento.
+4.3 Limpieza
+   1. Retirar del tamiz y/o la malla de la tamizadora automática todos los restos de producto con ayuda
+      de papel que no libere fibras.
+   2. Lavar con agua jabonosa el tamiz y/o la malla de la tamizadora automática. No utilizar cepillos que
+      puedan modificar la luz de malla.
+   3. Limpiar con agua jabonosa, si procede, todas aquellas partes de la tamizadora que han estado en
+      contacto con el producto.
+   4. Aclarar con abundante agua. El último aclarado se realizará con agua desionizada.
+   5. Humedecer con etanol de limpieza el tamiz y/o la malla y todas las piezas de la tamizadora.
+14 TÉCNICOS DE FARMACIA
+   Tema 14-1ª PARTE
+
+   www.premir.es
+
+     6. Secar el tamiz y/o la malla y todas las piezas de la tamizadora, y proceder, en su caso, a montar la
+        tamizadora.
+
+  5. Registros
+
+
+  5. HOMOGEINIZACIÓN DE COMPONENTES
+  La homogeneización es la operación farmacotécnica cuya misión es garantizar la idéntica composición de
+  una mezcla, ya sea de sólidos o líquidos, en cualquier punto de la misma; esto es, obtener mezclas
+  homogéneas para asegurarnos que la proporción de los componentes, incluido el principio activo, será
+  semejante en toda ella y, por tanto, las formas de dosificación posteriormente elaboradas serán correctas.
+  Según el estado físico de sus constituyentes, el producto obtenido es una solución, una emulsión, una
+  suspensión o un polvo compuesto.
+
+  Las mezclas se pueden clasificar en:
+  • Mezclas positivas: son aquellas cuyos componentes se mezclan de forma espontánea e irreversible. En
+    general se llevan a cabo con gran facilidad y no plantean problemas durante la elaboración.
+  • Mezclas negativas: son aquellas cuyos componentes tienden a separarse. Requieren un aporte
+    continuo de energía para mantener unidos y homogéneos los componentes en la mezcla.
+  • Mezclas neutras: son aquellas cuyos componentes no se mezclan de forma espontánea, si se separan
+    una vez lograda la mezcla.
+
+  El tipo de mezcla puede variar durante el proceso. Existen ciertos parámetros que influyen en la mezcla de
+  los productos, que pueden hacer variar el tipo de mezcla:
+  • Características de los componentes: tamaño, forma, consistencia, humedad, densidad, viscosidad,
+    tensión superficial, estado.
+  • Estabilidad de la muestra: comportamiento frente a la humedad, capacidad de reacción química entre
+    los componentes.
+  • Proporción de componentes.
+  • Carga del mezclador.
+  • Orden de incorporación de productos.
+  • Tiempo de mezclado.
+
+  La homogeneización ocasiona cierta alteración de las partículas, a menudo usada para reducir la
+  sedimentación de las partículas más pesadas, para aumentar la viscosidad o para crear una mejor textura
+  de los componentes mezclados.
+
+  Los distintos tipos de homogeneización los desarrollamos en los apartados MEZCLA y SISTEMAS
+  DISPERSOS.
+                                                                        TÉCNICOS DE FARMACIA 15
+                                                                              Tema 14-1ª PARTE
+
+                                                                                       www.premir.es
+
+6. EXTRACIÓN MEDIANTE DISOLVENTES
+La extracción con disolventes consiste en la separación de una mezcla de sustancias por disolución de cada
+componente mediante uno o varios disolventes, con lo que se obtiene usa solución extraída o extracto y
+un residuo.
+
+
+
+
+                                                                                                      TÉCNICOS FARMACIA - SERGAS
+La extracción con disolventes se basa en un proceso de difusión celular hasta que se equilibran las
+concentraciones. En dicho proceso influyen el tiempo de contacto, el tipo de droga y el tamaño de la
+partícula.
+
+6.1. TIPOS DE EXTRACCIÓN.
+6.1. TIPOS DE EXTRACCIÓN.
+
+
+                                      -   Por incisión
+  Extracción mecánica
+                                      -   Por expresión
+
+
+                                      -   Líquido-líquido
+                                      -   Sólido-líquido
+                                          • Maceración (partes blandas y duras)
+  Extracción con disolventes              • Decocción (partes duras)
+                                          • Infusión (partes blandas)
+                                          • Digestión
+                                          • Percolación o lixiviación
+                                          • Extracción por Soxhlet
+
+
+
+El disolvente utilizado suele ser el agua, aunque también suelen utilizarse otros, como el alcohol (con
+mayor poder extractivo) para obtener tinturas. Con disolventes orgánicos se obtienen esencias; con
+disolventes grasos, aceites.
+
+La extracción más utilizada en farmacia es la maceración, mientras que la industria emplea la perforación
+y la extracción por Soxhlet.
+
+
+
+
+                                 Extracción por incisión: Consiste en hacer cortes en la superficie de la
+                                 parte de la planta de donde desea extraer el zumo.
+
+                                 Se emplea en las cápsulas de la adormidera para extraer el opio, en el
+                                 tronco de los pinos para extraer la resina trementina.
+16 TÉCNICOS DE FARMACIA
+   Tema 14-1ª PARTE
+
+   www.premir.es
+
+
+
+
+                      Extracción por expresión: Es el procedimiento más generalizado,
+                      consistente en presionar fuertemente la droga. Para ello puede
+                      emplearse exprimidores o prensas de acción más o menos automatizada.
+                      Los zumos y los jugos aparecen generalmente como líquidos turbios
+                      debido a impurezas sólidas que resultan del proceso extractivo
+                      mecánico; por ello, siempre es necesario efectuar una clarificación,
+                      siendo los métodos más frecuentemente empleados: la decantación, la
+                      filtración y la centrifugación.
+
+
+
+
+                      Maceración: se realiza poniendo en contacto la droga, de la que quiere
+                      extraerse el principio activo, y el disolvente, durante un tiempo
+                      prolongado. Tiene como inconveniente principal que no consigue
+                      extraer completamente el principio activo porque, en la medida en que
+                      la concentración de principio activo se iguala entre la droga y el agua,
+                      este principio activo deja de salir.
+
+
+
+
+                      Decocción (o cocimiento): el disolvente y la droga se mantienen a una
+                      temperatura de 100ºC durante un tiempo variable. El preparado galénico
+                      obtenido se denomina también decocción o cocimiento.
+
+
+
+
+                      Infusión: la droga se pone en un recipiente sobre el que se vierte un
+                      disolvente que está aproximadamente a 100ºC de temperatura.
+                      Disolvente y droga se dejan juntos hasta que alcanzan la temperatura
+                      ambiente. El preparado galénico obtenido se conoce con el nombre de
+                      infusión.
+                                         TÉCNICOS DE FARMACIA 17
+                                               Tema 14-1ª PARTE
+
+                                                         www.premir.es
+
+
+
+Digestión: el disolvente y la droga se ponen en contacto a una
+temperatura constante, alrededor de 50ºC, que facilita la salida del
+principio activo. Esto se hace utilizando un baño con la temperatura
+
+
+
+
+                                                                         TÉCNICOS FARMACIA - SERGAS
+adecuada. El preparado galénico obtenido se conoce como digestión.
+
+
+
+
+Percolación: consiste en hacer pasar a través de la droga previamente
+pulverizada y contenida en un recipiente, un disolvente a temperatura
+ambiente que va extrayendo las sustancias activas. El disolvente pasa a
+través de la droga gracias a la fuerza de la gravedad. El disolvente con los
+principios activos se recoge en un recipiente. Por este método se obtiene
+casi el 100% de las sustancias extraíbles de la droga.
+Para la percolación se utilizan los lixiviadores o percoladores y extractores
+por contacto múltiple.
+
+
+
+
+Extracción por Soxflet: el sólido se añade al principio y el disolvente se
+utiliza, primero para la extracción y, tras su destilación, se usa para una
+nueva separación. En la parte inferior del aparato hay un matraz donde
+se pone el disolvente. Se calienta el matraz, el disolvente se evapora y
+asciende hasta el refrigerante, donde se licúa y cae sobre el sólido. Éste se
+encuentra envuelto en papel de filtro. El disolvente extrae el principio
+activo y, a medida que se acumula, alcanza una salida que, mediante un
+tubo, le lleva de nuevo al matraz inferior. El proceso continúa cuando el
+disolvente se calienta de nuevo, se evapora, se licúa y se repite la
+extracción.
+18 TÉCNICOS DE FARMACIA
+   Tema 14-1ª PARTE
+
+   www.premir.es
+
+  7. DESTILACIÓN.
+  La destilación es una operación básica que, mediante el cambio de estado del líquido a vapor, permite
+  separar los componentes de una mezcla (generalmente líquidos) en base a su diferente volatilidad.
+  Este cambio de estado se consigue a través de la aportación de una energía y se lleva a cabo en unos
+  aparatos denominados destiladores, en donde la sustancia más volátil es la primera en pasar a vapor y ser
+  recogida por posterior condensación, siguiendo la misma operación con las demás sustancias de la mezcla.
+  Depende de parámetros como la temperatura, la presión del medio y la composición de la disolución. El
+  uso más generalizado de la destilación se encuentra en la obtención de agua destilada.
+
+  7.1. TIPOS DE DESTILACIÓN.
+  7.1.1. DESTILACIÓN SIMPLE
+
+                                                              Este tipo de destilación se emplea cuando la
+                                                              diferencia entre los puntos de ebullición de los
+                                                              componentes son significativamente diferentes
+                                                              o cuando las impurezas son sólidos disueltos (o
+                                                              aceites no volátiles) en el líquido a purificar. Para
+                                                              realizar una destilación simple se usa un
+                                                              destilador que consta de los siguientes
+                                                              elementos:
+                                                              •     Recipiente para contener la mezcla de
+                                                              líquidos a separar.
+                                                              •     Sistema de calefacción, que puede ser
+                                                              externo, como un mechero, o interno, con una
+                                                              resistencia eléctrica.
+                                                              •     Sistema de refrigeración con un serpentín,
+                                                              por donde circula el agua, para enfriar el vapor
+                                                              que va subiendo y condensarlo obteniendo
+                                                              finalmente un líquido.
+  • Recipiente para recoger el líquido separado.
+
+  7.1.2. DESTILACIÓN FRACCIONADA
+
+  Se emplea cuando la diferencia entre los puntos de ebullición de los líquidos que se desean separar es muy
+  pequeña y no se puede realizar esta separación a través de la destilación simple. (Ejemplo: separación de
+  los componentes del petróleo para obtener gasolina, gasoil, fueloil...)
+  En la destilación fraccionada se usa una columna fraccionadora que contiene distintos “platos”. En ella el
+  vapor caliente sube y se encuentra con los platos fríos y se condensa y cae para volver a calentarse, y así se
+  produce un mayor contacto entre los vapores que suben y los líquidos que bajan. Ello facilita el intercambio
+  de calor entre los vapores (que ceden) y los líquidos (que reciben). Ese intercambio produce un intercambio
+  de masa, donde los líquidos con menor punto de ebullición se convierten en vapor, y los vapores de
+  sustancias con mayor punto de ebullición pasan al estado líquido.
+                                                                        TÉCNICOS DE FARMACIA 19
+                                                                              Tema 14-1ª PARTE
+
+                                                                                       www.premir.es
+
+
+
+
+                                                                                                      TÉCNICOS FARMACIA - SERGAS
+7.1.3. DESTILACIÓN AL VACÍO O A PRESIÓN REDUCIDA
+
+Este sistema permite destilar líquidos a temperaturas más bajas que en la destilación simple y en la
+fraccionada, con lo que se evitan posibles alteraciones en sustancias termolábiles que se estropearían a
+temperaturas elevadas. Esto se consigue porque al reducir la presión se disminuye el punto de ebullición
+del líquido. Para generar este vacío se conecta el sistema de destilación a una bomba de vacío o trompa de
+agua.
+20 TÉCNICOS DE FARMACIA
+   Tema 14-1ª PARTE
+
+   www.premir.es
+
+  7.1.4. DESTILACIÓN POR ARRASTRE DE VAPOR
+
+
+                                                                 Es una técnica de destilación que permite la
+                                                                 separación de sustancias insolubles en agua
+                                                                 y ligeramente volátiles de otros productos
+                                                                 no volátiles. Es muy útil para sustancias de
+                                                                 punto de ebullición muy superior a 100ºC y
+                                                                 que se descomponen antes o al alcanzar la
+                                                                 temperatura de su punto de ebullición. Se
+                                                                 utiliza para la obtención de aceites
+                                                                 esenciales.
+
+
+
+
+  8. EVAPORACIÓN
+  La evaporación consiste en la transformación de líquido a vapor. Se realiza en la superficie y a
+  temperatura ambiente. Si se modifican las condiciones de presión y/o temperatura se consigue que el
+  procedimiento sea más rápido y eficaz.
+
+  La finalidad de la evaporación es obtener un líquido más concentrado en principio activo e, incluso, el
+  principio activo seco, eliminando una parte o la totalidad del disolvente extractivo.
+
+  Generalmente, el líquido que se evapora es agua y se produce vapor de agua. En la evaporación influyen
+  una serie de factores:
+     • Concentración del líquido que se va a evaporar.
+     • Volumen a evaporar.
+     • Humedad del ambiente, ya que muchas sustancias higroscópicas absorben la humedad del lugar que
+       les rodea. A menor humedad ambiental más evaporación.
+     • Presión del ambiente, a menor presión más evaporación.
+     • Temperatura ambiente.
+
+  En el laboratorio farmacéutico esta operación se utiliza con los siguientes objetivos:
+     • Obtener preparados extractivos: sólido-líquido y líquido-líquidos. Puede ser que las disoluciones sean
+       muy liquidas, así que se recurre a esta operación, para eliminar parte del disolvente
+     • Purificar por cristalización: en este caso al evaporarse el disolvente, se produce la cristalización del
+       principio activo.
+     • Eliminar disolventes tóxicos.
+                                                                           TÉCNICOS DE FARMACIA 21
+                                                                                 Tema 14-1ª PARTE
+
+                                                                                           www.premir.es
+
+8.1. EQUIPOS PARA EVAPORACIÓN
+Los equipos utilizados en este procedimiento son de dos tipos: los evaporadores y los rotavapores.
+
+8.1.1. EVAPORADORES
+
+
+
+
+                                                                                                          TÉCNICOS FARMACIA - SERGAS
+Los evaporadores usados en la industria constan de las siguientes partes:
+• Depósito o cámara de evaporación (contiene el líquido que se va a evaporar).
+• Sistema calefactor o camisa calefactora (proporciona el calor por medio de fluido -líquido o gas- caliente).
+• Entrada del líquido que se va a evaporar.
+• Entrada del fluido calefactor.
+• Salida del líquido concentrado.
+• Salida de los vapores producidos.
+22 TÉCNICOS DE FARMACIA
+   Tema 14-1ª PARTE
+
+   www.premir.es
+
+  Existen evaporadores de diversos tipos:
+
+
+
+
+                                            Evaporadores simples. La cámara calefactora envuelve a
+                                            la cámara de evaporación.
+
+
+
+
+                                            Evaporadores de tubos. Formados por una serie de tubos
+                                            dispuestos en horizontal o vertical por los que circula el
+                                            fluido calefactor o el líquido que se va a evaporar. Gracias a
+                                            los tubos hay mayor superficie de contacto entre el líquido
+                                            calefactor y el líquido a concentrar. Si lo que circula por
+                                            dichos tubos es el líquido a concentrar el contacto entre
+                                            ambos es aún mayor, lo que permite que la transferencia de
+                                            calor sea más rápida.
+
+
+
+
+                                            Evaporadores en vacío y de múltiple efecto. Se conectan
+                                            varios evaporadores entre sí y se realiza el vacío en cada
+                                            uno de ellos. Esto permite trabajar a menor temperatura
+                                            (para principios activos termolábiles). Así, para producir la
+                                            evaporación, será suficiente el vapor de agua producido
+                                            por el evaporador anterior.
+                                                                          TÉCNICOS DE FARMACIA 23
+                                                                                Tema 14-1ª PARTE
+
+                                                                                          www.premir.es
+
+8.1.2. ROTAVAPOR
+
+
+
+
+                                                                                                          TÉCNICOS FARMACIA - SERGAS
+                              Evaporador que se utiliza en el laboratorio y para cantidades pequeñas. En
+                              la placa calefactora se introduce el matraz que contiene la mezcla: cuando
+                              se alcanza la temperatura a la cual se volatiza el líquido más volátil, el vapor
+                              pasa por el refrigerante (que es un tubo hueco con un serpentín en su
+                              interior), por el cual pasa agua de forma constante, haciendo que el vapor
+                              se condense. El líquido obtenido se recoge finalmente en otro matraz. La
+                              pieza que sirve para unir el primer matraz con el refrigerante permite el
+                              giro del matraz, para que el calor sea homogéneo.
+
+
+
+
+9. PULVERIZACIÓN.
+*Explicado en el punto “3. DIVISIÓN DE SÓLIDOS”.
+
+
+
+10. TAMIZACIÓN
+*Expliacado en el punto “4. TAMIZADO”
+
+
+11. MEZCLA
+Se define mezcla como agregación de diferentes componentes (cualquiera que sea su estado físico)
+de manera uniforme, es decir, con la misma composición en todos sus puntos, con la misma
+proporción de los componentes en la totalidad de la preparación que en cualquiera de sus
+fracciones.
+El índice de mezclado es parámetro utilizado para cuantificar si el mezclado es bueno o malo. Se toman
+muestras en distintos puntos de la mezcla y se analiza la proporción de cada componente en cada una de
+ellas.
+
+11.1 MEZCLA DE SÓLIDOS
+Para conseguir una buena homogeneización en una mezcla de dos o más sólidos deben tenerse en cuenta
+los siguientes parámetros:
+
+a) Características físicas de los sólidos a mezclar:
+Las características físicas propias de cada sólido determinan la mayor o menor dificultad de mezcla, el
+dispositivo que debe de emplearse para mezclar y el tiempo de mezcla. Las características físicas
+24 TÉCNICOS DE FARMACIA
+   Tema 14-1ª PARTE
+
+   www.premir.es
+
+  principales que intervienen en el proceso son: estructura del sólido (amorfa o cristalina), granulometría
+  (tamaño partículas), dureza del sólido, volumen que ocupa el producto a mezclar, capacidad reológica
+  (capacidad de deslizamiento), electricidad estática, humedad…
+  Según la granulometría (tamaño de partículas) de los componentes se tienen dos tipos de mezclas:
+      - Mezclas isométricas: cuando las partículas o gránulos de los sólidos mezclados tienen un tamaño
+          parecido.
+      - Mezclas anisométricas: cuando la mezcla presenta gran heterogeneidad en cuanto al tamaño de
+          partícula se refiere.
+  Se utiliza un tipo diferente de mezclador en los dos casos. Lo ideal es trabajar con partículas de
+  granulometría semejante, para evitar la llamada rotura de la mezcla, es decir, que los componentes de la
+  mezcla se separen y ésta deje de ser homogénea.
+
+  b) Factores que pueden afectar a la estabilidad de la mezcla:
+  Las características físicas y químicas de los productos que constituyen la mezcla, no pueden ser alteradas
+  a lo largo de todo el proceso. Algunos factores que pueden alterar la estabilidad de la mezcla son: la
+  capacidad de reacción entre los sólidos componentes de la mezcla, capacidad de oxidación y capacidad
+  de hidrólisis.
+
+  c) Proporcionalidad de los componentes de la mezcla:
+  Determina en gran medida la técnica a emplear para su buena homogeneización. La correcta
+  homogeneidad de una mezcla es más difícil de obtener si uno de los componentes, generalmente el
+  principio activo, se encuentra en baja proporción en relación a los restantes componentes, operándose de
+  diferente modo si las proporciones son o no semejantes.
+
+  Se considera que cuando dos componentes se encuentran en la proporción entre el 20 y el 80%, no existe
+  ningún problema para mezclarlos directamente, pero si la proporción de uno de ellos es notoriamente más
+  baja que la del otro (por ejemplo, 2% del sólido A y 98% de sólido B habrá que realizar una técnica especial
+  de mezclado para asegurar la correcta homogeneización, la llamada técnica de diluciones sucesivas.
+
+  1.1.1. TIPOS DE MEZCLAS
+
+  (Explicados en el punto 6 del PNT)
+
+  1.1.2. EQUIPOS PARA MEZCLA DE SÓLIDOS
+
+  Los dispositivos mezcladores de sólidos, más comúnmente llamados bombos mezcladores, pueden
+  clasificarse en función del contenedor y según sea éste móvil o inmóvil, es decir que el recipiente en donde
+  se introducen los sólidos a mezclar esté dotado de movimiento gracias al cual se obtendrá la mezcla
+  homogénea o que el recipiente se encuentre estático, teniendo entonces que disponer de unos sistemas
+  agitadores en su interior que posibiliten la buena mezcla de los productos.
+
+  Se puede hablar de tres grandes clases de mezcladores:
+
+      •   Móviles, de contenedor móvil, giratorios o de caída libre, aquellos cuyos bombos son los que se
+          mueven provocando así la mezcla de componentes.
+             - Cilíndricos
+             - Troncocónicos o bicónicos
+             - En forma de uve mayúscula
+                                                                     TÉCNICOS DE FARMACIA 25
+                                                                           Tema 14-1ª PARTE
+
+                                                                                    www.premir.es
+
+
+
+
+                                                                                                   TÉCNICOS FARMACIA - SERGAS
+         -
+ •   Estáticos con agitación interna, aquellos cuyos bombos permanecen inmóviles, pero llevan
+     dispositivos internos (paletas, cintas, tornillos sinfín…) móviles que permiten la homogeneización
+     de los componentes.
+
+
+
+
+Mezclador de cintas                                 Mezclador de tornillo
+26 TÉCNICOS DE FARMACIA
+   Tema 14-1ª PARTE
+
+   www.premir.es
+
+    Mezclador de barras                                  Mezclador planetario
+
+
+
+
+     •   Estáticos, carecen de cualquier movimiento, produciéndose la mezcla por la progresiva
+         incorporación del material sólido, el cual choca contra unas paredes internas del mezclador
+         cambiando de dirección constantemente, lo que deriva en la homogeneización del material.
+
+  1.1.3. FORMULARIO NACIONAL: MEZCLADO DE POLVOS PN/L/OF/002/00.
+
+  1. Objetivo
+  Definir el procedimiento para el mezclado de productos pulverulentos.
+
+  2. Responsabilidad de aplicación y alcance
+  La responsabilidad de aplicación y alcance de este procedimiento recae sobre todo el personal (técnico
+  y/o auxiliar) que proceda al mezclado de productos pulverulentos (principios activos y/o excipientes).
+
+  3. Definiciones
+  A los efectos de este procedimiento se entiende por:
+  Mezclado de polvos: operación galénica cuyo objetivo es conseguir que cualquier muestra de una mezcla
+  de materiales tenga idéntica composición que otra muestra y que el total de la mezcla.
+
+  4. Descripción
+  4.1 Material y equipo
+      Mortero o mezclador de cuerpo móvil.
+      Espátula de acero inoxidable.
+      Papel que no libere fibras.
+  4.2 Entorno y requisitos previos.
+      Humedad relativa: ≤ 60%.
+      Temperatura: 25 ± 5 ºC.
+      Excepto los casos en que las especificaciones de la formulación requieran otras condiciones. Debido al
+      alto riesgo de contaminación cruzada en esta operación, deberán tomarse las medidas técnicas u
+      organizativas adecuadas para evitar dicha contaminación.
+  4.3 Desarrollo de la operación de mezclado
+  1. Pesar (PN/L/OF/001/00) por separado los distintos componentes de la mezcla.
+  2. Comprobar la ausencia de agregados. En su caso, desagregar según procedimiento de desagregación
+  (PN/L/OF/003/00).
+  3. Comprobar que el peso del producto desagregado sea el inicial.
+  4. Comprobar la limpieza del mezclador (mortero o mezclador de cuerpo móvil).
+  5. Verificar, en su caso, que el mezclador de cuerpo móvil esté conectado a la red eléctrica.
+  6. Proceder a cargar el mezclador con los productos. En función de la concentración de principio activo, el
+  proceso de mezclado se desarrollará como se detalla a continuación:
+                                                                           TÉCNICOS DE FARMACIA 27
+                                                                                 Tema 14-1ª PARTE
+
+                                                                                           www.premir.es
+
+    a) Mezcla por diluciones. Baja concentración de principio activo:
+       1. En primer lugar, introducir en el mezclador un tercio del excipiente mayoritario; a continuación,
+       añadir el principio activo en su totalidad. Si para comprobar la homogeneidad de la mezcla se
+       necesita un “marcador”, se añadirá un colorante autorizado. Proceder a su mezclado durante el
+       tiempo y condiciones que se especifiquen en la formulación correspondiente.
+
+
+
+
+                                                                                                          TÉCNICOS FARMACIA - SERGAS
+       2. Adicionar a la premezcla obtenida un segundo tercio del excipiente mayoritario y proceder a su
+       mezclado durante el tiempo y condiciones que se especifiquen en la formulación correspondiente.
+       3. Añadir a la premezcla obtenida en el punto 2 el último tercio del excipiente mayoritario y proceder
+       a su mezclado durante el tiempo y condiciones que se especifiquen en la formulación
+       correspondiente.
+       4. Adicionar a la premezcla obtenida en el punto 3 el resto de componentes de la formulación
+       (excepto los lubricantes, en el caso de cápsulas o comprimidos) y proceder a su mezclado durante el
+       tiempo y condiciones que se especifiquen en la formulación correspondiente.
+       5. Mezclar en último lugar el o los lubricantes, si procede; añadir a la premezcla obtenida en el punto
+       4 y proceder a su mezclado durante el tiempo y condiciones que se especifiquen en la formulación
+       correspondiente.
+    b) Mezcla directa:
+       1. Introducir en el mezclador (mortero o mezclador de cuerpo móvil) todos los excipientes, excepto
+       los lubricantes. Adicionar, a continuación, el principio activo. Proceder a su mezclado durante el
+       tiempo y condiciones que se especifiquen en la formulación correspondiente.
+       2. Añadir a la premezcla obtenida en el punto 1 el o los lubricantes, si procede, y mezclar durante el
+       tiempo y condiciones que se especifiquen en la formulación correspondiente.
+7. Proseguir con la formulación correspondiente.
+8. Proceder a la limpieza del mezclador de acuerdo con el apartado 4.4 de este procedimiento.
+4.4 Limpieza
+1. Si procede, desconectar de la red eléctrica el mezclador de cuerpo móvil y abrirlo.
+2. Retirar del mezclador (mortero o mezclador de cuerpo móvil) todos los restos de producto con ayuda de
+papel que no libere fibras.
+3. Proceder a lavar el mezclador con agua jabonosa.
+4. Aclarar el mezclador con agua. El último aclarado se realizará con agua desionizada.
+5. Secar el mezclador y proceder, en su caso, a montar el mezclador de cuerpo móvil.
+
+5. Registros
+
+
+11.2. MEZCLA DE LÍQUIDOS.
+Para poder obtener una mezcla homogénea de líquidos es necesario conocer una serie de parámetros que
+determinan las condiciones a aplicar en el proceso de mezclado u homogeneización y los instrumentos a
+emplear. Algunos de estos parámetros son:
+   a) Miscibilidad: si los líquidos son miscibles entre sí, se obtendrá una disolución homogénea casi
+      instantáneamente. Si son inmiscibles, se obtienen dispersiones heterogéneas que requieren el
+      aporte de otras sustancias que faciliten su mezcla y aportar energía para mantener la homogeneidad.
+   b) Viscosidad: cuanto más viscosos sean los líquidos a mezclar, más difícil será la obtención de una
+      mezcla homogénea, necesitándose mayor tiempo de mezcla y mayor aporte de energía.
+   c) Compatibilidad química: debe comprobarse antes de realizar la mezcla que los líquidos no
+      reaccionen químicamente entre sí ni a corto ni a largo plazo.
+   d) Capacidad de oxidación: si la mezcla de líquidos tiene tendencia a oxidarse por el oxígeno del aire,
+      se deberá mezclar en sistemas especiales cerrados al vacío.
+28 TÉCNICOS DE FARMACIA
+   Tema 14-1ª PARTE
+
+   www.premir.es
+
+     e) Estabilidad de la mezcla frente a la temperatura: líquidos que se pueden mezclar a elevadas
+         temperaturas, pero que al volver a la temperatura ambiente vuelven a separarse.
+  En la oficina de farmacia se suele realizar con un recipiente, por ej. vaso de precipitados, de capacidad
+  adecuada y un agitador. La agitación puede ser electromagnética, con imanes introducidos en los vasos
+  de precipitados, o mecánica con simples varillas de vidrio.
+  En la industria farmacéutica se utilizan los llamados reactores.
+
+  11.1.1. REACTORES
+
+  La mezcla y homogeneización de líquidos en la industria farmacéutica se lleva a cabo en los denominados
+  reactores, recipientes de acero inoxidable de calidad con la base abovedada y provistos de una tapadera
+  también abovedada para poder resistir a altas presiones y vacíos considerables. Es un aparato muy versátil,
+  suele emplearse para la preparación de disoluciones medicamentosas, cremas, pomadas, supositorios y
+  todo tipo de suspensiones y emulsiones medicamentosas. La tapadera del reactor ajusta perfectamente
+  con el cuerpo del recipiente gracias a unas juntas plásticas, de caucho o silicona que dan hermeticidad al
+  cierre que se asegura mediante tornillos o sistema hidráulico o neumático. En la tapadera se suele disponer
+  de los siguientes elementos:
+       • Uno o varios motores que van conectados cada uno a un agitador que se constituye como
+           elemento mezclador del aparato.
+       • Una mirilla o pequeña ventana con luz incorporada, para observar el proceso de mezcla que se
+           produce en el interior sin necesidad de abrir la tapadera.
+       • Aparatos de medición de la presión y vacío en el interior.
+       • Entrada o conexión para hacer vacío, introducir líquidos, gases…
+  Todo el cuerpo del reactor se encuentra rodeado por una camisa formada por una pared de acero
+  inoxidable que dejan un espacio hueco entre ella misma y el reactor en sí, por donde puede circular un
+  fluido bien calefactor o bien refrigerante según sea necesario.
+  Además todo reactor necesita de unos elementos que ayuden a homogeneizar la mezcla, son los
+  agitadores. Normalmente suelen disponer de dos tipos, unos agitadores de velocidad lenta, cuya función
+  principal es la homogeneización o mezcla y otros agitadores de velocidad rápida, cuya misión es la de
+  micronizar, dividir…
+                                                                            TÉCNICOS DE FARMACIA 29
+                                                                                  Tema 14-1ª PARTE
+
+                                                                                      www.premir.es
+
+12. DESECACIÓN.
+En Farmacia debe entenderse por desecar, separar, total o parcialmente el líquido (generalmente el
+agua) que acompaña un sólido, líquido o gas.
+La desecación de un sólido consiste en separar el líquido que contiene (agua, alcohol, disolventes
+
+
+
+
+                                                                                                      TÉCNICOS FARMACIA - SERGAS
+orgánicos…) generalmente mediante métodos térmicos. Esta desecación se efectúa siempre que la
+presencia de líquido (normalmente agua) en el sólido medicamentoso (fármaco o fármaco más
+excipientes) pueda producir fenómenos de oxidación, hidrólisis, crecimiento bacteriano y/o fúngico que
+puedan deteriorarlo. Con ello se consigue una mayor estabilidad del producto en el tiempo, ya que en las
+sustancias secas no se producen, o lo hacen muy lentamente, reacciones de descomposición químicas y
+los fenómenos microbiológicos. Por otra parte, la desecación es un proceso importante para facilitar
+posteriores fases de fabricación de formas farmacéuticas.
+La desecación no puede nunca confundirse con una evaporación, ya que esta última se produce cuando
+existe un elevado porcentaje de líquido a eliminar (mezclas líquidas homogéneas o heterogéneas),
+mientras que la desecación se lleva a cabo cuando existe un escaso porcentaje de líquido a eliminar.
+
+En función del porcentaje de líquido que se encuentra en el seno de un sólido se podrá diferenciar entre:
+• SÓLIDO HÚMEDO:
+Este sólido es inerte con relación al agua que lo acompaña, es decir, no se modifica su contenido en
+humedad, sea cual fuere la humedad relativa del ambiente que lo rodea.
+• SÓLIDO HIGROSCÓPICO:
+Este sólido presenta gran capacidad para captar el agua de la atmósfera en que se encuentra. Existen
+sólidos higroscópicos de dos tipos:
+    Þ Insolubles: aquellos que modifican su contenido de humedad hasta un cierto valor, que depende
+        de la humedad del ambiente que rodea el sólido.
+    Þ Solubles: captan agua continuamente hasta disolverse
+Habitualmente, los sólidos que se utilizan en Farmacia son sólidos higroscópicos insolubles.
+
+12.1. MÉTODOS DE DESECACIÓN.
+En el proceso de secado se dan simultáneamente dos procesos: la transferencia de materia (el agua sale
+del sólido en forma gaseosa) y la transferencia de calor (necesario aporte de calor para lograr la
+evaporación del agua.
+
+Los métodos de desecación se pueden clasificar de dos formas;
+•   Según la transmisión del calor:
+    -   Conducción (contacto cuerpo-cuerpo)
+    -   Convección (circulación de aire caliente)
+    -   Radiación (mediante radiaciones electromagnéticas)
+•   Según el sistema de secado:
+    -   Estática (el producto que se va a desecar no se mueve, el sistema si)
+    -   Dinámica (el producto se mueve y el sistema permanece inmóvil)
+30 TÉCNICOS DE FARMACIA
+   Tema 14-1ª PARTE
+
+   www.premir.es
+
+  12.2. SISTEMAS DE DESECACIÓN
+
+                           Transmisión       de Continuidad
+    Aparataje                                                      Movilidad         Resultado del proceso
+                           calor                del proceso
+
+    Estufas           de
+    laboratorio       (Tª Convección             Discontinuo       Estático          Poco homogéneo y lento
+    constante)
+
+
+    Túneles de secado
+                                                                                     Más rápido       (desecación
+    (aire             a Convección/radia
+                                                 Continuo          Estático          progresiva,            poco
+    contracorriente, IR ción
+                                                                                     homogénea)
+    o microondas)
+
+
+    Cintas     rodantes
+    (semejante       al Convección/radia                                             Rápido y desecación poco
+                                                 Continuo          Estático
+    anterior pero en ción                                                            homogénea
+    cintas sin fin)
+
+    Cilindros                                                                        Rápido y homogénea.
+                           Conducción            Continuo          Dinámico
+    rotatorios                                                                       Industria alimentaria.
+
+    Armario            de
+                                                                                     Lento, poco homogénea.
+    desecación         de Convección             Discontinuo       Estático
+                                                                                     Para p.a. termolábiles
+    vacío
+
+                                                                                     Homogénea, muy rápida.
+    Secador de lecho
+                     Convección                  Discontinuo       Dinámico          No es válido para productos
+    fluído
+                                                                                     friables.
+
+
+    Secador          por                                                             Homogénea, rápida. Para
+    dispersión         o Convección              Discontinuo       Dinámico          leche, extractos secos,
+    nebulización                                                                     polvos enzimáticos…
+
+    Agentes                                                                          Para    completar         una
+                           No aporta calor
+    deshidratases                                                                    desecación
+
+
+  13. LIOFILIZACIÓN
+  La liofilización es una técnica de desecación en la que se congela un líquido que se va a eliminar y, por
+  sublimación del hielo, pasa directamente a vapor sin el paso previo a líquido. La liofilización es el
+  proceso más suave para secar productos y es el mejor método para secar compuestos orgánicos o
+  inorgánicos sin alterar su composición cualitativa o cuantitativa. El proceso de liofilización se realiza a vacío
+  y a baja temperatura y así, por ejemplo, es posible evitar la desnaturalización de las proteínas. Los alimentos
+  y los materiales biológicos tales como células, tejidos, bacterias y vacunas se convierten en productos
+                                                                           TÉCNICOS DE FARMACIA 31
+                                                                                 Tema 14-1ª PARTE
+
+                                                                                           www.premir.es
+
+secos, evitando el paso por su fase líquida, y en consecuencia los cambios enzimáticos, biológicos y
+químicos.
+
+La liofilización se basa en el fenómeno físico de la sublimación del agua o bien de un disolvente orgánico
+o de mezclas acuoso-orgánicas que estén congeladas; el disolvente congelado sublima directamente a
+
+
+
+
+                                                                                                          TÉCNICOS FARMACIA - SERGAS
+vapor sin pasar por el estado líquido. Habitualmente, cuando se trabaja con alimentos, proteínas o material
+biológico, el disolvente a eliminar es agua.
+
+Las principales aplicaciones de la liofilización son:
+   • Conservación de sustancias medicamentosas lábiles (sueros, antibióticos…).
+   • Conservación de injertos de origen animal (bancos de tejidos humanos).
+   • Conservación de materia viva (cepas bacterianas).
+   • En tecnología farmacéutica, para desecar, conservar productos inestables, etc.
+   • En alimentación.
+
+13.1. ETAPAS DE LA LIOFILIZACIÓN
+El proceso de liofilización puede describirse en las siguientes fases:
+1. CONGELACIÓN: Se debe congelar rápidamente el producto a una temperatura por debajo de su
+     eutéctico. (Punto eutéctico: la temperatura más baja a la que puede fundir una mezcla de sólidos con
+     una composición dada).
+2. ALMACENAMIENTO: a veces el proceso de liofilización no puede ser continuo, por lo que es preciso
+     almacenar los frascos congelados en cámaras frías a una temperatura suficientemente baja para que
+     no se produzca la descongelación.
+3. TRATAMIENTO A VACIO: Es preciso eliminar el aire y otros vapores no condensables de la cámara a
+     fin de facilitar la migración del vapor. Se produce el vacío en la cámara de liofilización por debajo del
+     punto triple.
+4. CALENTAMIENTO/SECADO: Una vez la presión está bajo el punto triple del agua, aplicamos una
+     fuente de calor controlada para inducir el cambio de fase del hielo directamente a vapor, sin pasar por
+     el estado líquido. Habitualmente se trabaja a temperatura ambiente, pero si es necesario, se puede
+     calentar la muestra congelada con mucho cuidado para acelerar el proceso de secado. Esta fase no es
+     conveniente si los productos pueden variar sus propiedades por encima de la temperatura ambiente.
+5. ELIMINACIÓN DEL VAPOR: generalmente la técnica empleada es por condensación del vapor por
+     acción del frío, que se consigue con nieve carbónica, máquinas frigoríficas, deshidratantes o bombas
+     de vacío (estos dos últimos métodos sirven para pequeñas cantidades de agua).
+6. ALMACENAMIENTO DEL PRODUCTO: los productos liofilizados y adecuadamente cerrados se
+     pueden guardar por largos períodos de tiempo con la retención de las propiedades físicas, químicas,
+     biológicas y organolépticas de sus estados originales. La liofilización reduce las pérdidas de calidad
+     producidas por reacciones químicas, por degradación enzimática y no enzimática. Los procesos de
+     oxidación se pueden controlar guardando los productos liofilizados en recipientes impermeables al
+     oxígeno. El almacenamiento de los productos liofilizados en lugares con temperaturas bajas evita la
+     desnaturalización de proteínas.
+
+El objetivo de la liofilización es obtener un producto seco, que cuando se le vuelve a añadir agua o
+disolvente, presente las mismas características que el producto original (forma, color, aroma, sabor y
+textura). La liofilización reduce las pérdidas de calidad debidas al deterioro de la muestra por reacciones
+químicas i/o per degradación enzimática..
+32 TÉCNICOS DE FARMACIA
+   Tema 14-1ª PARTE
+
+   www.premir.es
+
+  13.2. DIAGRAMA DE FASES DE AUA
+
+
+
+
+  Punto triple del agua (Pt): Tª ≈ 0ºC y P ≈ 4,5 mmHg. En este punto coexisten en equilibrio el estado sólido,
+  el estado líquido y el estado gaseoso.
+
+  13.3. LIOFILIZADORES
+  El liofilizador es el aparato empleado para llevar a cabo la liofilización. Consta de las siguientes partes:
+     •       Cámara seca o cámara de liofilización: es el lugar donde se coloca la sustancia a liofilizar. Puede
+             tener formas diferentes con compartimentos donde se realiza la sublimación, pasando el agua de
+             sólido a vapor. El cierre es hermético y se trabaja bajo el vacío.
+     •       Cámara de condensación: comunica con la cámara seca y es donde se condensa el vapor que se
+             va produciendo en la sublimación. Un refrigerante lo mantiene a una temperatura más baja que la
+             cámara seca (entre -50 y -125 ºC). Por esta diferencia de temperaturas, la tensión de vapor también
+             es menor lo que hace que el vapor producido en la primera cámara pase a la segunda. Será más
+             rápido si se acopla un sistema de vacío.
+     •       Sistema de vacío: El vacío se produce con una bomba de aceite que trabaja sobre 10-2 mbar
+             conectada a una trampa para que no pasen vapores del solvente a su interior. El sistema de vacío
+             elimina primero el aire de la cámara seca al iniciar el proceso de liofilización, y luego ayuda a la
+             sublimación.
+     •       El liofilizador también consta de un sistema frigorífico y un equipo de control de temperatura
+             y presión, puede incluir un sistema para la regulación automática del calor, del frío y del vacío. Al
+             finalizar la desecación, se interrumpe el calentamiento y se hace pasar un gas para romper el vacío,
+             que debe ser inerte y estéril. En la primera cámara se obtendrá un residuo seco.
+                                                                          TÉCNICOS DE FARMACIA 33
+                                                                                Tema 14-1ª PARTE
+
+                                                                                         www.premir.es
+
+
+
+
+                                                                                                      TÉCNICOS FARMACIA - SERGAS
+13.4. VENTAJAS Y DESVENTAJAS DE LA LIOFILIZACIÓN
+
+  Ventajas                                                       Desventajas
+
+  •   Se obtienen productos que se pueden volver a regenerar     •   larga duración de la operación
+      muy rápidamente.
+                                                                 •   coste elevado de los equipos,
+  •   La forma y características del producto final son              instalaciones y mantenimiento
+      esencialmente las originales.
+                                                                 •   gran consumo energético requerido
+  •   Es un proceso idóneo para secar sustancias termolábiles.       (están funcionando contínuamente).
+  •   Los constituyentes oxidables están protegidos.
+  •   El contenido de humedad final es muy bajo.
+
+
+
+
+13.5. CONTROL DE LA LIOFILIZACIÓN
+Se debe controlar que el principio activo no se ha alterado, así como el grado de humedad residual ya que
+de eso depende la correcta conservación del producto.
+Para la determinación de la humedad existen diferentes métodos, por lo que al expresar grado de
+humedad hay que indicar el método utilizado: gravimétrico, volumétrico o químico; generalmente es < 0,5
+%.
+34 TÉCNICOS DE FARMACIA
+   Tema 14-1ª PARTE
+
+   www.premir.es
+
+  14. FILTRACIÓN
+  En Farmacia, la filtración es una operación galénica que consiste en la separación de las partículas sólidas
+  dispersas en un fluido (líquido o gas), mediante el paso de dicho fluido a través de materiales
+  porosos (filtros).
+  El fluido puede ser un líquido o un gas, lo que se recoge se llama filtrado y el material sólido que se deposita
+  sobre el filtro se llama torta.
+
+  14.1. TIPOS DE FILTRACIÓN
+  a) Siguiendo el criterio del tamaño de las partículas que se quieren filtrar, se clasifican en:
+        ▪ FILTRACIÓN CLARIFICANTE: se retienen las partículas de un tamaño superior a 10 µm. Se utiliza en
+          la preparación de jarabes, gotas nasales y óticas.
+        ▪ MICROFILTRACIÓN: permite separar partículas sólidas de tamaño pequeño que oscila entre 10 y
+          0,1 µm. Pueden retenerse, por ejemplo, bacterias. Elaboración de soluciones parenterales porque
+          retienen bacterias y otros microorganismos.
+        ▪ FILTRACIÓN ESTERILIZANTE ( es un tipo de microfiltración): se utiliza cuando es necesario obtener
+          productos estériles y los componentes son termolábiles. Para realizarla se precisan filtros de
+          membrana que retienen partículas de hasta 0,22 µm. Se utiliza para la elaboración de colirios,
+          mezclas para nutrición parenteral y otros productos que deben de ser estériles. Todo el material
+          debe de ser estéril, así como las condiciones de almacenamiento y manipulación. Puede clasificarse
+          dentro de la microfiltración.
+        ▪ ULTRAFILTRACIÓN: entre 0,001 y 0,1 µm. Se retienen moléculas grandes como proteínas y grandes
+          polímeros. Se utilizan membranas semipermeables especiales que actúan de filtro. Estudio de las
+          macromoléculas retenidas en el filtro, como proteínas y polímeros.
+     ▪ ÓSMOSIS INVERSA: se retienen partículas comprendidas entre 0,002 y 0,003 µm. Se utiliza para la
+         obtención de agua purificada y libre de pirógenos a partir de agua potable.
+  b) Siguiendo el criterio de clasificación del mecanismo de retención, la filtración puede ser:
+     ▪ POR TAMIZACIÓN (= CRIBADO): un filtro o criba detiene, en su superficie, el paso de las partículas
+         por debajo de un determinado tamaño e impide el paso a las de mayor tamaño.
+        ▪ POR ADSORCIÓN: en este caso, el filtro retiene las partículas de un cierto tamaño dentro de sí
+          mismo. Estas partículas son más pequeñas que el tamaño de los canalículos del filtro.
+        ▪ A TRAVÉS DE LA TORTA: los materiales previamente retenidos forman una capa que a su actúa
+          como una membrana filtrante.
+
+  A su vez, y dependiendo del mecanismo que predomine, podemos distinguir entre:
+    •    filtros de superficie: contienen poros de tamaño definido que retienen sólidos de mayor tamaño que
+         ellos y pueden saturarse con facilidad.
+    •    filtros en profundidad: están constituidos por partículas y fibras orientadas al azar, hecho que
+         determina que tengan poros de tamaño desigual. No se colmatan con facilidad.
+                                                                            TÉCNICOS DE FARMACIA 35
+                                                                                  Tema 14-1ª PARTE
+
+                                                                                           www.premir.es
+
+14.2. DISPOSITIVOS DE FILTRACIÓN
+14.2.1. A NIVEL LABORATORIO
+
+La efectividad de la filtración depende en gran medida de las características físicas de los filtros y del tipo
+
+
+
+
+                                                                                                           TÉCNICOS FARMACIA - SERGAS
+o clase de éstos, debiendo escoger de entre ellos el más adecuado a cada caso particular.
+
+Los filtros se caracterizan fundamentalmente por dos factores:
+    • POROSIDAD: depende del diámetro del poro y del número de poros existentes en el filtro; de tal
+         manera que a mayor diámetro y número de poros, mayor será la velocidad de filtración.
+    • RENDIMIENTO: es la velocidad de filtración expresada en ml/minuto; es decir, la cantidad de fluido
+         capaz de atravesar el filtro por unidad de tiempo. Cuanto más grueso sea el filtro y cuanto más
+         viscoso el fluido, menor será la velocidad de filtración.
+
+Es muy importante que los filtros usados durante el proceso de filtración:
+    • No cedan partículas de su composición al líquido filtrado, es decir, deben ser inertes para evitar la
+       contaminación del líquido filtrado.
+    • Tener larga duración para hacerlos más rentables económicamente.
+    • Ser económicos.
+    • No reaccionar con los componentes de la mezcla a filtrar para evitar así alteraciones del producto.
+    • Presentar gran poder de retención.
+
+TIPOS DE FILTROS
+Dentro de la amplia variedad de materiales de los que pueden estar constituidos los filtros distinguimos:
+
+• DE CELULOSA:
+Los filtros de celulosa tienen tamaño de poro variable y se usan para filtrar grandes volúmenes de
+sustancias. Su precio es bajo y se presenta en discos, placas y láminas. Se usan mucho en la preparación de
+jarabes, y perfumes. Se emplean con un embudo y pueden ser cónicos, plisados o planos. Los filtros cónicos
+y plisados se colocan de forma que sobresalgan aproximadamente 0,5 cm por encima de las paredes del
+embudo (el filtro nunca debe ser más pequeño que el embudo).
+Los filtros cónicos se emplean cuando se quiere recoger la parte sólida. Se utilizan con embudos de pico
+largo que se apoya en el vaso que recoge el líquido para acelerar el proceso por capilaridad.
+ Este tipo de filtro posee poca superficie de filtración, y, por tanto, es más lento. Se usan cuando se desea
+recoger la fracción de partículas sólidas que quedan en el filtro.
+Para prepararlo se toma un trozo de papel de filtro de forma circular y se dobla por la mitad, de manera
+que se obtiene un cuarto de círculo. Éste se abre por uno de sus lados hasta obtener un cono.
+
+Los filtros de plieques se usan cuando queremos utilizar el filtrado recogido para estudios posteriores. Los
+pliegues del filtro de celulosa hacen que aumente mucho la superficie de filtrado.
+36 TÉCNICOS DE FARMACIA
+   Tema 14-1ª PARTE
+
+   www.premir.es
+
+
+
+
+  Los filtros planos se usan para la filtración al vacío y se colocan sobre un embudo Büchner, de forma que
+  cubra todos los orificios y no sobresalga del círculo del embudo para que no se cuele nada de líquido.
+
+
+
+
+  Los                      filtros de papel son los más utilizados en la práctica farmacéutica.
+  • DE LANA DE VIDRIO:
+  La lana de vidrio se obtiene a partir de vidrio reciclado que se funde a altas
+  temperaturas (alrededor de 1500 ºC). Asimismo, presenta un aspecto
+  algodonoso y no se debe manipular sin guantes, porque puede ser irritante
+  para la piel. Se usa colocando una pequeña porción en el embudo si se
+  compra a granel o en forma de filtros ya preparados. Se utilizan para separar
+  mezclas que contengan sustancias que pueden atacar el papel. (Ácido
+  sulfúrico, ácido nítrico…) Los filtros de lana de vidrio se emplean para
+  recuperar la fracción líquida de la mezcla, porque la parte sólida se queda
+  muy adherida al filtro y no se puede recuperar.
+
+       • DE MEMBRANA:
+  Los filtros de membranas son polímeros de nailon y de otras fibras, muy porosos y resistentes a las
+  variaciones de temperatura. Permite llevar a cabo separaciones de sólidos, imposibles por medio de otros
+  filtros. Estos filtros se caracterizan porque retienen microorganismos y partículas mayores que el diámetro
+  de sus poros.
+  Tienen como características principales ser muy porosos y poseer una gran uniformidad en el diámetro de
+  poros, lo que hace que el producto filtrado sea muy homogéneo. Presentan como inconveniente la
+  fragilidad y la necesidad de colocar un prefiltro para que no se obstruya con partículas de naturaleza
+  coloidal.
+                                                                            TÉCNICOS DE FARMACIA 37
+                                                                                  Tema 14-1ª PARTE
+
+                                                                                           www.premir.es
+
+    • DE VIDRIO POROSO:
+Se presentan en forma de placas obtenidas por calefacción de partículas de vidrio en moldes de acero
+inoxidable: el vidrio se calienta hasta alcanzar su punto de fusión, se ablanda y las partículas se sueldan en
+los puntos de contacto, dejando porosidades.
+
+
+
+
+                                                                                                           TÉCNICOS FARMACIA - SERGAS
+    • DE FIBRA DE VIDRIO:
+Se trata de cartuchos formados por un gran número de finísimas fibras de vidrio que retienen partículas
+por impacto. Constituyen los denominados filtros HEPA (filtros de alta eficacia) empleados para la filtración
+esterilizante de aire y fluidos gaseosos.
+
+14.2.2. A NIVEL INDUSTRIAL
+
+A escala industrial, se emplean los denominados filtros prensa, utilizados tanto en la filtración esterilizante
+como en la clarificante. Los filtros prensa son dispositivos que permiten disponer de una gran superficie de
+filtración en un pequeño volumen de espacio.
+Para filtrar industrialmente líquidos con muchas sustancias interpuestas en su seno se usan filtros
+rotatorios.
+
+14.3. PROCEDIMIENTOS DE FILTRACIÓN
+Las técnicas o procedimientos habituales en la filtración dependen fundamentalmente del volumen de
+líquido a filtrar, de las características de los mismos y de la fracción que se quiere recuperar.
+Se dividen en procedimientos en el laboratorio, o a pequeña escala y en la industria, o a gran escala.
+Los más utilizados en los laboratorios pequeños y en las oficinas de farmacia son:
+
+                  CARACTERÍSTICAS                  PRECAUCIONES
+
+                  Muy utilizado en farmacia.       El líquido no debe
+                  Generalmente se emplea un        rebosar el filtro.
+  POR
+                  filtro de celulosa cónico o      No se debe romper el
+  GRAVEDAD
+                  plegado.                         filtro.
+
+
+
+
+                  Aumenta la velocidad de
+                                               El filtro que se pone en
+                  filtración. Se usa cuando se
+  FILTRACIÓN                                   el embudo Büchner no
+                  quiere recuperar la parte
+  AL VACÍO                                     debe tocar las paredes.
+                  sólida.
+38 TÉCNICOS DE FARMACIA
+   Tema 14-1ª PARTE
+
+   www.premir.es
+
+
+
+                                                  El gas comprimido que
+                Se emplea para líquidos muy       se usa debe manejarse
+                viscosos. Un gas comprimido       con precaución.
+   FILTRACIÓN
+                ejerce presión sobre el líquido   Se utiliza mucho en
+   A PRESIÓN
+                a filtrar.                        tecnología         de
+                                                  alimentos.
+TÉCNICOS DE FARMACIA 39
+      Tema 14-1ª PARTE
+
+         www.premir.es
+
+
+
+
+                    TÉCNICOS FARMACIA - SERGAS
+40 TÉCNICOS DE FARMACIA
+   Tema 14-1ª PARTE
+
+   www.premir.es
+

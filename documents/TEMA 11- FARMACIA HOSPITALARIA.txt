@@ -1,0 +1,1325 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TECNICO DE FARMACIA
+SERGAS
+
+TEMA 11:
+                                                 FARMACIA HOSPITALARIA. SERVICIO DE FARMACIA HOSPITALARIA. ÁREAS O ZONAS QUE LA INTEGRAN. SISTEMAS DE DISTRIBUCIÓN INTRAHOSPITALARIA DE PRODUCTOS FARMACÉUTICOS: REPOSICIONES DE BOTIQUINES, SISTEMAS DE DISPENSACIÓN DE MEDICAMENTOS EN DOSIS UNITARIAS (SDMDU),
+SISTEMAS DE DISPENSACIÓN AUTOMATIZADA. ÓRDENES HOSPITALARIAS DE DISPENSACIÓN.
+DISPENSACIÓN DE PRODUCTOS FARMACÉUTICOS Y PARAFARMACÉUTICOS A PACIENTES
+                                          AMBULATORIOS: NORMATIVA LEGAL. APLICACIONES INFORMÁTICAS DE DISTRIBUCIÓN Y DISPENSACIÓN DE LOS PRODUCTOS
+                                       FARMACÉUTICOS Y PARAFARMACÉUTICOS. ASISTENCIA AL FARMACÉUTICO EN LA GESTIÓN DE MEDICAMENTOS EN ENSAYO CLÍNICO:
+                                                                  NORMATIVA LEGAL. ASISTENCIA AL FARMACÉUTICOS EN LA ATENCIÓN AL PACIENTE AMBULATORIO, AL PACIENTE DE
+HOSPITAL DE DÍA.
+
+
+
+GUION
+1.- FARMACIA HOSPITALARIA: SERVICIO DE FARMACIA HOSPITALARIA.
+
+2.- REAS O ZONAS QUE INTEGRAN UN SERVICIO DE FARMACIA.
+2.1.- UNIDAD DE GESTIÓN DE COMPRAS.
+2.2.- ALMACENES.
+2.3.- ZONA DE DISPENSACIÓN.
+2.4.- CENTRO DE INFORMACIÓN DE MEDICAMENTOS.
+2.5.- RECEPCIÓN DE VISITAS. SECRETARÍA DEL SERVICIO. JEFE DE SERVICIO.
+2.6.- HABITACIÓN DEL PERSONAL DE GUARDIA.
+2.7.- UNIDAD DE TERAPIA INTRAVENOSA.
+2.8.- FARMACOCINÉTICA.
+
+3.- SISTEMAS DE DISTRIBUCIÓN INTRAHOSPITALARIA DE PRODCUTOS FARMACÉUTICOS Y PARAFAMACÉUTICOS: REPOSICIONES DE BOTIQUINES, SISTEMAS DE DISPENSACIÓN DE MEDICAMENTOS EN DOSIS UNITARIAS, SISTEMAS DE DISPENSACIÓN AUTOMATIZADA.
+3.1.- SISTEMA DE DISPENSACIÓN POR STOCK EN UNIDAD DE ENFERMERÍA.
+3.2.- SISTEMA DE DISPENSACIÓN POR REPOSICIÓN Y PACIENTE.
+3.3.- SISTEMA DE DISPENSACIÓN DE MEDICAMENTOS EN DOSIS UNITARIAS (SDMDU).
+3.4.- BOTIQUINES.
+3.5.- SISTEMAS AUTOMATIZADOS DE DISPENSACIÓN DE MEDICAMENTOS.
+
+4.- ORDENES HOSPITALARIAS DE DISPENSACIÓN.
+
+5.- DISPENSACIÓN DE PRODUCTOS FARMACÉUTICOS Y PARAFARMACÉUTICOS A PACIENTES AMBULATORIOS: NORMATIVA LEGAL.
+5.1.- NORMATIVA LEGAL QUE REGULA LA DISPENSACIÓN DE MEDICAMENTOS EN PACIENTES AMBULATORIOS.
+5.2.- TIPOS DE MEDICAMENTOS DISPENSADOS.
+5.3.- PROCESO DE DISPENSACIÓN.
+
+6.- APLICACIONES INFORMÁTICAS DE DISTRIBUCIÓN Y DISPENSACIÓN DE LOS PRODUCTOS FARMACÉUTICOS Y PARAFARMACÉUTICOS.
+6.1.- OFICINAS DE FARMACIA.
+6.2.- SERVICIO DE FARMACIA HOSPITALARIA.
+
+
+7.- ASISTENCIA AL FARMACÉUTICO EN LA GESTIÓN DE MEDICAMENTOS EN ENSAYO CLÍNICO: NORMATIVA LEGAL.
+7.1- DEFINICIONES IMPORTANTES.
+7.2.- CLASIFICACIÓN DE LOS ENSAYOS CLÍNICOS.
+7.3.- ACTIVIDADES DEL SERVICIO DE FARMACIA.
+
+8.-	ASISTENCIA	AL	FARMACÉUTICO	EN	LA	ATENCIÓN	AL	PACIENTE AMBULATORIO, AL PACIENTE DE HOSPITAL DE DÍA.
+8.1.- DISPENSACIÓN AL PACIENTE NO INGRESADO.
+8.2.- HOSPITAL DE DÍA.
+
+9.- BIBLIOGRAFÍA.
+
+
+1.- FARMACIA HOSPITALARIA: SERVICIO DE FARMACIA HOSPITALARIA.
+
+El Servicio de Farmacia (SF) de un hospital es un Servicio General Clínico (o Servicio Central), integrado funcional y jerárquicamente en el hospital.
+El RD 1/2025, texto refundido de la Ley 29/2006, de 26 de julio, de Garantías y Uso racional de los medicamentos y productos sanitarios, en el Capítulo III Del uso racional de los medicamentos en la atención hospitalaria y especializada.
+
+Artículo 84. Estructuras de soporte para el uso racional de los medicamentos en los hospitales.
+Los hospitales deberán disponer de servicios o unidades de farmacia hospitalaria con arreglo a las condiciones mínimas establecidas por esta ley. Los hospitales del más alto nivel y aquellos otros que se determinen deberán disponer de servicios o unidades de Farmacología Clínica.
+Para contribuir al uso racional de los medicamentos las unidades o servicios de farmacia hospitalaria realizarán las siguientes funciones:
+
+a) Garantizar y asumir la responsabilidad técnica de la adquisición, calidad, correcta conservación, cobertura de las necesidades, custodia, preparación de fórmulas magistrales o preparados oficinales y dispensación de los medicamentos precisos para las actividades intrahospitalarias y de aquellos otros para tratamientos extrahospitalarios, conforme a lo establecido en el artículo 3.6.
+b) Establecer un sistema eficaz y seguro de distribución de medicamentos, tomar las medidas para garantizar su correcta administración, custodiar y dispensar los productos en fase de investigación clínica y velar por el cumplimiento de la legislación sobre medicamentos de sustancias psicoactivas o de cualquier otro medicamento que requiera un control especial.
+c) Formar parte de las comisiones hospitalarias en que puedan ser útiles sus conocimientos para la selección y evaluación científica de los medicamentos y de su empleo.
+d) Establecer un servicio de información de medicamentos para todo el personal del hospital, un sistema de farmacovigilancia intrahospitalario, estudios sistemáticos de utilización de medicamentos y actividades de farmacocinética clínica.
+e) Llevar a cabo actividades educativas sobre cuestiones de su competencia dirigidas al personal sanitario del hospital y a los pacientes.
+f) Efectuar trabajos de investigación propios o en colaboración con otras unidades o servicios y participar en los ensayos clínicos con medicamentos.
+g) Colaborar con las estructuras de atención primaria y especializada de la zona en el desarrollo de las funciones señaladas en el artículo 83.
+h) Realizar cuantas funciones puedan redundar en un mejor uso y control de los medicamentos.
+i) Participar y coordinar la gestión de las compras de medicamentos y productos sanitarios del hospital a efectos de asegurar la eficiencia de la misma.
+
+Las funciones definidas en los párrafos c) a h) del apartado anterior serán desarrolladas en colaboración con farmacología clínica y demás unidades o servicios clínicos del hospital.
+
+
+Artículo 85. Farmacia hospitalaria.
+1. Los servicios de farmacia hospitalaria estarán bajo la titularidad y responsabilidad de un farmacéutico especialista en farmacia hospitalaria.
+2. Las Administraciones sanitarias con competencias en ordenación farmacéutica realizarán tal función en la farmacia hospitalaria manteniendo los siguientes criterios:
+a) Fijación de requerimientos para su buen funcionamiento, acorde con las funciones establecidas.
+b) Que las actuaciones se presten con la presencia y actuación profesional del o de los farmacéuticos necesarios para una correcta asistencia.
+c) Los farmacéuticos de las farmacias hospitalarias deberán haber cursado los estudios de la especialidad correspondiente.
+3. Los hospitales que no cuenten con servicios farmacéuticos deberán solicitar de las comunidades autónomas autorización para, en su caso, mantener un depósito de medicamentos bajo la supervisión y control de un farmacéutico. Las condiciones, requisitos y normas de funcionamiento de tales depósitos serán determinadas por la autoridad sanitaria competente.
+
+De acuerdo a estas funciones, vemos cómo hay actividades farmacéuticas de tipo asistencial, administrativo, tecnológico y científico. Cada una de estas funciones genera unos requerimientos y necesidades de localización, superficie, mobiliario, utillaje, de personal y organizativo, que vamos a evaluar.
+
+La Ley 3/2019, de 2 de julio de Ordenación Farmacéutica de Galicia, en sus artículos del 56 al 61, regula la atención farmacéutica en hospitales y centros sociosanitarios.
+
+Artículo 56. Atención farmacéutica en los hospitales y centros sociosanitarios.
+
+La atención farmacéutica en los hospitales y centros sociosanitarios se llevará a cabo a través de los servicios de farmacia hospitalaria propios y de los depósitos de medicamentos y productos sanitarios. En ellos los/las farmacéuticos/as responsables desarrollarán las funciones contempladas en la presente ley, prestando un servicio integrado con otras actividades de la atención hospitalaria o sociosanitaria.
+
+Artículo 57. Servicios de farmacia hospitalaria propios de los hospitales y centros sociosanitarios
+
+Será obligatorio el establecimiento de un servicio de farmacia hospitalaria propio en:
+a) Todos los hospitales que tengan cien o más camas.
+b) Los centros sociosanitarios con cien o más camas en régimen de asistidos/as.
+
+La Consellería podrá establecer acuerdos o convenios con los centros mencionados en los apartados a) y b) eximiéndoles de dicha exigencia, siempre y cuando dispongan de un depósito de medicamentos y productos sanitarios vinculado al servicio de farmacia del hospital de la red pública que sea el de referencia en el área sanitaria correspondiente
+
+
+Artículo 58. Funciones de los servicios de farmacia hospitalaria propios de los hospitales y centros sociosanitarios
+
+Los servicios de farmacia hospitalaria propios de los hospitales y centros sociosanitarios tendrán, además de las funciones contempladas en la normativa estatal de aplicación, las siguientes:
+
+a) Participar, a través de la comisión de farmacia y terapéutica del centro, en el proceso multidisciplinario de la selección de medicamentos y productos sanitarios precisos para la correcta atención farmacéutica, bajo criterios de seguridad, calidad y coste/efectividad, contemplados en la guía farmacoterapéutica de obligada difusión, que habrá de actualizarse periódicamente.
+b) Garantizar y asumir la responsabilidad técnica de la adquisición, calidad, correcta conservación, cobertura de las necesidades, custodia, preparación de fórmulas magistrales y preparados oficinales y dispensación de los medicamentos precisos para las actividades intrahospitalarias y de aquellos otros para tratamientos extrahospitalarios, con arreglo a lo establecido en el artículo 3.6 del texto refundido de la Ley de garantías y uso racional de los medicamentos y productos sanitarios, aprobado por Real decreto legislativo 1/2015, de 24 de julio.
+c) Establecer un sistema eficaz y seguro de distribución de medicamentos, tomar las medidas para garantizar su correcta conservación, disponibilidad, preparación, administración, trazabilidad y reposición, custodiar y dispensar los productos en fase de investigación clínica y velar por el cumplimiento de la legislación sobre medicamentos de sustancias psicoactivas o de cualquier otro medicamento que requiera un control especial.
+d) Establecer un sistema de dispensación de todos aquellos medicamentos contemplados en el artículo 3.6.b) y c) del Real decreto legislativo 1/2015, de 24 de julio, que favorezca la atención farmacéutica individualizada y que permita detectar o prevenir eventos adversos, garantizar la adecuación terapéutica y mejorar la adherencia al tratamiento, y que contribuya a que las personas usuarias obtengan el mejor resultado en salud derivado de la utilización de medicamentos y permita adaptarse a las nuevas necesidades asistenciales y los avances de las tecnologías de la información y comunicación.
+e) Participar en el seguimiento farmacoterapéutico de las personas usuarias que contribuya a garantizar la adherencia y persistencia terapéutica en los programas de conciliación de la medicación, impulsando la coordinación farmacoterapéutica entre diferentes estructuras sanitarias y niveles asistenciales, así como la integración y continuidad asistencial.
+f) Formar parte de las comisiones de las correspondientes estructuras sanitarias en que puedan ser útiles sus conocimientos para la selección y evaluación científica de los medicamentos y los criterios de uso, así como formar parte y coordinarse y colaborar con la Comisión Autonómica Central de Farmacia y Terapéutica.
+g) Participar en el desarrollo, implantación y seguimiento de protocolos terapéuticos y de la guía farmacoterapéutica a fin de conseguir la farmacoterapia más segura y eficiente, en condiciones de equidad y homogeneidad, y de promover el uso racional del medicamento en el hospital y su área de influencia.
+h) Realizar la homologación sanitaria de los tratamientos prescritos.
+i) Colaborar en la evaluación de resultados en salud derivada de la utilización de los medicamentos en la práctica clínica real, de la incorporación de la innovación terapéutica y tecnológica y de las políticas sanitarias.
+j) Establecer un servicio de información de medicamentos para todo el personal del hospital,
+
+
+estudios sistemáticos de utilización de medicamentos y actividades de farmacocinética clínica y todas aquellas actividades de su competencia que redunden en el mejor cuidado, ajuste posológico, terapias de soporte y estado nutricional de las personas usuarias.
+k) Colaborar en la formación pre y posgraduada de profesionales sanitarios/as.
+l) Efectuar trabajos de investigación propios o en colaboración con otras unidades y servicios y participar en los ensayos clínicos con medicamentos.
+m) Colaborar con las estructuras de atención primaria y atención hospitalaria de su área de influencia en el desarrollo de sus funciones a fin de garantizar una farmacoterapia integrada y una continuidad asistencial.
+n) Colaborar en los programas que se establezcan en su área sobre el uso racional y seguro del medicamento, así como en programas de formación de las personas usuarias y cuidadores/as sobre el uso de los medicamentos y su participación activa en los tratamientos.
+o) Establecer un sistema de farmacovigilancia intrahospitalario y promover la notificación de incidentes relacionados con el uso de medicamentos a través de los sistemas de notificación existentes.
+p) Participar y coordinar la gestión de las compras de medicamentos y productos sanitarios de las estructuras organizativas de gestión integrada a efectos de asegurar la eficiencia de la misma.
+q) Realizar cuantas funciones puedan redundar en un mejor uso y control de los medicamentos mediante estrategias de colaboración entre los/las profesionales sanitarios/as de los distintos niveles asistenciales y cualesquiera otras que se establezcan.
+
+Artículo 59. Recursos materiales y humanos de los servicios de farmacia hospitalaria propios
+a) Los servicios de farmacia hospitalaria propios habrán de disponer de una superficie adecuada en relación con la actividad desarrollada.
+b) Los servicios de farmacia hospitalaria propios de los hospitales contarán con un área diferenciada de atención de las personas usuarias externas, para preservar la confidencialidad y privacidad.
+c) Los servicios de farmacia hospitalaria propios de los hospitales y centros sociosanitarios estarán bajo la titularidad y responsabilidad de un/una farmacéutico/a especialista en Farmacia Hospitalaria.
+d) Dependiendo del volumen, actividades y tipo de centro, se fijará por norma reglamentaria el número de farmacéuticos adicionales, de técnicos o auxiliares en farmacia y de personal administrativo y subalterno necesarios para desarrollar con normalidad el funcionamiento del servicio.
+e) Todos los farmacéuticos que ejerzan su actividad en los servicios de farmacia hospitalaria propios estarán en posesión del título de especialista en Farmacia Hospitalaria.
+
+Artículo 60. Depósitos de medicamentos y Productos sanitarios:
+
+1. Los hospitales y los centros sociosanitarios que presten asistencia sanitaria específica que no cuenten con un servicio de farmacia hospitalario propio y no estén obligados a tenerlo habrán de disponer de un depósito, que estará vinculado a un servicio de farmacia hospitalaria del distrito sanitario y bajo la responsabilidad de la persona que ejerza la
+
+
+jefatura de dicho servicio, en caso de los hospitales o centros sociosanitarios del sector público.
+En caso de que se trate de un hospital o centro sociosanitario del sector privado, el depósito estará vinculado a una oficina de farmacia establecida en la misma zona farmacéutica o a un servicio de farmacia hospitalario.
+Los hospitales y centros sociosanitarios con los cuales se formalicen los acuerdos o convenios, habrán de disponer de un depósito de medicamentos vinculado al servicio de farmacia hospitalaria del hospital de la red pública que sea el de referencia en el área sanitaria correspondiente.
+2. Los centros y servicios sanitarios en que por el elevado volumen de medicamentos utilizado o por las características farmacológicas de los mismos o bien por motivos de salud pública se estime necesario que deben disponer de un depósito serán determinados reglamentariamente.
+Igualmente, podrá autorizarse la existencia de depósitos en otros centros y establecimientos sanitarios donde se lleven a cabo tratamientos específicos para determinados tipos de usuarios/as, cuando las características de los tratamientos o las necesidades asistenciales así lo exijan.
+En todo caso, los citados depósitos habrán de estar vinculados a alguno de los establecimientos o servicios enumerados en el artículo 3.6 del texto refundido de la Ley de garantías y uso racional de los medicamentos y productos sanitarios, aprobado por Real decreto legislativo 1/2015, de 24 de julio, a los cuales corresponderá la custodia, conservación y dispensación de medicamentos de uso humano.
+3. El depósito, dependiendo de su vinculación, será atendido por un farmacéutico del servicio de farmacia del distrito sanitario, en su caso, por un farmacéutico del servicio de farmacia hospitalaria del hospital de la red pública que sea el de referencia en el área sanitaria correspondiente para los hospitales y centros sociosanitarios que formalicen acuerdos o convenios de conformidad con lo dispuesto en el número 1 o por el farmacéutico titular de la oficina de farmacia con la que el centro esté vinculado.
+4. El farmacéutico responsable del depósito, con la colaboración del personal técnico o auxiliar de farmacia necesario, realizará las funciones siguientes:
+a. Garantizar la correcta conservación, custodia y dispensación de medicamentos y productos sanitarios para su aplicación dentro del centro, establecimiento o servicio.
+b. Asegurar un sistema eficaz y seguro de dispensación de medicamentos y productos sanitarios en el centro, establecimiento o servicio, con implantación de medidas que contribuyan a garantizar su correcta administración.
+c. Establecer las normas de acceso al depósito para el personal previamente autorizado, que será aquel que determine el servicio de farmacia responsable del depósito.
+d. Informar al personal sanitario del centro, establecimiento o servicio y a los/las propios/as pacientes en materia de medicamentos, así como realizar estudios de utilización de medicamentos.
+e. Colaborar con la comisión de farmacia y terapéutica del centro y con los comités éticos de investigación clínica, así como con otras comisiones del centro hospitalario de referencia en las cuales sus conocimientos puedan ser útiles.
+f. Garantizar las existencias necesarias para que la dispensación de medicamentos quede cubierta las veinticuatro horas del día.
+
+
+5. Los depósitos habrán de disponer de una superficie adecuada en relación con la actividad desarrollada, debiendo contar con el personal necesario para poder llevar a cabo sus funciones
+
+Como novedad se establece la posibilidad de determinar aquellos centros y servicios sanitarios que por el elevado volumen de medicamentos utilizado o por las características farmacológicas de los mismos o bien por motivos de salud pública, se estime necesario que deben disponer de un depósito.
+
+También se recoge la posibilidad de autorizar la existencia de depósitos en otros centros y establecimientos sanitarios donde se lleven a cabo tratamientos específicos para determinados tipos de usuarios, cuando las características de los tratamientos o las necesidades asistenciales así lo exijan.
+
+Vinculación de los Depósitos
+
+En todo caso los depósitos habrán de estar vinculados a alguno de los establecimientos o servicios enumerados en el artículo 3.6 del Real decreto legislativo 1/2015, de 24 de julio, por el que se aprueba el texto refundido de la Ley de garantías y uso racional de los medicamentos y productos sanitarios, a los cuales corresponderá la custodia, conservación y dispensación de medicamentos de uso humano.
+El depósito, dependiendo de su vinculación, será atendido por un farmacéutico, cuyas funciones son las mismas que actualmente. El farmacéutico responsable del depósito podrá contar con la colaboración del personal técnico o auxiliar de farmacia necesario. para el desempeño de dichas funciones.
+- En los hospitales o centros del sector público, el depósito estará vinculado a un servicio de farmacia hospitalaria del distrito sanitario y bajo la responsabilidad del farmacéutico jefe del servicio.
+- En los hospitales o centros del sector privado, el depósito estará vinculado a una oficina de farmacia establecida en la misma zona farmacéutica o a un servicio de farmacia hospitalario, bajo la responsabilidad del farmacéutico titular de la oficina de farmacia o del farmacéutico jefe del servicio de farmacia hospitalaria, según el caso.
+- En los hospitales y centros sociosanitarios obligados por el número de camas a tener un servicio de farmacia hospitalaria propio, que formalicen convenios con la Consellería competente en materia de sanidad que les exima de esta obligación, el depósito estará vinculado al servicio de farmacia del hospital de la red pública que sea el de referencia en el área sanitaria correspondiente, bajo la responsabilidad del farmacéutico jefe del servicio.
+
+Artículo 61. Atención farmacéutica en instituciones penitenciarias
+1. Los centros penitenciarios habrán de establecer servicios de farmacia o depósitos de medicamentos, que reunirán los requisitos generales establecidos en los artículos 59 y 60 y serán debidamente autorizados en los términos que reglamentariamente se determinen.
+2. Los depósitos de medicamentos de estos centros podrán vincularse a los servicios farmacéuticos de otros centros penitenciarios o a los servicios de farmacia de hospitales de la red pública.
+
+
+3. Las funciones de tales unidades asistenciales serán las establecidas en el artículo 58.
+
+2.- REAS O ZONAS QUE INTEGRAN UN SERVICIO DE FARMACIA.
+Los servicios de Farmacia Hospitalaria dentro del sistema sanitario son un elemento estratégico dentro de la institución hospitalaria que realiza su actividad asistencial basada en tres pilares fundamentales: la Farmacotecnia y preparación de medicamentos, la logística farmacéutica y la farmacoterapéutica.
+
+ÁREA DE GESTIÓN:
+
+2.1.- UNIDAD DE GESTIÓN COMPRAS.
+
+Los SF han visto incrementadas las tareas a desarrollar en el apartado de adquisiciones de medicamentos. Entre los motivos que han originado este aumento de carga de trabajo, destacamos:
+
+- Aplicación de normativas de contención del gasto, lo cual implica la negociación directa con los proveedores para obtener precios más competitivos.
+- Implantación en los centros hospitalarios de las directrices de la Ley de Contratos del Estado en las adquisiciones directas de medicamentos. Con ello, es preciso preparar, publicar y resolver tanto concursos públicos como procedimientos negociados.
+- Un incremento en los requerimientos de información detallada del volumen cualitativo y cuantitativo de todas las adquisiciones de medicamentos.
+- Intentar aumentar el índice de rotación de stock lo más alto posible, lo cual nos lleva a tener que disminuir el intervalo de pedidos con los laboratorios y aumentar el número de pedidos a realizar.
+Esta unidad debe estar lo más próxima posible a la zona de recepción de mercancías, para poder solucionar con rapidez las incidencias de las adquisiciones.
+
+Debe contar con recursos humanos administrativos y facultativos y el material necesario, por ejemplo, equipos informáticos, adecuados a las tareas que se realizarán en las mismas.
+
+Conceptos importantes:
+Índice de rotación de stock: expresa el número de veces que se han renovado las existencias (de un artículo, de una materia prima...) durante un período.
+
+2.2.- ALMACENES.
+
+Un almacén o depósito es el conjunto de artículos y materiales que posee un Centro Asistencial en espera de su utilización posterior en las diferentes secciones o unidades de la misma.
+
+
+Son funciones del almacén:
+- Solicitar el reabastecimiento de los diferentes artículos cuando sea necesario.
+- Recepción y registro de los materiales suministrados.
+
+Debe de haber zonas diferenciadas dentro del mismo almacén que dé cabida a los diferentes tipos de medicamentos:
+
+1. ALMACÉN DE RECEPCIÓN Y COMPROBACIÓN DE LOS MEDICAMENTOS
+Los SF deben estar situados lo más cerca posible a zonas de carga y descarga. Dependiendo del tipo de hospital y, consiguientemente del volumen de compras, las cantidades de medicamentos pueden ser voluminosas y pesadas. Por ello, es aconsejable la ubicación de los Servicios de Farmacia en las plantas bajas, con acceso directo a la calle y a zonas de carga y descarga habilitadas en lo posible sólo para el Servicio de Farmacia. Deben estar próximos a ascensores de carga usados en exclusividad para estas tareas.
+El Servicio de Farmacia debe de tener una zona acondicionada en la que se irá colocando la mercancía hasta su análisis, revisión, confirmación y posterior colocación de acuerdo con los diferentes almacenes establecidos y pactados dentro del Servicio de Farmacia.
+Esta zona de recepción debe estar a la entrada del servicio y próxima a la unidad de gestión de compras.
+
+2. ALMACENES GENERALES:
+a) Almacén de especialidades farmacéuticas (cuya conservación no requiera condiciones especiales de almacenamiento).
+Este tipo de almacenes contendrá entre otras:
+* Especialidades farmacéuticas propiamente dichas.
+* Productos dietéticos.
+* Contrastes radiológicos.
+* Medicamentos de ensayos clínicos.
+* Medicamentos de dispensación ambulatoria.
+* Antídotos.
+
+b) Almacenes de especialidades farmacéuticas de gran volumen:
+Se consideran especialidades farmacéuticas de gran volumen las que se presentan en frascos de 100 ml o volúmenes superiores, llamados comúnmente "sueros". Necesitan de un gran espacio de almacenamiento y es recomendable mantener las soluciones en sus embalajes de origen.
+- Soluciones parenterales.
+- Líquidos de diálisis.
+- Contrastes radiológicos.
+- Soluciones antisépticas.
+- Material de curas: suturas.
+c) Almacén de materias primas.
+Este tipo de almacén debe estar separado del almacén de los medicamentos.
+Los frascos, etiquetas, tapones y otros accesorios utilizados en el área de farmacotecnia pueden ser incluidos en esta área.
+
+
+d) Almacén de material (botellas plásticas, etiquetas, frascos, material de reenvasado).
+e) Almacén de carros de transporte.
+
+3. ALMACENES ESPECIALES:
+a) Almacén de inflamables: sería aconsejable su ubicación en habitaciones exteriores al SF y sus dimensiones dependerán de la cantidad y número de especialidades a almacenar. Estar construido con muros de cemento y techo liviano para que canalice la onda expansiva en caso de explosión.
+Deben contar con un sistema de control de la temperatura entre 12 y 15 °C con su correspondiente sistema de alarma.
+Además, debe tener luz antideflagrante, extractor de vapores, sistemas contraincendios, barrera de 10 cm de altura por si se produce un derrame, por ejemplo, de alcohol.
+Se utiliza para almacenar: éter y anestésicos inflamables. En el caso del alcohol, y sobre la base del RD. 2.058/1981 (BOE 18 y 19 de septiembre referente a requisitos técnicos de los depósitos), se aconsejan depósitos subterráneos, de carga exterior y con salida directa al Servicio de Farmacia.
+En el caso de centros hospitalarios cuyo consumo de alcohol sea pequeño se recurrirá a ubicar dentro de una habitación, que haga de laboratorio y se utilizarán garrafas plásticas para su almacenamiento, todo ello de acuerdo con las directrices de seguridad antes mencionadas.
+b) Almacenes para sustancias termolábiles: Este tipo de productos deben ser conservados a temperaturas comprendidas entre 2 y 8 °C.
+El almacenamiento de productos termolábiles requiere la instalación de frigoríficos industriales o la construcción de cámaras frigoríficas, dependiendo de la cantidad de medicamentos a almacenar.
+El disponer de una habitación frigorífica con estanterías permite almacenar otros productos además de los termolábiles, como pueden ser algunos productos inflamables y otros que se encuentran mejor conservados en frigorífico que a temperatura ambiente, como son los hemoderivados y soluciones de lípidos.
+Para prevenir las consecuencias de posibles averías conviene disponer de más de un frigorífico.
+No es aconsejable la utilización de neveras domésticas por el gran volumen que ocupan y la poca capacidad de almacenamiento.
+Para la conservación de aquellos productos que necesitan temperaturas de -10º o -20º C se debe disponer de un congelador.
+Todos los productos y medicamentos termolábiles deben estar registrados y aparecer en listados de renovación periódica, ? con su localización, para conocimiento de todo el personal del Servicio.
+c) Almacén de estupefacientes: hemos de instalar un recinto cerrado que nos permita poner bajo llave los estupefacientes. En ocasiones, y con un volumen bajo de consumo de estas drogas, es suficiente con instalar un armario metálico con una cerradura.
+En las plantas, los stocks de estos medicamentos deberán estar colocados en armarios bajo llave que permitan un control y seguimiento estricto de estos medicamentos.
+d) Almacenes para psicótropos: la legislación actual no obliga a hacer un seguimiento pormenorizado de este grupo farmacológico. No obstante, se aconseja su ubicación en unas condiciones de seguridad. Se pueden colocar en muebles o armarios con cerraduras.
+e) Almacén para radiofármacos y gases de uso médico: El "Real Decreto 479/1993, de 2 de
+
+
+Abril, por el que se regulan los medicamentos radiofármacos de uso humano" no exige ninguna condición higiénico-sanitaria para el almacenamiento de estos radiofármacos, pero teniendo en cuenta que algunos se comercializan en viales multidosis y la mayoría requieren una preparación previa a su administración presentando una corta estabilidad, el área de almacenamiento puede estar integrada dentro del área de preparación.
+La primera Comunidad autónoma que introdujo en su ley de ordenación farmacéutica, artículos específicos referidos a la radiofarmacia, fue Galicia (Ley 5/1999, del 21 de mayo, de Ordenación Farmacéutica).
+Esta zona requiere la ubicación de armarios (celdas) plomados como medida de radioprotección y frigorífico (temperatura 2-8 ºC) para el almacenamiento temporal de los radiofármacos según los requerimientos de temperatura.
+
+La actual Ley de ordenación farmacéutica de Galicia, Ley 3/2019, recoge que la adquisición y dispensación de radiofármacos elaborados en las unidades de radiofarmacia no integradas en servicios de farmacia es responsabilidad del servicio de farmacia del centro donde vayan a utilizarse.
+
+4. ALMACÉN ENSAYOS CLÍNICOS:
+El Real Decreto 1090/2015, de 4 de diciembre, regula los ensayos clínicos con medicamentos, los Comités de Ética de la Investigación con medicamentos y el Registro Español de Estudios Clínicos.
+El investigador principal, responsable del ensayo en el centro, puede delegar ciertas funciones específicas del ensayo clínico a otros equipos y profesionales especializados. Los Servicios de Farmacia, como expertos en el manejo y experiencia en el uso racional de los medicamentos, asumen por ley unas funciones básicas que son la recepción, custodia, trazabilidad y dispensación de los medicamentos en investigación. Si es necesaria una preparación especial del medicamento, se deberá realizar en una cabina de flujo laminar según esté reflejado en las instrucciones del propio ensayo. Este proceso será asumido por el Servicio de Farmacia con el objetivo de asegurar una calidad de la mezcla preparada y confirmar que la preparación se ha realizado según los protocolos descritos por el promotor.
+
+Actualmente, en muchos centros hospitalarios, la validación de los medicamentos en investigación es parte de un proceso global de prescripción que se realiza de forma electrónica. Los programas que se utilizan para esta prescripción son herramientas que facilitan y aumentan la seguridad del proceso. La intervención del farmacéutico validando los tratamientos, de acuerdo a los protocolos, puede reducir los problemas relacionados con los medicamentos y mejorar el cumplimiento según el ensayo clínico.
+Otros beneficios son la incorporación de procesos de decisión, la mejora de la comunicación interdepartamental, la posibilidad de analizar datos para la evaluación de la molécula, la trazabilidad, o la evaluación de calidad.
+Por otra parte, un programa para la prescripción electrónica ofrece avisos de interacciones medicamentosas, alergias, alertas de dosis inapropiadas, limitaciones a causa de la edad o función renal e incluso como recordatorio para administrar el tratamiento cuando se trata de profilaxis, aumentando la seguridad del paciente incluido en un ensayo clínico.
+
+
+
+La superficie destinada a cada uno de estos almacenes va a depender de diferentes factores:
+- Índice de rotación de stocks.
+- Stock residual en el servicio de farmacia
+- Proximidad a los laboratorios farmacéuticos que permita un servicio rápido y la consiguiente necesidad de no tener que acumular en el centro hospitalario la mercancía.
+- Tipo de dispensación de medicamentos que se emplee.
+- Frecuencia en la dispensación de los pedidos a las diferentes unidades de enfermería (diario, semanal, mensual).
+- Si el Servicio de Farmacia tiene asumido o no los productos sanitarios y/o dietéticos en el hospital.
+- Movimientos de consumo en estupefacientes y psicótropos.
+- Cantidad de ensayos clínicos a realizar por mes.
+- Características del centro hospitalario: tipo de hospital, número de camas, especialidades médicas existentes.
+
+Si no es posible una división tan exhaustiva en la ordenación de la mercancía en los diferentes almacenes, es conveniente que estos grupos de medicamentos permanezcan claramente separados entre sí y del almacén general de farmacia.
+
+ÁREA DE DISPENSACIÓN Y DISTRIBUCIÓN DE MEDICAMENTOS. GESTIÓN DE CONSUMOS:
+2.3.- ZONA DE DISPENSACIÓN.
+
+Al hablar de dispensación hemos de diferenciar:
+
+1. Dispensación para pacientes no ingresados (extrahospitalaria o ambulatoria)
+Para llevar a cabo estas funciones es necesario disponer de:
+* Una zona dentro del Servicio de Farmacia cercana a la salida del mismo.
+* Solicitar una habitación individualizada en el área de consultas externas del hospital.
+
+2. Dispensación para pacientes ingresados (intrahospitalaria)
+
+La zona de dispensación debe estar cerca del almacén general (donde está ubicada la medicación) y han de acondicionarse las siguientes áreas dentro de la misma:
+* Una zona de recepción de las órdenes médicas y de los impresos de reposición de los stocks de planta (puede incluso que existan dispositivos informáticos para su recepción).
+* Una zona farmacéutica donde se analicen y procesen adecuadamente las órdenes médicas y/o stocks de planta (ya sean éstos en papel o en formato electrónico). Esta zona debe estar aislada físicamente de las demás y con un adecuado grado de tranquilidad desde un punto de vista de ruidos.
+* Deberá existir una zona para la preparación de la medicación de los stocks y de las órdenes médicas. En el caso de existir unidosis, se puede habilitar una o varias áreas en forma de U, donde se coloque la medicación más dispensada (ello hará que la labor de los auxiliares sea más cómoda y rápida, evitando grandes desplazamientos para llevar a cabo esta labor).
+
+
+Hoy día también existen dispositivos semiautomáticos o automáticos de dispensación de medicamentos que permiten realizar la unidosis de una manera más eficaz (Kardex).
+* Próxima a la zona de preparación de la medicación, ya sea por stocks o por unidosis, tendremos una zona donde iremos almacenando la medicación hasta que se distribuyan por las unidades de enfermería. Esta zona estará cercana a la salida de farmacia y próxima a sistemas de comunicación internos del hospital (ascensores y montacargas).
+
+2.4.- CENTRO DE INFORMACIÓN DE MEDICAMENTOS.
+
+La zona de información no necesita una ubicación determinada. Se aconseja que esté cerca de la unidad de Farmacia clínica y de la zona de dispensación.
+Entre las funciones se encuentran: resolución de consultas formuladas por el personal sanitario, información de medicamentos a pacientes, informes técnicos a Comisiones Clínicas o evaluación de la utilización de medicamentos.
+
+Esta zona del Servicio de Farmacia abarca las siguientes áreas:
+* Zona de biblioteca: donde se almacenan las revistas, libros y material en soporte informático, básicas para llevar a cabo una adecuada información sobre medicamentos.
+* Zona de trabajo: donde el farmacéutico responsable del centro de información de medicamentos ejercerá su labor.
+* Zona de reuniones: se realizan las sesiones del Servicio de Farmacia y servirá para atender adecuadamente al personal sanitario que venga a solicitar información sobre medicamentos.
+
+2.5.- RECEPCIÓN DE VISITAS. SECRETARÍA DEL SERVICIO. JEFE DE SERVICIO.
+
+Son tres zonas muy relacionadas entre sí. Cualquier persona que acuda al Servicio (solicitar información sobre un ensayo clínico, información de medicamentos, visitadores de los laboratorios, etc.), es filtrada por la secretaría del Servicio que luego canaliza a las personas responsables su resolución en función de lo solicitado.
+Por lo mencionado, esta zona debe estar próxima a la entrada al Servicio de Farmacia, ello impedirá que el personal no sanitario deba circular dentro del Servicio. La secretaria estará en la antesala del despacho del Jefe de Servicio, y actuará como organizadora de todas las visitas que requieran la presencia del mismo.
+
+2.6.- HABITACIÓN DEL PERSONAL DE GUARDIA.
+
+En caso de que en el Servicio se realicen guardias nocturnas, se planificará una habitación para descanso por las noches del personal de guardia, facultativo y/o residente. Es aconsejable que dicha habitación se ubique fuera del Servicio de Farmacia, aunque cerca del mismo.
+
+2.7.- UNIDAD DE TERAPIA INTRAVENOSA.
+
+
+La Farmacotecnia y preparación de medicamentos es de las más complejas y de mayor responsabilidad del farmacéutico de hospital porque engloba la elaboración y preparación de fórmulas magistrales, la preparación de medicamentos estériles como mezclas parenterales, quimioterapia, nutriciones además del reenvasado de medicamentos, fraccionamiento, etc.
+
+El objetivo de esta unidad es la adecuada preparación en los conceptos de estabilidad y esterilidad de las mezclas elaboradas; de igual manera, es función de la unidad su correcta conservación y dispensación.
+
+Dicha unidad permitirá preparar:
+* Mezclas intravenosas:
+- Nutriciones parenterales.
+- Otras mezclas de administración intravenosa: colirios, analgesia intretecal/intradural, etc.,
+* Citostáticos, hazardaus drugs (cabina de flujo laminar vertical) Los condicionantes básicos de esta unidad son:
+- Zona aislada si es posible dentro del Servicio de Farmacia.
+- Que no posea ventanas que den al exterior o, de tenerlas, que estén selladas al exterior.
+- Paredes lisas y esquinas redondeadas, que faciliten su limpieza.
+- La zona donde se elaboren las nutriciones parenterales y mezclas intravenosas debe estar provista de una campana de flujo laminar horizontal con mesa adicional.
+
+En esta área se suelen realizar:
+- Colirios y ampollas.
+- Preparación de mezclas intravenosas en soluciones de gran o pequeño volumen.
+- Nutriciones parenterales.
+
+El área de preparación de medicamentos biopeligrosos (hazardaus drugs, entre ellos los citostáticos) debe de contar de al menos:
+- Una zona de almacenamiento y acondicionamiento del material (pre-cámara o antesala). Esta antesala debe tener estanterías, frigoríficos, lavabos, visor de partículas, zonas para vertirse y archivadores. La presala tiene presión positiva (+15)
+- La zona de preparación (cámara) donde se ubicarán las cabinas de flujo laminar vertical y que tendrá consideración de "zona limpia" con presión negativa. (-5)
+- Zona de transferencia de materiales y personas que actúa como barrera frente a la contaminación y donde el personal debe colocarse el EPI cuando vaya a entrar en la zona de preparación y retirárselo cuando vaya a salir de ella.
+
+2.8.- ÁREA DE FARMACOTECNIA.
+
+El local y su dimensión se deberán adaptar a las formas galénicas que se preparen, los diferentes tipos de preparación y el número de unidades, peso o volumen a preparar.
+Las superficies de este área (techos, suelos, paredes) deben ser lisas y sin grietas, para permitir una fácil y adecuada limpieza.
+La finalidad de la creación de esta zona es la de poder elaborar en el Servicio de Farmacia aquellas formulaciones de medicamentos que la industria farmacéutica no realiza.
+Las situaciones que se producen pueden ser:
+
+
+- Presentaciones para vías de administración de medicamentos no comercializados.
+- Diferentes dosificaciones de una determinada especialidad farmacéutica.
+- Reenvasado de medicamentos para su dispensación en dosis unitarias.
+
+La zona de farmacotecnia la estructuraremos de la siguiente manera:
+
+Área de elaboración o de preparación de formas farmacéuticas no estériles.
+
+En ella se efectuarán las operaciones de elaboración, acondicionamiento, etiquetado y control de una forma farmacéutica.
+
+En este área se prepararán:
+- Fórmulas magistrales y preparados oficinales.
+- Elaboración de preparados orales, dermatológicos, soluciones antisépticas y sólidos orales.
+
+En esta área de elaboración se recomienda que entre el material de laboratorio se disponga de:
+- Morteros
+- Espátulas (goma e inox)
+- Balanza de precisión
+- Balanza granataria
+- Capsulador
+-	Cedazos (20-30-40)
+- Agitador de palas
+- Calefactor
+- Equipo de filtración
+- Depósitos con grifo
+- Recipientes de inox
+- Material fungible
+- Batidora eléctrica
+- Termómetro
+- Alcohómetro
+- Baño maría.
+
+Área de reenvasado/etiquetado.
+
+El acondicionamiento de medicamentos en dosis unitarias constituye una parte esencial en los sistemas de distribución de los medicamentos dentro de un hospital. A pesar de que cada vez hay más medicamentos de fabricación industrial presentados en forma de dosis unitaria, siguen existiendo presentaciones comerciales de medicamentos en las que es necesario llevar a cabo un reacondicionamiento del mismo para poder ser dispensados como tal dentro del hospital.
+El sistema de dispensación de medicamentos en dosis unitarias implicará la necesidad de reenvasar de forma individualizada las especialidades farmacéuticas que lo necesiten ya sean sólidas, líquidas o polvos.
+La Sociedad Española de Farmacia Hospitalaria (SEFH) entiende por reenvasado de medicamentos, como el procedimiento por el cual se envasa un medicamento para que pueda
+
+
+ser administrado al paciente a la dosis prescrita, permitiendo una fácil y completa identificación, sin necesidad de manipulación.
+
+La S.E.F.H. recomienda reenvasar aquellos medicamentos sólidos y líquidos para administración por vía oral que la industria farmacéutica no presenta en dosis unitarias.
+Ya que la capacidad de reenvasado del Servicio de Farmacia está limitada por las disponibilidades de material y de personal, se recomienda reenvasar los medicamentos comprendidos en alguno de estos grupos:
+* Medicamentos que se destinen a unidades de enfermería del hospital en las cuales esté implantado el sistema de dispensación de medicamentos en dosis unitarias. Los envases unitarios constituyen una parte esencial en los sistemas de distribución de medicamentos en dosis unitarias.
+* Medicamentos que precisen un control de dispensación muy estricto (por ejemplo: medicamentos antineoplásicos, medicamentos estupefacientes).
+* Medicamentos de dosificación variable o de dosis no presentadas por la industria farmacéutica.
+* Medicamentos elaborados en la farmacia del hospital (comprimidos, cápsulas)
+
+Tipos de reenvasado
+
+Formas farmacéuticas sólidas:
+
+• Reetiquetado del blíster de la industria: Consiste en la colocación de pegatinas impresas con los datos del medicamento en la cara metálica del blíster de modo que, tras recortar posteriormente el blíster, cada unidad de medicamento quede correctamente identificada para su posterior dispensación en unidosis. Para ello, se utilizan plantillas creadas para cada medicamento y papel autoadhesivo. Se reenvasan de esta manera aquellos medicamentos que vienen acondicionados en blíster y que cumplen con el tamaño y distribución adecuados para que una vez colocada la etiqueta se pueda recortar manteniendo toda la información del medicamento en cada unidad.
+• Reenvasado en blíster: El proceso consiste en el llenado de los blísters con los medicamentos y el sellado con pegatinas autoadhesivas previamente impresas con la descripción de cada medicamento. En este caso pueden tener lugar dos supuestos:
+* Medicamento acondicionado en blíster de la industria: El blíster se recorta y cada unidad se introduce en un blíster de tamaño adecuado. Posteriormente se sella con la etiqueta correspondiente.
+* Medicamento acondicionado en frasco/bote: El comprimido o cápsula es introducido en el blíster. Posteriormente se sella con la etiqueta correspondiente .
+• Reenvasado en máquina reenvasadora: El proceso es igual al reenvasado en blíster, solo que en este caso se realiza de forma automatizada. Esto permite optimizar el tiempo de reenvasado y los recursos en los servicios de farmacia, aunque también requiere de labores de calibración y mantenimiento periódicos de la máquina y de una mayor dedicación al aprendizaje de su utilización por parte del personal técnico de la farmacia.
+Formas farmacéuticas líquidas:
+Suelen reenvasarse de forma manual en los servicios de farmacia por gravimetría o volumetría.
+
+
+
+
+La S.E.F.H. considera que cualquier sistema que garantice la seguridad del proceso de reenvasado es válido.
+
+No obstante, y de forma genérica, recomienda observar especialmente los siguientes puntos del procedimiento:
+- El proceso completo debe realizarse en un área destinada a tal fin.
+- En el área de reenvasado debe disponerse de un sólo medicamento y el material necesario para su reenvasado.
+- Entre el reenvasado de dos medicamentos debe realizarse una inspección y limpieza exhaustiva de la máquina, adecuándola al nuevo proceso de reenvasado.
+- Antes de comenzar el proceso de reenvasado debe realizarse un reconocimiento del medicamento y del envase original para descartar deterioro por humedad, contaminación y otros.
+- El equipo y material necesario para el reenvasado debe utilizarse siguiendo las instrucciones del fabricante. Cualquier desviación debe ser justificada y autorizada por el responsable del área.
+- Los envases unitarios de líquidos orales deben ser llenados de manera que viertan el contenido indicado en la etiqueta, para lo que deben contener un exceso que dependerá del formato, material del envase y características galénicas del medicamento. Se dosificará por cantidad vertida.
+- Las etiquetas empleadas en el reenvasado deben ser revisadas por el farmacéutico responsable, verificando que los datos identificativos de nombre comercial, principio activo, dosis, excipientes de declaración obligatoria, lote y caducidad se corresponden con los del medicamento industrial que se pretende reenvasar.
+- El número de unidades que se reenvasen no debe exceder, salvo excepciones debidamente justificadas, la cantidad necesaria para cubrir tratamiento durante un mes, con el fin de evitar que los medicamentos caduquen.
+- La identificación de los envases debe incluir como mínimo:
+* Nombre genérico (salvo asociaciones)
+* Nombre comercial
+* Dosis
+* Lote de reenvasado
+* Caducidad
+* Servicio de Farmacia
+* Hospital
+- La liberación del lote reenvasado será responsabilidad del farmacéutico encargado del área.
+- Debe mantenerse un registro permanente de todas las operaciones realizadas y que incluirá, como mínimo:
+* Nombre genérico (salvo asociaciones)
+* Nombre comercial
+* Dosis
+* Número de lote del laboratorio
+* Número de lote de reenvasado
+* Fecha de caducidad del laboratorio
+* Fecha de caducidad del reenvasado
+* Fecha de reenvasado
+
+
+* Número de dosis reenvasadas
+* Nombre y firma de la persona encargada del reenvasado
+* Nombre y firma del farmacéutico responsable
+
+- Para cada medicamento debe existir una ficha control de acondicionamiento de medicamentos en dosis unitarias en la que se recojan los aspectos fundamentales para la realización de este proceso.
+- No se dará salida a ninguna especialidad una vez acondicionada por el servicio de farmacia sin autorización previa del farmacéutico responsable del área.
+
+Estabilidad de los medicamentos reenvasados en dosis unitarias
+
+En el caso de los medicamentos en sus presentaciones comerciales, existen estudios de estabilidad realizados por las compañías farmacéuticas que avalan la fecha de caducidad proporcionada por el fabricante para dichos medicamentos en su material de acondicionamiento original.
+No obstante, en el momento en que se decide reenvasar en forma de dosis unitarias dichos medicamentos, hay que tener en cuenta las siguientes consideraciones para establecer la fecha de caducidad de forma adecuada:
+- En el caso del reetiquetado de blísters y reenvasado de blísters industriales recortados, la caducidad del reenvasado será la misma que la especificada por el fabricante, al no haberse manipulado el acondicionamiento primario original del medicamento comercial.
+- En el caso del reenvasado de formas sólidas acondicionadas en su presentación comercial en frascos y botes, así como en el caso de las formas líquidas orales, al haberse producido una manipulación del acondicionamiento primario original, se recomienda establecer una fecha de caducidad conforme a lo establecido en la Guía de Buenas Prácticas de Preparación de medicamentos en servicios de farmacia que, para el caso de las formas sólidas no acuosas (comprimidos, cápsulas, supositorios) puede ser hasta del 25% de la caducidad original, siendo el máximo establecido 6 meses. También se recomienda consultar la ficha técnica del medicamento, por si menciona algún dato de estabilidad importante del medicamento fuera de su acondicionamiento primario.
+
+Riesgos para la salud en el reenvasado: medicamentos peligrosos
+
+En la elección de presentaciones comerciales de medicamentos peligrosos, entre otros criterios, se consideran de elección aquellas cuyo contenido se adapte mejor a la dosificación habitual, con el objeto de minimizar la manipulación, considerando de elección aquellas presentaciones que no requieran reconstitución, claramente identificadas para no incurrir en errores, acondicionadas en contenedores irrompibles, que no se deban fraccionar para su dosificación y presentadas en dosis unitarias para evitar el reenvasado. No obstante, existen casos en los que se requiere reenvasar este tipo de medicamentos en forma de dosis unitarias.
+De forma general, no se recomienda utilizar sistemas de envasado automáticos que no sean de uso exclusivo y en condiciones ambientales de protección del manipulador, y el reenvasado debe conservar siempre el blíster original. Se recomienda, como primera opción, el reetiquetado del blíster en aquellos casos en que el medicamento peligroso presente esta presentación comercial.
+
+
+En el caso de que el reetiquetado de los blíster no sea viable, se recomienda recortar los blíster comerciales y reenvasarlos nuevamente, sin extraerlos del blíster original, en forma de dosis unitaria. Para los casos en los que estos medicamentos vengan acondicionados en frascos o botes, el reenvasado se realizará de forma manual bajo cabinas de seguridad biológica y los equipos de protección individual adecuados (batas desechables, guantes de citostáticos, mascarilla FFP2 - FFP3).
+El reenvasado de medicamentos peligrosos a través de sistemas automáticos se podrá realizar siempre y cuando se cumplan las siguientes premisas:
+• Los sistemas automáticos se usan de forma exclusiva para el reenvasado de medicamentos biopeligrosos.
+• Manteniendo siempre el blíster original del medicamento.
+• Protección adecuada del manipulador siguiendo las recomendaciones del servicio de Prevención de Riesgos Laborales.
+• Disponer de un protocolo de actuación ante cualquier alteración del medicamento durante el proceso de reenvasado (rotura o machacado del medicamento).
+
+El reenvasado de medicamentos peligrosos en formas farmacéuticas líquidas, como por ejemplo, soluciones pediátricas de antineoplásicos,) deberá realizarse siempre bajo cabina de seguridad biológica y utilizando los equipos de protección individual adecuados (mascarilla FFP3, gafas de protección, guantes de citostáticos y batas desechables). En el caso de los medicamentos no oncológicos o de riesgo reproductivo podrá realizarse sin necesidad de cabina de seguridad biológica.
+Deberá identificarse claramente en el etiquetado del medicamento reenvasado que se trata de un medicamento peligroso, con el fin de garantizar la seguridad del personal de enfermería en las unidades de hospitalización.
+
+Actualmente hay un proyecto de la Sociedad Española de farmacia hospitalaria (SEFH) "No reenvases sin necesidad" iniciado en el 2020 en el Hospital Nacional de Parapléjicos (Toledo) al detectar que existía un problema fundamental y es que no existía una base de datos que recopilara qué medicamentos ya existen en dosis unitaria y por tanto no necesitan ser reenvasados. Saber qué alternativas más ecológicas están disponibles, disminuye la contaminación generada en los servicios de farmacia.
+Nació con el objetivo de reducir al máximo el reenvasado en los Servicios de Farmacia Hospitalaria.
+
+Área de análisis y control de medicamentos.
+
+Esta zona debe estar próxima al área de elaboración, pero al mismo tiempo que evite posibles errores y confusiones entre la misma y el área de elaboración.
+
+Entre el aparataje recomendado se encuentra:
+- Medidor pH
+- Medidor punto de fusión
+- Cromatografía de capa fina
+- Agitador/calefactor
+- Material fungible
+- Espectofotómetro
+
+
+- Reactivos de identificación y valoración
+El objetivo de esta zona es el de garantizar la calidad de las preparaciones que se realicen. Sus funciones son:
+- Analizar y controlar las materias primas que llegan al Servicio de Farmacia y que luego se usarán para preparar y elaborar formas magistrales y normalizadas.
+- Realizar controles de calidad de todo lo que se fabrique en la unidad de farmacotecnia, antes de su dispensación o almacenamiento.
+El control de calidad deberá fijarse a diferentes etapas del proceso y dentro de cada etapa en diferentes niveles del mismo:
+- Calidad de materias primas solicitadas y recibidas: centro suministrador, etiquetado, verificación del contenido, registro interno adecuado y almacenaje.
+- Elaboración: según las normas y procedimientos del Formulario Nacional, adecuación de la zona de trabajo en lo referente a material y medios precisos, normas de trabajo por el manipulador adecuadas a los procedimientos establecidos y normas de higiene de la zona y del operario dentro de la normativa establecida a tal efecto.
+- Producto final: análisis de las características organolépticas establecidas, así como los controles fijados en el Formulario Nacional que deben realizarse al producto acabado. Etiquetado correcto.
+- Dispensación: adecuación a la prescripción e información a pacientes óptimas en cantidad y calidad.
+- Almacenaje de preparados oficinales y fórmulas magistrales: cumplimiento del adecuado almacenaje de una muestra de cada uno de los lotes de preparados oficinales preparados o fórmulas magistrales en el último año. También debe vigilarse el almacenamiento exigido a cada preparación que se realice hasta su dispensación.
+- Registro: es importante un control de calidad que verifique el adecuado cumplimiento de las normas de trabajo en lo referente al registro de materias primas, material de acondicionamiento y fórmulas magistrales elaboradas.
+
+2.9.- FARMACOCINÉTICA.
+
+El área de Farmacocinética clínica presta servicio a las especialidades médicas monitorizando fármacos con estrecho margen terapéutico o que presentan amplia variabilidad intra e interindividual, cuyas concentraciones plasmáticas se correlacionan con la respuesta farmacológica.
+
+Los niveles plasmáticos de estos fármacos se determinan con dos objetivos principales:
+- Realizar un ajuste de dosis individualizado para cada paciente, de modo que se obtenga la máxima eficacia del tratamiento y se minimicen sus efectos adversos.
+- Ayudar a identificar posibles causas (incumplimiento, interacciones, errores de medicación) de una respuesta inesperada al tratamiento (ineficacia o toxicidad).
+
+Dentro de la actividad asistencial que se lleva a cabo, destacan:
+- Análisis farmacocinético y elaboración de informes con recomendaciones para la optimización de la terapia.
+
+
+- Valoración de la adherencia al tratamiento del paciente, análisis de interacciones farmacológicas en su tratamiento hospitalario /domiciliario.
+- Fármacos monitorizados: Digoxina, Gentamicina, Tobramicina, Amikacina, Vancomicina, Ciclosporina, Tacrolimus, Ácido Valproico, Fenitoína, Fenobarbital, Carbamazepina, Lamotrigina, Oxcarbamacepina. Otros: Teofilina, Litio.
+
+Dentro de esta zona situaremos dos áreas:
+- Un área de laboratorio o de preparación, para procesar y conservar las muestras y realizar el análisis de los niveles plasmáticos.
+- Un área de despacho: en ella el farmacéutico responsable de la unidad emitirá los informes oportunos, dotado de herramientas y acceso a fuentes bibliográficas para desarrollar su labor.
+
+3.- SISTEMAS DE DISTRIBUCIÓN INTRAHOSPITALARIA DE PRODUCTOS FARMACÉUTICOS Y PARAFARMACÉUTICOS: REPOSICIONES DE BOTIQUINES, SISTEMAS DE DISPENSACIÓN DE MEDICAMENTOS EN DOSIS UNITARIAS, SISTEMAS DE DISPENSACIÓN AUTOMATIZADA.
+Respecto a la distribución, la Ley de Garantías y Uso racional del medicamento define entre las funciones del Servicio de Farmacia, la de establecer un sistema eficaz y seguro de distribución de medicamentos.
+
+Los objetivos a perseguir a través del sistema de distribución de medicamentos ideal, son:
+- Racionalizar la distribución de medicamentos.
+- Garantizar el cumplimiento de la prescripción médica las 24 horas del día.
+- Procurar la correcta administración de los medicamentos al paciente.
+- Disminuir los errores de medicación.
+- Establecer un seguimiento de los tratamientos farmacológicos.
+- Potenciar el papel del farmacéutico en el equipo asistencial.
+- Promover la atención farmacéutica.
+- Reducir el tiempo de enfermería dedicado a tareas administrativas y de manipulación de medicamentos.
+- Evitar costes por deterioro y caducidad de los medicamentos.
+- Conocer el coste por proceso.
+Los sistemas de dispensación de medicamentos más conocidos e implantados actualmente en los hospitales son:
+* Sistema de dispensación por stock en unidad de enfermería.
+* Sistema de dispensación por reposición y paciente.
+* Sistema de dispensación de medicamentos en dosis unitaria (SDMDU).
+
+Cada uno de estos sistemas se ha ido desarrollando para perfeccionar el anterior. De ellos, el SDMDU es el único que permite conseguir los objetivos anteriormente expuestos y está
+
+
+reconocido como el más idóneo.
+
+3.1.- SISTEMA DE DISPENSACIÓN POR STOCK EN UNIDAD DE ENFERMERÍA.
+
+El sistema de dispensación por stock en unidad de enfermería, reposición de stock, o sistema "tradicional", consiste en establecer en la unidad clínica correspondiente depósitos de medicamentos controlados por el personal de enfermería, con cantidades pactadas de las especialidades farmacéuticas que cubren las necesidades habituales de los pacientes a los que atiende.
+
+Circuito de funcionamiento:
+
+
+Este sistema sólo se recomienda en unidades en las que no son operativos otros sistemas de dispensación como la dosis unitaria.
+
+
+
+Para su correcto funcionamiento, es necesario:
+
+
+Ventajas e inconvenientes
+
+a) Ventajas:
+- Baja inversión en recursos materiales para su implantación.
+- Poco tiempo de dedicación del personal del Servicio de Farmacia.
+- Sistema sencillo para atender la demanda de medicamentos.
+b) Inconvenientes:
+- Numerosas oportunidades de error relacionadas con la medicación: la enfermera debe interpretar y transcribir la orden médica, preparar la medicación para el paciente, sin la intervención ni la validación del farmacéutico de la utilización segura y eficiente de los medicamentos.
+- Mucho tiempo del personal de enfermería de planta dedicado a labores burocráticas, en detrimento del tiempo dedicado a la atención al paciente.
+- Elevado coste de medicamentos por altos inventarios en los stocks, lo que aumenta el riesgo de caducidad y deterioro por mala conservación.
+- Permite conocer únicamente el consumo de medicamentos por GFH o unidad de enfermería, pero no la asignación de costes por paciente.
+- Dificulta la integración del farmacéutico en el equipo asistencial, impidiendo el desarrollo de la atención farmacéutica.
+
+3.2.- SISTEMA DE DISPENSACIÓN POR REPOSICIÓN Y PACIENTE.
+
+El sistema de dispensación por reposición y paciente consiste en establecer en cada unidad clínica, depósitos controlados por el personal de enfermería que permitan la administración de medicamentos con anterioridad a la solicitud por paciente, con reposición diaria y petición individualizada al Servicio de Farmacia para cada uno de los pacientes.
+
+
+Circuito de funcionamiento
+
+Aunque estrictamente éste es el circuito para un sistema de reposición por paciente con intervención del farmacéutico posterior a la administración, en algunos hospitales se han desarrollado variantes del sistema, en los cuales la solicitud de la medicación al Servicio de Farmacia y la dispensación por parte de éste se realiza previamente a la administración al paciente. Esto permite reducir el stock de medicamentos disponible en la unidad, y facilita, al menos parcialmente, la intervención del farmacéutico previa a la administración de la medicación.
+Este sistema supone un avance respecto al de stock en la unidad de enfermería, siendo una alternativa para ciertas unidades de hospitalización y servicios especiales (UCI, Neonatología, etc.,), o de pacientes ambulatorios. También puede utilizarse como complemento al sistema de stock de planta, para la dispensación de fármacos que requieran un control especial por su indicación o elevado coste.
+Ventajas e inconvenientes
+a) Ventajas:
+- Baja inversión en recursos materiales para su implantación.
+- Menor acumulación de medicación en el botiquín que en el sistema de stock de planta.
+- Permitiría realizar la imputación de costes de forma individualizada, si se informatiza el perfil farmacoterapéutico.
+- Permite conocer el historial farmacoterapéutico de los pacientes, con mayor posibilidad de intervención del farmacéutico que en el sistema de stock de planta.
+b) Inconvenientes:
+- Sistema poco ágil que conduce en muchos casos a la acumulación de un stock importante de medicamentos en la unidad.
+- Numerosas oportunidades de error: la enfermera interpreta y transcribe la orden médica dos veces (hoja de enfermería y petición individualizada a farmacia), prepara la medicación del stock y la administra al paciente.
+- El farmacéutico sólo tiene la oportunidad de intervenir una vez que se ha iniciado el
+
+
+tratamiento.
+- El tiempo que el personal de enfermería dedica a labores burocráticas es mayor que en el sistema de dispensación por stock de planta, así como el tiempo del personal de farmacia para preparar la medicación.
+
+3.3.- SISTEMA DE DISPENSACIÓN DE MEDICAMENTOS EN DOSIS UNITARIAS (SDMDU).
+Concepto de Dosis Unitarias: es la dosis concreta que un paciente determinado recibe en el momento de la administración. Es importante distinguir esta idea de la del envase unitario, como es el caso de un envase con un comprimido o incluso el envase que contenga una jeringuilla.
+Principios de la dosis unitaria:
+- Los medicamentos deben ir identificados siempre hasta el momento de su administración, ya que los medicamentos sin etiquetar representan un peligro potencial para el paciente.
+- El Servicio de Farmacia tiene la responsabilidad de reenvasar y etiquetar todas las dosis de medicamentos que así lo precisen que se usen en el hospital, y esto deberá hacerse en el Servicio de Farmacia y bajo la supervisión del Farmacéutico.
+- Lo ideal es que se dispense en cada ocasión la medicación para un solo horario, pero en la práctica y debido a los circuitos de visita de los médicos a los pacientes, esta dispensación se realiza en la mayoría de los hospitales para 24 h., siempre teniendo en cuenta que esto puede generar errores y deben establecerse procedimientos que minimicen esta posibilidad.
+- El farmacéutico debe recibir la prescripción original y en su defecto una copia exacta de la misma. En la actualidad, el médico puede introducir directamente la prescripción en el ordenador (prescripción electrónica).
+- Los medicamentos no se deben dispensar hasta que el farmacéutico haya validado la prescripción médica (dispensación con intervención previa del farmacéutico). Este proceso de validación puede dar lugar a la intervención del farmacéutico en la mejora de la prescripción, adecuando la misma a las necesidades del paciente.
+- Tanto el personal de enfermería de planta como el de farmacia, debe recibir directamente la orden médica a partir de la cual las enfermeras preparan el plan de medicación a administrar y farmacia la dispensación a realizar. La enfermera al recibir la medicación enviada por farmacia, comprobará la concordancia con la suya propia. Si encuentra alguna discrepancia, será preciso aclararlo con el Servicio de Farmacia y/o el médico; de esta forma muchos errores se detectarán y se evitarán.
+Objetivos de la dosis unitaria:
+
+En este tipo de dispensación, la intervención del farmacéutico es previa a la dispensación.
+Dichas intervenciones se centran en:
+- Selección del medicamento a utilizar/sustitución terapéutica.
+
+
+- Validación de la prescripción. El farmacéutico se responsabiliza de revisar y comprobar duplicidades, dosis y duración del tratamiento inadecuadas a la situación del paciente, interacciones, vía y forma de administración, reacciones adversas, contraindicaciones, alergias, cumplimiento de protocolos, selección de pacientes, cumplimiento de las condiciones administrativas de uso (ensayos clínicos, usos especiales y extranjeros, estupefacientes).
+En la actualidad el SDMDU sigue siendo el único sistema diseñado que ha probado repetidamente una mayor seguridad en la dispensación de medicamentos.
+
+Circuito de funcionamiento del SDMDU
+Prescripción: el facultativo, cumplimenta la Prescripción médica (P.M), de forma manual o electrónica. Si es manual se suele utilizar un impreso con original y un número de copias entre 3 y 4.
+
+Registro y transcripción de la P.M. por enfermería en la Unidad de Hospitalización.
+
+Traslado al Servicio de Farmacia: el Servicio de Farmacia recibe una copia de la P.M. a través del personal auxiliar, tubo neumático o de la red informática si la prescripción es electrónica.
+
+Transcripción de la P.M. cuando ésta es en formato papel: en el Servicio de Farmacia se realiza la transcripción de la P.M. al sistema informático o a los "Impresos de Dispensación" en caso de no estar informatizado el SDMDU.
+
+
+Revisión de la transcripción y validación de la P.M.: la realizan los farmacéuticos, introduciéndolas observaciones sobre incompatibilidades, toxicidad, intercambios terapéuticos, sustituciones genéricas, etc., que consideren oportunas.
+
+
+Llenado de carros: en los sistemas informatizados, "el listado de carga de carros" facilita esta actividad.
+
+Comprobación de carros: la realiza otro técnico diferente al que preparó el carro.
+
+Transporte a las Unidades de Hospitalización: mediante los "carros nodriza" se realiza el transporte de medicamentos
+
+Intercambio de cassettes, bandejas o maletines: se realiza en cada Unidad de Hospitalización un intercambio de vacíos por llenos
+
+
+Traslado de nuevo al Servicio de Farmacia de los carros conteniendo los cassettes vacíos o con la medicación devuelta no administrada.
+
+
+Registro y control de la medicación devuelta: el registro lo realiza el personal auxiliar y el control, posteriormente, el farmacéutico.
+
+
+3.4.- BOTIQUINES.
+Tanto en el sistema de dispensación en dosis unitarias como en el de dispensación por reposición y paciente, es necesario establecer en la unidad de enfermería un stock de medicamentos adicional o botiquín, cuya función es cubrir ciertas necesidades, como primeras dosis de medicamentos de urgencias, medicamentos a demanda, antisépticos, sueros y soluciones de gran volumen, etc.
+
+Organización de botiquines
+Una vez definido el stock fijo de medicamentos que van a constituir el botiquín de planta y el lugar donde va a ubicarse, habrá que organizarlo físicamente, de manera que facilite su utilización segura y cómoda, así como el buen control y conservación de todas las especialidades que lo compongan:
+- Las especialidades farmacéuticas deberán separarse en base a la vía de administración y, a su vez, deberá seguirse dentro de cada una de ellas un orden alfabético de colocación.
+- Los medicamentos para administración oral, parenteral y rectal, deberán guardarse en cajetines, uno por especialidad, de un tamaño adecuado y etiquetado con el nombre del medicamento (utilizar preferentemente la denominación común internacional), forma farmacéutica y dosis.
+- Medicamentos fotosensibles: deberán ser protegidos adecuadamente de la luz.
+- Medicamentos termolábiles: deberán conservarse en frigorífico, cuyo correcto funcionamiento deberá verificarse periódicamente, siendo necesario para ello disponer en su interior de un termómetro de máxima mínima y hacer registro diario.
+- Los sueros se ordenarán por tipos y volumen, haciendo su reposición, al igual que en el resto del botiquín, siempre de manera que se utilicen antes los que más tiempo lleven en la unidad.
+- Carro de parada: deberá estar en un lugar de fácil acceso, los medicamentos en cajetines perfectamente etiquetados y ordenados alfabéticamente y con una relación de su contenido. Se deben realizar revisiones periódicamente, y cada vez que sea utilizado, para su reposición. Se recomienda disponer de un carro con un sistema de precinto, que habrá de romperse cada vez que se utilice, así como la existencia de una hoja de registro donde se indique la fecha de utilización, revisión o reposición, y la persona que la llevó a cabo.
+- Estupefacientes: deberán guardarse en caja de seguridad bajo llave, debiendo ser custodiados y controlados por la supervisora de la unidad de enfermería o en quien delegue el jefe de servicio de la unidad.
+
+Funcionamiento
+Periódicamente, la enfermera responsable de la unidad solicitará al Servicio de Farmacia la medicación suficiente para reponer el botiquín hasta el stock máximo pactado. Dicha petición podrá cursarla por escrito, o bien electrónicamente. Una vez recibida la petición en el Servicio de Farmacia, y previa validación por el farmacéutico, se llevará a cabo la preparación y dispensación del pedido, el cual deberá ser recepcionado en la unidad y colocado por la enfermera responsable en su correcta ubicación.
+
+Seguimiento y control de botiquines
+Es necesario establecer las responsabilidades tanto de la unidad de enfermería como del Servicio de Farmacia en el seguimiento y control del mismo, que inevitablemente habrán de ser
+
+
+compartidas:
+
+a) Personal de enfermería de la unidad clínica: la organización y responsabilidad recaerá en la supervisora de la unidad. Se encargará de:
+- Garantizar un uso adecuado de los medicamentos del botiquín.
+- La adecuada custodia, mantenimiento y conservación de los medicamentos.
+- Realizar revisiones periódicas, al menos una vez al mes, para retirar los medicamentos que pudieran estar caducados o próximos a caducar, mal identificados y/o medicamentos no pactados.
+- Garantizar la devolución de los medicamentos sobrantes al Servicio de Farmacia.
+
+Se recomienda que las responsabilidades que ha de asumir la supervisora de la unidad respecto al stock de medicamentos sean aprobadas por la Comisión de Farmacia y Terapéutica.
+
+b) Servicio de Farmacia:
+- Supervisar las solicitudes de reposición de los botiquines, garantizando que la dispensación es acorde con los medicamentos pactados (farmacéutico).
+- Aportar información relativa a la correcta conservación de los medicamentos: elaborar listados de las especialidades fotosensibles, medicamentos con corto periodo de caducidad, etc. Así como, aportar información relativa a la manipulación, preparación y administración de medicamentos (farmacéutico).
+- Seguimiento y control del botiquín mediante revisiones periódicas, mínimo una vez al año, con el fin de comprobar su correcto estado y funcionamiento.
+
+Debe disponerse de un modelo de informe, donde se relacionen todos los criterios estandarizados de revisión y monitorizados a través de un programa de control de calidad.
+
+Tras la revisión del botiquín, una copia del informe deberá ser entregada a la supervisora de la unidad y otra a la dirección de enfermería, quedando así constancia por escrito de los puntos revisados y las posibles deficiencias encontradas.
+
+
+
+
+3.5.- SISTEMAS AUTOMATIZADOS DE DISPENSACIÓN DE MEDICAMENTOS.
+Los sistemas automatizados de dispensación de medicamentos, de acuerdo a su ubicación y prestaciones, pueden ser:
+
+a) Centralizados: sistemas de almacenamiento automáticos (carruseles) ubicados en los propios Servicios de Farmacia hospitalaria (SFH):
+- de almacenamiento vertical: carruseles con bandejas provistas de cajetines donde se almacenan los medicamentos y con movimiento rotativo vertical, utilizados preferentemente para la preparación de la medicación para dispensarse a través del SDMDU (p. ej. comprimido) y también en algunos casos para dispensación por stock.
+- de almacenamiento horizontal: carruseles provistos de un sistema de columnas con bandejas que tienen un movimiento rotativo horizontal. Se basan en el concepto de
+
+
+almacenamiento dinámico, de forma que el medicamento se acerca al usuario y evita desplazamientos innecesarios. Se utilizan mayoritariamente para el almacenamiento y/o preparación de stocks.
+
+Están diseñados para optimizar el espacio de almacenamiento de medicamentos en los SFH, facilitar las actividades de dispensación realizadas por el personal del SFH y disminuir los errores de medicación de los procesos logísticos. Los carruseles suelen estar conectados al sistema informático de farmacia.
+En los sistemas de reposición por stock, estos equipos facilitan la preparación de las unidades a reponer en los distintos almacenes, botiquines de planta o incluso los propios SAD. Y en los SDMDU, facilitan la preparación de la medicación necesaria para cada uno de los pacientes, una vez la prescripción médica ha sido validada por el farmacéutico.
+b) Descentralizados, sistemas Automatizados de Dispensación (SAD), gestionados desde los SFH, instalados en las zonas de atención al paciente (unidades de hospitalización, unidad de cuidados intensivos (UCI), quirófanos y urgencias) y que facilitan al personal médico y de enfermería la disponibilidad de medicamentos cuando requieran su uso.
+Los sistemas automatizados de dispensación (SAD) son armarios o dispositivos informatizados, destinados a almacenar y dispensar los medicamentos desde un lugar próximo al paciente, de forma que en todo momento se controla y registra su utilización.
+A su vez, pueden funcionar, de acuerdo a su configuración, como: sistemas automáticos de dispensación individualizada con o sin validación previa por el farmacéutico y sistemas de botiquines automatizados.
+
+Los sistemas automatizados de dispensación descentralizados (SAD), se pueden definir como un conjunto de armarios controlados electrónicamente, gestionados por un software e interconectados con las aplicaciones informáticas de los Servicios de Admisión y Farmacia, como mínimo. Los armarios situados en las unidades clínicas contienen la medicación lista para su uso, en cajetines con distintos niveles de control y acceso. El armario, unidad principal, dispone de un teclado y pantalla táctil para la realización de todas las funciones: identificación del usuario (enfermera, farmacéutico, médico), selección del paciente, retirada de medicación, reposición de la misma, etc. Estos armarios, situados en las unidades clínicas, están conectados a una consola central, ubicada en el Servicio de Farmacia, a través de la cual se gestionan todas las unidades periféricas.
+
+Descripción de los sistemas automatizados de dispensación (SAD)
+
+Un SAD consta de tres elementos básicos:
+
+1. Armario para el almacenamiento y dispensación de los medicamentos:
+El armario principal de la unidad de enfermería está provisto de un ordenador para el registro de los movimientos realizados con los medicamentos. Tanto el armario principal como los adicionales están divididos en una serie de cajones que pueden tener distintas configuraciones en función del nivel de control que se quiera establecer:
+- Cajones divididos en contenedores o cajetines abiertos (tipo matriz). El sistema da acceso a todos los medicamentos contenidos en el cajón.
+
+
+- Cajones divididos en contenedores o cajetines cerrados y de apertura controlada. El sistema da acceso a un solo cajetín, pero a todo su contenido.
+- Minicajones de apertura progresiva a medida que se retiran dosis. El sistema da acceso únicamente a las dosis a administrar de un medicamento. Algunos sistemas disponen de luces guía para indicar la ubicación del cajetín que contiene el medicamento a retirar.
+
+El número de armarios en una unidad de enfermería y su configuración vienen determinados fundamentalmente por el tipo de unidad donde se implanta el SAD (médica, quirúrgica, de cuidados intensivos, de urgencias, etc.), el número de pacientes atendidos, el sistema de dispensación y distribución de medicamentos que pretende reemplazar o complementar, la periodicidad de reposición de stock de los medicamentos y el nivel de control de acceso a los medicamentos (a mayor control, menor capacidad en número de especialidades y cantidad de las mismas).
+
+2. Sistema informático de gestión de los armarios
+El programa informático de gestión de los armarios tiene dos usuarios fundamentalmente:
+- La unidad de enfermería en el ordenador del armario principal donde se registran los movimientos de medicamentos realizados por paciente.
+- El Servicio de Farmacia en la consola central de control de todos los armarios de las unidades de enfermería donde se ha instaurado el sistema. En éste, se realiza la configuración del sistema y se obtienen los informes de utilización de medicamentos y los listados para reposición y control de los stocks de cada uno de los armarios.
+- El programa dispone de dos opciones:
+- Con intervención del farmacéutico previa a la dispensación. La enfermera sólo puede acceder a los medicamentos prescritos por el médico y validados por farmacia para cada paciente.
+- Con intervención del farmacéutico posterior a la dispensación. La enfermera puede acceder a todos los medicamentos contenidos en el armario.
+
+3. Sistema de interconexión con el resto de sistemas de información del hospital Las dos conexiones básicas para un buen funcionamiento del SAD son:
+- Con el censo actualizado de pacientes de la unidad de admisión del hospital. Permite la asignación de consumos de medicamentos a un paciente.
+- Con el programa de gestión de stock del Servicio de Farmacia. Permite un control rápido y eficaz del inventario de los medicamentos. Si el SAD va a funcionar como sistema de dispensación en dosis unitaria, también es imprescindible la conexión con el programa de dispensación en dosis unitaria del Servicio de Farmacia, o bien, con la historia clínica informatizada, si se dispone de esta aplicación.
+
+Actualmente en España, están disponibles tres tipos de SAD que tienen los elementos básicos mencionados anteriormente, con particularidades específicas:
+
+- Medstation(r) RX System, de Pyxis Corporation (distribuidor: Grifols International, S.A.)
+
+
+
+	
+
+- Sistemas Omnicell(r), de Omnicell Technologies (distribuidor: Palex Medical, S.A.).
+
+
+-	Sistema Autodrugs(r), de KRZ (distribuidor: KRZ, S.L).
+
+
+
+
+Objetivos de la automatización
+Objetivo final: mejorar la atención del paciente y racionalizar la utilización de los recursos. Los objetivos específicos para conseguir el objetivo final, son:
+- Minimizar el riesgo de errores de medicación y que éstos puedan ser identificados,
+documentados y subsanados.
+- Facilitar al farmacéutico las tareas de dispensación/distribución de medicamentos y potenciar la atención farmacéutica.
+- Facilitar la disponibilidad de la medicación para cubrir las necesidades terapéuticas del paciente a través de un acceso seguro, rápido y controlado a los medicamentos.
+- Garantizar la distribución continuada de medicamentos en las unidades de hospitalización.
+- Conocer el inventario de medicamentos inmovilizados, mejorar las condiciones de conservación y almacenaje de medicamentos en las unidades clínicas.
+- Integración del farmacéutico en el equipo asistencial e involucrar a médicos y enfermeras para que el proceso de utilización de medicamentos sea seguro, correcto y eficiente.
+- Mejorar la gestión de la información sobre utilización de recursos y costes.
+- Satisfacer al paciente con el tipo y calidad de la asistencia.
+
+Circuito y funcionamiento
+Una vez efectuada la prescripción médica, podemos tener dos circuitos de funcionamiento, en función de la configuración del SAD:
+a) Con validación previa de la orden médica por parte del farmacéutico:
+
+
+Para cubrir la necesidad de una primera dosis (inicio o cambio de tratamiento), una urgencia o un "si precisa", se ha de configurar el sistema de manera que pueda accederse a determinados contenedores sin validación previa por parte de farmacia.
+
+
+
+b) Sin validación previa de la orden médica por parte del farmacéutico:
+A diferencia del anterior, al seleccionar el paciente, aparecen en pantalla todos los medicamentos contenidos en el armario. La enfermera selecciona el medicamento a administrar y el armario abre el cajón y/o cajetín que contiene ese medicamento, indicando en pantalla la ubicación y/o con luces guía en el cajetín correspondiente. La enfermera introduce en el ordenador el número de unidades retiradas. Al igual que en el caso anterior, se envían electrónicamente los movimientos registrados por paciente a la consola central de farmacia.
+
+En ambos circuitos de funcionamiento y de acuerdo a la periodicidad establecida para la reposición, el Servicio de Farmacia extrae los listados de medicamentos que han alcanzado un nivel crítico (stock mínimo) y el número de unidades a reponer en los armarios.
+
+Ventajas e inconvenientes
+
+a) SAD frente a sistema de dispensación por stock y botiquín tradicionales
+
+Ventajas
+- Se dispone de datos sobre la utilización real de los medicamentos en la unidad y del perfil farmacoterapéutico de los pacientes. A partir de éstos es posible realizar estudios de utilización de medicamentos e intervenciones farmacéuticas, como adaptación de las prescripciones a la guía farmacoterapéutica del hospital, supervisar los tratamientos prescritos y realizar recomendaciones en cuanto a dosis, vía de administración, frecuencia y duración, evitar duplicidad de fármacos, evitar interacciones clínicamente significativas, detectar reacciones adversas, analizar y mejorar el cumplimiento de protocolos de tratamiento y de las políticas de medicamentos del hospital, etc..
+- Permite asignar costes por paciente.
+- -Facilita la identificación de pacientes con problemas relacionados con la medicación como herramienta básica para la provisión de atención farmacéutica.
+- Se reduce el número de errores asociados a la medicación.
+- Disminuye el inventario inmovilizado en la unidad de enfermería.
+- Se reduce el tiempo del personal de enfermería de la unidad empleado en la gestión y mantenimiento del botiquín de medicamentos.
+- Mejora la conservación de los medicamentos en el botiquín, ocupa menos espacio, más orden, mejor identificación de los medicamentos y un mejor control de las caducidades.
+- Permite la reducción de costes de medicamentos, por las intervenciones farmacéuticas y/o por menores pérdidas de medicamentos.
+- Mejora la calidad de la asistencia sanitaria del paciente.
+
+Inconvenientes
+- Aumenta el tiempo requerido por farmacia para la gestión y reposición de medicamentos en la unidad de enfermería y crea mayor dependencia del Servicio de Farmacia.
+- Depende de un suministro eléctrico y pueden haber averías electrónicas. Es fundamental disponer de un servicio de mantenimiento y de un sistema alternativo de dispensación de medicamentos ante eventuales problemas.
+
+
+- No están exentos de errores. Según la configuración del cajón, es posible tener acceso a más de un medicamento, se recomienda que en los cajones tipo matriz se coloquen los medicamentos con apariencia o nombre similar alejados. La fuente de errores también puede ser originada por la reposición de los armarios: ubicación incorrecta de los medicamentos, carga excesiva con posible caída de un medicamento en el contenedor adyacente.
+- Requiere gran coordinación en el equipo y es imprescindible disponer de programas de formación continuada del personal que accede al sistema para un buen funcionamiento y aceptación.
+- Alta inversión económica en los Servicios de Farmacia, informática y unidad clínica para la adquisición de los SAD.
+
+b) SAD frente a sistema de dispensación en dosis unitaria
+Ventajas
+- Permite una mejor redistribución de los tiempos del personal del Servicio de Farmacia. Se sustituyen las actividades de llenado, validación y recambio de carros de medicación por la actividad de reposición de medicamentos en los armarios de las unidades de enfermería y, ésta se puede programar. Rentabiliza los tiempos de auxiliares o técnicos de farmacia y celadores.
+-  Aumenta el margen de tiempo para revisar las órdenes médicas, disminuye el número de reclamaciones y de devoluciones de medicamentos y no hay que revisar carros de medicación, lo que permite al farmacéutico disponer de más tiempo para actividades clínicas.
+- Disminuye el número de dosis de medicamentos perdidos fundamentalmente por préstamos a otros pacientes y, por consiguiente, disminuye también el número de reclamaciones de dosis sin justificar.
+- Se reduce el tiempo del personal de enfermería de la unidad empleado en la gestión y mantenimiento del botiquín de medicamentos, y en reclamaciones de medicamentos.
+- Disminuye el número de retrasos en la administración de las primeras dosis, ya que, los medicamentos están disponibles en la unidad de hospitalización en todo momento.
+- Permite la visualización en pantalla de recomendaciones para la administración cuando la enfermera retira el medicamento, mejorando la atención sanitaria del paciente.
+- Aumenta la asignación de costes por paciente disminuyendo los costes asignados por unidad de enfermería.
+Inconvenientes
+- Disminuye la calidad del proceso de traslado del medicamento desde el control de enfermería a la habitación del paciente. En el sistema de dosis unitaria, se utiliza el carro con los medicamentos colocados en los cajetines de los pacientes y, con el SAD, se corre el riesgo de utilizar una bandeja, o inclusive las manos, con todos los medicamentos juntos de varios pacientes, lo que pudiera dar lugar a posibles errores de medicación.
+- No están exentos de errores. Según la configuración del cajón, es posible tener acceso a más de un medicamento, recomendándose que en los cajones tipo matriz se coloquen alejados los medicamentos con apariencia o nombre similar. La fuente de errores también puede ser originada en la reposición de los armarios: ubicación incorrecta de los medicamentos, carga excesiva con posible caída de un medicamento en el contenedor
+
+
+adyacente.
+- Es imprescindible disponer de programas de formación continuada del personal que incide en el sistema para un buen funcionamiento y aceptación.
+- Alta inversión económica en los Servicios de Farmacia, informática y unidad clínica para la adquisición de los SAD.
+
+No está totalmente claro si el SAD disminuye el número de errores de medicación respecto al sistema de dispensación en dosis unitaria (SDMDU).
+
+Como resumen final, los SAD son una herramienta útil en el proceso de utilización de medicamentos. Garantizan la disponibilidad de medicamentos las 24 horas en las unidades clínicas y mejoran la información para la utilización de los mismos. El SDMDU y los SAD facilitan la intervención farmacéutica presentando ventajas frente al sistema de dispensación por stock en unidad de enfermería y los botiquines tradicionales, en cuanto a la disminución del número de errores de medicación, dado que la mayor parte de éstos se producen en el momento de la prescripción y administración de los medicamentos.
+
+ISMP RECOMENDACIONES PARA EL USO SEGURO DE LOS SISTEMAS AUTOMATIZADOS DE DISPENSACIÓN DE MEDICAMENTOS
+
+Los SAD no pueden por sí solos mejorar la seguridad. Se han descrito numerosos errores de medicación asociados a la utilización de los SAD, que han llevado principalmente a la administración de un medicamento erróneo o de una dosis incorrecta.
+A través del análisis de estos incidentes se han podido conocer los puntos críticos de mayor riesgo de estos sistemas, los tipos de errores más frecuentes y las causas de los mismos. Así, se conoce que muchos de los errores se producen al reponer el SAD, al retirar la medicación y, también, cuando no se valida la prescripción médica por un farmacéutico. En consecuencia, es necesario planificar detenidamente la utilización de los SAD e implementar prácticas seguras en los procedimientos críticos que minimicen el riesgo de que se produzcan errores.
+
+
+
+
+4.- ÓRDENES HOSPITALARIAS DE DISPENSACIÓN.
+El Real Decreto 1718/2010, de 17 de diciembre, sobre receta médica y órdenes de dispensación, recoge que la receta médica y las órdenes de dispensación como documentos normalizados, suponen un medio fundamental para la transmisión de información entre los profesionales sanitarios y una garantía para el paciente, que posibilita un correcto cumplimiento terapéutico y la obtención de la eficiencia máxima del tratamiento, ello sin perjuicio de su papel como soporte para la gestión y facturación de la prestación farmacéutica que reciben los usuarios del Sistema Nacional de Salud.
+
+Definición: Orden de dispensación hospitalaria: la orden de dispensación hospitalaria para pacientes no ingresados es el documento de carácter sanitario, normalizado y obligatorio para la prescripción por los médicos, odontólogos y podólogos de los servicios hospitalarios, de los medicamentos que exijan una particular vigilancia, supervisión y control, que deban ser dispensados por los servicios de farmacia hospitalaria a dichos pacientes.
+
+
+Una orden de dispensación se utiliza para poder dispensar desde el Servicio de Farmacia aquellos medicamentos autorizados para su dispensación hospitalaria por el Ministerio de Sanidad y Consumo. Asimismo, podrá utilizarse para dispensar las unidades de medicación necesaria para un máximo de tres días de tratamiento, en los supuestos de urgencia que requieran particular vigilancia, supervisión y control. Debe contener todos los datos necesarios sobre la filiación del paciente, médico prescriptor y medicamento.
+
+Las órdenes de dispensación hospitalaria, extendidas en los hospitales públicos y privados, pueden emitirse en soporte papel, para cumplimentación manual o informatizada, y en soporte electrónico.
+
+El plazo de validez, los criterios de prescripción y dispensación establecidos en el "RD 1718 sobre receta médica y orden de dispensación" sobre receta médica se aplicarán a las órdenes de dispensación hospitalaria con las particularidades y características de la prestación farmacéutica en este ámbito asistencial.
+
+En cada orden de dispensación hospitalaria se podrán prescribir uno o varios medicamentos y uno o varios envases de los mismos.
+
+La dispensación de medicamentos se hará de acuerdo con el protocolo específico de cada tipo de tratamiento. El servicio de farmacia establecerá los mecanismos de comunicación más adecuados con los servicios médicos que permitan la atención integrada y corresponsable al paciente, comunicando al especialista prescriptor las incidencias que detecte en el seguimiento del tratamiento del paciente, con especial atención al cumplimiento y a la aparición de acontecimientos adversos.
+
+La orden hospitalaria de dispensación será dispensada por el Servicio de Farmacia del hospital en la que ha sido prescrita. En los regímenes especiales de Asistencia Sanitaria pública (MUFACE, ISFAS, etc.) y en el sistema Nacional de Salud para los pacientes derivados a Hospitales de Referencia, se podrán establecer mecanismos que permitan dispensar la orden hospitalaria en los Servicios de Farmacia que las administraciones competentes determinen.
+Los medicamentos y productos sanitarios no incluidos en la financiación solo podrán ser adquiridos y utilizados por los hospitales del Sistema Nacional de Salud previo acuerdo de la comisión responsable de los protocolos ter apéuticos u órgano colegiado equivalente en cada comunidad autónoma.
+
+Para poder tomar las decisiones a que se refiere el párrafo anterior, las comisiones responsables deberán haberse constituido de acuerdo a la normativa aplicable en la comunidad autónoma, dispondrán de un manual de procedimiento que garantice la calidad de sus decisiones e informarán de su constitución y decisiones al órgano competente dentro de la consejería responsable de la comunidad autónoma.
+
+El farmacéutico debe validar la prescripción antes de su dispensación, y debe solicitar el "recibí" del paciente. Además, deberá aportar por escrito toda la información adicional al paciente.
+
+
+Una vez dispensadas, los servicios de farmacia hospitalarios conservarán las órdenes de dispensación hospitalaria, al menos durante seis meses, de acuerdo con los criterios y plazos establecidos en la Ley 41/2002, de 14 de noviembre, básica reguladora de la autonomía del paciente y de derechos y obligaciones en materia de información y documentación clínica.
+
+Con respecto a MEDICAMENTOS ESTUPEFACIENTES, el Real Decreto 1675/2012, de 14 de diciembre, regula las recetas oficiales y los requisitos especiales de prescripción y dispensación de estupefacientes para uso humano y veterinario.
+
+En este RD se definen:
+- Receta oficial de estupefacientes: documento, de carácter sanitario, normalizado y obligatorio, mediante el cual los médicos, odontólogos y veterinarios, legalmente facultados para ello, y en el ámbito de sus competencias respectivas, prescriben medicamentos para uso humano y veterinario que contienen sustancias estupefacientes incluidas en la Lista I de la Convención Única de 1961 sobre Estupefacientes.
+- Orden de dispensación intrahospitalaria de estupefacientes: documento, de carácter sanitario y obligatorio, mediante el cual los médicos y odontólogos de los servicios hospitalarios solicitan, a los servicios de farmacia hospitalaria, y para los pacientes ingresados, medicamentos que contienen sustancias estupefacientes incluidas en la Lista I de la Convención Única de 1961 sobre Estupefacientes.
+- Vale de estupefacientes: documento de carácter sanitario, normalizado y obligatorio mediante el cual las oficinas y servicios de farmacia, almacenes de distribución y laboratorios farmacéuticos adquieren las sustancias y medicamentos estupefacientes precisos para el desempeño de la actividad que tienen autorizada.
+
+La receta oficial de estupefacientes, las órdenes de dispensación intrahospitalaria de estupefacientes y los vales de estupefacientes, pueden emitirse en soporte papel, para cumplimentación manual o informatizada, o bien en soporte electrónico.
+Las órdenes de dispensación intrahospitalaria de estupefacientes deberán contener, al menos, los siguientes datos:
+a) El nombre y dos apellidos del facultativo responsable.
+b) El número de colegiado o código de identificación asignado por las Administraciones competentes del Sistema Nacional de Salud.
+c) Los medicamentos estupefacientes que se solicitan.
+d) Los datos adicionales que sean necesarios para las correspondientes actuaciones de control.
+
+Todas las recetas oficiales de estupefacientes deberán incluir la denominación "Receta Oficial de Estupefacientes", con la excepción de aquellas que se emitan en formato electrónico.
+
+Las recetas oficiales de estupefacientes en soporte papel para cumplimentación manual deberán cumplir los siguientes requisitos:
+a) Tener un sistema de numeración que permita una identificación única.
+b) Presentarse en talonarios numerados, con 50 recetas igualmente numeradas, cada una de las cuales irá acompañada de una hoja de información al paciente, en la que se escogerá la información del tratamiento necesaria para facilitar el uso adecuado del medicamento
+
+
+estupefaciente; en ambos documentos figurará la misma numeración. Cada talonario deberá incluir además un justificante de recepción del mismo.
+c) La hoja de información al paciente deberá estar diferenciada de la receta propiamente dicha, pudiendo ser separable de la misma mediante copia o trepado.
+d) Estas recetas deberán llevar el sello u otro sistema de identificación inequívoco de la institución a través de la cual se haya distribuido el talonario, ya sea la Administración sanitaria o el colegio oficial correspondiente.
+
+Realizada la prescripción, el facultativo firmará y fechará la receta oficial de estupefacientes y la hoja de información al paciente.
+
+Condiciones de prescripción:
+* En cada receta de estupefacientes se podrá prescribir un solo medicamento.
+* La prescripción formulada en una receta oficial de estupefacientes podrá amparar como máximo la medicación precisa para tres meses de tratamiento y sin superar un total de cuatro envases.
+* Solo podrán prescribirse medicamentos totalmente dispuestos para su inmediata administración al paciente.
+* El prescriptor entregará al paciente la receta adjunta a la hoja de información. El paciente, en ningún caso, estará obligado a mostrar la hoja de información al farmacéutico.
+
+Realizada la dispensación, el farmacéutico consignará en la receta la identificación de la oficina de farmacia, la fecha de dispensación y su firma.
+La receta dispensada quedará en su poder e invalidada para una nueva dispensación.
+El farmacéutico registrará en el libro de contabilidad de estupefacientes la dispensación efectuada.
+
+Además, los servicios de farmacia podrán dispensar, a los pacientes no ingresados, medicamentos estupefacientes que requieran una particular vigilancia, supervisión y control, de acuerdo con lo establecido en la Ley 29/2006, de 26 de julio. La prescripción de estos medicamentos se realizará en las correspondientes órdenes de dispensación hospitalaria de estupefacientes, convenientemente identificadas.
+
+Las órdenes de dispensación hospitalaria en base a las cuales los servicios de farmacia hospitalaria dispensen medicamentos estupefacientes y las órdenes de dispensación intrahospitalaria de estupefacientes, quedarán en poder de los mismos, y a disposición de la autoridad sanitaria correspondiente, durante un periodo de cinco años, sin perjuicio de las instrucciones que cada comunidad autónoma pueda dictar al respecto, en el ámbito de sus competencias.
+
+
+5.- DISPENSACIÓN DE PRODUCTOS FARMACÉUTICOS Y PARAFARMACÉUTICOS A PACIENTES AMBULATORIOS: NORMATIVA LEGAL.
+A partir de la normativa Prosereme V (circular 12/91, de 17 de abril, de la Dirección General de Farmacia y Productos Sanitarios), los Servicios de Farmacia hospitalarios pasan a tener que dispensar en régimen ambulatorio los denominados medicamentos de Uso Hospitalario, es decir, medicamentos que sólo pueden ser prescritos por especialistas adscritos al centro hospitalario y dispensados exclusivamente por los Servicios de Farmacia hospitalarios.
+
+Posteriormente, la normativa se ve aumentada con una serie de patologías, para las que la administración indica que toda la medicación que les sea prescrita como consecuencia de su enfermedad le tendrá que ser dispensada por los Servicios Farmacéuticos hospitalarios. En un principio, una normativa que se creía afectaba a pocas especialidades farmacéuticas y pocos pacientes ha visto cómo, hoy día, la lista de pacientes y de medicamentos atendidos en este apartado son numerosos (pacientes afectos de VIH +, fibrosis quística, hemofílicos, hepatitis C, esclerosis múltiple, esclerosis lateral amiotrófica, asma alérgica grave, usos especiales).
+
+5.1.- NORMATIVA LEGAL QUE REGULA LA DISPENSACIÓN DE MEDICAMENTOS A PACIENTES AMBULATORIOS.
+La dispensación debe ser realizada siempre por un farmacéutico o bajo su supervisión personal y directa. En todo momento tiene que existir en el Servicio de Farmacia un farmacéutico responsable.
+
+a) Medicamentos de uso hospitalario/Medicamentos con reservas singulares establecidas en el ámbito del SNS consistentes en limitar la dispensación a los pacientes no hospitalizados en los Servicios de Farmacia de los Hospitales:
+* RD Legislativo 1/2015 de 24 de julio, por el que se aprueba el texto refundido de la Ley de garantías y uso racional de los medicamentos y productos sanitarios.
+* RD-Ley 1345/2007 de 11 de octubre por el que se regula el procedimiento de autorización, registro y condiciones de dispensación de los medicamentos de uso humano fabricados industrialmente.
+* RD 618/2007 de 11 de mayo por el que se regula el procedimiento para el establecimiento, mediante visado, de reservas singulares a las condiciones de prescripción y dispensación de los medicamentos.
+* RD-Ley 9/2011 de 19 de agosto, de medidas para la mejora de la calidad y cohesión del SNS de contribución a la consolidación fiscal, y de elevación del importe máximo de los avales del Estado para 2011.
+* RD-Ley 16/2012 de 20 de abril, de medidas urgentes para garantizar la sostenibilidad del SNS y mejorar la calidad y seguridad de sus prestaciones.
+* Ley 10/2013, de 24 de julio, por la que se incorporan al ordenamiento jurídico español las Directivas 2010/84/UE del Parlamento Europeo y del Consejo, de 15 de diciembre de 2010, sobre farmacovigilancia, y 2011/62/UE del Parlamento Europeo y del Consejo, de 8 de junio de 2011, sobre prevención de la entrada de medicamentos falsificados en la cadena de suministro
+
+
+legal, y se modifica la Ley 29/2006, de 26 de julio, de garantías y uso racional de los medicamentos y productos sanitarios.
+* Real Decreto-ley 28/2012, de 30 de noviembre, de medidas de consolidación y garantía del sistema de la Seguridad Social.
+* Circular 8/91 da Dirección Xeneral do Servicio Galego de Saúde para a "Regulación da prescrición e dispensa de medicamentos de uso Hospitalario a pacientes non ingresados".
+* Real Decreto 1675/2012, de 14 de diciembre, por el que se regulan las recetas oficiales y los requisitos especiales de prescripción y dispensación de estupefacientes para uso humano y veterinario (APLICA A ESTUPEFACIENTES DE USO HOSPITALARIO).
+
+b) Medicamentos con indicaciones distintas a las autorizadas en ficha técnica/ Medicamentos de uso compasivo/ Medicamentos extranjeros.
+* Real Decreto 1015/2009, de 19 de junio, por el que se regula la disponibilidad de medicamentos en situaciones especiales.
+* Acordo relativo a regulación no Servizo Galego de Saúde do procedemento de valiación das solicitudes de medicamentos en situacións especiais e constitución das subcomisións avaliadoras3 Novembro 2104.
+c) Nutrición enteral domiciliaria
+* ORDEN SCO/3858/2006, de 5 de diciembre, por la que se regulan determinados aspectos relacionados con la prestación de productos dietéticos del Sistema Nacional de Salud.
+* Real Decreto 1030/2006, de 15 de septiembre, por el que se establece la cartera de servicios comunes del Sistema Nacional de Salud y el procedimiento para su actualización.
+* Instrución 2/2007 de productos dietéticos no Servicio Galego de Saúde.
+* Real Decreto 1205/2010, de 24 de septiembre, por el que se fijan las bases para la inclusión de los alimentos dietéticos para usos médicos especiales en la prestación con productos dietéticos del Sistema Nacional de Salud y para el establecimiento de sus importes máximos de financiación.
+
+d) Medicamentos incluidos dentro de programas especiales del SERGAS/ADMINISTRACIÓN CENTRAL
+* Circular 2/2001 da División de Farmacia e Produtos Sanitarios do SERGAS sobre dispensa de medicamentos para intervencións diagnósticas.
+* Circular 1/2001 da División de Farmacia e Productos Sanitarios do SERGAS sobre Finalización de tratamentos farmacoterapéuticos ó alta hospitalaria.
+* Circular 8/91, de 23 de abril de 1991, del Insalud. Dispensación de medicamentos en enfermos hemofílicos VIH positivos y afectados de fibrosis quística por los servicios de farmacia hospitalarios.
+* Circular 1/2004 Dispensa de recursos farmacoterapeúticos en enfermos afectados de epidermólise bulbosa en réxime ambulatorio polos servizos de Farmacia dos Centros Hospitalarios do SERGAS.
+* Asistencia integral domiciliaria a nenos dependentes de tecnoloxía. Dirección Xeral da División de Asistencia Sanitaria. 2001
+* Circular 1/2002 sobre tratamientos farmacoterapéuticos para pacientes incluidos en programas de reproducción humana asistida.
+
+
+* Instrución 17/2012 do 09/11/2012 para facilitar o acceso o diagnóstico e tratamento daquelas persoas que poidan padecer unha infección ou enfermidade infecciosa que estea suxeita a vixilancia epidemiolóxica, control e ou eliminación a nivel da comunidade, estatal ou internacional, e non teñan recoñecida polo INSS, ou no seu caso polo ISM a condición de asegurados ou beneficiarios e que non reciben a asistencia por outras vías legalmente establecidas.
+* Instrución 10/2012 do 31/08/2012 de "prestación de asistencia sanitaria en Galicia ás persoas que non teñen a condición de asegurado ou de beneficiario do mesmo recoñecido polo Instituto Nacional da Seguridade Social, ou, no seu caso, polo Instituto Social da Mariña".
+* Instrucion 11/2012 instrucións para facilitar o acceso ao diagnóstico e tratamento da enfermidade e infección tuberculosa nas unidades de prevención e control da tuberculose dos pacientes que non teñen recoñecida polo Instituto Nacional da Seguridade Social (INSS), ou no seu caso, polo Instituto Social da Mariña (ISM) a condición de asegurados ou beneficiarios dos mesmos.
+* Circular 5/2004 sobre regulación de tratamientos farmacoterapéuticos para pacientes con leucemia mieloide crónica.
+
+e) Varios
+* Real Decreto-Ley 1718/2010, de 17 de diciembre, sobre receta médica y órdenes de dispensación.
+* Instrucción 007/2013 do 26 de xullo de 2013 pola que se establecen os criterios de derivación de pacientes entre Estructuras Organizativas de Xestión Integrada do Servicio Galego de Saúde.
+* ORDEN SCO/2874/2007, de 28 de septiembre, por la que se establecen los medicamentos que constituyen excepción a la posible sustitución por el farmacéutico.
+* Instrucción 4/2010. Inclusión de medicamentos de alto impacto sanitario, social e económico nas guías farmacoterapéuticas das institucións sanitarias do Servizo Galego de Saúde
+* Regulación no Servizo Galego de Saúde do procedemento de avaliación das solicitudes de medicamentos en situacións especiais e constitución das subcomisións avaliadoras. Noviembre 2014.
+* Estrategia terapéutica para la hepatitis crónica causada por el virus de la hepatitis C en el Sistema Nacional de Salud. Recomendaciones generales y pautas actuales de tratamiento. Plan estratégico para el abordaje de la hepatitis C, aprobado en el Pleno del Consejo Interterritorial del SNS el 26 de marzo de 2015.
+
+5.2.- TIPOS DE MEDICAMENTOS DISPENSADOS.
+Actualmente, podemos clasificar en dos, los tipos de pacientes a los que se les dispensa medicación desde los Servicios de Farmacia Hospitalarios:
+1. Pacientes ingresados: su tratamiento puede incluir fármacos de uso habitual y/o medicamentos restringidos al ámbito hospitalario o sometido a condiciones especiales de dispensación.
+2. Pacientes no ingresados = pacientes ambulatorios: éstos, a su vez, en función de donde se administren la medicación pueden ser:
+
+
+2.1 Pacientes ambulantes: acuden al hospital a que se les administre medicación específica. Sólo permanecen en el hospital el tiempo necesario para la administración del fármaco y un período posterior de observación si es necesarios, que no suele ir más allá de unas horas.
+2.2. Pacientes externos: acuden al servicio de farmacia hospitalaria donde se dispensan fármacos que no están disponibles en las oficinas de farmacia comunitarias. Estos pacientes no requieren la intervención del personal sanitario y ellos mismos de administran la mediación en su domicilio.
+Dentro de la medicación que se puede dispensar a pacientes no ingresados (ambulantes y/o externos), tenemos:
+a) Medicamentos de uso hospitalario:
+Son aquellos que por sus peculiaridades farmacológicas, su novedad o interés para la salud pública, quedan reservados a tratamientos que se prestan en el medio hospitalario.
+Deben ser prescritos por un médico especialista y dispensados por los Servicios de Farmacia Hospitalaria. Llevan la sigla H colocada junto al CN.
+Ej.: tratamientos para:
+- VIH/SIDA: tenofovir, efavirenz, emtricitabina, abacavir, etc
+- Esclerosis múltiple: glatirámeto, interferón beta 1b, natalizumab, etc
+- Esclerosis lateral amiotrófica: riluzol
+- Enfermedad renal crónica: Darbepoetina alfa
+- Hepatitis: lamivudina, tenofovir, ledipasvir, etc
+- Tratamientos quimioterápicos: Talidomida
+- Enfermedad inflamatoria intestinal: infliximab
+b) Algunos medicamentos de diagnóstico hospitalario:
+Se emplean para el tratamiento de patologías que se deben diagnosticar en el medio hospitalario. Pueden ser dispensados en las oficinas de farmacia y para su financiación por el SNS deben llevar visado de inspección. Junto al código nacional llevan las siglas DH.
+Algunos DH, por sus características especiales, se dispensan desde los Servicios de Farmacia (DIHSC)
+
+Ej.: tratamientos para:
+- Enfermedad inflamatoria intestinal: adalimumab, etanercept
+- Omalizumab (en Galicia exclusivamente)
+- Tratamiento VHC: sofosbuvir + velpatasvir
+- Tratamientos oncológicos: temozolomida
+- Otros: tolvaptan
+c) Medicamentos incluidos dentro de programas especiales del SERGAS/Administración central Son tratamientos que, por distintas causas, las administraciones públicas han determinado que se dispensen desde los Servicio de Farmacia Hospitalarios:
+- Medicamentos utilizados en intervenciones diagnósticas
+- Medicación al alta para completar tratamientos
+- Fibrosis Quística.
+- Epidermolisis bullosa
+
+
+- Asistencia integral domiciliaria a niños dependientes de tecnología
+- Tratamientos para pacientes incluidos en programas de reproducción humana asistida
+- Algunos tratamientos antibióticos.
+- Tratamiento para la Leucemia Mieloide Crónica.
+d) Medicamentos en situaciones especiales (uso compasivo, medicamentos no autorizados en España, prescripción de medicamentos usados para indicaciones no autorizadas)
+e) Medicamentos en ensayo clínico.
+f) Nutrición parenteral domiciliaria.
+g) Nutrición enteral domiciliaria.
+h) Fórmulas magistrales.
+En general, pero especialmente en el caso de las fórmulas magistrales y de los medicamentos extranjeros y de ensayo clínico, la información oral y escrita a los pacientes es de vital importancia, por la ausencia de información en el cartonaje y el prospecto.
+Hay que tener en cuenta, que determinados pacientes pueden requerir medicamentos del Servicio de Farmacia por muchos años o por todo el resto de su vida, por lo que es de vital importancia favorecer al máximo la comodidad para su suministro.
+
+5.3.- PROCESO DE DISPENSACIÓN.
+
+El farmacéutico debe verificar, previamente a la dispensación:
+- El paciente conoce el objetivo del tratamiento.
+- El paciente conoce la forma de administración correcta del tratamiento.
+- Con la información disponible, el medicamento no es inadecuado para el paciente (embarazo, interacciones, etc.)
+
+En función de la validación realizada, el farmacéutico debe decidir si se puede dispensar o no el medicamento. En caso de no dispensar, debe remitirse al paciente de nuevo a su médico, informando al paciente sobre el posible problema detectado, pero sin cuestionar la actuación de otros profesionales sanitarios. Deben realizarse notas o breves informes de remisión por escrito.
+
+Una correcta y efectiva dispensación de medicamentos y productos sanitarios pretende:
+- Colaborar con el adecuado cumplimiento de la prescripción médica.
+- Entregar el medicamento y/o producto sanitario en condiciones óptimas y de acuerdo a la legislación vigente.
+- Orientar a los pacientes para el uso adecuado del medicamento.
+- Contribuir al seguimiento farmacoterapéutico de los pacientes.
+- Identificar y ayudar a solucionar problemas relacionados con los medicamentos.
+- Favorecer la coordinación y comunicación entre los profesionales sanitarios.
+
+
+Circuito de funcionamiento
+
+
+La dispensación de los medicamentos debe realizarse en un entorno con unas condiciones adecuadas:
+- Espacio de dispensación limpio, seguro y organizado.
+- Disponer de un área diferenciada para la dispensación, con espacio suficiente para realizar las tareas de preparación y entrega de la medicación.
+- No se deben introducir alimentos ni bebidas en las zonas de almacenaje y dispensación.
+- Condiciones de temperatura, humedad y luz adecuadas para asegurar lo correcta conservación de los medicamentos.
+
+6.- APLICACIONES INFORMÁTICAS DE DISTRIBUCIÓN Y DISPENSACIÓN DE LOS PRODUCTOS FARMACÉUTICOS Y PARAFARMACÉUTICOS.
+Hoy en día la mayoría de los Servicios de Farmacia tienen instalados equipos informáticos, que permiten facilitar y mejorar la gestión de sus recursos.
+
+
+6.1.- OFICINAS DE FARMACIA.
+Prácticamente todos los programas informáticos disponibles poseen funciones muy similares, permitiendo:
+
+
+       Además de estas actividades básicas, se pueden llevar a cabo muchas otras, en función de las necesidades de la Oficina de farmacia, como por ejemplo: realización de estadísticas, búsquedas en internet, integración con robótica, videovigilancia, etc etc
+
+6.2.- SERVICIO DE FARMACIA HOSPITALARIA.
+A nivel del sistema público de salud, también existen numerosos programas informáticos que permiten/facilitan la gestión de todos los procesos que se llevan a cabo en los Servicios de Farmacia.
+Actualmente, en el SERGAS está disponible el aplicativo de e-prescripción y gestión de farmacia
+Silicon(r) y Sinphos(r).
+
+El programa Silicon(r) ofrece una gestión integral de la prescripción farmacológica:
+
+
+Es un programa integrable con el resto de sistemas de información del hospital, y actualmente tiene distinto grado de implantación en cada uno de los hospitales del SERGAS.
+
+
+El programa Sipnhos(r)(en extinción, está siendo sustituido progresivamente en sus distintas aplicaciones por Silicom(r)), actualmente sirve para realizar la gestión completa del stock de medicamentos del SF: compras, inventario, control de caducidades, stock en almacén/es, etc. etc.
+
+7.- ASISTENCIA AL FARMACÉUTICO EN LA GESTIÓN DE MEDICAMENTOS EN ENSAYO CLÍNICO: NORMATIVA LEGAL.
+
+7.1.- DEFINICIONES IMPORTANTES.
+
+El Real Decreto 1090/2015, de 4 de diciembre, por el que se regulan los ensayos clínicos con medicamentos, los Comités de Ética de la Investigación con medicamentos y el Registro Español de Estudios Clínicos, define:
+
+Ensayo Clínico: un estudio clínico que cumpla cualquiera de las siguientes condiciones:
+1. º Se asigna de antemano al sujeto de ensayo a una estrategia terapéutica determinada, que no forma parte de la práctica clínica habitual del Estado miembro implicado.
+2. º La decisión de prescribir los medicamentos en investigación se toma junto con la de incluir al sujeto en el estudio clínico.
+3. º Se aplican procedimientos de diagnóstico o seguimiento a los sujetos de ensayo que van más allá de la práctica clínica habitual.
+- "Medicamento en investigación": El que se está sometiendo a prueba o utilizando como referencia, incluso como placebo, en un ensayo clínico
+- "Promotor": Individuo, empresa, institución u organización responsable de iniciar, gestionar y organizar la financiación de un ensayo clínico.
+- "Investigador": Persona encargada de la realización del ensayo clínico en un centro de ensayos clínicos.
+- "Investigador principal": Investigador responsable de un equipo de investigadores que realizan un ensayo clínico en un centro de ensayos clínicos.
+- "Sujeto de ensayo": Persona que participa en un ensayo clínico, bien como receptor del medicamento en investigación o bien como control.
+- "Consentimiento informado": La expresión libre y voluntaria por parte de un sujeto de ensayo clínico de su voluntad de participar en un ensayo clínico determinado, tras haber sido informado de todos los aspectos del mismo que sean pertinentes para su decisión de participar o, en el caso de los sujetos de ensayo menores o incapaces, una autorización o acuerdo de sus representantes legalmente designados de incluirlos en el ensayo clínico.
+- "Protocolo": Documento donde se describen los objetivos, el diseño, la metodología, las consideraciones estadísticas y la organización de un ensayo clínico. El término "protocolo" comprende las sucesivas versiones de los protocolos y sus modificaciones.
+- "Manual del investigador": Recopilación de datos clínicos y no clínicos sobre el medicamento en investigación que sean pertinentes para el estudio de dicho medicamento en seres humanos.
+- "Fabricación": La fabricación total o parcial, así como las operaciones de división, acondicionamiento y etiquetado (incluido el enmascaramiento).
+
+
+- "Buena práctica clínica": Conjunto detallado de requisitos de calidad éticos y científicos del diseño, la dirección, el desarrollo, la monitorización, la auditoría, el registro, el análisis y el informe de los ensayos clínicos que garanticen la protección de los derechos, la seguridad y el bienestar de los sujetos de ensayo, así como la fiabilidad y solidez de los datos obtenidos en el ensayo clínico.
+- "Inspección": Revisión oficial por una autoridad competente de los documentos, las instalaciones, los archivos, los sistemas de garantía de calidad y cualesquiera otros recursos que la autoridad competente considere relacionados con el ensayo clínico y que puedan encontrarse en el lugar del ensayo clínico, en las instalaciones del promotor o de la organización de investigación por contrato o en cualquier otro establecimiento que la autoridad competente considere oportuno inspeccionar
+- "Monitor": Profesional capacitado con la necesaria formación y competencia clínica y/o científica, elegido por el promotor, que se encarga del seguimiento directo de la realización del ensayo. Sirve de vínculo entre el promotor y el investigador principal, cuando éstos no concurran en la misma persona. En ningún caso el monitor debe formar parte del equipo investigador.
+- "Organización de investigación por contrato (en adelante CRO)": Persona física o jurídica contratada por el promotor para realizar funciones o deberes del promotor en relación con el ensayo clínico.
+- "Registro español de estudios clínicos": Base de datos cuyo titular es la Agencia Española de Medicamentos y Productos Sanitarios, accesible desde su página web, de uso libre y gratuito para todo usuario, cuyo objetivo es servir de fuente de información en materia de estudios clínicos a los ciudadanos.
+- "Subestudio": Estudio que forma parte del ensayo clínico pero que puede estar relacionado o no con el objetivo principal de este, en el que participan de forma voluntaria una parte de las personas incluidas en el ensayo clínico y para el que se solicita un consentimiento informado adicional, por ejemplo, subestudios farmacocinéticos o farmacogenéticos.
+
+La investigación clínica debe desarrollarse en un entorno que garantice la protección de las personas que participan en ella y en consonancia con elementos como la Declaración de Helsinki, aprobada por la Asociación Médica Mundial, y el Convenio del Consejo de Europa para la protección de los derechos humanos y la dignidad del ser humano con respecto a las aplicaciones de la biología y la medicina, suscrito en Oviedo.
+
+Asimismo, debe garantizar los principios básicos recogidos en la Ley 41/2002, de 14 de noviembre, básica reguladora de la autonomía del paciente y de derechos y obligaciones en materia de información y documentación clínica, y en la Ley 26/2011, de 1 de agosto, de adaptación normativa a la Convención Internacional sobre los Derechos de las Personas con Discapacidad. Finalmente, debe también garantizar que los resultados que de ella se deriven sean de calidad y útiles para los fines expresados anteriormente por lo que debe desarrollarse en un contexto de máxima transparencia.
+
+Al mismo tiempo, es necesario fomentar la investigación clínica de medicamentos huérfanos y de medicamentos destinados al tratamiento de grupos de población como niños, mujeres y ancianos que tradicionalmente han estado poco representados en la investigación clínica.
+
+
+7.2.- CLASIFICACIÓN DE LOS ENSAYOS CLÍNICOS.
+En función de la fase de estudio en la que se encuentran, podemos clasificar los ensayos clínicos en:
+
+Fase I: son estudios de farmacocinética y farmacodinamia (liberación, absorción, distribución, metabolismo y eliminación). Proporcionan información preliminar sobre el efecto y la seguridad. Se llevan a cabo generalmente en individuos sanos (salvo excepciones, por ej ensayos de citostáticos). La muestra de pacientes es pequeña y engloba sujetos sanos.
+
+Fase II: esta fase comprende la investigación clínica inicial del efecto del tratamiento. Se realiza con un número limitado de pacientes que padecen la enfermedad. Proporcionan información preliminar sobre la eficacia del fármaco y su utilidad.
+
+Fase III: fase donde se valora la eficacia y seguridad del fármaco bajo situaciones similares a las que se puedan esperar cuando éste esté en el mercado. Se realiza en un número de pacientes mucho mayor que en la fase anterior. En esta fase el fármaco se compara con los tratamientos estándar establecidos, si los hubiese, y son la base para la autorización de un fármaco.
+
+Fase IV: corresponden a los estudios que se realizan en los medicamentos ya comercializados. Pretenden detectar las reacciones adversas que surgen durante la utilización del fármaco. Se investigan nuevas indicaciones de uso, formas farmacéuticas etc.
+
+Nota: ningún ensayo clínico podrá ser realizado sin informe previo favorable de un Comité Ético de Investigación Clínica, que será independiente de los promotores e investigadores y de las autoridades sanitarias. El CEIm estará constituido por un mínimo de diez miembros, al menos uno de los cuales será un miembro lego, ajeno a la investigación biomédica o a la asistencia clínica, que representará los intereses de los pacientes.
+Entre los miembros del citado comité figurarán médicos, uno de los cuales será farmacólogo clínico, un farmacéutico de hospital, un farmacéutico de atención primaria, y un diplomado o graduado en enfermería. En la designación de dichos profesionales se atenderá al principio de presencia equilibrada entre mujeres y hombres, salvo por razones fundadas y objetivas, debidamente motivadas.
+Si en el centro existe una Comisión de Investigación o un Comité de Ética Asistencial, un miembro de cada uno de ellos deberá formar parte del CEIm.
+Al menos dos miembros deben ser ajenos a las profesiones sanitarias, uno de los cuales deberá ser licenciado o graduado en derecho. Además, al menos uno de sus miembros debe tener formación acreditada en bioética.
+
+La red Gallega de Comités de Ética de Investigación está formada por el Comité autonómico (CEImG) y tres comités territoriales encargados de la valoración ética, metodológica y legal de todo estudio de investigación con seres humanos, o su material biológico y sus datos de carácter persoal.
+
+
+7.3.- ACTIVIDADES DEL SERVICIO DE FARMACIA.
+
+En el Servicio de Farmacia, se realizan:
+
+1. Recepción de muestras:
+Se debe comprobar que se trata de la medicación correcta, comprobando que el código del protocolo coincide con el formulario de envío de medicación que se recibe: atención al número de unidades, lote, caducidad, y número de kit (si el estudio es aleatorizado).
+La recepción de las muestras siempre deberá ser confirmada mediante el correspondiente acuse de recibo, en la forma que indique el promotor (correo ordinario, fax, web...)
+
+2. Almacenamiento y conservación de las muestras:
+El promotor determinará las condiciones de almacenado y la caducidad. El servicio de farmacia debe poder garantizar su cumplimiento. Deben colocarse las muestras, clasificadas por ensayos clínicos, en un lugar separado del resto de medicamentos.
+Es necesario realizar un control de inventario que, además de garantizar una correcta provisión de las muestras, permita controlar las caducidades de las mismas. Con frecuencia este trabajo es realizado por los monitores de los ensayos.
+
+3. Preparación:
+En aquellos casos en los que se precise manipular las muestras, se deberá disponer de la siguiente información:
+- Condiciones de almacenamiento requeridas antes y después de su preparación.
+- Tipo y cantidad de diluyentes recomendados para la reconstitución, administración, y concentración final resultante de principio activo.
+- Tipo de material para el acondicionamiento (vidrio, plástico...).
+- Necesidad o no de filtración.
+- Estabilidad del producto preparado (reconstituido y/o diluido).
+- Compatibilidad con otros productos, si fuese necesario.
+- Sensibilidad a la luz.
+- Instrucciones especiales para la preparación y administración.
+
+Para el reetiquetado o reacondicionamiento no se necesita autorización.
+Los SFH pueden fabricar medicación de un Ensayo clínico previa autorización de la AEMPS (siguiendo normas de la UE).
+4. Dispensación:
+Las muestras pueden ser dispensadas al investigador o al propio paciente, según el estudio. El investigador y el farmacéutico se responsabilizarán de la correcta dispensación de las muestras y de que sólo podrán ser dispensadas a los sujetos incluidos en el estudio.
+Cuando la dispensación se realice directamente al paciente, se informará de las condiciones de conservación del medicamento, esquema de dosificación, toma de la medicación en relación con los alimentos, instrucciones sobre hábitos de vida que puedan ser relevantes para el estudio, instrucciones sobre la devolución de la medicación sobrante.
+
+
+5. Devolución de la medicación sobrante:
+Todas las muestras no administradas, incluyendo los envases abiertos o parcialmente utilizados que fueron devueltos por los sujetos del estudio, serán devueltas al promotor a través del servicio de farmacia.
+En ocasiones se pueden destruir en el propio Servicio de Farmacia.
+Si el promotor lo autoriza, y tras comercialización del medicamento en investigación, se podrán usar en la práctica habitual los envases sobrantes inalterados.
+
+6. Mantenimiento de los registros de movimientos de la medicación:
+Debe registrarse, de forma informatizada o por escrito, todo el proceso de recepción de muestras, dispensaciones por paciente, devoluciones de sujetos, devoluciones de medicación al promotor y retirada de muestras por caducidades.
+
+7.4.- NORMATIVA LEGAL.
+* Real Decreto Legislativo 1/2015, de 24 de julio, por el que se aprueba el texto refundido de la Ley de garantías y uso racional de los medicamentos y productos sanitarios.
+* Real Decreto 1090/2015, de 4 de diciembre, por el que se regulan los ensayos clínicos con medicamentos, los Comités de Ética de la Investigación con medicamentos y el Registro Español de Estudios Clínicos.
+
+8.- ASISTENCIA AL FARMACÉUTICO EN LA ATENCIÓN AL PACIENTE AMBULATORIO, AL PACIENTE DE HOSPITAL DE DÍA.
+
+8.1. DISPENSACIÓN AL PACIENTE NO INGRESADO.
+El incremento de especialidades farmacéuticas que se dispensan desde el SF a pacientes no ingresados, ha hecho que los Servicios de Farmacia hayan tenido que adaptar sus instalaciones para poder dispensar estos tratamientos.
+Para poder realizar adecuadamente las tareas de dispensación, seguimiento, información y asesoramiento a todos los pacientes, es necesario disponer de una zona dentro del Servicio de Farmacia, con acceso rápido y directo desde la calle que conste de:
+a. Despacho farmacéutico para dispensación e información de medicamentos
+b. Zona de almacenaje del stock adecuado de los medicamentos que se puedan dispensar.
+c. Antesala donde los pacientes puedan esperar a ser atendidos.
+
+Para poder recoger el tratamiento es necesario:
+- Entregar la orden de dispensación hospitalaria debidamente cumplimentada.
+- En tratamientos crónicos la periodicidad de la dispensación será fijada por el servicio de farmacia (generalmente un mes). Debe valorarse la estabilidad del medicamento (ej. fórmulas magistrales), las circunstancias particulares del paciente, así como la fecha de la próxima consulta médica.
+
+
+Puede recoger la medicación otra persona distinta al paciente, siempre que presente la documentación exigida.
+En el impreso de solicitud o receta debe figurar:
+- Nombre completo del paciente
+- Nº de historia clínica
+- Medicación prescrita con la indicación, dosis, vía de administración y duración prevista del tratamiento
+- Fecha de consulta y fecha de la próxima visita médica
+- Nombre y firma del médico prescriptor
+
+Desde el Servicio de Farmacia debe darse al paciente, de forma oral y mediante horas informativas escritas, toda la información necesaria sobre su tratamiento, de forma clara y sencilla (cómo utilizarlo, frecuencia de administración, duración del tratamiento, conservación, reacciones adversas, etc.
+
+8.2.- HOSPITAL DE DÍA.
+Conceptos
+
+Hospitalización de día: asistencia en el hospital durante unas horas, ya sea para diagnósticos, investigaciones clínicas y/o exploraciones múltiples, así como para tratamientos que no pueden hacerse en la consulta externa, pero que no justifican la estancia completa en el hospital.
+Hospital de día Médico-Quirúrgico: espacio que concentra toda la actividad de Hospitalización de Día del hospital general de agudos.
+
+Hospital de día Médico:
+Dependiendo del hospital se llevarán a cabo unos u otros procedimientos, pero algunos de ellos son comunes a la mayoría:
+* Hemoterapia: transfusión de concentrados de hematíes, plaquetas, etc
+* Soporte al paciente oncohematológico: movilización de células progenitoras en paciente ambulatorio
+* Paciente hemofílico: administración de factores de coagulación
+* Cuidados de enfermería asociados: inserción de catéteres venosos periféricos, cuidados de catéteres vasculares centrales, cuidado de reservorios subcutáneos...
+* Administración parenteral:
+o Citostáticos (oxaliplatino, 5-fluorouracilo, vincristina, paclitaxel...),
+o Medicamentos	para	reducir	los	vómitos	asociados	a	quimioterapia (metoclopramida, ondansetrón, corticoides...)
+o Medicamentos	para	reducir	los	efectos	del	propio	proceso	oncológico (bifosfonatos)
+o Fármacos	para	la	artritis	reumatoide,	enfermedades	digestivas,	psoriasis (infliximab)
+o Fármacos para la esclerosis múltiple (natalizumab)
+o Fármacos para patologías como el lupus (ciclofosfamida, corticoides)
+o Medicamentos en deficiencias de inmunoglobulinas o patologías de origen autoinmune (inmunoglobulinas específicas)
+
+
+o Fármacos utilizados en el programa de ahorro de sangre de intervenciones quirúrgicas (hierro intravenoso)
+o Fármacos empleados en deficiencias enzimáticas (alfa 1 antitripsina)
+o Agentes antiinfecciosos (ganciclovir, pentamidina...)
+o Anticuerpos monoclonales (rituximab, trastuxumab...)
+
+Puesto de Hospital de Día: unidad donde un paciente se somete a una consulta, exploración, o tratamiento o se recupera de los mismos antes del alta.
+
+Los estándares y recomendaciones de la Unidad de Hospitalización de Día no tienen un carácter normativo en el sentido de establecer unos requisitos mínimos para la autorización de la apertura y/o el funcionamiento de estas unidades, ni estándares para su acreditación. El objetivo es orientar la programación y diseño de estas unidades, así como facilitar criterios de calidad, eficiencia y seguridad en su funcionamiento.
+
+Medios humanos y arquitectónicos
+Para el desarrollo de las actividades de la unidad son necesarios:
+Medios humanos: personal médico, enfermeras, personal auxiliar, administrativos, celadores. Medios materiales: localizados en cuatro áreas fundamentales:
+* Recepción: zonas de espera y registro de los pacientes
+* Control de enfermería y apoyos generales
+* Área administrativa y de apoyos para el personal
+* Puestos de HD: son los espacios asistenciales necesarios para la consulta, exploración, tratamiento y recuperación.
+Éstos serán espacios para camas o sillones, en habitaciones individuales o espacios comunes, según el tipo de paciente y/o tratamiento.
+Medicamentos que se dispensan a un HD médico
+a) Tratamientos individualizados
+Las solicitudes de estos tratamientos se deben hacer de forma individualizada y lo más habitual es que la medicación se prepare cada día en forma de mezcla individualizada para cada paciente (infliximab, paclitaxel, vincristina...), aunque dependiendo de la patología
+
+
+que estemos tratando en ocasiones la medicación se puede dispensar también sin manipular (eritropoyetina...) para su preparación en hospital de día.
+Circuito de funcionamiento
+Recepción del vale de dispensación: debe comprobarse que la solicitud contiene, al menos, los datos de filiación del paciente (nombre y apellidos, número de historia clínica), datos del médico prescriptor, datos del medicamento (principio activo, dosis, frecuencia, vía de administración, duración del tratamiento, indicación) y datos antropométricos si fuese necesario. Este "vale de dispensación" puede ser también, en formato electrónico.
+
+
+Validación de la prescripción por el farmacéutico, comprobando que la indicación prescrita sea conforme a ficha técnica y que la posología, vía de administración y duración del tratamiento son correctas para ese paciente.
+
+Preparación por el farmacéutico de la hoja de elaboración de la mezcla intravenosa, si fuese necesario, así como de la etiqueta identificativa del preparado.
+
+Elaboración de la mezcla por parte del técnico de farmacia o del personal debidamente formado del que disponga el servicio de farmacia (DUE...)-preparación/selección de los productos adecuados, elaboración e identificación.
+
+Dispensación del medicamento preparado a HD
+
+
+Gestión del consumo por el farmacéutico según los procedimientos propios de cada servicio.
+
+
+
+b) Medicamentos en stock
+
+Como en cualquier otra unidad del hospital, el Servicio de Hospital de Día, pactará con el servicio de Farmacia una relación cualitativa y cuantitativa de medicamentos que formarán parte del stock de la unidad.
+
+
+9.- BIBLIOGRAFÍA.
+* RD 1/2015, texto refundido de la Ley 29/2006, de 26 de Julio, de Garantías y Uso racional de medicamentos y productos sanitarios.
+* Ley 3/2019 de Ordenación farmacéutica de Galicia.
+* Real Decreto 1718/2010, de 17 de diciembre, sobre receta médica y órdenes de dispensación.
+* Real Decreto 1675/2012, de 14 de diciembre, por el que se regulan las recetas oficiales y los requisitos especiales de prescripción y dispensación de estupefacientes para uso humano y veterinario.
+* 	Manual de Farmacotecnia. 2023. SEFH. SOCIEDAD ESPAÑOLA DE FARMACIA HOSPITALARIA ISBN: 978-84-09-50880-8
+* Circular 8/1991: Regulación de la prescripción y dispensación de medicamentos de uso hospitalario a pacientes no ingresados (los Servicios de Farmacia gestionados por el Servicio Galego de Salud, llevarán a cabo la dispensación de los medicamentos clasificados como de uso hospitalario a los pacientes no ingresados).
+* Instrución 15/2006: Instrución sobre a definición de criterios de uso e dispensación do tratamento con omalizumab en pacientes con asma alérxico grave persistente
+* Circular 2/2001 da División de Farmacia e Produtos Sanitarios do SERGAS sobre dispensa de medicamentos para intervencións diagnósticas.
+* Circular 1/2001 da División de Farmacia e Produtos Sanitarios do SERGAS sobre finalización de tratamientos farmacoterapéuticos ó alta hospitalaria.
+* Circular 8/91, de 23 de abril de 1991, del Insalud. Dispensación de medicamentos en enfermos hemofílicos VIH positivos y afectados de fibrosis quística por los servicios de farmacia hospitalarios.
+* Circular 1/2004 Dispensa de recursos farmacoterapeúticos en enfermos afectados de epidermólise bulbosa en réxime ambulatorio polos servizos de Farmacia dos Centros Hospitalarios do SERGAS.
+* Asistencia integral domiciliaria a niños dependientes de tecnología: asistencia integral domiciliaria a nenos dependentes de tecnoloxía. Dirección Xeral da División de Asistencia Sanitaria. 2001
+* Circular 1/2002 sobre tratamientos farmacoterapéuticos para pacientes incluídos en programas de reproducción humana asistida.
+* Instrución 17/2012 do 09/11/2012 para facilitar o acceso o diagnóstico e tratamento daquelas persoas que poidan padecer unha infección ou enfermidade infecciosa que estea suxeita a vixilancia epidemiolóxica, control e ou eliminación a nivel da comunidade, estatal ou internacional , e non teñan recoñecida polo INSS, ou no seu caso polo ISM a condición de asegurados ou beneficiarios e que non reciben a asistencia por outras vías legalmente establecidas//- Instrucion 11/2012 instrucións para facilitar o acceso ao diagnóstico e tratamento da enfermidade e infección tuberculosa nas unidades de prevención e control da tuberculose dos pacientes que non teñen recoñecida polo Instituto Nacional da Seguridade Social (INSS), ou no seu caso, polo Instituto Social da Mariña (ISM) a condición de asegurados ou beneficiarios dos mesmos.
+* Circular 5/2004 sobre regulación de tratamientos farmacoterapéuticos para pacientes con leucemia mieloide crónica.
+* Real Decreto 1718/2010, de 17 de diciembre, sobre receta médica y órdenes de dispensación.
+* Real Decreto 479/1993, de 2 de abril, por el que se regulan los medicamentos radiofármacos de uso humano
+* Unidad de hospitalización de día: estándares y recomendaciones. Informes, estudios e investigación 2009. Ministerio de Sanidad y Política Social.
+* Libro	FARMACIA	HOSPITALARIA	-	TOMO	I Coordinadora:	Mª	Cinta	Gamundi	Planas 2002.
+* Francisco J. Farfán Sedano; Mª Jesús Frutos Sastre. "La farmacia Hospitalaria para técnicos en farmacia". AMV Ediciones
+* Editorial CEP: Técnico en Farmacia del Servicio Gallego de salud. Temario específico 2015.
+
+
+
+
+Tus centres PREMIR(r) en Galicia son:
+Santiago de C • 9815901 98 (Central) Coruna • 98113 12 so
+Ferrel • 981 31 21 SO
+Lugo • 982 22 80 30
+Orense • 988 373 013
+Pontevedra • 986 847 214
+Vigo • 986 238 442
+
+
+
+
+
+
+
+
+
+
+
+CPR PREMIR	oposnet
+Ciclos Superiores	campus virtual
+Grupo PREMIR"
+
+
+
+
+
+
+Languages
+School
+GrupoPREMIR"  ,
+
+Academia
+PREMIR(r)
+Oposiciones
+
+
+
+
+
+

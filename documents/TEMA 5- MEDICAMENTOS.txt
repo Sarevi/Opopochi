@@ -1,0 +1,1871 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TÉCNICO DE FARMACIA
+SERGAS
+TEMA 5:
+MEDICAMENTOS: DEFINICIONES Y TIPOS. CLASIFICACIÓN ANATÓMICA, TERAPÉUTICA Y QUÍMICA. GENERALIDADES: MECANISMO DE ACCIÓN Y EFECTOS. DEFINICIONES Y TIPOS. ESPECIALIDADES FARMACÉUTICAS GENÉRICAS (EFG), ESPECIALIDADES FARMACÉUTICAS PUBLICITARIAS (EFP), ESUPEFACIENTES Y PSICÓTROPOS, MEDICAMENTOS EN SITUACIONES ESPECIALES: MEDICAMENTOS EXTRANJEROS, USO COMPASIVO O UTILIZADOS EN CONDICIONES NO ESTABLECIDAS EN SU FICHA TÉCNICA. MEDICAMENTOS DE ESPECIAL CONTROL MÉDICO. MEDICAMENTOS DE DIAGNÓSTICO HOSPITALARIO Y USO HOSPITALARIO. MUESTRAS PARA INVESTIGACIÓN CLÍNICA. ETIQUETADO, PROSPECTO Y FICHA TÉCNICA. APLICACIONES INFORMÁTICAS DE BASES DE DATOS DEL MEDICAMENTO.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INDICE
+1.- TERMINOLOGÍA FARMACÉUTICA
+
+2.- MEDICAMENTOS LEGALMENTE RECONOCIDOS
+
+3.- TIPOS DE MEDICAMENTOS
+3.1.- SEGÚN CONDICIONES DE DISPENSACIÓN
+3.1.1.- Sujetos e prescripción médica Dispensación renovable o no renovable Dispensación especial
+Dispensación restringida
+3.1.2.- No sujetos a prescripción médica
+3.2.- SEGÚN FINANCIACIÓN
+3.2.1.- Medicamentos financiados 3.2.2.- Medicamentos no financiados
+
+4.- AUTORIZACIÓN Y REGISTRO DE MEDICAMENTOS
+
+5.- CLASIFICACIÓN ATC DE MEDICAMENTOS
+5.1. ESTRUTURA DE LA CLASIFICACIÓN ATC
+5.1.1.- Primer Nivel: grupo anatómico 5.1.2.- Segundo Nivel: grupo terapéutico
+5.1.3.- Tercer Nivel: subgrupo terapéutico o farmacológico 5.1.4.- Cuarto Nivel: grupo químico
+5.1.5.- Quinto Nivel: principio activo o asociación farmacológica
+5.2. GRUPOS TERAPÉUTICOS DE LA CLASIFICACIÓN ATC
+5.2.1.- A: Tracto alimentario y metabolismo 5.2.2.- B: Sangre y órganos hematopoyéticos 5.2.3.- C: Sistema cardiovascular
+5.2.4.- D: Terapia dermatológica
+5.2.5.- G. Sistema genitourinario y hormonas sexuales
+5.2.6.- H: Terapia Hormonal, excluyendo hormonas sexuales e insulinas 5.2.7.- J: Antiinfecciosos para uso sistémico
+5.2.8.- L: Terapia antineoplásica y agentes inmunomoduladores 5.2.9.- M: Sistema Musculoesquelético
+5.2.10.- N: Sistema Nervioso
+5.2.11.- P: Productos antiparasitarios, insecticidad y repelentes 5.2.12.- R: Sistema respiratorio
+5.2.13.- S: Órganos de los sentidos 5.2.14.- V: Varios
+
+6.- MEDICAMENTOS QUE PUEDEN ENCONTRARSE EN LOS SERVICIOS DE FARMACIA HOSPITALARIA
+6.1. MEDICAMENTOS DE DISPENSACÓN RESTRINGIDA AL ÁMBITO HOSPITALARIO
+6.1.1.- Medicamentos de uso hospitalario
+6.1.2.-	Medicamentos de diagnóstico hospitalario sin cupón precinto 6.1.3.- Medicamentos en situaciones especiales
+? Uso compasivo de medicamentos en investigación.
+? Uso de medicamentos en condiciones diferentes de la autorizadas en ficha técnica
+? Acceso a medicamentos no autorizados en España.
+6.2. MEDICAMENTOS SOMETIDOS A CONDICIONES ESPECIALES DE DISPENSACIÓN
+6.2.1.- Estupefacientes en farmacia hospitalaria
+6.2.2 Medicamentos no sustituibles
+
+7.- APLICACIONES INFORMÁTICAS DE BASES DE DATOS DE MEDICAMENTOS
+7.1.- CATÁLOGO DE MEDICAMENTOS DEL CGCOF
+7.2.- BASES DE DATOS DEL MEDICAMENTO
+7.2.1.- Base de datos de la Agencia Española de Medicamentos y productos sanitarios (AEMPS)
+7.2.2.- Base de datos del Ministerio de Sanidad (Nomenclátor Digitalis)
+7.2.3.- Base de datos del Consejo General de Colegios Oficiales de Farmacéuticos 7.2.4.- Vademécum
+
+8.- BIBLIOGRAFÍA
+9.- ANEXO
+
+1. TERMINOLOGÍA FARMACÉUTICA
+
+Existen sustancias, tanto en la naturaleza como sintetizadas en laboratorios, que tienen alguna propiedad que nos permite usarlas en el ser humano o en animales con el fin de mejorar la salud. Estas sustancias medicinales, bien solas o en combinación, pueden ser manipuladas para formar un medicamento, que podemos definir como la sustancia o conjunto de sustancias que, administrada interior o exteriormente a un organismo, sirve para prevenir, diagnosticar, curar o aliviar la enfermedad y corregir o reparar las secuelas de esta.
+
+El Técnico de Farmacia debe conocer y comprender una serie de conceptos básicos relacionados con los medicamentos que son importantes para el correcto desarrollo de su actividad profesional y que vienen definidos por la RD legislativo 1/2015 de 24 de julio, por el que se aprueba el texto refundido de la Ley de garantías y uso racional de los medicamentos y productos sanitarios, Ley 29/2006, de 26 de julio:
+? Medicamento de uso humano: sustancia o combinación de sustancias con propiedades para el tratamiento o prevención de enfermedades en seres humanos, que pueda administrarse con el fin de restaurar, corregir o modificar las funciones fisiológicas ejerciendo una acción farmacológica, inmunológica o metabólica, o de establecer un diagnóstico médico.
+? Medicamento de uso veterinario: sustancia o combinación de sustancias poseedora de propiedades curativas o preventivas con respecto a las enfermedades animales o que pueda administrarse al animal con el fin de restablecer, corregir o modificar sus funciones fisiológicas ejerciendo una acción farmacológica, inmunológica o metabólica, o de establecer un diagnóstico veterinario.
+? Principio activo: toda materia, cualquiera que sea su origen -humano, animal, vegetal, químico o de otro tipo- a la que se atribuye una actividad apropiada para constituir un medicamento.
+? Excipiente: todo componente de un medicamento distinto del principio activo y del material de acondicionamiento.
+? Materia prima: toda sustancia -activa o inactiva- empleada en la fabricación de un medicamento, ya permanezca inalterada, se modifique o desaparezca en el transcurso del proceso.
+? Forma galénica o forma farmacéutica: disposición a que se adaptan los principios activos y excipientes para constituir un medicamento. Se define por la combinación de la forma en la que el producto farmacéutico es presentado por el fabricante y la forma en la que es administrada.
+? Medicamento genérico: todo medicamento que tenga la misma composición cualitativa y cuantitativa en principios activos y la misma forma farmacéutica, y cuya bioequivalencia con el medicamento de referencia haya sido demostrada por estudios adecuados de biodisponibilidad.
+? Producto intermedio: el destinado a una posterior transformación industrial por un fabricante autorizado.
+? Fórmula magistral: el medicamento destinado a un paciente individualizado, preparado por un farmacéutico, o bajo su dirección, para cumplimentar expresamente una prescripción facultativa detallada de los principios activos que incluye, según las normas de correcta elaboración y control de calidad establecidas al efecto, dispensado en oficina de farmacia o servicio farmacéutico y con la debida información al usuario.
+? Preparado oficinal: medicamento elaborado según las normas de correcta elaboración y control de calidad establecidas y garantizado por un farmacéutico o bajo su dirección, dispensado en oficina de farmacia o servicio farmacéutico, enumerado y descrito por el Formulario Nacional, destinado a su entrega directa a los enfermos a los que abastece dicha farmacia o servicio farmacéutico.
+
+? Medicamento en investigación: Medicamento en investigación": Forma farmacéutica de un principio activo o placebo que se investiga o se utiliza como referencia en un ensayo clínico, incluidos los productos con autorización cuando se utilicen o combinen, en la formulación o en el envase, de forma diferente a la autorizada, o cuando se utilicen para tratar una indicación no autorizada o para obtener más información sobre un uso autorizado.
+? Producto sanitario: cualquier instrumento, dispositivo, equipo, material u otro artículo, incluidos los programas informáticos que intervengan en su buen funcionamiento, destinado a ser utilizado en seres humanos con fines de:
+1º Diagnóstico, prevención, control, tratamiento o alivio de una enfermedad;
+2. º Diagnóstico, control, tratamiento, alivio o compensación de una lesión o de una deficiencia;
+3. º Investigación, sustitución o modificación de la anatomía o de un proceso fisiológico;
+4. º Regulación de la concepción
+? Producto de cuidado personal: sustancias o preparados que, sin tener la consideración legal de medicamentos, productos sanitarios, cosméticos o biocidas, están destinados a ser aplicados sobre la piel, dientes o mucosas del cuerpo humano con finalidad de higiene o de estética, o para neutralizar o eliminar ectoparásitos.
+? Producto cosmético: sustancia o preparado destinado a ser puesto en contacto con las diversas partes superficiales del cuerpo humano (epidermis, sistema piloso y capilar, uñas, labios y órganos genitales externos) o con los dientes y las mucosas bucales, con el fin exclusivo o principal de limpiarlos, perfumarlos, modificar su aspecto, corregir los olores corporales, protegerlos o mantenerlos en buen estado.
+"Medicamento falsificado": Cualquier medicamento cuya presentación sea falsa con respecto a:
+1. º Su identidad, incluidos el envase y etiquetado, el nombre o composición en lo que respecta a cualquiera de sus componentes, incluidos los excipientes, y la dosificación de dichos componentes;
+2. º su origen, incluidos el fabricante, el país de fabricación, el país de origen y el titular de la autorización de comercialización; o,
+3. º su historial, incluidos los registros y documentos relativos a los canales de distribución empleados.
+La presente definición no comprende los defectos de calidad involuntarios y se entiende sin perjuicio de las violaciones de los derechos de propiedad intelectual
+? Medicamento homeopático: de uso humano o veterinario, el obtenido a partir de sustancias denominadas cepas homeopáticas con arreglo a un procedimiento de fabricación homeopático descrito en la Farmacopea Europea o en la Real Farmacopea Española o, en su defecto, en una farmacopea utilizada de forma oficial en un país de la Unión Europea. Un medicamento
+homeopático podrá contener varios principios activos.
+? Medicamentos de plantas medicinales: plantas y sus mezclas, así como los preparados obtenidos de plantas en forma de extractos, liofilizados, destilados, tinturas, cocimientos o cualquier otra preparación galénica que se presente con utilidad terapéutica, diagnóstica o preventiva seguirán el régimen de las fórmulas magistrales, preparados oficinales o medicamentos industriales, según proceda y con las especificidades que reglamentariamente
+se establezcan.
+
+En la tabla que aparece a continuación se resumen los conceptos fundamentales de la LGURM acompañados de unos ejemplos que facilitan su compresión:
+
+
+
+
+
+2. MEDICAMENTOS LEGALMENTE RECONOCIDOS
+El RD legislativo 1/2015 de 24 de julio, por el que se aprueba el texto refundido de la Ley de garantías y uso racional de los medicamentos y productos sanitarios, Ley 29/2006, de 26 de julio, especifica cuales son aquellos productos que han de ser considerados como medicamentos (capítulo I, artículo 8).
+
+Son medicamentos legalmente reconocidos los siguientes:
+
+Medicamentos de uso humano y de uso veterinario elaborados industrialmente o en cuya fabricación intervenga un proceso industrialFórmulas magistrales.Preparados oficinales.
+
+Medicamentos especialesVacunas y demás medicamentos biológicosVacunas, insulinas, hemoderivados, medicamentos biotecnológicos...Medicamentos de origen humanoDerivados de plasma, sangre, glándulas, tejidos...etc, procedentes de donantes identificadosMedicamentos
+avanzadadeterapia¦ Medicamentos de terapia génica
+¦ Medicamentos de terapia celular somáticaRadiofármacosCualquier producto que, cuando esté preparado para su uso con finalidad terapéutica o diagnóstica, contenga uno o más radionucleidos (isótopos radiactivos). Deben ser utilizados en condiciones especiales y en unidades bajo estricto control médico y para su uso es preciso proteger a los pacientes y los trabajadores contra las radiaciones.Medicamentos con sustancias psicoactivas	con	potencial
+adictivo.Sustancias estupefacientes y psicotrópicas que por su alto potencial adictivo están sometidas a controles
+rigurosos y condiciones especiales de dispensaciónMedicamentos homeopáticosSe considera medicamento homeopático, de uso humano o veterinario, el obtenido a partir de sustancias denominadas cepas homeopáticas con arreglo a un procedimiento de fabricación homeopático descrito en la Farmacopea Europea o en la Real Farmacopea Española o, en su defecto, en una farmacopea utilizada de forma oficial en un Estado miembro de la Unión Europea. Un medicamento homeopático podrá contener varios principios activos.Medicamentos medicinalesdeplantasLas plantas y sus mezclas, así como los preparados obtenidos de plantas en forma de extractos, liofilizados, destilados, tinturas, cocimientos o cualquier otra preparación galénica que se presente con utilidad terapéutica, diagnóstica o preventiva seguirán el régimen de las fórmulas magistrales, preparados oficinales o medicamentos industriales, según proceda y con las especificidades que reglamentariamente se establezcan.
+El Ministerio de Sanidad, Servicios Sociales e Igualdad establecerá una lista de plantas cuya venta al público estará restringida o prohibida por razón de su toxicidad. Podrán venderse libremente al público las plantas, tradicionalmente consideradas como medicinales y que se ofrezcan sin referencia a propiedades terapéuticas, diagnósticas o preventivas, quedando
+prohibida su venta ambulanteGases medicinalesA tales efectos, se entenderá por gases medicinales licuados el oxígeno líquido, nitrógeno líquido y protóxido de nitrógeno líquido así como cualesquiera otros que, con similares características y utilización, puedan fabricarse en el futuro
+En todos los casos, la atribución de la condición de medicamento corresponde a la Agencia Española de Medicamentos y Productos Sanitarios (AEMPS).
+
+3. TIPOS DE MEDICAMENTOS
+Los medicamentos se pueden clasificar atendiendo a diversos criterios; entre ellos:
+
+
+3.1. SEGÚN LAS CONDICIONES DE DISPENSACIÓN
+El Artículo 19 del RD 1/201establece que la Agencia Española del Medicamento y los Productos Sanitarios (AEMPS) puede clasificar los medicamentos en función de si están sujetos o no a prescripción médica.
+
+? Sujetos a prescripción médica
+Son medicamentos sujetos a prescripción médica aquellos que, para poder ser adquiridos, necesitan receta médica, veterinaria o una orden de dispensación.
+Se caracterizan por llevar en el embalaje el símbolo (0).
+Dentro de este grupo se incluyen, entre otros, productos fabricados industrialmente (especialidades farmacéuticas), fórmulas magistrales y preparados oficinales.
+
+
+
+En cualquier caso, según el Artículo 19 de la LGURM, desarrollado por el Real Decreto 1718/2011 de receta médica y órdenes de dispensación están sujetos a prescripción médica los medicamentos que se encuentren en alguno de los siguientes supuestos:
+a. Puedan presentar un peligro, directa o indirectamente, incluso en condiciones normales de uso, si se utilizan sin control médico.
+b. Se utilicen frecuentemente, y de forma muy considerable, en condiciones anormales de utilización, y ello pueda suponer, directa o indirectamente, un peligro para la salud.
+c. Contengan sustancias o preparados a base de dichas sustancias, cuya actividad y/o reacciones adversas sea necesario estudiar más detalladamente.
+d. Se administren por vía parenteral, salvo casos excepcionales, por prescripción médica.
+
+La Agencia Española de Medicamentos y Productos Sanitarios podrá establecer, en los medicamentos que sólo pueden dispensarse bajo prescripción médica, las siguientes subcategorías:
+
+
+
+
+? No sujetos a prescripción médica
+El mismo artículo 19, punto 4, recoge que la Agencia Española de Medicamentos y Productos Sanitarios podrá calificar como medicamentos no sujetos a prescripción médica aquéllos que vayan destinados a procesos o condiciones que no necesiten un diagnóstico preciso y cuyos datos de evaluación toxicológica, clínica o de su utilización y vía de administración no exijan prescripción médica, de modo que dichos medicamentos puedan ser utilizados para autocuidado de la salud, mediante su dispensación en la oficina de farmacia por un farmacéutico, que informará, aconsejará e instruirá sobre su correcta utilización
+
+Las especialidades farmacéuticas publicitarias se recogen en RD 1/2015. Artículo 80. Garantías en la publicidad de medicamentos y productos sanitarios destinada al público en general.
+
+Actualmente, los medicamentos que se pueden publicitar se clasifican como la sigla "MSP" Medicamento susceptible de publicidad al público.
+El RD 1/2015, artículo 80, recoge las Garantías en la publicidad de medicamentos y productos sanitarios destinada al público en general:
+1. Podrán ser objeto de publicidad destinada al público los medicamentos que cumplan todos los requisitos que se relacionan a continuación:
+a) Que no se financien con fondos públicos.
+b) Que, por su composición y objetivo, estén destinados y concebidos para su utilización sin la intervención de un médico que realice el diagnóstico, la prescripción o el seguimiento del tratamiento, aunque requieran la intervención de un farmacéutico. Este requisito podrá exceptuarse cuando se realicen campañas de vacunación aprobadas por las autoridades sanitarias competentes.
+c) Que no constituyan sustancias psicotrópicas o estupefacientes con arreglo a lo definido en los convenios internacionales.
+2. La publicidad de un medicamento que sea objeto de publicidad al público, cumplirá con los requisitos establecidos en el apartado 1 de este artículo; por su parte, los mensajes publicitarios deberán reunir los siguientes requisitos:
+a) Que resulte evidente el carácter publicitario del mensaje y quede claramente especificado que el producto es un medicamento.
+b) Que se incluya la denominación del medicamento en cuestión, así como la denominación común cuando el medicamento contenga una única sustancia activa.
+
+c) Que se incluyan todas las informaciones indispensables para la utilización correcta del medicamento, así como una invitación expresa y claramente visible a leer detenidamente las instrucciones que figuren en el prospecto o en el embalaje externo, según el caso, y la recomendación de consultar al farmacéutico sobre su correcta utilización.
+d) No incluir expresiones que proporcionen seguridad de curación, ni testimonios sobre las virtudes del producto ni de profesionales o personas cuya notoriedad pueda inducir al consumo.
+e) No utilizar como argumento publicitario el hecho de haber obtenido autorización sanitaria en cualquier país o cualquier otra autorización, número de registro sanitario o certificación que corresponda expedir, ni los controles o análisis que compete ejecutar a las autoridades sanitarias con arreglo a lo dispuesto en esta ley.
+f) Los mensajes publicitarios de los medicamentos que se emitan en soporte audiovisual deberán cumplir las condiciones de accesibilidad para personas con discapacidad establecidas en el ordenamiento jurídico para la publicidad institucional.
+3. La publicidad de medicamentos no sujetos a prescripción médica no requerirá de autorización administrativa previa, si bien las Administraciones sanitarias competentes efectuarán los controles necesarios para garantizar que los contenidos publicitarios cumplan con las normas legales y reglamentarias, que les sean de aplicación y que se ajusten fielmente a las condiciones científicas y técnicas recogidas en la autorización de comercialización.
+4. Las Administraciones sanitarias, por razones de salud pública o seguridad de las personas, podrán limitar, condicionar o prohibir la publicidad de los medicamentos y de los productos sanitarios.
+5. Se prohíben las primas, obsequios, premios, concursos, bonificaciones o similares como métodos vinculados a la promoción o venta al público de estos medicamentos.
+6. En el caso de los productos sanitarios queda excluida la posibilidad de realizar publicidad directa o indirecta, dirigida al público en el caso de que un producto esté financiado por el Sistema Nacional de Salud. Esta prohibición de publicidad afecta a las empresas fabricantes, distribuidoras o comercializadoras, así como a todas aquellas entidades que puedan mantener un contacto directo con el paciente. Asimismo, se prohíben las primas, obsequios, descuentos, premios, concursos, bonificaciones o similares como métodos vinculados a la promoción o venta al público de dichos productos.
+7. No podrán ser objeto de publicidad destinada al público los productos sanitarios que estén destinados a ser utilizados o aplicados exclusivamente por profesionales sanitarios.
+8. La publicidad de las técnicas o procedimientos médicos o quirúrgicos ligados a la utilización de productos sanitarios específicos respetará los criterios contemplados en la publicidad de productos sanitarios.
+
+3.2. SEGÚN LA FINANCIACIÓN
+
+Los productos farmacéuticos también se pueden clasificar según su financiación. Así, en la oficina de farmacia nos encontramos con productos que están financiados por el sistema sanitario público y otros que no.
+Según el Real Decreto-ley 16/2012, de 20 de abril, de medidas urgentes para garantizar la sostenibilidad del Sistema Nacional de Salud y mejorar la calidad y seguridad de sus prestaciones, la inclusión de medicamentos en la financiación del Sistema Nacional de Salud se realiza teniendo en cuenta los siguientes criterios:
+a. Gravedad, duración y secuelas de las distintas patologías para las que resulten indicados.
+b. Necesidades específicas de ciertos colectivos.
+c. Valor terapéutico y social del medicamento y beneficio clínico del mismo teniendo en cuenta su
+
+relación coste-efectividad.
+d. Racionalización del gasto público destinado a la prestación farmacéutica e impacto presupuestario en el Sistema Nacional de Salud.
+e. Existencia de medicamentos u otras alternativas terapéuticas para las mismas afecciones a menor precio o inferior coste de tratamiento.
+f. Grado de innovación del medicamento.
+
+? Medicamentos financiados
+Son aquellos en los cuales el usuario no paga la totalidad de su importe sino solo una parte en función de su renta.
+
+
+Los límites en la cuantía de la aportación de los pensionistas del SNS, varían anualmente en función de la evolución anual del IPC. Los datos que refleja la tabla son en base a La Resolución de 15 de diciembre de 2014 de la DG de Cartera Básica de Servicios del SNS y Farmacia, actualiza tanto la cuantía máxima de los medicamentos con aportación reducida, como los límites máximos de aportación mensual para los pensionistas de la Seguridad Social y sus beneficiarios
+
+
+o Aportación reducida
+Aquellos usuarios con tratamientos crónicos que tengan prescritos medicamentos pertenecientes a los grupos ATC y productos sanitarios de aportación reducida, así como los pacientes diagnosticados de VIH/SIDA, aportarán el 10 % del coste del producto hasta un máximo que varía en función de la evolución anual del IPC.
+Así, para 2015 la aportación máxima de dichos usuarios queda fijada en 4,24 €, importe que se actualizará de forma automática cada mes de enero de acuerdo con la citada evolución del IPC.
+Los medicamentos y productos sanitarios de aportación reducida se identifican por llevar cícero (•) en el cupón precinto.
+
+
+
+o Exenciones de aportación
+Quedan exentos de aportación los usuarios que pertenezcan a una de las siguientes categorías, así como sus beneficiarios:
+¦ Afectados del síndrome tóxico y personas con discapacidad en los supuestos contemplados en su normativa específica.
+¦ Personas perceptoras de rentas de integración social.
+¦ Personas perceptoras de pensiones no contributivas.
+¦ Parados que han perdido el derecho a percibir el subsidio de desempleo en tanto subsista su situación.
+¦ Tratamientos derivados de accidente de trabajo y enfermedad profesional.
+¦ Personas beneficiarias del ingreso mínimo vital.
+¦ Personas menores de edad con un grado de discapacidad reconocido igual o superior al 33 %.
+¦ Los pensionistas de la Seguridad Social, cuya renta anual sea inferior a 5.635 euros consignada en la casilla de base liquidable general y del ahorro de la declaración del Impuesto sobre la Renta de las Personas Físicas, y los que, en el caso de no estar obligados a presentar dicha declaración, perciban una renta anual inferior a 11.200 euros.
+¦ Personas perceptoras de la prestación económica de la Seguridad Social por hijo o menor a cargo en régimen de acogimiento familiar permanente o guarda con fines de adopción.
+
+En algunas ocasiones los medicamentos y productos sanitarios para ser financiados deben llevar
+visado de inspección.
+DECRETO 189/2011, de 22 de septiembre, de homologación sanitaria de los tratamientos prescritos.
+Determinados medicamentos, productos sanitarios y productos dietéticos incluidos en las prestaciones farmacéutica y complementaria del Sistema Nacional de Salud requieren, con carácter previo a su dispensación a través de las oficinas de farmacia, de un mecanismo en el que se verifique el cumplimiento de las condiciones de prescripción relativas a ellos.
+
+El Real decreto 618/2007, de 11 de mayo, regula el procedimiento para el establecimiento, mediante visado, de reservas singulares a las condiciones de prescripción y dispensación de los medicamentos.
+El objetivo de las reservas singulares aplicadas a las condiciones de prescripción y dispensación de los medicamentos es la de verificar la adecuada utilización de los medicamentos y la de asegurar la adecuación de lo prescrito a lo autorizado, prestando especial atención a aquellos medicamentos calificados de prescripción médica restringida, de utilización reservada a determinados medios especializados, así como aquellos que estén sujetos a reservas singulares por cuestiones de seguridad o de limitación para determinados grupos de población de riesgo y, por último, aquellos para los que se financien únicamente algunas de sus indicaciones terapéuticas o que se les aplique una aportación reducida en función del tipo de paciente, de conformidad con lo dispuesto en el Real decreto 1348/2003, de 31 de octubre, por el que se adapta la clasificación anatómica de medicamentos al sistema de clasificación ATC.
+Se considerará homologación sanitaria de los tratamientos al proceso a través del cual se verifican con carácter previo a su dispensación, las prescripciones de determinados medicamentos, productos sanitarios y productos dietéticos incluidos en las prestaciones farmacéutica y complementaria del Sistema Nacional de Salud, y se valida el cumplimiento de los requisitos establecidos para su prescripción, de acuerdo con las indicaciones terapéuticas establecidas en la autorización de comercialización, con sus fichas técnicas, indicaciones financiadas y demás requisitos de prescripción de acuerdo con la normativa vigente en la materia.
+
+Estarán sujetos a homologación sanitaria de recetas:
+- Medicamentos con cupón precinto diferenciado
+- Medicamentos de diagnóstico hospitalario.
+- Medicamentos que contengan carnitina.
+- Medicamentos antipsicóticos atípicos para mayores de 75 años.
+- Vacunas individualizadas antialérgicas y antibacterianas.
+- Dietoterápicos y nutrición enteral (varía en función de las CCAA)
+- Absorbentes de incontinencia urinaria.
+- Tiras reactivas (varía en función de las CCAA)
+- Medicamentos para pacientes con hipercolesterolemia familiar heterocigótica (estatinas, ezetimiba)
+
+? No financiados
+Son aquellos productos farmacéuticos en los que el usuario debe abonar el 100% de su importe.
+Actualmente no todos los medicamentos autorizados en nuestro país son financiados por el Sistema Nacional de Salud.
+Que un medicamento no esté financiado no implica que no esté sujeto a prescripción médica para su dispensación.
+
+
+4. AUTORIZACIÓN Y REGISTRO DE MEDICAMENTOS
+
+Todos los medicamentos que se comercializan en España están regulados durante todo su ciclo de vida, desde el inicio de las etapas de investigación hasta después de su comercialización.
+Para que se pueda comercializar un medicamento en España, es preciso que la Agencia Española de Medicamentos y Productos Sanitarios (AEMPS) o la Comisión Europea lo autoricen y que, una vez autorizado, se produzca su inscripción en el Registro de Medicamentos (RAEFAR).
+La autorización de un medicamento tendrá una duración de 5 años. Pasados esos 5 años se podrá renovar, previa reevaluación de la relación beneficio/riesgo. La renovación de esa autorización tendrá carácter indefinido. Anualmente el laboratorio debe realizar una declaración de que desea seguir manteniendo la autorización.
+La autorización de comercialización caducará si en el plazo de 3 años no se ha comercializado el medicamento o no lo mantiene en el mercado de forma efectiva.
+
+Según la Ley 29/2006 (LGURM), para que la AEMPS autorice un medicamento este debe satisfacer las siguientes condiciones:
+a. Alcanzar los requisitos de calidad que se establezcan.
+Todo medicamento debe tener perfectamente establecida su composición cualitativa y cuantitativa. En aquellas sustancias en las que esto no sea posible, sus procedimientos de preparación deben ser reproducibles.
+El Ministerio de Sanidad es el encargado de establecer el tipo de controles exigibles al laboratorio titular de la autorización de comercialización y al fabricante para garantizar la calidad de las materias primas, de los productos intermedios, del proceso de fabricación y del producto final, incluyendo envasado y conservación, a efectos de la autorización y registro. Dichos controles se mantendrán mientras dure la producción y/o comercialización del medicamento, modificándose el procedimiento de control
+
+conforme el avance de la técnica.
+
+Los criterios y normas calidad que deben cumplir los principios activos y excipientes que forman parte de la composición de los medicamentos de uso humano y uso veterinario quedan establecidos en la Real Farmacopea Española.
+
+b. Ser seguro
+El medicamento no debe producir, en condiciones normales de utilización, efectos tóxicos o indeseables desproporcionados al beneficio que procura.
+Los medicamentos, principios activos y materias primas que los compongan, se someten a estudios toxicológicos y clínicos que permiten garantizar su seguridad en condiciones normales de uso y que están en relación con la duración prevista del tratamiento.
+La seguridad debe garantizarse en cuanto a los riesgos relativos a la utilización del medicamento, así como en cuanto a cualquier riesgo de efectos no deseados para el medio ambiente.
+Los solicitantes de la autorización deben acreditar la capacidad de realizar una adecuada vigilancia post- comercialización de la seguridad del medicamento.
+
+c. Ser eficaz en las indicaciones terapéuticas para las que se ofrece.
+La eficacia se define como la capacidad de lograr el efecto que se desea o se espera.
+La eficacia de los medicamentos para cada una de sus indicaciones se establece en base a la realización previa de estudios preclínicos y ensayos clínicos cuando el medicamento está en fase de investigación.
+
+d. Estar correctamente identificado.
+Cada principio activo tiene asignada por la AEMPS una denominación oficial española (D.O.E.). Esta denominación es igual, o similar en algunos casos, a la denominación común internacional (D.C.I.) fijada por la Organización Mundial de la Salud.
+Al medicamento también se le puede denominar de otras maneras:
+* Con un nombre de fantasía que no pueda confundirse con la denominación oficial española o una denominación común internacional ni inducir a error sobre las propiedades terapéuticas o la naturaleza del medicamento.
+* Con una denominación común o científica acompañada de una marca comercial o del nombre del titular de la autorización de comercialización.
+La denominación de los medicamentos genéricos se realiza con una D.O.E. de principio activo o en su defecto, con la D.C.I. Si esta no existiese, se designan con la denominación común o científica de dicha sustancia, acompañada del nombre o marca del titular o fabricante. Los medicamentos genéricos se identifican además con las siglas EFG (Equivalente Farmacéutico Genérico).
+
+
+e. Suministrar la información precisa
+Suministrar la información en formato accesible y de forma comprensible por el paciente, para su correcta utilización.
+El titular o fabricante debe proporcionar información sobre la identificación, indicaciones y precauciones a observar en el empleo del medicamento.
+Se puede encontrar información sobre el medicamento en la ficha técnica, el prospecto y el
+etiquetado.
+
+? FICHA TÉCNICA
+La ficha técnica es un resumen de las características del producto y refleja las condiciones de uso autorizadas por la AEMPS para ese medicamento concreto. También resume la información científica esencial para los profesionales sanitarios, que pueden consultarla.
+Este es un documento más científico-técnico, diferente al que los pacientes verán al abrir un medicamento, es decir, el prospecto.
+
+? PROSPECTO
+El prospecto se elabora con el contenido de la ficha técnica y ha de proporcionar a los pacientes información suficiente sobre la denominación del principio activo, identificación del medicamento y su titular, instrucciones para su administración, empleo y conservación, así como los efectos adversos, interacciones, contraindicaciones, en especial los efectos sobre la conducción de vehículos a motor, y otros datos que se determinen reglamentariamente con el fin de promover su más correcto uso y el seguimiento del tratamiento prescrito, así como las medidas a adoptar en caso de intoxicación.
+El prospecto ha de ser legible, claro, asegurando su compresión por el paciente y reduciendo al mínimo los términos de naturaleza técnica.
+
+Una vez que se produce la autorización y registro del medicamento, este se supervisará de manera constante de modo que en cualquier momento puede revisarse dicha autorización. Asimismo todas las modificaciones posteriores que se introduzcan deberán ser objeto de autorización y hacerse constar en el Registro de Medicamentos.
+
+
+5. CLASIFICACIÓN ATC DE MEDICAMENTOS
+
+Los medicamentos se pueden clasificar atendiendo a diversos criterios:
+
+
+A lo largo de la historia de la farmacología uno de los problemas sobre los que ha trabajado más es sobre una clasificación de los principios activos que sea funcional y universalmente aceptada. Se han realizado muchos intentos, pero el que ha tenido un mayor apoyo internacional es el que basa su clasificación en tres criterios: anatómico, terapéutico y químico. A esta clasificación se le conoce como clasificación ATC por sus siglas en inglés (Anatomical, Therapeutic, Chemical Classification System).
+
+
+
+
+
+
+
+La clasificación ATC es un sistema de codificación de sustancias farmacéuticas y medicamentos en función del sistema u órgano sobre el que actúa, el efecto farmacológico, las indicaciones terapéuticas y la estructura química de un fármaco.
+Este sistema se adoptó para utilizar un método internacional único; es el mismo sistema que utiliza la EMA (Agencia Europea de Evaluación de Medicamentos), que recomienda la OMS y que permite, entre otras cosas, el análisis cuantitativo y cualitativo del consumo de medicamentos.
+
+5.1. ESTRUCTURA DE LA CLASIFICACIÓN ATC
+
+El sistema de codificación de medicamentos ATC está estructurado en cinco niveles.
+
+5.1.1. PRIMER NIVEL: GRUPO ANATÓMICO
+Indica el órgano, aparato o sistema sobre el que actúa el medicamento. Existen 14 grupos anatómicos, cada uno identificado con una letra que se corresponde con la inicial en inglés del órgano, aparato o sistema.
+
+
+5.1.2. SEGUNDO NIVEL: GRUPO TERAPÉUTICO
+Indica la acción terapéutica del fármaco. Cada grupo terapéutico se identifica con dos cifras precedidas de la letra correspondiente al grupo anatómico al que pertenece.
+Véase el ejemplo con el grupo anatómico J.
+
+
+5.1.3. TERCER NIVEL: SUBGRUPO TERAPÉUTICO O FARMACOLÓGICO
+Indica la acción terapéutica. Cada subgrupo se identifica con una letra.
+
+
+5.1.4. CUARTO NIVEL: GRUPO QUÍMICO O SUBGRUPO QUÍMICO
+Incluye las familias de fármacos cuyas moléculas son similares. De nuevo, se identifica con una letra.
+
+
+5.1.5. QUINTO NIVEL: PRINCIPIO ACTIVO O ASOCIACIÓN FARMACOLÓGICA
+Este nivel indica los principios activos de cada grupo químico. Se identifica con un número de dos cifras.
+
+
+El código ATC asignado a cada principio activo es único salvo en el caso de que un mismo principio activo presente indicaciones terapéuticas diversas y, por tanto, esté clasificado en grupos distintos. Si se da esta circunstancia, a cada una de sus indicaciones terapéuticas se le asignará un código ATC distinto.
+
+
+Si un medicamento incluye más de un principio activo, se le asigna un código en función de la indicación terapéutica principal.
+
+En el caso de las asociaciones de un principio activo ya codificado, el código se crea modificando el penúltimo dígito, que pasará a ser un 5.
+
+
+
+
+
+
+5.2.2. B: SANGRE Y ÓRGANOS HEMATOPOYÉTICOS
+Los órganos hematopoyéticos son aquellos donde tiene lugar la formación de las células sanguíneas.
+En este grupo anatómico se incluyen fármacos indicados en el tratamiento de patologías como distintos tipos de anemias, defectos de la coagulación y otras condiciones hemorrágicas.
+
+
+5.2.3. C: SISTEMA CARDIOVASCULAR
+El sistema cardiovascular es el encargado de llevar a todas las células corporales las sustancias necesarias para su funcionamiento, recoger los productos resultantes del metabolismo para su procesado o eliminación y transportar las células leucocitarias encargadas de los mecanismos de defensa adonde sean necesarias.
+En este grupo anatómico destacan los fármacos indicados en el tratamiento de la insuficiencia cardíaca, insuficiencia coronaria, hipertensión arterial, arritmia cardíaca, además de fármacos hipolipemiantes y antivaricosos.
+
+
+5.2.4. D: TERAPIA DERMATOLÓGICA
+La piel es el órgano más grande del cuerpo. Constituye una cubierta protectora y realiza funciones como regular la temperatura, relación con el medio externo, defensa del organismo frente a agresiones y
+
+absorción y secreción de sustancias.
+La terapia dermatológica está indicada en el tratamiento de las afecciones de la piel
+
+5.2.5. G: SISTEMA GENITOURINARIO Y HORMONAS SEXUALES
+El sistema genitourinario está formado por el conjunto de los órganos urinarios y el aparato genital. El sistema urinario tiene la función de secretar, almacenar y excretar la orina y el aparato genital es el encargado de la función reproductora.
+En este grupo se incluyen tanto los fármacos utilizados en afecciones de los órganos genitales y del sistema urinario y como los fármacos relacionados con la función reproductora.
+
+5.2.6. H: TERAPIA HORMONAL, EXCLUYENDO HORMONAS SEXUALES E INSULINAS
+Las hormonas son sustancias secretadas por las glándulas endocrinas cuyo papel es la regulación de gran cantidad de procesos fisiológicos.
+Los preparados hormonales sistémicos se utilizan para la regulación de ciertas funciones orgánicas y como terapia sustitutiva en diversas alteraciones endocrinas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5.2.7. J: ANTIINFECCIOSOS PARA USO SISTÉMICO
+Una infección se produce por la entrada de un agente patógeno que invade el organismo y se multiplica causando la enfermedad. Los microorganismos causantes son bacterias, hongos y virus.
+Los antiinfecciosos de uso sistémico incluyen medicamentos cuya función es combatir la infección actuando sobre el microorganismo implicado y afectando lo menos posible a las células del organismo. También forman parte de este grupo los sueros, inmunoglobulinas y vacunas cuya función es prevenir la enfermedad infecciosa.
+
+
+5.2.8. L: TERAPIA ANTINEOPLÁSICA Y AGENTES INMUNOMODULADORES
+El cáncer es una alteración caracterizada por el desarrollo de células anormales que se multiplican de forma descontrolada. La terapia antineoplásica se utiliza en el tratamiento del cáncer.
+Los inmunomoduladores son fármacos que actúan sobre el sistema inmunitario potenciando o inhibiendo su actividad.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5.2.9. M: SISTEMA MUSCULOESQUELÉTICO
+El sistema musculoesquelético está formado por el conjunto de los músculos, los huesos y las articulaciones y cumple funciones de sostén, movimiento y protección de los órganos internos.
+En este grupo anatómico se incluyen diversos medicamentos para el tratamiento de patologías musculares, óseas y articulares.
+
+5.2.10. N: SISTEMA NERVIOSO
+El Sistema nervioso es uno de los sistemas más importantes y más complejos de nuestro organismo. Está formado por dos divisiones: el Sistema Nervioso Central, formado por el encéfalo y la médula espinal y el Sistema Nervioso Periférico, del que forman parte todas las conexiones nerviosas.
+El sistema nervioso es el responsable de recibir los estímulos del entorno y elaborar una respuesta y, junto con el sistema endocrino, se ocupa de coordinar todas las funciones del organismo.
+Forman parte de este grupo anatómico los medicamentos anestésicos, los analgésicos, los antidepresivos, medicamentos utilizados en el Alzheimer, en la esclerosis múltiple y en diversas terapias de deshabituación.
+Los productos antiparasitarios se utilizan en el tratamiento de infestaciones producidas por distintos tipos de parásitos, principalmente helmintos y protozoos.
+Los insecticidas y repelentes se utilizan para evitar las enfermedades transmitidas por mosquitos, moscas y otros insectos como son la malaria o el dengue.
+
+
+5.2.12. R: SISTEMA RESPIRATORIO
+El sistema respiratorio es el encargado captar el oxígeno, transportarlo a la sangre a través de las paredes alveolares y eliminar el dióxido de carbono, producto de desecho de la respiración.
+En este grupo anatómico destacan, entre otros, los tratamientos para el asma y la EPOC, preparados para el resfriado, fármacos antitusígenos, mucolíticos y expectorantes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5.2.13. S: ÓRGANOS DE LOS SENTIDOS
+En este grupo anatómico se incluyen fármacos para el tratamiento de patologías relacionadas con los órganos de los sentidos y que no pertenezcan a los grupos anteriores. Son los medicamentos utilizados en las enfermedades que afectan al ojo y al oído.
+
+5.2.14. V: VARIOS
+En el grupo anatómico "Varios" se incluyen aquellos elementos que no hayan sido incluidos en ninguno de los grupos anteriores. Es un grupo heterogéneo en el que se encuentran productos muy diversos: fármacos, productos para pruebas diagnósticas, preparados dietéticos y productos no terapéuticos.
+
+6. MEDICAMENTOS	QUE	PUEDEN	ENCONTRARSE	EN	LOS SERVICIOS DE FARMACIA HOSPITALARIA
+En el hospital puede encontrarse una amplia gama de medicamentos que responden a las necesidades terapéuticas de los pacientes que allí se atienden.
+
+MEDICAMENTOS DE USO HABITUAL QUE PRECISAN LOS PACIENTES INGRESADOSPueden dispensarse también en las oficinas de farmacia comunitarias a los pacientes ambulatorios si han sido prescritos por su médico de cabecera o especialista de Área.
+     MEDICAMENTOS DE DISPENSACIÓN HOSPITALARIA- Medicamentos de uso hospitalario (H)
+- Medicamentos en situaciones especiales (RD 1015/2009, de 19 de junio)
+¦ Medicamentos extranjeros.
+¦ Medicamentos para indicaciones diferentes a las autorizadas (Uso fuera de ficha técnica)
+¦ Uso compasivo
+- Medicamentos en fase de ensayo clínico.
+
+6.1. MEDICAMENTOS	DE	DISPENSACIÓN	RESTRINGIDA	AL	ÁMBITO HOSPITALARIO
+Dentro de este grupo tenemos:
+
+6.1.1. MEDICAMENTOS DE USO HOSPITALARIO
+Son aquellos que por sus peculiaridades farmacológicas, su novedad o interés para la salud pública, quedan reservados a tratamientos que se prestan en el medio hospitalario.
+Deben ser prescritos por un médico especialista y dispensados por los Servicios de Farmacia Hospitalaria. Llevan la sigla H colocada junto al CN.
+
+6.1.2. ALGUNOS MEDICAMENTOS DE DIAGNÓSTICO HOSPITALARIO SIN CUPÓN PRECINTO
+Se emplean para el tratamiento de patologías que se deben diagnosticar en el medio hospitalario. Son medicamentos de diagnóstico hospitalario, pero no se dispensan en oficina de Farmacia.
+No llevan cupón precinto, y están catalogados como "DIHSC = diagnóstico hospitalario sin cupón precinto". Ejemplo: Apremilast (OTEZLA(r) 30 mg 56 cp)
+Los medicamentos que se dispensan a pacientes externos, se utilizan para patologías crónicas, generalmente son muy costosos y con un perfil de seguridad/eficacia que hace requerir un especial control de dispensación.
+
+En la siguiente tabla aparecen los medicamentos más utilizados y las patologías para las que están destinados.
+
+PATOLOGÍAMEDICAMENTOSVIH/ SIDAAntirretrovirales: abacavir, tenofovir, emtricitabina, EfavirenzESCLEROSIS MÚLTIPLEGlatirámero,	Interferón	beta	1b,	Interferón	beta	1ª, Natalizumab.ESCLEROSIS LATERAL AMIOTRÓFICARiluzolENFERMEDAD RENAL CRÓNICAEritropoyetina (EPO)ARTRITIS REUMATOIDEAdalimumab, Etarnecept, InfliximabENFERMEDADES AUTOINMUNESTofacitinibENFERMEDAD DE CROHNInfliximab, AdalimumabHEPATITISRibavirina, lamivudina, tenofovir.NEUTROPENIA POSTQUIMIOTERAPIAFactores estimulantes de colonias: Filgrastim
+6.1.3. MEDICAMENTOS EN SITUACIONES ESPECIALES
+Existen varios motivos para que las condiciones de utilización de un fármaco no estén recogidas en la ficha técnica del producto:
+* El rápido avance de la ciencia y la lentitud de registro puede contribuir a que fármacos prometedores en pacientes con patologías graves en las últimas fases de desarrollo, tarden en ser accesibles a los pacientes.
+* Los pacientes pediátricos, embarazadas y ancianos, están altamente protegidos para su participación en investigación, así cuando el llega al mercado, no existen datos en la ficha técnica para su utilización en los mismos.
+* Por último, el desinterés del fabricante para registrar las modificaciones de un fármaco antiguo, con un bajo precio, hacen que estas no aparezcan en su ficha técnica.
+
+Las condiciones de utilización de un medicamento están fijadas en su ficha técnica, sin embargo, en la práctica clínica nos encontramos con situaciones que exigen la utilización de los medicamentos fuera de las condiciones "normales" de uso para poder proporcionar un tratamiento.
+
+? USO COMPASIVO DE MEDICAMENTOS EN INVESTIGACIÓN:
+La Agencia Española de Medicamentos y Productos Sanitarios (AEMPS) puede autorizar el uso de medicamentos en investigación antes de su comercialización en España, para pacientes concretos sin una alternativa terapéutica disponible satisfactoria, que no forman parte de un ensayo clínico y que están en una situación clínica que no permite esperar a que finalice la investigación y los nuevos tratamientos se autoricen.
+Con esta norma el acceso a estos medicamentos puede hacerse de forma individualizada para un paciente o acogiéndose a una autorización temporal de uso por la Agencia Española de Medicamentos y Productos Sanitarios (AEMPS) para un grupo de pacientes.
+El laboratorio tiene que querer acceder al suministro como uso compasivo.
+El acceso a estos medicamentos a través de Medicamentos en Situaciones Especiales (MSE) es igual en todo el territorio español y debe ser solicitado por un Servicio de Farmacia Hospitalaria, indicando el medicamento prescrito, ya sea un medicamento en investigación o en fase de evaluación por las agencias reguladoras antes de su autorización (e incluso medicamentos autorizados, pero no comercializados en España).
+La solicitud realizada debe incluir un informe clínico en el que se justifique la ausencia de alternativas, así como la necesidad del tratamiento prescrito y evidencia que haya del medicamento en la indicación solicitada (bibliografía o datos que apoyen su uso).
+
+También será necesario que la solicitud cuente con el visto bueno de la dirección del centro sanitario y el consentimiento informado del paciente, así como la conformidad expresa del laboratorio a suministrarlo.
+
+? USO DE MEDICAMENTOS EN CONDICIONES DIFERENTES DE LAS AUTORIZADAS EN LA FICHA TÉCNICA:
+La norma también incluye el uso de medicamentos aprobados cuando existe la necesidad de utilizarlos en condiciones diferentes a las autorizadas.
+Se elimina la necesidad de autorización previa individual en cada caso por parte de la AEMPS, y se refuerza la responsabilidad de los centros sanitarios, la información a los pacientes, y la vigilancia de su uso.
+La AEMPS podrá emitir recomendaciones, que se tendrán en cuenta en los protocolos terapéutico- asistenciales elaborados por los centros sanitarios.
+
+? ACCESO A MEDICAMENTOS NO AUTORIZADOS EN ESPAÑA:
+La Agencia podrá autorizar con carácter excepcional, el acceso a medicamentos no autorizados en España y destinados a su utilización en España cuando no se encuentre el medicamento autorizado en España con igual composición o esté en una forma farmacéutica que no permita el tratamiento del paciente y/o que no exista en España medicamento autorizado que constituya una alternativa adecuada para ese paciente.
+Asimismo, podrá autorizar el acceso a medicamentos que estando autorizados en España no se encuentren comercializados.
+
+6.2. MEDICAMENTOS SOMETIDOS A CONDICIONES ESPECIALES DE DISPENSACIÓN
+Son medicamentos que por sus características requieren ser dispensados con un especial control por parte del SFH. Estos son:
+
+6.2.1. ESTUPEFACIENTES EN FARMACIA HOSPITALARIA
+El SFH es el principal responsable de la custodia y dispensación controlada de estupefacientes en el hospital. A continuación, se muestran unas listas donde se reflejan las sustancias estupefacientes, que son en su mayoría analgésicos potentes.
+CLASIFICACIÓN DE MEDICAMENTOS ESTUPEFACIENTESLISTA I? Alfentanilo
+? Cocaína (en fórmulas magistrales)
+? Fentanilo
+? Metadona
+? Morfina
+? Petidina
+? Remifentanilo
+? Oxicodona
+? TapentadolLISTA II? Acetildihidrocodeína
+? Codeína
+? Dextropropoxifeno
+? Dihidrocodeína
+? Etilmorfina
+? Folcodina
+? Nicocodeína
+? Nicodicodina
+? Norcodeína
+? Propiramo
+
+LISTA IIIProductos de las listas I y II mezclados con sustancias no estupefacientes; la cantidad de estupefaciente no ha de exceder ciertos límites.LISTA IVProhibidos en España. Entre otros están el cannabis y la heroína (diactilmorfina)
+Tanto las recepciones como las dispensaciones deben reflejarse en el LIBRO DE CONTABILIDAD DE ESTUPEFACIENTES, y el saldo (stock) reflejado en él de cada estupefaciente debe ser idéntico a las unidades físicas de las que se dispone.
+Los estupefacientes estarán custodiados por exigencia legal en un armario o caja fuerte bajo llave tanto en el Servicio de Farmacia, como en los botiquines de planta.
+
+6.2.2. Medicamentos no sustituibles
+
+ORDEN SCO/2874/2007, de 28 de septiembre, por la que se establecen los medicamentos que constituyen excepción a la posible sustitución por el farmacéutico con arreglo al artículo 86.4 de la Ley 29/2006, de 26 de julio, de garantías y uso racional de los medicamentos y productos sanitarios.
+
+Son medicamentos no sustituibles
+a) Medicamentos biológicos Que incluyen hormonas (insulina, hormona del crecimiento, levotiroxina, etc.), hemoderivados, vacunas, anticuerpos y otros fármacos obtenidos a partir de organismos vivos mediante técnicas biotecnológicas.
+b) Medicamentos con principios activos de estrecho margen terapéutico y que no se administren por vía intravenosa: acenocumarol, carbamazepina, ciclosporina, digoxina, fenitoina, levotiroxina, litio, metildigoxina, tacrolimus, teofilina y warfarina.
+c) Medicamentos para el aparato respiratorio administrados por vía inhalatoria. https://www.aemps.gob.es/medicamentos-de-uso-humano/medicamentos-no-sustituibles/
+
+7. APLICACIONES INFORMÁTICAS DE BASES DE DATOS DEL MEDICAMENTO
+En muchas ocasiones, el técnico en farmacia y parafarmacia, en la realización de sus funciones, debe manejar información sobre medicamentos, que procede tanto de libros como de bases de datos en formato electrónico que permiten un acceso más fácil y rápido.
+
+7.1. CATÁLOGO DE MEDICAMENTOS DEL CGCOF
+El Catálogo de Medicamentos contiene información farmacológica de todos los medicamentos autorizados en España, incluidos los medicamentos publicitarios, los hospitalarios y los envases clínicos.
+Dispone de un completo índice alfabético de medicamentos con las características más destacables (precio, tipo de medicamento, aportación, inclusión o exclusión del SNS) y monografías de todos los principios activos, organizadas por grupos terapéuticos según la clasificación ATC.
+
+Incluye además:
+* Legislación sobre medicamentos.
+* Medicamentos utilizados durante el embarazo y la lactancia.
+* Listado de medicamentos extranjeros.
+* Revisiones farmacológicas de medicamentos permitiendo comparar y seleccionar medicamentos de una misma clase terapéutica.
+* Interacciones de importancia clínica.
+* Notas informativas sobre riesgo de medicamentos publicads durante el año anterior a la publicación del catálogo por la AEMPS.
+
+7.2. BASES DE DATOS DEL MEDICAMENTO
+Las bases de datos del medicamento son la fuente de información más utilizada en la actualidad. Contienen información farmacológica y terapéutica de las diferentes especialidades farmacéuticas y sus principios activos.
+
+7.2.1. BASE DE DATOS DE LA AGENCIA ESPAÑOLA DE MEDICAMENTOS Y PRODUCTOS SANITARIOS (AEMPS)
+Una de las fuentes de información de recomendada consulta para conocer datos básicos sobre un medicamento es la página de la AEMPS (www.aemps.gob.es).
+
+
+
+
+
+
+Los datos de identificación del medicamento que se obtienen en una búsqueda en esta base de datos son:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BASE DE DATOS DEL MINISTERIO DE SANIDAD (NOMENCLÁTOR DIGITALIS)
+
+El Nomenclátor Digitalis es un listado informatizado de medicamentos en el que viene trabajando el Ministerio de Sanidad desde el año 2000.
+Contiene información sobre los productos incluidos en la prestación farmacéutica del SNS (dispensables a través de oficinas de farmacia)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7.2.2. BASE DE DATOS DEL CONSEJO GENERAL DE COLEGIOS OFICIALES DE FARMACÉUTICOS
+
+BotPlus es la base de datos del medicamento del Consejo General de Colegios Oficiales de Farmacéuticos (CGCOF).
+
+Contiene la información relativa a todos los medicamentos comercializados en España, así como información sobre productos sanitarios y plantas medicinales de venta en oficinas de farmacia.
+
+BotPlus supone un instrumento de ayuda en la prescripción y dispensación de medicamentos, puesto que incluye un sistema de alertas que permite la detección de similitudes fonéticas u ortográficas de especialidades farmacéuticas y principios activos. Ofrece la posibilidad de realizar búsquedas documentales (fichas técnicas, farmacovigilancia...) y de principios activos o medicamentos indicados o contraindicados en una enfermedad.
+
+Incluye legislación sobre el medicamento y actualiza cada 2-4 días por Internet notas de farmacovigilancia, nuevos principios activos, cambios en indicaciones y fichas técnicas...
+La búsqueda de un medicamento en la base de datos del CGCOF puede hacerse por nombre (principio activo o especialidad farmacéutica) o por código nacional.
+
+Búsqueda por principio activo
+
+
+Búsqueda por especialidad farmacéutica
+
+
+Búsqueda por Código nacional
+
+Resultado de la búsqueda de un medicamento en la base de datos BotPlus
+
+
+A partir de la base de datos se puede acceder a los módulos complementarios:
+
+
+
+
+
+
+
+
+
+
+
+
+
+La base de datos BotPlus es utilizada como referencia en los programas de gestión de las oficinas de farmacia.
+
+7.2.3. VADEMÉCUM
+El vademecum (www.vademecum.es) es una base de datos farmacológica que ofrece al profesional sanitario ayuda en la prescripción y en la dispensación de medicamentos.
+El acceso a esta base de datos es gratuita con registro previo.
+Permite realizar la búsqueda de un medicamento por índice alfabético, grupo ATC, enfermedades y síntomas, principio activo y laboratorio.
+Proporciona información sobre la composición, propiedades, indicaciones terapéuticas, dosificación, efectos adversos, interacciones...
+
+
+
+
+
+
+8. BIBLIOGRAFÍA
+? Sabela Fernández Vila; Beatriz Tojo Fernández; Montserrat Chao Millor; Fátima Calvo Rey.
+"Dispensación de Productos Farmacéuticos". Editorial MCGraw-Hill. 2013.
+? Cristina Moreno Valderrey. "Dispensación de Productos Farmacéuticos". Editorial Paraninfo. 2014.
+? Francisco J. Farfán Sedano; Mª Jesús Frutos Sastre. "La Farmacia Hospitalaria para técnicos en farmacia". AMV Ediciones.
+? Montserrat Chao Millor; Sabela Fernández Vila. "Disposición y venta de productos". Editorial MCGraw-Hill. 2011.
+? Benito Hernández; Elena Martínez. "Dispensación de productos farmacéuticos". Editorial Altamar. 2013.
+
+9. ANEXO: PRINCIPALES PRINCIPIOS ACTIVOS
+A. TRACTO ALIMENTARIO Y METABOLISMO.
+
+CódigoGrupo terapéuticoPrincipios activosSubgrupo terapéutico
+A01
+
+EstomatológicosPovidona iodada estomatología (A01ABM2) Peróxido de hidrógeno, estomatología (A01AB02) Nistatina (A01ABM3)
+Caarbenoxilona (A01ADM1)
+
+Preparados estomatológicos
+
+
+
+A02
+
+
+
+Fármacos para alteraciones relacionadas con la acidezAlmagato (A02AD03)
+Hidróxido de magnesio (A02AA04) Hidróxido de aluminio (A02AB01)
+AntiácidosRanitidina (A02BA02) Famotidina (A02BA03) Omeprazol (A02BC01) Pantoprazol (A02BC02) Lansoprazol (A02BC03) Rabeprazol (A02BC04)
+Esomeprazol (A02BC05)
+
+
+Agentes contra úlcera péptica y RGE
+
+
+
+
+
+
+A03
+
+
+
+
+
+
+Fármacos para alteraciones funcionales gastrointestinalesMebeverina (A03AA04) Trimebulina (A03AA05)
+Otilonio bromuro (A03AB06)
+Agentes contra padecimientos funcionales del estómagoAtropina (A03BA01) Butilescopolamina bromuro (A03BB01)Belladona y derivados, monofármacosClordiacepóxido con Escopolamina metobromuro (A03CB01)Antiespasmódicos en combinación con psicolépticosMetamizol con butilescopolamina bromuro (A03DB01)Antiespasmódicos en combinación con analgésicosAzintamida con metilbromuro de escopolamina (A03EDP1)Antiespasmódicos y anticolinérgicos en combinación con otros fármacosDomperidona (A03FA03) Metoclopramida (A03FA01) Cleboprida (A03FA06)
+Propulsivos
+A04
+Antieméticos y antináuseasOndansetron (A04AA01) Granisetron (A04AA02) Palonosetron (A04AA05)
+Antieméticos y antinauseosos
+
+A05
+
+Terapia hepatobiliarÁcido ursodesoxicólico (A05AA02) Cólico ácido (A05AA03)
+Terapia biliarSilimarina (A05BA03)Terapia hepática, lipotrópicosProcaína, diciclomina y metocalcona (A05CA)Fármacos para terapia biliar y lipotrópicos en combinación
+
+A06
+
+LaxantesParafina líquida (A06AA01) Bisacodilo (A06AB02) Aceite de ricino (A06B06)
+Picosulfato sódico (A06AB08)
+Metilcelulosa (A06AC06)
+
+Laxantes
+
+Lactulosa (A06AD11)
+Glicerol enema (A06AG04)
+
+
+
+
+
+
+A07
+
+
+
+
+
+Antidiarreicos, antiinfecciosos y antiinflamatorios intestinalesNeomicina (A07AA01) Paromomicina (A07AA06)
+Antiinfecciosos intestinalesCarbón adsorbente (A07BA01)
+Gelatina con germen de trigo, arroz y pectina (A07BCM1)
+Adsorbentes intestinalesSodio cloruro y citrato, potasio cloruro, glucosa (A07CA)Electrolitos con carbohidratosLoperamida (A07DA05)
+Loperamida + simeticona (A07DA53)
+AntipropulsivosBudesonida oral (A07EA06) Beclometasona (A07EA07)Agentes antiinflamatorios intestinalesLactobacillus acidophillus (A07FA01)Microorganismos antidiarreicosRacecadotrilo (A07XA04)Otros antidiarreicos
+A08Antiobesidad, excluyendo productos dietéticosOrlistat (A08AB01) Rimonabant ( A08AX01) Sibutramina (A08AA10)
+Preparados contra la obesidad, excluyendo productos dietéticosA09DigestivosAmilasa alfa, lipasa, proteasa (A09AAP3)Digestivos, incluyendo enzimas
+
+
+
+A10
+
+
+
+
+AntidiabéticosInsulina humana para inyección (A10AB01) Insulina humana acción intermedia (A10AC04) Insulina humana acción prolongada (A10AE01)
+Insulinas y análogosMetformina (A10BA02) Clorpropamida (A10BB02) Glibenclamida (A10BB01) Sitagliptina (A10BH01) Semaglutida (A10BJ06)
+Dapagliflozina (A10BK01)
+
+Fármacos hipoglucemiantes excluyendo insulinas
+
+
+
+
+
+
+
+
+A11
+
+
+
+
+
+
+
+
+
+VitaminasÁcido ascórbico, carboxilasa clorhidrato, nicotinamida, retinol, riboflavina, tocoferol.
+(A11ABP1)
+Multivitamínicos, combinaciones.Ácido ascórbico, biotina, colecalciferol, nicotinamida, piridoxina, retinol, riboflavina, tocoferol.
+(A11BA P1)
+Multivitamínicos solosRetinol (A11CA01)
+Aceite de hígado de bacalao (A11CB M1) Calcitriol (A11CC04)
+Vitaminas A y D, incluyendo combinaciones de las dosTiamina (A11DA01) Sulbutiamina (A11DA02)Vitamina B1, sola y en combinación con vitaminas B6 y B12Cianocobalamina, lisozima (A11EXP1)Vitaminas del complejo B, incluyendo combinacionesÁcido ascórbico (A11GA01)
+Ácido ascórbico con retinol (A11GBP2)Vitamina C, incluyendo combinacionesPiridoxina (A11HA02)Otros preparados de vitaminas, monofármacos
+
+Tocoferol (A11HA03)
+Biotina (A11HA05)Vitamina A + vitamina E (A11JAP1) Colecalciferol, retinol y iodo (A11JCP1)Otros productos con vitaminas, combinaciones
+
+
+A12
+
+
+Suplementos mineralesCalcio fosfato (A12AA01)
+Calcio gluconato (A12AA03) Calcio carbonato (A12AA04)
+CalcioPotasio cloruro (A12BA01)PotasioZinc sulfato (A12CB01) Magnesio lactato (A12CC06)
+Otros suplementos minerales
+A13
+TónicosAspartato arginina (A13AM1) Carnitina (A13AM3)
+Citrulina (A13AM6)
+Tónicos
+A14
+AnabolizantesEstanozolol (A14AA02) Metenolona (A14AA04)
+Nandrolona (A14AB01)
+Esteroides anabólicos
+A15
+Estimulantes del apetitoCiproheptadina, estimulante del apetito (A15M1) Pizotifeno, estimulante del apetito (A15M2) Ciproheptadina en asociación (A15P1)
+Estimulantes del apetito
+A16Otros productos para el aparato digestivo y metabolismoAdemetionina (A16AA02) Betaína (A16AA06) Galsulfasa (A16AB08)
+Nitisinona (A16Ax04)
+Otros productos para el aparato digestivo y metabolismo
+B. SANGRE Y ÓRGANOS HEMATOPOYÉTICOS
+
+
+CódigoGrupo terapéuticoPrincipios activosSubgrupo terapéutico
+
+
+
+
+
+B01
+
+
+
+
+
+AntitrombóticosWarfarina (B01AA03) Acenocumarol (B01AA07) Heparina sódica (B01AB01) Enoxaparina (B01AB05)
+Acetilsalicílico ácido, antitrombótico (B01AC06) Clopidogrel (B01AC04)
+Prasugrel (B01AC22) Ticagrelor (B01AC24) Estreptoquinasa (B01AD01) Uroquinasa (B01AD04)
+Dabigatran(B01AE07), Rivaroxaban(B01AF01),
+Apixaban (B01AF02) Edoxaban(B01AF03)
+
+
+
+
+
+Antitrombóticos
+
+
+B02
+
+
+AntihemorrágicosAminocaproico ácido (B02AA01) Tranexámico ácido (B02AA02) Aprotinina (B02AB01)
+Alfa 1 antitripsina, antihemorrágico (B02AB02)
+
+AntifibrinolíticosFitomenadiona (B02BA01) Menadiona (B02BA02)Vitamina K y otros hemostáticos
+
+Fibrinógeno humano (B02BB01)
+Fibrinógeno humano + trombina humana (B02BC30)
+Factores de la coagulación IX, II, VII y X en combinación (B02BD01)
+Factor de coagulación VIII (B02BD02)
+
+
+
+
+B03
+
+
+
+
+
+AntianémicosGlicina sulfato ferroso (B03AA01) Gluconato ferroso (B03AA03) Sulfato ferroso (B03AA07)
+Complejo hidróxido férrico-sacarosa (B03AC02)
+
+Preparados con hierroCianocobalamina (B03BA01) Hidroxocobalamina (B03BA03) Fólico ácido (B03BB01)
+Fólico ácido + cianocobalamina (B03BB51)
+
+Vitamina B12 y ácido fólicoEritropoyetina (B03XA01) Darbepoetina alfa (B03XA02)
+Metoxi-polietilenglicol epoetina beta (B03XA03)Otros	preparados antianémicosB05Sustitutos para plasma y soluciones para infusiónAlbúmina (B05AA01) Dextrán (B05AA05)
+Agentes con gelatina (B05AA06)
+Hidroxietil almidón (B05AA07)Sangre	y	productos relacionadosAminoácidos (B05BA01) Emulsiones grasas (B05BA02)
+Sodio cloruro, electrolito IV (B05BB01) Sodio bicarbonato (B05BB01)
+Manitol (B05BC01)Soluciones I.V.Soluciones isotónicas con icodextrina (B05DAP1) Soluciones aminoácidos diálisis peritoneal (B05DBP1)Soluciones	para	diálisis peritonealCloruro de potasio (B05XA01) Cloruro de calcio (B05XA07)
+Glicerofosfato de sodio (B05XA14)Aditivos para soluciones I.V.Sodio bicarbonato hemofiltrados (B05ZBM1)Soluciones para hemodiálisis y hemofiltraciónB06Otros	agentes hematológicosEstreptoquinasa + estreptodornasa (B06AA55) Inhibidor de C1 (B06AC01)
+Icatibant (B06AC02)Otros agentes hematológicos
+C. SISTEMA CARDIOVASCULAR
+
+
+CódigoGrupo terapéuticoPrincipios activosSubgrupo terapéuticoDigoxina (C01AA05)Glucósidos cardíacosMetildigoxina (C01AA08)Procainamida (C01BA02)C01Terapia cardíacaLidocaína antiarrítmico (C01BB01)
+Amiodarona (C01BD01)
+Antiarrítmicos de clase I y IIIDronedarona (C01BD07)
+
+Etilefrina (C01CA01) Norepinefrina (C01CA03) Dopamina (C01CA04) Fenilefrina (C01CA06) Dobutamina (C01CA07)
+Epinefrina (C01CA24)Estimulantes cardiacos excluyendo glucósidos cardíacosGliceril trinitrato (C01DA02) Isosorbida dinitrato (C01DA08)
+Isosorbida monohidrato (C01DA14)
+Vasodilatadores usados en enfermedades cardíacasIndometacina cardiología (C01EB03) Adenosina (C01EB10)
+Trimetazidina cardiología (C01EB15)
+Otros preparados para el corazón
+
+
+
+
+
+C02
+
+
+
+
+
+
+AntihipertensivosMetildopa (levógira) (C02AB01)
+Clonidina (C02AC01) Moxonidina (C02AC05)Agentes antiadrenérgicos de acción centralPrazosina (C02CA01) Doxazosina (C02CA04) Urapidil (C02CA06)
+Agentes antiadrenérgicos de acción periféricaHidralazina (C02DB02) Minoxidil (C02DC01) Nitroprusiato (C02DD01)
+Agentes que actúan sobre el músculo liso arteriolarBosentán (C02KX01) Ambrisentán (C02KX02)
+Sitaxentán (C02KX03)
+Otros antihipertensivos
+
+
+
+
+
+
+C03
+
+
+
+
+
+
+
+DiuréticosHidroclorotiazida (C03AA03)Diuréticos de techo bajo: tiazidasClortalidona (C03BA04) Xipamida (C03BA10) Indapamida (C03BA11)
+Diuréticos de techo bajo, excluyendo tiazidasFurosemida (C03CA01) Bumetanida (C03CA02) Piretanida (C03CA03)
+Torasemida (C03CA04)
+
+Diuréticos de techo altoEspironolactona (C03DA01) Eplerenona (C03DA04)Agentes ahorradores de potasioAmilorida + hidroclorotiazida (C03EA01)
+Espironolactona + altizida (C03EA04) Espironolactona + clortalidona (C03EA06)Diuréticos y agentes ahorradores de potasio en combinaciónTolvaptán (C03XA01)Otros diuréticos
+C04
+Vasodilatadores periféricosPentoxifilina (C04AD03) Ergoloides mesilatos (C04AE01) Nicergolina (C04AE02)
+Dihidroergocristina + piracetam (C04AE54)
+
+Vasodilatadores periféricos
+C05
+VasoprotectoresHidrocortisona antihemorroidal (C05AA01) Fluocinolona acetónido (C05AA10)
+Tetracaína tópica (C05AD02)Agentes de uso tópico para el tratamiento de hemorroides y fisuras anales
+
+Trinitrato de glicerilo (C05AE01)Heparina (C05BA01)
+Pentosano polisulfato de sodio (C05BA04) Heparina asociaciones (C05BA53) Polidocanol (C05BB02)
+
+Terapia antivaricosaDiosmina (C05CA03) Troxerutina (C05CA04)
+Hidrosmina (C05CA05)
+Agentes estabilizadores de capilares
+
+
+
+
+
+C07
+
+
+
+
+
+
+Beta-bloqueantes adrenérgicosPropanolol (C07AA05) Atenolol (C07AB03) Carvediol (C07AG02)
+Agentes beta-bloqueantesAtenolol + bendroflumetiazida (C07BB03) Bisoprolol + hidroclorotiazida (C07BB07)
+Nebivolol + hidroclorotiazida (C07BB12)
+Agentes beta-bloqueantes y tiazidasMetoprolol + clortalidona (C07CB02) Atenolol + clortalidona (C07CB03)Agentes beta-bloqueantes y otros diuréticosAtenolol + hidroclorotiazida + amilorida (C07DB01)Agentes beta-bloqueantes, tiazidas y otros diuréticosFelodipino + metoprolol (C07FB02)
+Atenolol + Bendroflumetiazida + hidralazina (C07FB03)
+Agentes beta-bloqueantes y otros antihipertensivos
+
+
+C08
+
+
+Bloqueantes de canales de calcioAmlodipino (C08CA01) Nifedipino (C08CA05) Manidipino (C08CA11)
+Barnidipino (C08CA12)
+Bloqueantes selectivos de canales de calcio con efectos principalmente vascularesVerapamilo (C08DA01) Diltiazem (C08DB01)Bloqueantes selectivos de canales de calcio con efectos cardíacos directos
+
+
+
+
+
+
+
+
+C09
+
+
+
+
+
+
+
+
+Fármacos activos sobre el sistema Renina- AngiotensinaCaptropil (C09AA01)
+Enalapril (C09AA02) Imidapril ((C09AA16)
+Inhibidores de la ECA, monofármacosCaptropil + hidroclorotiazida (C09BA01) Enalapril + lercanidipino (C09BB02) Enalapril + nitrendipino (C09BB06) Trandolapril + verapamilo (C09BB10) Delapril + menidipino (C09BB12)
+
+Inhibidores de la ECA, combinacionesLosartán (C09CA01) Eprosartán (C09CA02) Valsartán (C09CA03)
+Irbesartán (C09CA04)
+Antagonistas de angiotensina II, monofármacosLosartán + hidroclorotiazida (C09DA01) Valsartán + hidroclorotiazida (C09DA03) Amlodipino + valsartán (C09DB01)Antagonistas de angiotensina II, combinacionesAliskireno (C09XA02)
+Aliskireno + hidroclorotiazida (C09XA52) Aliskireno y amlodipino (C09XA53)Otros agentes que actúan sobre el sistema renina- angiotensina
+
+
+C10
+Agentes modificadores de los lípidos
+Simvastatina (C10AA01) Lovastatina (C10AA02) Fluvastatina (C10AA04) Atorvastatina (C10AA05) Pitavastatina (C10AA08) Rosuvastatina (C10AA07) Colestiramina (C10AC01) Colestipol (C10AC02) Alirocumab (C10AX14 ) Evolocumab (C10AX13)
+Acido bempedoico (C10AX15)
+Agentes modificadores de los lípidos, monofármacosEzetimiba y simvastatina (C10BA02) Pravastatina y acetilsalicílico ácido (C10BX02) Atorvastatina y amlodipino (C10BX03)
+Agentes modificadores de los lípidos, combinaciones
+
+
+CódigoGrupo terapéuticoPrincipios activosSubgrupo terapéutico
+
+
+D01
+
+
+Antifúngicos dermatológicosNistatina tópica (D01AA01) Clotrimazol tópico (D01AC01) Miconazol tópico (D01AC02) Ketoconazol tópico (D01AC08) Griseofulvina (D01BA01)
+
+Antifúngicos para uso tópicoGriseofulvina (D01BA01) Terbinafina (D01BA02)Antifúngicos para uso sistémicoD02
+Emolientes y protectoresProductos con zinc (D02ABM1) Vaselina (D02ACM2)
+Emolientes y protectores
+D03Preparados para el tratamiento de heridas y úlcerasCadexómero iodo (D03AX01) Colagenasa, combinaciones (D03BA52)
+CicatrizantesTripsina en asociación (D03BAP2)Enzimas
+
+D04
+
+
+AntipruriginososTripelenamina (D04AA04) Prometazina tópica (D04AA10) Dimetindeno tópico (D04AA13) Lidocaina tópica (D04AB01) Benzocaína tópica (D04AB04)
+Calamina (D04AXM4)
+
+
+Antipruriginosos
+
+D05
+
+AntipsoriásicosCalcipotriol (D05AX02) Calcitriol tópico (D05AX03) Tacalcitol (D05AX04)
+Antipsoriásicos para uso tópicoMetoxaleno (D05BA02) Acitretina (D05BB02)Antipsoriásicos para uso sistémico
+
+D06
+Antibióticos y quimioterápicos para uso dermatológicoClortetraciclina tópica (D06AA02) Gentamicina tópica (D06AX07) Mupirocina (D06AX09) Sulfanilamida (D06BA05) Aciclovir tópico (D06BB03)
+
+Antibióticos para uso tópico
+
+Sulfadiazina argéntica (D06BA01) Tromantadina (D06BB02)Quimioterápicos para uso tópico
+
+
+D07
+
+
+Corticosteroides tópicosHidrocortisona tópica (D07AA02) Fluocortina (D07AB04)
+Beclometasona tópica (D07AC15)Corticosteroides, monofármacosDiflocortolona + clorquinaldolCorticosteroides en combinación con antisépticosHidrocortisona + cloranfenicol (D07CA01)
+Betametasona + gentamicina (D07CC01)Corticosteroides en combinación con antibióticos
+D08
+Antisépticos y desinfectantesClorhexidina tópica (D08AC02) Povidona iodada tópica (D08AG02) Mercurocromo (D08AK04) Peróxido de hidr
+
+Antisépticos y desinfectantesD09Apósitos medicamentososPovidona iodada apósitos (D09AA09)Apósitos medicamentosos
+D10
+
+AntiacnéicosPeróxido de benzoilo (D10AE01)Preparados anti-acné para uso tópicoIsotretinoína (D10BA01)Preparados anti-acné para uso sistémico
+D11
+Otros preparados dermatológicosCompuestos de cadmio (D11AC02) Povidona iodada champú (D11AC06) Hidroquinona (D11AX11) Diclofenaco, dermatología (D11AX18)
+Otros preparados dermatológicos
+G. SISTEMA GENITOURINARIO Y HORMONAS SEXUALES
+
+CódigoGrupo terapéuticoPrincipios activosSubgrupo terapéuticoG01
+
+
+Antiinfecciosos y antisépticos ginecológicosClindamicina ginecología (G01AA10) Metronidazol ginecología (G01AF01) Clotrimazol ginecología (G01AF02) Ketoconazol ginecología (G01AF11)
+Povidona iodada ginecología (G01AX11)
+Antiinfecciosos y antisépticos excluyendo combinaciones con corticosteroidesNeomicina + hidrocortisona (G01BA P1)Antiinfecciosos y antisépticos en combinación con corticosteroidesG02
+
+
+
+Otros productos ginecológicosMetilergometrina (G02AB01)
+Dinoprostona (G02AD02) Misoprostol, ginecología (G02AD06)
+OxitócicosDIU plástico con progestágenos (G02BA03)
+Etonogestrel + etinilestradiol, anillo vaginal (G02BB01)
+Anticonceptivos para uso tópicoRitodrina (G02CA01) Lisurida (G02CB02) Quinagolida (G02CB04)
+Otros productos ginecológicosG03Linestrenol y estrógeno (G03AA03) Levonorgestrel y estrógeno (G03AA07) Desogestrel y estrógeno (G03AA09)
+Gestodeno y estrógeno (G03AB06)
+Anticonceptivos hormonales para uso sistémico
+
+Levonorgestrel, anticonceptivo emergencia (G03AD01)Etonogestrel (G03AC08Testosterona (G03BA03)
+AndrógenosMesterolona (G03BB01)Estradiol (G03CA03)Estriol (G03CA04)Promestrieno (G03CA09)EstrógenosEstrógenos conjugados (G03CA57)Tibolona (G03CX01)Hormonas sexuales y moduladores del sistema genitalMedroxiiprogesterona (G03DA02) Progesterona (G03DA04) Dienogest (G03DB08)
+
+ProgestágenosNoretisterona (G03DC02)Linestrenol (G03DC03)Estradiol + levonorgestrel, combinaciones fijas (G03FA01)
+Estradiol + drospirenona (G03FA17)
+Progestágenos y estrógenos en combinaciónEstradiol + medroxiprogesterona (G03FB06)Gonadotrofina coriónica (G03GA01)Gonadotrofina menopáusica humana (G03GA02)Gonadotrofinas y otros estimulantes de la ovulaciónClomifeno (G03GB02)Ciproterona (G03HA01)Estradiol + ciproterona (G03HB01 P1)AntiandrógenosEtinilestradiol + ciproterona (G03HB01 P2)Levonorgestrel y estrógeno (G03AA07)Gestodeno y estrógeno (G03AA10)Desogestrel y estrógeno (G03AB05)
+Testosterona (G03BA03)Otras hormonas sexuales y moduladores del sistema genitalEstradiol (G03CA03)Medroxiprogesterona (G03DA02)Ulipristal( G03XB02MODULADORES DEL RECEPTOR DE PROGESTERONAG04Flavoxato (G04BD02)Oxibutinina (G04BD04)
+Sildenafilo (G04BE03) Tadalafilo (G04BE08)
+Otros productos de uso urológico, incluyendo antiespasmódicosUrológicosDapoxetina (G04BX14)Alfuzosina (G04CA01)Tamsulosina (G04CA02)
+Finasterida urología (G04CB01)Fármacos usados en la hipertrofia prostática benignaDutasterida (G04CB02)
+H. TERAPIA HORMONAL, EXCLUYENDO HORMONAS SEXUALES E INSULINAS
+
+CódigoGrupo terapéuticoPrincipios activosSubgrupo terapéutico
+
+
+
+H01
+
+
+
+Hormonas hipotalámicas e hipofisariasTetracosactida (H01AA02) Somatotropina (H01AC01) Mecasermina (H01AC03) Pegvisomant (H01AX01)
+Hormonas del lóbulo anterior de la hipófisis y análogosDesmopresina (H01BA02) Oxitocina (H01BB02)Hormonas del lóbulo posterior de la hipófisisNafarelina (H01CA02) Somatostatina (H01CB01) Lanreotida (H01CB03)
+Hormonas hipotalámicas
+
+
+
+
+H02
+
+
+
+
+Corticosteroides para uso sistémicoFludrocortisona (H02AA02) Betametasona (H02AB01) Dexametasona (H02AB02) Metilprednisolona (H02AB04) Parametasona (H02AB05) Prednisolona (H02AB06) Prednisona (H02AB07) Hidrocortisona (H02AB09)
+Deflazacort (H02AB13)
+
+
+
+Corticosteroides para uso sistémico, monofármacosPrednisolona más otros (H02BXP1) Dexametasona + clemastina (H02BXP3)Corticosteroides para uso sistémico, combinaciones
+
+
+H03
+
+
+Terapia tiroideaLevotiroxina sódica (H03AA01)Preparados tiroideosCarbimazol (H03BB01) Tiamazol (H03BB02)
+Preparados antitiroideosYoduro potásico (H03CAM1)
+Yoduro potásico + ácido fólico + Vitamina B12 (H03CAP1)
+Terapia de iodoH04Hormonas pancreáticasGlucagón (H04AA01)Hormonas glucogenolíticas
+
+H05
+
+Homeostasis del calcioHormona paratiroidea (H05AA03)Hormonas paratiroideas y análogosCalcitonina (H05BA01) Elcatonina (H05BA04)
+Cinacalcet (H05BX01)
+Agentes antiparatiroideos
+J.	ANTIINFECCIOSOS PARA USO SISTÉMICO
+CódigoGrupo terapéuticoPrincipios activosSubgrupo terapéutico
+
+
+
+J01
+
+
+
+Antibacterianos para uso sistémicoDoxiciclina (J01AA02) Oxitetraciclina (J01AA06)
+TetraciclinasCloranfenicol (J01BA01)AnfenicolesAmpicilina (J01CA01) Amoxicilina (J01CA04) Penicilina procaína (J01CE09) Cloxacilina (J01CF02)
+Amoxicilina + clavulánico ácido (J01CR02)
+
+Antibacterianos betalactámicos, penicilinas
+
+Cefazolina (J01DB04) Cefoxitina (J01DC01) Cefaclor (J01DC04) Cefotaxima (J01DD01) Ceftriaxona (J01DD04)
+
+Otros bacterianos betalasctámicosTrimetoprima (J01EA01) Sulfadiazina (J01EC02)
+Sulfonamidas y trimetoprimaEritromicina (J01FA01) Claritromicina (J01FA09) Azitromicina (J01FA10) Clindamicina (J01FF01)
+Macrólidos, lincosamidas y estreptograminasEstreptomicina (J01GA01)
+Tobramicina (J01GB01) Gentamicina (J01GB03)
+Aminoglucósidos antibacterianos.Ciprofloxacino (J01MA02) Norfloxacino (J01MA06) Levofloxacino (J01MA12)
+Quinolonas antibacterianasEspiramicina + metronidazol (J01RA04)Asociaciones de antibacterianosVancomicina (J01XA01)
+Metronidazol (J01XD01) Fosfomicina (J01XX01)
+Otros antibacterianos
+
+
+J02
+
+Antimicóticos para uso sistémicoAmfotericina B (J02AA01) Ketoconazol (J02AB02) Fluconazol (J02AC01) Itraconazol (J02AC02) Caspofungina (J02AX04) Micafungina (J02AX05)
+
+Antimicóticos de uso sistémico
+
+
+J04
+
+
+AntimicobacterianosRifampicina (J04AB02) Isoniazida (J04AC01) Pirazinamida (J04AK01)
+Etambutol (J04AK02)
+Fármacos para el tratamiento de la tuberculosisClofazimina (J04BA01) Dapsona (J01BA02)Medicamentos para el tratamiento de la lepra
+
+J05
+
+Antivirales de uso sistémicoAciclovir (J05AB01) Ribavirina (J05AB04) Ritonavir (J05AE03) Zidovudina (J05AF01)
+Abacavir (J05AF06)
+
+Antivirales de acción directa
+
+J06
+
+Sueros inmunes e inmunoglobulinasInmunoglobulinas humanas normales, para administración extravascular (J06BA01)
+Inmunoglobulinas humanas normales, para administración extravascular (J06BA02)
+Anti D (RH) inmunoglobulina (J06BB01). Tétanos Inmunoglobulina (J06BB02)
+
+
+Inmunoglobulinas
+
+J07VacunasHaemophilus influenzae B, antígeno purificado conjugado (J07AG01)
+Meningococo A,C, antígeno bivalente de polisacáridos purificados (J07AH03)
+Toxoide tetánico (J07AM01) Tuberculosis, vivos atenuados (J07AN01)Vacunas antibacterianasGripe, antígeno purificado (J07BB02) Hepatitis B, antígeno purificado (J07BC01)
+Poliomielitos oral, virus vivo atenuado trivalente (J07BF02)
+
+Vacunas antiviralesDifteria, poliomielitos, tétanos (J07CA01)
+Haemophilus influenzae B y hepatitis B (J07CA08)
+Vacunas antibacterianas y antivirales combinadas
+L. TERAPIA ANTINEOPLÁSICA Y AGENTES INMUNOMODULADORES
+
+CódigoGrupo terapéuticoPrincipios activosSubgrupo terapéutico
+
+
+
+
+
+
+L01
+
+
+
+
+
+
+
+CitostáticosCiclofosfamida (L01AA01) Clorambucilo (L01AA02)
+AlquilantesMetotrexato (L01BA01) Citarabina (L01BC01)
+Cladribina (L01BB04)
+AntimetabolitosVinblastina (L01CA01) Vncristina (L01CC02) Etopósido (L01CB01)
+AlcaloidesIdarubicina (L01DB06)
+Bleomicina (L01DC01) Mitomicina (L01DC03)
+Antibióticos citotóxicosCisplatino (L01XA01) Oxaliplatino (L01XA03)Otros agentes antineoplásicos L01X
+
+L02
+
+Terapia endocrinaMegestrol (L02AB01) Leuprorelina (L02AE02)
+Hormonas y derivados L02ATamoxifeno (L02BA01)
+Bicalutamida (L02BB03) Letrozol (L02BG04)
+Antagonistas de hormonas L02BL03
+InmunoestimulantesFilgrastim (L03AA02) Aldesleukina (L03AC01)
+Factores estimulantesL04
+InmunosupresoresTacrólimus (L04AD02)
+Ácido Micofenólico (L04AA06)
+Inmunosupresores L04A
+M. SISTEMA MUSCULOESQUELÉTICO
+
+CódigoGrupo terapéuticoPrincipios activosSubgrupo terapéutico
+
+
+
+
+
+
+M01
+
+
+
+
+
+
+Antiinflamatorios y antirreumáticosIndometacina (M01AB01) Sulindaco (M01AB02) Diclofenaco (M01AB05) Piroxicam (M01AC01) Ibuprofeno (M01AE01) Naproxeno (M01AE02) Ketoprofeno (M01AE03) Celecoxib (M01AH01) Etoricoxib (M01AH05)
+Diacereína (M01AX21)
+
+
+
+Antiinflamatorios y antirreumáticos no esteroideosIndometacina/prednisona (M01BA P1)Antiinflamatorios/antirreum áticos combinadosCondroitín sulfato (M01AX25)Antirreumáticos específicos
+
+M02
+Productos tópicos para dolores musculares y articularesPiroxicam tópico (M02AA07) Ketoprofeno tópico (M02AA10)
+Diclofenaco antiinflamatorio tópico (M02AA15) Ibuprofeno tópico (M02AA13)
+Indometacina tópica (M02AA23)
+Productos tópicos para dolores musculares y articulares
+M03
+
+Relajantes muscularesPancuronio (M03AC01 Atracurio (M03AC04)Miorrelajantes de acción periféricaTetrazepam (M03BX07)Miorrelajantes de acción centralM04
+AntigotososAlopurinol (M04AA01) Colchicina (M04AC01)
+Preparados antigotosos
+M05
+Fármacos para el tratamiento de enfermedades óseasÁcido Ibandrónico (M05BA06) Ácido Risedrónico (M05BA07) Ácido Alendrónico (M05BA04) Ranelato estroncio (M05BX03)
+Agentes que afectan la estructura ósea y la mineralización
+M09Otros fármacos para desórdenes del sistema musculoesquelético
+Ácido hialuronico (M09AX01) Mucopolisacaridasa (M09AB92)Otros agentes que afectan la estructura ósea y la mineralización
+N. SISTEMA NERVIOSO
+
+CódigoGrupo terapéuticoPrincipios activosSubgrupo terapéuticoTiopental (N01AF03)Fentanilo (N01AH01)
+Propofol (N01AX10)Anestésicos generalesN01AnestésicosÓxido Nitroso (N01AX13)Bupicaína (N01BB01)Lidocaína anestésico local (N01BB02)Anestésicos localesMepivacaína (N01BB03)N02AnalgésicosMorfina (N02AA01)Opioides
+
+Fentanilo analgésico (N02AB03)
+Tramadol/paracetamol (N02AX52) Tramadol (N02AX02)Ácido Acetilsalicílico (N02BA01)
+Metamizol magnésico (N02BB91) Paracetamol (N02BE01)
+Analgésicos y antipiréticosDihidroergotamina (N02CA01 Almotriptán (N02CC05)
+Antimigrañosos
+
+N03
+
+AntiepilépticosFenitoína (N03AB02) Clonazepam (N03AE01) Ácido Valproico (N03AG01) Levetiracetam (N03AX14) Pregabalina (N03AX16)
+
+Antiepilépticos
+
+
+
+N04
+
+
+
+AntiparkinsonianosTrihexifenidilo (N04AA01) Biperideno (N04AA02)
+Agentes anticolinérgicosSelegilina (N04BD01) Rasagilina (N04BD02)
+Levodopa/carbidopa/entacapona (N04BA03) Bromocriptina (N04BC01)
+Pergolida (N04BC02)
+Rotigotina (N04BC09)
+
+
+Agentes dopaminérgicos
+
+
+
+
+
+
+
+N05
+
+
+
+
+
+
+
+
+PsicolépticosClorpromazina (N05AA01) Haloperidol (N05AD01) Sulpirida (N05AL01) Risperidona (N05AX08) Aripiprazol (N05AX12) Paliperidona (N05AX13) Quetiapina (N05AH04) Olanzapina (N05AH03)
+Clozapina (N05AH02)
+
+
+
+AntipsicóticosDiazepam (N05BA01) Lorazepam (N05BA06) Bromazepam (N05BA08) Ketazolam (N05BA10) Alprazolam (N05BA12)
+
+AnsiolíticosLormetazepam (N05CD06) Midazolam (N05CD08)
+Zolpidem (N05CF02)
+Hipnóticos y sedantes
+
+
+
+N06
+
+
+
+
+PsicoanalépticosAmitriptilina (N06AA09) Fluoxetina (N06AB03) Paroxetina (N06AB05) Sertralina (N06AB06) Escitalopram (N06AB10) Venlafaxina (N06AX16)
+Duloxetina (N06AX21)
+
+
+Antidepresivos
+
+Metilfenidato (N06BA04) Citicolina (N06BX06)Psicoestimulantes, agentes utilizados para ADHD y nootrópicosAmitriptilina/Medazepam (N06CA01 P1) Nortriptilina/Diazepam (N06CA01 P3Psicolépticos y psicoanalépticos en asociaciónRivastigmina (N06DA03) Donepezilo (N06DA02) Galantamina (N06DA04) Memantina (N06DX01)
+
+Fármacos antidemencia
+
+
+N07
+
+
+Otros fármacos que actúan sobre el sistema nerviosoNeostigmina (N07AA01) Pilocarpina (N07AX01)
+ParasimpaticomiméticosDisulfiram (N07BB01)
+Naltrexona (N07BB04) Metadona (N07BC02)
+Fármacos usados en desórdenes adictivosBetahistina (N07CA01) Flunarizina (N07CC03)
+Preparados antivértigo
+INSECTICIDAS Y REPELENTES.
+
+CódigoGrupo terapéuticoPrincipios activosSubgrupo terapéutico
+
+P01
+
+AntiprotozoariosTrimetrexato (P01AX07)Agentes contra amebiasis y otras enfermedades protozoarias,Cloroquina (P01BA01)Antipalúdicos,Meglumina antimoniato (P01CB01) Pentamidina isetionato (P01CX01)Agentes antileishmaniosis y antitripanosomiasis
+
+P02
+
+
+AntihelmínticosTriclabendazol (P02BX04)AntitrematodosMebendazol (P02CC01) Albendazol (P02CA03) Pirantel (P02CC01)
+Agentes antinemátodosSodio cloruro antihelmíntico (P02DX M1)Anticestodos
+
+P03Ectoparasiticidas, incluyendo escabicidas, insecticidas y repelentes
+Lindano (P03AB02) Permetrina (P03AC04)
+Ectoparasiticidas, incluyendo escabicidas
+R. SISTEMA RESPIRATORIO
+
+CódigoGrupo terapéuticoPrincipios activosSubgrupo terapéutico
+
+
+R01
+
+
+Preparados de uso nasalFenilefrina nasal (R01AA04) Oximetazolina nasal (R01AA05) Propionato de fluticasona (R01AC08) Mometasona (R01AD09)
+Descongestivos y otras preparaciones nasales para uso tópicoEbastina/Pseudoefedrina (R01BA52 P3) Loratadina/ Pseudoefedrina (R01BA52 P4)Descongestivos nasales para uso sistémico
+R02
+
+
+
+
+
+
+
+
+
+
+
+
+R03
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R05
+
+
+
+
+
+
+
+R06
+
+
+Preparados faríngeos
+
+
+
+
+
+
+
+
+
+
+
+
+
+Medicamentos contra alteraciones obstructivas pulmonares
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Preparados para la tos y el resfriado
+
+
+
+
+
+
+
+
+Antihistamínicos para uso sistémico
+
+
+Clorhexidina/Benzocaína (R02AA20 P2)
+Clorhexidina/Benzocaína/Enoxolona (R02AA20 P3)
+Clorhexidina/Benzocaína/Tirotricina (R02AA20 P4)
+Salmeterol/Fluticasona (R03AK06) Budesonida/Formoterol (R03AK07 P1) Beclometasona/Formoterol (R03AK07 P2) Formoterol (R03AC13),
+Indacaterol (R03AC18) Olodaterol(R03AC19
+Budesonida (R03BA02) Fluticasona (R03BA05) Ipratropio bromuro (R03BB01) Tiotropio bromuro (R03BB04) Aclidinio Bromuro (R03BB05 ) Umeclidinio Bromuro (R03BB07)
+Salbutamol (R03CC02) Terbutalina (R03CC03)
+Teofilina (R03DA04)
+Diprofilina/Betametasona/Buaifenesina (R03DA51P1)
+Montelukast (R03DC03) Omalizumab (R03DX05)
+Acetilcisteína (R05CB01) Bromhexina (R05CB02) Carbocisteína (R05CB03) Ambroxol (R05CB06)
+Codeína (R05DA04) Dextrometorfano (R05DA09) Cloperastina (R05DB21)
+Dextrometorfano/Guaifenesina (R05FC02 P3)
+
+Asociaciones de: acetilcistína, paracetamol, acido acetilsalicílico, acido ascórbico, fenilefrina, dextrometorfano, etc.
+Dimenhidrinato, asociaciones (R06AA52 P1) Cetirizina (R06AE07)
+Loratadina (R06AX13) Elastina (R06AX22)
+
+
+Preparados para la garganta
+
+
+
+
+
+
+Adrenérgicos, inhalatorios
+
+
+
+
+
+Otros agentes contra padecimientos obstructivos de las vías respiratorias, inhalatorios
+
+
+
+Adrenérgicos de uso sistémico
+
+
+Otros agentes contra padecimientos obstructivos de las vías respiratorias, sistémicos
+
+
+
+Expectorantes, excluido asociación con antitusígenos
+
+
+Supresores de la tos, excluido asociación con expectorantes
+
+Expectorantes y supresores de la tos en asociación
+
+Otros preparados para el resfriado
+
+
+
+Antihistamínicos para uso sistémico
+
+
+S. ÓRGANOS DE LOS SENTIDOS
+
+CódigoGrupo terapéuticoPrincipios activosSubgrupo terapéutico
+
+
+S01
+
+
+OftalmológicosCloranfenicol oftálmico (S01AA01) Gentamicina oftálmica (S01AA11) Tobramicina oftálmica (S01AA12) Eritromicina oftálmica (S01AA17) Azitromicina oftálmica (S01AA26)
+Aciclovir oftálmico (S01AD03)
+
+
+Antiinfecciosos
+
+Norfloxacino oftálmico (S01AE02)
+Ciprofloxacino oftálmico (S01AE03)Dexametasona oftálmica (S01BA01) Hidrocortisona oftálmica (S01BA02) Prednisolona oftálmica (S01BA04) Diclofenaco oftálmico (S01BC03)
+
+AntiinflamatoriosPrednisona/Neomicina (S01CA P2) Dexametasona/Tobramicina (S01CA01 P1) Dexametasona/Neomicina (S01CA01P5)
+Diclofenaco/Tobramicina (S01CC01P1)
+Antiinfecciosos y antiinflamatorios en asociaciónAcetilcolina (S01EB09) Timolol (S01ED01)
+Timolol en asociación (S01ED51)
+Antiglaucoma y mióticosAtropina/Escopolamina/Fenilefrina (S01FA P1) Atropina oftálmica (S01FA01)
+Ciclopentolato (S01FA04)
+Fenilefrina oftálmica midriático (S01FB01
+
+Midriáticos y ciclopléjicosOximetazolina oftálmica (S01GA04)
+Fenilefrina oftálmica descongestivo (S01GA05) Ácido cromoglícico oftálmico (S01GX01)
+Descongestivos y antialérgicosOxibuprocaína (S01HA02) Tetracaína/Nafazolina (S01HA30 P1)
+Tetracaína/Oxibuprocaína (S01HA30 P2)
+Anestésicos localesFluoresceína (S01JA01) Fluoresceína/Oxibuprocaina (S01JA51 p1)
+Agentes para diagnósticoVerteporfina (S01LA01) Pegaptanib (S01LA03) Ranibizumab (S01LA04)
+Agentes contra desórdenes vasculares ocularesRetinol en asociación (S01XA P5) Lágrimas artificiales (S01XA20) Hipromelosa (S01XA20 M1)
+Sodio cloruro oftálmico (S01XA20 M2)
+Carmelosa sódica (S01XA20 M5)
+
+Otros oftalmológicos
+
+
+
+
+
+S02
+
+
+
+
+
+OtológicosCiprofloxacino ótico (S02AA15)AntiinfecciososHidrocortisona y antiinfecciosos otológicos (S02CA03)
+Fluocinolona/Antiinfecciosos/Anestesico (S02CA05 P3)
+Fludrocortisona/Lidocaína/Antibioticos (S02CA07 P1)
+
+Combinaciones de corticosteroides y antiinfecciososAnalgésicos/Anestésicos otológicos (S02DA30) Disolventes de cerumen auricular (S02DX)
+* Potasio hidróxido (S02DX M1)
+* Laurilsulfato sódico (S02DX60)
+
+Otros otológicos
+V. VARIOS
+
+
+Código V01
+
+
+
+V03
+
+
+
+
+V04
+
+
+
+
+
+
+
+V08
+
+Grupo terapéutico
+Alergenos
+
+
+
+Todo el resto de los productos terapéuticos
+
+
+
+Agentes diagnósticos
+
+
+
+
+
+
+
+
+Medios de contraste
+
+Principios activos
+Extractos alergénicos (V01AA)
+Carbón activo (V03AB M1) Protamina (V03AB14) Naloxona (N03AB15)
+Acetilcisteína antídoto (V03AB23) Flumazenil (V03AB25)
+Oxigeno (V03AN01) Idarucizumab (V03AB37)
+Tuberculina (V04CF01)
+Pruebas para enfermedades alérgicas (V04CL)
+Iohexol (V08AB02) Iopamidol (V08AB04)
+Sulfato de bario con agentes en suspensión (V08BD01)
+Sulfato de bario sin agentes en suspensión (V08BD02)
+Derivados del gadolinio:
+* Ácido gadopentético (V08CA01)
+* Gadodiamida (V08CA03)
+* Gadoteridol (V08CA04)
+Oxido de hierro, nanopartículas (V08CD03) Microesferas de albúmina humana (V08DA01)
+
+Compuestos de:
+
+Subgrupo terapéutico
+Alérgenos
+
+
+
+Todo el resto de los productos terapéuticos
+
+
+
+
+Otros agentes diagnósticos
+
+Medios de contraste para RX iodados
+
+Medios de contraste para RX no iodados
+
+
+
+Medios de contraste para resonancia magnética
+
+
+Medios de contraste para ultrasonido
+Radiofármacos para diagnóstico de los diferentes sistemas: sistema nervioso central, sistema
+
+V09
+
+
+
+
+
+
+V10
+
+Radiofármacos para diagnóstico
+
+
+
+
+
+
+Radiofármacos utilizados en terapéutica
+* 
+Tecnecio-99m
+* Galio-67
+* Indio-111
+
+
+Compuestos de:
+* Itrio-90
+    * Erbio-169 Compuestos de:
+* Estroncio-89
+    * Samario-153 Compuestos de Yodo-131
+* 
+Talio-201
+* Fluor-8
+* Yodo-131
+
+esquelético, renal, hepático, respiratorio, tiroides, sistema cardiovascular, detección de inflamación e infección, detección de tumores, etc.
+
+Antiinflamatorios
+
+
+
+Calmantes del dolor
+
+
+Otros radiofármacos terapéuticos
+
+
+ANEXO: SISTEMA ESPAÑOL DE VERIFICACIÓN DE MEDICAMENTOS (SEVEM)
+
+En 2011, se publicó la Directiva 2011/62/UE del Parlamento europeo y del Consejo de 8 de junio de 2011 que modifica la Directiva 2001/83/CE por la que se establece un código comunitario sobre medicamentos de uso humano, en lo relativo a la prevención de la entrada de medicamentos falsificados en la cadena de suministro legal.
+
+El objetivo de esta normativa es impedir que los medicamentos falsificados entren en la cadena de suministro.
+En febrero de 2016, la Comisión Europea publicó un desarrollo normativo de la Directiva, el Reglamento Delegado (UE) 2016/161 que concreta las obligaciones de los fabricantes, mayoristas y farmacéuticos a la hora de garantizar que los medicamentos suministrados a los pacientes sean auténticos.
+Se trata, por tanto, de un sistema aprobado por normativa europea, de aplicación a todos los agentes de la cadena de valor del medicamento (fabricantes, distribuidores y farmacéuticos) y que tiene por objetivo prevenir la entrada de medicamentos falsificados en la cadena de suministro legal.
+Dicho sistema consiste en la incorporación en el envase de los medicamentos de dos dispositivos de seguridad:
+- un identificador único o código bidimensional Datamatrix que identifica individualmente el envase.
+- un dispositivo contra manipulaciones en el embalaje exterior, que puede ser un sello o un precinto que permita verificar visualmente si el envase del medicamento ha sido manipulado o no.
+Estos dispositivos de seguridad presentes en el envase de los medicamentos tendrán que ser verificados y autenticados en la oficina de farmacia por parte del profesional farmacéutico en el momento de la dispensación. Para ello, el farmacéutico escaneará el código de cada envase y se conectará al repositorio nacional, que estará sincronizado con la plataforma europea, para confirmar que el producto que llega al paciente es el mismo que salió de la planta de producción farmacéutica
+
+Dispositivos de seguridad
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Identificador único
+El identificador único del envase del medicamento estará incorporado en un código bidimensional Datamatrix y también en formato legible. Este identificador contendrá la siguiente información:
+
+* Código de producto, que incorpora el código nacional del medicamento*.
+* Número de serie único por envase.
+
+* Número de lote
+* Fecha de caducidad
+
+
+
+
+
+
+Dispositivos antimanipulación
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MEDICAMENTOS DE ESPECIAL CONTROL MÉDICO (ECM): DESAPARECE LA CATEGORÍA DE ESPECIAL CONTROL MÉDICO
+
+Los medicamentos clasificados hasta este momento como especial control médico son: Acnemin(r), Acitretina IFC(r), Alitretinoína IFC(r), Clozabrain(r), Dercutane(r), Flexresan(r), Isdiben(r), Isoacné(r), Leponex(r), Mayesta(r), Nemea(r), Neotigason(r), Toctino(r), Uronefrex(r).
+
+De acuerdo con el Real Decreto 717/2019 de 5 de diciembre, y tras la publicación del Nomenclátor oficial de la prestación farmacéutica del SNS correspondiente al mes de enero de 2020, se informa que:
+1. Desaparece ya la calificación ECM de cada uno de los medicamentos anteriormente calificados como de especial control médico.
+2. Para estos medicamentos, de momento, se mantiene la exigencia de visado.
+3. Estos medicamentos constan ya como sustituibles, por lo que se han integrado en las agrupaciones homogéneas ya creadas (antes se consideraban "no sustituibles" según la Orden SCO/2874/2007).
+
+
+
+PREMIR(r)
+opos1c1ones
+
+Tus centros PREMIR(r) en Galicia son: Santiago • 981 59 01 98
+Corufia • 981 13 12 50
+Ferrol • 981 31 21 50
+Lugo • 982 22 80 30
+Orense • 988 37 30 13
+Vigo • 986 23 84 42
+Pontevedra • 986 84 72 14
+
+
+
+
+
+Grupo
+PREMIR.	esta formado por:
+
+
+
+
+
+
+
+
+
+
+
+CPR PREMIR
+Ciclos Superiores
+Grupo PREMIR"
+
+Languages
+School
+GrupoPREMIR.
+
+
+
+
+
+
+
+
+PREMIR.
+oposiciones
+
+oposnet
+campus virtual
+
+
+
+
+
+

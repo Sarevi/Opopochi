@@ -1,0 +1,961 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+TECNICO EN FARMACIA
+SERGAS
+7TEMA 7:
+              ACONDICIONAMIENTO DE LOS MEDICAMENTOS: CONCEPTOS GENERALES. MATERIAL DE ACONDICIONAMIENTO. SIGLAS Y SÍMBOLOS DEL ACONDICIONAMIENTO. CONTROL DE CALIDAD DEL MATERIAL DE ACONDICIONAMIENTO. LEGISLACIÓN SOBRE MATERIAL DE ACONDICIONAMIENTO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INDICE:
+1. CONCEPTOS BÁSICOS SOBRE ACONDICIONAMIENTO
+1.1. FUNCIONES DEL ACONDICIONAMIENTO
+1.2. TIPOS DE MATERIALES DE ACONDICIONAMIENTO DE USO FARMACÉUTICO. REQUISITOS A CUMPLIR
+1.2.1. Vidrio
+1.2.2. Plástico
+1.2.3. Metal
+1.2.4. Materiales elastoméricos
+1.2.5. Cartón y papel
+
+2. ACONDICIONAMIENTO PRIMARIO
+2.1. ACONDICIONAMIENTOS DISTINTOS DE PEQUEÑOS ENVASES O BLÍSTERES
+2.2. PEQUEÑOS ENVASES EN LA QUE NO ES POSIBLE INCLUIR LA INFORMACIÓN DEL PUNTO ANTERIOR
+2.3. BLÍTERES Y TIRAS
+2.4. AMPOLLAS DE DISOLVENTE
+
+3. ACONDICIONAMIENTO SECUNDARIO
+3.1. CÓDIGO NACIONAL
+3.2. SÍMBOLOS, SIGLAS Y LEYENDAS
+3.3. CUPÓN-PRECINTO
+3.3.1. Cupón-precinto diferenciado
+
+4. INFORMACIÓN SOBRE MEDICAMENTOS
+4.1. LA FICHA TÉCNICA
+4.2. EL PROSPECTO
+
+5. ACONDICIONAMIENTOS ESPECIALES
+5.1. RADIOFÁRMACOS
+5.2. MEDICAMENTOS HOMEOPÁTICOS
+5.3. MUESTRAS GRATUÍTAS
+5.4. ENVASES CLÍNICOS
+
+6. CONTROL DE CALIDAD DEL MATERIAL DE ACONDICIONAMIENTO
+6.1. PROCEDIMIENTOS GENERALES
+6.2. PROCEDIMIENTOS ESPECÍFICOS
+
+7. LEGISLACIÓN SOBRE MATERIAL DE ACONDICIONAMIENTO
+7.1. REAL DECRETO 1345/2007, DE 11 DE OCTUBRE
+
+8. BIBLIOGRAFÍA
+9. ANEXO: LIBRO DE REGISTRO DE MATERIAL DE ACONDICIONAMIENTO
+
+1. CONCEPTOS BÁSICOS SOBRE ACONDICIONAMIENTO
+Los medicamentos han de llegar al usuario en condiciones óptimas de calidad, seguridad y eficacia. Para ello, una vez elaborados, se someten a una serie de operaciones conocidas como acondicionamiento.
+
+Acondicionamiento: conjunto de operaciones incluido el envase y etiquetado, a que debe de someterse un producto a granel para convertirse en un producto terminado.
+El acondicionamiento puede ser: primario o secundario.
+
+
+Material de acondicionamiento: cualquier material empleado en el acondicionamiento de medicamentos, a excepción de los embalajes utilizados para el transporte o envío.
+
+Acondicionamiento terciario o envase de transporte: facilita el transporte o manipulación de varias unidades de medicamentos en su acondicionamiento secundario, o en el primario, en caso de no existir secundario.
+
+Etiquetado: informaciones que constan en el embalaje exterior y en el acondicionamiento primario. Las etiquetas del acondicionamiento forman parte de éste. Ejemplo: etiqueta de un frasco de un jarabe.
+
+Ficha técnica o resumen de las características del producto: documento autorizado por la AEMPS, donde se reflejan las indicaciones autorizadas para el medicamento y recoge un resumen de información científica. Está dirigida a los profesionales sanitarios. Las fichas técnicas las podemos visualizar y descargar en la web de la AEMPS (CIMA=centro de información "on line" de medicamentos de uso humano).
+
+Prospecto: información escrita dirigida al paciente o usuario, que acompaña al medicamento.
+
+1.1. FUNCIONES DEL ACONDICIONAMIENTO
+
+Las funciones principales del acondicionamiento son:
+¦ Protección: mantiene la estabilidad e integridad del medicamento protegiéndolo frente a:
+
+? Riesgos ambientales (humedad, luz, temperatura...)
+? Riesgos físicos o mecánicos (golpes, caídas...)
+? Riesgos biológicos (crecimientos de bacterias, hongos...)
+¦ Protección pasiva: es la que ofrece frente a manipulación, falsificaciones, apertura del medicamento por niños etc.
+¦ Información e identificación: presenta toda la información que identifica el medicamento como su composición, la fecha de caducidad, el modo de administración, las precauciones de uso, las contraindicaciones, las reacciones adversas, el laboratorio que lo ha fabricado...
+
+La información contenida en el etiquetado, en la ficha técnica y en el prospecto forma parte de la autorización del medicamento necesitando la autorización de la Agencia Española de Medicamentos y Productos Sanitarios (AEMPS). Cualquier modificación necesitará, igualmente, una autorización previa.
+
+1.2. TIPOS DE MATERIALES DE ACONDICIONAMIENTO DE USO FARMACÉUTICO. REQUISITOS A CUMPLIR
+Los materiales más utilizados para el envasado y estuchado de medicamentos son: vidrio, plástico, metal, materiales elastoméricos, papel y cartón.
+Ya se emplee uno u otro material, debe cumplir los siguientes requisitos:
+? Poseer suficiente resistencia física.
+? Mantener su integridad física y química a lo largo del tiempo y, por tanto, ser inatacable por agentes físicos, químicos o biológicos.
+? Tener una composición sencilla y constante.
+? Asegurar la perfecta estabilidad del producto que guarda: ningún componente del mismo puede alterarse y ser absorbido y/o adsorbido por el envase.
+? Ser inerte respecto del producto que guarda: no puede ceder componente alguno a dicho producto.
+? Ser impermeable a los constituyentes del medicamento.
+? Aislar el medicamento de los agentes externos que pudieran deteriorarlo (luz, humedad...)
+? Tener buen aspecto externo que ayude a su fácil dispensación y ser fácilmente trasportable, manejable y almacenable; en una palabra, debe ser práctico y funcional.
+
+1.2.1. VIDRIO
+
+De todo el material empleado para contener medicamentos, el vidrio es el que ha alcanzado una mayor difusión, utilizándose para todo tipo de formas farmacéuticas, hasta el punto de ser considerado el material que más se acerca a las características que debe cumplir el contenedor ideal del medicamento.
+El vidrio es muy útil debido a sus particulares propiedades; entre ellas destacan dureza, transparencia, estabilidad, inercia química, limpieza fácil de controlar... Sin embargo, tiene el inconveniente de ser frágil, pesado y caro (actualmente ya hay materiales plásticos que resultan ser más caros que el vidrio).
+
+Tipos de vidrio:
+Existen diferentes tipos de vidrio, cuatro de los cuales son de uso farmacéutico:
+
+¦ VIDRIO TIPO I O VIDRIO NEUTRO
+Vidrio de borosilicatos, neutro con elevada resistencia hidrolítica y elevada resistencia a choques térmicos. Químicamente inerte y muy resistente. Es la solución ideal para contener todo tipo de productos inyectables y los tratamientos más delicados.
+Baja cesión alcalina, lo que significa que cede pocas sustancias.
+Bajo coeficiente de dilatación térmica y por tanto muy resistente a saltos térmicos.
+Usos: envasado de cualquier fármaco o preparado vía parenteral, sangre humana y derivados de sangre (hemoderivados).
+Vidrio de muy buena calidad, es el ideal para el envasado de medicamentos.
+La Farmacopea Europea indica que es conveniente su empleo para el envasado de preparaciones de uso parenteral y no parenteral, para sangre humana y productos derivados de la sangre. De hecho, debe aconsejarse su utilización para todo tipo de formas farmacéuticas líquidas y semi- sólidas, sobre todo si llevan agua en su formulación.
+
+Características:
+- Alta resistencia hidrolítica
+- Excelente resistencia al choque térmico
+- Propiedades químicas estables
+- Resistencia ácida y alcalina
+- Resistencia a cambios extremos de temperatura
+
+¦ VIDRIO TIPO II
+Vidrio con base sódico-cálcica que se somete a un tratamiento de descalinización para eliminar parte del óxido de sodio de la superficie interna del vidrio, y así hacerlo más resistente.
+Esta categoría es especialmente adecuada para soluciones administradas por vía intravenosa, como los frascos para infusión, también puede utilizarse para preparados farmacéuticos inyectables cuya estabilidad haya sido demostrada y para preparados orales.
+Sólo debe usarse una vez y para el envasado de soluciones acuosas de administración parenteral siempre que tengan un pH<7, siendo necesario y obligatorio verificar la estabilidad de cada preparación con este tipo de envase antes de su uso definitivo.
+Usos: polvos liofilizados, soluciones de uso parenteral oleosas y acuosas de pH neutro o ácido.
+
+¦ VIDRIO TIPO III
+Vidrio sódico-cálcico sin tratamiento superficial, por tanto, es de inferior calidad y resistencia que el tipo II.
+El vidrio tipo 3 tiene una mejor resistencia al agua y a los cambios de temperatura que el vidrio común, pero no es tan resistente como el vidrio tipo 1 o 2, que se usan para medicamentos más críticos. Este tipo de vidrio tiene una resistencia hidrolítica media.
+
+Usos: antibióticos parenterales, soluciones oleosas parenterales. No apto para preparaciones liofilizadas que haya que reconstituir con agua. No aconsejado para para ningún preparado acuoso.
+Farmacopea Europea indica que puede emplearse para el envasado de medicamentos con vehículo no acuoso de administración parenteral, de polvos de uso parenteral y de medicamentos
+
+de administración no parenteral. Debe desaconsejarse su empleo para el acondicionamiento de cualquier producto que lleve agua en su composición.
+Debe esterilizarse mediante calor seco antes de llenarlo.
+
+¦ VIDRIO TIPO IV
+Vidrios sódico-cálcico de uso general. También conocido como "no parenteral". Usos: uso de fármacos no parenteral que no contengan agua en su composición.
+Puede emplearse para formas farmacéuticas sólidas y ciertos preparados líquidos o semi-sólidos de uso no parenteral. Debe desaconsejarse su empleo para el acondicionamiento de cualquier producto que lleve agua en su composición.
+
+La Farmacopea distingue además dos tipos de vidrio según el color:
+
+¦ VIDRIO INCOLORO: vidrio muy transparente dentro del espectro visible.
+¦ VIDRIO COLOREADO: vidrio de distintos colores (lo normal es ámbar, topacio o verde) por adición de pequeñas cantidades de óxidos metálicos a su estructura. Se empleará siempre que el medicamento que guarda el envase se vea afectado en su estabilidad por la luz. El tipo ámbar se obtiene añadiendo óxido de hierro para su tinción, por lo que puede transferir pequeñas cantidades.
+
+El envase elegido para una preparación, debe ser tal que el material de vidrio no libere sustancias en cantidades suficientes para afectar a la estabilidad de la preparación o para presentar riesgo de toxicidad. En casos justificados, puede ser necesario disponer de información detallada sobre la composición del vidrio, para que se puedan evaluar los riesgos potenciales.
+Se recomienda que todos los envases de vidrio para las preparaciones líquidas y para los polvos para administración parenteral, permitan la inspección visual del contenido.
+La superficie exterior del vidrio puede ser tratada, por ejemplo, para reducir la fricción y para mejorar la resistencia a la abrasión. El tratamiento externo es tal que no contamine la superficie interior del envase.
+Con la excepción de los envases de vidrio de tipo I, los envases de vidrio para preparaciones farmacéuticas no deben ser reutilizados. Los envases para contener sangre humana y hemoderivados tampoco deben ser reutilizados.
+Los envases de vidrio para uso farmacéutico satisfacen el ensayo o ensayos apropiados de resistencia hidrolítica. Cuando los envases de vidrio tienen elementos que no son de vidrio, los ensayos se aplican únicamente a la parte de vidrio del envase.
+Para definir la calidad de los envases de vidrio en función del uso previsto, son necesarios uno o más de los siguientes ensayos.
+- Los ensayos de resistencia hidrolítica se realizan para definir el tipo de vidrio (I, II o III) y para controlar su resistencia hidrolítica.
+- Los envases destinados a las preparaciones parenterales acuosas se someten a un ensayo de liberación de arsénico y los envases de vidrio coloreado se someten a un ensayo de transmisión espectral.
+
+Tipos de recipientes de vidrio:
+
+? AMPOLLAS:
+Son envases de vidrio de paredes finas en las que el cerrado, después de llenarlas, se hace por fusión del vidrio.
+Actualmente pueden distinguirse ocho tipos de ampollas que se diferencian, fundamentalmente, en la forma de la rama, extremo de la misma, existencia o no de bulbo y existencia de una o dos ramas. Cada tipo de ampolla se designa mediante una letra: A, B, C, D, E, F, G y H.
+Para poder administrar el medicamento, la ampolla debe romperse por el estrangulamiento efectuando una pequeña fuerza de flexión.
+Zona de estrangulamiento de la ampolla: viene marcada con un punto (ampolla OPC) o con un aro de pintura (ampolla score ring).
+
+
+? FRASCOS, VIALES, JERINGAS Y CARPULES:
+Recipientes que, una vez llenos, se cierran con un tapón de otro material, normalmente plástico o material elastomérico.
+
+Los viales son recipientes de capacidad variable, elaborados con vidrio, cuyo cerrado después del llenado se efectúa con un tapón de material elastómero y sellado por una cápsula de aluminio. Su contenido se extrae en una o varias veces. El vial consta de una serie de partes: fondo, cuerpo, codo, cuello y boca.
+
+Para la administración del preparado, la parte central de la cápsula dispone de una lengüeta (llamada opérculo) que puede ser retirada, dejando el elastómero a la vista, y que puede ser perforado por la correspondiente aguja.
+
+Se distingue del frasco por su volumen, ya que el vial es destinado al pequeño volumen (<100ml).
+
+
+
+
+
+
+
+
+
+
+
+
+Existen muchos tipos de viales, si bien los más conocidos son el vial tipo "antibiótico" y el vial tipo "insulina", que se puede diferenciar por el distinto diámetro de su boca.
+
+Los frascos son viales de gran volumen, de vidrio o de plástico empleados para la administración de gran volumen parenteral (500-1000ml). Suelen estar graduados y disponer de un sistema plástico que les permite ser colgados del correspondiente accesorio para la perfusión lenta del líquido por vía intravenosa. La boca del frasco es obturada mediante un cierre elastomérico que, a su vez, es sellado mediante una cápsula de aluminio o aluminio-plástico.
+
+Los carpule o cartucho dental son cilindros de vidrio tipo I para el envasado de medicamentos de uso dental, como anestésicos, etc.
+
+Las jeringas precargadas o auto-inyectables son jeringas de vidrio para el envasado de pequeños volúmenes; su interés reside en la nula manipulación del inyectable para ser administrado.
+
+Directamente se coge la jeringa ya cargada con el medicamento y se inyecta al paciente. Se utilizan generalmente para la inyección de heparinas, insulinas y otros fármacos.
+Las jeringas disponen también de una capacidad adicional por el recorrido del émbolo desde la línea índice hasta el extremo opuesto al cono y del denominado volumen residual, que corresponde al volumen de líquido contenido en la
+boquilla y el cilindro después de empujar el émbolo a fondo.
+Las jeringas precargadas son acondicionamiento primario y al mismo tiempo, sistema de administración.
+
+
+1.2.2. PLÁSTICO
+
+Tipos de plástico
+Son productos orgánicos de alto peso molecular que por la plasticidad que presentan en determinadas condiciones pueden ser moldeables.
+Plasticidad: capacidad de un sólido para ser deformado de forma permanente.
+
+Los plásticos no son puros, sino que además del polímero presentan:
+1. Estabilizantes: evitan su descomposición
+2. Plastificantes: influyen sobre sus propiedades físicas
+3. Lubricantes: facilitan el moldeo final
+4. Colorantes
+5. Antioxidantes: aumentan la resistencia del material
+Estos compuestos pueden migrar hacia el fármaco y modificar el olor, color y/o conferir estabilidad ó reacciones no deseadas.
+
+Principales tipos de plásticos:
+* Cloruro de polivinilo (PVC): se usa para tubos de sangre, soluciones inyectables
+* Poliestireno: duro, pero no esterilizable.
+* Polietileno: muy usado Se usa para en frascos, tubos, jeringas, sacos para sangres, soluciones...
+* Polipropileno: sensible a la oxidación. Se esteriliza en autoclave. Se usa para frascos, jarras, copas, cubetas, artículos sanitarios...
+
+Los materiales plásticos más utilizados en la fabricación de envases farmacéuticos son poliolefinas, como el polietileno de alta o baja densidad (HDPE o LDPE) y el polipropileno (PP), el policloruro de vinilo (PVC) y el polietileno tereftalato (PET).
+
+Los materiales y aditivos que pueden ser empleados están mencionados en las distintas monografías que recoge la Legislación Europea. Para cada uno de ellos, se indica qué tipo de ensayos en concreto se debe realizar.
+
+Ventajas del plástico para su utilización como material de envasado:
+? Es poco frágil, resistente a golpes y choques.
+? Pesa poco, por lo que se transporta y almacena con más facilidad.
+? Es más barato que el vidrio.
+? Es más fácil de transformar, pudiéndose obtener recipientes con gran variedad de formas y diseños.
+? Protege el contenido de la luz en el caso de plásticos opacos o coloreados.
+? Puede ser de muy flexible a rígido.
+Ahora bien, presenta numerosas desventajas:
+? Son permeables, en mayor o menor grado, a los gases y vapores, permeabilidad que aumenta en proporción directa con la temperatura.
+? Es atacable, en mayor o menor medida, por los agentes químicos, físicos y biológicos.
+? Presenta fenómenos de absorción y adsorción.
+
+? Cede sustancias propias con relativa facilidad.
+? Puede alterar su estabilidad física y química a lo largo del tiempo.
+? No suele resistir las altas temperaturas.
+? Nunca es tan transparente como el vidrio.
+
+Un tema, que cada vez cobra más importancia, es el reciclado físico y éste es uno de los procesos que más valor les da a los materiales plásticos. Aunque también existe el reciclado químico (obtención de sustancias químicas a partir de los residuos de materiales plásticos), habitualmente al pensar en reciclado se está haciendo referencia al reciclado mecánico.
+El reciclado mecánico es un proceso físico en el que a través de una serie de operaciones y en presencia de presión y temperatura, el plástico es recuperado como materia prima, para su posterior transformación.
+
+Tipos de recipientes de plástico
+? Frascos de vidrio y plástico: Se emplean para acondicionar formas sólidas y líquidas de administración oral y tópica.
+? Bolsas: Son recipientes de volumen variable que están elaboradas normalmente con láminas de material plástico, cerrado en la parte inferior y en los lados por sellado, la parte superior puede ser cerrada por fusión del material, en función del uso previsto.
+
+? Jeringas:
+Frente a las jeringas hipodérmicas tradicionales, las modernas jeringas de un solo uso, o desechables, tienen la ventaja de preservar mejor la esterilidad de la solución inyectable y facilitar su administración. Para controlar la calidad de las jeringas se procede a una serie de ensayos, como los de estanqueidad del émbolo y del cono frente a la compresión, estanqueidad del cilindro y émbolo o del cono (de la jeringa y de la aguja) a la aspiración y determinación del volumen residual.
+
+1.2.3. METAL
+
+El uso de los metales viene determinado por las características que presentan cuando constituyen finas láminas formadoras de tubos o cuando se presentan en forma de papel.
+
+Estas características son:
+? Ser fácilmente deformables y plegables.
+? Tener gran resistencia a la fractura y a la fatiga, lo que quiere decir que no se rompe por muchas veces que se pliegue.
+? Ser impermeable a gases, vapores y líquidos, evitando los riesgos de contaminación, oxidación y otras alteraciones del contenido por ataque de agentes externos; a la vez, evita la salida de su interior de sustancias volátiles y esencias.
+El metal más frecuente como material de acondicionamiento, en el ámbito farmacéutico es el aluminio. Con él se envasan productos semisólidos, como pastas, geles o emulsiones; y productos sólidos como cápsulas, comprimidos, grageas, supositorios y aerosoles. Se utiliza también para elaborar los tapones de los frascos de infusión y viales, así como los sobres, blísteres y tubos.
+Otros metales son el plomo (prácticamente ya no se utiliza) y el estaño (muy utilizado para el envasado y acondicionamiento de formas farmacéuticas semisólidas hasta la aparición del
+
+aluminio). El estaño es resistente al ataque químico. En desuso por su escasa rigidez y ser poco consistente.
+El plomo es más resistente a la oxidación que el aluminio, pero puede contaminar de plomo el contenido. Eso se evita, en parte, recubriendo de cera el interior. En desuso.
+
+Tipos de acondicionamientos de metal:
+? El blíster: Se suele emplear para el acondicionamiento de formas sólidas de administración oral, como comprimidos, grageas o cápsulas. Están constituidos por una lámina moldeada en forma de pequeñas cavidades, selladas por la parte inferior. La primera de ellas puede ser de aluminio o cloruro de polivinilo, solo o en combinación con otras sustancias y la inferior es de aluminio.
+? Envase de tiras o strip: Es otra forma menos utilizada de acondicionar formas sólidas de administración oral y consiste en envasar estas formas farmacéuticas entre dos láminas de plástico, papel y aluminio que se unen mediante el termosellado en los bordes alrededor de cada dosis. Este procedimiento se utiliza frecuentemente para el acondicionamiento de comprimidos efervescentes, ya que garantiza una protección excelente frente a la humedad.
+? El tubo de metal: Es muy utilizado para formas farmacéuticas semisólidas, ya que permite una fácil dispensación del preparado, con buen cierre y una adecuada protección del producto. Si se utiliza de forma correcta, el riesgo de contaminación de la fracción remanente es mínimo ya que el tubo al ser colapsable no vuelve a inspirar aire hacia su interior. Si el contenido no es compatible con el metal, el interior del tubo puede ser recubierto con formulaciones céreas o soluciones de resinas epoxi, aunque se incrementa ligeramente su coste.
+Los tubos de plástico presentan un gran número de ventajas con respecto a otros recipientes: son inodoros, irrompibles, presentan gran inercia química, peso ligero, mayor versatilidad de adaptación a una línea de producción, etc.
+A diferencia de los tubos de metal, los de plástico son capaces de mantener su forma durante toda su vida útil, lo que conlleva tanto ventajas como inconvenientes. Entre las primeras se pueden citar factores estéticos, ya que su apariencia no se altera tras la administración de una o varias dosis. Por el contrario, la recuperación de la forma original motivada por la elasticidad del material puede favorecer la degradación del preparado remanente debido a la entrada de aire hacia el interior del recipiente.
+
+1.2.4. MATERIALES ELASTOMÉRICOS
+
+Los materiales elastoméricos suelen utilizarse como constituyentes de cierres (tapones) para la obturación de envases de uso farmacéutico (viales, frascos, jeringas, carpules...). Además, se encuentran presentes en diversos productos sanitarios, como son tubos para transfusión sanguínea, sondas, tetinas para biberones, preservativos...
+Los elastómeros son materiales naturales o sintéticos que tienen gran elasticidad, tanto para la deformación de que son susceptibles, como por su capacidad de recobrar la forma primitiva.
+
+Clasificación de elastómeros según origen:
+? Caucho natural: obtenido del látex de plantas tropicales.
+? Caucho sintético: más resistente al envejecimiento e impermeable a gases y vapor de agua. Ejemplos: caucho de butilo, nitrilo, de silicona.
+El cierre elastomérico ideal debe ser hermético, esterilizable y perforable por agujas hipodérmicas sin provocar fragmentación. Asimismo, deben autoobturarse después de ser perforado, no
+
+presentar interacciones con los productos con los que está en contacto, ser impermeables a líquidos y a gases, no ceder ninguna sustancia al medicamento, no fragmentarse al ser perforado y ser estable durante el tiempo de reposición del medicamento.
+
+1.2.5. CARTÓN Y PAPEL
+
+Forman parte del acondicionamiento secundario. Entre sus funciones, además de la protección y presentación, hay que destacar que contienen la base de la información fundamental de los medicamentos.
+o Cartón: es un componente habitual de las cajas del embalaje, estuches de los medicamentos... Los estuches suelen estar constituidos por una cartulina lisa y
+discretamente brillante, dotando a los medicamentos de mayor resistencia a la humedad. Contiene el etiquetado o información sobre los medicamentos correspondiente al acondicionamiento secundario.
+o Papel: el prospecto de los medicamentos está constituido por papel, en el que se recogerá toda la información necesaria para el usuario.
+El papel lo podemos encontrar formando parte del acondicionamiento primario (ejemplo pegatina identificadora de un frasco de una solución oral)
+
+2. ACONDICIONAMIENTO PRIMARIO
+El acondicionamiento primario es aquel acondicionamiento directo del medicamento en un recipiente con el cual está en contacto y que se denomina envase primario o inmediato.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+La información que debe de incluirse en el acondicionamiento primario depende del tipo y tamaño del envase.
+
+Número de lote: combinación de números y/o letras que identifica un lote. Clave de identificación de los ejemplares de un mismo proceso de fabricación. Consta de una letra ó letras o un conjunto de números. Cada lote va asociado a única fecha de caducidad.
+
+
+2.1. ACONDICIONAMIENTOS PRIMARIOS DISTINTOS DE PEQUEÑOS ENVASES Y BLÍSTERES
+
+Nombre del medicamento
+Formado por la denominación del medicamento, seguido de la dosificación y de la forma farmacéutica. Cuando proceda, se incluirá la mención de los destinatarios lactantes, niños o adultos. Cuando el producto contenga hasta tres principios activos, se incluirá la Denominación Oficial Española (DOE), en su defecto, la Denominación Común Internacional (DCI) o, en su defecto, su denominación común.
+Nombre del medicamento en alfabeto Braille. Se incluirá en ausencia de embalaje exterior Nombre y dirección del titular de la autorización de comercialización del medicamento Composición cualitativa y cuantitativa
+Nombre de los principios activos (según DOE o DCI en su defecto) por unidad de administración o, según la forma de administración para un volumen o peso determinado.
+Excipientes
+Composición cualitativa de aquellos excipientes de declaración obligatoria.
+Cuando se trate de un producto inyectable, de una preparación tópica o de un colirio, se incluirán todos los excipientes, sean o no, de declaración obligatoria.
+Forma farmacéutica y contenido (en peso, volumen o unidades de administración) Forma de administración y vía de administración
+Advertencia: "Mantener fuera del alcance y de la vista de los niños" Advertencias especiales, cuando el medicamento las requiera Fecha de caducidad (mes/año)
+Los medicamentos con una estabilidad reducida después de su reconstitución, dilución o apertura indicarán el tiempo de validez de la preparación reconstituida, diluida o tras su apertura e incluirán un recuadro para su consignación por los usuarios.
+Precauciones particulares de conservación, en su caso.
+Precauciones especiales de eliminación de los medicamentos no utilizados y de los materiales de desecho derivados de su uso, cuando corresponda, y en su caso los símbolos autorizados por la AEMPS, a efectos de facilitar la aplicación y desarrollo de los sistemas de recogida de medicamentos y favorecer la protección del medio ambiente.
+Titular de autorización de comercialización. Nombre y dirección y, en su caso, el nombre de representante local designado por el titular.
+Código Nacional Lote de fabricación
+Para los medicamentos no sujetos a prescripción médica, la indicación de uso.
+En caso de medicamentos que contengan radionucleidos, condiciones de transporte de mercancías peligrosas.
+En el caso de gases medicinales deberán incluirse las especificaciones técnicas que deben cumplir, las condiciones de suministro y transporte, y en su caso, los símbolos correspondientes. Símbolos y siglas descritos en el anexo IV del RD 1345/2007. Las leyendas no son obligatorias.
+
+2.2. PEQUEÑOS ENVASES EN LOS QUE NO ES POSIBLE INCLUIR LA INFORMACIÓN DEL PUNTO ANTERIOR
+Los envases primarios que por su tamaño no puedan llevar la información contenida en el apartado anterior, deben llevar como mínimo:
+? Nombre del medicamento, y si fuera necesario la vía de administración.
+? Fecha de caducidad.
+? Lote de fabricación.
+? Forma de administración, si es necesario.
+? Contenido en peso, en volumen o en unidades de administración.
+? Cualquier otra información necesaria para la conservación y uso seguro del medicamento.
+? Símbolo internacional de radioactividad y nombre del fabricante en caso de medicamentos que contengan sustancias radionucleidos.
+2.3. BLÍSTERES Y TIRAS
+Blíster: material de acondicionamiento, formado por dos láminas selladas. Al menos una de las láminas ha sido moldeada formando pequeñas cavidades. Generalmente una lámina es de plástico (PVC), mientras que la otra suele ser de aluminio. Permite la fácil obtención del producto aislándolo adecuadamente del medio externo.
+Datos obligatorios que debe de llevar un blíster:
+
+- Nombre del medicamento, tal y como se indica en el embalaje exterior.
+- Fecha de caducidad
+- Lote de fabricación
+- Nombre del titular de la autorización de comercialización.
+- Cualquier otra información necesaria para la conservación y uso seguro del medicamento.
+En el caso de que el acondicionamiento primario esté preparado para cortarse en unidades la integridad de la identificación del medicamento deberá garantizar en cada unidad:
+¦ Nombre del medicamento
+¦ Fecha de caducidad.
+¦ Número de lote.
+2.4. AMPOLLAS DE DISOLVENTE
+La información mínima que debe de ir en una ampolla es:
+
+3. ACONDICIONAMIENTO SECUNDARIO
+El acondicionamiento secundario es el embalaje externo o estuche que contiene en su interior al envase primario.
+No es obligatorio, siempre que el primario proporcione toda la información.
+Los materiales más empleados en el acondicionamiento secundario de medicamentos son el papel y el cartón.
+Deben de cumplir los siguientes requisitos:
+? Proteger al medicamento de agentes externos que puedan deteriorarlo (humedad, luz...)
+? Constituir un elemento de identificación del medicamento facilitando la dispensación.
+? Ser de fácil manejo, transporte y almacenamiento.
+La información que debe de incluir el embalaje exterior es:
+Nombre del medicamento
+Estará formado por la denominación del medicamento, seguido de la dosificación y de la forma farmacéutica y, cuando proceda, la mención de los destinatarios lactantes, niños o adultos.
+Cuando el producto contenga hasta tres principios activos, se incluirá la Denominación Oficial Española (DOE), en su defecto, la Denominación Común Internacional (DCI) o, en su defecto, su denominación común.
+Como norma general las denominaciones de los medicamentos no contendrán abreviaturas ni siglas. No obstante, la Agencia Española de Medicamentos y Productos Sanitarios podrá, por razones de salud pública y a petición del solicitante, autorizar su inclusión.
+Nombre del medicamento en alfabeto Braille. En ausencia de embalaje exterior, se incluirá en el acondicionamiento primario, teniendo en cuenta las particularidades de cada medicamento.
+Composición cualitativa y cuantitativa
+Composición cualitativa y cuantitativa, en principios activos por unidad de administración o, según la forma de administración para un volumen o peso determinados, utilizando las DOE o las DCI, o, en su defecto, sus denominaciones comunes o científicas.
+Excipientes
+Composición cualitativa de aquellos excipientes de declaración obligatoria.
+Cuando se trate de un producto inyectable, de una preparación tópica o de un colirio, se incluirán todos los excipientes, sean o no de declaración obligatoria.
+Forma farmacéutica, y contenido en peso, dosis y volumen o unidades de administración. Forma de administración y vía de administración
+Advertencia: << Mantener fuera del alcance y de la vista de los niños>> Advertencias especiales, cuando el medicamento las requiera
+Fecha de caducidad (mes/año)
+Los medicamentos con una estabilidad reducida después de su reconstitución, dilución o apertura, indicarán el tiempo de validez de la preparación reconstituida, diluida o tras su apertura e incluirán un recuadro para su consignación por los usuarios.
+Precauciones particulares de conservación, en su caso
+Precauciones especiales de eliminación de los medicamentos no utilizados y de los materiales de desecho derivados de su uso, cuando corresponda, y en su caso los símbolos autorizados por la AEMPS, a efectos de facilitar la aplicación y desarrollo de los sistemas de recogida de medicamentos y favorecer la protección del medio ambiente.
+Titular de autorización de comercialización. Nombre y dirección y, en su caso, el nombre de representante local designado por el titular.
+Código Nacional Lote de fabricación
+
+
+Para los medicamentos no sujetos a prescripción médica, la indicación de usoCondiciones de prescripción y dispensaciónRecuadro o espacio en blanco que permita indicar la posología recetada, duración del tratamiento y frecuencia de tomas, excepto en aquellos casos que la AEMPS determine, teniendo en cuenta las
+particularidades de cada medicamento.En el caso de medicamentos que contengan radionucleidos, condiciones de transporte de mercancías peligrosas.En el caso de gases medicinales deberán incluirse las especificaciones técnicas que deben cumplir,
+las condiciones de suministro y transporte, y en su caso, los símbolos correspondientes.Símbolos, siglas y leyendas descritos en el anexo IV del RD 1345/2007Cupón-precinto del Sistema Nacional de Salud, cuando proceda
+La información contenida en el acondicionamiento secundario añade los siguientes puntos en relación al envase primario:
+? Condiciones de prescripción y dispensación.
+? Leyendas (no son obligatorias en el acondicionamiento primario).
+? Cupón-precinto del Sistema Nacional de salud.
+? Recuadro o espacio en blanco que permite indicar la posología recetada, duración del tratamiento y frecuencia de uso.
+
+3.1. CÓDIGO NACIONAL
+
+
+
+
+
+
+
+
+
+
+El Código Nacional (CN) es un elemento de identificación de cada formato de un medicamento o producto sanitario.
+El Ministerio de Sanidad y Consumo asigna un código nacional a todos los medicamentos comercializados en España.
+El código nacional está formado por siete dígitos; seis dígitos significativos y un dígito de control (7º) resultado de una combinación matemática de los seis anteriores.
+El número del código nacional debe de aparecer en el ángulo superior derecho de las caras principales (al menos debe haber una cara principal) del embalaje externo de un medicamento, precedido de las siglas CN. La sigla CN no es obligatorio que preceda al código nacional.
+No es obligatorio que haya más de una cara principal. Por tanto, tampoco lo es el requerimiento de incluir al menos dos veces el código nacional, ni los símbolos y siglas en el ángulo superior derecho del material de acondicionamiento.
+
+Adjudicación del C.N:
+* Código Nacional de Parafarmacia: Consejo General de Colegios Oficiales de Farmacéuticos. El periodo de validez del Código Nacional asignado a un producto, así como las revalidaciones que, en su caso, se soliciten posteriormente, se establece en cinco años, a partir de la fecha de asignación del Código Nacional de Parafarmacia, o de la revalidación que corresponda.
+* Dietoterapia y Efectos y accesorios financiados: Dirección General Cartera Básica
+* Medicamentos: AEMPS
+
+3.2. SÍMBOLOS, SIGLAS Y LEYENDAS
+Según el anexo IV del RD 1345/2007 los símbolos, siglas y leyendas que deben aparecer en el embalaje exterior de los medicamentos son :
+
+- Pictograma de fotosensibilidad: no es obligatorio que figure en acondicionamiento secundario (RD 686/2013, 16 de septiembre, por el que se modifica el RD 1345/2007, del 11 de octubre).
+- Símbolo SIGRE: indica que el laboratorio fabricante está adherido a SIGRE, único sistema integrado de gestión de medicamentos autorizado en España por las autoridades
+
+sanitarias y medioambientales. Garantiza que tanto los envases como los residuos de medicamentos que puedan contener van a recibir un tratamiento medioambiental adecuado, una vez que el ciudadano los deposita en el Punto SIGRE.
+Siglas que deben figurar en el material de acondicionamiento:
+
+
+
+
+
+
+
+
+
+
+
+Los símbolos y las siglas relacionados con la dispensación y conservación de medicamentos deben de estar situados en el ángulo superior derecho, de al menos una cara principal del embalaje exterior, al lado o debajo del código nacional.
+Los otros símbolos se situarán en otro lugar bien visible del embalaje exterior con el fin de garantizar su máxima legibilidad.
+Los símbolos y las siglas se acompañan en el embalaje exterior de una serie de leyendas:
+- MEDICAMENTO SUJETO A PRESCRIPCIÓN MÉDICA
+- Medicamento no sujeto a prescripción médica
+- Uso hospitalario
+- Diagnóstico hospitalario
+- Leer el prospecto antes de utilizar este medicamento
+- Mantener fuera de la vista y del alcance de los niños
+- Envase clínico, prohibida su venta al detalle
+- Medicamento homeopático
+- Basado exclusivamente en su uso tradicional
+- Muestra gratuita, prohibida su venta
+Pueden incluirse todas aquellas advertencias especiales que el medicamento requiera.
+Debe figurar la indicación terapéutica y población diana (solo para medicamentos no sujetos a prescripción médica).
+
+La leyenda <MEDICAMENTO NO SUJETO A PRESCRIPCIÓN MÉDICA> debe situarse en un lugar bien visible en el embalaje exterior. Debe ser en negrita y color negro o en otro color que destaque claramente con relación al fondo.
+
+
+Aunque no es obligatorio, otras siglas y otros símbolos pueden aparecer en el cartonaje de los medicamentos:
+
+- Tabla posología: en aquellos casos en los que sea aplicable. Su inclusión es voluntaria.
+
+- Logo de certificación de uso de papel reciclado en el cartonaje: se recomienda que solo figure en solapas interiores del etiquetado, siempre y cuando sea de un tamaño razonable y sin inducir ningún tipo de publicidad, con el objeto de garantizar un uso racional del medicamento. Su inclusión es voluntaria.
+- Únicamente se considera aceptable la inclusión de dibujos/pictogramas/imágenes que ayuden a la comprensión de la información recogida en el etiquetado, ej., formas farmacéuticas, siempre y cuando sean un reflejo de la forma farmacéutica incluida en el envase. En ningún caso se permitirá la inclusión de pictogramas/dibujo/imágenes de carácter promocional, esto es, que su presencia suponga una clara incitación a promover la prescripción, la dispensación, la venta o el consumo de medicamentos, no aporte ningún tipo de información adicional al paciente (ej. nubes, flores, etc.) y/o no esté relacionado con la información contenida en la información del medicamento.
+- En medicamentos "sujetos a prescripción médica", está prohibido que aparezcan dibujos o símbolos en etiquetado que hagan alusión a propiedades del medicamento. Sólo se permitirán dibujos que ayuden a la comprensión de información recogida en etiquetado.
+- En los "no sujetos a prescripción", sí se acepta la inclusión de dibujos que faciliten la compresión por parte del paciente de la indicación terapéutica a la que va destinado el medicamento. Las propuestas serán evaluadas caso por caso.
+
+- No se acepta la inclusión de imágenes/dibujos de niños para identificar que el medicamento está indicado en población pediátrica ya que puede inducir a confusión y potenciar posibles errores de medicación.
+
+Medicamentos autorizados mediante procedimiento centralizado
+Los medicamentos con autorización centralizada (autorización de la Agencia Europea de Medicamentos - EMEA) pueden llevar en una sola cara del embalaje secundario un recuadro llamado " Blue-Box "en el que deben aparecer:
+
+- ESPAÑA, en tipografía normal sin negrita.
+- Nombre del representante local y teléfono, debajo de la palabra ESPAÑA.
+Es importante dejar una separación entre la palabra España y los datos del representante local con el fin de que sea legible.
+- Debe incluir la leyenda sobre las condiciones de prescripción, así como cualquier otra que corresponda al medicamento en cuestión. Y éstas deberán incluirse preferiblemente a continuación de la información del representante local.
+- C.N (el número sin sigla "C.N") seguido de los símbolos (ángulo derecho blue-box)
+- Símbolo correspondiente al sistema de recogida de residuos de medicamentos. Si aplica, se debe incluir en la parte inferior de la blue-box y no será necesario en el caso de medicamentos de uso hospitalario.
+- La inclusión del nombre completo del medicamento, (incluyendo las siglas EFG, cuando corresponda), será voluntaria.
+- La distribución de la información debe hacerse en el mismo sentido de lectura que la del resto del cartonaje.
+- Incluir el pictograma de la conducción en los medicamentos que corresponda.
+- En caso de medicamentos genéricos, incluir la leyenda "Medicamento genérico: EFG".
+
+
+
+
+
+
+
+
+
+
+3.3. CUPÓN-PRECINTO
+
+Los medicamentos financiados por el Sistema Nacional de Salud llevan un cupón-precinto en el embalaje exterior. Los no financiados sustituyen el cupón-precinto por un recuadro con el código de barras del medicamento.
+El cupón-precinto es parte del embalaje externo donde se especifican las características del medicamento y el código de barras que ha sido diseñado para el control de la dispensación de medicamentos financiados por el Sistema Nacional de Salud.
+
+
+
+La información que debe de llevar el cupón-precinto es:
+? Nombre del medicamento.
+? Forma farmacéutica.
+? Código nacional
+? Código de barras.
+? Siglas y símbolos
+? Titular de la autorización de comercialización.
+
+
+Son símbolos y siglas que pueden aparecer en el cupón-precinto:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3.3.1. CUPÓN-PRECINTO DIFERENCIADO
+
+Hay medicamentos para cuya dispensación se necesita un visado de inspección o validación sanitaria que acredite la prescripción original del médico. Son los medicamentos con cupón precinto diferenciado (CPD).
+El cupón precinto diferenciado consiste en un recuadro abierto por abajo en la parte superior del precinto.
+
+
+DISPOSITIVOS DE SEGURIDAD / LOTE Y CADUCIDAD
+
+El sistema de dispositivos de seguridad tiene por objeto reforzar la cadena legal frente a los medicamentos falsificados.
+- Incluyen dos elementos en el embalaje exterior de los medicamentos:
+* Identificador único: una secuencia única incluida en un código de barras bidimensional que permite la identificación y verificación de la autenticidad del envase individual en el que se encuentra impreso.
+* Dispositivo contra las manipulaciones: permite verificar si el envase del medicamento ha sido manipulado.
+
+El Reglamento Delegado (UE) 2016/161 de la Comisión establece las disposiciones detalladas relativas a los dispositivos de seguridad [identificador único (IU) y dispositivo contra manipulaciones (DCM)] que deben figurar en el envase de determinados medicamentos de uso humano.
+* Lote y caducidad: todos los medicamentos deben incluir esta información con caracteres visuales.
+Los medicamentos con una estabilidad reducida después de su reconstitución, dilución o apertura indicarán el tiempo de validez de la preparación reconstituida, diluida o tras su apertura e incluirán un recuadro para su consignación por los usuarios.
+En los medicamentos que contengan radionucleidos, se expresará día/mes/año y, en su caso, hora, minutos y país de la referencia horaria.
+
+4. INFORMACIÓN SOBRE MEDICAMENTOS
+La información relacionada más directamente con el medicamento la encontramos en documentos como la ficha técnica y el prospecto.
+En el RD 1/2015, texto refundido Ley 29/2006, se recogen:
+Artículo 14. Garantías de identificación
+- DOE: denominación oficial española. La denominación oficial española será de uso obligatorio, sin perjuicio de que pueda expresarse, además, en las correspondientes lenguas oficiales de las comunidades autónomas. Se usará la DCI en ausencia de DOE.
+- Marca o EFG
+- Código nacional
+
+Artículo 15. Garantías de información
+- Ficha técnica
+- Prospecto
+- Etiquetado
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4.1. LA FICHA TÉCNICA
+
+La ficha técnica o resumen de las características del producto es un documento autorizado por la AEMPS donde aparecen las condiciones de uso autorizadas del medicamento y recoge la información científica esencial para los profesionales sanitarios.
+
+En el Real Decreto 1/2015, artículo 15, Garantías de información, se recoge que el Ministerio de Sanidad, Servicios Sociales e Igualdad regulará los aspectos relativos a las garantías de información y, en concreto, las características, extensión, pormenores y lugares donde deba figurar. En todo caso, para la elaboración de esta información sobre el medicamento, su titular proporcionará información escrita suficiente sobre su identificación, indicaciones y precauciones a observar en su empleo. Esta información se presentará, al menos, en la lengua española oficial del Estado y con ella se elaborará la ficha técnica, el prospecto y el etiquetado.
+
+Los textos y demás características de la ficha técnica, el prospecto y el etiquetado forman parte de la autorización de los medicamentos y han de ser previamente autorizados por la Agencia Española de Medicamentos y Productos Sanitarios. Sus modificaciones requerirán asimismo autorización previa o notificación, según proceda.
+
+La ficha técnica o resumen de las características del producto reflejará las condiciones de uso autorizadas para el medicamento y sintetizará la información científica esencial para los profesionales sanitarios. La Agencia Española de Medicamentos y Productos Sanitarios aprobará la ficha técnica en la que constarán datos suficientes sobre la identificación del medicamento y su titular, así como las indicaciones terapéuticas para las que el medicamento ha sido autorizado, de acuerdo con los estudios que avalan su autorización.
+
+A la ficha técnica se acompañará, preceptivamente, información actualizada del precio del medicamento y, cuando sea posible, la estimación del coste del tratamiento.
+
+La Agencia Española de Medicamentos y Productos Sanitarios pondrá la ficha técnica a disposición de los servicios de salud de las comunidades autónomas, de los colegios u organizaciones profesionales, de los médicos, odontólogos, podólogos y farmacéuticos en ejercicio y, en su caso, de los veterinarios en ejercicio.
+
+El titular de la autorización estará obligado a poner la ficha técnica actualizada a disposición de las Administraciones sanitarias y de los profesionales en todas sus actividades de promoción e información en los términos establecidos reglamentariamente.
+
+El R.D. 1345/2007, de 11 de octubre, en su Anexo II, señala:
+CONTENIDO DE LA FICHA TECNICA O RESUMEN DE LAS CARACTERISTICAS DEL PRODUCTO:
+
+1. Nombre del medicamento
+2. Composición cualitativa y cuantitativa (incluye excipientes solo de declaración obligatoria)
+3. Forma farmacéutica
+4. Datos clínicos:
+4.1 Indicaciones terapéuticas
+4.2 Posología y forma de administración
+4.3 Contraindicaciones
+4.4 Advertencias y precauciones especiales de empleo
+4.5 Interacción con otros medicamentos y otras formas de interacción
+4.6 Embarazo y lactancia
+4.7 Efectos sobre la capacidad para conducir y utilizar maquinaria
+4.8 Reacciones adversas
+4.9 Sobredosis
+5. Propiedades farmacológicas:
+5.1 Propiedades farmacodinámicas
+5.2 Propiedades farmacocinéticas
+5.3 Datos preclínicos sobre seguridad
+6. Datos farmacéuticos:
+6.1 Lista de excipientes (incluye TODOS los excipientes, pero solo cualitativamente)
+6.2 Incompatibilidades
+6.3 Período de validez
+6.4 Precauciones especiales de conservación
+6.5 Naturaleza y contenido del envase
+6.6 Precauciones especiales de eliminación, y "otras manipulaciones", en su caso.
+7. Titular de la autorización de comercialización
+8. Numero de la autorización de comercialización
+9. Fecha de la primera autorización/ renovación de la autorización
+10. Fecha de la revisión del texto
+
+Además en caso de radiofármacos:
+11. Dosimetría para los radiofármacos, con una explicación detallada completa de la dosimetría interna de la radiación.
+12. Instrucciones para la preparación.
+13. Adicionalmente, los medicamentos sometidos a un seguimiento adicional deberán incluir junto al nombre del medicamento la siguiente declaración: "Este medicamento está sujeto a un seguimiento adicional". Esta declaración irá precedida por el símbolo negro a que se refiere el artículo 1 del Reglamento de Ejecución (UE) n.º 198/2013 de la Comisión, de 7 de marzo de 2013, relativo a la selección de un símbolo de identificación de los medicamentos de uso humano
+
+sujetos a un seguimiento adicional, y seguida por la frase explicativa normalizada que corresponda.
+Además, para todos los medicamentos, se incluirá en la sección 4.8 un texto estándar en el que se pida expresamente a los profesionales de la salud que notifiquen toda sospecha de reacción adversa al Sistema Español de Farmacovigilancia (se incluirá enlace al formulario web que la AEMPS establecerá al efecto).
+
+4.2. EL PROSPECTO
+
+El prospecto es la información escrita que acompaña al medicamento y va dirigida al usuario. La información debe ser en lenguaje claro sin tecnicismos.
+
+
+En el prospecto se pueden incluir dibujos y otros motivos gráficos para complementar la información escrita y favorecer la compresión por parte del usuario.
+
+La información que debe incluir el prospecto de un medicamento es:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CIRCULAR Nº 1/2011 de la AEMPS: Información que deben incluir los prospectos
+La presente circular regula la información que deben añadir todos los prospectos, y en particular orienta sobre cómo obtener la información más actualizada de los mismos, sobre cómo eliminar de manera responsable los medicamentos no utilizados, y más específicamente en materia de antibióticos.
+
+Esta información es de aplicación a los medicamentos con una autorización nacional de comercialización, provenga ésta de un procedimiento puramente nacional o de un procedimiento europeo descentralizado o de reconocimiento mutuo. Esta circular no es de aplicación a los medicamentos cuya autorización de comercialización provenga de un procedimiento Información que deberán incluir todos los medicamentos autorizados en sus prospectos sobre la eliminación de medicamentos. Con el objetivo de promover entre los ciudadanos la adecuada eliminación de los residuos de medicamentos
+
+1. Información que deberán incluir los medicamentos autorizados en sus prospectos sobre dónde obtener la información más actualizada de los mismos.
+Con el objetivo de que los usuarios de medicamentos conozcan que puede existir una versión más actualizada del prospecto que acompaña al medicamento que haya sido autorizada con posterioridad a su distribución en el canal farmacéutico, todos los medicamentos autorizados en España incluirán la siguiente leyenda:
+"La información detallada y actualizada de este medicamento está disponible en la página Web de la Agencia Española de Medicamentos y Productos Sanitarios (AEMPS) http://www.aemps.es/ " Esta leyenda deberá ser la última frase del prospecto.
+2. Información que deberán incluir todos los medicamentos autorizados en sus prospectos sobre la eliminación de medicamentos.
+Con el objetivo de promover entre los ciudadanos la adecuada eliminación de los residuos de medicamentos que se generen en los domicilios y en cumplimiento de lo previsto en el
+
+artículo 62 del Real Decreto 1345/2007, de 11 de octubre, por el que se regula el procedimiento de autorización, registro y condiciones de dispensación de los medicamentos de uso humano fabricados industrialmente, los prospectos de todos los medicamentos autorizados en España deberán actualizar la leyenda que se incluye al final de los prospectos según lo dispuesto a continuación:
+"Los medicamentos no se deben tirar por los desagües ni a la basura. Deposite los envases y los medicamentos que no necesita en "el Punto SIGRE" de la farmacia. En caso de duda pregunte a su farmacéutico cómo deshacerse de los envases y de los medicamentos que no necesita. De esta forma, ayudará a proteger el medio ambiente."
+Esta leyenda debe incluirse dentro de la sección 5 del prospecto de acuerdo con lo previsto en el RD 1345/2007.
+3. Información que deberán incluir todos los antibióticos autorizados en sus prospectos sobre su indicación, utilización y eliminación.
+Con el objetivo de incrementar la concienciación de los usuarios de antibióticos sobre la necesidad de una correcta utilización de los mismos, los prospectos de todos los antibióticos autorizados en España deberán incluir la siguiente información:
+"Los antibióticos se utilizan para tratar infecciones bacterianas y no sirven para tratar infecciones víricas como la gripe o el catarro.
+Es importante que siga las instrucciones relativas a la dosis, el intervalo de administración y la duración del tratamiento indicadas por su médico.
+No guarde ni reutilice este medicamento. Si una vez finalizado el tratamiento le sobra antibiótico, devuélvalo a la farmacia para su correcta eliminación. No debe tirar los medicamentos por el desagüe ni a la basura."
+
+Este texto debe incluirse en el apartado 1 del prospecto, en negrita y recuadrado, entre la información del nombre del medicamento (<Nombre comercial>contiene <principio activo>, un antibiótico que pertenece a un grupo llamado <familia>) y la información sobre sus indicaciones de uso (Este medicamento se usa para el tratamiento de las siguientes infecciones bacterianas).
+
+5. ACONDICIONAMIENTOS ESPECIALES
+Existen medicamentos que requieren especificaciones concretas en su acondicionamiento: los radiofármacos, los medicamentos homeopáticos, las muestras gratuitas y los envases clínicos.
+
+5.1. RADIOFÁRMACOS
+
+RADIOFÁRMACO: Cualquier producto que, cuando está preparado para su uso con finalidad terapéutica y diagnóstica, contiene uno o más radionucleidos (isótopos radioactivos) Particularidades del acondicionamiento de radiofármacos:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Prospectos de radiofármacos: debe incluir información relativa a la manipulación y a las precauciones necesarias por parte del paciente, así como la eliminación del envase y residuos generados.
+
+5.2. MEDICAMENTOS HOMEOPÁTICOS
+
+MEDICAMENTO HOMEOPÁTICO: Es un medicamento obtenido a partir de sustancias denominadas cepas homeopáticas, con arreglo a un procedimiento de fabricación homeopática descrito en la Farmacopea Europea, o en la Real Farmacopea Española o, en su defecto, en una farmacopea utilizada de forma oficial en un país de la Unión Europea. Hay dos tipos de medicamentos homeopáticos:
+
+* Con indicación terapéutica
+* Sin indicación terapéutica
+
+El acondicionamiento de medicamentos homeopáticos:
+Medicamentos	homeopáticos	con
+indicación terapéuticaSe ajustan a las disposiciones generales vistas en los
+epígrafes anteriores.Medicamentos	homeopáticos	sin indicación terapéuticaEn el etiquetado y prospecto debe de incluir obligatoriamente:
+• Denominación científica de la cepa o cepas seguida del grado y tipo de dilución empleando los símbolos de la farmacopea utilizada.
+• La leyenda "Medicamento homeopático sin
+indicaciones terapéuticas aprobadas"
+
+
+
+
+5.3. MUESTRAS GRATUITAS
+
+El Real Decreto 1416/1994, de 25 de junio, por el que se regula la publicidad de los medicamentos de uso humano, recoge que únicamente podrán elaborarse y suministrarse muestras gratuitas de especialidades farmacéuticas y medicamentos fabricados industrialmente, que reúnan los siguientes requisitos:
+
+a) Que su fórmula esté constituida por una sustancia/s activas medicinales que, por ser novedad en el campo terapéutico, precise el previo conocimiento de las personas facultadas para prescribirlos.
+b) Que, aun no tratándose de una sustancia medicinal de las referidas en el apartado anterior, su preparación o FF, dosis por unidad o concentración, forma de administración, sean nuevas o estén dirigidas a la administración por vía distinta de las utilizadas y suponga, además, una ventaja terapéutica respecto de aquéllas.
+c) Que, aun siendo conocidas farmacológica y terapéuticamente las sustancias medicinales, se hubieran descubierto acciones farmacológicas nuevas y por consiguiente tengan una nueva indicación terapéutica.
+
+La entrega se realizará de acuerdo con las siguientes condiciones:
+a) Máximo de 10 muestras de cada medicamento por año y persona facultada, y durante un tiempo máximo de dos años contados desde la fecha de autorización del medicamento.
+b) Cada suministro de muestras deberá responder a una petición formulada por escrito, fechada y firmada, que proceda del destinatario.
+c) Los laboratorios que suministren muestras deberán mantener un sistema adecuado de control.
+d) Las muestras deberán ser idénticas a la presentación más pequeña del medicamento comercializado.
+e) Cada muestra deberá llevar la mención "Muestra gratuita. Prohibida su venta", y suprimido o anulado el cupón-precinto del medicamento.
+f) Cada entrega de muestras deberá acompañarse de un ejemplar de la ficha técnica, junto con la información actualizada del precio, condiciones de la oferta del Sistema Nacional de Salud, en su caso, y, cuando sea posible, la estimación del coste del tratamiento.
+
+
+
+Además:
+- No podrán suministrarse muestras de medicamentos que contengan sustancias psicotrópicas o estupefacientes.
+- El solicitante o, en su caso, el titular de la autorización requerirá de la Dirección General de Farmacia y Productos Sanitarios autorización para elaborar y suministrar muestras gratuitas.
+- Al autorizarse un medicamento la Dirección General de Farmacia y Productos Sanitarios podrá ampliar el número de muestras por año de aquellos medicamentos que su especial interés terapéutico lo aconseje.
+
+5.4. ENVASES CLÍNICOS
+ENVASES CLÍNICOS (EC): Son medicamentos que contienen un número de unidades superior al utilizado para la venta al público. Se utilizan en entidades autorizadas. Las características del acondicionamiento de envases clínicos son:
+
+
+
+
+
+
+
+
+
+Envase / etiqueta exterior:
+- "Envase clínico, prohibida su venta al detalle"
+- Código nacional + siglas + símbolos
+- Código de barras (no cupón precinto SNS)
+
+Subunidad:
+- "subunidad de envase clínico, prohibida su venta al detalle"
+- código nacional + siglas + símbolos
+
+6. CONTROL DE CALIDAD DEL MATERIAL DE ACONDICIONAMIENTO
+El material de acondicionamiento usado con fines médicos o farmacéuticos deberá comprobarse estrictamente antes de su utilización; por ello se realizarán controles o ensayos físicos, químicos y biológicos rigurosos.
+
+6.1. PROCEDIMIENTOS GENERALES
+
+Las normas GMP (Nomas de correcta elaboración y control de calidad de fórmulas magistrales y preparados oficinales; en España reguladas por el REAL DECRETO 175/2001, de 23 de febrero de 2001) establecen criterios de control del material de acondicionamiento primario semejantes a los de materias primas, incluyendo criterios similares respecto a suministros, recepción, registro y almacenaje de los mismos. Se actuará también de modo semejante respecto del material obsoleto o caducado, debiendo destruirse y registrarse su eliminación.
+
+Los procedimientos que se efectúan para garantizar la calidad de las mercancías son los siguientes:
+? Recepción adecuada del material de acondicionamiento, comprobando en el albarán que el pedido solicitado se ajusta a lo entregado.
+? Observación de posibles anomalías como humedad, roturas...
+? Etiquetaje con un número de registro interno sobre cada uno de los paquetes o cajas.
+? Comprobación de los boletines o certificados de análisis correspondientes, documentos únicos para cada lote de fabricación.
+? Cumplimentación en el "Libro de registro de la calidad de materiales de acondicionamiento" (ANEXO)
+? Cuarentena hasta que se confirme su aceptación o rechazo.
+? Almacenamiento adecuado del material autorizado, controlado, mediante soporte informático, las mercancías listas para su utilización.
+
+6.2. PROCEDIMIENTOS ESPECÍFICOS
+
+Para asegurar la calidad de las diferentes clases de material de acondicionamiento se habrá de efectuar una serie de ensayos y observaciones.
+¦ Ensayos de vidrio: para la comprobación de la calidad del vidrio y, por tanto, su distinción, las farmacopeas describen dos tipos de ensayos de resistencia hidrolítica (ensayo sobre el vidrio pulverizado y ensayo sobre la superficie interna del recipiente de vidrio). Además, Farmacopea Europea indica que deben hacerse los siguientes: determinación de cloruros y de arsénico, transmisión de la luz para recipientes de vidrio colorado y resistencia al choque térmico para recipientes destinados al envasado de sangre humana y productos derivados de la misma.
+¦ Ensayos de plástico: algunos ensayos marcados por la Farmacopea para el control de
+calidad de los plásticos son: identificación, disolución, acidez o basicidad, sustancias reductoras, sustancias solubles en hexano...
+¦ Ensayos materiales elastoméricos: la Farmacopea europea contempla los cierres de caucho y de silicona para envases de preparaciones acuosas para inyección. Indica que los cierres deben de ser lavados y esterilizados antes de su uso, señalando que deben someterse a los siguientes ensayos de control de calidad: identificación, disolución, acidez o alcalinidad, absorbancia y sustancias reductoras.
+
+7. LEGISLACIÓN SOBRE MATERIAL DE ACONDICIONAMIENTO
+La base legal que regula el material de acondicionamiento es el Real Decreto 1345/2007, de 11 de octubre, por el que se regula el procedimiento de autorización, registro y condiciones de dispensación de los medicamentos de uso humano fabricados industrialmente.
+El Real Decreto 1091/2010, de 3 de septiembre por el que se modifica el Real Decreto 1345/2007 no incluye ninguna variación relevante respecto al acondicionamiento de medicamentos.
+El RD 686/2013, del 16 de septiembre, que modifica el RD 1345/2007.
+
+7.1. MATERIAL DE ACONDICIONAMIENTO EN EL REAL DECRETO 1345/2007
+CAPÍTULO III
+Etiquetado y prospecto
+
+SECCIÓN 1ª DISPOSICIONES GENERALES DEL ETIQUETADO Y PROSPECTO
+Artículo 29. Objetivos del etiquetado y prospecto: Garantías de identificación e información para el uso racional del medicamento.
+1. 	El etiquetado y el prospecto del medicamento habrán de ser conformes a la información de su ficha técnica.
+2. El etiquetado y el prospecto garantizarán la inequívoca identificación del medicamento, proporcionando la información necesaria para su correcta administración y uso por los pacientes o usuarios y, en su caso, por los profesionales sanitarios.
+3. El etiquetado y el prospecto, en su diseño y contenido, facilitarán la adecuada comprensión y conocimiento del medicamento por el ciudadano. El prospecto deberá ser legible, claro, asegurando su comprensión por el paciente y reduciendo al mínimo los términos de naturaleza técnica.
+
+Artículo 30. Autorización de la información contenida en el etiquetado y prospecto.
+1. Los textos y demás características del etiquetado y del prospecto forman parte de la solicitud del medicamento y requerirán autorización de la Agencia Española de Medicamentos y Productos Sanitarios.
+Las modificaciones requerirán, asimismo, autorización previa de la Agencia Española del Medicamento y Productos Sanitarios y se resolverán conforme al procedimiento establecido para las modificaciones de la autorización.
+2. 	Los textos se presentarán, al menos, en castellano. Además, también se podrán redactar en otros idiomas, siempre que en todos ellos figure la misma información. En estos casos, con la solicitud se acompañará la documentación acreditativa de la fidelidad de la traducción.
+3. En el caso de los medicamentos huérfanos, las informaciones previstas en el etiquetado podrán redactarse, previa solicitud debidamente motivada, en una lengua oficial de la Unión Europea, en aquellos casos que determine la Agencia Española de Medicamentos y Productos Sanitarios.
+4. Así mismo, cuando el destino del medicamento no sea la entrega directa al paciente, la Agencia Española de Medicamentos y Productos Sanitarios podrá dispensar de la obligación de hacer figurar determinadas informaciones en el etiquetado y el prospecto, así como de redactar el prospecto en castellano.
+5. Sin perjuicio de lo anterior, en los casos de los apartados 3 y 4, el titular de la autorización de comercialización pondrá a disposición de la Agencia Española de Medicamentos y Productos
+
+Sanitarios la información del etiquetado y/o del prospecto en castellano, de manera que pueda hacerse disponible a los ciudadanos y profesionales interesados.
+
+SECCION 2ª GARANTÍAS DE IDENTIFICACIÓN DEL MEDICAMENTO: ETIQUETADO
+
+Artículo 31. Requisitos generales.
+1. El etiquetado del medicamento deberá incluir la información detallada en el anexo III.
+2. Los datos que han de mencionarse obligatoriamente en el etiquetado de los medicamentos estarán expresados en caracteres fácilmente legibles, claramente comprensibles e indelebles. Estos datos no inducirán a error sobre la naturaleza del producto ni sobre las propiedades terapéuticas del mismo.
+
+Artículo 32. Garantías de autenticidad y trazabilidad del etiquetado.
+El embalaje exterior o en su defecto el acondicionamiento primario incorporará los elementos que permitan la autentificación del producto, así como la información necesaria para determinar la trazabilidad del medicamento desde su fabricación hasta su dispensación al ciudadano, incluyendo para ello la identificación que se establezca reglamentariamente.
+
+Artículo 33. Incorporación de símbolos y motivos gráficos.
+1. Será obligatorio incluir en el etiquetado los símbolos recogidos en el anexo IV.
+2. Se podrá autorizar la inclusión de otros motivos gráficos que, siendo conformes a la ficha técnica, y no teniendo carácter publicitario, sean adecuados para facilitar la interpretación por los pacientes y usuarios de determinadas menciones del anexo III.
+
+Artículo 34. Obligación de declarar determinados excipientes.
+En el etiquetado, en la declaración de la composición del medicamento, se incluirán los excipientes de declaración obligatoria cuyo conocimiento resulte necesario para una correcta administración y uso del medicamento.
+Los excipientes de declaración obligatoria se irán actualizando conforme a los avances científicos y técnicos y de acuerdo con lo que se establezca en la Unión Europea.
+
+Artículo 35. Garantía de correcta identificación: nombre del medicamento.
+1. El nombre con el que se comercialice el medicamento definido en el artículo 2.8, habrá de reunir los requisitos establecidos legalmente y en ningún caso podrá inducir a error sobre las propiedades terapéuticas o la naturaleza del medicamento.
+La denominación podrá ser un nombre de fantasía que no pueda confundirse con la denominación común, definida en el artículo 2.9 o bien la denominación común o científica del principio activo, acompañada de una marca comercial o del nombre del titular o fabricante de la autorización de comercialización.
+2. Se evitarán aquellas denominaciones que puedan inducir a error en la prescripción o dispensación a causa de denominaciones ya existentes en el mercado farmacéutico, del empleo de otras denominaciones anteriores o de los hábitos de prescripción.
+3. En general, y de acuerdo con lo establecido en los dos apartados anteriores, no serán admisibles las denominaciones de medicamentos cuando:
+a) Su prescripción o dispensación pueda dar lugar a confusión fonética u ortográfica con el de otro medicamento o con productos sanitarios, cosméticos o alimentarios.
+
+b) Haya sido utilizada en un medicamento cuya autorización haya sido revocada y no hubieran transcurrido cinco años desde su revocación, excepto que tengan la misma composición en principios activos.
+c) Tenga parecido ortográfico con una Denominación Oficial Española, con una Denominación Común Internacional recomendada o propuesta por la Organización Mundial de la Salud, o con una denominación común usual o científica.
+d) Se trate de medicamentos publicitarios y de otros medicamentos con publicidad dirigida al público, cuya denominación no podrá ser igual o inducir a confusión con el de otro medicamento sujeto a prescripción médica o financiado con fondos públicos.
+
+Artículo 36. Requisitos generales del prospecto.
+1. El prospecto es la información escrita que acompaña al medicamento, dirigida al paciente o al usuario. En él se identifica al titular de la autorización y en su caso, el nombre del representante del titular de la autorización de comercialización y al responsable de la fabricación del medicamento, se declara su composición y se dan instrucciones para su administración, empleo y conservación, así como sus efectos adversos, interacciones, contraindicaciones y demás datos que se determinan en el anexo V, con el fin de proponer su más correcto uso y la observancia del tratamiento prescrito, así como las medidas a adoptar en caso de intoxicación.
+2. El prospecto deberá estar redactado y concebido en términos claros y comprensibles para permitir que los pacientes y usuarios actúen de forma adecuada, cuando sea necesario con ayuda de los profesionales sanitarios.
+3. El prospecto deberá reflejar los resultados de las consultas con los grupos de pacientes o de usuarios para garantizar su legibilidad, claridad y facilidad de comprensión para favorecer el uso correcto del medicamento.
+4. Como norma general, el prospecto sólo contendrá la información concerniente al medicamento al que se refiera. No obstante, la Agencia Española de Medicamentos y Productos Sanitarios podrá autorizar, en determinadas circunstancias, que se incluya información relativa a distintas dosis y formas farmacéuticas disponibles de un mismo medicamento.
+5. Es obligatoria la inserción del prospecto en todos los medicamentos, salvo si toda la información exigida se incluye en el embalaje exterior o, en su defecto, en el acondicionamiento primario.
+6. El titular de la autorización de comercialización garantizará que, previa solicitud de las organizaciones de pacientes, el prospecto esté disponible en formatos apropiados para las personas invidentes o con visión parcial.
+
+Artículo 37. Omisión de indicaciones terapéuticas.
+La Agencia Española de Medicamentos y Productos Sanitarios podrá decidir que ciertas indicaciones terapéuticas no figuren en el prospecto o en la ficha técnica, en particular cuando el solicitante de un medicamento genérico comunique que éstas indicaciones estuvieran cubiertas por el derecho de patentes o de protección de datos en el momento en que el medicamento genérico se autorice.
+
+Artículo 38. Motivos gráficos.
+Se podrá autorizar la inclusión en el prospecto de dibujos, y otros motivos gráficos, que complementen la información escrita del prospecto, así como otras informaciones, siempre que, siendo conformes con la ficha técnica, se justifiquen por razones de educación sanitaria o
+
+favorezcan una mayor comprensión para el consumidor o usuario al que se dirijan, y no respondan a criterios de promoción o publicidad del medicamento.
+
+SECCION 4ª: DISPOSICIONES PARTICULARES PARA DETERMINADOS FORMATOS DE MEDICAMENTOS
+
+Artículo 39. Material de acondicionamiento de los envases clínicos.
+1. En el embalaje exterior habrán de figurar los datos establecidos en la parte primera del anexo III, con las siguientes excepciones:
+a) Supresión del cupón precinto del Sistema Nacional de Salud.
+b) Supresión del recuadro o espacio en blanco que permita indicar la posología recetada, duración del tratamiento y frecuencia de tomas".
+c) Inclusión de forma destacada de la leyenda: "Envase clínico, prohibida su venta al detalle".
+2. En el acondicionamiento primario constarán los datos reflejados en la parte segunda del anexo III.
+3. El número de prospectos que se incluyan en el embalaje serán los suficientes, dependiendo del número de unidades del envase clínico, para garantizar la información de los posibles pacientes o usuarios, y contendrán la información que se establece en el anexo V.
+
+Artículo 40. Material de acondicionamiento de las muestras gratuitas.
+El material de acondicionamiento de las muestras gratuitas, cualquiera que sea éste, habrá de reunir las mismas características y condiciones que las autorizadas para los envases de venta al público, con las siguientes excepciones:
+a) Se suprimirá o anulará el cupón precinto del Sistema Nacional de Salud.
+b) En el embalaje exterior se indicará de manera indeleble y bien visible la leyenda: "Muestra gratuita, prohibida su venta".
+
+
+
+
+8. BIBLIOGRAFÍA
+Sabela Fernández Vila; Beatriz Tojo Fernández; Montserrat Chao Millor; Fátima Calvo Rey. "Dispensación de Productos Farmacéuticos". Editorial MCGraw-Hill. 2013.
+Cristina Moreno Valderrey. "Dispensación de Productos Farmacéuticos". Editorial Paraninfo. 2014. Francisco J. Farfán Sedano; Mª Jesús Frutos Sastre. "La Farmacia Hospitalaria para técnicos en farmacia". AMV Ediciones.
+Montserrat Chao Millor; Sabela Fernández Vila. "Disposición y venta de productos". Editorial MCGraw- Hill. 2011.
+Benito Hernández; Elena Martínez. "Dispensación de productos farmacéuticos". Editorial Altamar. 2013. FAULÍ I TRILLO, C. Tratado de Farmacia galénica. Madrid. Ed. Luzán 5.
+VILA JATO, J.L. Tecnología Farmacéutica. Vol I: Aspectos fundamentales de los sistemas farmacéuticos y operaciones básicas. Madrid. Ed. Síntesis.
+VILA JATO, J.L. Tecnología Farmacéutica. Vol II: Formas Farmacéuticas. Madrid. Ed. Síntesis.
+BARBÉ ROCABERT, C. Preparados farmacéuticos y parafarmacéuticos. Bases tecnológicas y documentales. Barcelona 2001. Masson.
+LUIS, C.D; CAMACHO, Mª.A; SANCHEZ-CASCADO, G; MINGO, G.J. Elaboración de preparados farmacéuticos y parafarmacéuticos. Madrid. 2005 McGrawHill.
+Real Decreto 175/2001, de 23 de febrero por el que se aprueban las normas de correcta elaboración y control de calidad de fórmulas magistrales y preparados oficinales
+Real Decreto Legislativo 1/2015, de 24 de julio, por el que se aprueba el texto refundido de la Ley de garantías y uso racional de los medicamentos y productos sanitarios
+Real Decreto 1345/2007 de 11 de octubre, por el que se regula el procedimiento de autorización, registro y condiciones de dispensación de los medicamentos de uso humano fabricados industrialmente.
+Agencia Española de medicamentos y productos sanitarios. Preguntas y Respuestas sobre la información a incluir en Ficha Técnica, Etiquetado y Prospecto. Disponible en: https://www.aemps.gob.es/industria_etiquetado_preguntasrespuestas/#indice3
+Resolución de 24 de septiembre de 2021, de la Agencia Española de Medicamentos y Productos Sanitarios, por la que se dictan instrucciones sobre excipientes en la información de los medicamentos.
+/medicamentos-de-uso-humano/legislacion_espana_medicamentosusohumano/legislacion-sobre-ficha- tecnica-prospecto-y-etiquetado.
+
+9. ANEXO:	LIBRO	DE	REGISTRO	DE	MATERIAL	DE	ACONDICIONAMIENTO
+
+
+
+
+
+
+Tus centres PREMIR(r) en Galicia son:
+Santiago de C • 981 59 01 98 {Central}
+Coruna • 98113 12 so
+Ferrol • 981 31 21 SO
+Lugo • 982 22 80 30
+Orense • 988 373 013
+Pontevedra • 986 847 214
+Vigo • 986 238 442
+
+
+
+
+
+
+
+
+
+
+
+CPR PREMIR	oposnet
+Ciclos Superiores	campus virtual
+Grupo PREMIR'
+
+
+
+
+
+
+Languages
+School
+GrupoPREMIR"  /
+
+Academia
+PREMIR(r)
+Oposiciones
+
+
+
+
+
+

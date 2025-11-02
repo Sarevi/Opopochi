@@ -1,0 +1,1484 @@
+       TÉCNICOS DE FARMACIA
+                                SERGAS
+              TEMA 14-2ª PARTE:
+
+
+
+
+14
+       OPERACIONES FARMACÉUTICAS BÁSICAS:
+CONCEPTOS GENERALES. PESADA CON BALANZAS
+      ELECTRÓNICAS DE PRECISIÓN. DIVISIÓN DE
+   SÓLIDOS. TAMIZADO. HOMOGENEIZACIÓN DE
+        COMPONENTES. EXTRACCIÓN MEDIANTE
+    DISOLVENTES. DESTILACIÓN. EVAPORACIÓN.
+         PULVERIZACIÓN. TAMIZACIÓN. MEZCLA.
+       DESECACIÓN.LIOFILIZACIÓN. FILTRACIÓN.
+      GRANULACIÓN. ESTERILIZACIÓN. SISTEMAS
+      DISPERSOS HOMOGÉNEOS: DISOLUCIONES.
+          SISTEMAS DISPERSOS HETEROGÉNEOS:
+     EMULSIONES, SUSPENSIONES Y AEROSOLES.
+2 TÉCNICOS DE FARMACIA
+  Tema 14-2ª PARTE
+
+  www.premir.es
+                                                                          TÉCNICOS DE FARMACIA 3
+                                                                                Tema 14-2ª PARTE
+
+                                                                                         www.premir.es
+
+15. GRANULACIÓN
+La granulación es una operación contraria a la división, que tiene como fin la aglomeración de
+sustancias finamente divididas o pulverizadas mediante presión o mediante la adición de un
+aglutinante disperso en un líquido. El resultado perseguido es la obtención de un granulado que
+
+
+
+
+                                                                                                        TÉCNICOS FARMACIA - SERGAS
+constituya una forma farmacéutica definitiva o un producto intermedio para la fabricación de
+comprimidos, o que sirva de material de relleno para las cápsulas y los sobres.
+
+La unión interparticular del granulado se puede lograr de dos formas:
+-      Con un aglutinante: se requiere un líquido, agua u otro, que ligue el aglutinante con la(s)
+sustancia(s) que se desee granular. Ésta es la denominada granulación por vía húmeda. Se clasifica en:
+o      Acuosa: si se emplea agua.
+o      Anhidra: si no se emplea agua.
+-      Por la acción mecánica: se requiere una fuerza o una presión de una máquina de comprimir o de
+una compactadora. Se habla de granulación por vía seca.
+
+15.1. GRANULACIÓN POR VÍA HÚMEDA
+La granulación por vía húmeda es aquella que se lleva a cabo mediante la adición, sobre las sustancias a
+granular, de un aglutinante dispersado en un líquido con el que forma una disolución o una suspensión.
+Este líquido es agua en la mayoría de los casos, si bien excepcionalmente puede emplearse algún
+disolvente orgánico como el alcohol. Las sustancias aglutinantes que se pueden emplear son el almidón
+(normalmente de maíz), gelatina, polivinilpirrolidona (PVP), metilcelulosa y, mucho menos utilizadas la
+goma arábica, goma tragacanto, pectina, dextrina y alginatos. Todas las dispersiones líquidas que deban
+calentarse para obtenerlas, es necesario que se dejen enfriar moderadamente (lo necesario para que aún
+sigan siendo dispersiones líquidas) antes de añadirlas lentamente a las sustancias a aglutinar.
+Para poder desarrollar una granulación por vía húmeda, es necesario asegurarse que el fármaco y
+sustancias que se quieren granular puedan mojarse, si son hidrolizables. También se tendrá en cuenta si el
+producto puede desecarse a cierta temperatura, es decir, que no es termolábil, ya que, si así fuera, debería
+aplicarse necesariamente una granulación por vía seca o una desecación en estufas de vacío.
+
+15.2. GRANULACIÓN POR VÍA SECA
+La granulación por vía seca se realizará siempre que las sustancias a granular sean alteradas, degradadas
+por la humedad o por el calor, o cuando dichas sustancias sean solubles en el líquido aglutinante. Este tipo
+de granulación se basa en unir las partículas mediante la aplicación de una fuerza o presión sobre la mezcla
+de sustancias, lo que se consigue de dos formas distintas:
+-       Mediante la aplicación de una fuerza de compresión efectuada con una máquina de comprimir; en
+cuyo caso la operación suele denominarse precompresión. Se obtienen pequeñas masas compactas de
+cierta dureza que reciben el nombre de precomprimidos o pre-formas, quizás debido a que la granulación
+por vía seca suele ser en ocasiones una operación intermedia en la fabricación de comprimidos.
+-       Mediante el empleo de una compactadora de rodillos, que efectuará una fuerza sobre el producto
+que pasa entre dos cilindros, compactándolo. En este caso, se obtiene una placa o lámina compacta y de
+un grosor determinado.
+Cuando la aplicación de dicha fuerza o presión no es suficiente para compactar de tal manera que el
+producto dé lugar a un granulado consistente, desmoronándose, puede añadirse a la mezcla que se
+pretende granular alguna sustancia que favorezca la compactación, es decir, un aglutinante en forma de
+polvo seco.
+4 TÉCNICOS DE FARMACIA
+  Tema 14-2ª PARTE
+
+     www.premir.es
+
+ 16. ESTERILIZACIÓN.
+ 16.1- CONCEPTOS GENERALES
+
+ El ambiente sanitario u hospitalario puede estar contaminado con una gran variedad de microorganismos
+ capaces de producir enfermedad en el ser humano. Los procedimientos que eliminan o disminuyen la
+ carga microbiana son:
+ •       Limpieza-descontaminación
+ •       Desinfección
+ •       Esterilización
+ Los distintos procedimientos pueden llevarse a cabo de forma centralizada, en centrales de esterilización,
+ o de forma descentralizada, en los distintos servicios o departamentos asistenciales.
+ La OMS define la esterilización como la técnica de saneamiento cuya finalidad es la destrucción de toda
+ forma de vida, aniquilando todos los microrganismos, tanto patógenos como no patógenos,
+ incluidas sus formas esporuladas, altamente resistentes.
+ La esterilización supone el nivel más alto de seguridad (y por lo tanto de letalidad, o eficacia biocida) en la
+ destrucción de microorganismos o de sus formas de resistencia.
+
+ Cuando una carga microbiana se expone a un método de esterilización, la velocidad a la que se produce
+ su muerte es proporcional a ala aplicación de este método, durante un tiempo determinado. En función
+ de esto, experimentalmente se determinan las curvas de la muerte de los microorganismos, que permiten
+ evaluar los métodos de esterilización. Este estudio incluye los parámetros:
+ •      Valor Z: temperatura requerida para reducir en un 90% los microorganismos, sobre un objeto
+ determinado en un tiempo concreto.
+ •       Valor D: tiempo de reducción decimal de una carga de microorganismos. Puede definirse también
+ como el tiempo necesario para destruir el 90 % de los microorganismos, en un objeto determinado a una
+ temperatura concreta.
+ La FDA es la agencia reguladora estadounidense, que exige que cada método de esterilización debe
+ documentar y certificar que la probabilidad de encontrar un artículo no estéril es menos de una en un
+ millón. A este indicador se le llama SAL (sterility assurance level) de 10 exp-6. También llamado “nivel de
+ garantía de esterilidad” se refiere a la posibilidad de que un artículo no se hubiera esterilizado después
+ de haber sido sometido a un tratamiento de esterilización determinado.
+
+ 16.2. MÉTODOS DE ESTERILIZACIÓN.
+ El medio de esterilización ideal debería reunir las siguientes características:
+ •       Máximo poder de destrucción: bactericida, tuberculicida, esporicida, fungicida y virucida.
+ •       Seguro, sencillo y fácil de manejar.
+ •       Inofensivo para la salud de los profesionales.
+ •       Compatible con las características del material.
+ •       Capacidad de monotorizar o controlar.
+ •       Gran poder de penetración en el interior de los paquetes y de los instrumentales.
+ •       Rápida actividad, en poco tiempo.
+ •       Bajo coste y alto rendimiento.
+ •      Válido para esterilizar cualquier tipo de material.
+ Este método ideal no existe, cada uno tiene sus ventajas e inconvenientes, siendo los más habituales:
+                                                                          TÉCNICOS DE FARMACIA 5
+                                                                                Tema 14-2ª PARTE
+
+                                                                                          www.premir.es
+
+A.      FÍSICOS:
+
+        FLAMEADO
+Esta técnica tiene por objeto pasar el material por la llama de un mechero tipo Bunsen hasta lograr su
+incandescencia. Se utiliza en laboratorios de microbiología para esterilizar asas de siembra, tubos de vidrio
+
+
+
+
+                                                                                                         TÉCNICOS FARMACIA - SERGAS
+o pipetas, mediante la aplicación directa de la llama.
+
+        INCINERACIÓN
+Es una forma de destruir la carga microbiana por combustión. Más que como medio de esterilización se
+utiliza para eliminación de residuos biopeligrosos mediante combustión en hornos crematorios o
+incineradores de características especiales.
+
+         CALOR SECO (horno Pasteurícele o estufa Poupinel)
+se realiza en cámaras de acero inoxidable provocando la muerte de los microorganismos por oxidación de
+sus componentes. Difunde por conducción y son necesarias altas temperaturas (entre 160 ºC y 180 ºC). Su
+uso queda limitado a la esterilización de polvos, aceites y vidrios en Farmacia y Laboratorio.
+
+         CALOR HÚMEDO (autoclave de vapor)
+es vapor de agua y causa la muerte celular por coagulación de proteínas de los gérmenes. Se realiza el
+proceso en cámaras de acero inoxidable llamadas autoclaves de vapor. Debe utilizarse sólo para materiales
+y equipos resistentes a temperaturas altas (no válido para termosensibles). Requiere 135 ºC durante 7-10
+min ó 121 ºC durante 20 min. Los ciclos de 140ºC son una excelente alternativa para la esterilización de
+priones (enfermedad de Creutzfeld-Jacob).
+Debido a que el aire y el vapor de agua son inmiscibles entre si, es imprescindible la eliminación total del
+aire. A día de hoy esto se consigue por succión de vacíos repetidos junto con inyecciones alternativas de
+vapor hasta conseguir que la cámara quede repleta de vapor.
+El vapor en el autoclave debe:
+•               Acceder a todos los puntos de la cámara.
+•              No mezclarse con el aire, para estar en total contacto con envoltorios y objetos.
+•              Tener una calidad de vapor igual o superior al 97% (con menos de un 3% de agua) para no
+dejar mojados los paquetes)
+6 TÉCNICOS DE FARMACIA
+  Tema 14-2ª PARTE
+
+  www.premir.es
+
+ ETAPAS DE UN CICLO DE AUTOCLAVE
+
+
+
+
+ 1.      Calentamiento inicial de la cámara: con la salida de aire de su interior, en donde se encuentran
+ los paquetes con el material colocado correctamente: limpio, seco y debidamente empaquetado.
+ 2.      Calentamiento de la temperatura en el interior: con inyecciones de vapor, hasta alcanzar las
+ condiciones (Tª y presión) de esterilización.
+ 3.      Realización del ciclo de esterilización: con el mantenimiento de los parámetros citados durante
+ el tiempo prefijado.
+ 4.      Expulsión del vapor o desvaporización: con caída de la presión (descompresión).
+ 5.      Secado final: con la igualación de la presión interior de la cámara atmosférica.
+
+ ★      TEST BOWIE-DICK
+ Demuestra la ausencia de aire o de otros gases no condensables dentro de la cámara de vapor que puedan
+ impedir la rápida y uniforme penetración del vapor dentro de la misma y de la carga. Debe realizarse
+ diariamente antes de que el autoclave empiece a esterilizar.
+ •               Diseño de la prueba: se hace un paquete con toallas de algodón dobladas y apiladas
+ horizontalmente, con unas medidas aproximadas de 22x30x27cm. En la mitad del paquete se coloca una
+ hoja impresa con sustancias químicas reactivas al vapor saturado. Este paquete se envuelve en papel
+ creado y se coloca en la parte inferior y junto a la puerta. Se lleva a cabo un programa de 134ºC (durante 3
+ min) para conseguir el contacto con el vapor.
+ •              Interpretación de los resultados: debe comprobarse el color de la hoja impresa, que debe
+ ser homogéneo. En caso contrario, significa presencia de aire o gases (insuficiente penetración y contacto
+ con el vapor).
+                                                                           TÉCNICOS DE FARMACIA 7
+                                                                                 Tema 14-2ª PARTE
+
+                                                                                           www.premir.es
+
+Una variedad de este test es el “ensayo DART”
+
+       MINICLAVES:
+Son autoclaves de pequeñas dimensiones y capacidad reducida, de uso cada vez más frecuente en centros
+de salud, pequeños laboratorios, consultas de odontología…posibilitan la esterilización de instrumental
+
+
+
+
+                                                                                                          TÉCNICOS FARMACIA - SERGAS
+de pequeño volumen de forma rápida y eficaz.
+
+        RADIACIONES IONIZANTES:
+Las radiaciones ionizantes (radiación gamma) tienen una gran capacidad germicida, a la que se une una
+gran intensidad de penetración. Estas cualidades hacen posible la esterilización de materiales sólidos o
+líquidos envasados en cualquier tipo de envoltorio. Inciden directamente sobre los ácidos nucleicos,
+inhibiendo la división celular. Requieren instalaciones especiales (cobalto 60) y con envoltorios específicos.
+
+        FILTROS MICROPOROSOS:
+Gracias al diminuto tamaño de sus poros (0,01 a 1,1 micras), la acción de criba o tamiz impide el paso de
+bacterias, virus y micoplasmas. Se utilizan para esterilizar fluidos, líquidos y gases.
+
+B.      QUÍMICOS
+
+         ÓXIDO DE ETILENO:
+Provoca la muerte celular por alquilación. Se realiza la esterilización en cámaras especiales de oxido de
+etileno. Es un medio de esterilización a bajas temperaturas (30-55 ºC) con un tiempo de exposición de 3 a
+8 horas, penetra con facilidad en los materiales porosos pero luego se desprende con lentitud.
+Todos los objetos esterilizados con OE deben ser sometidos a un tiempo de desabsorción por aireación
+forzada de 10-12 h. Sus efectos tóxicos más importantes son los de tipo crónico (posibles efectos
+mutagénicos, cancerígenos y teratogénicos) además de poder producir irritación en ojos, piel y vías
+respiratorias.
+
+        ÁCIDO PERACÉTICO:
+Es un oxidante, soluble en agua, que no deja residuos tóxicos. Puede emplearse como líquido y en estado
+plasma. Muy corrosivo. Existen sistemas automáticos que lo emplean en endoscopios y material de
+microcirugía.
+
+        FORMALDEHÍDO:
+Gas incoloro, volátil, de olor fuerte y con propiedades germicidas. Actúa a 60 ºC durante 3,5h (actúa por
+alquilación). Es potencialmente cancerígeno y mutagénico y requiere de instalaciones controladas.
+
+         PLASMA DE BAJA TEMPERETURA DE PERÓXIDO DE HIDRÓGENO
+Actúa por oxidación de los microorganismos. Se emplea en equipos automáticos en donde se controlan:
+presión, concentración de peróxido de hidrógeno, nº de ciclos, tiempo y Tª. El material procesado no
+requiere aireación posterior.
+El ciclo de esterilización consta de:
+•               Vacío inicial.
+•               Inyección de peróxido de hidrogeno (se libera de una ampolla en la que se encuentra
+líquido y se vaporiza en la cámara).
+•               Difusión y contacto con el material.
+•                  Plasma que se consigue al activarse un campo magnético.
+Al finalizar el ciclo se vuelve a presión atmosférica.
+8 TÉCNICOS DE FARMACIA
+  Tema 14-2ª PARTE
+
+     www.premir.es
+
+        PLASMA DE GASES INERTES MÁS VAPOR
+ Se emplea una combinación de plasma y otros agentes esterilizantes. Sus principales características son:
+ •                 Tiempo de exposición: 30 min - 3 horas.
+ •              Tiempo de ciclo: 45 min - 6 horas.
+ •              Agente esterilizante: plasma gas (mezcla de gases) a partir de la mezcla de peróxido de
+ hidrogeno y ácido peroxiacético (líquidos).
+
+ 16.3. VENTAJAS E INCONVENIENTES
+
+
+                              VENTAJAS                             INCONVENIENTES
+
+                              Ciclos cortos
+                              Menor coste de operación       No     compatible       con     material
+                              Efectivo frente eliminación de termosensible
+     Autoclave de vapor
+                              priores                        No elimina pirógenos
+                              No presenta toxicidad para el No esteriliza sustancias oleosas ni polvo
+                              personal ni el ambiente
+                                                            Daño material por exposición a alta Tª
+                              Equipo    menos costoso   que Tiempos de exposición prolongados
+                              autoclave                     Dificultad para certificación del método
+     Calor seco
+                              Facilidad de operación de los Costes de operación elevados
+                              equipos                       Carece de información de efecto contra
+                                                            priones
+                                                                 Periodos prolongados de proceso y
+                              Permite esterilización de material
+                                                                 aireación
+                              termosensible
+     Óxido de etileno                                            No es un método efectivo contra Briones
+                              Certificable
+                                                                 Tóxico para el personal, pacientes y
+                              penetración
+                                                                 ambiente
+                                                                   Incompatibilidad       con       algunos
+                              Baja temperatura                     materiales
+                              Ciclos de corta duración             Controversia respecto a su utilización en
+     Plasma
+                              No tóxico para personas/ambiente artículos con lúmenes largos entre 1 y 2
+                              No requiere instalaciones especiales m y angostos (entre 1 y 3 mm)
+                                                                   No elimina priones
+                             Rápido                                No suele ser utilizado para material
+                             Efecto   en     esterilización  de    sumergible
+     Ácido        peracético
+                             endoscopios y laparoscopios           Esteriliza un solo contenedor por ciclo
+     líquido
+                             Equipo automático estandarizado       No elimina Briones
+                             No contamina medio ambiente           Debe ser utilizado de forma inmediata
+                                                                   Incompatibilidad    con      algunos
+                              Baja temperatura                     materiales
+     Formaldehído             Ciclos de corta duración             Método no aprobado para su utilización
+                              Certificable                         en EEUU
+                                                                   No elimina Briones
+                                                                           TÉCNICOS DE FARMACIA 9
+                                                                                 Tema 14-2ª PARTE
+
+                                                                                           www.premir.es
+
+16.4. CONTROL DE LA ESTERILIZACIÓN.
+Dada da importancia de que el material supuestamente estéril sea realmente estéril, se emplean una serie
+de indicadores que demuestran que el proceso se desarrolló de forma correcta. Estos controles son:
+
+
+
+
+                                                                                                          TÉCNICOS FARMACIA - SERGAS
+A. Controles de exposición:
+•      Indicadores físicos: se realizan a través de dispositivos mecánicos que forman parte integrante de
+las autoclaves y equipos de esterilización y cumplen distintas funciones de registro: termómetros,
+temporizadores, gráficas, relojes, manómetros.
+•      Indicadores químicos externos: diferencian los productos procesados de los no procesados, pero
+no confirman que se hayan conseguido los parámetros de la esterilización.
+
+B. Controles del producto
+•        Indicadores químicos internos: confirman que en el interior del paquete se han cumplido una o
+más de las condiciones necesarias para que el proceso de esterilización sea eficaz. Su lectura se efectúa al
+abrir el paquete para su utilización. Los controles químicos integradores (integran todos los parámetros
+que indican que el ciclo se ha realizado correctamente) son obligatorios en cualquier paquete con volumen
+superior a 30 litros.
+
+C. Controles de carga
+•       Indicadores biológicos: son dispositivos que portan una determinada concentración de esporas de
+bacterias concretas difíciles de destruir por procesos de esterilización: Bacillus stearothermophilus para
+ciclos de vapor y Bacillus subtilis para calor seco, OE y Gas plasma de peróxido de hidrógeno. Estos controles
+biológicos se presentan, unos en ampollas de lectura rápida en 24-48 horas y otros en soporte papel
+inoculado o de Tyvek-Mylar para cultivo de las esporas en el laboratorio de microbiología.
+•       Indicadores químicos internos: pueden utilizarse como control de carga.
+
+
+SISTEMAS DISPERSOS.
+Los sistemas dispersos tienen gran importancia en farmacia ya que prácticamente todas las formas
+farmacéuticas que se elaboran son mezclas de distintas sustancias, es decir, sistemas dispersos.
+Un sistema disperso es aquel formado por dos fases, en el cual una fase está dispersa en la otra. La fase
+dispersa es la fase interna y la fase en la que se dispersa (dispersante) es la fase externa. Ambas fases se
+encuentran en distinta proporción, siendo mayoritaria la fase externa.
+
+Podemos diferenciar distintos tipos de sistemas dispersos según el tamaño de partícula de la fase interna:
+•              Sistemas dispersos homogéneos: El tamaño de partícula de la fase interna es menor de
+0,001 µm, por ello se dice que son sistemas monofásicos. Son las disoluciones.
+
+•                Sistemas dispersos heterogéneos: se consideran polifásicos. El tamaño de las partículas
+de la fase interna pueden estar entre:
+o        0,001 µm y 0,1µm: a estos sistemas pertenecen los coloides (se consideran el límite entre sistemas
+dispersos homogéneos y heterogéneos, por ello, en algunos libros los denominan soluciones coloidales).
+o        0,1 µm y 50 µm, tipo al que pertenecen suspensiones y emulsiones.
+10 TÉCNICOS DE FARMACIA
+   Tema 14-2ª PARTE
+
+   www.premir.es
+
+
+
+
+  Teniendo en cuenta los tipos de sistemas dispersos, puede deducirse que tendrán un comportamiento
+  distinto al someterlos a los mismos procedimientos:
+                                          Soluciones                Coloides                Dispersiones
+
+    Sedimentan                            No                        Sí                      No
+
+    Pasan a través de papel de filtro Sí                            No                      No
+
+    Dispersan la luz (efecto Tyndall) No                            Sí                      Sí
+
+
+
+  Tanto la atmósfera como el mar son sistemas dispersos formados por distintas sustancias: la atmósfera es
+  mezcla de gases y el mar es mezcla de sales. Si un rayo de luz atraviesa la atmósfera o el mar, las partículas
+  que hay en ellos hacen que el rayo se desvíe, es decir, se disperse. Esta dispersión es mayor cuanto menor
+  es la longitud de onda de la radiación, como ocurre con es espectro solar en la región azul y el violeta; de
+  ahí el color del cielo y del mar. Este fenómeno se conoce como efecto Tyndall.
+
+  17. SISTEMAS DISPERSOS HOMOGÉNEOS: DISOLUCIONES
+  17.1. DISOLUCIONES
+  Una disolución es un sistema disperso homogéneo formado por una fase interna denominada soluto
+  (sustancia en menor abundancia dentro de la solución) y una fase externa denominada disolvente.
+  El estado físico de cada fase puede ser sólido, líquido o gaseoso, pero el estado físico final de la disolución
+  lo define el disolvente.
+
+  FORMAS DE EXPRESAR LA CONCENTRACCIÓN DE UNA DISOLUCIÓN
+
+  La cantidad relativa de soluto o disolvente en una disolución se expresa mediante las llamadas unidades
+  de concentración. Las más importantes son:
+                                                                           TÉCNICOS DE FARMACIA 11
+                                                                                 Tema 14-2ª PARTE
+
+                                                                                           www.premir.es
+
+    UNIDADES FÍSICAS                                      UNIDADES QUÍMICAS
+
+    ▪            Porcentajes o tantos por ciento:         ▪            Molaridad.
+    -     Porcentaje en peso.(p/p)                        ▪            Normalidad.
+    -     Porcentaje en peso- volumen. (p/v)
+                                                          ▪
+
+
+
+
+                                                                                                       TÉCNICOS FARMACIA - SERGAS
+                                                                       Molalidad
+    -     Porcentaje en volumen. (v/v)
+    ▪            Partes por millón (p.p.m)
+
+
+
+A)      UNIDADES FÍSICAS:
+•               En porcentaje:
+Cuando la disolución se expresa en porcentaje se representa con el símbolo %.
+Se parte de considerar que la cantidad total de la disolución son 100 partes y la cantidad de soluto es una
+porción de ellas. Así, se expresa como partes de soluto en 100 partes de disolución.
+De esta forma, la concentración en tanto por ciento se puede expresar a su vez de tres maneras: peso/peso;
+volumen/volumen y peso/volumen.
+
+
+•                Peso/peso (p/p)
+En este caso, el soluto y el disolvente se miden en unidades de masa, aunque ambos componentes pueden
+ser sólidos o líquidos.
+Se puede usar cualquier unidad de masa, pero sea cual sea la escogida, deberá ser la misma tanto para el
+soluto como para el disolvente. En Farmacia las unidades de masa más usadas son el g y el mg.
+Viene dado por la ecuación:
+
+
+                                     g de soluto
+
+               % (P/P) =             g de disolución (soluto+disolvente)           · 100
+                                     .
+
+
+
+
+•              Peso/ volumen (p/v)
+La cantidad de soluto se expresa en masa (g), pero la cantidad total de disolución se expresa en volumen
+(ml).
+Expresa los gramos de soluto contenidos en 100 ml de disolución. Viene dado por la ecuación:
+                                       g de soluto
+                       % (P/V) =            ml de la disolución            · 100
+                                        .
+
+
+•                Volumen/volumen (v/v)
+El soluto, el disolvente y la cantidad total de la disolución se miden en volumen, generalmente el ml, y
+tanto el soluto como el disolvente deben ser líquidos.
+Expresa los ml de soluto contenidos en 100 ml de disolución. Viene dado por la ecuación:
+12 TÉCNICOS DE FARMACIA
+   Tema 14-2ª PARTE
+
+      www.premir.es
+
+                                            ml de soluto
+                            %V=                 ml de disolución            · 100
+                                            .
+
+
+
+  •              Partes por millón (p.p.m):
+  Indica el número de gramos de soluto por cada 1.000.000 de gramos de disolución, o el número de mg de
+  soluto en 1.000 g de disolución.
+
+  B)              UNIDADES QUÍMICAS:
+
+
+  •              MOLARIDAD (M)
+  La molaridad se representa con la letra M. En esta forma de expresar la concentración aparece el concepto
+  de mol.
+  MOL: es la unidad del SI para medir cantidad de sustancia
+  moles de soluto = masa de la sustancia (g) / masa molar(g/mol)
+  Se define la molaridad de una disolución acuosa como el número de moles de soluto que hay en un litro
+  de disolución.
+
+                                Masa soluto (g) / masa molecular
+                  M=                                                           · 100
+                                Volumen de disolución (L)
+
+
+  •                NORMALIDAD (N)
+  La normalidad de una disolución se define como el número de equivalentes–gramo de soluto existente en
+  un litro de disolución. Se expresa mediante la letra N.
+
+
+                   Masa soluto (g) / (masa molecular/valencia)
+      N=                                                                                 · 100
+                       Volumen disolución (L)
+                   .
+
+
+
+  -        El número de gramos de soluto dividido entre su peso molecular es el número de moles.
+  -        El número de moles dividido entre la valencia es el número de equivalentes químicos.
+  -        Valencia de un ácido = nº de hidrógenos protonizables de su molécula.
+  -      Valencia de una base = nº de grupos hidroxilo en su molécula.
+  (Ejemplo: Valencia del HCl : 1 ; valencia del Mg (OH)2: 2)
+
+  Estudiando las fórmulas de la Normalidad y la Molaridad es evidente que la única diferencia entre ellas es
+  la valencia que aparece en el numerador de la Normalidad; por lo tanto:
+
+                                            N = M x valencia
+                                                                           TÉCNICOS DE FARMACIA 13
+                                                                                 Tema 14-2ª PARTE
+
+                                                                                           www.premir.es
+
+
+•               MOLALIDAD (m)
+Una disolución 1 molal es aquella que contiene 1 mol de soluto por kilogramo de disolvente. Se representa
+por la letra m.
+
+                            Nº de moles de soluto
+
+
+
+
+                                                                                                          TÉCNICOS FARMACIA - SERGAS
+                m=                                                              · 100
+                            Kg disolvente
+
+
+17.2. ASPECTOS FÍSICO-QUÍMICOS DE LOS SISTEMAS DISPERSOS HOMOGÉNEOS
+
+•      SOLUBILIDAD: capacidad que presenta una sustancia para disolverse en otra. Indica la cantidad
+máxima de soluto que puede disolverse en una cantidad determinada de disolvente a una temperatura
+determinada. Esta cantidad se conoce como coeficiente de solubilidad.
+Teniendo en cuenta el coeficiente de solubilidad, existen tres tipos de disoluciones:
+-               Solución insaturada: la cantidad de soluto es inferior a su coeficiente de solubilidad.
+-               Solución saturada: aquella en que la cantidad de soluto es igual a su coeficiente de
+solubilidad.
+-               Solución sobresaturada: aquella en que la cantidad de soluto es superior a su coeficiente
+de solubilidad.
+A veces es necesario modificar la solubilidad de un principio activo. Sabiendo qué factores influyen en la
+solubilidad y actuando sobre ellos, podemos conseguir que ese principio activo sea más soluble.
+Los factores que influyen en la solubilidad son:
+-       Naturaleza y polaridad del medio: la solubilidad depende de la composición química tanto del
+soluto como del disolvente; por ello tiene que ver con el tipo de enlace o unión (iónico, polar o apolar). Así
+pues las sustancias con más grupos denominados hidrófilos se disuelven en sustancias polares, mientras
+que las que tienen más grupos lipófilos se disuelven en disolvente apolares.
+-       Temperatura: cualquier proceso puede ser exotérmico o endotérmico, es decir, que al producirse
+desprenda o absorba calor respectivamente. Así, cuando el proceso de disolución es endotérmico quiere
+decir que absorbe calor; por lo tanto, al calentar, favorecemos el proceso, esto es, aumentaremos la
+solubilidad. La mayoría de las disoluciones de sólidos son endotérmicas.
+-       pH del medio: todos los compuestos químicos que se comportan como electrolitos débiles, en
+disolución se encuentran ionizados y no ionizados, una forma es la soluble, y la otra la insoluble.
+Modificando el pH del medio, podremos obtener mayor proporción de una forma frente a la otra,
+cambiando así la solubilidad de dicho compuesto. Un ejemplo serían los alcaloides, que son insolubles en
+agua a pH alcalino, pero solubles en agua a pH ácido.
+-       Aditivos: es posible añadir otras sustancias bien como cosolventes (disolvente secundario que
+ayuda a disolver aquel principio activo que es poco soluble en el disolvente primario), o que formen sales
+con el soluto, haciendo que éstas sean más solubles o formando complejos.
+-       Polimorfismo: hay dos grandes grupos de sólidos: los cristalinos y los amorfos. El estado cristalino,
+presenta un alto orden estructural, mientras que el amorfo carece de orden, lo que hace que tenga una
+baja estabilidad por lo que a una determinada temperatura la forma menos estable es la más soluble.
+
+
+•      VELOCIDAD DE DISOLUCIÓN: este parámetro se puede expresar como la cantidad de sustancia
+que se disuelve en un determinado tiempo. El proceso será más o menos rápido en función de: superficie
+de contacto sólido-líquido, solubilidad, agitación.
+14 TÉCNICOS DE FARMACIA
+   Tema 14-2ª PARTE
+
+   www.premir.es
+
+  -               Superficie de contacto sólido-líquido: la velocidad de disolución aumenta al aumentar
+  la superficie de contacto (superficie específica). Esto se consigue reduciendo el tamaño de partícula del
+  sólido.
+  -               Solubilidad: y todos los factores que influyen en la misma (citados en el punto anterior).
+  -               Agitación: permite renovar el disolvente en la interfase (espacio en el que se produce el
+  intercambio sólido-líquido) evitando que se produzca la saturación de la sustancia.
+
+  17.3. DISOLUCIONES HIDROALCOHÓLICAS
+  Los alcoholes se suelen utilizar mezclados con el agua, y así se obtienen los distintos grados de alcohol. El
+  grado de alcohol se define, como la cantidad de alcohol en 100 partes de la mezcla; bien sea P/P o V/V.
+  Al mezclar agua con alcohol para realizar una mezcla hidroalcohólica, se produce una contracción de
+  volumen, por lo que es preciso recurrir al uso de tablas para el cálculo de los distintos grados de alcohol.
+                                                                            TÉCNICOS DE FARMACIA 15
+                                                                                  Tema 14-2ª PARTE
+
+                                                                                               www.premir.es
+
+17.4. VENTAJAS E INCONVENIENTES DE LAS SOLUCIONES
+
+  VENTAJAS                                                INCONVENIENTES
+
+  • Fácil liberación del principio activo. Para que un    • Al no estar protegidas, pueden sufrir degradación
+
+
+
+
+                                                                                                          TÉCNICOS FARMACIA - SERGAS
+  principio activo se absorba es necesario que se         en el tracto gastrointestinal por los distintos pH.
+  libere de la forma farmacéutica que lo contiene; en     También pueden sufrir los efectos enzimáticos a
+  este caso, al estar disuelto, la liberación es casi     este nivel.
+  instantánea.                                            • No pueden emplearse cuando se quiera obtener
+  • Rápida velocidad de absorción. No solo es             una respuesta sostenida, pues se absorben
+  necesario que el principio activo sea soluble para su   rápidamente.
+  biodisponibilidad, sino también que se disuelva a la    • Se contaminan con facilidad, ya que el agua es
+  velocidad adecuada; en este caso ya está disuelto,      un buen medio de cultivo para los
+  por lo que se absorbe rápidamente.                      microorganismos, inconveniente que se evita en las
+  • Fácil administración (puede autoadministrarse).       mezclas hidroalcohólicas, pues el alcohol es un
+  Por lo general, se emplea en niños y ancianos.          agente conservante. En el caso de jarabes, la
+  • Inocua. No se producen intolerancias ni efectos       proporción de azúcar ayuda a evitar la proliferación
+  adversos, pues normalmente el disolvente es agua,       microbiana.
+  componente mayoritario de nuestro organismo,            • Pueden presentarse problemas de hidrólisis y
+  por lo que es difícil que reaccione a él.               reacciones de óxido-reducción que alteren el
+  • Buena dosificación en general, ya que, al ser un      principio activo por acción del agua.
+  sistema disperso homogéneo, el tamaño de
+  partícula de la fase interna es muy pequeño, de
+  modo que no sedimenta aunque esté en reposo. El
+  principio activo está repartido por igual en toda la
+  disolución.
+  • Menor irritación gástrica, al encontrarse el PA
+  diluido en el disolvente.
+
+
+
+17.5. FORMULARIO NACIONAL: ELABORACIÓN DE SOLUCIONES PN/L/FF/007/00
+1. Objetivo
+Definir el procedimiento para la elaboración de soluciones líquidas no estériles.
+
+2. Responsabilidad de aplicación y alcance
+La responsabilidad de aplicación y alcance de este procedimiento recae sobre todo el personal (técnico
+y/o auxiliar) que proceda a la elaboración de soluciones líquidas no estériles.
+
+3. Definiciones
+A los efectos de lo recogido en este procedimiento se entiende por:
+Solución: mezcla, química y físicamente homogénea, de dos o más sustancias.
+Solución líquida: solución en la que el solvente es líquido y el soluto es sólido o líquido.
+
+4. Descripción
+4.1 Fórmula patrón
+Principio activo   x%
+Solvente         c.s.
+16 TÉCNICOS DE FARMACIA
+   Tema 14-2ª PARTE
+
+      www.premir.es
+
+  En función de cada formulación, pueden formar parte de la preparación otros componentes como:
+  conservantes, corrector de sabor y/o color, cosolventes, antioxidantes, viscosizantes, etc.
+
+  4.2 Material y equipo
+  Agitador mecánico con/sin calefacción o manual.
+  Vasos de precipitados u otros recipientes adecuados.
+  Sistema de producción de calor.
+  Filtro adecuado.
+
+  4.3 Entorno
+  Humedad relativa: ≤ 60 %.
+  Temperatura: 25 ± 5 ºC.
+  Excepto los casos en que las especificaciones de la formulación requieran otras condiciones.
+
+  4.4 Método patrón
+  1. Pesar (PN/L/OF/001/00) o medir todos los componentes de la fórmula.
+  2. Reunir 3/4 partes del solvente con el principio activo agitando hasta disolución.
+  La velocidad de disolución del principio activo puede aumentar calentando, siempre que este aumento de
+  temperatura no afecte a la estabilidad del producto. Si el principio activo es termolábil, añadirlo en frío.
+  Si el principio activo es insoluble en el solvente, incorporarlo previamente disuelto en un
+  cosolvente de polaridad adecuada.
+  3. Añadir lentamente, si procede, los conservantes y otros componentes minoritarios, como antioxidantes,
+  correctores de color y/o sabor, agitando hasta su completa disolución.
+  4. Adicionar lentamente, si procede y bajo agitación, los viscosizantes. Debe obtenerse una solución de
+  aspecto homogéneo.
+  5. En caso necesario, filtrar la solución con el filtro adecuado.
+  6. Completar hasta el volumen total especificado en la fórmula con el resto del solvente.
+  7. Proceder a la limpieza del material y equipo según se especifique en los procedimientos de limpieza
+  correspondientes.
+
+  4.5 Acondicionamiento
+  Proceder al acondicionamiento en el envase adecuado, atendiendo a las especificaciones de cada
+  formulación.
+  El tipo de envase utilizado debe ser compatible con la solución que contiene.
+
+  4.6 Controles
+  •       Fórmula magistral:
+  -       Evaluación de los caracteres organolépticos.
+  •       Formula magistral tipificada y preparados oficinales:
+  -       Evaluación de los caracteres organolépticos
+  -       Verificación del peso y/o volumen.
+  •       Si se elaboran lotes, además, se realizarán los siguientes:
+  -       Determinación del grado de coloración (RFE 2.2.2).
+  -       Determinación de la limpidez y del grado de opalescencia (RFE 2.2.1).
+  -       Determinación de la densidad relativa (RFE 2.2.5).
+  -       Determinación del pH, según procedimiento PN/L/CP/001/00.
+                                                                             TÉCNICOS DE FARMACIA 17
+                                                                                   Tema 14-2ª PARTE
+
+                                                                                             www.premir.es
+
+-     Control microbiológico (RFE 5.1.4).
+Cuando proceda se completará con las exigencias que figuran en la Real Farmacopea Española.
+
+18. SISTEMAS DISPERSOS                                  HETEROGÉNEOS:                    EMULSIONES,
+SUSPENSIONES Y AEROSOLES
+
+
+
+
+                                                                                                             TÉCNICOS FARMACIA - SERGAS
+El empleo de formas farmacéuticas líquidas facilita y agiliza los procesos de disolución en los líquidos
+biológicos y por lo tanto la absorción y biodisponibilidad.
+Hay muchos principios activos que no pueden formularse en solución; por ejemplo cuando el principio
+activo es insoluble, o si es alterable en el medio líquido. Existen también otros casos donde la formulación
+de soluciones es galénicamente inviable.
+En estos casos se recurre al empleo de sistemas polifásicos, conocidos como sistemas dispersos
+heterogéneos, que por su naturaleza y propiedades físico-químicas permiten obtener elevados grados de
+dispersión para los principios activos que se pretende vehicular.
+
+18.1. CONCEPTOS
+Los sistemas dispersos heterogéneos son sistemas polifásicos que están formados por la interposición
+de una o varias sustancias (fase dispersa, discontinua o fase interna) en el seno de otra sustancia (fase
+dispersante, continua o fase externa), en la cual no son solubles.
+Ambas fases están perfectamente diferenciadas y pueden observarse bien a simple vista o bien por
+microscopía; además, sus elementos pueden ser separados por filtración.
+Las características más representativas de estos sistemas son:
+•        Interfaz o interfase: es la existencia de una superficie de contacto entre las dos fases. Las partículas
+que constituyen la fase interna poseen una elevada proporción superficie/volumen. O dicho de otra forma,
+la superficie de contacto entre las partículas y el medio de dispersión (área interfacial) es muy elevada y
+aumenta a medida que disminuye el tamaño de la fase dispersa. En esta interfaz se concentra la mayor
+cantidad de energía del sistema, es decir, la interfaz se encuentra en un estado de tensión que se denomina
+“tensión interfacial” o “tensión superficial”. Las partículas tienden a agregarse para reducir esa superficie
+de contacto con el medio dispersante.
+•        Inestabilidad: una característica ligada a la existencia de una interfaz y a la acumulación de energía
+en ella, es que, por lo general, se trata de sistemas poco estables. Una vez que el sistema se mantiene en
+reposo tiende a disminuir la interfaz, lo que en una situación extrema conduce a la separación de las fases,
+es decir, la rotura del sistema. Únicamente se podrán obtener sistemas lo suficientemente estables y
+aceptables para su empleo como medicamentos, incluyendo en la formulación, además de las dos fases,
+un tercer componente o agente estabilizante. La naturaleza y el número de los agentes estabilizantes
+dependerán del tipo de sistema disperso.
+•        Movimiento de las partículas: las partículas de la fase dispersa se mueven con mayor velocidad
+según disminuye su tamaño, siguiendo una complicada trayectoria. Ello favorece su colisión y unión, con
+lo que progresivamente se modifica su tamaño. Por otro lado, las partículas tienden a sedimentar por
+efecto de la fuerza de la gravedad. Estos movimientos influyen también en la estabilidad del sistema.
+
+18.2. CLASIFICACIÓN DE LOS SISTEMAS DISPERSOS HETEROGÉNEOS
+18.2.1. DESDE EL PUNTO DE VISTA DEL TAMAÑO DE LA PARTÍCULA
+
+•      DISPERSIONES GROSERAS: El tamaño de la partícula es superior a 1 µm. Las partículas se ven a
+simple vista o al microscopio.
+18 TÉCNICOS DE FARMACIA
+   Tema 14-2ª PARTE
+
+      www.premir.es
+
+  •       DISPERSIONES COLOIDALES: El tamaño de la partícula está entre 1 µm y 1 nm. Sólo se aprecian las
+  partículas con microscopio electrónico.
+
+  18.2.2. DE ACUERDO AL ESTADO FÍSICO DE LA MATERIA
+
+  Pueden existir sistemas dispersos de:
+  o               Líquido en gas: aerosoles líquidos, nebulizaciones, nieblas.
+  o               Sólido en gas: aerosoles sólidos, humos.
+  o               Gas en líquidos: espuma.
+  o               Líquido en líquido: emulsiones.
+  o               Sólido en líquidos: dispersiones coloidales, suspensiones.
+  o               Gas en sólido: espumas sólidas.
+  o               Sólido en sólido: oro coloidal.
+  o               Cristales líquidos: estado intermedio entre sólido cristalino y líquido.
+
+  Estos sistemas dispersos tienen un importante interés galénico, porque pueden constituir por si mismos
+  formas farmacéuticas, o bien emplearse como componentes de las mismas. Las dispersiones coloidales se
+  utilizan como agentes reológicos para aumentar la estabilidad de suspensiones y emulsiones.
+
+  18.3. FORMACIÓN Y ESTABILIZACIÓN DE SISTEMAS DISPERSOS
+  Por lo general, se trata de sistemas termodinámicamente inestables, por lo que únicamente una adecuada
+  formulación permitirá obtener preparados con una estabilidad físico-química (plazo de validez) aceptable
+  para su empleo como medicamentos.
+  Se mencionan a continuación los principales factores de los que depende la estabilidad de los sistemas
+  dispersos; el formulador deberá en cada caso potenciar la acción de aquellos que favorezcan la estabilidad
+  del sistema y minimizar los efectos de aquellos que tiendan a inestabilizarlo.
+
+  18.3.1. FACTORES QUE FAVORECEN LA ESTABILIDAD
+
+
+  •       Presencia de tensioactivos o emulgentes:
+  Ayuda a vencer la tensión interfacial, tienden a acumularse en la superficie o en la interfase aceite/agua; de
+  este modo, disminuyen la tensión interfacial o interfásica, favoreciendo la estabilidad del sistema disperso.
+  La eficacia de un tensoactivo se mide por la mínima cantidad necesaria para lograr un efecto determinado.
+
+  •        Grado de dispersión de la fase interna:
+  Es la relación superficie/volumen de la fase dispersa. Cuando el grado de división de la fase interna es
+  elevado y homogéneo se obtiene una mayor estabilidad del sistema disperso.
+
+  •      La viscosidad:
+  Al aumentar la viscosidad disminuye la velocidad de sedimentación y se favorece la estabilidad del sistema
+  disperso. Al aumentar la viscosidad del medio dificulta la movilidad de las partículas impidiendo que se
+  aproximen.
+  Cuanto más viscoso sea el viscosizante empleado, tanto más estable será el sistema.
+
+  •       La carga eléctrica:
+  Las partículas dispersas tienden a cargarse eléctricamente por adsorción de iones de la fase externa, o por
+  ionización de grupos funcionales en su propia superficie. En este caso el pH del preparado juega un papel
+  trascendental.
+                                                                             TÉCNICOS DE FARMACIA 19
+                                                                                   Tema 14-2ª PARTE
+
+                                                                                             www.premir.es
+
+
+•       Los coloides protectores:
+Son sustancias fácilmente liófilas (afines a la fase externa) que al disolverse en presencia de coloides liófilos
+los rodean y protegen de las acciones que tienden a precipitarlos. Aumentando la viscosidad del medio
+dispersante y, al adherirse alrededor de la partícula, aumentando la distancia entre ellas. En general son
+
+
+
+
+                                                                                                             TÉCNICOS FARMACIA - SERGAS
+sustancias poliméricas no iónicas.
+
+18.3.2. FACTORES QUE NO FAVORECEN LA ESTABILIDAD
+
+
+• Los electrolitos:
+La adición de electrolitos podría ser causa de desestabilización si las partículas atraen los iones de signo
+contrario y neutralizan sus cargas protectoras.
+
+
+•       La temperatura:
+El aumento de temperatura disminuye la estabilidad de los sistemas dispersos, influyendo de distintas
+maneras: disminuye la viscosidad, aumenta los movimientos cinéticos, influye sobre la intersolubilidad de
+las fases y del emulgente en ellas…
+
+
+•      El tiempo:
+Por mucho que se disminuyan las causas de inestabilidad de los sistemas dispersos, nada hay que las anule
+totalmente. Todo sistema disperso, con el tiempo, tiende hacia la perfecta estabilidad de sus fases
+separadas.
+
+18.4. EMULSIONES
+Una emulsión es un sistema disperso heterogéneo formado por dos fases líquidas inmiscibles entre sí.
+La fase líquida que se encuentra dispersa se denomina “fase 1": gotas, glóbulos, discontinua e interna. La
+otra fase recibe el nombre de “fase 2”: medio, continua, dispersante y externa.
+
+18.4.1. TIPOS DE EMULSIONES
+
+1.      Emulsiones oleo-acuosas (O/A): la fase externa, continua o dispersante es la acuosa, y la fase
+interna, discontinua o dispersa es la fase oleosa. Se representa como O/A u O/W, según usemos
+nomenclatura española o inglesa, respectivamente. La RFE las llama cremas hidrófilas cuando son de uso
+tópico. Las emulsiones O/A presentan las siguientes características:
+•       Pueden llegar a contener hasta un 85% de agua.
+•       Son emulsiones lavables y que se adhieren a la piel.
+•       Tienen bajo poder emoliente y se usan en el tratamiento de procesos dermatológicos agudos.
+
+2.      Emulsiones acuo-oleosas (A/O): la fase externa, continua o dispersante es la oleosa y la interna,
+discontinua o dispersa es la acuosa, se llama emulsión acuo/oleosa y se representa como A/O o W/O. La
+RFE las denomina cremas hidrófobas cuando son para uso tópico. Las principales características de las
+emulsiones A/O son las siguientes:
+•       Pueden llegar a contener hasta un 85% de fase oleosa
+•       Son emulsiones con un alto poder lubricante por su elevado contenido graso.
+•       Presentan acción emoliente y se usan en procesos dermatológicos crónicos
+20 TÉCNICOS DE FARMACIA
+   Tema 14-2ª PARTE
+
+      www.premir.es
+
+  3.     Emulsiones acuo/silicónicas: En este tipo de emulsiones se sustituye la fase oleosa por sustancias
+  derivadas de la silicona y quedan emulsiones A/S o W/S. Las emulsiones A/S son muy usadas para el
+  tratamientode pieles acneicas y grasas. La preparación de las emulsiones con silicona se realiza en frío. En
+  su elaboración no se pueden usar emulgentes de alto HLB. Son incompatibles con sales y óxidos de
+  metales. Estas emulsiones presentan la característica de ser muy poco irritantes al aplicarlas sobre la piel
+  lesionada.
+
+  4.       Microemulsiones: La característica principal de las microemulsiones es el pequeño tamaño de la
+  gota dispersa, que debe ser menor de 0,1 um, lo que favorece la absorción del PA a través de la piel. Las
+  microemulsiones pueden ser A/O u O/A, tienen consistencia líquida, se preparan en frío y son poco viscosas
+  y transparentes. La elección del tipo de emulsión dependerá de la vía de administración para la cual se vaya
+  a utilizar:
+  •       Para administración parenteral, deben ser emulsiones O/A.
+  •       Para administración oral de grasas, se emplean emulsiones O/A.
+  •       Para administración tópica, se pueden utilizar emulsiones O/A o A/O, dependiendo de la afección
+  que se vaya a tratar.
+
+  18.4.2. COMPONENTES DE UNA EMULSIÓN
+
+  Las emulsiones pueden presentar distinta consistencia física, pero todas están formadas
+  por tres partes:
+  1.      Fase acuosa
+  La fase acuosa contiene:
+  •     Agua: es el componente mayoritario y debe ser desionizada y purificada.
+  Además, puede contener todos o algunos de los siguientes componentes:
+  •       Agentes humectantes: se usan para facilitar la solubilidad d e principios activos poco solubles y
+  para retener la humedad de la piel una vez aplicado el producto. Los más usados son la glicerina, el
+  propilenglicol y el sorbitol.
+  •       Conservantes antimicrobianos hidrosolubles: se emplean para evitar el crecimiento de
+  bacterias y hongos en las emulsiones. Se incorporan a la preparación en concentraciones bajas, entre el
+  0,1% y el 0,7%.
+  •      Antioxidantes: solo se añaden cuando hay algún componente que se oxida fácilmente; los más
+  usados son la vitamina C o el ácido ascórbico, el BHT (butilhidroxitolueno) y el bisulfito sódico.
+  •       Principios activos hidrosolubles: aportan la acción farmacológica; si son termolábiles se deben
+  añadir al final, una vez hecha la emulsión.
+
+  2.       Fase oleosa
+  En la fase oleosa se pueden incluir los siguientes componentes o solo alguno de ellos:
+  •        Aceites: los más usados son el aceite de almendras dulces, el de rosa mosqueta, el de germen de
+  trigo y el de oliva. Todos estos excipientes presentan acción emoliente sobre la piel.
+  •      Vaselina y parafinas: son emolientes y lubricantes de la piel. Se caracterizan por dejar una
+  sensación grasa en ella.
+  •       Ceras: son muy oclusivas y proporcionan brillo a las cremas; además, aumentan la viscosidad de la
+  fase oleosa.
+  •      Alcoholes grasos: el más empleado es el alcohol cetílico. Son sólidos, tienen acción emoliente y
+  ayudan a estabilizar las emulsiones.
+                                                                          TÉCNICOS DE FARMACIA 21
+                                                                                Tema 14-2ª PARTE
+
+                                                                                          www.premir.es
+
+•       Ácidos grasos: sustancias emolientes que actúan como espesantes de la fase oleosa. Destacan el
+ácido esteárico y el miristato de isopropilo.
+•         Conservantes liposolubles: como los aceites esenciales; por ejemplo, el de lavanda o el de
+eucalipto. Antioxidantes liposolubles: como la vitamina E, que es termosensible y, por ello, debe añadirse
+al final de la preparación.
+
+
+
+
+                                                                                                         TÉCNICOS FARMACIA - SERGAS
+•         Siliconas: la más usada es la dimeticona, que tiene acción hidrorrepelente. Protegen del frío y del
+viento y se usan mucho en la elaboración de protectores labiales.
+•       Principios activos liposolubles: se incorporan en esta fase.
+
+3.       Agentes emulgentes
+Los emulgentes son compuestos químicos que contienen grupos polares o acuosos y
+grupos apolares o lipídicos en la misma molécula. De esta manera, por los grupos polares, se unen a la fase
+acuosa; por los grupos apolares, se unen a la fase oleosa y se mantienen unidas.
+El HLB (del inglés hidrophylic-lipophylic balance) es un valor que clasifica los emulgentes
+según su tendencia hidrofílica o lipofílica. Se utiliza para predecir la tendencia de los emulgentes a formar
+emulsiones A/O u O/A.
+El parámetro HLB tiene asignado un valor comprendido entre 0 y 20. El valor 0 es para
+indicar la máxima lipofilia del emulgente y el valor 20 indica la máxima hidrofilia.
+Los emulgentes empleados en la elaboración de emulsiones A/O tienen un HLB de 3 a 8,
+mientras que los emulgentes utilizados en la preparación de emulsiones O/A deben tener
+un HLB comprendido entre 8 y 16.
+Existen varios tipos de emulgentes en el mercado según su estructura química y su comportamiento frente
+al agua. Se pueden clasificar en distintos grupos atendiendo a su composición química, pero los más
+utilizados en la elaboración de fórmulas magistrales son los siguientes:
+A.       Emulgentes iónicos. Pueden ser de tres tipos:
+•              Aniónicos. Productos que adquieren carga negativa en una solución acuosa. Los más
+representativos incluyen:
+-       Jabones. Sales sódicas o potásicas de ácidos grasos. Son sustancias bastante irritantes.
+Tradicionalmente, se preparaban en los hogares con sosa, aceite de oliva
+-      Laurilsulfato sódico. Se caracteriza por ser menos irritante que los jabones y por utilizarse en
+productos de higiene corporal. Al emplearlo, se debe agitar despacio la preparación para evitar la
+formación de espuma.
+•               Catiónicos. Sustancias que tienen carga positiva en una solución acuosa. El más usado es el
+cloruro de benzalconio, que se comercializa bajo el nombre registrado de Armil®. Se emplea mucho como
+antiséptico en cirugía y análisis clínicos.
+•               Anfóteros. Se ionizan de forma positiva o negativa según el pH de la solución acuosa en la
+que se encuentran. Son muy poco irritantes y entre ellos destacan las Tegobetaínas®.
+
+B.      Emulgentes no iónicos. Son los más usados en formulación magistral porque son muy estables,
+poco tóxicos y poco irritantes, y compatibles con muchos principios activos. Los principales emulgentes
+no iónicos son los siguientes:
+•              Span®. Moléculas derivadas del sorbitol. Estas sustancias son predominantemente lipófilas,
+de HLB bajo (entre 3 y 9), y se emplean en la elaboración de emulsiones A/O.
+•               Tween®. Productos derivados del polietilenglicol. Se emplean en la preparación de
+emulsiones O/A, pues su HLB oscila entre 8 y 16. Ambas moléculas son largos polímeros y, según la longitud
+de la cadena, se denominan Span® o Tween® más un número: Span 20, Span 40, Span 85, Tween 20, Tween
+40, etc.
+22 TÉCNICOS DE FARMACIA
+   Tema 14-2ª PARTE
+
+      www.premir.es
+
+
+  18.4.3. ESTABILIDAD DE LAS EMULSIONES
+
+  La estabilidad de las emulsiones puede alterarse debido a varios factores, lo que conlleva
+  la rotura de la emulsión, con la consiguiente separación de las fases acuosa y oleosa.
+  Los fenómenos de hidrólisis, oxidación o reacción entre los componentes de la emulsión son algunos
+  de estos factores.
+  A veces, si se deja enfriar la emulsión sin agitación, se puede quedar la fase dispersa en la superficie,
+  formando una costra. Este fenómeno se llama cremado y es reversible.
+  Otras veces, las gotas de la fase dispersa se unen formando una gota de gran tamaño. Este proceso se llama
+  coalescencia y es irreversible.
+
+  18.4.4. VENTAJAS DE LAS EMULSIONES
+
+  •       Se pueden enmascarar los caracteres organolépticos desagradables de principios activos y
+  excipientes, especialmente si se van a administrar por vía oral.
+  •       Permite una liberación controlada del principio activo para obtener un efecto farmacológico
+  mayor.
+  •       Si se usan en tratamientos dermatológicos se pueden elaborar emulsiones de distinta consistencia
+  según las necesidades del paciente: líquidas, semisólidas…
+  •       Se aplican de forma muy sencilla por vía tópica.
+  •       Se pueden aplicar a la vez principios activos hidrosolubles y liposolubles, distribuyéndolos cada
+  uno en la fase correspondiente.
+  •       Los componentes de la fase oleosa presentan acción emoliente en piel y mucosas por sí mismo.
+  •       Las emulsiones son ampliamente utilizadas en farmacia:
+  -       Para administración parenteral deben ser emulsiones O/A
+  -       Para administración oral de grasas se emplean emulsiones O/A
+  -       Para administración tópica se pueden utiliza emulsiones O/A o A/O, dependiendo de la afección
+  que se vaya a tratar.
+
+  18.4.5. FORMULARIO NACIONAL: ELABORACIÓN DE EMULSIONES PN/L/FF/002/00
+
+  1. Objetivo
+  Definir el procedimiento para la elaboración de emulsiones.
+
+  2. Responsabilidad de aplicación y alcance
+  La responsabilidad de aplicación y alcance de este procedimiento recae sobre todo el personal (técnico
+  y/o auxiliar) que proceda a la elaboración de emulsiones.
+
+  3. Definiciones
+  Emulsión: sistema disperso, estabilizado mediante la adición de un agente emulgente adecuado, de dos
+  fases inmiscibles, donde ambas, la fase interna y la externa, son líquidas. El tamaño de partícula de la fase
+  interna varía entre 0,5 y 100 μm.
+  La IUPAC, define una emulsión como un líquido que contiene gotas líquidas y/o cristales líquidos dispersos.
+
+  4. Descripción
+  4.1 Fórmula patrón
+  En general se ajusta a:
+                                                                             TÉCNICOS DE FARMACIA 23
+                                                                                   Tema 14-2ª PARTE
+
+                                                                                             www.premir.es
+
+                                        EMULSIÓN O/A                         EMULSIÓN A/O
+
+    Principio activo                     x%                                   x%
+
+    Excipientes
+
+
+
+
+                                                                                                         TÉCNICOS FARMACIA - SERGAS
+    Fase grasa                          10-30 %                              10-50 %
+
+    Fase acuosa                          60-85 %                              40-85 %
+
+    Emulgente                           < 10 %                               < 10 %
+
+* Nota: En caso de utilizar una base autoemulsionable, seguir las instrucciones del fabricante.
+
+4.2 Material y equipo
+Agitador mecánico con/sin calefacción o manual.
+Vasos de precipitados u otros recipientes adecuados.
+Sistema de producción de calor.
+
+4.3 Entorno
+▪        Humedad relativa: ≤ 60 %.
+▪        Temperatura: 25 ± 5 ºC.
+▪        Excepto los casos en que las especificaciones de la formulación requieran otras condiciones.
+
+4.4 Método patrón
+1. Pesar (PN/L/OF/001/00) los componentes de la fase oleosa, incluidos los emulgentes, y reunirlos en un
+mismo recipiente o reactor en función del tamaño del lote a preparar.
+2. Pesar (PN/L/OF/001/00) los componentes de la fase acuosa y reunirlos en otro recipiente.
+3.
+a) Si la totalidad de los componentes de la fórmula son fluidos a temperatura ambiente y las características
+del sistema emulgente lo permiten, se puede proceder a la emulsificación a temperatura ambiente.
+Proceder según lo descrito en el punto 6 del presente procedimiento.
+b) Si se precisa calentar, los componentes termolábiles o volátiles (principios activos y excipientes), tanto
+de la fase acuosa como de la oleosa, deberán adicionarse a la emulsión al final del proceso de enfriamiento.
+4. Calentar la fase oleosa como mínimo a la temperatura de fusión del componente con punto de fusión
+más elevado, bajo agitación moderada para asegurar su homogeneidad.
+5. Calentar la fase acuosa a la misma temperatura que la fase oleosa, bajo agitación moderada para
+garantizar su homogeneidad.
+6. Emulsificar por adición de la fase acuosa sobre la oleosa. La velocidad de adición, duración, velocidad de
+agitación y tipo de agitación empleada dependerá de las características de cada formulación.
+7. En los procesos de emulsificación en caliente, proceder a estabilizar el sistema mediante agitación
+moderada durante toda la fase de enfriamiento.
+8. Incorporación del principio activo:
+•        Principios activos termolábiles o insolubles en la fase externa: disolverlos o dispersarlos en el
+mínimo volumen posible de un solvente con la polaridad adecuada (glicerina, propilenglicol, vaselina
+líquida, etc.), incorporándolos cuando la temperatura de la emulsión haya descendido a unos 30 - 35 ºC, en
+el caso de una emulsión en caliente.
+•         Principios activos hidrosolubles no termolábiles: disolverlos en la fase acuosa.
+•         Principios activos liposolubles no termolábiles: disolverlos en la fase grasa.
+24 TÉCNICOS DE FARMACIA
+   Tema 14-2ª PARTE
+
+      www.premir.es
+
+  9. Proceder a la limpieza del material y equipo según se especifique en los procedimientos de limpieza
+  correspondientes.
+
+  4.5 Acondicionamiento
+  Proceder al acondicionamiento de la emulsión, según las especificaciones particulares de cada
+  formulación.
+  El tipo de envase utilizado debe ser adecuado y compatible con la emulsión que contiene.
+  Antes de proceder al envasado es conveniente dejar la fórmula en reposo durante un corto espacio de
+  tiempo.
+
+  4.6 Controles
+  •       Fórmula magistral:
+  -       Evaluación de los caracteres organolépticos.
+  •       Fórmula magistral tipificada y preparados oficinales:
+  -       Evaluación de los caracteres organolépticos.
+  -       Verificación del peso.
+  •       Si se elaboran lotes, además se realizarán los siguientes:
+  -       Determinación de extensibilidad, según procedimiento PN/L/CP/003/00.
+  -       Determinación del signo de la emulsión, según procedimiento PN/L/CP/002/00.
+  -       En caso de emulsiones O/A, control de pH, según procedimiento PN/L/CP/001/00.
+  -     Control microbiológico (RFE 5.1.4).
+  Cuando proceda se completa con las exigencias que figuran en la Real Farmacopea Española.
+
+
+  18.4.4. FORMULARIO NACIONAL: DETERMINACIÓN DEL SÍMBOLO DE LA EMULSIÓN: PN/L/CP/002/00
+
+  1. Objetivo
+  Definir el procedimiento para comprobar el signo de la emulsión preparada, ya que puede haber
+  inversiones de fase que alteren las características y la estabilidad de la emulsión.
+
+  2. Responsabilidad de aplicación y alcance
+  La responsabilidad de aplicación y alcance de este procedimiento recae sobre todo el personal (técnico
+  y/o auxiliar) que proceda al control del signo de las emulsiones preparadas.
+
+  3. Definiciones
+  Signo de la emulsión: naturaleza de la fase externa.
+  •       Las emulsiones oleo-acuosas (O/A) son aquellas cuya fase interna es oleosa (aceite mineral o
+  vegetal) y la fase externa es acuosa (agua).
+  •       Las emulsiones acuo-oleosas (A/O) son aquellas cuya fase interna es acuosa y la externa es oleosa.
+
+  4. Descripción
+  El signo de la emulsión se puede determinar por varios métodos:
+
+  4.1 Conductividad
+  •     Determinar la conductividad del preparado, siguiendo el método analítico 2.2.38 descrito en la Real
+  Farmacopea Española.
+                                                                           TÉCNICOS DE FARMACIA 25
+                                                                                 Tema 14-2ª PARTE
+
+                                                                                           www.premir.es
+
+-      Si la fase externa es oleosa, no conduce la electricidad.
+Este método puede conducir a conclusiones erróneas debido a que algunas emulsiones O/A tienen baja
+conductividad, mientras la conductividad de emulsiones A/O aumenta con la concentración de la fase
+dispersada.
+
+
+
+
+                                                                                                          TÉCNICOS FARMACIA - SERGAS
+4.2 Coloración
+Se utiliza un colorante hidrosoluble (por ejemplo, azul de metileno). Si la emulsión es de tipo O/A el
+colorante se dispersa, pero si la emulsión es del tipo A/O el colorante no se extiende, lo repele.
+•        En un porta se deposita una pequeña cantidad de la emulsión problema. A continuación se añade
+una gota de azul de metileno, sin mezclar.
+-       Si la emulsión es O/A el colorante se dispersa.
+-       Si la emulsión es A/O el colorante no se extiende, lo repele.
+
+4.3 Dilución
+Las emulsiones de fase externa acuosa pueden diluirse con agua, pero si la fase externa es oleosa la
+emulsión no se diluye.
+•       En una probeta con agua se añade una pequeña cantidad de emulsión, sin agitar.
+-       Si es de fase externa acuosa el agua se enturbia.
+-       Si es de fase externa oleosa el agua permanece inalterada, no se enturbia.
+
+18.5. SUSPENSIONES
+Las suspensiones son sistemas dispersos heterogéneos constituidos por partículas de un sólido
+insoluble (fase dispersa) de tamaño de partícula mayor de 0,1 μm, dispersadas en un líquido (medio
+dispersante).
+Por tanto, en una suspensión, la fase interna es siempre un sólido, y la fase externa, un líquido en el que el
+sólido es insoluble. En Farmacia la fase externa de las suspensiones es habitualmente el agua, pero se
+puede utilizar también algún líquido oleoso.
+Idealmente, las partículas deben permanecer uniformemente distribuidas en el medio de dispersión, sin
+que exista agregación entre ellas. Pero una suspensión es un sistema termodinámicamente inestable, y las
+partículas sólidas de la fase interna pueden sedimentarse, aumentar de tamaño, absorberse al envase…
+Así, una suspensión farmacéutica aceptable tiene que reunir las siguientes condiciones:
+•      Permanecer lo bastante homogénea al menos durante el tiempo que pasa entre la agitación del
+envase y la retirada de la dosis correspondiente
+•     El sedimento que se produce durante el almacenamiento ha de poderse resuspender fácilmente
+mediante agitación.
+•       La viscosidad tiene que estar equilibrada para que, por una parte, la retirada de la dosis y su
+aplicación resulten fáciles y, por otra parte, se dificulte la sedimentación de las partículas.
+•      El tamaño de las partículas será pequeño y homogéneo, lo que proporciona una textura más
+agradable a la formulación.
+
+Para poder obtener una suspensión, es indispensable que el líquido humecte a las partículas del sólido, es
+decir que el líquido desplace el aire en contacto con el sólido y se pueda situar a su alrededor. Si esto no
+ocurre no se puede dispersar una fase en la otra.
+26 TÉCNICOS DE FARMACIA
+   Tema 14-2ª PARTE
+
+   www.premir.es
+
+  En general, se denomina “sólidos hidrofílicos” a aquellos que se humectan fácilmente por el agua y “sólidos
+  hidrofóbicos” a aquellos que se humectan con dificultad.
+
+  18.5.1. COMPOSICIÓN DE LAS SUSPENSIONES
+
+  Las suspensiones están formadas por varios componentes:
+  1.        Fase sólida. Está compuesta por uno o varios principios activos y algunas sustancias insolubles en
+  la fase líquida. El sólido es prácticamente insoluble en el líquido.
+  2.        Fase líquida. La fase líquida más habitual, especialmente en preparaciones orales, es el agua.
+  Cuando la suspensión es para uso tópico u oftálmico, se puede emplear una sustancia oleosa, como el
+  aceite de coco, o un disolvente orgánico, como el alcohol.
+  3.        Sustancias coadyuvantes. Aquellas que se incorporan a los principios activos para fabricar las
+  distintas formas farmacéuticas del mercado: jarabes, lociones, pomadas, supositorios, etc. Existen varios
+  tipos:
+  •                Agentes floculantes. Productos que evitan que las partículas del sólido se adhieran entre sí
+  en la suspensión y formen una masa sólida. Para ello, estas sustancias rodean a las partículas sólidas y
+  favorecen la posterior dispersión del sólido, evitando su apelmazamiento en el fondo del envase. Los más
+  utilizados son el acetato sódico, el citrato sódico, el fosfato sódico, el almidón, el alginato, los derivados de
+  la celulosa y los carbopoles, que son polímeros de ácido acrílico.
+  •               Modificadores de la viscosidad. Utilizados para aumentar la viscosidad del pre parado y
+  evitar así que las partículas de sólido se sedimenten fácilmente. Los más utilizados son las celulosas
+  solubles en agua (como la metilcelulosa o la carboxi- metilcelulosa sódica), polisacáridos (el alginato o el
+  almidón), polímeros del ácido acrílico (el carbopol)….
+  •               Tampones. Productos que mantienen el pH deseado en la fórmula para asegurar que la
+  suspensión es compatible con el medio interno. Se usan los citratos y los fosfatos d e calcio.
+  •                Modificadores de la densidad. Según las leyes de la física, si la fase dispersa y la dispersante
+  tienen la misma densidad, no hay sedimentación de las partículas sólidas o esta se produce con mayor
+  dificultad. Por eso se añade sacarosa, glicerol o propilenglicol, para que la densidad del producto final
+  dificulte la sedimentación de las partículas sólidas.
+  •               Humectantes. Sustancias que favorecen la retención de agua por parte de un sólido y
+  mejoran su dispersión. Se usan fundamentalmente glicerol o glicerina, y propilenglicol.
+  •               Colorantes, aromatizantes y saborizantes. Sustancias utilizadas para mejorar los caracteres
+  organolépticos de la suspensión. Los colorantes usados son de tipo alimentario, como curcumina (E-100),
+  de color naranja; riboflavina (E-101), de color amarillo; betanina (E-162), de color rojo, etc. Han de ser
+  acordes con los aromatizantes y saborizantes, usados especialmente en preparaciones para administración
+  por vía oral, que se emplean sobretodo en pediatría y geriatría.
+  •              Conservantes. Se aÑaden a la preparación para evitar el crecimiento de hongos o bacterias,
+  procesos de hidrólisis, oxidación, etc., que pueden degradar el producto. Los más usados son Phenonip,
+  Kathon CG y derivados del PABA (ácido para-aminobenzoico).
+
+  18.5.2. ESTABILIDAD DE LAS SUSPENSIONES
+
+  Cuando una suspensión se deja en reposo, en el fondo del recipiente se observa una formación semejante
+  a una nube blanquecina formada por partículas del sólido insoluble. Este fenómeno es completamente
+  normal y no supone una elaboración incorrecta de la suspensión.
+  Antes de proceder a la administración de una suspensión, se debe agitar convenientemente: con suavidad
+  y por inversión del recipiente, pero nunca agitando vigorosamente, pues se favorece la formación de
+  espuma, que alteraría la dosificación correcta del medicamento.
+                                                                        TÉCNICOS DE FARMACIA 27
+                                                                              Tema 14-2ª PARTE
+
+                                                                                       www.premir.es
+
+El sólido insoluble de la formulación debe mantenerse en suspensión el mayor tiempo posible para que la
+dosificación sea correcta al administrarla. El tiempo que el sólido está suspendido en el líquido depende
+de:
+•      Velocidad de sedimentación: debido a la fuerza de la gravedad, las partículas sólidas tienen a
+depositarse en el fondo del recipiente. Si son muy pequeñas la sedimentación es muy lenta. Si se utilizan
+
+
+
+
+                                                                                                      TÉCNICOS FARMACIA - SERGAS
+agentes viscosizantes, también se dificulta la sedimentación de las partículas del sólido.
+•        Floculación y aglomeración (coagulación): dado que las suspensiones son sistemas inestables,
+las partículas sólidas tienden a depositarse en el fondo, formando masas de distinta consistencia. Cuando
+la masa que se forma en el fondo queda muy compactada, se llama aglomerado o coagulado . Cuando la
+masa del fondo queda poco compactada se llama floculado y se resuspende fácilmente mediante
+agitación.
+•       Crecimiento cristalino: en algunas ocasiones, la pequeña parte del sólido disuelta precipita y
+forma cristales que pueden aumentar de tamaño en determinadas circunstancias. La formación de cristales
+puede ocasionar alteraciones en el uso de las suspensiones: dosificaciones incorrectas, obstrucción de las
+jeringas en preparaciones parenterales….
+
+18.5.3. VENTAJAS E INCONVENIENTES DE LAS SUSPENSIONES
+
+
+                            •      Enmascaran caracteres organolépticos desagradables debido a que
+                            el sabor se aprecia más fácilmente en las disoluciones. Por ello, son el
+                            preparado de elección por vía oral en niños o ancianos.
+                            •       Permiten aplicar principios activos poco solubles en los disolventes
+                            utilizados en formulación magistral, que de otra forma serían muy difíciles de
+                            administrar.
+    VENTAJAS                •      Presentan una fácil administración oral en pediatría, geriatría y en
+                            pacientes con disfagia.
+                            •      Son de elaboración muy sencilla, y requieren un equipamiento muy
+                            elemental y de fácil manejo.
+                            •      Sirven para la elaboración de formas farmacéuticas de acción
+                            retardada
+
+
+                            •      Si la agitación del envase previa a la administración del medicamento
+                            no es la adecuada, se realizará una dosificación incorrecta porque el
+    INCONVENIENTES          preparado no tendrá una composición homogénea en la dosis administrada.
+                            •      Si la agitación es demasiado enérgica, se puede favorecer la formación
+                            de espuma que dificulta la administración de la dosis
+
+
+
+18.5.4. FORMULARIO NACIONAL: ELABORACIÓN DE SUSPENSIONES PN/L/FF/008/00
+
+1. Objetivo
+Definir el procedimiento para la elaboración de suspensiones.
+28 TÉCNICOS DE FARMACIA
+   Tema 14-2ª PARTE
+
+   www.premir.es
+
+  2. Responsabilidad de aplicación y alcance
+  La responsabilidad de aplicación y alcance de este procedimiento recae sobre todo el personal (técnico
+  y/o auxiliar) que proceda a la elaboración de suspensiones.
+
+  3. Definiciones
+  Suspensión: sistema disperso heterogéneo constituido por partículas de un sólido insoluble (fase dispersa)
+  de tamaño de partícula mayor de 0,1 μm, dispersadas en un líquido (medio dispersante).
+
+  4. Descripción
+  4.1 Fórmula patrón
+  En general se ajusta a:
+
+  Principio activo                    x%
+  Humectante                          c.s.
+  Viscosizante, si procede              c.s.
+  Agente floculante, si procede           c.s.
+  Medio dispersante                    c.s.
+  (Agua purificada, etc.)
+
+  En función de cada formulación, otros componentes que pueden formar parte de la formulación son:
+  corrector de sabor, aromas, antioxidantes, conservantes, floculantes, redispersantes, reguladores de pH,
+  etc.
+
+  4.2 Material y equipo
+  Agitador mecánico con/sin calefacción o manual.
+  Vasos de precipitados u otros recipientes adecuados.
+  Sistema de producción de calor.
+
+  4.3 Entorno
+  Humedad relativa ≤ 60 %.
+  Temperatura: 25 ± 5 ºC.
+  Excepto los casos en que las especificaciones de la formulación requieran otras condiciones.
+
+  4.4 Método patrón
+  1. Pesar (PN/L/OF/001/00) todos los componentes de la fórmula.
+  2. Calentar, si procede, la cantidad de agua purificada especificada en la formulación.
+  3. Añadir, lentamente y bajo agitación, los conservantes, si procede. Agitar hasta su completa disolución.
+  4. Atemperar la solución obtenida en el punto 3 hasta 25-30 ºC. Alcanzada esta temperatura, añadir
+  lentamente bajo agitación el agente humectante y el/los principio/s activo/s.
+  5. Añadir a la fase anterior, el agente floculante, si procede.
+  6. Adicionar lentamente, bajo agitación, los viscosizantes, si procede. Debe obtenerse una dispersión de
+  aspecto homogéneo, sin presencia de producto aglomerado.
+  7. Incorporar el resto de los componentes de la suspensión y enrasar la preparación.
+  8. Homogeneizar la suspensión obtenida mediante agitación.
+  9. Proceder a la limpieza del material y equipo según se especifique en los procedimientos de limpieza
+  correspondientes.
+
+  4.5 Acondicionamiento
+  Proceder al acondicionamiento de la suspensión, según las especificaciones particulares de cada
+  formulación.
+                                                                            TÉCNICOS DE FARMACIA 29
+                                                                                  Tema 14-2ª PARTE
+
+                                                                                           www.premir.es
+
+El tipo de envase utilizado debe ser adecuado y compatible con la suspensión que contiene.
+
+4.6 Controles
+•       Fórmula magistral:
+-       Evaluación de los caracteres organolépticos.
+
+
+
+
+                                                                                                           TÉCNICOS FARMACIA - SERGAS
+•       Formula magistral tipificada y preparados oficinales:
+-       Evaluación de los caracteres organolépticos.
+-       Verificación del peso o volumen.
+•       Si se elaboran lotes, además se realizarán los siguientes:
+-       Determinación de la velocidad de sedimentación.
+-       Determinación de la viscosidad (RFE 2.2.8).
+-       Determinación de la densidad relativa (RFE 2.2.5).
+-       Determinación del pH, según procedimiento PN/L/CP/001/00.
+-     Control microbiológico (RFE 5.1.4).
+Cuando proceda se completará con las exigencias que figuran en la Real Farmacopea Española.
+
+18.6. AEROSOLES
+Los aerosoles son sistemas dispersos de fase externa gas y fase interna sólido (=humo) ó líquido (=niebla).
+•      Aerosoles humos: son dispersiones de un sólido en un gas (S/G), que se obtiene por combustión
+de determinados productos medicamentosos.
+•      Aerosoles polvo: insulfladores de polvos: la insulflación de polvos se obtiene aspirando el
+paciente el contenido pulverulento de determinados medicamentos incluidos en un adaptador o en
+cápsulas de gelatina dura.
+•       Aerosoles con gases propelentes: es extensa la legislación sobre estos envases a presión. Define
+“recipiente a presión” como recipiente no rellenable, utilizable para una sola carga que contenga un
+producto en estado líquido, en pasta o en polvo y un gas comprimido y licuado a presión. Este recipiente
+está provisto de un dispositivo llamado válvula que, a voluntad, permita la salida del contenido bajo la
+forma de niebla, de líquido, de pasta o de polvo.
+
+18.6.1. TIPOS DE AEROSOLES MEDICAMENTOSOS
+
+1.       SISTEMAS PRESURIZADOS: aerosoles con gases propelentes o propulsores=aerosol a presión,
+spray. Componentes:
+•        Base: producto, disolvente, cosolvente, suspensor, emulsionador…Los disolventes de mayor
+utilización son el etanol y el isopropanol. Suele también emplearse acetona y cloruro de metileno. En cada
+caso específico se podrán emplear los disolventes más apropiados a cada formulación unidos a los
+cosolventes, suspensores o emulsionadores…
+•        Gas propulsor: No deben ser tóxicos, ni irritantes, estables, inodoros, insípidos, ser compatibles con
+los componentes del aerosol y no atacar los envase, válvulas y pulsadores. Tipos: gases comprimidos
+(nitrógeno, óxido nitroso y anhídrico carbónico) y gases licuados (diclorometano, cloruro de etilo, butano,
+propano…).
+•        Envase: Debe distinguirse entre el recipiente y la válvula, tanto para gases licuados como para gases
+comprimidos.
+30 TÉCNICOS DE FARMACIA
+   Tema 14-2ª PARTE
+
+   www.premir.es
+
+  o       Recipientes: en la industria farmacéutica mayoritariamente son metálicos y más recomendables de
+  acero inoxidable; para pequeños volúmenes pueden ser de vidrio. El vidrio presenta cierta fragilidad, por
+  lo que dichos envases suelen recubrirse de una sustancia termoplástica que amortigua suficientemente los
+  golpes.
+  o       Válvulas: cierra el recipiente y permite la salida de la base al ejercerse una ligera presión digital
+  sobre el pulsador de la misma. Se fabrican de muy diferentes tipos, ya que son función del producto
+  incluido en el envase. Tipos de válvulas:
+  ▪      No dosificadoras: vierten el producto aerosol mientras se presiona la válvula.
+  ▪        Dosificadoras: en la posición de reposo, la cámara de dosificación comunica constantemente con
+  el interior del envase, pero durante la pulsación se aísla y descarga solamente el producto que había
+  almacenado durante la pulsación.
+  ▪
+                                                                           TÉCNICOS DE FARMACIA 31
+                                                                                 Tema 14-2ª PARTE
+
+                                                                                           www.premir.es
+
+Tipos de aerosoles a presión:
+o               Bifásicos: el gas propelente suele interponerse en la base dando lugar a una fase líquida
+única, y el resto de gas permanece vaporizado en la parte superior, que a su vez ejercerá la presión
+necesaria para impulsar la fase líquida al exterior, cuando se presione la válvula. Este tipo es el denominado
+envasado aerosol de dos fases.
+o
+
+
+
+
+                                                                                                          TÉCNICOS FARMACIA - SERGAS
+                Trifásicos: si parte del gas propelente, además forma una tercera fase líquida, inferior o
+superior, según densidades, a este sistema se le denomina envasado aerosol de tres fases. Este sistema es
+el que suelen presentar los envasados aerosol que dan lugar a espumas y que precisan de una ligera
+agitación antes de pulsar la válvula. La formación de espuma, nieve… es provocada por la expansión del
+gas propelente al salir del envase y encontrarse al exterior bajo el efecto de la presión atmosférica.
+
+2. SISTEMAS NO PRESURIZADOS:
+
+•      Nebulizadores: se usan cuando la dosis terapéutica es elevada (por lo que no puede ser
+administrada con inhaladores)
+-              Nebulizadores a chorro: utilizan un gas comprimido (aire u oxígeno) para convertir un
+líquido en aerosol
+-              Nebulizadores ultrasónicos: se utilizan poco en la práctica clínica
+•      Inhaladores de polvo seco: el producto se dispersa en forma de polvo, por efecto de una corriente
+que genera el propio paciente al aspirar-
+-            Sistemas unidosis: utilizan una cápsula de gelatina en cuyo interior va la dosis del
+medicamento que se va a administrar ( spinhaler ®, Rotahaler®)
+-               Sistemas multidosis: llevan un reservorio de medicamento (turbohaler®,accuhaler®)
+
+
+
+BIBLIOGRAFÍA
+-       Formulación Magistral. Mc Graw Hill 2025
+-       Higiene en el medio hospitalario y limpieza de material. Mc Graw Hill 2024.
+-       https://www.aemps.gob.es/formulario-nacional/ (3ª edición, actualizado a Noviembre de 2024)
+-       https://www.sergas.es/Saude-publica/Documents/1166/procedementos_esterilizacion.pdf
+-       https://www.ub.edu/talq/es/node/261 (liiofilización, Universidad de Barcelona)
+-       Benito Hernández; Elena Martínez. “Formulación Magistral”. Altamar SA 2010
+-     Merino Jiménez, C; De la Jara Gordo, A Mª; Gómez Peña, B; “Operaciones Básicas de Laboratorio”-
+Mc Graw Hill 2009.
+-      Luis, C D; Camacho, Mª A; Sánchez-Cascado, G; J.Mingo, Gonzalo; “Elaboración de preparados
+farmacéuticos y parafarmacéuticos”. Mc Graw Hill 2005.
+-       FAULÍ I TRILLO, C. Tratado de Farmacia galénica. Madrid. Ed. Luzán 5.
+-      VILA JATO, J.L. Tecnología Farmacéutica. Vol I: Aspectos fundamentales de los sistemas
+farmacéuticos y operaciones básicas. Madrid. Ed. Síntesis.
+-       VILA JATO, J.L. Tecnología Farmacéutica. Vol II: Formas Farmacéuticas. Madrid. Ed. Síntesis.
+-     BARBÉ ROCABERT, C. Preparados farmacéuticos y parafarmacéuticos. Bases tecnológicas y
+documentales. Barcelona 2001. Masson.
+32 TÉCNICOS DE FARMACIA
+   Tema 14-2ª PARTE
+
+   www.premir.es
+

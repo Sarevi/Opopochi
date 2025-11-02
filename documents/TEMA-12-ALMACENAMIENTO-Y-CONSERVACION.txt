@@ -1,0 +1,2107 @@
+              TÉCNICO DE FARMACIA
+                           SERGAS
+                                        TEMA 12:
+ SISTEMAS DE ALMACENAJE Y CONDICIONES DE CONSERVACIÓN DE
+
+
+
+
+      12
+PRODUCTOS FARMACÉUTICOS Y PARAFARMACÉUTICOS SEGÚN SUS
+CARACTERÍSTICAS. CÓDIGOS FARMACÉUTICOS IDENTIFICATIVOS DE
+       LOS PRODUCTOS FARMACÉUTICOS Y PARAFARMACÉUTICOS.
+      ORDENACIÓN DE LOS PRODUCTOS. GESTIÓN DE EXISTENCIAS.
+ CONTROL DE CADUCIDADES. PROCEDIMIENTO DE DEVOLUCIÓN DE
+PRODUCTOS CADUCADOS CONFORME A LA NORMATIVA. RETIRADA
+     DE PRODUCTOS POR ALERTA SANITARIA. ELIMINACIÓN DE LOS
+         PRODUCTOS SEGÚN EL SISTEMA INTEGRAL ESTABLECIDO.
+         APLICACIONES INFORMÁTICAS DE GESTIÓN Y CONTROL DE
+                                                 ALMACÉN.
+2 TECNICO FARMACIA SERGAS
+  Tema 12
+
+  www.premir.es
+                                                      TECNICO FARMACIA SERGAS 3
+                                                                       Tema 12
+
+                                                                     www.premir.es
+
+ÍNDICE
+
+1. SISTEMAS DE ALMACENAJE Y CONDICIONES DE CONSERVACIÓN DE
+   PRODUCTOS FARMACÉUTICOS Y PARAFARMACÉUTICOS SEGÚN SUS
+
+
+
+
+                                                                                  TECNICO FARMACIA- SERGAS
+   CARACTERÍSTICAS
+ 1.1 TIPOS DE ALMACENES
+ 1.2 CORRECTO ALMACENAMIENTO DE MEDICAMENTOS
+ 1.3 ALMACENAMIENTO NO AUTOMIATIZADO: COLOCACIÓN
+ 1.4 ALMACENAMIENTO AUTOMATIZADO
+
+2. CÓDIGOS FARMACÉUTICOS IDENTIFICATIVOS DE LOS PRODUCTOS
+   FARMACÉUTICOS Y PARAFARMACÉUTICOS
+3. ORDENACIÓN DE LOS PRODUCTOS
+4. GESTIÓN DE EXISTENCIAS
+ 4.1 OBJETIVOS DE LA GESTIÓN DE STOCKS
+ 4.2 TIPOS DE STOCKS
+ 4.3 GESTIÓN DE STOCKS: FACTORES
+ 4.4 GESTIÓN DE STOCKS: TÉCNICAS
+ 4.5 VALORACIÓN DE EXISTENCIAS: INVENTARIOS
+ 4.6 REGISTRO Y CONTROL DE MOVIMIENTOS DE ALMACÉN
+ 4.7 CONTROL DE PRODUCTOS
+ 4.8 APROVISIONAMIENTO
+ 4.9 CONTROL DE CALIDAD DE LA GESTIÓN DE STOCKS
+5. CONTROL DE CADUCIDADES
+6. PROCEDIMIENTO DE DEVOLUCIÓN DE PRODUCTOS CADUCADOS
+   CONFORME A LA NORMATIVA
+7. RETIRADA DE PRODUCTOS POR ALERTA SANITARIA
+8. ELIMINACIÓN DE LOS PRODUCTOS SEGÚN EL SISTEMA INTEGRAL
+   ESTABLECIDO
+ 8.1 ANTECEDENTES LEGISLATIVOS DE INTERÉS
+ 8.2 DECRETO 38/2015 DE 26 DE FEBRERO, DE RESIDUOS SANITARIOS DE GALICIA (DOG DE 1 DE
+ ABRIL DE 2015)
+9. APLICACIONES INFORMÁTICAS DE GESTIÓN Y CONTROL DE ALMACÉN
+10. BIBLIOGRAFÍA
+4 TECNICO FARMACIA SERGAS
+  Tema 12
+
+  www.premir.es
+
+ 1. SISTEMAS   DE   ALMACENAJE    Y   CONDICIONES                                           DE
+  CONSERVACIÓN   DE    PRODUCTOS    FARMACÉUTICOS                                            Y
+  PARAFARMACÉUTICOS SEGÚN SUS CARACTERÍSTICAS.
+
+ Como ya se comentó en el tema 11, entre las Funciones del Servicio de Farmacia están:
+   - Controlar las existencias de medicamentos para facilitar una buena gestión de suministros,
+       para que en un determinado momento se pueda disponer del medicamento con la mayor
+       brevedad posible.
+   - Garantizar y asumir la responsabilidad técnica de la adquisición, calidad, correcta
+       conservación, cobertura de necesidades, custodia y dispensación de los medicamentos y
+       productos sanitarios precisos.
+
+ El almacén es el espacio físico del Servicio de Farmacia destinado a la conservación de los
+ medicamentos, materias primas o productos sanitarios que deban ser conservados o custodiados
+ bajo la responsabilidad de un farmacéutico.
+ Son funciones del almacén:
+     - Solicitar el reabastecimiento de los diferentes artículos cuando sea necesario.
+     - Recepción y registro de los materiales suministrados.
+
+ Y dentro de estas funciones, las labores del técnico de farmacia serían:
+    - Recepción
+    - Almacenamiento
+    - Revisión
+    - Reposición
+    - De todos los medicamentos y productos sanitarios que se guarden en el almacén.
+
+ Como ya se comentó también en el tema 11, debe de haber zonas diferenciadas dentro del mismo
+ almacén que den cabida a los diferentes tipos de medicamentos:
+
+    1.1 TIPOS DE ALMACENES
+
+ a) Almacén de recepción y comprobación de los medicamentos
+ b) Almacenes generales
+    • Almacén de especialidades farmacéuticas (cuya conservación no requiera condiciones
+       especiales de almacenamiento).
+    • Almacenes de especialidades farmacéuticas de gran volumen:
+       - Soluciones parenterales.
+       - Líquidos de diálisis.
+       - Contrastes radiológicos.
+       - Soluciones antisépticas.
+       - Material de curas: suturas.
+    • Almacén de materias primas.
+       - El material debe ir acompañado del boletín de análisis correspondiente. Hoy en día, lo
+          más habitual es que estén disponibles en las páginas web de los distintos proveedores,
+                                                              TECNICO FARMACIA SERGAS 5
+                                                                               Tema 12
+
+                                                                               www.premir.es
+
+         y que se pueda acceder a ellos en el momento de realizar la recepción de la mercancía.
+       - Deben almacenarse en la zona de cuarentena hasta que se produzca la aceptación o el
+         rechazo del producto.
+
+       Concepto: cuarentena: situación de las materias primas, de los productos intermedios, a
+
+
+
+
+                                                                                              TECNICO FARMACIA- SERGAS
+       granel o terminados, y de los materiales de acondicionamiento que se encuentran aislados
+       físicamente, o de otra forma efectiva, mientras se toma la decisión de su aprobación o
+       rechazo.
+
+   •   Almacén de material (botellas plásticas, etiquetas, frascos, material de reenvasado).
+       - Deben almacenarse en la zona de cuarentena hasta que se produzca la aceptación o el
+          rechazo del producto.
+   •   Almacén de carros de transporte.
+   •   Almacén de antídotos y antagonistas
+
+c) Almacenes especiales:
+   • Almacén de inflamables
+   • Almacenes para sustancias termolábiles: debe comprobarse en la recepción que se ha
+      mantenido la cadena de frío: acumuladores, embalaje adecuado o dispositivos indicadores
+      de temperatura que indican el tiempo durante el cual el medicamento permanece a una
+      determinada temperatura. Los medicamentos termolábiles son los primeros que se
+      recepcionan.
+      Al colocar las especialidades farmacéuticas termolábiles en el congelador o frigorífico,
+      habrá que tener en cuenta la accesibilidad al producto y otros factores que se comentarán
+      en el punto 1.2.
+   • Almacén de estupefacientes:
+      - La recepción de la mercancía debe ser verificada y registrada en el libro de contabilidad
+          de estupefacientes.
+      - La mercancía debe ser almacenada lo antes posible en un recinto cerrado que nos
+          permita poner bajo llave los estupefacientes. En ocasiones, y con un volumen bajo de
+          consumo de estas drogas, es suficiente con instalar un armario metálico con una
+          cerradura.
+      - En las plantas, los stocks de estos medicamentos deberán estar colocados en armarios
+          bajo llave que permitan un control y seguimiento estricto de estos medicamentos.
+      - En el libro de contabilidad de estupefacientes han de registrarse los movimientos de
+          entrada y de salida de estos medicamentos.
+      - El libro de contabilidad debe estar siempre disponible para su inspección.
+   • Almacenes para psicótropos: la legislación actual no obliga a hacer un seguimiento
+      pormenorizado de este grupo farmacológico. No obstante, se aconseja su ubicación en
+      unas condiciones de seguridad. Se pueden colocar en muebles o armarios con cerraduras.
+   • Almacén para radiofármacos y gases de uso médico: esta zona requiere la ubicación de
+      armarios (celdas) plomados como medida de radioprotección y frigorífico (temperatura 2-
+      8 ºC) para el almacenamiento temporal de los radiofármacos según los requerimientos de
+      temperatura.
+6 TECNICO FARMACIA SERGAS
+  Tema 12
+
+     www.premir.es
+
+ d) Almacén de ensayos clínicos.
+
+      1.2. CORRECTO ALMACENAMIENTO DE MEDICAMENTOS
+
+ Durante la conservación de los medicamentos se deben respetar las recomendaciones del
+ laboratorio titular de la autorización con relación a las temperaturas de almacenamiento, habida
+ cuenta de que las condiciones de conservación recogidas en la ficha técnica de cada especialidad
+ farmacéutica han sido aprobadas por la Agencia Española del Medicamento.
+
+ En ocasiones, al realizar una consulta sobre el rango de temperaturas en el cual se debe almacenar
+ un medicamento, se encuentra la expresión “temperatura ambiente”, sin una indicación
+ numérica.
+
+ A este respecto:
+
+ - La Farmacopea Europea considera que el significado de “temperatura ambiente” puede ser
+ establecido por la Autoridad Nacional, teniendo en cuenta las condiciones deseables de
+ conservación y las condiciones climáticas estacionales del propio país.
+ - La Farmacopea Europea, al igual que la Real Farmacopea Española, indica que cuando en un
+ procedimiento analítico se menciona la temperatura sin una indicación numérica, los términos
+ generales que se utilizan tienen el significado siguiente:
+           • En un congelador: temperatura inferior a -15ºC
+           • Refrigerado o en refrigerador: +2ºC hasta +8ºC
+           • Fresco: +8ºC hasta +15ºC
+           • Temperatura ambiente: +15ºC hasta +25ºC
+
+ -    Por otro lado, la Agencia Europea del Medicamento no acepta “temperatura ambiente”
+      como término empleado para expresar las condiciones de conservación de los principios
+      activos o de las especialidades farmacéuticas.
+ -    La U.S Pharmacopeia (USP) realiza las siguientes consideraciones:
+          o Frío (Cold): cualquier temperatura que no supere los 8ºC
+          o Fresco (Cool): cualquier temperatura entre 8 y 15ºC
+          o Temperatura ambiente: La temperatura predominante en un área de trabajo
+          o Temperatura ambiente controlada: temperatura mantenida termostáticamente en el
+             ambiente de trabajo, entre 20 y 25ºC. Se permiten excursiones entre 15 y 30ºC. Se
+             recomienda una temperatura media de 25ºC.
+          o Caliente (Warm): cualquier temperatura entre 30 y 40ºC
+
+         De forma general, debemos saber que todos los medicamentos requieren unas
+ determinadas condiciones de luz, temperatura y humedad para su correcta conservación.
+ Por lo tanto, hay que tener en cuenta que:
+    - La luz acelera el proceso de degradación de muchos medicamentos.
+    - Todos los productos requieren una temperatura controlada.
+    - La temperatura mayoritaria de idónea conservación está entre 20-22ºC
+    - La humedad influye en las condiciones de estabilidad de los medicamentos.
+    - La humedad ambiental afecta más a los productos químicos y materias primas que a las
+                                                                TECNICO FARMACIA SERGAS 7
+                                                                                 Tema 12
+
+                                                                                  www.premir.es
+
+     especialidades farmacéuticas.
+   - Con todos estos datos, deberíamos:
+        o No almacenar los medicamentos en contacto con paredes o muros.
+        o Disponer sobre el suelo unos soportes que mantengan la medicación alejada del
+            suelo unos 20 cm.
+
+
+
+
+                                                                                                 TECNICO FARMACIA- SERGAS
+        o Procurar que se cumplan las siguientes características: amplio, limpio, seco, con
+            buena iluminación y buena ventilación.
+
+a) Medicamentos fotosensibles:
+   - Los medicamentos que contienen principios activos fotosensibles deben protegerse de la
+     luz (natural y artificial) para evitar su deterioro.
+   - Sacar solo justo antes de uso; reconstituir/diluir inmediatamente.
+   - Mantener dentro del envase original (caja/cartón) o en envases opacos (ampollas topacio,
+     papel aluminio, envases ámbar)
+   - Si el envase industrial ya lo protege (ej. cristal topacio), no está obligado a doble envasado.
+   - Solo sacar el medicamento del envase que lo protege justo antes de administrarlo.
+   - En medicamentos que requieren reconstitución o dilución, hacerlo justo antes de su uso
+     (evitar exposición prolongada)
+   - Si se ha expuesto a la luz, consultar la información de estabilidad y desechar si sospechas
+     de alteración
+   - Revisar apariencia: cambios de color, turbidez, precipitación à si se detectan, aislar y
+     retirar, aunque no esté caducado.
+   - Identificación en almacenes y unidades: etiquetar claramente los medicamentos
+     fotosensibles.
+   - Usar pegatinas o simbolización específica en estanterías o botiquines
+   - Si se extraen de los mismos y no están envasados adecuadamente en frascos topacio, es
+     conveniente envolverlos con papel de aluminio u otro papel opaco.
+     Ej de medicamentos fotosensibles:
+     Ø Adrenalina
+     Ø Atropina
+     Ø Digoxina
+     Ø Metoclopramida
+     Ø Furosemida
+     Ø Nifedipino, nimodipino
+     Ø Indometacina
+     Ø Ketoprofeno
+
+b) Medicamentos a los que afecta la humedad
+   Es conveniente controlar la humedad relativa ambiental en los almacenes mediante
+   higrómetros.
+
+  Medidas prácticas de conservación
+- Envases herméticos: usar frascos de boca estrecha y tapados herméticamente. Dejar los
+  desecantes (como sílice gel) intactos en su envase original.
+- Ambientes de baja humedad: guarda en armarios secos, con control de humedad relativa
+  (ideal por debajo de valores atmosféricos)
+8 TECNICO FARMACIA SERGAS
+  Tema 12
+
+  www.premir.es
+
+ - Uso de DRYCaps® en formulación magistral: cápsulas personalizadas, usar tecnologías con
+   protección de humedad (DRYCaps®) para mantener la estabilidad
+ - Etiquetado claro: marcar claramente en almacenes y áreas de preparación que son
+   medicamentos sensibles a la humedad.
+ - Reevaluación tras apertura o reenvase: cada vez que se fraccione o abra un envase, aplicar un
+   protocolo de control de humedad y revisar su estado físico.
+ - Ejemplos de medicamentos a los que afecta la humedad:
+   Ø Nitroglicerina
+   Ø Ácido acetilsalicílico
+   Ø Espironolactona
+
+ c) Medicamentos termolábiles
+    - Comprobar que se ha mantenido la cadena de frío en el momento de la recepción.
+    - Cadena de frío: conjunto de eslabones de tipo logístico que intervienen en el proceso de
+      almacenamiento, conservación, manejo, transporte y distribución, para mantener a una
+      determinada temperatura los medicamentos que puedan sufrir transformaciones con la
+      variación de la misma, desde que salen de las casas fabricantes hasta que llegan hasta su
+      destino. La finalidad de este proceso es asegurar que los medicamentos sean conservados
+      debidamente dentro de rangos de temperatura establecidos, para que mantengan sus
+      propiedades originales.
+    - En general, la red de frío está compuesta por tres niveles de intervención:
+          o el laboratorio titular de la autorización
+          o los almacenes mayoristas
+          o los puntos de recepción.
+       Todos ellos están estrechamente relacionados entre sí y permanecen conectados
+      mediante los sistemas de transporte.
+    - El personal sanitario debe gestionar cuidadosamente la cadena de frío comprobando y
+      registrando las condiciones en que se encuentran las especialidades farmacéuticas
+      termolábiles cuando los envíos llegan al Servicio de Farmacia o unidad clínica del hospital,
+      cuando los medicamentos se almacenan y cuando se administran.
+    - Durante el proceso de conservación se deben respetar las recomendaciones del
+      laboratorio titular de la autorización en relación con las temperaturas de almacenamiento.
+
+         Congelador                             Temperatura inferior a -15 ºC
+         Refrigerado o en refrigerador          +2ºC a +8ºC
+
+ Como norma general para el almacenamiento de medicamentos termolábiles han de
+ considerarse:
+    a) Ubicación. Al colocar las especialidades farmacéuticas termolábiles en la cámara,
+        congelador, nevera o frigorífico, deben tenerse en cuenta tres aspectos:
+           - la termoestabilidad
+           - la accesibilidad
+           - la caducidad.
+    Es conveniente almacenar los medicamentos más termolábiles, es decir, los menos resistentes
+    a temperaturas elevadas, en las zonas más frías de la cámara o nevera, reservando las zonas
+    menos frías para los más termoestables.
+                                                                 TECNICO FARMACIA SERGAS 9
+                                                                                  Tema 12
+
+                                                                                   www.premir.es
+
+    Por lo que respecta a la accesibilidad, los medicamentos de uso más frecuente deben
+    almacenarse en las zonas o espacios más accesibles, ya que durante el almacenamiento no
+    sólo debe acotarse el número de aperturas, sino también limitar su duración.
+    Si se almacenan lotes de distinta caducidad, siempre serán los de caducidad más próxima los
+    que tengan prioridad de salida.
+
+
+
+
+                                                                                                  TECNICO FARMACIA- SERGAS
+    b) Señalización. Es aconsejable señalizar en el exterior de la cámara, nevera o frigorífico la
+       ubicación de las distintas especialidades farmacéuticas para facilitar su localización, evitar
+       aperturas innecesarias y limitar su duración.
+
+ Equipos para el control de la temperatura de almacenamiento de especialidades
+ farmacéuticas termolábiles:
+
+  Comprende los siguientes elementos:
+I. Sistemas de almacenamiento de especialidades farmacéuticas termolábiles: cámaras
+    frigoríficas, frigoríficos, congeladores y acumuladores de frío para el almacenamiento de
+    medicamentos termolábiles.
+    En almacenes mayoristas y en farmacias hospitalarias es aconsejable que exista un grupo
+    electrógeno, capaz de mantener en funcionamiento los dispositivos de frío (cámara,
+    congelador, nevera o frigorífico) en caso de corte de fluido eléctrico.
+
+ - Las cámaras frigoríficas: En general, las cámaras frigoríficas se utilizan para el almacenamiento
+   cuando el volumen medio del stock de medicamentos es elevado, suelen necesitarse en las
+   Industrias Farmacéuticas, Almacenes de Distribución y Servicios de Farmacia Hospitalarios.
+   Es conveniente tener en cuenta que:
+       a.- Deben estar provistas de luces externas de seguridad y de alarmas sonoras, para
+       asegurar que nadie pueda quedarse encerrado en el interior de la cámara, y en caso de ser
+       posible, deben instalarse teléfonos en el interior de la misma.
+       b.- Deben estar dotadas de termostato (entre +2ºC y +8ºC), y de un termómetro o
+       termógrafo.
+       c.- La cámara ha de ser de fácil acceso para las personas y vehículos.
+       d.- La cámara debe de estar instalada en una zona clara, bien iluminada y bien ventilada,
+       además debe disponer de un espacio, para el embalaje, la carga y la expedición de
+       medicamentos.
+
+ - El frigorífico: El frigorífico permite el almacenamiento de stocks más pequeños, suele usarse
+   en unidades clínicas de hospitalización y en farmacias comunitarias.
+   Para asegurar su buen funcionamiento es imprescindible que el aparato reúna una serie de
+   requisitos:
+       a.- Estar dotado de termostato (entre +2ºC y +8ºC).
+       b.- Estar ubicado alejado de toda fuente de calor como radiadores, estufas…
+       c.- Se deben respetar una serie de recomendaciones, que resultan fundamentales para su
+       correcto empleo dentro de la cadena de frío:
+   • El frigorífico debe estar situado a unos 15 cm de distancia con respecto a la pared, para
+        permitir que el calor se disperse, e instalado sobre una base debidamente nivelada.
+10 TECNICO FARMACIA SERGAS
+   Tema 12
+
+   www.premir.es
+
+     •   Debe estar conectado a la red general, con toma de tierra, no a derivaciones, para evitar
+         desconexiones accidentales.
+     •   La puerta deberá abrirse solamente las veces necesarias.
+     •   Es conveniente que se disponga de un enchufe de seguridad para evitar la desconexión
+         fortuita, así como instalar mensajes de advertencia de no desconexión de la red eléctrica
+         bajo ningún concepto.
+     •   Colocar en los últimos estantes de la nevera botellas llenas de agua salada o de suero
+         fisiológico, ya que funcionan como acumuladores de frío y ayudan a estabilizar la
+         temperatura interna del frigorífico; en caso de corte de electricidad pueden mantener el
+         frío durante 6-12 horas, siempre y cuando el frigorífico no se abra durante este tiempo.
+     •   No ocupar más de la mitad del espacio disponible y dejar espacios vacíos entre los envases,
+         con el fin de permitir la circulación de frío. Los medicamentos no deberán contactar con
+         las paredes del frigorífico por la posibilidad de congelación (se aconseja una separación
+         mínima de 4 cm. de la pared).
+     •   No colocar nada de peso en la puerta del frigorífico ni en los estantes inferiores, para evitar
+         el desajuste del cierre.
+     •   No colocar bebidas, ni comida, ni otros productos ajenos a los propios de la farmacia.
+
+     Es conveniente que las puertas del frigorífico sean de cristal, con el fin de visualizar su interior,
+     y que las puertas sean de palanca, para que aseguren el cierre.
+     Se recomienda que las vacunas sean colocadas en bandejas de rejilla o perforadas (que no
+     sean de cartón) para evitar humedad o depósito de agua que pueda afectar a los envases.
+
+  - El congelador En caso de ubicarse dentro de la nevera, su acúmulo de escarcha disminuye la
+    capacidad frigorífica. Por tanto, cuando el grosor de la capa de hielo supere los 5mm, deberá
+    procederse a su descongelación. Hoy en día por lo general, se ubica con puerta propia fuera
+    de la zona frigorífica.
+
+  Deben guardarse las normas de almacenamiento, así como aquellas recomendaciones que se
+  consideren necesarias en la conservación de los medicamentos termolábiles cerca del congelador,
+  cámara frigorífica o nevera, para que puedan ser consultadas con facilidad.
+
+  - Los acumuladores de frío: son un elemento imprescindible en el transporte y almacenamiento
+      de especialidades farmacéuticas termolábiles. Durante el transporte de medicamentos
+      termolábiles, los acumuladores de frío deben estar envueltos por materiales que absorban la
+      humedad y no deben estar en contacto con las especialidades farmacéuticas, para evitar su
+      congelación.
+  Se pueden emplear en caso de avería de la nevera o del congelador. Cuando se utilicen a causa
+  de una avería en la nevera, los acumuladores de frío se ubicarán alrededor de las paredes
+  interiores de la misma, evitando el contacto directo con las especialidades farmacéuticas
+  almacenadas.
+  En el momento de elegir los acumuladores, hay que tener en cuenta que su tamaño debe ser
+  adecuado a los congeladores, frigoríficos y neveras portátiles de las que se dispone.
+  Por último, hay que tener en cuenta que antes de colocar los acumuladores de frío en el
+  congelador, es conveniente mantenerlos durante unas horas en el frigorífico. Y una vez en el
+                                                                 TECNICO FARMACIA SERGAS 11
+                                                                                  Tema 12
+
+                                                                                  www.premir.es
+
+ congelador, se deben mantener un mínimo de dos días antes de su utilización; colocándose en la
+ base del congelador, de manera que no se apilen unos sobre otros.
+
+ - Neveras portátiles: Además de para la distribución de especialidades farmacéuticas, las
+   neveras portátiles se pueden utilizar como recurso de emergencia para el almacenamiento en
+
+
+
+
+                                                                                                 TECNICO FARMACIA- SERGAS
+   el caso de avería (de corta duración), en los depósitos de medicamentos donde se maneje un
+   volumen reducido de los mismos. La mayoría suele estar fabricada con revestimiento externo
+   de plástico o fibra de vidrio, revestimiento interior de polietileno o poliestireno y material
+   aislante de poliuretano.
+
+ - Cajas isotérmicas o contenedores de aislamiento térmico: se usan en función del tipo de
+   medicamentos, de su volumen y del tiempo máximo de recorrido. Éstas por lo general son de
+   poliestireno o tienen revestimiento exterior o interior de cartón y material aislante de
+   poliuretano.
+
+II. Controladores de temperatura.
+   - Termómetros: constituyen un elemento importante para la monitorización y el control de la
+     temperatura. En el caso de que deban medir la temperatura de un frigorífico, han de
+     permanecer en el estante intermedio, y no deben retirarse de este lugar, a no ser que sea
+     necesario para efectuar la limpieza y desinfección de la nevera o refrigerador.
+
+     Se recomiendan los termómetros de máxima y mínima, de los cuales existe una gran variedad
+     en el mercado (digitales, de esfera, etc.). Estos instrumentos permiten conocer en cada
+     intervalo de tiempo transcurrido, la temperatura mínima a la que se ha conservado el
+     medicamento y la máxima alcanzada a causa de las aperturas de la puerta, avería eléctrica, etc.
+     El termómetro de máximos y mínimas clásico consta de 2 columnas de mercurio, con las
+     anotaciones de máximos y mínimos y dos escalas graduadas inversas en las que la
+     temperatura actual es igual en las dos.
+
+ - Termógrafos: dispositivos que registran la temperatura de forma continuada y permiten
+   conocer con exactitud las oscilaciones de temperatura que ha sufrido la nevera. Se
+   recomienda descargar informe mínimo 1 vez/semana.
+
+ - Indicadores de temperatura: son la cinta, el papel, la tableta o cualquier otro dispositivo
+   utilizado para comprobar si se han alcanzado determinadas temperaturas.
+   Basados en sustancias que pueden existir en dos o más formas o estructuras, las cuales tienen
+   propiedades fisicoquímicas distintas que se manifiestan en cambios de color (indicadores
+   basados en colores) o en variaciones de la conductividad (indicadores digitales).
+
+     Estos cambios de estructura se producen en unos intervalos de tiempo/temperatura bien
+     conocidos. Los indicadores deben ir acompañados de instrucciones claras acerca de su uso y
+     criterio para interpretar los resultados.
+
+     Entre los indicadores de temperatura, cabe considerar los siguientes:
+     • Indicadores de frío: se trata de indicadores de temperatura irreversibles, que muestran si
+        los medicamentos han estado expuestos a temperaturas excesivamente bajas.
+12 TECNICO FARMACIA SERGAS
+   Tema 12
+
+   www.premir.es
+
+      •   Indicadores de temperatura máxima: alertan sobre la exposición de las especialidades
+          farmacéuticas por encima de la temperatura deseada. Generalmente son etiquetas
+          adhesivas, que, fijadas sobre el producto, revelan su exposición a una determinada
+          temperatura sobrepasada la cual se autoactiva y aparece un cambio de color en el
+          indicador.
+      •   Indicadores de tiempo/temperatura: una vez activado, permite un registro de la
+          exposición del producto a determinadas temperaturas durante cierto tiempo.
+      •   Indicadores para acumuladores de frío: se trata de indicadores de temperatura reversibles,
+          destinados a evitar la congelación por contacto con el acumulador.
+
+      La nevera, cámara o frigorífico deben contar con termómetro y de manera rutinaria se debe
+      verificar que la temperatura se mantenga entre +2ºC y +8ºC. Hay que tener en cuenta que la
+      temperatura más baja es la tomada por la mañana, ya que durante la noche el frigorífico se
+      mantiene cerrado, y que la temperatura tomada por la tarde es más alta, por el uso continuo
+      del mismo.
+
+      El conocimiento por parte del personal sanitario de las recomendaciones anteriormente
+      citadas permite el mantenimiento de las especialidades farmacéuticas en el rango de
+      temperatura óptimo para su almacenamiento, necesario para que conserven sus propiedades
+      originales.
+
+  •   Control y registro de temperaturas:
+      - Debemos contar con termómetros registradores de máximas y mínimas o registradores
+         continuos de temperatura.
+      - Si se registran Tª entre 8-12 ºC por un período menor a 8 horas no se hace nada
+      - Si la Tª de la nevera ha sido >12 ºC o más de 8 horas entre 8 y 12ºC, se activa el protocolo:
+             o Anotar la incidencia, indicando temperatura alcanzada y tiempo
+             o Realizar un inventario de los lotes afectados
+             o Revisar estabilidad de cada uno de ellos
+             o Marcarlos y etiquetarlos con categoría que le corresponda
+             o Los de categoría D se valorarán siempre de forma individual, según Tª y tipo de
+                 medicamento
+             o Los de categoría E y vacunas, se desecharán
+             o Los medicamentos afectados deberán almacenarse claramente separados del resto
+                 de las existencias, en otra nevera y marcados para diferenciarlos.
+             o Sólo se dispensarán una vez que hayan sido evaluados por el farmacéutico y se
+                 consideren aptos.
+             o Dispensar en primer lugar los medicamentos expuestos a la rotura de la cadena de
+                 frío, y asegurarse de su pronta utilización si han sido considerados aptos después
+                 de su evaluación.
+                                                               TECNICO FARMACIA SERGAS 13
+                                                                                Tema 12
+
+                                                                                www.premir.es
+
+Existe una clasificación de fármacos termolábiles en categorías que van de la A a la F en función
+de su estabilidad a 25ºC:
+
+ Categoría            Estabilidad                             Actuación
+ A             Estable ≥ 28 días a 25 °C               Etiquetar si cumple condiciones, si no,
+
+
+
+
+                                                                                               TECNICO FARMACIA- SERGAS
+                                                       desechar
+ B             Estable ≥ 7 días y < 28 días a 25 °C    Etiquetar si cumple condiciones, si no,
+                                                       desechar
+ C             Estable ≥ 48 h y < 7 días a 25 °C       Etiquetar si cumple condiciones, si no,
+                                                       desechar
+ D             Estable < 48 h a 25 °C                  Valorar individualmente en función del
+                                                       tiempo y temperatura alcanzada
+ E             No estable fuera de nevera (> 8 °C)     Desechar
+ F             Estabilidad depende del lote            Consultar laboratorio
+
+Sin embargo, aquellos medicamentos que no son termolábiles no deben refrigerarse, ya que
+podrían deteriorase:
+      - Cambios en la liberación del producto
+      - Fragilidad
+      - Cambio de color
+      - Deterioro del principio activo
+      - Precipitación o cristalización
+      - Alteración de la viscosidad
+
+       1.3 ALMACENAMIENTO NO AUTOMATIZADO: COLOCACIÓN
+
+La colocación del material en almacén va a depender del mobiliario del que dispongamos:
+a) Colocación en estanterías
+    Las estanterías permiten colocar el material en varios niveles de altura, así se consigue más
+    espacio. La forma de colocación es la siguiente: el material que menos se utiliza se pondrá en
+    la parte más alta; en cuanto a los artículos que dispongan de fecha de duración en su
+    etiquetado, los más próximos a rebasarla serán los primeros en ser utilizados, y los recién
+    recepcionados se situarán detrás de los ya almacenados. Se utilizan las estanterías metálicas,
+    ya que se deterioran menos, tienen mayor resistencia y no son inflamables (a diferencia de las
+    de madera).
+b) Colocación en refrigeradores
+    Se guardan productos termolábiles. Ver “conservación de productos termolábiles”, en el
+    punto anterior.
+c) Colocación en armarios
+    Existen materiales que bien por su peligrosidad, por su elevado precio o por imperativo legal,
+    requieren un estricto control y deben guardarse en armarios cerrados.
+d) Colocación en el suelo
+    Disponer sobre el suelo unos soportes que mantengan la medicación alejada del suelo unos
+    20 cm.
+14 TECNICO FARMACIA SERGAS
+   Tema 12
+
+   www.premir.es
+
+         1.4. ALMACENAMIENTO AUTOMATIZADO
+
+  Actualmente, sobre todo en los hospitales de grandes dimensiones, gran parte o todo el almacén
+  está informatizado. Pueden emplearse los siguientes recursos:
+
+  - Plataformas guiadas por láser: un escáner va montado en el punto más alto del transporte y
+    realiza un barrido del área en busca de los puntos de referencia (targets), una serie de cilindros
+    de plástico que llevan una película reflectante, situados en lugares estratégicos a lo largo del
+    recorrido y dotados de un software para procesar los datos.
+  - Sistema de armarios, abiertos o cerrados, cuyo diseño modular permite una gran variedad de
+    posibles equipamientos en función de la aplicación, cestas, estantes, cajones, etc. Permiten
+    clasificar el material optimizando al máximo el espacio disponible, facilitando las labores de
+    localización. La identificación de los artículos se realiza con etiquetas con código de barras, y
+    las estanterías son móviles.
+
+
+
+
+  2. CÓDIGOS   FARMACÉUTICOS    IDENTIFICATIVOS DE                                              LOS
+     PRODUCTOS FARMACÉUTICOS Y PARAFARMACÉUTICOS
+  El Código Nacional (CN) es un elemento de identificación de cada formato de un medicamento o
+  producto sanitario. Es un sistema de identificación rápido, cuyo objetivo es ayudar y facilitar la
+  gestión de las Oficinas de Farmacia y otros estamentos, haciendo posible la adquisición de los
+  medicamentos, efectos y accesorios, productos de parafarmacia que se encuentran en el Mercado
+  Nacional, mediante el tratamiento informático de los indicados productos.
+  El CN es adjudicado por diferentes estamentos oficiales, en función del tipo de producto:
+  • A los medicamentos, medicamentos a base de plantas medicinales y medicamentos
+      homeopáticos se lo adjudica la AEMPS, cuando autoriza el registro.
+  • A los dietoterápicos y efectos y accesorios financiados se lo asigna la Dirección General de
+      Farmacia y Productos Sanitarios.
+  • A los productos de Parafarmacia, se lo adjudica el Consejo General de Colegios Oficiales de
+      Farmacéuticos. Estos productos no están financiados por el S.N.S
+                                                                    TECNICO FARMACIA SERGAS 15
+                                                                                     Tema 12
+
+                                                                                       www.premir.es
+
+El código nacional está formado por siete dígitos; seis dígitos significativos y un dígito de control
+(7º) resultado de una combinación matemática de los seis anteriores.
+
+
+
+
+                                                                                                      TECNICO FARMACIA- SERGAS
+A finales de los años 80 se integró en las especialidades farmacéuticas el código de barras EAN 13
+/SF, que permite la lectura óptica del código, y al llevar introducido el Código Nacional
+correspondiente a cada producto farmacéutico dentro de su estructura, facilita la facturación de
+los productos.
+La cantidad creciente de medicamentos, productos farmacéuticos, efectos y accesorios,
+dietoterápicos y productos de parafarmacia, puestos en el mercado con código, supuso un
+agotamiento de los números de código Nacional disponibles. Ante la situación de agotamiento
+de códigos, que desde hace unos años se ha venido produciendo, se han ido buscando soluciones,
+llegándose a la que se ha considerado la más idónea Las modificaciones introducidas en el antiguo
+CN ( 6 dígitos , de los cuales 5 son significativos y el 6ª es un dígito control) dan lugar a la aparición
+de los “CN optimizados”, CN de siete cifras, se incorpora un séptimo dígito, separado por un punto,
+que se calculará según una función matemática de los seis anteriores. De esta forma se consigue
+mayor disponibilidad de códigos nacionales.
+        244137       a      244137.8
+        Antiguo             Optimizado
+        EAN-13SF: 8 4 7 0 0 0 2 4 4 1 3 7 8
+
+La representación EAN-13SF es idéntica para el CN antiguo y para el CN optimizado.
+
+
+
+
+En 2019 entra en vigor el Código Datamatrix (Código QR) en todos los medicamentos. Se trata de
+un código único para cada envase que permite conocer la trazabilidad de cada unidad y evitar
+falsificaciones.
+Su inclusión en el cartonaje viene promovida por la Comunidad Europea a través del Reglamento
+Delegado (UE) 2016/161 de la comisión y complementada por la Directiva 2001/83/CE del
+Parlamento Europeo.
+16 TECNICO FARMACIA SERGAS
+   Tema 12
+
+   www.premir.es
+
+  3. ORDENACIÓN DE LOS PRODUCTOS
+
+  Existen varios criterios de almacenamiento de productos farmacéuticos. El más utilizando es por
+  orden alfabético, pero también se utilizan otros, o una combinación de ellos:
+  - Criterio de ordenación por orden alfabético: se clasifican los productos por orden alfabético de
+      su nombre comercial. Es un· sistema de ordenación compresible que facilita la localización. El
+      inconveniente que posee es que se mezclan productos muy heterogéneos, con tamaños y
+      formas diferentes, y el espacio no está aprovechado correctamente.
+  - Criterio de ordenación por formas farmacéuticas: divide el espacio de almacén en otras
+      subzonas, cada una para cada forma o agrupación de formas farmacéuticas. Dentro de la
+      subzona, se clasifican los productos por orden alfabético. Ejemplo todos los jarabes en una
+      subzona clasificados por orden alfabético.
+  - Criterio de ordenación por tipo de dispensación: los productos más dispensados están ubicados
+      más cerca y los menos solicitados se almacenan en otras zonas de acceso más apartadas. Es
+      una clasificación complementaria a las anteriores.
+  - Criterios de ordenación por actividad farmacológica: este criterio consiste en agrupar y
+      distinguir todas aquellas especialidades indicadas para una misma patología. Por ejemplo,
+      almacenar todos los analgésicos con una subclasificación por orden alfabético. La desventaja
+      que presenta es que se necesita gran dominio del vademécum.
+  - Criterio de ordenación por proveedor se utiliza para productos de parafarmacia.
+  - Criterio de ordenación por funcionalidad: es utilizado para ordenar el espacio de la exposición
+      (se utiliza en las oficinas de farmacia no en farmacia hospitalaria). Sabemos que la zona de
+      exposición no sólo almacena sino que también expone. Para exponer mejor los productos
+      deben disponerse en un orden que facilite su localización e identificación por el usuario. Este
+      criterio es muy aplicado, combinado con la ordenación por proveedor.
+  - Es necesario un buen almacenaje para asegurar la calidad del servicio al usuario, y para ello se
+      debe:
+          o Procurar disponer del producto con una fecha de caducidad suficiente para su
+               utilización de forma óptima.
+          o Aprovechar al máximo el espacio disponible.
+          o Colocar el producto de forma que las operaciones de reposición y las de dispensación
+               sean lo más fáciles e inmediatas que se pueda.
+          o Evitar deterioro de los productos almacenados. Evitar posibles confusiones en la
+               dispensación.
+  - Son recomendaciones para un almacenaje eficiente:
+          o Reponer de atrás hacia delante, de abajo arriba y de izquierda a derecha. Primero se
+               coge el de delante, el de más arriba o el de más a la derecha, así siempre se coge el más
+               antiguo. Todos los profesionales deben almacenar, reponer y dispensar de la misma
+               manera.
+          o El personal que almacena y dispensa debe conocer los criterios de ordenación
+               establecidos.
+          o Se debe procurar separar los productos similares para evitar errores.
+          o Reservar más o menos espacio para cada producto según su frecuencia de
+               dispensación.
+          o Revisar periódicamente las caducidades de las existencias
+                                                              TECNICO FARMACIA SERGAS 17
+                                                                               Tema 12
+
+                                                                               www.premir.es
+
+
+
+4.GESTIÓN DE EXISTENCIAS
+Definición stock: conjunto de artículos acumulados en espera de su utilización más o menos
+
+
+
+
+                                                                                              TECNICO FARMACIA- SERGAS
+próxima. Son las existencias de un determinado producto que permite abastecer a los usuarios.
+En los Servicios de Farmacia hospitalaria las existencias consisten en todos los productos que se
+han adquirido para atender las necesidades sanitarias. Estas existencias también incluyen las
+materias primas y el material de acondicionamiento que se emplearán en la elaboración de
+fórmulas magistrales y preparados oficinales.
+En una correcta gestión de existencias se generan las siguientes dudas:
+
+       4.1 OBJETIVOS DE LA GESTIÓN DE STOCKS
+
+Objetivo básico: mantener un nivel de stock óptimo= tener suficiente cantidad de
+medicamentos para satisfacer la demanda y evitar roturas de stock, pero siempre de forma
+que su almacenamiento resulte rentable, evitando que haya un exceso inútil del mismo
+
+- Mantener el volumen de stock al más bajo nivel compatible con el suministro regular de las
+  necesidades del hospital.
+- Minimizar el importe total del inventario.
+- Minimizar las roturas de stock.
+- Procurar una eficiente utilización de los recursos.
+- Realizar una proyección de la evolución del consumo que permita establecer un programa de
+  compras.
+- ¿Cómo conseguimos esto?
+     o Estableciendo unas previsiones de consumo.
+     o Estudiando los plazos de entrega del proveedor.
+     o Realizando inventarios periódicos.
+     o Utilizando una aplicación informática de gestión que realice análisis de consumos por
+         grupo terapéutico, p.a., especialidad, servicio, paciente…
+
+   4.2. TIPOS DE STOCKS
+
+Nivel de stock: cantidad de existencias de un medicamento almacenado en un momento dado.
+18 TECNICO FARMACIA SERGAS
+   Tema 12
+
+   www.premir.es
+
+
+
+
+  Podemos clasificar los distintos tipos de stock según criterios funcionales u operativos:
+
+  A) Criterio funcional
+
+  a) Stock activo: también se denomina stock operativo. Sirve para atender la demanda normal
+     del proceso asistencial.
+
+
+
+
+  b) Stocks máximo y mínimo: el stock máximo es el límite superior de las existencias y el mínimo
+     el límite inferior.
+     Existen aplicaciones informáticas que establecen para cada artículo su stock máximo y
+     mínimo, basándose en su consumo. Estos valores se van actualizando periódicamente. Los
+     fijamos en función de los consumos.
+  c) Stock de seguridad: es un volumen de existencias que tenemos en el almacén por encima de
+     lo que normalmente vamos a necesitar, para hacer frente a las demandas inesperadas y
+     retrasos imprevistos en las entregas de los proveedores. Funciona como un colchón
+     complementario al stock operativo. Ayuda a evitar las roturas de stock.
+     La cantidad de este stock dependerá:
+      • de la variabilidad de la demanda
+      • de la variabilidad en el plazo de entrega
+      • del riesgo que estemos dispuestos a admitir en caso de encontrarnos sin existencias.
+
+      Influye en los costes de adquisición y almacenamiento del medicamento en cuestión y en el
+      riesgo de ruptura de stock
+                                                               TECNICO FARMACIA SERGAS 19
+                                                                                Tema 12
+
+                                                                                www.premir.es
+
+
+
+
+                                                                                               TECNICO FARMACIA- SERGAS
+d) Stock de alerta: es una cantidad de existencias situada entre el stock máximo y el mínimo,
+   necesarias para hacer frente a la demanda durante el período de reposición. Cuando las
+   existencias alcanzan este volumen de stock, se ha de realizar un nuevo pedido. Por lo tanto, el
+   stock de alerta nos indica el punto de pedido.
+
+
+
+
+e) Stock estacional: se crea para hacer frente a un aumento esperado del consumo por cambio
+   de estación o temporada. Aunque tiene cierto carácter comercial, existen medicamentos con
+   un consumo estacional, como por ej: broncodilatadores en primavera, palivizumab para la
+   prevención del virus respiratorio sincitial en recién nacidos o antivirales en período gripal.
+f) Stock sobrante: son existencias de medicamentos con las que no se contaba al inicio de la
+   gestión. Comprende todos los artículos, en buen estado, que han dejado de necesitarse,
+   pudiendo ser devueltos o canjeados por el proveedor.
+
+   Aparecen por:
+   § Errores en la emisión del pedido o en su transporte
+   § Devoluciones a proveedor no admitidas
+   § Devoluciones de planta porque no se utiliza (cambio de tratamiento, alta, o éxitus)
+   § Devoluciones de pacientes externos
+
+B) Criterio operativo
+
+a) Stock óptimo: es el que compatibiliza una adecuada atención a la demanda y una
+   rentabilidad maximizada teniendo en cuenta los costes de almacenaje.
+b) Stock cero: consiste en trabajar bajo demanda, es decir, sólo se compra el medicamento
+   cuando se necesita para atender a un paciente concreto. En los Servicio de Farmacia se emplea
+   para peticiones especiales de medicamentos costosos, no incluidos en la guía
+   farmacoterapéutica.
+c) Stock físico: es la cantidad de artículo disponible en un momento determinado en el almacén.
+   Nunca puede ser negativo. También denominado stock real.
+20 TECNICO FARMACIA SERGAS
+   Tema 12
+
+   www.premir.es
+
+  d) Stock neto: es el stock físico menos la demanda no satisfecha. Esta cantidad sí puede ser
+     negativa.
+  e) Stock disponible: es el stock físico, más los pedidos en curso del artículo a los proveedores,
+     menos la demanda insatisfecha.
+
+       4.3. GESTIÓN DE STOCKS: FACTORES
+
+  Entre los factores que influyen en la gestión de stocks hay
+  a) Factores controlables:
+  - Cantidad a pedir
+  - Fecha de pedido
+  - Coste del pedido
+  - Stock de seguridad
+
+  b)   Factores no controlables:
+  -    Demanda
+  -    Plazo de entrega
+  -    Caducidad de los medicamentos
+  -    Espacio en el almacén
+  -    Costes de gestión
+
+  En cuanto a los costes más importantes asociados a un sistema de gestión de stocks se pueden
+  agrupar en:
+     - Costes de adquisición o compra
+     - Costes de realización de pedidos
+     - Costes de almacenamiento
+     - Costes de ruptura de stock
+
+       4.4. GESTIÓN DE STOCKS: TÉCNICAS
+
+  Para una buena gestión logística de stocks hay que controlar las entradas y salidas de todos los
+  productos.
+  Este control de flujo de información nos permitirá:
+      - Elaborar propuestas correctas de pedido
+      - Analizar la utilización de medicamentos.
+      - Asignar costes a cada área, servicio o unidad
+      - Elaborar informes rigurosos
+
+  Técnicas para llevar a cabo la gestión de stocks:
+  A. Automatizar los pedidos del stock en planta, mediante la solicitud del pedido a través del
+     sistema informático. Con esto conseguimos varios objetivos:
+     • La organización del trabajo del Servicio de Farmacia no depende de la llegada del pedido
+         en papel
+     • No se produce desplazamiento del personal
+     • Disminuyen los errores de transcripción
+                                                             TECNICO FARMACIA SERGAS 21
+                                                                              Tema 12
+
+                                                                              www.premir.es
+
+B. Controles periódicos de inventario
+C. Utilizar sistemas automatizados o semi-automatizados de clasificación, almacenaje y
+   dispensación (Kardex®). Sacamos datos de consumos mensuales, pérdidas, informes de
+   caducidades etc.
+
+
+
+
+                                                                                            TECNICO FARMACIA- SERGAS
+D. Métodos de reducción de costes
+
+      D.1 Realizar la clasificación ABC de los medicamentos
+
+La clasificación ABC de los medicamentos es una herramienta de gestión del inventario
+farmacéutico que se utiliza para optimizar la administración de existencias en farmacias
+hospitalarias o comunitarias. Se basa en el principio de Pareto (80/20), que establece que un
+pequeño porcentaje de los productos representa la mayor parte del consumo o del valor
+económico.
+
+Mediante este método se divide el inventario en tres grandes grupos usando como criterio el
+valor anual de los artículos, de forma que:
+
+
+
+
+Grupo A: un pequeño porcentaje de artículos, en torno al 10-20%, representa un elevado valor
+de porcentaje acumulado del valor anual, sobre un 70-80 %. Cuando se trata de este tipo de
+productos, se debe controlar su stock detalladamente, reducir todo lo posible las existencias y
+minimizar el stock de seguridad. Importante revisar porque el coste de almacenamiento supera el
+coste del lanzamiento del producto
+22 TECNICO FARMACIA SERGAS
+   Tema 12
+
+   www.premir.es
+
+  Grupo B: un porcentaje intermedio de productos (20-30%) está asociado a un valor porcentual
+  también intermedio (20-30%). Se debe mantener un sistema de control de stock aunque mucho
+  menos estricto que en el caso anterior.
+  No es fácil la tarea de fijar políticas de compra para estos artículos, ya que se encuentran en el
+  centro de los extremos. Por lo tanto, deberán fundamentarse en relación a la importancia relativa
+  de los artículos. Así, las políticas más adecuadas quedarán determinadas de la siguiente forma:
+
+           1. Si los artículos de clase B, representan solamente un 20% del consumo total, las políticas
+           descritas relativas a la clase C, serán las más adecuadas.
+           2. Pero si representan un 40% del consumo total, deberán adoptarse las políticas
+           recomendadas para la clase A, pero aplicando controles menos estrictos.
+           3. En resumen, el factor más importante a tener en cuenta, lo constituye la importancia que
+           tienen los artículos de la clase B respecto del inventario total.
+
+  Grupo C: un porcentaje elevado de artículos (50-60%) representa un reducido porcentaje del
+  valor anual acumulado.
+
+  Este grupo es lo contrario al grupo A, no requiere una vigilancia tan estrecha, porque no tiene una
+  incidencia importante sobre el valor total del stock.
+
+   Clase               Criterio económico                               Descripción
+   A           Medicamentos que representan el 70–80 % del      Productos de alto coste o rotación.
+               valor económico, aunque solo sean un 10–20 % del Necesitan control riguroso, revisiones
+               total de productos.                              frecuentes y gestión individualizada.
+   B           Representan el 15–25 % del valor, y un 30 % aprox.
+                                                                Productos de coste medio. Requieren
+               del total de productos.                          control periódico y estrategias de
+                                                                gestión intermedias.
+   C           Solo el 5–10 % del valor económico, pero abarcan Productos baratos o de baja rotación.
+               el 50–60 % del número de productos.              Gestión más simple; control menos
+                                                                intensivo.
+                                                                 TECNICO FARMACIA SERGAS 23
+                                                                                  Tema 12
+
+                                                                                   www.premir.es
+
+
+
+
+                                                                                                  TECNICO FARMACIA- SERGAS
+Para determinar la importancia de cada artículo, se clasifican los inventarios de la siguiente forma:
+
+       - Para cada artículo, se determina la cantidad de unidades consumidas promedio, durante
+       un período de tiempo determinado, y el precio promedio y se multiplican dichos valores.
+       - Ordenar los artículos en orden descendente según los valores hallados tras haber
+       realizado la operación anterior.
+       - Obtener el porcentaje representado por cada artículo respecto al total de artículos.
+       - Calcular el porcentaje acumulado de cada artículo.
+       - Hasta el 80%, representarán los artículos de clase A, del 80 al 95% representarán los
+       artículos de clase B y del 95 al 100% será artículos de clase C.
+
+Para conseguir una gestión adecuada del stock de medicamentos en un hospital o sistema de
+salud es importante tener en cuenta los siguientes aspectos:
+    - Hacer una planeación, programación y ejecución de las adquisiciones en forma oportuna
+       para evitar la falta de productos indispensables para la buena atención de los pacientes.
+       Ello se obtiene con un buen cálculo de los stocks mínimos y de seguridad, así como de los
+       imprevistos y demás contingencias administrativas que puedan existir.
+    - Las pérdidas reales y potenciales, mermas y daños se deben sacar de los stocks y aumentar
+       correspondientemente las compras en este sentido.
+    - La demora o falta de cumplimiento en el tiempo de entrega por parte del proveedor obliga
+       a ampliar los stocks, e igualmente, la simplificación de los procedimientos administrativos
+       acelera el flujo de las compras.
+    - Los presupuestos imponen prioridades en las compras.
+    - La capacidad de los almacenes limita las adquisiciones.
+    - Los excesos en compras, aunque sean a precios rebajados, siempre producen desperdicio
+       y sobrecostes.
+24 TECNICO FARMACIA SERGAS
+   Tema 12
+
+   www.premir.es
+
+     - Las estadísticas de consumo son una gran guía en las compras siempre y cuando sus
+       registros de ingresos y salidas sean estrictos.
+     - Las redes, diagramas o barras que representan cronogramas de actividades o flujos de
+       control son muy importantes y aún indispensables para el control de las adquisiciones y
+       los suministros.
+
+         D.2) Método FIFO
+         El método FIFO (First In First Out) es un método de valoración de existencias en el que se
+         asume que los primeros productos en entrar en el almacén son los primeros en salir de él.
+         Este criterio es muy lógico y responde al movimiento real de un almacén de productos
+         perecederos y con una fecha de caducidad relajada en el envase.
+         Una variante es el Método FEFO (First Expired, First Out). Se da prioridad a la salida de los
+         medicamentos con fecha de caducidad más próxima. Muy importante para termolábiles,
+         inyectables y medicación hospitalaria. Complementa al FIFO (First In, First Out).
+
+         D.3) Método LIFO
+         El método LIFO (Last In First Out) es un método de valoración de existencias que asume
+         que los últimos productos en entrar en el almacén son los primeros en salir de él. Su uso se
+         basa en el principio de que los precios de los productos suben continuamente en el tiempo
+         debido a la inflación. Mediante este método se consigue reducir el pago de impuestos. Se
+         consumen primero los medicamentos más recientemente recibidos. No recomendado en
+         farmacias hospitalarias ni comunitarias, porque puede dejar en almacén medicamentos
+         más antiguos, aumentando el riesgo de caducidades, pérdida de estabilidad
+         (especialmente en termolábiles) y pérdida de trazabilidad.
+
+         D.4) Sistemas de coste de reposición
+         Mediante este sistema el stock se valora atendiendo al coste que supondría reponer el
+         producto. Se fija por tanto en el coste de reposición del producto.
+
+         D.5) Sistemas de coste de valor añadido
+         Los sistemas de Valor Añadido se utilizan para abordar algunos problemas especiales que
+         aparecen cuando lo almacenado ha sido procesado de algún modo, es decir, intentan
+         reflejar los costes de procesamiento y los gastos generados.
+         Estas formas de clasificar los medicamentos pueden ser de gran ayuda, sobre todo a la hora
+         de establecer el stock de seguridad.
+         Si bien, el factor que ayudará de forma más clara a la reducción de los costes es la
+         estimación de la demanda futura.
+
+         4.5. VALORACIÓN DE EXISTENCIAS: INVENTARIOS
+
+  El inventario es el recuento manual de todas las existencias presentes en los almacenes, realizada
+  periódicamente, para verificar que las existencias registradas se encuentran realmente en stock.
+  Las fases de un inventario son las siguientes:
+       - Localización de cada artículo en el almacén.
+       - Identificación de cada artículo de la forma más clara y precisa.
+                                                                TECNICO FARMACIA SERGAS 25
+                                                                                 Tema 12
+
+                                                                                 www.premir.es
+
+   - Verificación del total de artículos de cada clase y variedad y compararlo con el registro
+     existente.
+   - Identificación de los artículos que debe retirarse por caducidad, deterioro o desuso.
+   - Dar de baja a estos artículos en los registros correspondientes.
+   - Registro de toda la información contenida.
+
+
+
+
+                                                                                                TECNICO FARMACIA- SERGAS
+Existen tres modelos fundamentales de inventario:
+    - Inventario anual: se realiza una vez al año y para ello es necesario bloquear los
+        movimientos del almacén mientras se lleva a cabo. Este inventario se realiza al final del
+        año. Como inconveniente presenta que, en caso de detectar errores, deberán revisarse las
+        entradas y salidas de un largo periodo de tiempo.
+    - Inventario permanente: consiste en inventariar diariamente las existencias de los
+        artículos que han registrado movimiento durante la jornada laboral. Presenta como
+        ventaja que, si se detectan errores, éstos se identifican más rápidamente.
+    - Inventario rotativo: es intermedio entre los dos anteriores. Se basa en la aplicación del
+        principio de Pareto, que dice que una pequeña parte de las existencias suponen un
+        porcentaje alto del valor total almacenado, una porción media supone un porcentaje
+        medio y una parte importante de lo almacenado representa un valor pequeño. En este
+        caso se realiza un inventario parcial y según este principio existirán unos pocos artículos
+        que necesitan un seguimiento más exhaustivo al ser productos de elevado coste. Para
+        estos productos se necesitará una revisión más frecuente (ej quincenal). Para el grupo
+        intermedio sería suficiente con un control trimestral, y para el grupo con un alto
+        porcentaje, pero con un coste bajo, sería suficiente un control anual.
+
+FICHAS DE ALMACÉN
+
+La ficha de almacén es un registro continuo de entradas y salidas de artículos y puede realizarse
+mediante un documento específico con existencia física, o bien, y preferentemente, mediante un
+programa informático de gestión de almacenes que en cualquier momento puede producir
+copias impresas de los diferentes registros.
+Estos programas se basan en una base de datos que genera las fichas necesarias para cada
+artículo.
+Estas fichas recogen una serie de datos mínimos en cada registro:
+    - Identificación de la organización.
+    - Nombre del producto
+    - Fecha de realización del pedido y datos del proveedor
+    - Fecha de entrada en almacén.
+    - Número de factura del material.
+    - Números de serie y/o lote de cada producto.
+    - Fecha de salida del almacén.
+    - Unidad o servicio a quien se entrega.
+    - Número de unidades compradas y precios unitarios.
+26 TECNICO FARMACIA SERGAS
+   Tema 12
+
+   www.premir.es
+
+         4.6. REGISTRO Y CONTROL DE MOVIMIENTOS DE ALMACÉN
+
+  Una de las funciones del almacén es el registro y control del movimiento de artículos, es decir, el
+  seguimiento de las existencias.
+  Un stock demasiado bajo, ocasionará frecuentemente roturas de stock.
+  Un stock demasiado alto genera a medio plazo un aumento de las caducidades y una
+  sobreocupación de los espacios.
+
+         4.7. CONTROL DE PRODUCTOS
+
+  Se deben establecer normas claras de almacenamiento para disminuir costes, prevenir pérdidas y
+  desperdicios debido a robo, obsolescencia, ruptura; daño del producto o del embalaje, etc., así
+  como establecer de manera clara dónde se encuentra cada producto para una fácil y rápida
+  dispensación, tener fácil acceso a cada elemento, poder controlar físicamente los inventarios, y
+  buscar que los productos mantengan toda su calidad durante el máximo tiempo posible,
+  mediante el control adecuado de temperatura y humedad, mínima exposición al sol o a la luz del
+  día y la ausencia total de insectos.
+  Así mismo, se deben evitar las siguientes deficiencias:
+      - Deterioro: normalmente los daños por deterioro son proporcionales al volumen de las
+           existencias y al tiempo de permanencia de los productos, es decir, son mayores cuanto
+           mayor cantidad de elementos a cuanto mayor tiempo.
+      - Obsolescencia: el riesgo de obsolescencia de los productos induce a menores compras y
+           desde luego a menores inventarios. Un control estricto a la formulación médica debe
+           disminuir significativamente este coste. Muchas innovaciones tienen poca o ninguna
+           ventaja sobre los productos antiguos; se deben más a factores de comercialización que a
+           innovación, pero producen un doble impacto en los inventarios; el producto antiguo se
+           vuelve obsoleto, mientras el nuevo se agota con frecuencia.
+      - Caducidad: los medicamentos tienen fecha de caducidad, o sea, que en caso de las fechas
+           posteriores solo existe la alternativa de devolverlos. No es raro encontrar que cerca del 5%
+           de los productos en inventarios hayan caducado.
+      - Hurto: su magnitud depende de los controles y la motivación del personal tanto de
+           almacén como del hospital en general.
+      - Accidentes: dando tratamiento especial a los elementos pesados, peligrosos o de alta
+           contaminación potencial.
+
+  En el control de las existencias siempre debe estar presente la maximización de los beneficios al
+  paciente, al mismo tiempo que se minimizan los costes totales de los stocks.
+
+         4.8 APROVISIONAMIENTO
+
+  Consiste en adquirir y poner a disposición del hospital los medicamentos necesarios para la
+  actividad diaria, garantizando el abastecimiento de las cantidades requeridas en término de
+  tiempo, calidad y precio.
+  El cuándo y cuánto realizar el aprovisionamiento dependerá de:
+      - La importancia terapéutica del medicamento
+      - La frecuencia de utilización
+                                                                TECNICO FARMACIA SERGAS 27
+                                                                                 Tema 12
+
+                                                                                  www.premir.es
+
+   -   El volumen físico que ocupa en el almacén
+   -   El precio unitario del medicamento
+   -   La estimación del consumo
+   -   Los costes de la gestión del pedido
+
+
+
+
+                                                                                                 TECNICO FARMACIA- SERGAS
+Ø ¿CUÁNDO PEDIR?
+
+Si utilizamos modelos deterministas de gestión de stocks podríamos hacerlos por
+    a) Períodos fijos: se realiza mediamente un calendario fijo (por ejemplo, todos los primeros
+         de mes). La cantidad de pedido puede ser fija o variable.
+    b) Por punto de pedido: consiste en pedir cuando se alcanza el stock de alerta (el punto de
+         pedido). El punto de pedido es el nivel de existencias que exige la realización de un nuevo
+         pedido a fin de satisfacer las necesidades de consumo. Las aplicaciones informáticas
+         facilitan el proceso.
+
+Ø ¿CUÁNTO PEDIR?
+
+El cálculo exacto de la cantidad óptima de pedido requiere conocer:
+    - Los consumos o la estimación de las necesidades anuales.
+    - El precio unitario de adquisición
+    - Los costes de financiación del inventario inmovilizado
+    - Los costes de gestión del pedido.
+
+El cálculo de las cantidades a pedir de cada artículo es una operación que debe realizar la
+aplicación informática, comparando el stock actual con los stocks máximo y mínimo.
+
+CONTROL DE CALIDAD DE LA GESTIÓN DE STOCKS
+
+Este control de calidad se centrará en:
+a) Índice de rotación de stock: expresa en grado de renovación de los medicamentos
+    almacenados durante un determinado período de tiempo. Se calcula dividiendo el importe
+    del consumo entre el importe del inventario. Nos interesa tener un índice de rotación elevado.
+b) Índice de cobertura: calcula el tiempo (en días) que el stock disponible es capaz de cubrir la
+    demanda. Se calcula dividiendo las existencias entre el consumo mensual. Muestra el tiempo
+    promedio que tardan las existencias en agotarse.
+c) Nº de roturas de stock: se produce cuando no se puede hacer frente a la demanda de un
+    medicamento por falta de existencias en el almacén. Lo ideal es reducir este número al
+    mínimo, porque supone costes adicionales. Para resolver este problema, podríamos realizar
+    un pedido al laboratorio farmacéutico fuera del período establecido, pedir un préstamo a otro
+    hospital cercano o realizar un pedido a un proveedor alternativo.
+28 TECNICO FARMACIA SERGAS
+   Tema 12
+
+   www.premir.es
+
+  5. CONTROL DE CADUCIDADES
+  Se entiende por fecha de caducidad el momento límite en el que el producto se ajusta a sus
+  especificaciones siempre y cuando éste se haya conservado correctamente.
+  Esta fecha de vencimiento es una aplicación e interpretación directa de los conocimientos
+  obtenidos a partir de estudios de estabilidad.
+
+  Dentro de las propiedades que podrían verse afectadas cuando se alcanza la fecha de caducidad
+  encontramos las siguientes:
+
+
+
+
+  El tiempo de conservación se determina la mayoría de las veces en relación con la temperatura de
+  almacenamiento.
+
+  Los resultados de los estudios de estabilidad, incluidas las características físicas, químicas,
+  microbiológicas y biofarmacéuticas del medicamento, según sea necesario, se evalúan para
+  establecer un tiempo de conservación preliminar.
+  Tras haber evaluado la estabilidad del producto, en la etiqueta se pueden inscribir las
+  recomendaciones relativas a las condiciones de almacenamiento, como las siguientes:
+      - Manténgase en condiciones normales de almacenamiento; locales secos, bien ventilados,
+         a temperatura de 15 a 25ºC y en determinadas condiciones climáticas hasta 30 ºC.
+      - Manténgase entre 8 y 15º C (en lugar fresco). De no especificarse lo contrario, estos
+         productos pueden conservarse en frigorífico.
+      - Manténgase entre 2-8ºC (refrigerado).
+      - Manténgase en congelación: entre -10 y -20 ºC
+
+  Los estudios predictivos de estabilidad se hacen manejando habitualmente la temperatura
+  como variable generadora de la degradación del principio activo.
+                                                                TECNICO FARMACIA SERGAS 29
+                                                                                 Tema 12
+
+                                                                                  www.premir.es
+
+El control de caducidades se realizará siguiendo las etapas que se recogen a continuación:
+
+a) Registro manual y/o informático de la fecha de caducidad en la recepción, elaboración,
+   acondicionamiento y devoluciones
+   Se debe registrarla fecha de caducidad en:
+
+
+
+
+                                                                                                 TECNICO FARMACIA- SERGAS
+   - La recepción de productos farmacéuticos.
+   - La elaboración de preparados.
+   - El acondicionamiento de los medicamentos para su dispensación.
+   - Las devoluciones.
+   Este proceso puede hacerse de forma manual o preferentemente informatizada. En este
+   último caso, en los últimos 7 días de cada mes, se emite un listado informático con los
+   productos de que caducan en el mes siguiente.
+
+b) Revisión de caducidades:
+   El técnico de farmacia revisa los medicamentos que caducarán al finalizar el mes siguiente. Los
+   estupefacientes y muestras de ensayos clínicos serán revisados por el farmacéutico.
+   Si existe producto que va a caducar, se deberá marcar de algún modo, (ejemplo puntos rojos)
+   preferentemente con un impreso en el que figurarán el nombre do producto, código y
+   cantidad a caducar.
+   En el caso de que caduque la totalidad del stock, se deberá poner en conocimiento del
+   responsable de la gestión de stocks para realizar el correspondiente pedido si procede.
+   Una vez efectuada la revisión de caducidades, el técnico entregará el listado y el registro de
+   incidencias al farmacéutico responsable.
+
+c) Registro de la dispensación de productos que caducan al final del mes en curso
+   Cuando se dispensa algún producto que caduca al final del mes en curso, se anotará en el
+   impreso antes mencionado donde se marcó el producto a caducar y su cantidad, la cantidad
+   dispensada, unidad clínica destinataria, fecha y firma de la persona que realiza la dispensación.
+
+d) Retirada de caducidades
+   Los últimos 7 días de cada mes, con el listado de caducidades de dicho mes, el técnico de
+   farmacia retirará los medicamentos que caducan y que no fueron dispensados, cubriendo un
+   impreso de “Relación de medicamentos caducados”.
+   En el caso de medicamentos ubicados en varias localizaciones, se revisarán todos ellos. Los
+   estupefacientes serán retirados por un Farmacéutico apuntándose también en el citado
+   impreso. En el caso de estupefacientes caducados, hay que registrar el movimiento en el libro
+   de contabilidad de estupefacientes.
+   Los medicamentos caducados se colocarán en un área parte, perfectamente identificada,
+   salvo los estupefacientes, que quedarán bajo custodia del farmacéutico responsable.
+
+e) Retirada de medicamentos caducados en botiquines:
+   Con posterioridad a la retirada de medicamentos caducados en el Servicio de Farmacia, el
+   técnico de farmacia acudirá/contactará con las unidades clínicas a las que le fueron
+   dispensados los productos que caduquen al final del mes en curso y procederá a la retirada de
+   los no consumidos, cubriendo el impreso “Relación de medicamentos caducados”.
+30 TECNICO FARMACIA SERGAS
+   Tema 12
+
+   www.premir.es
+
+     Los medicamentos caducados en botiquines también se colocarán en el área de productos
+     caducados.
+
+  f) Movimiento administrativo de los productos caducados
+     La auxiliar administrativa dará la salida informática a los medicamentos relacionados en el
+     impreso “Relación de medicamentos caducados”.
+
+  g) Destino final de los medicamentos caducados
+     Ver punto 6
+
+
+
+  6. PROCEDIMIENTO DE DEVOLUCIÓN DE PRODUCTOS CADUCADOS
+  CONFORME A LA NORMATIVA
+  La devolución de medicamentos, productos sanitarios y/o materias primas se realiza por diversas
+  razones o causas, señaladas en el “REAL DECRETO ,726/1982, de 17 de marzo, por el que se regula la
+  caducidad y devoluciones de las especialidades farmacéuticas a los laboratorios farmacéuticos”:
+      - Por haberse alcanzado la fecha que indica su límite de validez.
+      - Deterioro de unidades debido a causas respecto de las cuales el laboratorio admita su
+         responsabilidad.
+      - Anulación del registro de una especialidad.
+      - Suspensión temporal de comercialización de una especialidad farmacéutica legalmente
+         autorizada.
+      - Retirada del mercado de un determinado lote, por causa debidamente justificada, si así lo
+         dispone la autoridad sanitaria competente al respecto o el propio laboratorio.
+      - Resolución fundada de 1a autoridad sanitaria competente en la que se aprecian otras
+         causas de índole técnico-sanitaria-económicas, justificativas de la devolución.
+      - El cese de actividades del laboratorio, que deberá ser comunicado inmediatamente a la
+         Dirección General de Farmacia y Medicamentos (ahora Dirección General de Farmacia y
+         Productos Sanitarios), asociaciones empresariales de la distribución y Corporación
+         farmacéutica, admitiendo y abonando en tal supuesto y en el plazo de seis meses la
+         devolución de las especialidades que los almacenes y farmacias tengan en existencia.
+
+  Conceptos:
+  Plazo de validez: es el periodo de tiempo durante el cual los ejemplares de la especialidad
+  farmacéutica mantienen la composición y actividad que se declara dentro de los límites de
+  tolerancia reglamentariamente establecidos.
+
+  Fecha de caducidad: es la fecha que señala el final del plazo de validez de cada lote. Ésta será
+  propuesta por el laboratorio preparador a la Dirección General de Farmacia y Medicamentos que
+  resolverá al respecto. La fecha de caducidad, establecida en días y meses, supone que el límite de
+  validez será el último día del mes referido en la inscripción correspondiente.
+
+  A los efectos que se prevén en este Real Decreto, se establece para todas las especialidades
+  farmacéuticas, una fecha de caducidad máxima de cinco años. En su consecuencia, los
+                                                                                TECNICO FARMACIA SERGAS 31
+                                                                                                 Tema 12
+
+                                                                                                     www.premir.es
+
+laboratorios no podrán comercializar, los almacenistas distribuir, ni las oficinas de farmacia
+dispensar, ejemplares de especialidades farmacéuticas, fuera del plazo que señala su fecha de
+caducidad.
+
+La devolución a los laboratorios de especialidades farmacéuticas cuya validez sea inferior a cinco
+
+
+
+
+                                                                                                                        TECNICO FARMACIA- SERGAS
+años, y de aquellas que contengan productos biológicos, antibióticos o cualesquiera otros que
+expresamente señale la Dirección General de Farmacia y Medicamentos no podrá hacerse antes
+de la fecha que indica su límite de validez siempre que el laboratorio mantenga una actividad
+normal.
+
+Los laboratorios no podrán suministrar a los mayoristas especialidades farmacéuticas con un
+plazo de validez inferior a seis meses, salvo supuestos especiales reglamentariamente autorizados
+por la Dirección General de farmacia y Medicamentos.
+
+En esta legislación se imponía la obligación al laboratorio adjudicatario de reponer los
+medicamentos que caducaban en poder de la Administración contratante incluso cuando
+hubieran sido entregados correctamente y con los plazos mínimos de validez establecidos en el
+Real Decreto 726/1982 (“Los laboratorios y almacenes farmacéuticos, en su caso, aceptarán obligatoriamente las
+devoluciones de especialidades que se efectúen en los plazos y condiciones que se fijen en el presente Real Decreto”). Estas
+cláusulas trasladaban al laboratorio las posibles insuficiencias en la gestión interna por parte de la
+Administración de los medicamentos, insuficiencias que se traducían en no utilizar primero los
+medicamentos con fecha de caducidad más cercana.
+
+Ahora en el artículo 268.4 de la ley 30/2007 se indica expresamente que "una vez recibidos de
+conformidad por la Administración bienes o productos perecederos, será ésta responsable de su
+gestión, uso o caducidad, sin perjuicio de la responsabilidad del suministrador por los vicios o
+defectos ocultos en los mismos". Se entiende que este nuevo artículo supone para la contratación
+de productos farmacéuticos por la Administración que ésta es la responsable de la gestión de los
+medicamentos recibidos y, en su caso, de su perecimiento. Es decir, sitúa en la Administración
+contratante la responsabilidad de una puntual gestión de los inventarios de los medicamentos,
+pudiendo negarse los laboratorios a aceptar devoluciones de productos caducados.
+
+A continuación, se explica el modo de actuación para llevar a cabo las devoluciones a los
+laboratorios farmacéuticos:
+   - Periódicamente se lleva a cabo en el servicio de Farmacia un control de las caducidades.
+       Todos aquellos medicamentos que estén caducados o "próximos" a caducar se separan del
+       resto.
+   - En el caso de tener medicamentos, productos sanitarios o materias primas caducadas
+       deben estar perfectamente identificados con el rótulo de "caducados" y alejados de las
+       zonas de almacenamiento y dispensación habituales para evitar errores.
+   - Los medicamentos, productos sanitarios o materias primas que estén próximos a caducar,
+       hay que tenerlos igualmente identificados.
+   - Estos medicamentos son remitidos por los Servicios de Farmacias a los laboratorios de
+       origen, a través o bien de su almacén distribuidor, o directamente poniéndose en contacto
+       con el laboratorio fabricante.
+32 TECNICO FARMACIA SERGAS
+   Tema 12
+
+   www.premir.es
+
+  •   La devolución no podrá hacerse antes de la fecha que indica su límite de validez. Para su
+      aceptación por el laboratorio fabricante, las devoluciones se realizarán:
+      - Por las oficinas de farmacia al mayorista o al laboratorio antes de transcurrir seis meses a
+         partir de su fecha de caducidad.
+      - Por los mayoristas a los laboratorios antes de transcurrido un año natural a partir de su
+         fecha de caducidad.
+
+  En el caso de estupefacientes caducados éstos se devolverán al almacén de distribución o al
+  laboratorio y se utilizarán los correspondientes talonarios de vales oficiales de estupefacientes. Se
+  darán de baja en el libro de estupefacientes.
+
+  Con el fin de tener un control más exhaustivo de la devolución de estas partidas se debe rellenar
+  la hoja de control de devoluciones.
+
+  Cuando se lleva a cabo la recepción de los distintos productos, medicamentos o principios activos
+  en el servicio de Farmacia, se puede detectar que vienen en condiciones defectuosas (roturas del
+  embalaje, roturas en la cadena de frío, etc.). En estos casos, el Servicio de Farmacia debe devolverlo
+  al almacén de distribución o al laboratorio.
+  Con el fin de tener un control más exhaustivo de la devolución de estas partidas se debe rellenar
+  la hoja de control de devoluciones.
+
+  •   Estupefacientes: toda devolución de estupefacientes debe ser comunicada a la Delegación
+      Provincial de la Consellería de Sanidade por el responsable del Servicio. Los envases
+      caducados incompletos o estupefacientes deteriorados se entregan a la Inspección de
+      Farmacia de la Delegación Provincial de la Consellería de Sanidade, levantándose el Acta
+      correspondiente. La copia del acta de retirada de estupefacientes debe archivarse en la unidad
+      administrativa durante un mínimo de 5 años destruyéndose posteriormente.
+
+  Los laboratorios farmacéuticos deberán comunicar, en los términos que se fijen,
+  reglamentariamente, al Ministerio de Sanidad, Servicios Sociales e Igualdad, las unidades de
+  presentaciones identificadas por lotes de medicamentos y destinatario, vendidas en territorio
+  nacional, así como las que sean objeto de devolución. Asimismo, garantizarán, en los términos
+  que se fijen reglamentariamente, la identificación de cada unidad a lo largo de su recorrido. Las
+  entidades de distribución comunicarán, en los términos que se fijen reglamentariamente, a la
+  Comunidad Autónoma en la que tengan su domicilio social y al Ministerio de Sanidad, Servicios
+  Sociales e Igualdad las unidades suministradas y las devueltas, con indicación del lote al que
+  pertenezcan así como el destinatario, tanto se trate de oficinas o servicios de farmacia como de
+  otras entidades de distribución, con independencia de la Comunidad Autónoma en la que
+  radiquen (“Real Decreto Legislativo 1/2015, de 24 de julio, por el que se aprueba el texto refundido de
+  la Ley de garantías y uso racional de los medicamentos y productos sanitarios”)
+
+  Los almacenes mayoristas y los laboratorios farmacéuticos sólo podrán aceptar devoluciones de
+  las oficinas de farmacia y servicios de farmacia a los que les hayan suministrado los medicamentos
+  objeto de la devolución, sin perjuicio de las devoluciones que pudieran recibir destinadas
+  exclusivamente a la destrucción en el ámbito de sistemas integrados de gestión de residuos, así
+  como de la aplicación, cuando proceda, de lo dispuesto en el Real Decreto 726/1982, de 17 de
+                                                                  TECNICO FARMACIA SERGAS 33
+                                                                                   Tema 12
+
+                                                                                    www.premir.es
+
+marzo, por el que se regula la caducidad y devoluciones de las especialidades farmacéuticas a los
+laboratorios farmacéuticos. (Real Decreto 782/2013, de 11 de octubre, sobre distribución de
+medicamentos de uso humano)
+
+
+
+
+                                                                                                    TECNICO FARMACIA- SERGAS
+7. RETIRADA DE PRODUCTOS POR ALERTA SANITARIA
+
+Cuando existe una alerta sanitaria por una incidencia de calidad, la agencia española del
+medicamento comunicará vía e-mail a través de la dirección de correo electrónico
+alertas.calidad@aemps.es la alerta correspondiente a los distintos centros sanitarios.
+
+Las alertas farmacéuticas suelen hacer referencia a un lote o lotes de fabricación determinados.
+(Un lote de fabricación comprende aquellas unidades de un medicamento producidas a partir de
+un mismo grupo de materiales de partida, en un proceso o una serie de procesos de fabricación y
+que se supone homogéneo). De forma habitual existen en el mercado distintos lotes de
+fabricación de los medicamentos comercializados.
+
+Es importante destacar que, en muchas ocasiones, el defecto de calidad detectado afecta a un
+único envase, sin embargo, se ordena la retirada preventiva del lote de fabricación completo al
+que pertenece, para evitar cualquier posible riesgo para la salud en el caso, de que unidades
+adicionales pudiesen estar afectadas.
+
+La clasificación de los defectos se hace en función del posible riesgo para la salud de los pacientes
+y de acuerdo con los consensos internacionales establecidos entre las autoridades sanitarias. Los
+defectos de calidad se clasifican en tres clases (1, 2 y 3) siendo la clase 1 la que se corresponde con
+un posible riesgo más elevado y la clase 3 la de un menor riesgo.
+
+La información de estas alertas va dirigida, en general, a los agentes de la cadena de distribución
+y dispensación de medicamentos (entidades de distribución, oficinas de farmacia y servicios
+farmacéuticos).
+
+De forma general, los productos retirados por la administración sanitaria competente pueden ser:
+   - Por anulación del registro de una especialidad.
+   - Suspensión temporal de comercialización de una especialidad farmacéutica legalmente
+       autorizada.
+   - Retirada del mercado de un determinado lote, por causa debidamente justificada, si así lo
+       dispone la autoridad sanitaria competente al respecto o el propio laboratorio.
+   - Resolución fundada de la autoridad sanitaria competente en la que se aprecian otras
+       causas de índole técnico-sanitaria-económicas, justificativas de la devolución.
+
+El farmacéutico responsable de la gestión de las alertas sanitarias comunicará al técnico de
+farmacia el producto y los lotes afectados de los que se podría disponer en el centro hospitalario.
+El técnico deberá revisar todas las posibles ubicaciones del producto (almacenes, botiquines,
+sistemas de dispensación automatizada, carros de parada, etc etc) comprobando la existencia de
+dichos lotes. De haber existencias, éstas deberán ser retiradas inmediatamente y ser devueltas
+34 TECNICO FARMACIA SERGAS
+   Tema 12
+
+   www.premir.es
+
+  según se indique en la propia alerta (generalmente al laboratorio fabricante). Es importante
+  notificar cuántas unidades y de qué almacenes o unidades clínicas se han retirado a los auxiliares
+  administrativos, para realizar los ajustes en los stocks correspondientes y realizar una nueva
+  dispensación a la unidad clínica afectada o incluso o un nuevo pedido al laboratorio si fuese
+  necesario.
+
+
+  8. ELIMINACIÓN DE LOS PRODUCTOS SEGÚN EL SISTEMA INTEGRAL
+  ESTABLECIDO
+
+  Actualmente la eliminación de residuos viene regulada por el Decreto 38/2015 de 26 de febrero,
+  de residuos sanitarios de Galicia (DOG de 1 de abril de 2015).
+
+         8.1. ANTECEDENTES LEGISLATIVOS DE INTERÉS
+
+  •   Decreto 460/1997 de residuos sanitarios de Galicia. Normativa para la gestión de residuos
+      de los establecimientos sanitarios.
+  •   Ley 10/1998 de residuos, norma común para todos los residuos, completada con normas
+      específicas para algunos de ellos.
+  •   Ley 22/2011 de residuos y suelos contaminados, establece el régimen jurídico de la
+      producción y gestión de residuos, así como la previsión de medidas para prevenir su
+      generación y para evitar o reducir los impactos adversos sobre la salud humana y el medio
+      ambiente asociados a la generación y gestión de estos. La nueva ley elimina el concepto de
+      residuo urbano y distingue únicamente entre residuos domésticos, residuos comerciales y
+      residuos industriales.
+  •   Orden del Ministerio de Medio Ambiente 304/2002, de 8 de febrero, por la que se publican
+      las operaciones de valorización y eliminación de los residuos y la lista europea de residuos
+      aprobada por la Decisión 2000/532/CE y sus posteriores modificaciones, en la que se refunden
+      en una sola lista las dos categorías de residuos existentes hasta el momento (peligrosos y no
+      peligrosos).
+  •   En el ámbito autonómico, la Ley 10/2008, de 3 de noviembre, de residuos de Galicia.
+      Conforme a su artículo 3, esta ley es de aplicación a todo tipo de residuos que se originen o
+      gestionen en el ámbito territorial de la Comunidad Autonómica, sin que entre las exclusiones
+      mencionadas en ese precepto se encuentren los residuos sanitarios.
+  •   Directiva 94/62/CE, del Parlamento Europeo y del Consejo, de 20 de diciembre, relativa
+      a los envases y residuos de envases.
+  •   Real Decreto 1055/2022, de 27 de diciembre, de envases y residuos de envases.
+
+         8.2. DECRETO 38/2015 DE 26 DE FEBRERO, DE RESIDUOS SANITARIOS DE GALICIA
+         (DOG DE 1 DE ABRIL DE 2015)
+
+  El Decreto 38/2015 se elaboró conjuntamente por las Consellerías de Medio Ambiente, Territorio
+  e Infraestructuras y de Sanidad, derogando el Decreto 460/1997, de 21 de noviembre. Su finalidad
+  es la de regular dentro de la Comunidad Autónoma de Galicia la gestión de los residuos
+  procedentes de las actividades sanitarias o relacionadas con ellas, con el objetivo de prevenir los
+                                                                 TECNICO FARMACIA SERGAS 35
+                                                                                  Tema 12
+
+                                                                                   www.premir.es
+
+riesgos que dicha gestión genera, tanto para las personas expuestas como para la salud pública y
+el medio ambiente, y desarrollar en el ámbito sanitario la regulación general de los residuos.
+
+El ámbito de aplicación comprende:
+    1. El ámbito de aplicación de este decreto comprende todas las actividades de producción y
+
+
+
+
+                                                                                                  TECNICO FARMACIA- SERGAS
+       de gestión de los residuos sanitarios, de ámbito público o privado, que se produzcan o
+       gestionen dentro de la Comunidad Autónoma de Galicia.
+    2. A los efectos de este decreto, se entienden por residuos sanitarios los siguientes:
+       a) Los generados como consecuencia de las actividades llevadas a cabo en un centro,
+           servicio o establecimiento sanitario de los recogidos en el Decreto 12/2009, de 8 de
+           enero, por el que se regula la autorización de centros, servicios y establecimientos
+           sanitarios, o normativa que lo modifique o sustituya.
+       b) Los residuos a los que se atribuya la naturaleza de residuos sanitarios por disposición
+           legal o reglamentaria.
+       c) Los generados por los centros, servicios y establecimientos veterinarios asistenciales y
+           centros de investigación animal.
+       d) residuos recogidos en la clases IIa y III del anexo VII, que se generen en establecimientos
+           que presten servicios de cuidados estéticos, como centros de estética, tatuaje,
+           micropigmentación y piercing, y en tanatorios.
+
+   3. Quedan excluidos del ámbito de aplicación del presente decreto:
+      a) Los residuos radiactivos gestionados de acuerdo con el Real decreto 102/2014, de 21
+         de febrero, para la gestión responsable y segura del combustible nuclear gastado y los
+         residuos radiactivos, o norma que lo modifique o sustituya.
+      b) Cadáveres y restos humanos de entidad suficiente, que comprenden las partes del
+         cuerpo humano procedentes de abortos, mutilaciones, operaciones quirúrgicas,
+         autopsias clínicas o judiciales y actividades de docencia e investigación, de relevancia
+         anatómica o legal, gestionados de acuerdo con el Decreto 151/2014, de 20 de
+         noviembre, de sanidad mortuoria de Galicia, o norma que lo modifique o sustituya.
+      c) Los cadáveres de animales y subproductos animales, cubiertos por el Reglamento
+         (CE) núm. 1069/2009 del Parlamento Europeo y del Consejo, de 21 de octubre de 2009,
+         por el que se establecen las normas sanitarias aplicables a los subproductos animales
+         y los productos derivados no destinados al consumo humano.
+
+a) CLASIFICACIÓN DE RESIDUOS
+
+   Se elabora una nueva clasificación de los residuos, en función de su peligrosidad y el riesgo
+   asociado a la actividad sanitaria:
+
+   1. Residuos sanitarios no peligrosos:
+      a. Clase I: residuos domésticos, son residuos generados en los centros sanitarios similares
+         a los producidos en los hogares. Ej: papel, cartón, aceites, restos de poda, etc
+      b. Clase II: residuos no domésticos, son residuos generados en los centros sanitarios
+         diferentes de los producidos en los hogares.
+36 TECNICO FARMACIA SERGAS
+   Tema 12
+
+   www.premir.es
+
+        Se incluyen en esta clase:
+
+        1º. Clase IIa: residuos específicos de la actividad sanitaria, que son los generados en los
+        centros sanitarios, diferentes de los producidos en los hogares, como resultado de la
+        actividad sanitaria propiamente dicha. Ej: películas y papel fotográfico, residuos químicos,
+        residuos de objetos cortantes y punzantes que no son objeto de requisitos especiales para
+        prevenir infecciones, residuos de medicamentos caducados y/o descartados distintos de
+        los especificados en la clase IV etc
+        2º. Clase IIb: residuos no específicos de la actividad sanitaria, que son los generados en
+        los centros sanitarios, diferentes de los producidos en los hogares, y que no son resultado
+        de la actividad sanitaria propiamente dicha. Ej: equipos eléctricos y electrónicos no
+        peligrosos, cartuchos de tóner, ropa y textil, etc
+
+     2. Residuos sanitarios peligrosos:
+
+        a. Clase III: residuos sanitarios biocontaminados, son residuos que requieren una
+           gestión diferenciada tanto en el interior de los centros como en el exterior, en todas las
+           etapas de la gestión.
+
+            Se incluyen en esta clase:
+            1º. Residuos procedentes de la actividad sanitaria de pacientes afectados por
+            patologías relacionadas en el anexo I del presente decreto.
+            2º. Residuos de cultivos o reservas de agentes infecciosos y material de desecho en
+            contacto con ellos, incluyendo los filtros de alta eficacia de las campanas de flujo
+            laminar.
+            3º. Residuos de vacunas con agentes vivos o atenuados.
+            4º. Residuos de animales de experimentación, cadáveres y restos anatómicos de ani-
+            males infectados o inoculados con agentes infecciosos responsables de las patologías
+            incluidas en el anexo I del presente decreto.
+
+        b. Clase IV: son residuos de citostáticos y citotóxicos y todo material utilizado en su
+           preparación o en contacto con ellos (incluidos filtros de campanas verticales, equipos
+           de infusión etc)
+
+        c. Clase V: otros residuos peligrosos, son los residuos peligrosos generados en los centros
+           sanitarios no incluidos en las clases III y IV. Ej: residuos de Hg reactivo, piezas de
+           anatomía en formol, cartuchos desechables de óxido de etileno, absorbentes y ropa
+           contaminada, baterías, amalgamas de odontología, aceites, equipos de frío, etc
+
+  Se incluye un nuevo anexo de enfermedades cuyos residuos tienen peligrosidad.
+                                                               TECNICO FARMACIA SERGAS 37
+                                                                                Tema 12
+
+                                                                                www.premir.es
+
+ANEXO I: Residuos de enfermedades infecciosas objeto de requisitos especiales para
+prevenir infecciones.
+
+1) Cualquier residuo de materiales, objetos o sustancias que estén en contacto con pacientes
+   afectados de las siguientes enfermedades infecciosas:
+
+
+
+
+                                                                                               TECNICO FARMACIA- SERGAS
+   - Fiebres hemorrágicas víricas, tales como:
+           - Fiebre hemorrágica del Congo-Crimea.
+           - Fiebre de Lasa.
+           - Marbug.
+           - Ébola.
+           - Fiebre hemorrágica argentina (Junin).
+           - Fiebre hemorrágica boliviana (Machupo).
+   - Complejo encefalítico transmitido por artrópodos vectores (arbovirus): Absettarow,
+        Hanzalova, Hypr, Kumlinge, KiasanurForestDisease, fiebre hemorrágica de Omsk,
+        Russianspring-summerencephalitis.
+   - Herpes virus simiae (Monkey B virus).
+   - Rabia.
+   - Carbunco (Bacillusanthracis).
+   - Muermo.
+   - Mieloidosis.
+   - Difteria.
+   - Tularemia.
+   - Viruela (erradicada).
+   - Creutzfeld-Jakob u otras producidas por priones.
+2) Residuos contaminados con heces de pacientes afectados por las siguientes infecciones:
+   - Cólera.
+   - Disentería amebiana.
+3) Residuos contaminados con secreciones respiratorias de pacientes con las siguientes
+   infecciones:
+   - Tuberculosis.
+   - Fiebre Q.
+4) Filtros de diálisis de máquinas reservadas a pacientes portadores de las siguientes infecciones
+   de transmisión sanguínea:
+   - Hepatitis B.
+   - Hepatitis C.
+   - Virus de la inmunodeficiencia humana (VIH).
+5) Residuos de actividades de análisis o experimentación microbiológica, contaminados con
+   agentes infecciosos o productos biológicos derivados, tales como:
+   - Cultivos de agentes infecciosos y material de desecho en contacto con ellos: placas de
+        Petri, hemocultivos, extractos líquidos, caldos, instrumental contaminado, etcétera.
+   - Reservas de agentes infecciosos.
+   - Vacunas vivas o atenuadas, salvo materiales manchados de un solo uso.
+6) Residuos de cadáveres, partes del cuerpo y otros residuos anatómicos de animales de
+   experimentación que sean inoculados con los agentes infecciosos responsables de las
+38 TECNICO FARMACIA SERGAS
+   Tema 12
+
+   www.premir.es
+
+     infecciones que se citan en los puntos 1, 2, 3 y 4, así como residuos procedentes de los lechos
+     de estabulación de tales animales.
+     - Entre las modificaciones en la gestión de los residuos se incluyen:
+         • Posibilidad de un almacenamiento intermedio en los centros sanitarios, además del
+            almacenamiento final, previo a la retirada por el gestor externo. Ya no se especifican
+            las 72 horas como periodo máximo de almacenamiento.
+         • No se establece ningún grosor mínimo de las bolsas que contengan residuos, ni
+            tampoco se establece un color determinado para las mismas.
+         • Se permite el tratamiento final de los residuos sanitarios en los centros productores,
+            previa autorización de las autoridades sanitarias.
+         • Anexo en el que se incluye un catálogo de los residuos sanitarios y el grupo en el que
+            se incluyen cada uno de los residuos generados.
+
+  b) Gestión de los residuos
+  Gestión de los residuos en la clase I
+  Los residuos domésticos se separarán de manera selectiva y conforme a la normativa vigente en
+  materia de residuos, y a lo establecido en los planes de residuos que sean de aplicación y en las
+  ordenanzas municipales que correspondan.
+
+  Gestión de los residuos de la clase II
+  1. Los residuos no domésticos se recogerán en envases o recipientes que faciliten su tratamiento
+  y en condiciones que eviten los riesgos para la salud humana y el medio ambiente.
+  2. Las bolsas de plástico destinadas a la recogida y almacenaje de residuos deberán ser opacas,
+  impermeables y lo suficientemente resistentes como para, de una manera segura, contener la
+  clase de residuo para la que fueron diseñadas.
+  3. La gestión de los residuos de cortantes y punzantes de la clase IIa se realizará de igual modo
+  que la de los residuos sanitarios de la clase III.
+
+  Gestión de los residuos de las clases III y IV
+  1. Estos residuos se recogerán en recipientes adecuados al tipo de residuos y al punto de
+  producción, y que cumplan las siguientes características:
+          a) Rígidos y de libre sustentación.
+          b) Opacos, impermeables y resistentes a la humedad.
+          c) Resistentes a perforación interna o externa.
+          d) Provistos de cierre hermético.
+          e) Composición que garantice que en su destrucción se eviten o minimicen las emisiones
+          tóxicas.
+  2. Solo podrán ser reutilizados los recipientes utilizados para contener residuos de la clase III, y
+  después de someterse a un proceso de preparación para la reutilización que deberá ser autorizado
+  de la manera prevista en el artículo 15. (Control de las operaciones de gestión extracentro que
+  precisa autorización previa de la Consellería competente en materia de medio ambiente).
+  3. Los recipientes y los contenedores utilizados en el almacenamiento y transporte intracentro se
+  etiquetarán de acuerdo con lo establecido en la normativa general de residuos. Se rotularán con
+  los pictogramas de biorriesgo o citotóxico, o con ambos, y con sus textos asociados, cuando
+  contengan residuos de estas clases, tales como los que aparecen en el anexo VI.
+                                                                 TECNICO FARMACIA SERGAS 39
+                                                                                  Tema 12
+
+                                                                                   www.premir.es
+
+4. Los residuos cortantes y punzantes se depositarán en envases específicos y dispondrán de
+dispositivos de seguridad que impidan su apertura.
+
+Gestión de los residuos de la clase V
+El envasado, etiquetado y separación de estos residuos se hará según la legislación vigente para
+
+
+
+
+                                                                                                  TECNICO FARMACIA- SERGAS
+este tipo de residuos y, en concreto, según la Ley 22/2011, de 28 de julio, de residuos y suelos
+contaminados, y la Ley 10/2008, de 3 de noviembre, de residuos de Galicia.
+
+c) TRATAMIENTO DE LOS DISTINTOS GRUPOS DE RESIDUOS.
+
+Tratamiento de los residuos en los propios centros de producción
+    § Los productores podrán proceder al tratamiento de los residuos en el mismo centro
+      sanitario, para lo cual requerirán la autorización expresa del órgano con competencia en
+      materia ambiental.
+    § Las operaciones de tratamiento se ajustarán a lo dispuesto en el artículo 13. Todos los
+      datos de las operaciones de control, los incidentes durante el mantenimiento y, en
+      especial, las averías o anomalías del funcionamiento deberán quedar registradas y estar
+      disponibles en todo momento para conocimiento del órgano de dirección con
+      competencias en materia de salud pública de la consellería competente en materia de
+      sanidad durante un período de cinco años, sin perjuicio de las competencias que
+      correspondan a otras consellerías o administraciones públicas.
+    § Los residuos sanitarios líquidos de la clase IIa, constituidos por fluidos corporales, así
+      como residuos de nutrición parenteral que no pertenezcan a ninguna de las clases de
+      residuos considerados peligrosos, podrán eliminarse mediante vertido por un desagüe
+      conectado a la red de saneamiento del centro sanitario, siempre que se cumplan las
+      condiciones establecidas en las correspondientes ordenanzas municipales y normas
+      adicionales de aplicación, manteniendo las medidas preventivas que correspondan. En
+      caso de que los envases que contengan este tipo de residuos presenten dificultades para
+      su apertura y posterior vertido se gestionarán como clase IIa.
+
+Tratamiento de los residuos de gestión extracentro
+    § El tratamiento de los residuos deberá realizarse de acuerdo con lo establecido en la Ley
+      22/2011, de 28 de julio, en la Ley 10/2008, de 3 de noviembre, y en las ordenanzas
+      municipales correspondientes, de acuerdo con las condiciones específicas que se
+      establezcan para desarrollar la actividad en las autorizaciones expedidas por los órganos
+      competentes.
+    § El tratamiento de los residuos de la clase III deberá atender a criterios de inocuidad, higiene
+      y salubridad, con el fin de garantizar la eliminación de los gérmenes patógenos y la
+      protección de la salud pública, de los trabajadores implicados y la del medio ambiente.
+    § Los residuos de la clase III se deberán someter a un proceso de esterilización en las
+      condiciones especificadas en el anexo V, o de incineración.
+      Requisitos de los tratamientos de esterilización: Los residuos sanitarios incluidos en la clase
+      III se someterán a un proceso de esterilización mediante vapor caliente a presión, por
+      técnica de autoclave, es decir, mediante acción desinfectante por proceso fraccionado de
+      vapor al vacío.
+40 TECNICO FARMACIA SERGAS
+   Tema 12
+
+   www.premir.es
+
+     §   Los residuos contaminados por la enfermedad de Creutzfeld-Jakob, por otras
+         enfermedades producidas por priones, y las que reglamentariamente se determinen, solo
+         podrán ser gestionados mediante incineración.
+     §   Los residuos de la clase IV solamente se podrán someter a un proceso de incineración.
+         Únicamente en situaciones excepcionales en que la incineración no sea posible, podrá
+         emplearse la desactivación química para aquellos agentes susceptibles de ser
+         neutralizados mediante este procedimiento.
+     §   Los equipos empleados en el tratamiento de los residuos dispondrán del marcado CE y de
+         la correspondiente declaración de conformidad y su instalación, puesta en servicio,
+         mantenimiento y utilización se atendrán a lo indicado en el manual de instrucciones, todo
+         ello según la normativa sobre seguridad industrial y sin perjuicio de lo contemplado en
+         otras normativas sanitarias y de medio ambiente.
+     §   El gestor elaborará y aplicará un programa de mantenimiento y control de sus equipos e
+         instalaciones que garanticen su buen funcionamiento, efectividad de los procesos de
+         tratamiento y que verifique que las emisiones y efluentes resultantes de ellos se
+         encuentran dentro de los límites exigidos por la normativa vigente en materia de
+         protección ambiental y de la salud de los trabajadores.
+
+
+
+
+         8.3. SIGRE
+
+  SIGRE Medicamento y Medio Ambiente es una entidad sin ánimo de lucro creada para garantizar
+  la correcta gestión medioambiental de los envases y residuos de medicamentos de origen
+  doméstico.
+
+  Puesto en marcha en 2001, fruto de la colaboración entre la industria farmacéutica, las farmacias
+  y las empresas de distribución farmacéutica, trabajan para ser un modelo eficaz y eficiente.
+                                                               TECNICO FARMACIA SERGAS 41
+                                                                                Tema 12
+
+                                                                                www.premir.es
+
+Todos los ingresos generados se destinarán íntegramente a su fin social. Por ello, las tarifas se
+determinarán de forma que permitan cubrir todos los costes asociados a su funcionamiento,
+financiar la gestión de los residuos de envases generados y permitir el cumplimiento de las
+obligaciones establecidas en el Reglamento de Envases a sus empresas adheridas.
+
+
+
+
+                                                                                               TECNICO FARMACIA- SERGAS
+SIGRE persigue un doble objetivo:
+   • El medioambiental: reduciendo los perjuicios que los envases y residuos de medicamentos
+       pueden ocasionar en el medio ambiente.
+   • El sanitario: favoreciendo la no acumulación de medicamentos en los hogares y
+       sensibilizando al ciudadano sobre su uso responsable.
+   • El papel de cada agente en SIGRE:
+   • La industria: financia el Sistema y realiza medidas de ecodiseño sobre sus envases
+   • La distribución: aporta la logística
+   • La oficina de farmacia: asesora al ciudadano y custodia el Punto SIGRE.
+
+SIGRE EN LA NORMATIVA SANITARIA Y MEDIOAMBIENTAL
+
+La normativa sanitaria y medioambiental sustenta jurídicamente el funcionamiento del Sistema
+SIGRE:
+
+v LEGISLACIÓN SANITARIA:
+  • Directiva europea 2004/27/CE, por la que se establece un código comunitario de
+       medicamentos de uso humano. “Los Estados Miembros garantizarán la existencia de
+       sistemas adecuados de recogida de los medicamentos no utilizados o caducados”.
+    • Real Decreto 1345/2007, sobre autorización, registro y condiciones de dispensación de los
+       medicamentos de uso humano.
+Obligatoriedad de incluir en el embalaje exterior los símbolos autorizados por la Agencia Española
+de Medicamentos y Productos Sanitarios, a efectos de facilitar la aplicación y desarrollo de los
+sistemas de recogida de medicamentos y favorecer la protección del medio ambiente.
+42 TECNICO FARMACIA SERGAS
+   Tema 12
+
+   www.premir.es
+
+  v LEGISLACIÓN MEDIOAMBIENTAL:
+     •   Ley 22/2011, de residuos y suelos contaminado. En aplicación del principio de
+         responsabilidad compartida, todos los agentes implicados en la comercialización de un
+         producto deberán contribuir en la gestión de sus residuos.
+     •   Autorizaciones administrativas (Consejerías de Medio Ambiente) y Ordenanzas locales
+         (Ayuntamientos). Recogen los requisitos de funcionamiento del Sistema (características
+         del Punto SIGRE, ubicación en el interior de las farmacias, etc.).
+     •   El Símbolo SIGRE se encuentra autorizado por la Agencia Española de Medicamentos y
+         Productos Sanitarios (AEMPS) y la Agencia Europa de Medicamentos (EMA) y es la garantía
+         para el ciudadano de que, una vez utilizado ese medicamento, depositando su envase en
+         el Punto SIGRE, tanto éste como los residuos de medicamentos que pueda contener van a
+         recibir un correcto tratamiento medioambiental.
+
+  EL PUNTO SIGRE EN LOS PROSPECTOS: asimismo, la AEMPS, a través de su Circular 1/2011,
+  reguló la información que deben contener los prospectos sobre la forma correcta de eliminar de
+  manera responsable los residuos de medicamentos que se generan en los domicilios. Para ello,
+  deben incluir la siguiente leyenda:
+
+
+
+
+  FUNCIONAMIENTO
+
+  SIGRE ha sido diseñado como un sistema de gestión cerrado, basado en un proceso de logística
+  inversa, en el que se aprovecha la entrega de nuevos medicamentos a la farmacia para realizar la
+  recogida de los residuos depositados en el Punto SIGRE. A través de este modelo se consigue
+  reducir las emisiones de CO2 generadas por el transporte de los residuos y se garantiza el control
+  farmacéutico para evitar sustracciones o su uso ilícito.
+  La actividad desarrollada por SIGRE se inicia con la recogida de los residuos de medicamentos a
+  través de los contenedores blancos instalados en las oficinas de farmacia (Puntos SIGRE), donde
+  los consumidores depositan los medicamentos que ya no necesiten o que estén caducados, así
+  como sus envases vacíos.
+
+  A continuación, la distribución farmacéutica recoge las bolsas SIGRE que contienen los envases
+  vacíos o con restos de medicamentos y los almacena en contenedores estancos ubicados en sus
+  instalaciones, desde donde son retirados por gestores autorizados para su transporte hasta la
+  Planta de Tratamiento de Envases y Residuos de Medicamentos, ubicada en Tudela del Duero
+  (Valladolid).
+  En esta Planta, los residuos de medicamentos son clasificados para su posterior envío a gestores
+  autorizados de residuos, que se encargarán de realizar el tratamiento final de los mismos.
+                                                                TECNICO FARMACIA SERGAS 43
+                                                                                 Tema 12
+
+                                                                                  www.premir.es
+
+SIGRE se encarga de gestionar un sistema eficiente para el correcto reciclado de los envases, vacíos
+o con restos de medicamentos, en el que participan todos los agentes del sector. Nuestra actividad
+está supervisada y tutelada por las autoridades ambientales a través de las Consejerías de Medio
+Ambiente de las distintas Comunidades y Ciudades Autónomas.
+
+
+
+
+                                                                                                 TECNICO FARMACIA- SERGAS
+Una de las principales labores de SIGRE es promover el nuevo modelo de economía circular en el
+sector farmacéutico. Por ello, desde SIGRE se impulsa el ecodiseño en los envases de los
+medicamentos para que cada vez sean más ligeros, menos contaminantes y más fácilmente
+reciclables.
+SIGRE se encarga de elaborar los Planes Empresariales de Prevención y Ecodiseño (PEPE) de
+envases del sector farmacéutico, en los que se proponen los objetivos a alcanzar y las medidas
+que pueden aplicar los laboratorios para reducir su impacto ambiental.
+Actualmente está en desarrollo el PEPE 2024-2028, el noveno plan que acomete la industria
+farmacéutica desde el año 2000 para seguir progresando en la aplicación de los principios de la
+economía circular y contribuir a los objetivos establecidos en la normativa vigente.
+44 TECNICO FARMACIA SERGAS
+   Tema 12
+
+   www.premir.es
+
+                            ¿Qué se puede depositar en SIGRE?
+
+
+
+
+  Las radiografías, pilas termómetros gafas, etc se deben depositar en los Puntos Limpios o
+  Ecoparques municipales.
+  Las agujas u objetos cortantes, hay que consultar a nivel del municipio si existe una recogida
+  específica para este tipo de residuos. De manera excepcional, se pueden depositar en el Punto
+  SIGRE las agujas que vayan unidas al envase del medicamento y no puedan separarse del mismo
+  (por ejemplo, las jeringas precargadas de insulina), pero siempre y cuando dichas agujas estén
+  tapadas o protegidas correctamente con su capuchón o dispositivo protector.
+  Los productos de parafarmacia, en general no se pueden depositar. Sólo se admiten algunos
+  productos de parafarmacia similares en su forma y presentación a un medicamento que están
+  identificados con el Símbolo SIGRE en el envase.
+  Los materiales de cura como gasas, tiritas… se deben depositar en el contenedor gris.
+
+  En España, y siguiendo las instrucciones de la Agencia Española de Medicamentos y Productos
+  Sanitarios sobre donaciones de medicamentos, se prohíbe el uso de los medicamentos
+  depositados en SIGRE, para nuevos pacientes (sean en el propio país o en otros países) debido al
+  riesgo sanitario que su reutilización conlleva. Esto se debe a que los medicamentos donados
+  deben tener las mismas garantías de calidad, seguridad y eficacia que los comercializados en
+  nuestro país. Además, por su impacto sobre la salud y el medioambiente, debe provenir de un
+  canal de suministro controlado como el farmacéutico, para poder garantizar la calidad de los
+  medicamentos.
+                                                                TECNICO FARMACIA SERGAS 45
+                                                                                 Tema 12
+
+                                                                                 www.premir.es
+
+9. APLICACIONES INFORMÁTICAS DE GESTIÓN Y CONTROL DE
+ALMACÉN
+En general, para gestionar el enorme número de productos disponibles para farmacia hospitalaria
+es indispensable el uso de programas informáticos.
+
+
+
+
+                                                                                                TECNICO FARMACIA- SERGAS
+Las aplicaciones informáticas que se emplean incluyen módulos de gestión de aprovisionamiento
+integrados con la dispensación y con el control de existencias, sirven para recoger la información
+que luego usaremos para decidir el momento y la cantidad de compra de cada producto,
+almacenan ordenadamente esta información y nos permiten recuperarla para la gestión de
+compras
+
+Si se predefinen los criterios oportunos, cuando el programa detecta que el volumen de
+existencias queda por debajo del mínimo establecido, el sistema informático nos avisa para
+efectuar un pedido.
+Otro instrumento fundamental son las nuevas tecnologías de la información y comunicación: los
+pedidos pueden transmitirse directamente por internet con estos aplicativos.
+Los proveedores ofrecen diversas posibilidades de interconexión para facilitar la recepción de los
+pedidos. Ellos también actúan como potentes sistemas informáticos que, ante la recepción de un
+pedido, responden instantáneamente con la información de los productos de los que carecen y
+no van a poder suministrar.
+Al recibir los productos farmacéuticos en el almacén éstos deben darse de alta a nivel informático
+para un correcto control del stock. Esto puede hacerse de forma manual o utilizando un lector
+óptico que lee el código de barras e introduce su información en el sistema informático,
+ahorrando el trabajo de la introducción manual de los códigos.
+Los programas informáticos integran todos los procesos de gestión de farmacia hospitalaria, y
+generalmente se presentan organizados en módulos o bloques de gestión (ej pedidos, gestión de
+stocks, proveedores…)
+En cuanto al control de existencias o productos cada programa proporciona unas posibilidades
+diferentes. Pueden incorporar criterios de stock mínimo, stock de alerta (a partir del cual se debe
+reponer) y stock máximo (al cual se debe llegar cuando se repone), pero además se pueden
+configurar aspectos relacionados con la optimización de stock, la previsión estadística para la
+petición de productos estacionales, etc.
+A nivel del sistema público de salud, también existen numerosos programas informáticos que
+permiten/facilitan la gestión de todos los procesos que se llevan a cabo en los Servicios de
+Farmacia.
+Actualmente, en el SERGAS están disponibles los aplicativos de gestión de farmacia Silicon® y
+Sinphos®.
+Son programas integrables con el resto de sistemas de información del hospital, y actualmente
+tienen distinto grado de implantación en cada uno de los hospitales del SERGAS.
+El programa Sinphos® (en extinción, está siendo sustituido progresivamente en sus distintas
+aplicaciones por Silicom®), actualmente sirve para realizar la gestión completa del stock de
+medicamentos del Servicio de Farmacia: compras, inventario, control de caducidades, control de
+dispensación/devoluciones a las diferentes unidades clínicas, stock en almacén/es, etc etc
+46 TECNICO FARMACIA SERGAS
+   Tema 12
+
+   www.premir.es
+
+  ANEXO: Tubos neumáticos
+  El sistema de tubos neumáticos se usa frecuentemente para la distribución de medicamentos en
+  centros sanitarios. No es apropiado para todos los medicamentos ya que puede favorecer su
+  desnaturalización o la aparición de otros procesos degradativos. Es necesario disponer, actualizar,
+  y dar a conocer una guía de medicamentos no válidos para su distribución en este sistema.
+
+  Causas que pueden desaconsejar el envío de medicación por tubo neumático
+
+   Causa                Ejemplos
+   Limitadas por las    § Productos explosivos o inflamables
+   instalaciones        § Peso o volumen excesivo
+   Limitadas      por   § Macromoléculas de alto peso molecular por riesgo de
+   posible alteración      desnaturalización
+   de la medicación     § Rotura de emulsiones
+                        § Craking de suspensiones
+                        § Medicación que en su embalaje avise “no agitar”
+                        § Formación de espuma
+                        § Medicación de tiempo de administración muy corto, como
+                           algunos medicamentos parenterales una vez reconstituidos, o
+                           medicación congelada
+   Otras                § Estupefacientes, medicación de ensayos clínicos u otros fármacos
+   características   de    de especial control (incluidos los de alto coste)
+   la medicación        § Productos citotóxicos o de radiofarmacia
+                        § Productos de terapias avanzadas
+
+  Normas generales para el envío de medicación por tubo neumático
+   Usarlo para pedidos no programados
+   La         medicación          deberá        estar         correctamente      identificada:
+   a. Principio activo, nombre comercial, fecha de caducidad y lote
+   b.                        El                       servicio                    destinatario
+   c. El paciente al que va destinada la medicación en los casos de medicación controlada por
+   paciente
+   d. La persona que ha solicitado el envío por tubo neumático
+   Confirmar previamente con la estación receptora el envío de la medicación (vía teléfono o
+   mensajería de ordenador)
+   No forzar los contenedores de envío de los tubos neumáticos
+   La medicación deberá estar convenientemente protegida para evitar su deterioro durante
+   el transporte, usando material acolchado o aislante térmico para la medicación
+   termosensible
+   Si se envían jeringas precargadas preparadas en el servicio de farmacia, nunca se enviará
+   con agujas, sino que se emplearán los tapones correspondientes
+   Respetar las restricciones de envío por tipo de medicación
+                                                                      TECNICO FARMACIA SERGAS 47
+                                                                                       Tema 12
+
+                                                                                         www.premir.es
+
+11. BIBLIOGRAFÍA
+
+-   Ley 10/2013, de 24 de julio, por la que se incorporan al ordenamiento jurídico español las Directivas
+    2010/84/UE del Parlamento Europeo y del Consejo, de 15 de diciembre de 2010, sobre
+    farmacovigilancia, y 2011/62/UE del Parlamento Europeo y del Consejo, de 8 de junio de 2011, sobre
+
+
+
+
+                                                                                                         TECNICO FARMACIA- SERGAS
+    prevención de la entrada de medicamentos falsificados en la cadena de suministro legal, y se modifica
+    la Ley 29/2006, de 26 de julio, de garantías y uso racional de los medicamentos y productos sanitarios.
+-   Ley 29/2006, de 26 de julio, de garantías y uso racional de los medicamentos y productos sanitarios.
+-   Real Decreto Legislativo 1/2015, de 24 de julio, por el que se aprueba el texto refundido de la Ley de
+    garantías y uso racional de los medicamentos y productos sanitarios.
+-   Real Decreto 726/1982 por el que se regula la caducidad y devolución de especialidades farmacéuticas
+    a los laboratorios farmacéuticos.
+-   Resolución de 2 de Diciembre de 1.983 de la Dirección General de Farmacia y Medicamentos: Normas
+    sobre devolución de especialidades farmacéuticas que contienen estupefacientes de la lista I del
+    Convenio de Estupefacientes de 1.961.
+-   Real Decreto 782/2013, de 11 de octubre, sobre distribución de medicamentos de uso humano
+-   LEY 30/2007, de 30 de octubre, de Contratos del Sector Público.
+-   Real Decreto 1675/2012, de 14 de diciembre, por el que se regulan las recetas oficiales y los requisitos
+    especiales de prescripción y dispensación de estupefacientes para uso humano y veterinario.
+-   DECRETO 38/2015, de 26 de febrero, de residuos sanitarios de Galicia.
+-   Libro FARMACIA HOSPITALARIA - TOMO I Coordinadora: Mª Cinta Gamundi Planas 2002.
+-   Francisco J. Farfán Sedano; Mª Jesús Frutos Sastre. "La farmacia Hospitalaria para técnicos en farmacia".
+    AMV Ediciones
+-   Editorial CEP: Técnico en Farmacia del Servicio Gallego de salud. Temarios específico 2015.
+-   www.sigre.es
+-   https://www.sefh.es/fh/dx.doi.org/10.1016/j.farma.2010.07.003
+48 TECNICO FARMACIA SERGAS
+   Tema 12
+
+   www.premir.es
+
