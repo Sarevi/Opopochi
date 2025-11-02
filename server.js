@@ -32,13 +32,26 @@ app.use(session({
   cookie: {
     maxAge: 7 * 24 * 60 * 60 * 1000, // 7 días
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production'
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax'
   }
 }));
 
 // Middleware optimizado para producción
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://*.onrender.com'],
+    origin: function(origin, callback) {
+      // Permitir requests sin origin (como apps móviles o curl)
+      if (!origin) return callback(null, true);
+
+      // Permitir localhost para desarrollo
+      if (origin.includes('localhost')) return callback(null, true);
+
+      // Permitir cualquier dominio de Render
+      if (origin.includes('.onrender.com')) return callback(null, true);
+
+      // Rechazar otros orígenes
+      callback(new Error('Not allowed by CORS'));
+    },
     credentials: true
 }));
 app.use(express.json({ limit: '10mb' }));

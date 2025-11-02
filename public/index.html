@@ -1382,9 +1382,10 @@
             try {
                 const response = await fetch(`${API_BASE}/api/health`, {
                     method: 'GET',
+                    credentials: 'include',
                     headers: { 'Content-Type': 'application/json' }
                 });
-                
+
                 if (response.ok) {
                     const health = await response.json();
                     updateServerStatus('online', 'Servidor en línea');
@@ -1395,7 +1396,7 @@
             } catch (error) {
                 console.log('❌ Servidor no disponible:', error.message);
             }
-            
+
             updateServerStatus('offline', 'Modo demostración');
             isServerOnline = false;
             return false;
@@ -1737,27 +1738,29 @@
         async function loadAvailableTopics() {
             try {
                 console.log('🔄 Cargando temas...');
-                
+
                 if (!isServerOnline) {
                     loadDemoTopics();
                     return;
                 }
-                
-                const response = await fetch(`${API_BASE}/api/documents-status`);
-                
+
+                const response = await fetch(`${API_BASE}/api/documents-status`, {
+                    credentials: 'include'
+                });
+
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
-                
+
                 const status = await response.json();
-                
-                availableTopics = Object.entries(status).filter(([id, config]) => 
+
+                availableTopics = Object.entries(status).filter(([id, config]) =>
                     config.files && config.files.some(file => file.exists)
                 );
-                
+
                 populateTopicSelect();
                 updateTopicInfo();
-                
+
             } catch (error) {
                 console.error('❌ Error cargando temas:', error);
                 loadDemoTopics();
