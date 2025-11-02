@@ -20,6 +20,9 @@ const port = process.env.PORT || 3000;
 // Inicializar base de datos
 db.initDatabase();
 
+// Confiar en proxies (necesario para Render)
+app.set('trust proxy', 1);
+
 // Middleware de sesiones
 app.use(session({
   store: new SQLiteStore({
@@ -29,11 +32,12 @@ app.use(session({
   secret: process.env.SESSION_SECRET || 'oposiciones-secret-key-change-in-production',
   resave: false,
   saveUninitialized: false,
+  proxy: true,  // CRÍTICO: Confiar en el proxy de Render
   cookie: {
     maxAge: 7 * 24 * 60 * 60 * 1000, // 7 días
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax'  // lax funciona para same-origin y es más seguro
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax'  // 'none' necesario para HTTPS con proxy
   }
 }));
 
@@ -474,21 +478,28 @@ async function getRandomChunkFromTopics(topics) {
 
 // Middleware para verificar si el usuario está autenticado
 function requireAuth(req, res, next) {
+  console.log('🔒 requireAuth - Session ID:', req.sessionID, '- User ID en sesión:', req.session.userId);
+  console.log('🔒 requireAuth - Cookie header:', req.headers.cookie);
+
   if (!req.session.userId) {
+    console.log('❌ No hay userId en la sesión - Rechazando petición');
     return res.status(401).json({ error: 'No autenticado', requiresLogin: true });
   }
 
   // Verificar que el usuario existe y está activo
   const user = db.getUserById(req.session.userId);
   if (!user) {
+    console.log('❌ Usuario no encontrado en DB');
     req.session.destroy();
     return res.status(401).json({ error: 'Usuario no encontrado', requiresLogin: true });
   }
 
   if (user.estado === 'bloqueado') {
+    console.log('❌ Usuario bloqueado:', user.username);
     return res.status(403).json({ error: 'Cuenta bloqueada. Contacta al administrador.' });
   }
 
+  console.log('✅ requireAuth OK - Usuario:', user.username);
   req.user = user;
   next();
 }
@@ -571,14 +582,25 @@ app.post('/api/auth/login', (req, res) => {
 
     // Guardar en sesión
     req.session.userId = result.user.id;
-    console.log('✅ Login exitoso - Usuario ID:', result.user.id, '- Session ID:', req.sessionID);
 
-    res.json({
-      success: true,
-      user: {
-        id: result.user.id,
-        username: result.user.username
+    // Forzar guardado de sesión
+    req.session.save((err) => {
+      if (err) {
+        console.error('❌ Error guardando sesión:', err);
+        return res.status(500).json({ error: 'Error guardando sesión' });
       }
+
+      console.log('✅ Login exitoso - Usuario ID:', result.user.id, '- Session ID:', req.sessionID);
+      console.log('📦 Sesión guardada:', { userId: req.session.userId, sessionID: req.sessionID });
+      console.log('🍪 Cookie que se enviará:', req.session.cookie);
+
+      res.json({
+        success: true,
+        user: {
+          id: result.user.id,
+          username: result.user.username
+        }
+      });
     });
 
   } catch (error) {
