@@ -33,28 +33,26 @@ app.use(session({
     maxAge: 7 * 24 * 60 * 60 * 1000, // 7 días
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
-    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax'
+    sameSite: 'lax'  // lax funciona para same-origin y es más seguro
   }
 }));
 
 // Middleware optimizado para producción
 app.use(cors({
-    origin: function(origin, callback) {
-      // Permitir requests sin origin (como apps móviles o curl)
-      if (!origin) return callback(null, true);
-
-      // Permitir localhost para desarrollo
-      if (origin.includes('localhost')) return callback(null, true);
-
-      // Permitir cualquier dominio de Render
-      if (origin.includes('.onrender.com')) return callback(null, true);
-
-      // Rechazar otros orígenes
-      callback(new Error('Not allowed by CORS'));
-    },
-    credentials: true
+    origin: true,  // Permitir todos los orígenes (más permisivo para debugging)
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Admin-Password'],
+    exposedHeaders: ['Set-Cookie']
 }));
 app.use(express.json({ limit: '10mb' }));
+
+// Middleware de logging para debugging
+app.use((req, res, next) => {
+  console.log(`📨 ${req.method} ${req.path} - Origin: ${req.headers.origin || 'none'} - Cookies: ${req.headers.cookie ? 'presente' : 'ausente'}`);
+  next();
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname));
 
@@ -570,6 +568,7 @@ app.post('/api/auth/login', (req, res) => {
 
     // Guardar en sesión
     req.session.userId = result.user.id;
+    console.log('✅ Login exitoso - Usuario ID:', result.user.id, '- Session ID:', req.sessionID);
 
     res.json({
       success: true,
@@ -597,18 +596,23 @@ app.post('/api/auth/logout', (req, res) => {
 
 // Verificar sesión
 app.get('/api/auth/check', (req, res) => {
+  console.log('🔐 Verificando sesión - Session ID:', req.sessionID, '- User ID:', req.session.userId);
+
   if (!req.session.userId) {
+    console.log('❌ No hay userId en la sesión');
     return res.json({ authenticated: false });
   }
 
   const user = db.getUserById(req.session.userId);
 
   if (!user) {
+    console.log('❌ Usuario no encontrado en DB');
     req.session.destroy();
     return res.json({ authenticated: false });
   }
 
   if (user.estado === 'bloqueado') {
+    console.log('⚠️ Usuario bloqueado:', user.username);
     return res.json({
       authenticated: true,
       blocked: true,
@@ -616,6 +620,7 @@ app.get('/api/auth/check', (req, res) => {
     });
   }
 
+  console.log('✅ Sesión válida para usuario:', user.username);
   res.json({
     authenticated: true,
     user: {

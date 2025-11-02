@@ -1156,6 +1156,7 @@
         // ========================
 
         async function checkAuth() {
+            console.log('🔐 Verificando autenticación...');
             try {
                 const response = await fetch(`${API_BASE}/api/auth/check`, {
                     method: 'GET',
@@ -1163,10 +1164,17 @@
                     headers: { 'Content-Type': 'application/json' }
                 });
 
+                console.log('📡 Respuesta auth/check:', {
+                    status: response.status,
+                    ok: response.ok
+                });
+
                 const data = await response.json();
+                console.log('📦 Datos de autenticación:', data);
 
                 if (data.authenticated) {
                     if (data.blocked) {
+                        console.warn('⚠️ Usuario bloqueado');
                         showAuthScreen();
                         showAuthMessage('error', 'Tu cuenta está bloqueada. Contacta al administrador para reactivarla.');
                         return false;
@@ -1174,14 +1182,16 @@
 
                     isAuthenticated = true;
                     currentUser = data.user;
+                    console.log('✅ Usuario autenticado:', currentUser);
                     showMainApp();
                     return true;
                 } else {
+                    console.log('❌ No autenticado');
                     showAuthScreen();
                     return false;
                 }
             } catch (error) {
-                console.error('Error verificando autenticación:', error);
+                console.error('❌ Error verificando autenticación:', error);
                 showAuthScreen();
                 return false;
             }
@@ -1379,11 +1389,20 @@
         // ========================
 
         async function checkServerHealth() {
+            console.log('🔍 Verificando servidor...');
+            updateServerStatus('checking', 'Verificando servidor...');
+
             try {
                 const response = await fetch(`${API_BASE}/api/health`, {
                     method: 'GET',
                     credentials: 'include',
                     headers: { 'Content-Type': 'application/json' }
+                });
+
+                console.log('📡 Respuesta del servidor:', {
+                    status: response.status,
+                    ok: response.ok,
+                    statusText: response.statusText
                 });
 
                 if (response.ok) {
@@ -1392,9 +1411,16 @@
                     isServerOnline = true;
                     console.log('✅ Servidor disponible:', health);
                     return true;
+                } else {
+                    console.error('❌ Respuesta no OK:', response.status, response.statusText);
                 }
             } catch (error) {
-                console.log('❌ Servidor no disponible:', error.message);
+                console.error('❌ Error conectando al servidor:', error);
+                console.error('Error completo:', {
+                    name: error.name,
+                    message: error.message,
+                    stack: error.stack
+                });
             }
 
             updateServerStatus('offline', 'Modo demostración');
@@ -1738,14 +1764,22 @@
         async function loadAvailableTopics() {
             try {
                 console.log('🔄 Cargando temas...');
+                console.log('📊 Estado del servidor: isServerOnline =', isServerOnline);
 
                 if (!isServerOnline) {
+                    console.log('⚠️ Servidor offline, cargando temas demo');
                     loadDemoTopics();
                     return;
                 }
 
+                console.log('📡 Llamando a /api/documents-status...');
                 const response = await fetch(`${API_BASE}/api/documents-status`, {
                     credentials: 'include'
+                });
+
+                console.log('📡 Respuesta documents-status:', {
+                    status: response.status,
+                    ok: response.ok
                 });
 
                 if (!response.ok) {
@@ -1753,11 +1787,13 @@
                 }
 
                 const status = await response.json();
+                console.log('📦 Temas recibidos:', Object.keys(status).length);
 
                 availableTopics = Object.entries(status).filter(([id, config]) =>
                     config.files && config.files.some(file => file.exists)
                 );
 
+                console.log('✅ Temas disponibles filtrados:', availableTopics.length);
                 populateTopicSelect();
                 updateTopicInfo();
 
