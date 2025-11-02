@@ -79,147 +79,87 @@ const IMPROVED_CLAUDE_CONFIG = {
   jitterFactor: 0.1          // Jitter moderado
 };
 
-// Configuración completa de temas (optimizada)
+// Configuración completa de temas - TÉCNICO DE FARMACIA
 const TOPIC_CONFIG = {
-  "articulos-lec-del-desahucio-1": {
-    "title": "ARTICULOS LEC DEL DESAHUCIO (1)",
-    "description": "Artículos LEC del Desahucio",
-    "files": ["ARTICULOS LEC DEL DESAHUCIO (1).txt"]
+  "tema-4-organizaciones-farmaceuticas": {
+    "title": "TEMA 4 - ORGANIZACIONES FARMACEUTICAS",
+    "description": "Organizaciones Farmacéuticas",
+    "files": ["TEMA 4- ORGANIZACIONES FARMACEUTICAS.pdf"]
   },
-  "arts-129-240-lec-1": {
-    "title": "Arts 129-240 LEC (1)",
-    "description": "Artículos 129-240 LEC",
-    "files": ["Arts 129-240 LEC (1).txt"]
+  "tema-5-medicamentos": {
+    "title": "TEMA 5 - MEDICAMENTOS",
+    "description": "Medicamentos",
+    "files": ["TEMA 5- MEDICAMENTOS.pdf"]
   },
-  "arts-141-215-lecr-1": {
-    "title": "Arts 141-215 Lecr (1)",
-    "description": "Artículos 141-215 Lecr",
-    "files": ["Arts 141-215 Lecr (1).txt"]
+  "tema-6-formulas-magistrales": {
+    "title": "TEMA 6 - FORMULAS MAGISTRALES Y PREPARADOS OFICINALES",
+    "description": "Fórmulas Magistrales y Preparados Oficinales",
+    "files": ["TEMA 6- FORMULAS MAGISTRALES Y PREPARADOS OFICINALES.pdf"]
   },
-  "arts-179-300-lopj-1": {
-    "title": "Arts 179-300 LOPJ (1)",
-    "description": "Artículos 179-300 LOPJ",
-    "files": ["Arts 179-300 LOPJ (1).txt"]
+  "tema-7-acondicionamiento": {
+    "title": "TEMA 7 - ACONDICIONAMIENTO DE LOS MEDICAMENTOS",
+    "description": "Acondicionamiento de los Medicamentos",
+    "files": ["TEMA 7- ACONDICIONAMIENTO DE LOS MEDICAMENTOS.pdf"]
   },
-  "artculos-42-62-ljs-1": {
-    "title": "Artículos 42-62 LJS (1)",
-    "description": "Artículos 42-62 LJS",
-    "files": ["Artículos 42-62 LJS (1).txt"]
+  "tema-8-farmacocinetica": {
+    "title": "TEMA 8 - FARMACOCINETICA Y FARMACODINAMIA",
+    "description": "Farmacocinética y Farmacodinamia",
+    "files": ["TEMA 8- FARMACOCINETICA Y FARMACODINAMIA.pdf"]
   },
-  "carta-dos-ciudadanos": {
-    "title": "Carta Dos. Ciudadanos",
-    "description": "Carta de Derechos de los Ciudadanos",
-    "files": ["Carta Dos. Ciudadanos.txt"]
+  "tema-9-administracion": {
+    "title": "TEMA 9 - ADMINISTRACION DE MEDICAMENTOS",
+    "description": "Administración de Medicamentos",
+    "files": ["TEMA 9- ADMINISTRACION DE MEDICAMENTOS.pdf"]
   },
-  "ley-coop-jca-intern-2": {
-    "title": "Ley Coop Jca. Intern. (2)",
-    "description": "Ley de Cooperación Jurídica Internacional",
-    "files": ["Ley Coop Jca. Intern. (2).txt"]
+  "tema-10-formas-farmaceuticas": {
+    "title": "TEMA 10 - FORMAS FARMACEUTICAS Y VIAS DE ADMINISTRACION",
+    "description": "Formas Farmacéuticas y Vías de Administración",
+    "files": ["TEMA 10- FORMAS FARMACEUTICAS Y VIAS DE ADMINISTRACION.pdf"]
   },
-  "rglto-1-05-cxpx-rglto-1-18-2": {
-    "title": "Rglto. 1-05 CXPX (Rglto 1-18) (2)",
-    "description": "Reglamento 1-05",
-    "files": ["Rglto. 1-05 CXPX (Rglto 1-18) (2).txt"]
+  "tema-11-farmacia-hospitalaria": {
+    "title": "TEMA 11 - FARMACIA HOSPITALARIA",
+    "description": "Farmacia Hospitalaria",
+    "files": ["TEMA 11- FARMACIA HOSPITALARIA.pdf"]
   },
-  "tema-1": {
-    "title": "TEMA 1",
-    "description": "Tema 1",
-    "files": ["TEMA 1.txt"]
+  "tema-12-almacenamiento": {
+    "title": "TEMA 12 - ALMACENAMIENTO Y CONSERVACION",
+    "description": "Almacenamiento y Conservación",
+    "files": ["TEMA 12- ALMACENAMIENTO Y CONSERVACION.pdf"]
   },
-  "tema-10-11-gestin-1": {
-    "title": "Tema 10 (11 Gestión) (1)",
-    "description": "Tema 10 Gestión",
-    "files": ["Tema 10 (11 Gestión) (1).txt"]
+  "tema-13-laboratorio": {
+    "title": "TEMA 13 - LABORATORIO FARMACEUTICO",
+    "description": "Laboratorio Farmacéutico",
+    "files": ["TEMA 13- LABORATORIO FARMACEUTICO.pdf"]
   },
-  "tema-14-15": {
-    "title": "TEMA 14 (15)",
-    "description": "Tema 14",
-    "files": ["TEMA 14 (15).txt"]
+  "tema-13-parte-2": {
+    "title": "TEMA 13 (2ª parte) - LABORATORIO FARMACEUTICO",
+    "description": "Laboratorio Farmacéutico - Parte 2",
+    "files": ["TEMA 13-2ª parte- LABORATORIO FARMACEUTICO.pdf"]
   },
-  "tema-14-alt": {
-    "title": "TEMA 14 (15) - Alternativo",
-    "description": "Tema 14 - Versión alternativa",
-    "files": ["TEMA-14-_15_.txt"]
+  "tema-14-operaciones": {
+    "title": "TEMA 14 - OPERACIONES FARMACEUTICAS BASICAS",
+    "description": "Operaciones Farmacéuticas Básicas",
+    "files": ["TEMA 14 - OPERACIONES FARMACEUTICAS BASICAS.pdf"]
   },
-  "tema-15-16-xestin": {
-    "title": "TEMA 15 (ó 16 Xestión)",
-    "description": "Tema 15 Gestión",
-    "files": ["TEMA-15-_ó-16-Xestión_.txt"]
+  "tema-14-parte-2": {
+    "title": "TEMA 14 (2ª parte) - LABORATORIO FARMACEUTICO",
+    "description": "Laboratorio Farmacéutico - Parte 2",
+    "files": ["TEMA 14 -2ª parte- LABORATORIO FARMACEUTICO.pdf"]
   },
-  "tema-16-aux16-18-19-tra": {
-    "title": "Tema 16 (Aux),16-18-19 (Tra)",
-    "description": "Tema 16 Auxilio y Tramitación",
-    "files": ["Tema-16-_Aux__16-18-19-_Tra_.txt"]
+  "tema-15-analisis-clinicos": {
+    "title": "TEMA 15 - ANALISIS CLINICOS",
+    "description": "Análisis Clínicos",
+    "files": ["TEMA 15- ANALISIS CLINICOS.pdf"]
   },
-  "tema-2-bis-1": {
-    "title": "Tema 2 bis (1)",
-    "description": "Tema 2 bis",
-    "files": ["Tema 2 bis (1).txt"]
+  "tema-17-espectrofotometria": {
+    "title": "TEMA 17 - ESPECTROFOTOMETRIA Y MICROSCOPIA",
+    "description": "Espectrofotometría y Microscopía",
+    "files": ["TEMA 17- ESPECTROFOTOMETRIA Y MICROSCOPIA.pdf"]
   },
-  "tema-20-21-tram_-18-auxilio": {
-    "title": "Tema 20-21 (Tram)_ 18 (auxilio)",
-    "description": "Tema 20-21 Tramitación",
-    "files": ["Tema-20-21-_Tram__-18-_auxilio_.txt"]
-  },
-  "tema-22-tram-19-aux-1": {
-    "title": "TEMA 22 (Tram)-19 (Aux). (1)",
-    "description": "Tema 22 Tramitación y Auxilio",
-    "files": ["TEMA-22-_Tram_-19-_Aux_.-_1_.txt"]
-  },
-  "tema-24": {
-    "title": "TEMA 24",
-    "description": "Tema 24",
-    "files": ["TEMA-24.txt"]
-  },
-  "tema-3-1": {
-    "title": "TEMA 3 (1)",
-    "description": "Tema 3",
-    "files": ["TEMA 3 (1).txt"]
-  },
-  "tema-4": {
-    "title": "TEMA 4",
-    "description": "Tema 4",
-    "files": ["TEMA 4.txt"]
-  },
-  "tema-5-2": {
-    "title": "TEMA 5 (2)",
-    "description": "Tema 5",
-    "files": ["TEMA 5 (2).txt"]
-  },
-  "tema-6": {
-    "title": "TEMA 6",
-    "description": "Tema 6",
-    "files": ["TEMA 6.txt"]
-  },
-  "tema-7-polo-que-estudiamos": {
-    "title": "TEMA 7 (polo que, estudiamos)",
-    "description": "Tema 7",
-    "files": ["TEMA 7 (polo que, estudiamos).txt"]
-  },
-  "tema-8-polo-que-estudiamos": {
-    "title": "TEMA 8 (polo que, estudiamos)",
-    "description": "Tema 8",
-    "files": ["TEMA 8 (polo que, estudiamos).txt"]
-  },
-  "tema-9-auxilio": {
-    "title": "TEMA 9 (Auxilio)",
-    "description": "Tema 9 Auxilio",
-    "files": ["TEMA 9 (Auxilio).txt"]
-  },
-  "tema-laboral-23-tram-20-auxili": {
-    "title": "Tema Laboral 23 (Tram) 20 (Auxilio)",
-    "description": "Tema Laboral y Auxilio",
-    "files": ["Tema-Laboral-23-_Tram_-20-_Auxilio_.txt"]
-  },
-  "temas-rexistro-civil-2": {
-    "title": "Temas Rexistro Civil (2)",
-    "description": "Registro Civil",
-    "files": ["Temas Rexistro Civil (2).txt"]
-  },
-  "temas-rexistro-civil-2-1": {
-    "title": "Temas Rexistro Civil (2) (1)",
-    "description": "Registro Civil - Parte 2",
-    "files": ["Temas-Rexistro-Civil-_2_-_1_.txt"]
+  "tema-18-parafarmacia": {
+    "title": "TEMA 18 - PARAFARMACIA",
+    "description": "Parafarmacia",
+    "files": ["TEMA 18- PARAFARMACIA.pdf"]
   }
 };
 
