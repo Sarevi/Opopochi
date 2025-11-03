@@ -2083,6 +2083,22 @@
         // ========================
 
         async function generateNextQuestion() {
+            // SI ES MODO EXAMEN OFICIAL
+            if (isOfficialExamMode && officialExamQuestions.length > 0) {
+                // Si ya respondió todas las preguntas
+                if (questionCount >= officialExamQuestions.length) {
+                    finishOfficialExam(false); // false = no time out
+                    return;
+                }
+
+                // Mostrar siguiente pregunta
+                questionCount++;
+                currentQuestion = officialExamQuestions[questionCount - 1];
+                document.getElementById('question-number').textContent = `Pregunta ${questionCount} de ${officialExamQuestions.length}`;
+                displayQuestion();
+                return;
+            }
+
             if (!currentTopic) return;
 
             // Si estamos en modo repaso, navegar por las preguntas del test
@@ -2222,12 +2238,28 @@
             const isReview = window.isReviewMode === true;
             const questionId = isReview ? currentQuestion.id : null;
 
-            // Actualizar estadísticas (o marcar como revisada si es repaso)
-            await updateLocalStats(currentTopic, isCorrect, isReview, questionId);
+            // SI ES MODO EXAMEN OFICIAL
+            if (isOfficialExamMode) {
+                // Guardar respuesta en el array
+                officialExamAnswers.push({
+                    questionNumber: questionCount,
+                    question: currentQuestion.question,
+                    userAnswer,
+                    correctAnswer: currentQuestion.correct,
+                    isCorrect,
+                    timestamp: Date.now()
+                });
 
-            // Solo agregar a preguntas falladas si NO es modo repaso
-            if (!isCorrect && !isReview) {
-                await addLocalFailedQuestion(currentTopic, currentQuestion, userAnswer);
+                // NO actualizar estadísticas ni preguntas falladas en modo oficial
+            } else {
+                // MODO NORMAL O REPASO
+                // Actualizar estadísticas (o marcar como revisada si es repaso)
+                await updateLocalStats(currentTopic, isCorrect, isReview, questionId);
+
+                // Solo agregar a preguntas falladas si NO es modo repaso
+                if (!isCorrect && !isReview) {
+                    await addLocalFailedQuestion(currentTopic, currentQuestion, userAnswer);
+                }
             }
 
             document.querySelectorAll('.option').forEach((opt, index) => {
@@ -2451,6 +2483,205 @@
                 
                 showSuccess('Datos eliminados');
             }
+        }
+
+        // ========================
+        // EXAMEN OFICIAL
+        // ========================
+
+        function selectExamSize(size) {
+            officialExamConfig.questionCount = size;
+            document.querySelectorAll('.exam-size-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (parseInt(btn.dataset.size) === size) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        function selectExamTime(minutes) {
+            officialExamConfig.timeLimit = minutes;
+            document.querySelectorAll('.exam-time-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (parseInt(btn.dataset.time) === minutes) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        async function startOfficialExam() {
+            try {
+                console.log(`🎓 Iniciando examen oficial: ${officialExamConfig.questionCount} preguntas, ${officialExamConfig.timeLimit} minutos`);
+
+                // Mostrar loading
+                showLoading();
+
+                // Solicitar examen al servidor
+                const response = await fetch(`${API_BASE}/api/exam/official`, {
+                    method: 'POST',
+                    credentials: 'include',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        questionCount: officialExamConfig.questionCount
+                    })
+                });
+
+                if (response.status === 401 || response.status === 403) {
+                    isAuthenticated = false;
+                    currentUser = null;
+                    showAuthScreen();
+                    showAuthMessage('error', 'Sesión expirada. Inicia sesión nuevamente.');
+                    return;
+                }
+
+                if (!response.ok) {
+                    throw new Error('Error al generar examen oficial');
+                }
+
+                const data = await response.json();
+
+                // Configurar examen
+                officialExamQuestions = data.questions;
+                isOfficialExamMode = true;
+                officialExamStartTime = Date.now();
+                officialExamAnswers = [];
+                questionCount = 1;
+                correctAnswers = 0;
+                currentQuestion = officialExamQuestions[0];
+
+                // Iniciar temporizador
+                officialExamTimeRemaining = officialExamConfig.timeLimit * 60; // convertir a segundos
+                startOfficialExamTimer();
+
+                // Mostrar primera pregunta
+                showPage('study');
+                showQuestionMode();
+                document.getElementById('current-topic-name').textContent = '🎓 EXAMEN OFICIAL';
+                document.getElementById('question-number').textContent = `Pregunta ${questionCount} de ${officialExamQuestions.length}`;
+                displayQuestion();
+
+                console.log(`✅ Examen oficial iniciado: ${officialExamQuestions.length} preguntas`);
+
+            } catch (error) {
+                console.error('Error iniciando examen oficial:', error);
+                alert('Error al generar examen oficial. Intenta de nuevo.');
+                hideLoading();
+            }
+        }
+
+        function startOfficialExamTimer() {
+            const timerElement = document.getElementById('official-exam-timer');
+            timerElement.style.display = 'block';
+
+            // Actualizar cada segundo
+            officialExamTimer = setInterval(() => {
+                officialExamTimeRemaining--;
+
+                updateOfficialExamTimer();
+
+                // Si se acaba el tiempo
+                if (officialExamTimeRemaining <= 0) {
+                    stopOfficialExamTimer();
+                    finishOfficialExam(true); // true = tiempo agotado
+                }
+            }, 1000);
+        }
+
+        function updateOfficialExamTimer() {
+            const minutes = Math.floor(officialExamTimeRemaining / 60);
+            const seconds = officialExamTimeRemaining % 60;
+            const display = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+            document.getElementById('timer-display').textContent = display;
+
+            const timerElement = document.getElementById('official-exam-timer');
+
+            // Cambiar estilo según tiempo restante
+            if (officialExamTimeRemaining <= 60) {
+                // Menos de 1 minuto - DANGER (rojo parpadeante)
+                timerElement.className = 'danger';
+            } else if (officialExamTimeRemaining <= 300) {
+                // Menos de 5 minutos - WARNING (amarillo)
+                timerElement.className = 'warning';
+            } else {
+                timerElement.className = '';
+            }
+        }
+
+        function stopOfficialExamTimer() {
+            if (officialExamTimer) {
+                clearInterval(officialExamTimer);
+                officialExamTimer = null;
+            }
+            document.getElementById('official-exam-timer').style.display = 'none';
+        }
+
+        async function finishOfficialExam(timeOut = false) {
+            stopOfficialExamTimer();
+
+            const totalQuestions = officialExamQuestions.length;
+            const answeredQuestions = officialExamAnswers.length;
+            const correctCount = officialExamAnswers.filter(a => a.isCorrect).length;
+            const nota = (correctCount / totalQuestions) * 10;
+            const timeSpent = Math.floor((Date.now() - officialExamStartTime) / 1000);
+
+            // Mostrar resultados
+            const resultHTML = `
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 4rem; margin-bottom: 16px;">
+                        ${nota >= 5 ? '🎉' : '📚'}
+                    </div>
+                    <h2 style="margin-bottom: 8px;">
+                        ${timeOut ? '⏱️ Tiempo Agotado' : '✅ Examen Finalizado'}
+                    </h2>
+                    <div style="font-size: 3rem; font-weight: bold; color: ${nota >= 5 ? '#16a34a' : '#dc2626'}; margin: 24px 0;">
+                        ${nota.toFixed(2)} / 10
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; text-align: center;">
+                        <div>
+                            <div style="font-size: 2rem; font-weight: bold; color: #16a34a;">${correctCount}</div>
+                            <div style="color: #6b7280; font-size: 0.875rem;">Correctas</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; font-weight: bold; color: #dc2626;">${totalQuestions - correctCount}</div>
+                            <div style="color: #6b7280; font-size: 0.875rem;">Incorrectas</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; font-weight: bold; color: #f97316;">${totalQuestions}</div>
+                            <div style="color: #6b7280; font-size: 0.875rem;">Total</div>
+                        </div>
+                    </div>
+                    <div style="background: #f9fafb; border-radius: 8px; padding: 16px; margin: 24px 0;">
+                        <div style="font-weight: 600; margin-bottom: 8px;">📊 Estadísticas</div>
+                        <div style="display: flex; justify-content: space-around; font-size: 0.875rem; color: #6b7280;">
+                            <div>Tiempo: ${Math.floor(timeSpent / 60)}:${(timeSpent % 60).toString().padStart(2, '0')}</div>
+                            <div>Precisión: ${((correctCount / totalQuestions) * 100).toFixed(1)}%</div>
+                            <div>Preguntas: ${totalQuestions}</div>
+                        </div>
+                    </div>
+                    <button onclick="exitOfficialExam()" style="width: 100%; background: #f97316; color: white; padding: 16px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; font-size: 1.125rem;">
+                        🏠 Volver al Inicio
+                    </button>
+                </div>
+            `;
+
+            document.getElementById('topic-selection').style.display = 'none';
+            document.getElementById('question-container').innerHTML = resultHTML;
+            document.getElementById('question-container').classList.remove('hidden');
+
+            // Resetear variables
+            isOfficialExamMode = false;
+            officialExamQuestions = [];
+            officialExamAnswers = [];
+            officialExamTimeRemaining = 0;
+        }
+
+        function exitOfficialExam() {
+            isOfficialExamMode = false;
+            officialExamQuestions = [];
+            officialExamAnswers = [];
+            stopOfficialExamTimer();
+            showPage('official-exam');
         }
 
         // ========================
