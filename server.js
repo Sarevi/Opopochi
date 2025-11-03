@@ -1055,16 +1055,20 @@ app.post('/api/record-answer', requireAuth, (req, res) => {
     const { topicId, questionData, userAnswer, isCorrect, isReview, questionId } = req.body;
     const userId = req.user.id;
 
+    // LOG DETALLADO PARA DEBUG
+    console.log(`📝 RECORD-ANSWER - Usuario: ${userId}, Tema: ${topicId}, isReview: ${isReview}, questionId: ${questionId}, isCorrect: ${isCorrect}`);
+
     // Obtener título del tema
     const topicConfig = TOPIC_CONFIG[topicId];
     const topicTitle = topicConfig?.title || 'Tema desconocido';
 
     // SISTEMA DE REPASO: Si es una pregunta de repaso
     if (isReview && questionId) {
+      console.log(`🔍 MODO REPASO DETECTADO - questionId: ${questionId}, isCorrect: ${isCorrect}`);
       if (isCorrect) {
         // Si acierta la pregunta de repaso, ELIMINARLA de preguntas falladas
-        db.removeFailedQuestion(userId, questionId);
-        console.log(`✅ Pregunta de repaso ${questionId} acertada - Eliminada de preguntas falladas`);
+        const result = db.removeFailedQuestion(userId, questionId);
+        console.log(`✅ ELIMINANDO pregunta ${questionId} de usuario ${userId} - Resultado:`, result);
       } else {
         // Si falla de nuevo, se mantiene en preguntas falladas
         console.log(`❌ Pregunta de repaso ${questionId} fallada nuevamente - Se mantiene`);
