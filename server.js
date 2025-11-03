@@ -1052,19 +1052,32 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
 
 app.post('/api/record-answer', requireAuth, (req, res) => {
   try {
-    const { topicId, questionData, userAnswer, isCorrect } = req.body;
+    const { topicId, questionData, userAnswer, isCorrect, isReview, questionId } = req.body;
     const userId = req.user.id;
 
     // Obtener título del tema
     const topicConfig = TOPIC_CONFIG[topicId];
     const topicTitle = topicConfig?.title || 'Tema desconocido';
 
-    // Actualizar estadísticas en la base de datos
-    db.updateUserStats(userId, topicId, topicTitle, isCorrect);
+    // SISTEMA DE REPASO: Si es una pregunta de repaso
+    if (isReview && questionId) {
+      if (isCorrect) {
+        // Si acierta la pregunta de repaso, ELIMINARLA de preguntas falladas
+        db.removeFailedQuestion(userId, questionId);
+        console.log(`✅ Pregunta de repaso ${questionId} acertada - Eliminada de preguntas falladas`);
+      } else {
+        // Si falla de nuevo, se mantiene en preguntas falladas
+        console.log(`❌ Pregunta de repaso ${questionId} fallada nuevamente - Se mantiene`);
+      }
+    } else {
+      // SISTEMA NORMAL: Preguntas nuevas generadas
+      // Actualizar estadísticas en la base de datos
+      db.updateUserStats(userId, topicId, topicTitle, isCorrect);
 
-    // Si es incorrecta, guardar en preguntas falladas
-    if (!isCorrect) {
-      db.addFailedQuestion(userId, topicId, questionData, userAnswer);
+      // Si es incorrecta, guardar en preguntas falladas
+      if (!isCorrect) {
+        db.addFailedQuestion(userId, topicId, questionData, userAnswer);
+      }
     }
 
     // Obtener estadísticas actualizadas del usuario para este tema
@@ -1073,7 +1086,8 @@ app.post('/api/record-answer', requireAuth, (req, res) => {
 
     res.json({
       success: true,
-      stats: topicStats || { total_questions: 0, correct_answers: 0, accuracy: 0 }
+      stats: topicStats || { total_questions: 0, correct_answers: 0, accuracy: 0 },
+      removedFromReview: isReview && isCorrect // Indicar si se eliminó del repaso
     });
 
   } catch (error) {
@@ -1118,6 +1132,61 @@ app.get('/api/failed-questions', requireAuth, (req, res) => {
   } catch (error) {
     console.error('❌ Error obteniendo preguntas falladas:', error);
     res.status(500).json({ error: 'Error al obtener preguntas falladas' });
+  }
+});
+
+// Nuevo endpoint: Obtener preguntas falladas de un tema como test de repaso
+app.get('/api/review-exam/:topicId', requireAuth, (req, res) => {
+  try {
+    const userId = req.user.id;
+    const topicId = req.params.topicId;
+
+    console.log(`📚 Usuario ${userId} solicita test de repaso del tema: ${topicId}`);
+
+    // Obtener todas las preguntas falladas del usuario
+    const allFailedQuestions = db.getUserFailedQuestions(userId);
+
+    // Verificar si hay preguntas para ese tema
+    if (!allFailedQuestions[topicId] || !allFailedQuestions[topicId].questions.length) {
+      return res.status(404).json({
+        error: 'No hay preguntas falladas para repasar en este tema'
+      });
+    }
+
+    const topicQuestions = allFailedQuestions[topicId].questions;
+
+    // Formatear preguntas al formato de test (sin mostrar respuestas del usuario)
+    const reviewQuestions = topicQuestions.map((q, index) => {
+      // Aleatorizar opciones para que no estén siempre en el mismo orden
+      const randomizedQuestion = randomizeQuestionOptions({
+        question: q.question,
+        options: q.options,
+        correct: q.correct,
+        explanation: q.explanation,
+        difficulty: q.difficulty,
+        page_reference: q.page_reference
+      });
+
+      return {
+        ...randomizedQuestion,
+        id: q.id, // Mantener el ID para tracking
+        isReview: true // Flag para indicar que es una pregunta de repaso
+      };
+    });
+
+    console.log(`✅ Test de repaso generado: ${reviewQuestions.length} preguntas del tema ${topicId}`);
+
+    res.json({
+      examId: Date.now(),
+      questions: reviewQuestions,
+      topics: [topicId],
+      questionCount: reviewQuestions.length,
+      isReview: true // Indicar que es un test de repaso
+    });
+
+  } catch (error) {
+    console.error('❌ Error generando test de repaso:', error);
+    res.status(500).json({ error: 'Error al generar test de repaso' });
   }
 });
 
