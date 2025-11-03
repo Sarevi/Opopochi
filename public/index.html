@@ -898,6 +898,65 @@
                 width: 100%;
             }
         }
+
+        /* ESTILOS PARA EXAMEN OFICIAL */
+        .exam-size-btn,
+        .exam-time-btn {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 16px 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #6b7280;
+        }
+
+        .exam-size-btn:hover,
+        .exam-time-btn:hover {
+            border-color: #f97316;
+            background: #fff7ed;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.15);
+        }
+
+        .exam-size-btn.active,
+        .exam-time-btn.active {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            border-color: #f97316;
+            color: white;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+        }
+
+        #official-exam-timer {
+            position: fixed;
+            top: 80px;
+            right: 24px;
+            background: white;
+            border: 2px solid #f97316;
+            border-radius: 12px;
+            padding: 12px 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: none;
+        }
+
+        #official-exam-timer.warning {
+            background: #fef3c7;
+            border-color: #fbbf24;
+            animation: pulse 1s infinite;
+        }
+
+        #official-exam-timer.danger {
+            background: #fee2e2;
+            border-color: #dc2626;
+            animation: pulse 0.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
     </style>
 </head>
 <body>
@@ -1025,6 +1084,9 @@
             <button class="nav-button" onclick="showPage('review')" id="nav-review">
                 🔄 Reforzar
             </button>
+            <button class="nav-button" onclick="showPage('official-exam')" id="nav-official-exam">
+                🎓 Examen Oficial
+            </button>
         </nav>
 
         <!-- NOTIFICACIÓN DE REINTENTOS -->
@@ -1037,6 +1099,12 @@
                     <div class="retry-progress-bar" id="retry-progress-bar"></div>
                 </div>
             </div>
+        </div>
+
+        <!-- TEMPORIZADOR EXAMEN OFICIAL -->
+        <div id="official-exam-timer">
+            <div style="font-size: 0.75rem; color: #6b7280; margin-bottom: 4px; text-align: center;">⏱️ Tiempo Restante</div>
+            <div id="timer-display" style="font-size: 1.5rem; font-weight: bold; text-align: center;">60:00</div>
         </div>
 
         <!-- PÁGINA DE ESTUDIO -->
@@ -1133,6 +1201,89 @@
                 </div>
             </div>
         </div>
+
+        <!-- PÁGINA: EXAMEN OFICIAL -->
+        <div id="official-exam-page" class="page">
+            <div class="card">
+                <h2><span class="emoji">🎓</span>Examen Oficial Simulacro</h2>
+                <p style="color: #6b7280; margin-top: 8px;">Pon a prueba tus conocimientos con un examen completo como el real</p>
+            </div>
+
+            <div class="card" style="margin-top: 24px;">
+                <h3 style="margin-bottom: 16px; color: #1f2937;">⚙️ Configurar Examen</h3>
+
+                <!-- Selector de Preguntas -->
+                <div style="margin-bottom: 24px;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 12px; color: #374151;">
+                        📝 Número de Preguntas
+                    </label>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+                        <button class="exam-size-btn active" data-size="25" onclick="selectExamSize(25)">
+                            <div style="font-size: 1.5rem; font-weight: bold;">25</div>
+                            <div style="font-size: 0.75rem; opacity: 0.8;">Rápido</div>
+                        </button>
+                        <button class="exam-size-btn" data-size="50" onclick="selectExamSize(50)">
+                            <div style="font-size: 1.5rem; font-weight: bold;">50</div>
+                            <div style="font-size: 0.75rem; opacity: 0.8;">Medio</div>
+                        </button>
+                        <button class="exam-size-btn" data-size="75" onclick="selectExamSize(75)">
+                            <div style="font-size: 1.5rem; font-weight: bold;">75</div>
+                            <div style="font-size: 0.75rem; opacity: 0.8;">Largo</div>
+                        </button>
+                        <button class="exam-size-btn" data-size="100" onclick="selectExamSize(100)">
+                            <div style="font-size: 1.5rem; font-weight: bold;">100</div>
+                            <div style="font-size: 0.75rem; opacity: 0.8;">Completo</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Selector de Tiempo -->
+                <div style="margin-bottom: 32px;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 12px; color: #374151;">
+                        ⏱️ Tiempo Límite
+                    </label>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+                        <button class="exam-time-btn active" data-time="30" onclick="selectExamTime(30)">
+                            <div style="font-size: 1.25rem; font-weight: bold;">30</div>
+                            <div style="font-size: 0.75rem; opacity: 0.8;">minutos</div>
+                        </button>
+                        <button class="exam-time-btn" data-time="60" onclick="selectExamTime(60)">
+                            <div style="font-size: 1.25rem; font-weight: bold;">60</div>
+                            <div style="font-size: 0.75rem; opacity: 0.8;">minutos</div>
+                        </button>
+                        <button class="exam-time-btn" data-time="90" onclick="selectExamTime(90)">
+                            <div style="font-size: 1.25rem; font-weight: bold;">90</div>
+                            <div style="font-size: 0.75rem; opacity: 0.8;">minutos</div>
+                        </button>
+                        <button class="exam-time-btn" data-time="120" onclick="selectExamTime(120)">
+                            <div style="font-size: 1.25rem; font-weight: bold;">120</div>
+                            <div style="font-size: 0.75rem; opacity: 0.8;">minutos</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Información del Examen -->
+                <div style="background: #fef3c7; border: 2px solid #fbbf24; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
+                    <div style="display: flex; align-items: start; gap: 12px;">
+                        <span style="font-size: 1.5rem;">⚠️</span>
+                        <div>
+                            <div style="font-weight: 600; color: #92400e; margin-bottom: 4px;">Modo Examen Real</div>
+                            <ul style="margin: 0; padding-left: 20px; color: #92400e; font-size: 0.875rem; line-height: 1.6;">
+                                <li>Preguntas mezcladas de <strong>todos los temas</strong></li>
+                                <li>No podrás volver a preguntas anteriores</li>
+                                <li>El temporizador será visible en todo momento</li>
+                                <li>Se guardará tu puntuación al finalizar</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botón Iniciar -->
+                <button onclick="startOfficialExam()" style="width: 100%; background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); color: white; padding: 16px 32px; font-size: 1.125rem; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3); transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(249, 115, 22, 0.4)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 4px 12px rgba(249, 115, 22, 0.3)';">
+                    🚀 Iniciar Examen Oficial
+                </button>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -1150,6 +1301,18 @@
         const API_BASE = '';
         let currentUser = null;
         let isAuthenticated = false;
+
+        // Variables para Examen Oficial
+        let officialExamConfig = {
+            questionCount: 25,
+            timeLimit: 30 // minutos
+        };
+        let officialExamQuestions = [];
+        let officialExamTimer = null;
+        let officialExamTimeRemaining = 0; // segundos
+        let isOfficialExamMode = false;
+        let officialExamStartTime = null;
+        let officialExamAnswers = [];
 
         // ========================
         // SISTEMA DE AUTENTICACIÓN

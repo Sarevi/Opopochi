@@ -1194,6 +1194,75 @@ app.get('/api/review-exam/:topicId', requireAuth, (req, res) => {
   }
 });
 
+// ========================
+// EXAMEN OFICIAL (SIMULACRO)
+// ========================
+
+app.post('/api/exam/official', requireAuth, async (req, res) => {
+  try {
+    const { questionCount } = req.body; // 25, 50, 75, 100
+    const userId = req.user.id;
+
+    // Validar questionCount
+    if (![25, 50, 75, 100].includes(questionCount)) {
+      return res.status(400).json({ error: 'Número de preguntas inválido. Use 25, 50, 75 o 100.' });
+    }
+
+    console.log(`🎓 Usuario ${userId} solicita EXAMEN OFICIAL de ${questionCount} preguntas`);
+
+    // Obtener todos los temas disponibles
+    const allTopics = Object.keys(TOPIC_CONFIG);
+    const questionsPerTopic = Math.ceil(questionCount / allTopics.length);
+
+    let allQuestions = [];
+
+    // Generar preguntas de cada tema (distribución equitativa)
+    for (const topicId of allTopics) {
+      try {
+        const topicQuestions = await generateQuestions([topicId], questionsPerTopic, userId);
+        allQuestions.push(...topicQuestions);
+
+        // Si ya tenemos suficientes, parar
+        if (allQuestions.length >= questionCount) break;
+      } catch (error) {
+        console.error(`❌ Error generando preguntas del tema ${topicId}:`, error.message);
+        // Continuar con el siguiente tema
+      }
+    }
+
+    // Recortar al número exacto solicitado
+    allQuestions = allQuestions.slice(0, questionCount);
+
+    // Mezclar aleatoriamente (shuffle Fisher-Yates)
+    for (let i = allQuestions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]];
+    }
+
+    // Añadir flag de examen oficial a cada pregunta
+    const officialQuestions = allQuestions.map((q, index) => ({
+      ...q,
+      questionNumber: index + 1,
+      isOfficial: true
+    }));
+
+    console.log(`✅ Examen oficial generado: ${officialQuestions.length} preguntas mezcladas de ${allTopics.length} temas`);
+
+    res.json({
+      examId: Date.now(),
+      questions: officialQuestions,
+      questionCount: officialQuestions.length,
+      isOfficial: true,
+      topics: allTopics,
+      timestamp: new Date().toISOString()
+    });
+
+  } catch (error) {
+    console.error('❌ Error generando examen oficial:', error);
+    res.status(500).json({ error: 'Error al generar examen oficial' });
+  }
+});
+
 app.post('/api/resolve-failed-question', requireAuth, (req, res) => {
   try {
     const userId = req.user.id;
