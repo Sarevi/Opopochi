@@ -900,8 +900,7 @@
         }
 
         /* ESTILOS PARA EXAMEN OFICIAL */
-        .exam-size-btn,
-        .exam-time-btn {
+        .exam-size-btn {
             background: white;
             border: 2px solid #e5e7eb;
             border-radius: 12px;
@@ -912,50 +911,18 @@
             color: #6b7280;
         }
 
-        .exam-size-btn:hover,
-        .exam-time-btn:hover {
+        .exam-size-btn:hover {
             border-color: #f97316;
             background: #fff7ed;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(249, 115, 22, 0.15);
         }
 
-        .exam-size-btn.active,
-        .exam-time-btn.active {
+        .exam-size-btn.active {
             background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
             border-color: #f97316;
             color: white;
             box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
-        }
-
-        #official-exam-timer {
-            position: fixed;
-            top: 80px;
-            right: 24px;
-            background: white;
-            border: 2px solid #f97316;
-            border-radius: 12px;
-            padding: 12px 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            display: none;
-        }
-
-        #official-exam-timer.warning {
-            background: #fef3c7;
-            border-color: #fbbf24;
-            animation: pulse 1s infinite;
-        }
-
-        #official-exam-timer.danger {
-            background: #fee2e2;
-            border-color: #dc2626;
-            animation: pulse 0.5s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
         }
     </style>
 </head>
@@ -1101,12 +1068,6 @@
             </div>
         </div>
 
-        <!-- TEMPORIZADOR EXAMEN OFICIAL -->
-        <div id="official-exam-timer">
-            <div style="font-size: 0.75rem; color: #6b7280; margin-bottom: 4px; text-align: center;">⏱️ Tiempo Restante</div>
-            <div id="timer-display" style="font-size: 1.5rem; font-weight: bold; text-align: center;">60:00</div>
-        </div>
-
         <!-- PÁGINA DE ESTUDIO -->
         <div id="study-page" class="page active">
             <!-- SELECCIÓN DE TEMA -->
@@ -1237,31 +1198,6 @@
                     </div>
                 </div>
 
-                <!-- Selector de Tiempo -->
-                <div style="margin-bottom: 32px;">
-                    <label style="display: block; font-weight: 600; margin-bottom: 12px; color: #374151;">
-                        ⏱️ Tiempo Límite
-                    </label>
-                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
-                        <button class="exam-time-btn active" data-time="30" onclick="selectExamTime(30)">
-                            <div style="font-size: 1.25rem; font-weight: bold;">30</div>
-                            <div style="font-size: 0.75rem; opacity: 0.8;">minutos</div>
-                        </button>
-                        <button class="exam-time-btn" data-time="60" onclick="selectExamTime(60)">
-                            <div style="font-size: 1.25rem; font-weight: bold;">60</div>
-                            <div style="font-size: 0.75rem; opacity: 0.8;">minutos</div>
-                        </button>
-                        <button class="exam-time-btn" data-time="90" onclick="selectExamTime(90)">
-                            <div style="font-size: 1.25rem; font-weight: bold;">90</div>
-                            <div style="font-size: 0.75rem; opacity: 0.8;">minutos</div>
-                        </button>
-                        <button class="exam-time-btn" data-time="120" onclick="selectExamTime(120)">
-                            <div style="font-size: 1.25rem; font-weight: bold;">120</div>
-                            <div style="font-size: 0.75rem; opacity: 0.8;">minutos</div>
-                        </button>
-                    </div>
-                </div>
-
                 <!-- Información del Examen -->
                 <div style="background: #fef3c7; border: 2px solid #fbbf24; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
                     <div style="display: flex; align-items: start; gap: 12px;">
@@ -1271,8 +1207,8 @@
                             <ul style="margin: 0; padding-left: 20px; color: #92400e; font-size: 0.875rem; line-height: 1.6;">
                                 <li>Preguntas mezcladas de <strong>todos los temas</strong></li>
                                 <li>No podrás volver a preguntas anteriores</li>
-                                <li>El temporizador será visible en todo momento</li>
-                                <li>Se guardará tu puntuación al finalizar</li>
+                                <li>No verás las respuestas hasta el final</li>
+                                <li>Las preguntas falladas se guardarán en <strong>Reforzar</strong></li>
                             </ul>
                         </div>
                     </div>
@@ -1304,12 +1240,9 @@
 
         // Variables para Examen Oficial
         let officialExamConfig = {
-            questionCount: 25,
-            timeLimit: 30 // minutos
+            questionCount: 25
         };
         let officialExamQuestions = [];
-        let officialExamTimer = null;
-        let officialExamTimeRemaining = 0; // segundos
         let isOfficialExamMode = false;
         let officialExamStartTime = null;
         let officialExamAnswers = [];
@@ -2087,7 +2020,7 @@
             if (isOfficialExamMode && officialExamQuestions.length > 0) {
                 // Si ya respondió todas las preguntas
                 if (questionCount >= officialExamQuestions.length) {
-                    finishOfficialExam(false); // false = no time out
+                    finishOfficialExam();
                     return;
                 }
 
@@ -2615,19 +2548,9 @@
             });
         }
 
-        function selectExamTime(minutes) {
-            officialExamConfig.timeLimit = minutes;
-            document.querySelectorAll('.exam-time-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (parseInt(btn.dataset.time) === minutes) {
-                    btn.classList.add('active');
-                }
-            });
-        }
-
         async function startOfficialExam() {
             try {
-                console.log(`🎓 Iniciando examen oficial: ${officialExamConfig.questionCount} preguntas, ${officialExamConfig.timeLimit} minutos`);
+                console.log(`🎓 Iniciando examen oficial: ${officialExamConfig.questionCount} preguntas`);
 
                 // Mostrar loading
                 showLoading();
@@ -2665,10 +2588,6 @@
                 correctAnswers = 0;
                 currentQuestion = officialExamQuestions[0];
 
-                // Iniciar temporizador
-                officialExamTimeRemaining = officialExamConfig.timeLimit * 60; // convertir a segundos
-                startOfficialExamTimer();
-
                 // Mostrar primera pregunta
                 showPage('study');
                 showQuestionMode();
@@ -2685,62 +2604,13 @@
             }
         }
 
-        function startOfficialExamTimer() {
-            const timerElement = document.getElementById('official-exam-timer');
-            timerElement.style.display = 'block';
-
-            // Actualizar cada segundo
-            officialExamTimer = setInterval(() => {
-                officialExamTimeRemaining--;
-
-                updateOfficialExamTimer();
-
-                // Si se acaba el tiempo
-                if (officialExamTimeRemaining <= 0) {
-                    stopOfficialExamTimer();
-                    finishOfficialExam(true); // true = tiempo agotado
-                }
-            }, 1000);
-        }
-
-        function updateOfficialExamTimer() {
-            const minutes = Math.floor(officialExamTimeRemaining / 60);
-            const seconds = officialExamTimeRemaining % 60;
-            const display = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-
-            document.getElementById('timer-display').textContent = display;
-
-            const timerElement = document.getElementById('official-exam-timer');
-
-            // Cambiar estilo según tiempo restante
-            if (officialExamTimeRemaining <= 60) {
-                // Menos de 1 minuto - DANGER (rojo parpadeante)
-                timerElement.className = 'danger';
-            } else if (officialExamTimeRemaining <= 300) {
-                // Menos de 5 minutos - WARNING (amarillo)
-                timerElement.className = 'warning';
-            } else {
-                timerElement.className = '';
-            }
-        }
-
-        function stopOfficialExamTimer() {
-            if (officialExamTimer) {
-                clearInterval(officialExamTimer);
-                officialExamTimer = null;
-            }
-            document.getElementById('official-exam-timer').style.display = 'none';
-        }
-
-        async function finishOfficialExam(timeOut = false) {
-            stopOfficialExamTimer();
+        async function finishOfficialExam() {
 
             const totalQuestions = officialExamQuestions.length;
             const answeredQuestions = officialExamAnswers.length;
             const correctCount = officialExamAnswers.filter(a => a.isCorrect).length;
             const incorrectCount = totalQuestions - correctCount;
             const nota = (correctCount / totalQuestions) * 10;
-            const timeSpent = Math.floor((Date.now() - officialExamStartTime) / 1000);
 
             // Crear identificador único del examen
             const examId = `examen-${totalQuestions}-${Date.now()}`;
@@ -2807,7 +2677,7 @@
                         ${nota >= 5 ? '🎉' : '📚'}
                     </div>
                     <h2 style="margin-bottom: 8px;">
-                        ${timeOut ? '⏱️ Tiempo Agotado' : '✅ Examen Finalizado'}
+                        ✅ Examen Finalizado
                     </h2>
                     <div style="font-size: 3rem; font-weight: bold; color: ${nota >= 5 ? '#16a34a' : '#dc2626'}; margin: 24px 0;">
                         ${nota.toFixed(2)} / 10
@@ -2829,9 +2699,8 @@
                     <div style="background: #f9fafb; border-radius: 8px; padding: 16px; margin: 24px 0;">
                         <div style="font-weight: 600; margin-bottom: 8px;">📊 Estadísticas</div>
                         <div style="display: flex; justify-content: space-around; font-size: 0.875rem; color: #6b7280;">
-                            <div>Tiempo: ${Math.floor(timeSpent / 60)}:${(timeSpent % 60).toString().padStart(2, '0')}</div>
                             <div>Precisión: ${((correctCount / totalQuestions) * 100).toFixed(1)}%</div>
-                            <div>Preguntas: ${totalQuestions}</div>
+                            <div>Total: ${totalQuestions} preguntas</div>
                         </div>
                         ${incorrectCount > 0 ? `
                             <div style="margin-top: 12px; padding: 12px; background: #fef3c7; border-radius: 6px; font-size: 0.875rem; color: #92400e;">
@@ -2863,14 +2732,12 @@
             isOfficialExamMode = false;
             officialExamQuestions = [];
             officialExamAnswers = [];
-            officialExamTimeRemaining = 0;
         }
 
         function exitOfficialExam() {
             isOfficialExamMode = false;
             officialExamQuestions = [];
             officialExamAnswers = [];
-            stopOfficialExamTimer();
             showPage('official-exam');
         }
 
