@@ -1784,16 +1784,24 @@
             document.getElementById('question-container').classList.remove('hidden');
         }
 
-        function backToTopicSelection() {
+        async function backToTopicSelection() {
             document.getElementById('topic-selection').style.display = 'block';
             document.getElementById('available-topics').style.display = 'block';
             document.getElementById('question-container').classList.add('hidden');
             hideRetryNotification();
 
+            // Si estábamos en modo repaso, recargar preguntas falladas
+            const wasReviewMode = window.isReviewMode === true;
+
             // Salir del modo repaso si estaba activo
             window.isReviewMode = false;
             window.reviewQuestions = null;
             window.currentReviewIndex = 0;
+
+            // Recargar datos del usuario si veníamos de modo repaso
+            if (wasReviewMode) {
+                await loadUserData();
+            }
 
             loadAvailableTopics();
         }
