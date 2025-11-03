@@ -1595,39 +1595,49 @@
             }
         }
 
-        async function updateLocalStats(topicId, isCorrect) {
+        async function updateLocalStats(topicId, isCorrect, isReview = false, questionId = null) {
             const topicConfig = availableTopics.find(([id]) => id === topicId);
             const topicTitle = topicConfig ? topicConfig[1].title : 'Tema desconocido';
 
-            // Actualizar localmente primero
-            if (!userStats[topicId]) {
-                userStats[topicId] = {
-                    title: topicTitle,
-                    totalQuestions: 0,
-                    correctAnswers: 0,
-                    lastStudied: new Date().toISOString()
-                };
-            }
+            // Si es modo repaso, no actualizar estadísticas locales
+            if (!isReview) {
+                if (!userStats[topicId]) {
+                    userStats[topicId] = {
+                        title: topicTitle,
+                        totalQuestions: 0,
+                        correctAnswers: 0,
+                        lastStudied: new Date().toISOString()
+                    };
+                }
 
-            userStats[topicId].totalQuestions++;
-            if (isCorrect) {
-                userStats[topicId].correctAnswers++;
+                userStats[topicId].totalQuestions++;
+                if (isCorrect) {
+                    userStats[topicId].correctAnswers++;
+                }
+                userStats[topicId].lastStudied = new Date().toISOString();
+                userStats[topicId].accuracy = Math.round((userStats[topicId].correctAnswers / userStats[topicId].totalQuestions) * 100);
             }
-            userStats[topicId].lastStudied = new Date().toISOString();
-            userStats[topicId].accuracy = Math.round((userStats[topicId].correctAnswers / userStats[topicId].totalQuestions) * 100);
 
             // Enviar al servidor
             try {
+                const requestBody = {
+                    topicId,
+                    questionData: currentQuestion,
+                    userAnswer: null,
+                    isCorrect
+                };
+
+                // Agregar parámetros de repaso si aplica
+                if (isReview && questionId) {
+                    requestBody.isReview = true;
+                    requestBody.questionId = questionId;
+                }
+
                 const response = await fetch(`${API_BASE}/api/record-answer`, {
                     method: 'POST',
                     credentials: 'include',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        topicId,
-                        questionData: currentQuestion,
-                        userAnswer: null,
-                        isCorrect
-                    })
+                    body: JSON.stringify(requestBody)
                 });
 
                 if (response.status === 401 || response.status === 403) {
@@ -1638,10 +1648,20 @@
                 }
 
                 if (response.ok) {
-                    console.log('✅ Estadísticas guardadas en servidor');
+                    console.log(isReview ? '✅ Pregunta de repaso procesada' : '✅ Estadísticas guardadas en servidor');
+
+                    // Si es repaso y fue correcta, actualizar la lista local
+                    if (isReview && isCorrect && questionId) {
+                        if (failedQuestions[topicId]) {
+                            failedQuestions[topicId].questions = failedQuestions[topicId].questions.filter(q => q.id !== questionId);
+                            if (failedQuestions[topicId].questions.length === 0) {
+                                delete failedQuestions[topicId];
+                            }
+                        }
+                    }
                 }
             } catch (error) {
-                console.error('Error guardando estadísticas:', error);
+                console.error('Error guardando datos:', error);
             }
         }
 
@@ -1769,6 +1789,12 @@
             document.getElementById('available-topics').style.display = 'block';
             document.getElementById('question-container').classList.add('hidden');
             hideRetryNotification();
+
+            // Salir del modo repaso si estaba activo
+            window.isReviewMode = false;
+            window.reviewQuestions = null;
+            window.currentReviewIndex = 0;
+
             loadAvailableTopics();
         }
 
@@ -1887,12 +1913,42 @@
 
         async function generateNextQuestion() {
             if (!currentTopic) return;
-            
+
+            // Si estamos en modo repaso, navegar por las preguntas del test
+            if (window.isReviewMode && window.reviewQuestions) {
+                window.currentReviewIndex++;
+
+                // Si llegamos al final del test de repaso
+                if (window.currentReviewIndex >= window.reviewQuestions.length) {
+                    // Finalizar test de repaso
+                    window.isReviewMode = false;
+                    window.reviewQuestions = null;
+                    window.currentReviewIndex = 0;
+
+                    // Recargar preguntas falladas
+                    await loadUserData();
+
+                    // Volver a la página de repaso
+                    alert(`¡Test de repaso completado!\n\nAcertadas: ${correctAnswers} de ${questionCount}`);
+                    backToTopicSelection();
+                    showPage('review');
+                    return;
+                }
+
+                // Mostrar siguiente pregunta de repaso
+                currentQuestion = window.reviewQuestions[window.currentReviewIndex];
+                questionCount++;
+                document.getElementById('question-number').textContent = `Pregunta ${questionCount} de ${window.reviewQuestions.length}`;
+                displayQuestion();
+                return;
+            }
+
+            // Modo normal: generar pregunta desde la API
             questionCount++;
             document.getElementById('question-number').textContent = `Pregunta ${questionCount}`;
-            
+
             showLoading();
-            
+
             if (isServerOnline) {
                 await generateQuestionWithRetry();
             } else {
@@ -1991,12 +2047,18 @@
 
             if (isCorrect) correctAnswers++;
 
-            await updateLocalStats(currentTopic, isCorrect);
+            // Detectar si estamos en modo repaso
+            const isReview = window.isReviewMode === true;
+            const questionId = isReview ? currentQuestion.id : null;
 
-            if (!isCorrect) {
+            // Actualizar estadísticas (o marcar como revisada si es repaso)
+            await updateLocalStats(currentTopic, isCorrect, isReview, questionId);
+
+            // Solo agregar a preguntas falladas si NO es modo repaso
+            if (!isCorrect && !isReview) {
                 await addLocalFailedQuestion(currentTopic, currentQuestion, userAnswer);
             }
-            
+
             document.querySelectorAll('.option').forEach((opt, index) => {
                 if (index === currentQuestion.correct) {
                     opt.classList.add('correct');
@@ -2004,27 +2066,27 @@
                     opt.classList.add('incorrect');
                 }
             });
-            
+
             const resultSection = document.getElementById('result-section');
             const resultIcon = document.getElementById('result-icon');
             const resultTitle = document.getElementById('result-title');
             const resultExplanation = document.getElementById('result-explanation');
-            
+
             if (isCorrect) {
                 resultSection.className = 'result-section correct';
                 resultIcon.textContent = '✅';
-                resultTitle.textContent = '¡Correcto!';
+                resultTitle.textContent = isReview ? '¡Correcto! Pregunta eliminada del repaso.' : '¡Correcto!';
                 resultTitle.style.color = '#16a34a';
             } else {
                 resultSection.className = 'result-section incorrect';
                 resultIcon.textContent = '❌';
-                resultTitle.textContent = 'Incorrecto';
+                resultTitle.textContent = isReview ? 'Incorrecto. Seguirás viendo esta pregunta.' : 'Incorrecto';
                 resultTitle.style.color = '#dc2626';
             }
-            
+
             resultExplanation.textContent = currentQuestion.explanation;
             resultSection.style.display = 'block';
-            
+
             document.getElementById('next-question-btn').style.display = 'block';
         }
 
@@ -2087,7 +2149,7 @@
 
         function displayFailedQuestions() {
             const container = document.getElementById('failed-container');
-            
+
             if (Object.keys(failedQuestions).length === 0) {
                 container.innerHTML = `
                     <div class="empty-state">
@@ -2098,55 +2160,85 @@
                 `;
                 return;
             }
-            
+
             let failedHTML = '<div class="failed-topics">';
-            
+
             Object.entries(failedQuestions).forEach(([topicId, topicData]) => {
+                const topicTitle = topicData.title || 'Tema';
+                const questionCount = topicData.questions.length;
+
                 failedHTML += `
-                    <div class="failed-topic">
-                        <div class="failed-topic-header" onclick="toggleFailedTopic('${topicId}')">
-                            <h3>${topicData.title}</h3>
-                            <div class="failed-topic-count">${topicData.questions.length} preguntas falladas</div>
-                        </div>
-                        <div class="failed-questions" id="failed-${topicId}">
-                `;
-                
-                topicData.questions.forEach(question => {
-                    const correctAnswer = question.options[question.correct];
-                    const userAnswer = question.options[question.userAnswer];
-                    const dateString = new Date(question.date).toLocaleDateString('es-ES');
-                    
-                    failedHTML += `
-                        <div class="failed-question">
-                            <div class="failed-question-text">${question.question}</div>
-                            <div class="failed-question-details">
-                                <strong>Tu respuesta:</strong> ${userAnswer}<br>
-                                <strong>Respuesta correcta:</strong> ${correctAnswer}<br>
-                                <strong>Fecha:</strong> ${dateString}
+                    <div class="failed-topic-card" style="background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #f3f4f6;">
+                        <div style="margin-bottom: 16px;">
+                            <h3 style="margin: 0 0 8px 0; color: #1f2937; font-size: 1.25rem;">${topicTitle}</h3>
+                            <div style="color: #dc2626; font-weight: 600; font-size: 0.875rem;">
+                                📝 ${questionCount} pregunta${questionCount !== 1 ? 's' : ''} para repasar
                             </div>
-                            <button class="retry-button" onclick="removeFailedQuestion('${topicId}', ${question.id})">
-                                ✅ Marcar como repasada
-                            </button>
                         </div>
-                    `;
-                });
-                
-                failedHTML += '</div></div>';
+                        <button onclick="startReviewTest('${topicId}')" style="width: 100%; background: #f97316; color: white; padding: 14px 24px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; font-size: 1rem; transition: all 0.2s ease;" onmouseover="this.style.background='#ea580c'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(249, 115, 22, 0.3)';" onmouseout="this.style.background='#f97316'; this.style.transform='none'; this.style.boxShadow='none';">
+                            🎯 Hacer Test de Repaso
+                        </button>
+                    </div>
+                `;
             });
-            
+
             failedHTML += '</div>';
             container.innerHTML = failedHTML;
         }
 
-        function toggleFailedTopic(topicId) {
-            const element = document.getElementById(`failed-${topicId}`);
-            element.classList.toggle('active');
-        }
+        // Nueva función: Iniciar test de repaso
+        async function startReviewTest(topicId) {
+            try {
+                console.log(`🎯 Iniciando test de repaso para tema: ${topicId}`);
 
-        function removeFailedQuestion(topicId, questionId) {
-            removeLocalFailedQuestion(topicId, questionId);
-            displayFailedQuestions();
-            showSuccess('Pregunta marcada como repasada');
+                const response = await fetch(`${API_BASE}/api/review-exam/${topicId}`, {
+                    method: 'GET',
+                    credentials: 'include',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+
+                if (response.status === 401 || response.status === 403) {
+                    isAuthenticated = false;
+                    currentUser = null;
+                    showAuthScreen();
+                    showAuthMessage('error', 'Sesión expirada. Inicia sesión nuevamente.');
+                    return;
+                }
+
+                if (!response.ok) {
+                    throw new Error('Error al cargar preguntas de repaso');
+                }
+
+                const data = await response.json();
+
+                // Iniciar el test con las preguntas de repaso
+                currentTopic = topicId;
+                window.reviewQuestions = data.questions;
+                window.isReviewMode = true;
+                window.currentReviewIndex = 0;
+
+                currentQuestion = window.reviewQuestions[0];
+                questionCount = 1;
+                correctAnswers = 0;
+
+                // Obtener el título del tema
+                const topicConfig = availableTopics.find(([id]) => id === topicId);
+                const topicTitle = topicConfig ? topicConfig[1].title : (failedQuestions[topicId]?.title || 'Test de Repaso');
+
+                document.getElementById('current-topic-name').textContent = topicTitle + ' - REPASO';
+                document.getElementById('question-number').textContent = `Pregunta ${questionCount} de ${window.reviewQuestions.length}`;
+
+                // Mostrar página de estudio y el contenedor de preguntas
+                showPage('study');
+                showQuestionMode();
+                displayQuestion();
+
+                console.log(`✅ Test de repaso iniciado: ${data.questions.length} preguntas`);
+
+            } catch (error) {
+                console.error('Error iniciando test de repaso:', error);
+                alert('Error al cargar el test de repaso. Intenta de nuevo.');
+            }
         }
 
         // ========================
