@@ -1263,6 +1263,53 @@ app.post('/api/exam/official', requireAuth, async (req, res) => {
   }
 });
 
+// Guardar preguntas falladas del examen oficial
+app.post('/api/exam/save-failed', requireAuth, (req, res) => {
+  try {
+    const userId = req.user.id;
+    const { examId, examName, failedQuestions } = req.body;
+
+    console.log(`💾 Usuario ${userId} guardando ${failedQuestions.length} preguntas falladas del "${examName}"`);
+
+    // Guardar cada pregunta fallada con el examId como topic_id
+    let savedCount = 0;
+    for (const answer of failedQuestions) {
+      const questionData = {
+        question: answer.question,
+        options: answer.options,
+        correct: answer.correctAnswer,
+        explanation: answer.explanation,
+        difficulty: answer.difficulty || 'media',
+        page_reference: answer.page_reference || ''
+      };
+
+      const result = db.addFailedQuestion(
+        userId,
+        examId,  // Usar examId como topic_id (ej: "examen-25-1234567890")
+        questionData,
+        answer.userAnswer
+      );
+
+      if (result.success && !result.duplicate) {
+        savedCount++;
+      }
+    }
+
+    console.log(`✅ Guardadas ${savedCount} preguntas nuevas del examen (${failedQuestions.length - savedCount} duplicadas omitidas)`);
+
+    res.json({
+      success: true,
+      savedCount,
+      examId,
+      examName
+    });
+
+  } catch (error) {
+    console.error('❌ Error guardando preguntas falladas del examen:', error);
+    res.status(500).json({ error: 'Error al guardar preguntas falladas' });
+  }
+});
+
 app.post('/api/resolve-failed-question', requireAuth, (req, res) => {
   try {
     const userId = req.user.id;
