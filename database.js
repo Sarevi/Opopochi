@@ -323,8 +323,23 @@ function getUserFailedQuestions(userId) {
   return grouped;
 }
 
-// Agregar pregunta fallada
+// Agregar pregunta fallada (evitando duplicados)
 function addFailedQuestion(userId, topicId, questionData, userAnswer) {
+  // Verificar si ya existe esta pregunta para este usuario y tema
+  const checkStmt = db.prepare(`
+    SELECT id FROM failed_questions
+    WHERE user_id = ? AND topic_id = ? AND question = ?
+  `);
+
+  const existing = checkStmt.get(userId, topicId, questionData.question);
+
+  // Si ya existe, NO insertarla de nuevo
+  if (existing) {
+    console.log(`⚠️ Pregunta duplicada detectada - NO se insertará (ID existente: ${existing.id})`);
+    return { success: true, duplicate: true, id: existing.id };
+  }
+
+  // Si no existe, insertarla
   const stmt = db.prepare(`
     INSERT INTO failed_questions (user_id, topic_id, question, options, correct, user_answer, explanation, difficulty, page_reference)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
@@ -342,7 +357,8 @@ function addFailedQuestion(userId, topicId, questionData, userAnswer) {
     questionData.page_reference
   );
 
-  return { success: true };
+  console.log(`✅ Pregunta fallada agregada correctamente`);
+  return { success: true, duplicate: false };
 }
 
 // Eliminar pregunta fallada
