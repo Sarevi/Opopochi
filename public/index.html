@@ -1173,6 +1173,27 @@
             <div class="card" style="margin-top: 24px;">
                 <h3 style="margin-bottom: 16px; color: #1f2937;">⚙️ Configurar Examen</h3>
 
+                <!-- Banner Examen Pendiente -->
+                <div id="pending-exam-banner" style="display: none; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 12px; padding: 20px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                        <div style="font-size: 2.5rem;">📝</div>
+                        <div style="flex: 1;">
+                            <div style="font-weight: 700; font-size: 1.125rem; color: white; margin-bottom: 4px;">¡Tienes un Examen Pendiente!</div>
+                            <div style="color: rgba(255,255,255,0.9); font-size: 0.875rem;" id="pending-exam-info">
+                                Respondiste X de Y preguntas
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                        <button onclick="continueOfficialExam()" style="background: white; color: #059669; padding: 12px 20px; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; transition: all 0.2s;">
+                            ✅ Continuar Examen
+                        </button>
+                        <button onclick="cancelPendingExam()" style="background: rgba(255,255,255,0.2); color: white; padding: 12px 20px; font-weight: 600; border: 1px solid white; border-radius: 8px; cursor: pointer; font-size: 1rem; transition: all 0.2s;">
+                            ❌ Cancelar y Empezar Nuevo
+                        </button>
+                    </div>
+                </div>
+
                 <!-- Selector de Preguntas -->
                 <div style="margin-bottom: 24px;">
                     <label style="display: block; font-weight: 600; margin-bottom: 12px; color: #374151;">
@@ -1876,6 +1897,9 @@
                 case 'review':
                     displayFailedQuestions();
                     break;
+                case 'official-exam':
+                    checkPendingExam();
+                    break;
             }
         }
 
@@ -2540,7 +2564,20 @@
             // Contar correctas para el resumen final
             if (isCorrect) correctAnswers++;
 
+            // GUARDAR PROGRESO EN LOCALSTORAGE
+            const examState = {
+                questions: officialExamQuestions,
+                answers: officialExamAnswers,
+                currentQuestionIndex: questionCount, // Ya respondió esta, la siguiente será questionCount + 1
+                correctAnswers: correctAnswers,
+                startTime: officialExamStartTime,
+                questionCount: officialExamQuestions.length,
+                timestamp: Date.now()
+            };
+            localStorage.setItem('official_exam_progress', JSON.stringify(examState));
+
             console.log(`📝 Respuesta guardada: Pregunta ${questionCount} - ${isCorrect ? 'Correcta ✅' : 'Incorrecta ❌'}`);
+            console.log(`💾 Progreso guardado: ${questionCount}/${officialExamQuestions.length}`);
         }
 
         function selectExamSize(size) {
@@ -2598,6 +2635,19 @@
                 questionCount = 1;
                 correctAnswers = 0;
                 currentQuestion = officialExamQuestions[0];
+
+                // GUARDAR ESTADO INICIAL EN LOCALSTORAGE
+                const initialExamState = {
+                    questions: officialExamQuestions,
+                    answers: [],
+                    currentQuestionIndex: 0, // Aún no ha respondido ninguna
+                    correctAnswers: 0,
+                    startTime: officialExamStartTime,
+                    questionCount: officialExamQuestions.length,
+                    timestamp: Date.now()
+                };
+                localStorage.setItem('official_exam_progress', JSON.stringify(initialExamState));
+                console.log('💾 Estado inicial del examen guardado');
 
                 // Mostrar primera pregunta
                 showPage('study');
@@ -2755,6 +2805,10 @@
             isOfficialExamMode = false;
             officialExamQuestions = [];
             officialExamAnswers = [];
+
+            // LIMPIAR PROGRESO GUARDADO
+            localStorage.removeItem('official_exam_progress');
+            console.log('🗑️ Progreso del examen eliminado de localStorage');
         }
 
         function exitOfficialExam() {
@@ -2776,6 +2830,86 @@
             }
 
             showPage('official-exam');
+        }
+
+        // Detectar examen pendiente y mostrar banner
+        function checkPendingExam() {
+            const savedProgress = localStorage.getItem('official_exam_progress');
+
+            if (savedProgress) {
+                try {
+                    const examState = JSON.parse(savedProgress);
+                    const answered = examState.currentQuestionIndex;
+                    const total = examState.questionCount;
+
+                    // Mostrar banner
+                    document.getElementById('pending-exam-banner').style.display = 'block';
+                    document.getElementById('pending-exam-info').textContent =
+                        `Respondiste ${answered} de ${total} preguntas`;
+
+                    console.log(`📝 Examen pendiente detectado: ${answered}/${total}`);
+                } catch (error) {
+                    console.error('Error leyendo examen pendiente:', error);
+                    localStorage.removeItem('official_exam_progress');
+                }
+            } else {
+                document.getElementById('pending-exam-banner').style.display = 'none';
+            }
+        }
+
+        // Continuar examen pendiente
+        function continueOfficialExam() {
+            const savedProgress = localStorage.getItem('official_exam_progress');
+
+            if (!savedProgress) {
+                alert('No se encontró el examen pendiente.');
+                return;
+            }
+
+            try {
+                const examState = JSON.parse(savedProgress);
+
+                // Restaurar estado completo
+                officialExamQuestions = examState.questions;
+                officialExamAnswers = examState.answers;
+                questionCount = examState.currentQuestionIndex + 1; // Siguiente pregunta
+                correctAnswers = examState.correctAnswers;
+                officialExamStartTime = examState.startTime;
+                isOfficialExamMode = true;
+
+                // Verificar si ya terminó todas las preguntas
+                if (questionCount > officialExamQuestions.length) {
+                    finishOfficialExam();
+                    return;
+                }
+
+                // Cargar la siguiente pregunta
+                currentQuestion = officialExamQuestions[questionCount - 1];
+
+                // Ir a la página de estudio y mostrar la pregunta
+                showPage('study');
+                showQuestionMode();
+                document.getElementById('current-topic-name').textContent = '🎓 EXAMEN OFICIAL';
+                document.getElementById('question-number').textContent =
+                    `Pregunta ${questionCount} de ${officialExamQuestions.length}`;
+                displayQuestion();
+
+                console.log(`✅ Examen restaurado: Continuando desde pregunta ${questionCount}`);
+            } catch (error) {
+                console.error('Error restaurando examen:', error);
+                alert('Error al restaurar el examen. Se eliminará el progreso.');
+                localStorage.removeItem('official_exam_progress');
+                checkPendingExam();
+            }
+        }
+
+        // Cancelar examen pendiente
+        function cancelPendingExam() {
+            if (confirm('¿Estás seguro? Se perderá todo el progreso del examen actual.')) {
+                localStorage.removeItem('official_exam_progress');
+                checkPendingExam();
+                console.log('❌ Examen pendiente cancelado');
+            }
         }
 
         // ========================
