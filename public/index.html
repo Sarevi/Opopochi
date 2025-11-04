@@ -2622,7 +2622,8 @@
                 }
 
                 if (!response.ok) {
-                    throw new Error('Error al generar examen oficial');
+                    const errorData = await response.json().catch(() => ({ error: 'Error desconocido' }));
+                    throw new Error(errorData.error || `Error del servidor: ${response.status}`);
                 }
 
                 const data = await response.json();
@@ -2660,7 +2661,8 @@
 
             } catch (error) {
                 console.error('Error iniciando examen oficial:', error);
-                alert('Error al generar examen oficial. Intenta de nuevo.');
+                console.error('Error completo:', error.message, error.stack);
+                alert(`Error al generar examen oficial:\n${error.message}\n\nRevisa la consola para más detalles.`);
 
                 // Restaurar botón y ocultar loading en caso de error
                 const startBtn = document.getElementById('start-exam-btn');
