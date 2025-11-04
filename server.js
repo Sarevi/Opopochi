@@ -1212,46 +1212,136 @@ app.post('/api/exam/official', requireAuth, async (req, res) => {
 
     // Obtener todos los temas disponibles
     const allTopics = Object.keys(TOPIC_CONFIG);
+
+    // Calcular cuántas preguntas por tema (distribución equitativa)
     const questionsPerTopic = Math.ceil(questionCount / allTopics.length);
 
-    let allQuestions = [];
+    console.log(`📚 Generando ${questionsPerTopic} preguntas por tema de ${allTopics.length} temas`);
 
-    // Generar preguntas de cada tema (distribución equitativa)
-    for (const topicId of allTopics) {
+    // Obtener todo el contenido mezclado de todos los temas
+    const allContent = await getDocumentsByTopics(allTopics);
+
+    if (!allContent || !allContent.trim()) {
+      return res.status(404).json({
+        error: 'No se encontró contenido para los temas'
+      });
+    }
+
+    // Dividir en chunks de 1200 caracteres
+    const chunks = splitIntoChunks(allContent, 1200);
+    console.log(`📄 Documento dividido en ${chunks.length} chunks de todos los temas`);
+
+    if (chunks.length === 0) {
+      return res.status(404).json({ error: 'No hay contenido suficiente' });
+    }
+
+    const topicId = 'examen-oficial'; // ID especial para examen oficial
+    let allGeneratedQuestions = [];
+
+    // SISTEMA 3 NIVELES: 20% simples / 60% medias / 20% elaboradas
+    const totalNeeded = questionCount;
+    const simpleNeeded = Math.round(totalNeeded * 0.20);
+    const mediaNeeded = Math.round(totalNeeded * 0.60);
+    const elaboratedNeeded = totalNeeded - simpleNeeded - mediaNeeded;
+
+    const simpleCalls = Math.ceil(simpleNeeded / 3);
+    const mediaCalls = Math.ceil(mediaNeeded / 3);
+    const elaboratedCalls = Math.ceil(elaboratedNeeded / 2);
+
+    console.log(`🎯 Plan (20/60/20): ${simpleNeeded} simples + ${mediaNeeded} medias + ${elaboratedNeeded} elaboradas`);
+
+    // Generar preguntas SIMPLES (20%)
+    for (let i = 0; i < simpleCalls; i++) {
+      const chunkIndex = Math.floor(Math.random() * chunks.length);
+      const selectedChunk = chunks[chunkIndex];
+
+      console.log(`⚪ SIMPLE ${i + 1}/${simpleCalls}`);
+
+      const fullPrompt = CLAUDE_PROMPT_SIMPLE.replace('{{CONTENT}}', selectedChunk);
+
       try {
-        const topicQuestions = await generateQuestions([topicId], questionsPerTopic, userId);
-        allQuestions.push(...topicQuestions);
+        const response = await callClaudeWithImprovedRetry(fullPrompt, 600, 'simples', 3);
+        const responseText = response.content[0].text;
+        const questionsData = parseClaudeResponse(responseText);
 
-        // Si ya tenemos suficientes, parar
-        if (allQuestions.length >= questionCount) break;
+        if (questionsData?.questions?.length) {
+          allGeneratedQuestions.push(...questionsData.questions);
+        }
       } catch (error) {
-        console.error(`❌ Error generando preguntas del tema ${topicId}:`, error.message);
-        // Continuar con el siguiente tema
+        console.error(`❌ Error en simple ${i + 1}:`, error.message);
       }
     }
 
-    // Recortar al número exacto solicitado
-    allQuestions = allQuestions.slice(0, questionCount);
+    // Generar preguntas MEDIAS (60%)
+    for (let i = 0; i < mediaCalls; i++) {
+      const chunkIndex = Math.floor(Math.random() * chunks.length);
+      const selectedChunk = chunks[chunkIndex];
 
-    // Mezclar aleatoriamente (shuffle Fisher-Yates)
-    for (let i = allQuestions.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]];
+      console.log(`🔵 MEDIA ${i + 1}/${mediaCalls}`);
+
+      const fullPrompt = CLAUDE_PROMPT_MEDIA.replace('{{CONTENT}}', selectedChunk);
+
+      try {
+        const response = await callClaudeWithImprovedRetry(fullPrompt, 900, 'medias', 3);
+        const responseText = response.content[0].text;
+        const questionsData = parseClaudeResponse(responseText);
+
+        if (questionsData?.questions?.length) {
+          allGeneratedQuestions.push(...questionsData.questions);
+        }
+      } catch (error) {
+        console.error(`❌ Error en media ${i + 1}:`, error.message);
+      }
     }
 
-    // Añadir flag de examen oficial a cada pregunta
-    const officialQuestions = allQuestions.map((q, index) => ({
-      ...q,
-      questionNumber: index + 1,
-      isOfficial: true
-    }));
+    // Generar preguntas ELABORADAS (20%)
+    for (let i = 0; i < elaboratedCalls; i++) {
+      const chunkIndex = Math.floor(Math.random() * chunks.length);
+      const selectedChunk = chunks[chunkIndex];
 
-    console.log(`✅ Examen oficial generado: ${officialQuestions.length} preguntas mezcladas de ${allTopics.length} temas`);
+      console.log(`🔴 ELABORADA ${i + 1}/${elaboratedCalls}`);
+
+      const fullPrompt = CLAUDE_PROMPT_ELABORADA.replace('{{CONTENT}}', selectedChunk);
+
+      try {
+        const response = await callClaudeWithImprovedRetry(fullPrompt, 1000, 'elaboradas', 2);
+        const responseText = response.content[0].text;
+        const questionsData = parseClaudeResponse(responseText);
+
+        if (questionsData?.questions?.length) {
+          allGeneratedQuestions.push(...questionsData.questions);
+        }
+      } catch (error) {
+        console.error(`❌ Error en elaborada ${i + 1}:`, error.message);
+      }
+    }
+
+    // Validar y aleatorizar todas las preguntas generadas
+    const finalQuestions = allGeneratedQuestions.slice(0, questionCount).map((q, index) => {
+      if (!q.question || !Array.isArray(q.options) || q.options.length !== 4) {
+        q.options = q.options || ["A) Opción 1", "B) Opción 2", "C) Opción 3", "D) Opción 4"];
+      }
+      q.correct = q.correct ?? 0;
+      q.explanation = q.explanation || "Explicación no disponible.";
+      q.difficulty = q.difficulty || "media";
+      q.page_reference = q.page_reference || "Examen Oficial";
+
+      // Aleatorizar orden de las opciones
+      return randomizeQuestionOptions(q);
+    });
+
+    // Mezclar aleatoriamente las preguntas (shuffle Fisher-Yates)
+    for (let i = finalQuestions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [finalQuestions[i], finalQuestions[j]] = [finalQuestions[j], finalQuestions[i]];
+    }
+
+    console.log(`✅ Examen oficial generado: ${finalQuestions.length} preguntas mezcladas`);
 
     res.json({
       examId: Date.now(),
-      questions: officialQuestions,
-      questionCount: officialQuestions.length,
+      questions: finalQuestions,
+      questionCount: finalQuestions.length,
       isOfficial: true,
       topics: allTopics,
       timestamp: new Date().toISOString()
