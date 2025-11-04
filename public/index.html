@@ -1215,9 +1215,14 @@
                 </div>
 
                 <!-- Botón Iniciar -->
-                <button onclick="startOfficialExam()" style="width: 100%; background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); color: white; padding: 16px 32px; font-size: 1.125rem; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3); transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(249, 115, 22, 0.4)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 4px 12px rgba(249, 115, 22, 0.3)';">
+                <button id="start-exam-btn" onclick="startOfficialExam()" style="width: 100%; background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); color: white; padding: 16px 32px; font-size: 1.125rem; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3); transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(249, 115, 22, 0.4)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 4px 12px rgba(249, 115, 22, 0.3)';">
                     🚀 Iniciar Examen Oficial
                 </button>
+                <div id="exam-loading" style="display: none; text-align: center; margin-top: 16px; padding: 24px; background: #fff7ed; border-radius: 12px; border: 2px solid #f97316;">
+                    <div class="loading" style="margin: 0 auto 16px;"></div>
+                    <div style="font-weight: 600; color: #f97316; margin-bottom: 8px;">Generando Examen Oficial</div>
+                    <div style="font-size: 0.875rem; color: #9a3412;">Esto puede tardar 1-2 minutos. Por favor espera...</div>
+                </div>
             </div>
         </div>
     </div>
@@ -2552,8 +2557,14 @@
             try {
                 console.log(`🎓 Iniciando examen oficial: ${officialExamConfig.questionCount} preguntas`);
 
-                // Mostrar loading
-                showLoading();
+                // Mostrar loading en la página de configuración
+                const startBtn = document.getElementById('start-exam-btn');
+                const loadingDiv = document.getElementById('exam-loading');
+
+                startBtn.disabled = true;
+                startBtn.style.opacity = '0.5';
+                startBtn.style.cursor = 'not-allowed';
+                loadingDiv.style.display = 'block';
 
                 // Solicitar examen al servidor
                 const response = await fetch(`${API_BASE}/api/exam/official`, {
@@ -2600,6 +2611,19 @@
             } catch (error) {
                 console.error('Error iniciando examen oficial:', error);
                 alert('Error al generar examen oficial. Intenta de nuevo.');
+
+                // Restaurar botón y ocultar loading en caso de error
+                const startBtn = document.getElementById('start-exam-btn');
+                const loadingDiv = document.getElementById('exam-loading');
+
+                if (startBtn) {
+                    startBtn.disabled = false;
+                    startBtn.style.opacity = '1';
+                    startBtn.style.cursor = 'pointer';
+                }
+                if (loadingDiv) {
+                    loadingDiv.style.display = 'none';
+                }
             }
         }
 
@@ -2737,6 +2761,20 @@
             isOfficialExamMode = false;
             officialExamQuestions = [];
             officialExamAnswers = [];
+
+            // Restaurar botón y ocultar loading
+            const startBtn = document.getElementById('start-exam-btn');
+            const loadingDiv = document.getElementById('exam-loading');
+
+            if (startBtn) {
+                startBtn.disabled = false;
+                startBtn.style.opacity = '1';
+                startBtn.style.cursor = 'pointer';
+            }
+            if (loadingDiv) {
+                loadingDiv.style.display = 'none';
+            }
+
             showPage('official-exam');
         }
 
