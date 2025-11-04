@@ -2836,6 +2836,19 @@
 
         // Detectar examen pendiente y mostrar banner
         function checkPendingExam() {
+            // Siempre restaurar botón y ocultar loading al entrar a esta página
+            const startBtn = document.getElementById('start-exam-btn');
+            const loadingDiv = document.getElementById('exam-loading');
+
+            if (startBtn) {
+                startBtn.disabled = false;
+                startBtn.style.opacity = '1';
+                startBtn.style.cursor = 'pointer';
+            }
+            if (loadingDiv) {
+                loadingDiv.style.display = 'none';
+            }
+
             const savedProgress = localStorage.getItem('official_exam_progress');
 
             if (savedProgress) {
