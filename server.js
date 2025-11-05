@@ -956,6 +956,11 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
     const topicId = topics.join(','); // Combinar topics si son múltiples
     let allGeneratedQuestions = [];
 
+    // CONFIGURACIÓN DE CACHÉ
+    const CACHE_PROBABILITY = 0.60; // 60% intentar caché, 40% generar nueva
+    let cacheHits = 0;
+    let cacheMisses = 0;
+
     // SISTEMA 3 NIVELES: 20% simples / 60% medias / 20% elaboradas
     const totalNeeded = questionCount;
     const simpleNeeded = Math.round(totalNeeded * 0.20); // 20% simples
@@ -969,75 +974,174 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
     console.log(`🎯 Plan (20/60/20): ${simpleNeeded} simples (${simpleCalls} llamadas) + ${mediaNeeded} medias (${mediaCalls} llamadas) + ${elaboratedNeeded} elaboradas (${elaboratedCalls} llamadas)`);
 
     // Generar preguntas SIMPLES (20%)
-    for (let i = 0; i < simpleCalls; i++) {
-      const chunkIndex = db.getUnusedChunkIndex(userId, topicId, chunks.length);
-      const selectedChunk = chunks[chunkIndex];
+    let simpleGenerated = 0;
+    while (simpleGenerated < simpleNeeded) {
+      const questionsToGet = Math.min(3, simpleNeeded - simpleGenerated);
 
-      console.log(`\n⚪ SIMPLE ${i + 1}/${simpleCalls} - Chunk ${chunkIndex}/${chunks.length}`);
-      console.log(`📝 "${selectedChunk.substring(0, 100)}..."`);
+      // Intentar obtener de caché según probabilidad
+      const tryCache = Math.random() < CACHE_PROBABILITY;
+      let questions = [];
 
-      const fullPrompt = CLAUDE_PROMPT_SIMPLE.replace('{{CONTENT}}', selectedChunk);
+      if (tryCache) {
+        console.log(`\n💾 SIMPLE - Intentando caché (${questionsToGet} preguntas)...`);
 
-      try {
-        const response = await callClaudeWithImprovedRetry(fullPrompt, 800, 'simples', 3);
-        const responseText = response.content[0].text;
-        const questionsData = parseClaudeResponse(responseText);
-
-        if (questionsData?.questions?.length) {
-          allGeneratedQuestions.push(...questionsData.questions);
-          db.markChunkAsUsed(userId, topicId, chunkIndex);
+        for (let j = 0; j < questionsToGet; j++) {
+          const cached = db.getCachedQuestion(userId, topicId, 'simple');
+          if (cached) {
+            questions.push(cached.question);
+            db.markQuestionAsSeen(userId, cached.cacheId, 'exam');
+            cacheHits++;
+            console.log(`✓ Pregunta de caché (ID: ${cached.cacheId})`);
+          } else {
+            break; // No hay más en caché, generar nuevas
+          }
         }
-      } catch (error) {
-        console.error(`❌ Error en simple ${i + 1}:`, error.message);
       }
+
+      // Si no se obtuvieron suficientes del caché, generar nuevas
+      if (questions.length < questionsToGet) {
+        const toGenerate = questionsToGet - questions.length;
+        console.log(`\n⚪ SIMPLE - Generando ${toGenerate} preguntas nuevas`);
+
+        const chunkIndex = db.getUnusedChunkIndex(userId, topicId, chunks.length);
+        const selectedChunk = chunks[chunkIndex];
+        console.log(`📝 Chunk ${chunkIndex}/${chunks.length}: "${selectedChunk.substring(0, 80)}..."`);
+
+        const fullPrompt = CLAUDE_PROMPT_SIMPLE.replace('{{CONTENT}}', selectedChunk);
+
+        try {
+          const response = await callClaudeWithImprovedRetry(fullPrompt, 800, 'simples', 3);
+          const responseText = response.content[0].text;
+          const questionsData = parseClaudeResponse(responseText);
+
+          if (questionsData?.questions?.length) {
+            // Guardar cada pregunta en caché
+            questionsData.questions.slice(0, toGenerate).forEach(q => {
+              db.saveToCacheAndTrack(userId, topicId, 'simple', q, 'exam');
+              questions.push(q);
+              cacheMisses++;
+            });
+            db.markChunkAsUsed(userId, topicId, chunkIndex);
+          }
+        } catch (error) {
+          console.error(`❌ Error generando simples:`, error.message);
+        }
+      }
+
+      allGeneratedQuestions.push(...questions);
+      simpleGenerated += questions.length;
     }
 
     // Generar preguntas MEDIAS (60%)
-    for (let i = 0; i < mediaCalls; i++) {
-      const chunkIndex = db.getUnusedChunkIndex(userId, topicId, chunks.length);
-      const selectedChunk = chunks[chunkIndex];
+    let mediaGenerated = 0;
+    while (mediaGenerated < mediaNeeded) {
+      const questionsToGet = Math.min(3, mediaNeeded - mediaGenerated);
 
-      console.log(`\n🔵 MEDIA ${i + 1}/${mediaCalls} - Chunk ${chunkIndex}/${chunks.length}`);
-      console.log(`📝 "${selectedChunk.substring(0, 100)}..."`);
+      const tryCache = Math.random() < CACHE_PROBABILITY;
+      let questions = [];
 
-      const fullPrompt = CLAUDE_PROMPT_MEDIA.replace('{{CONTENT}}', selectedChunk);
+      if (tryCache) {
+        console.log(`\n💾 MEDIA - Intentando caché (${questionsToGet} preguntas)...`);
 
-      try {
-        const response = await callClaudeWithImprovedRetry(fullPrompt, 1100, 'medias', 3);
-        const responseText = response.content[0].text;
-        const questionsData = parseClaudeResponse(responseText);
-
-        if (questionsData?.questions?.length) {
-          allGeneratedQuestions.push(...questionsData.questions);
-          db.markChunkAsUsed(userId, topicId, chunkIndex);
+        for (let j = 0; j < questionsToGet; j++) {
+          const cached = db.getCachedQuestion(userId, topicId, 'media');
+          if (cached) {
+            questions.push(cached.question);
+            db.markQuestionAsSeen(userId, cached.cacheId, 'exam');
+            cacheHits++;
+            console.log(`✓ Pregunta de caché (ID: ${cached.cacheId})`);
+          } else {
+            break;
+          }
         }
-      } catch (error) {
-        console.error(`❌ Error en media ${i + 1}:`, error.message);
       }
+
+      if (questions.length < questionsToGet) {
+        const toGenerate = questionsToGet - questions.length;
+        console.log(`\n🔵 MEDIA - Generando ${toGenerate} preguntas nuevas`);
+
+        const chunkIndex = db.getUnusedChunkIndex(userId, topicId, chunks.length);
+        const selectedChunk = chunks[chunkIndex];
+        console.log(`📝 Chunk ${chunkIndex}/${chunks.length}: "${selectedChunk.substring(0, 80)}..."`);
+
+        const fullPrompt = CLAUDE_PROMPT_MEDIA.replace('{{CONTENT}}', selectedChunk);
+
+        try {
+          const response = await callClaudeWithImprovedRetry(fullPrompt, 1100, 'medias', 3);
+          const responseText = response.content[0].text;
+          const questionsData = parseClaudeResponse(responseText);
+
+          if (questionsData?.questions?.length) {
+            questionsData.questions.slice(0, toGenerate).forEach(q => {
+              db.saveToCacheAndTrack(userId, topicId, 'media', q, 'exam');
+              questions.push(q);
+              cacheMisses++;
+            });
+            db.markChunkAsUsed(userId, topicId, chunkIndex);
+          }
+        } catch (error) {
+          console.error(`❌ Error generando medias:`, error.message);
+        }
+      }
+
+      allGeneratedQuestions.push(...questions);
+      mediaGenerated += questions.length;
     }
 
     // Generar preguntas ELABORADAS (20%)
-    for (let i = 0; i < elaboratedCalls; i++) {
-      const chunkIndex = db.getUnusedChunkIndex(userId, topicId, chunks.length);
-      const selectedChunk = chunks[chunkIndex];
+    let elaboratedGenerated = 0;
+    while (elaboratedGenerated < elaboratedNeeded) {
+      const questionsToGet = Math.min(2, elaboratedNeeded - elaboratedGenerated);
 
-      console.log(`\n🔴 ELABORADA ${i + 1}/${elaboratedCalls} - Chunk ${chunkIndex}/${chunks.length}`);
-      console.log(`📝 "${selectedChunk.substring(0, 100)}..."`);
+      const tryCache = Math.random() < CACHE_PROBABILITY;
+      let questions = [];
 
-      const fullPrompt = CLAUDE_PROMPT_ELABORADA.replace('{{CONTENT}}', selectedChunk);
+      if (tryCache) {
+        console.log(`\n💾 ELABORADA - Intentando caché (${questionsToGet} preguntas)...`);
 
-      try {
-        const response = await callClaudeWithImprovedRetry(fullPrompt, 1400, 'elaboradas', 2);
-        const responseText = response.content[0].text;
-        const questionsData = parseClaudeResponse(responseText);
-
-        if (questionsData?.questions?.length) {
-          allGeneratedQuestions.push(...questionsData.questions);
-          db.markChunkAsUsed(userId, topicId, chunkIndex);
+        for (let j = 0; j < questionsToGet; j++) {
+          const cached = db.getCachedQuestion(userId, topicId, 'elaborada');
+          if (cached) {
+            questions.push(cached.question);
+            db.markQuestionAsSeen(userId, cached.cacheId, 'exam');
+            cacheHits++;
+            console.log(`✓ Pregunta de caché (ID: ${cached.cacheId})`);
+          } else {
+            break;
+          }
         }
-      } catch (error) {
-        console.error(`❌ Error en elaborada ${i + 1}:`, error.message);
       }
+
+      if (questions.length < questionsToGet) {
+        const toGenerate = questionsToGet - questions.length;
+        console.log(`\n🔴 ELABORADA - Generando ${toGenerate} preguntas nuevas`);
+
+        const chunkIndex = db.getUnusedChunkIndex(userId, topicId, chunks.length);
+        const selectedChunk = chunks[chunkIndex];
+        console.log(`📝 Chunk ${chunkIndex}/${chunks.length}: "${selectedChunk.substring(0, 80)}..."`);
+
+        const fullPrompt = CLAUDE_PROMPT_ELABORADA.replace('{{CONTENT}}', selectedChunk);
+
+        try {
+          const response = await callClaudeWithImprovedRetry(fullPrompt, 1400, 'elaboradas', 2);
+          const responseText = response.content[0].text;
+          const questionsData = parseClaudeResponse(responseText);
+
+          if (questionsData?.questions?.length) {
+            questionsData.questions.slice(0, toGenerate).forEach(q => {
+              db.saveToCacheAndTrack(userId, topicId, 'elaborada', q, 'exam');
+              questions.push(q);
+              cacheMisses++;
+            });
+            db.markChunkAsUsed(userId, topicId, chunkIndex);
+          }
+        } catch (error) {
+          console.error(`❌ Error generando elaboradas:`, error.message);
+        }
+      }
+
+      allGeneratedQuestions.push(...questions);
+      elaboratedGenerated += questions.length;
     }
 
     // Validar y aleatorizar todas las preguntas generadas
@@ -1088,6 +1192,19 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
     const coverage = db.getChunkCoverage(userId, topicId);
     console.log(`📊 Cobertura del tema: ${coverage}/${chunks.length} chunks usados (${Math.round(coverage/chunks.length*100)}%)`);
 
+    // Estadísticas de caché
+    const total = cacheHits + cacheMisses;
+    const cacheHitRate = total > 0 ? Math.round((cacheHits / total) * 100) : 0;
+    console.log(`💾 Caché: ${cacheHits} hits / ${cacheMisses} misses (${cacheHitRate}% hit rate)`);
+
+    // Actualizar estadísticas diarias de caché
+    const costPerQuestion = 0.00076;
+    const totalCost = cacheMisses * costPerQuestion;
+    db.updateCacheStats(cacheMisses, cacheHits, totalCost);
+
+    // Limpiar preguntas expiradas (cada vez que se genera un examen)
+    db.cleanExpiredCache();
+
     res.json({
       examId: Date.now(),
       questions: finalQuestions,
@@ -1097,6 +1214,13 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
         used: coverage,
         total: chunks.length,
         percentage: Math.round(coverage/chunks.length*100)
+      },
+      cacheStats: {
+        hits: cacheHits,
+        misses: cacheMisses,
+        hitRate: cacheHitRate,
+        totalQuestions: total,
+        cost: totalCost.toFixed(5)
       }
     });
     
