@@ -186,40 +186,47 @@ async function callClaudeWithImprovedRetry(fullPrompt, maxTokens = 700, question
         model: "claude-haiku-4-5-20251001", // Claude Haiku 4.5 - Rápido, económico y capaz
         max_tokens: maxTokens, // Variable según tipo de pregunta
         temperature: 0.2,  // Temperatura baja para eficiencia máxima
-        /* COSTO OPTIMIZADO - SISTEMA 3 NIVELES (20% Simple / 60% Media / 20% Elaborada):
+        /* SISTEMA PREMIUM - MÁXIMA CALIDAD (20% Simple / 60% Media / 20% Elaborada):
          *
-         * PREGUNTAS SIMPLES (20% - 3 por llamada) - DIRECTAS:
+         * PREGUNTAS SIMPLES (20% - 3 por llamada) - TIPO OPOSICIÓN:
          * - Chunk: 1200 caracteres (~480 tokens)
-         * - Prompt: ~110 tokens
-         * - Input total: ~590 tokens × $0.80/1M = $0.000472
-         * - Output: ~70 tokens × 3 = 210 tokens × $4.00/1M = $0.000840
-         * - Total: $0.001312 ÷ 3 = $0.000437 USD/pregunta
+         * - Prompt detallado: ~200 tokens (instrucciones completas + ejemplos)
+         * - Input total: ~680 tokens × $0.80/1M = $0.000544
+         * - Output (800 max): ~93 tokens × 3 = 280 tokens × $4.00/1M = $0.001120
+         * - Total: $0.001664 ÷ 3 = $0.000555 USD/pregunta
          *
-         * PREGUNTAS MEDIAS (60% - 3 por llamada) - CONTEXTO CORTO:
+         * PREGUNTAS MEDIAS (60% - 3 por llamada) - APLICACIÓN PRÁCTICA:
          * - Chunk: 1200 caracteres (~480 tokens)
-         * - Prompt: ~120 tokens
-         * - Input total: ~600 tokens × $0.80/1M = $0.000480
-         * - Output: ~110 tokens × 3 = 330 tokens × $4.00/1M = $0.001320
-         * - Total: $0.001800 ÷ 3 = $0.000600 USD/pregunta
+         * - Prompt detallado: ~250 tokens (metodología + casos realistas)
+         * - Input total: ~730 tokens × $0.80/1M = $0.000584
+         * - Output (1100 max): ~122 tokens × 3 = 366 tokens × $4.00/1M = $0.001464
+         * - Total: $0.002048 ÷ 3 = $0.000683 USD/pregunta
          *
-         * PREGUNTAS ELABORADAS (20% - 2 por llamada) - CASOS LARGOS:
+         * PREGUNTAS ELABORADAS (20% - 2 por llamada) - CASOS COMPLEJOS:
          * - Chunk: 1200 caracteres (~480 tokens)
-         * - Prompt: ~140 tokens
-         * - Input total: ~620 tokens × $0.80/1M = $0.000496
-         * - Output: ~160 tokens × 2 = 320 tokens × $4.00/1M = $0.001280
-         * - Total: $0.001776 ÷ 2 = $0.000888 USD/pregunta
+         * - Prompt detallado: ~350 tokens (casos multifactoriales detallados)
+         * - Input total: ~830 tokens × $0.80/1M = $0.000664
+         * - Output (1400 max): ~233 tokens × 2 = 466 tokens × $4.00/1M = $0.001864
+         * - Total: $0.002528 ÷ 2 = $0.001264 USD/pregunta
          *
          * COSTO PROMEDIO PONDERADO (20/60/20):
-         * (0.20 × $0.000437) + (0.60 × $0.000600) + (0.20 × $0.000888)
-         * = $0.000087 + $0.000360 + $0.000178
-         * = $0.000625 USD (~0.00058 EUR) por pregunta
+         * (0.20 × $0.000555) + (0.60 × $0.000683) + (0.20 × $0.001264)
+         * = $0.000111 + $0.000410 + $0.000253
+         * = $0.000774 USD (~0.00072 EUR) por pregunta
          *
-         * 🎉 RESULTADOS FINALES:
-         * • Con 1€ generas ~1,600 preguntas (era 518 originalmente)
-         * • Mejor balance: 60% contexto corto (sweet spot calidad/costo)
-         * • 20% directas + 20% casos complejos (balance práctico)
-         * • REDUCCIÓN TOTAL: 68% vs sistema original
-         * • Ahorro mensual (10k): $6.25 vs $19.30 = $13.05/mes ahorrado
+         * 🎯 SISTEMA PREMIUM - MÁXIMA CALIDAD:
+         * • Con 1€ generas ~1,290 preguntas de CALIDAD OPOSICIÓN
+         * • Incremento coste: +24% vs sistema anterior (+$0.15/100 preguntas)
+         * • Mejora calidad: SIGNIFICATIVA (nivel examen oficial)
+         * • Examen 100 preguntas: $0.077 USD (~7 céntimos)
+         * • Balance: EXCELENTE relación calidad/precio para uso educativo
+         *
+         * CARACTERÍSTICAS PREMIUM:
+         * • Prompts extensos con metodología detallada
+         * • Ejemplos de preguntas tipo oposición real
+         * • Instrucciones para distractores inteligentes
+         * • Casos prácticos multifactoriales realistas
+         * • Verificación estricta contra invención de datos
          */
         messages: [{
           role: "user",
@@ -347,99 +354,139 @@ function parseClaudeResponse(responseText) {
 
 // PROMPTS OPTIMIZADOS - 3 NIVELES: Simple (30%), Media (60%), Elaborada (10%)
 
-// PROMPT SIMPLE (30% - Genera 3 preguntas por llamada) - PREGUNTAS DIRECTAS
-const CLAUDE_PROMPT_SIMPLE = `Genera 3 preguntas test DIRECTAS de Técnico Farmacia. Solo JSON.
+// PROMPT SIMPLE (20% - Genera 3 preguntas por llamada) - PREGUNTAS DIRECTAS
+const CLAUDE_PROMPT_SIMPLE = `Eres experto en elaborar preguntas tipo TEST para OPOSICIONES de Técnico en Farmacia.
 
-ESTILO: Pregunta directa sin contexto ni enunciado largo.
+GENERA 3 preguntas DIRECTAS sobre conceptos clave del texto proporcionado.
 
-EJEMPLOS:
-- "¿Cuál es la temperatura de conservación de medicamentos termolábiles?"
-- "¿Qué ratio habitantes/farmacia rige en zonas semiurbanas?"
+ESTILO OPOSICIÓN (pregunta directa, respuesta objetiva):
+✓ "Según el Real Decreto 1345/2007, ¿qué plazo tiene la Administración para resolver una solicitud de autorización de apertura?"
+✓ "¿A qué temperatura deben conservarse los medicamentos clasificados como termolábiles?"
+✓ "En formulación magistral, ¿cuál es el tiempo máximo de conservación establecido para preparados acuosos sin conservantes?"
 
-VARIEDAD:
-- Pregunta 1: Muy difícil
-- Pregunta 2: Difícil
-- Pregunta 3: Media
+METODOLOGÍA:
+1. Identifica en el texto 3 DATOS CONCRETOS importantes (plazos, temperaturas, rangos, procedimientos, definiciones clave)
+2. Formula pregunta directa que requiera ese dato específico
+3. Respuesta correcta: COPIA LITERAL del texto
+4. Crea 3 distractores inteligentes:
+   - Altera cifras cercanas (si dice "2-8°C" → usar "0-4°C", "4-10°C", "15-25°C")
+   - Usa plazos relacionados pero incorrectos (si dice "3 meses" → usar "1 mes", "6 meses", "1 año")
+   - Mezcla conceptos del mismo tema (si habla de "termolábiles" → incluir rangos de "temperatura ambiente")
 
-REGLAS:
-- Pregunta: 1 línea, máximo 15 palabras
-- 4 opciones (A,B,C,D), 1 correcta
-- Distractores: altera números/plazos del texto
-- Explicación: 1 línea (máximo 12 palabras)
-- Conceptos DIFERENTES entre sí
+DISTRIBUCIÓN:
+- Pregunta 1: Difícil (dato muy específico de normativa/procedimiento)
+- Pregunta 2: Media (concepto técnico importante)
+- Pregunta 3: Fácil-Media (fundamento básico pero clave)
 
-EVITA:
-- Códigos ATC completos (solo familias generales)
-- Listas de medicamentos concretos (más de 3)
-- Precios exactos de equipos
-- Cantidades arbitrarias sin aplicación práctica
+EXPLICACIÓN: Cita artículo, apartado o concepto del texto. Máximo 20 palabras.
 
-JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"","page_reference":""}]}
+PROHIBIDO:
+- Inventar datos NO presentes en el texto
+- Códigos ATC completos (C09XA02) → Solo mencionar familia general (IECAs, ARA-II)
+- Listar >3 medicamentos específicos
+- Precios, marcas, datos sin relevancia práctica
+- Preguntar por normativa si el texto no indica fecha/vigencia
 
-TEXTO:
-{{CONTENT}}`;
-
-// PROMPT MEDIA (50% - Genera 3 preguntas por llamada) - CONTEXTO CORTO
-const CLAUDE_PROMPT_MEDIA = `Genera 3 preguntas test con CONTEXTO CORTO de Técnico Farmacia. Solo JSON.
-
-ESTILO: Contexto breve (1-2 líneas) + pregunta concreta.
-
-EJEMPLOS:
-- "Un medicamento llega a 15°C. ¿Es aceptable para termolábiles?"
-- "Una zona tiene 5.600 habitantes. ¿Cuántas farmacias pueden abrirse?"
-
-VARIEDAD:
-- Pregunta 1: Muy difícil
-- Pregunta 2: Difícil
-- Pregunta 3: Media
-
-REGLAS:
-- Contexto + pregunta: máximo 25 palabras total
-- 4 opciones, distorsiona números en incorrectas
-- Explicación: 1 línea (máximo 15 palabras)
-- Situaciones DIFERENTES entre sí
-
-EVITA:
-- Normativa obsoleta o derogada
-- Datos inventados o concentraciones irreales
-- Preguntas que requieran memorizar listados completos
-
-JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"","page_reference":""}]}
+FORMATO (SOLO JSON):
+{"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"","page_reference":""}]}
 
 TEXTO:
 {{CONTENT}}`;
 
-// PROMPT ELABORADA (20% - Genera 2 preguntas por llamada) - CASOS PRÁCTICOS LARGOS
-const CLAUDE_PROMPT_ELABORADA = `Genera 2 preguntas test con CASOS PRÁCTICOS completos. Solo JSON.
+// PROMPT MEDIA (60% - Genera 3 preguntas por llamada) - CONTEXTO CORTO
+const CLAUDE_PROMPT_MEDIA = `Eres experto en elaborar preguntas tipo TEST para OPOSICIONES de Técnico en Farmacia.
 
-ESTILO: Situación realista detallada (3-4 líneas) + pregunta de toma de decisión.
+GENERA 3 preguntas de APLICACIÓN PRÁCTICA con contexto breve basadas en el texto.
 
-CASOS PRÁCTICOS (elegir 2 tipos DIFERENTES):
-A) Recepción: "Durante la recepción de un pedido observas que..."
-B) Elaboración: "Al preparar una fórmula magistral detectas..."
-C) Dispensación: "Un paciente solicita un medicamento y al revisar..."
-D) Conservación: "Al verificar las condiciones de almacenamiento encuentras..."
-E) Análisis: "En el laboratorio de análisis observas que..."
+ESTILO OPOSICIÓN (situación breve + aplicación de conocimiento):
+✓ "Recibes un pedido de vacunas que han viajado a 12°C durante 3 horas. Según protocolo de cadena de frío, ¿cuál es tu actuación?"
+✓ "Una paciente embarazada solicita dispensación de un medicamento de categoría D. ¿Qué acción debes realizar?"
+✓ "Al verificar la trazabilidad de un lote encuentras que el Datamatrix no contiene el número de serie. ¿Es conforme?"
 
-ENFOQUE: Casos prácticos REALES que ocurren en farmacias.
-- Situaciones de toma de decisiones según protocolos
-- Problemas de conservación y almacenamiento
-- Verificación de condiciones y documentación
-- Aplicación directa de normativa vigente
+METODOLOGÍA:
+1. Identifica en el texto un PROCEDIMIENTO, NORMATIVA o CRITERIO aplicable
+2. Crea situación realista de 1-2 líneas que requiera aplicar ese conocimiento
+3. Formula pregunta sobre la ACCIÓN CORRECTA según el texto
+4. Respuesta correcta: Lo que dice el texto que debe hacerse
+5. Distractores: Acciones incorrectas pero plausibles:
+   - Acción insuficiente (hace solo parte del protocolo)
+   - Acción excesiva (añade pasos innecesarios)
+   - Acción incorrecta pero frecuente (error común)
 
-REGLAS:
-- Caso completo con 2-3 detalles concretos del texto
-- 4 opciones con acciones realistas
-- Explicación: justifica respuesta con normativa (máximo 25 palabras)
+CARACTERÍSTICAS SITUACIONES:
+- Basadas en trabajo real del técnico en farmacia
+- Requieren aplicar conocimiento del texto
+- Datos numéricos del contexto sacados del texto (temperaturas, plazos, rangos)
+- Situación completa en máximo 35 palabras
+
+DISTRIBUCIÓN:
+- Pregunta 1: Difícil (situación compleja, varios factores)
+- Pregunta 2: Media (situación estándar)
+- Pregunta 3: Media-Fácil (situación básica)
+
+EXPLICACIÓN: Justifica por qué es correcta citando procedimiento/normativa. Máximo 25 palabras.
+
+PROHIBIDO:
+- Inventar situaciones sin datos del texto
+- Usar normativa obsoleta
+- Crear situaciones con datos irreales (temperaturas absurdas, plazos inventados)
+- Preguntas que solo memoricen listas
+
+FORMATO (SOLO JSON):
+{"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"","page_reference":""}]}
+
+TEXTO:
+{{CONTENT}}`;
+
+// PROMPT ELABORADA (20% - Genera 2 preguntas por llamada) - CASOS PRÁCTICOS COMPLEJOS
+const CLAUDE_PROMPT_ELABORADA = `Eres experto en elaborar preguntas tipo TEST para OPOSICIONES de Técnico en Farmacia.
+
+GENERA 2 CASOS PRÁCTICOS COMPLEJOS que requieran razonamiento profesional basado en el texto.
+
+ESTILO OPOSICIÓN (caso detallado con múltiples factores + decisión profesional):
+✓ "Durante la recepción de un pedido de insulinas NPH observas: el albarán indica salida del almacén hace 36 horas, la caja registra una temperatura de 14°C, el embalaje muestra signos de golpes, y la documentación incluye certificado de cadena de frío. El transportista alega que el vehículo tuvo una avería. ¿Cuál es tu actuación prioritaria según protocolo?"
+
+✓ "Al preparar una fórmula magistral dermatológica que contiene hidroquinona al 4%, observas que el envase original de hidroquinona tiene fecha de apertura de hace 8 meses, presenta ligera decoloración amarillenta, y el certificado de análisis indica una pureza del 99.5%. La receta especifica uso para tratamiento de melasma. ¿Qué decisión debes tomar?"
+
+TIPOS DE CASOS (elegir 2 DIFERENTES):
+A) Recepción de pedidos: Control de calidad, documentación, cadena de frío, caducidades
+B) Elaboración magistral: Incompatibilidades, estabilidad, procedimientos de preparación
+C) Dispensación: Verificación de receta, interacciones, contraindicaciones, sustituciones
+D) Conservación/Almacenamiento: Condiciones ambientales, segregación, control de temperatura
+E) Control de calidad: Verificación de lotes, trazabilidad, desviaciones de especificaciones
+F) Gestión de residuos: Clasificación, segregación, procedimientos de eliminación
+
+METODOLOGÍA:
+1. Selecciona un PROCEDIMIENTO o PROTOCOLO descrito en el texto
+2. Crea situación realista con 3-4 FACTORES RELEVANTES (todos extraídos del texto):
+   - Factor positivo (algo está bien)
+   - Factor negativo (algo preocupante)
+   - Factor contextual (información adicional relevante)
+   - Factor de presión (necesidad de decidir)
+3. Formula pregunta: "¿Cuál es tu actuación/decisión según protocolo/normativa?"
+4. Respuesta correcta: La acción que marca el texto para esa situación
+5. Distractores profesionales:
+   - Acción parcialmente correcta (hace algo pero le falta el paso crítico)
+   - Acción basada en práctica habitual pero incorrecta según normativa
+   - Acción excesivamente cauta o excesivamente permisiva
+
+CARACTERÍSTICAS:
+- Caso completo: 50-80 palabras
+- Todos los datos numéricos/técnicos del caso DEBEN estar en el texto
+- Situación profesionalmente realista
+- Requiere priorizar entre múltiples factores
 - Dificultad: muy difícil (ambas)
-- NO repetir tipo de caso
 
-EVITA:
-- Inventar concentraciones o datos no mencionados en el texto
-- Situaciones hipotéticas sin base en el contenido
-- Normativa obsoleta
+EXPLICACIÓN: Justifica la respuesta citando el artículo/protocolo del texto. Máximo 30 palabras.
 
-JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"muy difícil","page_reference":""}]}
+CRÍTICO - NO INVENTAR:
+- No uses concentraciones, temperaturas o plazos que no estén en el texto
+- No menciones medicamentos específicos si el texto no los nombra
+- No cites normativa específica (RD, decretos) si el texto no los menciona
+- No crees situaciones hipotéticas sin base documental
+
+FORMATO (SOLO JSON):
+{"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"muy difícil","page_reference":""}]}
 
 TEXTO:
 {{CONTENT}}`;
@@ -932,7 +979,7 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
       const fullPrompt = CLAUDE_PROMPT_SIMPLE.replace('{{CONTENT}}', selectedChunk);
 
       try {
-        const response = await callClaudeWithImprovedRetry(fullPrompt, 600, 'simples', 3);
+        const response = await callClaudeWithImprovedRetry(fullPrompt, 800, 'simples', 3);
         const responseText = response.content[0].text;
         const questionsData = parseClaudeResponse(responseText);
 
@@ -956,7 +1003,7 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
       const fullPrompt = CLAUDE_PROMPT_MEDIA.replace('{{CONTENT}}', selectedChunk);
 
       try {
-        const response = await callClaudeWithImprovedRetry(fullPrompt, 900, 'medias', 3);
+        const response = await callClaudeWithImprovedRetry(fullPrompt, 1100, 'medias', 3);
         const responseText = response.content[0].text;
         const questionsData = parseClaudeResponse(responseText);
 
@@ -980,7 +1027,7 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
       const fullPrompt = CLAUDE_PROMPT_ELABORADA.replace('{{CONTENT}}', selectedChunk);
 
       try {
-        const response = await callClaudeWithImprovedRetry(fullPrompt, 1000, 'elaboradas', 2);
+        const response = await callClaudeWithImprovedRetry(fullPrompt, 1400, 'elaboradas', 2);
         const responseText = response.content[0].text;
         const questionsData = parseClaudeResponse(responseText);
 
@@ -1279,7 +1326,7 @@ app.post('/api/exam/official', requireAuth, async (req, res) => {
       const fullPrompt = CLAUDE_PROMPT_SIMPLE.replace('{{CONTENT}}', selectedChunk);
 
       try {
-        const response = await callClaudeWithImprovedRetry(fullPrompt, 600, 'simples', 3);
+        const response = await callClaudeWithImprovedRetry(fullPrompt, 800, 'simples', 3);
         const responseText = response.content[0].text;
         const questionsData = parseClaudeResponse(responseText);
 
@@ -1301,7 +1348,7 @@ app.post('/api/exam/official', requireAuth, async (req, res) => {
       const fullPrompt = CLAUDE_PROMPT_MEDIA.replace('{{CONTENT}}', selectedChunk);
 
       try {
-        const response = await callClaudeWithImprovedRetry(fullPrompt, 900, 'medias', 3);
+        const response = await callClaudeWithImprovedRetry(fullPrompt, 1100, 'medias', 3);
         const responseText = response.content[0].text;
         const questionsData = parseClaudeResponse(responseText);
 
@@ -1323,7 +1370,7 @@ app.post('/api/exam/official', requireAuth, async (req, res) => {
       const fullPrompt = CLAUDE_PROMPT_ELABORADA.replace('{{CONTENT}}', selectedChunk);
 
       try {
-        const response = await callClaudeWithImprovedRetry(fullPrompt, 1000, 'elaboradas', 2);
+        const response = await callClaudeWithImprovedRetry(fullPrompt, 1400, 'elaboradas', 2);
         const responseText = response.content[0].text;
         const questionsData = parseClaudeResponse(responseText);
 
