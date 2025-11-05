@@ -355,140 +355,140 @@ function parseClaudeResponse(responseText) {
 // PROMPTS OPTIMIZADOS - 3 NIVELES: Simple (30%), Media (60%), Elaborada (10%)
 
 // PROMPT SIMPLE (20% - Genera 3 preguntas por llamada) - PREGUNTAS DIRECTAS
-const CLAUDE_PROMPT_SIMPLE = `Eres experto en elaborar preguntas tipo TEST para OPOSICIONES de Técnico en Farmacia.
+const CLAUDE_PROMPT_SIMPLE = `Eres evaluador experto para OPOSICIONES de Técnico en Farmacia.
 
-GENERA 3 preguntas DIRECTAS sobre conceptos clave del texto proporcionado.
+GENERA 3 preguntas tipo TEST de conocimientos fundamentales basadas en la documentación.
 
-ESTILO OPOSICIÓN (pregunta directa, respuesta objetiva):
-✓ "Según el Real Decreto 1345/2007, ¿qué plazo tiene la Administración para resolver una solicitud de autorización de apertura?"
-✓ "¿A qué temperatura deben conservarse los medicamentos clasificados como termolábiles?"
-✓ "En formulación magistral, ¿cuál es el tiempo máximo de conservación establecido para preparados acuosos sin conservantes?"
+ESTILO PROFESIONAL:
+✓ "Según el RD 1345/2007, ¿qué plazo máximo tiene la Administración para resolver solicitudes de autorización?"
+✓ "¿Cuál es el rango de temperatura establecido para la conservación de medicamentos termolábiles?"
+✓ "¿Qué tiempo máximo de validez tienen las fórmulas magistrales acuosas sin conservantes?"
 
 METODOLOGÍA:
-1. Identifica en el texto 3 DATOS CONCRETOS importantes (plazos, temperaturas, rangos, procedimientos, definiciones clave)
-2. Formula pregunta directa que requiera ese dato específico
-3. Respuesta correcta: COPIA LITERAL del texto
-4. Crea 3 distractores inteligentes:
-   - Altera cifras cercanas (si dice "2-8°C" → usar "0-4°C", "4-10°C", "15-25°C")
-   - Usa plazos relacionados pero incorrectos (si dice "3 meses" → usar "1 mes", "6 meses", "1 año")
-   - Mezcla conceptos del mismo tema (si habla de "termolábiles" → incluir rangos de "temperatura ambiente")
+1. Identifica 3 conceptos clave DIFERENTES (plazos normativos, temperaturas, rangos, procedimientos, definiciones)
+2. Formula pregunta profesional directa
+3. Extrae respuesta literal de la documentación
+4. Genera 3 distractores plausibles:
+   - Cifras próximas alteradas (2-8°C → opciones: 0-4°C, 4-10°C, 15-25°C)
+   - Plazos similares incorrectos (3 meses → opciones: 1 mes, 6 meses, 1 año)
+   - Conceptos relacionados pero no aplicables
 
-DISTRIBUCIÓN:
-- Pregunta 1: Difícil (dato muy específico de normativa/procedimiento)
-- Pregunta 2: Media (concepto técnico importante)
-- Pregunta 3: Fácil-Media (fundamento básico pero clave)
+DIFICULTAD:
+- Pregunta 1: Difícil (normativa específica o dato técnico preciso)
+- Pregunta 2: Media (procedimiento estándar o concepto técnico)
+- Pregunta 3: Media-Fácil (fundamento esencial)
 
-EXPLICACIÓN: Cita artículo, apartado o concepto del texto. Máximo 20 palabras.
+EXPLICACIÓN (máximo 15 palabras):
+✓ Cita directa: "Art. 12.2 establece plazo de 3 meses"
+✓ Referencia normativa: "RD 824/2010 fija temperatura 2-8°C"
+✗ NUNCA: "El texto dice", "Según los apuntes", "La documentación indica"
 
 PROHIBIDO:
-- Inventar datos NO presentes en el texto
-- Códigos ATC completos (C09XA02) → Solo mencionar familia general (IECAs, ARA-II)
-- Listar >3 medicamentos específicos
-- Precios, marcas, datos sin relevancia práctica
-- Preguntar por normativa si el texto no indica fecha/vigencia
+- Inventar datos no documentados
+- Códigos ATC completos (usar familias: IECAs, ARA-II)
+- Listados >3 medicamentos
+- Precios, marcas comerciales
 
-FORMATO (SOLO JSON):
-{"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"","page_reference":""}]}
+JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"","page_reference":""}]}
 
-TEXTO:
+DOCUMENTACIÓN:
 {{CONTENT}}`;
 
-// PROMPT MEDIA (60% - Genera 3 preguntas por llamada) - CONTEXTO CORTO
-const CLAUDE_PROMPT_MEDIA = `Eres experto en elaborar preguntas tipo TEST para OPOSICIONES de Técnico en Farmacia.
+// PROMPT MEDIA (60% - Genera 3 preguntas por llamada) - APLICACIÓN PRÁCTICA
+const CLAUDE_PROMPT_MEDIA = `Eres evaluador experto para OPOSICIONES de Técnico en Farmacia.
 
-GENERA 3 preguntas de APLICACIÓN PRÁCTICA con contexto breve basadas en el texto.
+GENERA 3 preguntas de CASOS PRÁCTICOS BREVES que evalúen aplicación de conocimientos.
 
-ESTILO OPOSICIÓN (situación breve + aplicación de conocimiento):
-✓ "Recibes un pedido de vacunas que han viajado a 12°C durante 3 horas. Según protocolo de cadena de frío, ¿cuál es tu actuación?"
-✓ "Una paciente embarazada solicita dispensación de un medicamento de categoría D. ¿Qué acción debes realizar?"
-✓ "Al verificar la trazabilidad de un lote encuentras que el Datamatrix no contiene el número de serie. ¿Es conforme?"
-
-METODOLOGÍA:
-1. Identifica en el texto un PROCEDIMIENTO, NORMATIVA o CRITERIO aplicable
-2. Crea situación realista de 1-2 líneas que requiera aplicar ese conocimiento
-3. Formula pregunta sobre la ACCIÓN CORRECTA según el texto
-4. Respuesta correcta: Lo que dice el texto que debe hacerse
-5. Distractores: Acciones incorrectas pero plausibles:
-   - Acción insuficiente (hace solo parte del protocolo)
-   - Acción excesiva (añade pasos innecesarios)
-   - Acción incorrecta pero frecuente (error común)
-
-CARACTERÍSTICAS SITUACIONES:
-- Basadas en trabajo real del técnico en farmacia
-- Requieren aplicar conocimiento del texto
-- Datos numéricos del contexto sacados del texto (temperaturas, plazos, rangos)
-- Situación completa en máximo 35 palabras
-
-DISTRIBUCIÓN:
-- Pregunta 1: Difícil (situación compleja, varios factores)
-- Pregunta 2: Media (situación estándar)
-- Pregunta 3: Media-Fácil (situación básica)
-
-EXPLICACIÓN: Justifica por qué es correcta citando procedimiento/normativa. Máximo 25 palabras.
-
-PROHIBIDO:
-- Inventar situaciones sin datos del texto
-- Usar normativa obsoleta
-- Crear situaciones con datos irreales (temperaturas absurdas, plazos inventados)
-- Preguntas que solo memoricen listas
-
-FORMATO (SOLO JSON):
-{"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"","page_reference":""}]}
-
-TEXTO:
-{{CONTENT}}`;
-
-// PROMPT ELABORADA (20% - Genera 2 preguntas por llamada) - CASOS PRÁCTICOS COMPLEJOS
-const CLAUDE_PROMPT_ELABORADA = `Eres experto en elaborar preguntas tipo TEST para OPOSICIONES de Técnico en Farmacia.
-
-GENERA 2 CASOS PRÁCTICOS COMPLEJOS que requieran razonamiento profesional basado en el texto.
-
-ESTILO OPOSICIÓN (caso detallado con múltiples factores + decisión profesional):
-✓ "Durante la recepción de un pedido de insulinas NPH observas: el albarán indica salida del almacén hace 36 horas, la caja registra una temperatura de 14°C, el embalaje muestra signos de golpes, y la documentación incluye certificado de cadena de frío. El transportista alega que el vehículo tuvo una avería. ¿Cuál es tu actuación prioritaria según protocolo?"
-
-✓ "Al preparar una fórmula magistral dermatológica que contiene hidroquinona al 4%, observas que el envase original de hidroquinona tiene fecha de apertura de hace 8 meses, presenta ligera decoloración amarillenta, y el certificado de análisis indica una pureza del 99.5%. La receta especifica uso para tratamiento de melasma. ¿Qué decisión debes tomar?"
-
-TIPOS DE CASOS (elegir 2 DIFERENTES):
-A) Recepción de pedidos: Control de calidad, documentación, cadena de frío, caducidades
-B) Elaboración magistral: Incompatibilidades, estabilidad, procedimientos de preparación
-C) Dispensación: Verificación de receta, interacciones, contraindicaciones, sustituciones
-D) Conservación/Almacenamiento: Condiciones ambientales, segregación, control de temperatura
-E) Control de calidad: Verificación de lotes, trazabilidad, desviaciones de especificaciones
-F) Gestión de residuos: Clasificación, segregación, procedimientos de eliminación
+ESTILO PROFESIONAL (situación + decisión):
+✓ "Recibes vacunas que han viajado a 12°C durante 3 horas. ¿Cuál es tu actuación según protocolo de cadena de frío?"
+✓ "Una embarazada solicita un medicamento categoría D en embarazo. ¿Qué debes hacer?"
+✓ "El Datamatrix de un lote no incluye número de serie. ¿Es conforme con la normativa de trazabilidad?"
 
 METODOLOGÍA:
-1. Selecciona un PROCEDIMIENTO o PROTOCOLO descrito en el texto
-2. Crea situación realista con 3-4 FACTORES RELEVANTES (todos extraídos del texto):
-   - Factor positivo (algo está bien)
-   - Factor negativo (algo preocupante)
-   - Factor contextual (información adicional relevante)
-   - Factor de presión (necesidad de decidir)
-3. Formula pregunta: "¿Cuál es tu actuación/decisión según protocolo/normativa?"
-4. Respuesta correcta: La acción que marca el texto para esa situación
+1. Identifica PROCEDIMIENTO, PROTOCOLO o CRITERIO normativo
+2. Crea situación profesional realista (1-2 líneas, máx 30 palabras)
+3. Pregunta: ¿Cuál es la actuación/decisión correcta?
+4. Respuesta correcta: Acción que establece la normativa
 5. Distractores profesionales:
-   - Acción parcialmente correcta (hace algo pero le falta el paso crítico)
-   - Acción basada en práctica habitual pero incorrecta según normativa
-   - Acción excesivamente cauta o excesivamente permisiva
+   - Acción parcial (omite paso crítico del protocolo)
+   - Acción excesiva (añade requisitos no exigidos)
+   - Práctica común pero técnicamente incorrecta
 
-CARACTERÍSTICAS:
-- Caso completo: 50-80 palabras
-- Todos los datos numéricos/técnicos del caso DEBEN estar en el texto
-- Situación profesionalmente realista
-- Requiere priorizar entre múltiples factores
+CONTEXTO SITUACIONES:
+- Trabajo diario del técnico (recepción, dispensación, elaboración, control)
+- Datos reales documentados (temperaturas, plazos, categorías)
+- Requieren conocer procedimiento específico
+
+DIFICULTAD:
+- Pregunta 1: Difícil (múltiples factores, protocolo complejo)
+- Pregunta 2: Media (procedimiento estándar)
+- Pregunta 3: Media-Fácil (criterio básico)
+
+EXPLICACIÓN (máximo 18 palabras):
+✓ Directa: "Protocolo cadena frío requiere rechazo si >8°C más de 2 horas"
+✓ Normativa: "Art. 85 obliga dispensación solo con autorización médica explícita"
+✗ NUNCA: "El texto dice que", "Según documentación"
+
+PROHIBIDO:
+- Inventar datos no documentados
+- Situaciones con cifras irreales
+- Normativa obsoleta
+
+JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"","page_reference":""}]}
+
+DOCUMENTACIÓN:
+{{CONTENT}}`;
+
+// PROMPT ELABORADA (20% - Genera 2 preguntas por llamada) - CASOS COMPLEJOS
+const CLAUDE_PROMPT_ELABORADA = `Eres evaluador experto para OPOSICIONES de Técnico en Farmacia.
+
+GENERA 2 CASOS PRÁCTICOS COMPLEJOS con múltiples factores que requieran razonamiento profesional.
+
+ESTILO PROFESIONAL (situación multifactorial 50-70 palabras):
+✓ "Durante la recepción de insulinas NPH observas: albarán indica salida hace 36 horas, temperatura registrada 14°C, embalaje con golpes, documentación incluye certificado de cadena de frío válido. El transportista informa de avería en ruta. ¿Cuál es tu actuación prioritaria?"
+
+✓ "Al elaborar fórmula dermatológica con hidroquinona al 4%, el envase original muestra: apertura hace 8 meses, ligera decoloración amarillenta, certificado de análisis con pureza 99.5%, receta médica para melasma. ¿Qué decisión tomas?"
+
+TIPOS DE CASOS (selecciona 2 DIFERENTES):
+A) Recepción/Control entrada: Verificación documentación, control temperatura, inspección visual, conformidad
+B) Elaboración magistral: Estabilidad principios activos, incompatibilidades, caducidad materias primas
+C) Dispensación especializada: Verificación recetas, categorías embarazo, sustancias controladas, sustituciones
+D) Almacenamiento/Conservación: Condiciones ambientales, segregación por tipo, control temperatura continuo
+E) Control calidad/Trazabilidad: Verificación lotes, Datamatrix, alertas sanitarias, retiradas
+F) Gestión residuos sanitarios: Clasificación (grupos I-IV), segregación, procedimientos eliminación
+G) Preparación nutriciones parenterales: Cálculo osmolaridad, compatibilidades, estabilidad
+H) Reenvasado/Reacondicionamiento: Mantenimiento información, etiquetado, trazabilidad
+I) Dispensación hospitalaria: Dosis unitarias, sistemas personalizados, armarios automatizados
+J) Administración medicamentos: Vías administración, tiempos perfusión, incompatibilidades IV
+
+METODOLOGÍA:
+1. Identifica PROTOCOLO o PROCEDIMIENTO normativo documentado
+2. Construye caso con 3-4 FACTORES documentados:
+   - Factor favorecedor (elemento correcto o positivo)
+   - Factor crítico (problema o desviación significativa)
+   - Factores contextuales (información adicional relevante)
+3. Pregunta directa: "¿Cuál es tu actuación?" o "¿Qué decisión tomas?"
+4. Opciones: 4 acciones profesionales graduadas en corrección
+5. Respuesta: Acción completa que establece el protocolo
+
+DISTRACTORES PROFESIONALES:
+- Acción parcial (omite paso crítico obligatorio)
+- Práctica habitual pero normativamente incorrecta
+- Acción extrema (demasiado permisiva o excesivamente restrictiva)
+
+EXPLICACIÓN (máximo 20 palabras):
+✓ Directa: "Protocolo exige rechazo si temperatura >8°C independientemente de certificación"
+✓ Normativa: "RD 824/2010 Art. 5 prohíbe uso materias primas con signos alteración"
+✗ NUNCA: "El texto indica", "Según documentación", "Los apuntes especifican"
+
+CRÍTICO - SOLO DATOS DOCUMENTADOS:
+- Todas las cifras (temperaturas, plazos, porcentajes, concentraciones) DEBEN estar documentadas
+- No inventar medicamentos, normativa específica o situaciones sin base
 - Dificultad: muy difícil (ambas)
 
-EXPLICACIÓN: Justifica la respuesta citando el artículo/protocolo del texto. Máximo 30 palabras.
+JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"muy difícil","page_reference":""}]}
 
-CRÍTICO - NO INVENTAR:
-- No uses concentraciones, temperaturas o plazos que no estén en el texto
-- No menciones medicamentos específicos si el texto no los nombra
-- No cites normativa específica (RD, decretos) si el texto no los menciona
-- No crees situaciones hipotéticas sin base documental
-
-FORMATO (SOLO JSON):
-{"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"muy difícil","page_reference":""}]}
-
-TEXTO:
+DOCUMENTACIÓN:
 {{CONTENT}}`;
 
 // ========================
