@@ -355,7 +355,6 @@ ESTILO: Pregunta directa sin contexto ni enunciado largo.
 EJEMPLOS:
 - "¿Cuál es la temperatura de conservación de medicamentos termolábiles?"
 - "¿Qué ratio habitantes/farmacia rige en zonas semiurbanas?"
-- "¿Cuánto tiempo puede conservarse una fórmula magistral acuosa?"
 
 VARIEDAD:
 - Pregunta 1: Muy difícil
@@ -368,6 +367,12 @@ REGLAS:
 - Distractores: altera números/plazos del texto
 - Explicación: 1 línea (máximo 12 palabras)
 - Conceptos DIFERENTES entre sí
+
+EVITA:
+- Códigos ATC completos (solo familias generales)
+- Listas de medicamentos concretos (más de 3)
+- Precios exactos de equipos
+- Cantidades arbitrarias sin aplicación práctica
 
 JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"","page_reference":""}]}
 
@@ -382,7 +387,6 @@ ESTILO: Contexto breve (1-2 líneas) + pregunta concreta.
 EJEMPLOS:
 - "Un medicamento llega a 15°C. ¿Es aceptable para termolábiles?"
 - "Una zona tiene 5.600 habitantes. ¿Cuántas farmacias pueden abrirse?"
-- "Preparas una fórmula acuosa hoy. ¿Hasta cuándo es válida?"
 
 VARIEDAD:
 - Pregunta 1: Muy difícil
@@ -395,6 +399,11 @@ REGLAS:
 - Explicación: 1 línea (máximo 15 palabras)
 - Situaciones DIFERENTES entre sí
 
+EVITA:
+- Normativa obsoleta o derogada
+- Datos inventados o concentraciones irreales
+- Preguntas que requieran memorizar listados completos
+
 JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"","page_reference":""}]}
 
 TEXTO:
@@ -403,22 +412,32 @@ TEXTO:
 // PROMPT ELABORADA (20% - Genera 2 preguntas por llamada) - CASOS PRÁCTICOS LARGOS
 const CLAUDE_PROMPT_ELABORADA = `Genera 2 preguntas test con CASOS PRÁCTICOS completos. Solo JSON.
 
-ESTILO: Situación realista detallada (3-4 líneas) + pregunta específica.
+ESTILO: Situación realista detallada (3-4 líneas) + pregunta de toma de decisión.
 
 CASOS PRÁCTICOS (elegir 2 tipos DIFERENTES):
 A) Recepción: "Durante la recepción de un pedido observas que..."
-B) Elaboración: "Al preparar una fórmula magistral en el laboratorio detectas..."
+B) Elaboración: "Al preparar una fórmula magistral detectas..."
 C) Dispensación: "Un paciente solicita un medicamento y al revisar..."
-D) Control: "Durante el inventario del almacén compruebas que..."
-E) Conservación: "Al verificar las condiciones de almacenamiento encuentras..."
-F) Análisis: "En el laboratorio de análisis clínicos observas que..."
+D) Conservación: "Al verificar las condiciones de almacenamiento encuentras..."
+E) Análisis: "En el laboratorio de análisis observas que..."
+
+ENFOQUE: Casos prácticos REALES que ocurren en farmacias.
+- Situaciones de toma de decisiones según protocolos
+- Problemas de conservación y almacenamiento
+- Verificación de condiciones y documentación
+- Aplicación directa de normativa vigente
 
 REGLAS:
-- Caso completo con detalles relevantes
-- 4 opciones, distorsiona datos numéricos
-- Explicación: 2 líneas (máximo 25 palabras)
+- Caso completo con 2-3 detalles concretos del texto
+- 4 opciones con acciones realistas
+- Explicación: justifica respuesta con normativa (máximo 25 palabras)
 - Dificultad: muy difícil (ambas)
 - NO repetir tipo de caso
+
+EVITA:
+- Inventar concentraciones o datos no mencionados en el texto
+- Situaciones hipotéticas sin base en el contenido
+- Normativa obsoleta
 
 JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"muy difícil","page_reference":""}]}
 
