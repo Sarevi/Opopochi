@@ -671,19 +671,30 @@ const CACHE_EXPIRY_HOURS = 48; // Expiración de preguntas en caché
 /**
  * Buscar pregunta en caché que el usuario NO ha visto
  * @param {number} userId - ID del usuario
- * @param {string} topicId - ID del tema
+ * @param {string|string[]} topicIds - ID del tema o array de IDs de temas
  * @param {string} difficulty - Dificultad requerida ('simple', 'media', 'elaborada')
  * @returns {object|null} - Pregunta del caché o null si no hay disponibles
  */
-function getCachedQuestion(userId, topicId, difficulty) {
+function getCachedQuestion(userId, topicIds, difficulty) {
   const cutoffTime = Date.now() - (NO_REPEAT_DAYS * 24 * 3600 * 1000);
   const now = Date.now();
 
+  // Convertir a array si es string único
+  const topicArray = Array.isArray(topicIds) ? topicIds : [topicIds];
+
+  if (topicArray.length === 0) {
+    console.log('✗ No se proporcionaron temas');
+    return null;
+  }
+
   try {
+    // Construir placeholders para IN clause
+    const placeholders = topicArray.map(() => '?').join(',');
+
     const stmt = db.prepare(`
-      SELECT qc.id, qc.question_data
+      SELECT qc.id, qc.question_data, qc.topic_id
       FROM question_cache qc
-      WHERE qc.topic_id = ?
+      WHERE qc.topic_id IN (${placeholders})
         AND qc.difficulty = ?
         AND qc.expires_at > ?
         AND qc.id NOT IN (
@@ -696,17 +707,18 @@ function getCachedQuestion(userId, topicId, difficulty) {
       LIMIT 1
     `);
 
-    const result = stmt.get(topicId, difficulty, now, userId, cutoffTime);
+    const result = stmt.get(...topicArray, difficulty, now, userId, cutoffTime);
 
     if (result) {
-      console.log(`✓ Pregunta encontrada en caché (ID: ${result.id})`);
+      console.log(`✓ Pregunta encontrada en caché (ID: ${result.id}, Tema: ${result.topic_id})`);
       return {
         cacheId: result.id,
+        topicId: result.topic_id,
         question: JSON.parse(result.question_data)
       };
     }
 
-    console.log(`✗ No hay preguntas disponibles en caché para usuario ${userId}, tema ${topicId}, dificultad ${difficulty}`);
+    console.log(`✗ No hay preguntas disponibles en caché para usuario ${userId}, temas [${topicArray.join(', ')}], dificultad ${difficulty}`);
     return null;
   } catch (error) {
     console.error('Error buscando en caché:', error);
