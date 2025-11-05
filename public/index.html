@@ -1099,6 +1099,21 @@
                     <div id="question-number">Pregunta 1</div>
                 </div>
 
+                <!-- Barra de progreso para examen oficial -->
+                <div id="exam-progress-bar" style="display: none; background: #f3f4f6; border-radius: 8px; overflow: hidden; margin: 16px 0; height: 8px;">
+                    <div id="exam-progress-fill" style="height: 100%; background: linear-gradient(90deg, #f97316 0%, #ea580c 100%); width: 0%; transition: width 0.3s ease;"></div>
+                </div>
+                <div id="exam-progress-text" style="display: none; text-align: center; color: #6b7280; font-size: 0.875rem; margin-bottom: 16px;">
+                    <span id="exam-progress-current">0</span> de <span id="exam-progress-total">0</span> preguntas respondidas
+                </div>
+
+                <!-- Botón Finalizar Examen (solo cuando termine todas) -->
+                <div id="exam-finish-container" style="display: none; margin-bottom: 16px;">
+                    <button onclick="showFinishExamModal()" style="width: 100%; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 16px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; font-size: 1.125rem; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3); transition: all 0.2s;">
+                        ✅ Finalizar Examen y Ver Resultados
+                    </button>
+                </div>
+
                 <div class="question-card">
                     <div class="question-text" id="question-text">
                         Cargando pregunta...
@@ -2578,6 +2593,47 @@
 
             console.log(`📝 Respuesta guardada: Pregunta ${questionCount} - ${isCorrect ? 'Correcta ✅' : 'Incorrecta ❌'}`);
             console.log(`💾 Progreso guardado: ${questionCount}/${officialExamQuestions.length}`);
+
+            // Actualizar barra de progreso
+            updateExamProgress();
+        }
+
+        function updateExamProgress() {
+            if (!isOfficialExamMode) return;
+
+            const answered = officialExamAnswers.length;
+            const total = officialExamQuestions.length;
+            const percentage = (answered / total) * 100;
+
+            // Actualizar barra
+            document.getElementById('exam-progress-fill').style.width = `${percentage}%`;
+            document.getElementById('exam-progress-current').textContent = answered;
+            document.getElementById('exam-progress-total').textContent = total;
+
+            // Mostrar botón de finalizar si respondió todas
+            if (answered === total) {
+                document.getElementById('exam-finish-container').style.display = 'block';
+            }
+        }
+
+        function showFinishExamModal() {
+            const answered = officialExamAnswers.length;
+            const total = officialExamQuestions.length;
+
+            document.getElementById('modal-exam-summary').textContent =
+                `Has respondido las ${total} preguntas del examen. ¿Deseas ver tus resultados?`;
+
+            const modal = document.getElementById('finish-exam-modal');
+            modal.style.display = 'flex';
+        }
+
+        function closeFinishExamModal() {
+            document.getElementById('finish-exam-modal').style.display = 'none';
+        }
+
+        function confirmFinishExam() {
+            closeFinishExamModal();
+            finishOfficialExam();
         }
 
         function selectExamSize(size) {
@@ -2656,6 +2712,12 @@
                 document.getElementById('current-topic-name').textContent = '🎓 EXAMEN OFICIAL';
                 document.getElementById('question-number').textContent = `Pregunta ${questionCount} de ${officialExamQuestions.length}`;
                 displayQuestion();
+
+                // Mostrar barra de progreso y texto
+                document.getElementById('exam-progress-bar').style.display = 'block';
+                document.getElementById('exam-progress-text').style.display = 'block';
+                document.getElementById('exam-progress-total').textContent = officialExamQuestions.length;
+                document.getElementById('exam-progress-current').textContent = '0';
 
                 console.log(`✅ Examen oficial iniciado: ${officialExamQuestions.length} preguntas`);
 
@@ -2811,6 +2873,11 @@
             // LIMPIAR PROGRESO GUARDADO
             localStorage.removeItem('official_exam_progress');
             console.log('🗑️ Progreso del examen eliminado de localStorage');
+
+            // Ocultar elementos del examen
+            document.getElementById('exam-progress-bar').style.display = 'none';
+            document.getElementById('exam-progress-text').style.display = 'none';
+            document.getElementById('exam-finish-container').style.display = 'none';
         }
 
         function exitOfficialExam() {
@@ -2830,6 +2897,11 @@
             if (loadingDiv) {
                 loadingDiv.style.display = 'none';
             }
+
+            // Ocultar elementos del examen
+            document.getElementById('exam-progress-bar').style.display = 'none';
+            document.getElementById('exam-progress-text').style.display = 'none';
+            document.getElementById('exam-finish-container').style.display = 'none';
 
             showPage('official-exam');
         }
@@ -2909,6 +2981,11 @@
                     `Pregunta ${questionCount} de ${officialExamQuestions.length}`;
                 displayQuestion();
 
+                // Mostrar y actualizar barra de progreso
+                document.getElementById('exam-progress-bar').style.display = 'block';
+                document.getElementById('exam-progress-text').style.display = 'block';
+                updateExamProgress();
+
                 console.log(`✅ Examen restaurado: Continuando desde pregunta ${questionCount}`);
             } catch (error) {
                 console.error('Error restaurando examen:', error);
@@ -2934,6 +3011,9 @@
         window.onload = async function() {
             console.log('🚀 Iniciando aplicación...');
 
+            // Configurar monitoreo de conexión
+            setupConnectionMonitoring();
+
             // Primero verificar autenticación
             const authenticated = await checkAuth();
 
@@ -2947,6 +3027,70 @@
                 console.log('⏳ Esperando autenticación...');
             }
         };
+
+        // ========================
+        // MONITOREO DE CONEXIÓN
+        // ========================
+
+        function setupConnectionMonitoring() {
+            const statusBanner = document.getElementById('connection-status');
+            const statusIcon = document.getElementById('connection-status-icon');
+            const statusText = document.getElementById('connection-status-text');
+
+            // Mostrar banner cuando se pierde la conexión
+            window.addEventListener('offline', () => {
+                console.log('🔴 Conexión perdida');
+                statusBanner.style.display = 'flex';
+                statusBanner.style.background = '#ef4444';
+                statusIcon.textContent = '📡';
+                statusText.textContent = 'Sin conexión - tus respuestas están guardadas localmente';
+            });
+
+            // Ocultar banner cuando se recupera la conexión
+            window.addEventListener('online', () => {
+                console.log('🟢 Conexión recuperada');
+                statusBanner.style.background = '#10b981';
+                statusIcon.textContent = '✅';
+                statusText.textContent = 'Conexión recuperada';
+
+                // Ocultar banner después de 3 segundos
+                setTimeout(() => {
+                    statusBanner.style.display = 'none';
+                }, 3000);
+            });
+
+            // Verificar estado inicial
+            if (!navigator.onLine) {
+                statusBanner.style.display = 'flex';
+            }
+        }
     </script>
+
+    <!-- Modal de Confirmación para Finalizar Examen -->
+    <div id="finish-exam-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000; align-items: center; justify-content: center;">
+        <div style="background: white; border-radius: 16px; padding: 32px; max-width: 500px; margin: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+            <div style="text-align: center; margin-bottom: 24px;">
+                <div style="font-size: 4rem; margin-bottom: 16px;">📝</div>
+                <h2 style="margin: 0 0 12px 0; color: #1f2937;">¿Finalizar Examen?</h2>
+                <p id="modal-exam-summary" style="color: #6b7280; margin: 0; line-height: 1.6;">
+                    Has respondido X de Y preguntas
+                </p>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <button onclick="closeFinishExamModal()" style="background: #f3f4f6; color: #374151; padding: 14px 20px; font-weight: 600; border: none; border-radius: 10px; cursor: pointer; font-size: 1rem; transition: all 0.2s;">
+                    ❌ Cancelar
+                </button>
+                <button onclick="confirmFinishExam()" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 14px 20px; font-weight: 600; border: none; border-radius: 10px; cursor: pointer; font-size: 1rem; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3); transition: all 0.2s;">
+                    ✅ Finalizar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner de estado de conexión -->
+    <div id="connection-status" style="display: none; position: fixed; bottom: 20px; right: 20px; background: #ef4444; color: white; padding: 12px 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 9999; font-weight: 600; font-size: 0.875rem;">
+        <span id="connection-status-icon">📡</span>
+        <span id="connection-status-text">Sin conexión</span>
+    </div>
 </body>
 </html>
