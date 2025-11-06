@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PREPARACION OPOSICION</title>
+    <title>Oposicion Tecnico Farmacia</title>
     <style>
         * {
             margin: 0;
@@ -378,17 +378,36 @@
         }
 
         .stat-card {
-            background: white;
-            border-radius: 12px;
-            padding: 24px;
-            border: 1px solid #f3f4f6;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            transition: all 0.2s ease;
+            background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #f97316 0%, #fb923c 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .stat-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(249, 115, 22, 0.15), 0 4px 8px rgba(0,0,0,0.1);
+            border-color: #f97316;
+        }
+
+        .stat-card:hover::before {
+            opacity: 1;
         }
 
         .stat-header {
@@ -405,24 +424,46 @@
         }
 
         .stat-badge {
-            background: #f97316;
+            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
             color: white;
-            padding: 4px 12px;
+            padding: 6px 14px;
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 600;
+            box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .stat-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
         }
 
         .stat-badge.good {
-            background: #10b981;
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+        }
+
+        .stat-badge.good:hover {
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
         }
 
         .stat-badge.warning {
-            background: #f59e0b;
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+        }
+
+        .stat-badge.warning:hover {
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
         }
 
         .stat-badge.danger {
-            background: #ef4444;
+            background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
+            box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+        }
+
+        .stat-badge.danger:hover {
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
         }
 
         .stat-numbers {
@@ -436,37 +477,61 @@
         }
 
         .stat-number .value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #1f2937;
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
         }
 
         .stat-number .label {
             font-size: 0.875rem;
             color: #6b7280;
-            margin-top: 4px;
+            margin-top: 6px;
+            font-weight: 500;
         }
 
         .progress-bar {
-            height: 8px;
+            height: 10px;
             background: #f3f4f6;
-            border-radius: 4px;
+            border-radius: 10px;
             overflow: hidden;
             margin-bottom: 8px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
         }
 
         .progress-fill {
             height: 100%;
-            background: #f97316;
-            transition: width 0.3s ease;
+            background: linear-gradient(90deg, #f97316 0%, #fb923c 100%);
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
 
         .progress-fill.good {
-            background: #10b981;
+            background: linear-gradient(90deg, #10b981 0%, #34d399 100%);
         }
 
         .progress-fill.warning {
-            background: #f59e0b;
+            background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%);
         }
 
         .progress-fill.danger {
@@ -1030,10 +1095,9 @@
 
         <div class="header">
             <h1>
-                <span class="emoji">📚</span>Preparación Oposición
+                <span class="emoji">📚</span>Oposicion Tecnico Farmacia
                 <span id="user-info" class="user-info" style="display: none;"></span>
             </h1>
-            <p>Sistema de estudio inteligente</p>
             <div id="server-status" class="server-status offline">
                 <div class="status-indicator"></div>
                 <span>Verificando servidor...</span>
@@ -1164,11 +1228,6 @@
 
         <!-- PÁGINA DE REPASO -->
         <div id="review-page" class="page">
-            <div class="card">
-                <h2><span class="emoji">🔄</span>Refuerza tus Conocimientos</h2>
-                <p style="color: #6b7280; margin-top: 8px;">Repasa las preguntas que has fallado</p>
-            </div>
-
             <div id="failed-container">
                 <div class="empty-state">
                     <div class="emoji">🎯</div>
@@ -1181,11 +1240,6 @@
         <!-- PÁGINA: EXAMEN OFICIAL -->
         <div id="official-exam-page" class="page">
             <div class="card">
-                <h2><span class="emoji">🎓</span>Examen Oficial Simulacro</h2>
-                <p style="color: #6b7280; margin-top: 8px;">Pon a prueba tus conocimientos con un examen completo como el real</p>
-            </div>
-
-            <div class="card" style="margin-top: 24px;">
                 <h3 style="margin-bottom: 16px; color: #1f2937;">⚙️ Configurar Examen</h3>
 
                 <!-- Banner Examen Pendiente -->
