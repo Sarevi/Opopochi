@@ -948,12 +948,19 @@ function addToBuffer(userId, topicId, questionData, difficulty, cacheId = null) 
   const expiresAt = now + (3600 * 1000); // 1 hour expiry
 
   try {
+    // Validar que questionData tiene los campos mínimos requeridos
+    if (!questionData || !questionData.question || !questionData.options) {
+      console.error('Error: questionData inválido en addToBuffer');
+      return null;
+    }
+
     const stmt = db.prepare(`
       INSERT INTO user_question_buffer (user_id, topic_id, question_data, question_cache_id, difficulty, created_at, expires_at)
       VALUES (?, ?, ?, ?, ?, ?, ?)
     `);
 
-    const result = stmt.run(userId, topicId, JSON.stringify(questionData), cacheId, difficulty, now, expiresAt);
+    const questionJson = JSON.stringify(questionData);
+    const result = stmt.run(userId, topicId, questionJson, cacheId, difficulty, now, expiresAt);
     return result.lastInsertRowid;
   } catch (error) {
     console.error('Error añadiendo pregunta al buffer:', error);
@@ -984,11 +991,30 @@ function getFromBuffer(userId, topicId) {
     const result = stmt.get(userId, topicId, now);
 
     if (result) {
-      // Remove from buffer after retrieving
+      let questionData = null;
+
+      // Intentar parsear JSON de forma segura
+      try {
+        questionData = JSON.parse(result.question_data);
+      } catch (parseError) {
+        console.error('Error parseando question_data del buffer:', parseError);
+        // Eliminar pregunta corrupta del buffer
+        db.prepare('DELETE FROM user_question_buffer WHERE id = ?').run(result.id);
+        return null;
+      }
+
+      // Validar que tiene los campos necesarios
+      if (!questionData || !questionData.question || !questionData.options) {
+        console.error('Question data del buffer no tiene campos requeridos');
+        db.prepare('DELETE FROM user_question_buffer WHERE id = ?').run(result.id);
+        return null;
+      }
+
+      // Remove from buffer after retrieving (solo si es válido)
       db.prepare('DELETE FROM user_question_buffer WHERE id = ?').run(result.id);
 
       return {
-        question: JSON.parse(result.question_data),
+        question: questionData,
         cacheId: result.question_cache_id
       };
     }

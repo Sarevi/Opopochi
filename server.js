@@ -1267,8 +1267,14 @@ app.post('/api/study/question', requireAuth, async (req, res) => {
     const { topicId } = req.body;
     const userId = req.user.id;
 
+    // Validación: topicId es requerido
     if (!topicId) {
       return res.status(400).json({ error: 'topicId es requerido' });
+    }
+
+    // Validación: topicId existe en la configuración
+    if (!TOPIC_CONFIG[topicId]) {
+      return res.status(400).json({ error: `Tema "${topicId}" no existe` });
     }
 
     console.log(`📚 Usuario ${userId} solicita pregunta de estudio: ${topicId}`);
@@ -1283,7 +1289,7 @@ app.post('/api/study/question', requireAuth, async (req, res) => {
       // Obtener pregunta del buffer (INSTANT!)
       const buffered = db.getFromBuffer(userId, topicId);
 
-      if (buffered) {
+      if (buffered && buffered.question) {
         questionToReturn = buffered.question;
 
         // Marcar como vista si viene de caché
@@ -1317,6 +1323,9 @@ app.post('/api/study/question', requireAuth, async (req, res) => {
           source: 'buffer',
           bufferSize: newBufferSize
         });
+      } else {
+        // Buffer reportó preguntas pero getFromBuffer falló (datos corruptos?)
+        console.warn(`⚠️ Buffer reportó ${bufferSize} preguntas pero getFromBuffer retornó null`);
       }
     }
 
@@ -1369,6 +1378,7 @@ app.post('/api/study/question', requireAuth, async (req, res) => {
 async function generateQuestionBatch(userId, topicId, count = 5) {
   const CACHE_PROBABILITY = 0.60;
   const questions = [];
+  const MAX_RETRIES = count * 2; // Intentar hasta el doble para asegurar al menos 1 pregunta
 
   // Obtener contenido del tema
   const topicContent = await getDocumentsByTopics([topicId]);
@@ -1381,7 +1391,10 @@ async function generateQuestionBatch(userId, topicId, count = 5) {
   console.log(`📄 Tema ${topicId}: ${topicChunks.length} chunks disponibles`);
 
   // Generar preguntas mezclando dificultades
-  for (let i = 0; i < count; i++) {
+  let attempts = 0;
+  while (questions.length < count && attempts < MAX_RETRIES) {
+    attempts++;
+
     // Distribuir dificultades: 20% simple, 60% media, 20% elaborada
     let difficulty = 'media';
     const rand = Math.random();
@@ -1399,7 +1412,7 @@ async function generateQuestionBatch(userId, topicId, count = 5) {
         question._cacheId = cached.cacheId;
         question._sourceTopic = topicId;
         db.markQuestionAsSeen(userId, cached.cacheId, 'study');
-        console.log(`💾 Pregunta ${i + 1}/${count} desde caché (${difficulty})`);
+        console.log(`💾 Pregunta ${questions.length + 1}/${count} desde caché (${difficulty})`);
       }
     }
 
@@ -1438,16 +1451,24 @@ async function generateQuestionBatch(userId, topicId, count = 5) {
           db.saveToCacheAndTrack(userId, topicId, difficulty, question, 'study');
 
           db.markChunkAsUsed(userId, topicId, chunkIndex);
-          console.log(`🆕 Pregunta ${i + 1}/${count} generada (${difficulty})`);
+          console.log(`🆕 Pregunta ${questions.length + 1}/${count} generada (${difficulty})`);
         }
       } catch (error) {
-        console.error(`❌ Error generando pregunta ${i + 1}:`, error.message);
+        console.error(`❌ Error generando pregunta (intento ${attempts}):`, error.message);
       }
     }
 
     if (question) {
       questions.push(question);
     }
+  }
+
+  // Log final con stats
+  console.log(`✅ Batch completado: ${questions.length}/${count} preguntas en ${attempts} intentos`);
+
+  // Si no se generó NINGUNA pregunta, lanzar error
+  if (questions.length === 0) {
+    throw new Error('No se pudo generar ninguna pregunta después de múltiples intentos');
   }
 
   return questions;
