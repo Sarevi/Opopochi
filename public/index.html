@@ -1624,13 +1624,13 @@
                 }
                 
                 try {
-                    const response = await fetch(`${API_BASE}/api/generate-exam`, {
+                    // FASE 2: Usar endpoint con prefetch para respuestas instantáneas
+                    const response = await fetch(`${API_BASE}/api/study/question`, {
                         method: 'POST',
                         credentials: 'include',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
-                            topics: [currentTopic],
-                            questionCount: 1
+                            topicId: currentTopic
                         }),
                     });
 
@@ -1649,6 +1649,15 @@
 
                         if (data.questions && data.questions.length > 0) {
                             currentQuestion = data.questions[0];
+
+                            // FASE 2: Log de información del buffer
+                            if (data.source === 'buffer') {
+                                console.log('⚡ Pregunta INSTANTÁNEA desde buffer');
+                            } else if (data.source === 'generated') {
+                                console.log('🔨 Batch de 5 preguntas generado');
+                            }
+                            console.log(`💾 Buffer: ${data.bufferSize} preguntas listas`);
+
                             hideRetryNotification();
                             displayQuestion();
                             return true;
