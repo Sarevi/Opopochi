@@ -1259,6 +1259,220 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
   }
 });
 
+// ====================================================================
+// FASE 2: ENDPOINT CON PREFETCH PARA ESTUDIO (RESPUESTA INSTANTÁNEA)
+// ====================================================================
+app.post('/api/study/question', requireAuth, async (req, res) => {
+  try {
+    const { topicId } = req.body;
+    const userId = req.user.id;
+
+    if (!topicId) {
+      return res.status(400).json({ error: 'topicId es requerido' });
+    }
+
+    console.log(`📚 Usuario ${userId} solicita pregunta de estudio: ${topicId}`);
+
+    // PASO 1: Verificar si hay pregunta en buffer
+    const bufferSize = db.getBufferSize(userId, topicId);
+    console.log(`💾 Buffer actual: ${bufferSize} preguntas`);
+
+    let questionToReturn = null;
+
+    if (bufferSize > 0) {
+      // Obtener pregunta del buffer (INSTANT!)
+      const buffered = db.getFromBuffer(userId, topicId);
+
+      if (buffered) {
+        questionToReturn = buffered.question;
+
+        // Marcar como vista si viene de caché
+        if (buffered.cacheId) {
+          db.markQuestionAsSeen(userId, buffered.cacheId, 'study');
+        }
+
+        console.log(`⚡ Pregunta entregada desde buffer (INSTANT!)`);
+
+        // Check buffer size after retrieval
+        const newBufferSize = db.getBufferSize(userId, topicId);
+        console.log(`💾 Buffer después de entrega: ${newBufferSize} preguntas`);
+
+        // Si buffer bajó de 3, rellenar en background
+        if (newBufferSize < 3) {
+          console.log(`🔄 Buffer bajo (${newBufferSize}), iniciando refill en background...`);
+
+          // Generar 2-3 preguntas más en background (sin esperar)
+          setImmediate(async () => {
+            try {
+              await refillBuffer(userId, topicId, 3 - newBufferSize);
+            } catch (error) {
+              console.error('Error en background refill:', error);
+            }
+          });
+        }
+
+        // Retornar inmediatamente
+        return res.json({
+          questions: [questionToReturn],
+          source: 'buffer',
+          bufferSize: newBufferSize
+        });
+      }
+    }
+
+    // PASO 2: Buffer vacío - generar batch de 5 preguntas
+    console.log(`🔨 Buffer vacío - generando batch inicial de 5 preguntas...`);
+
+    const batchQuestions = await generateQuestionBatch(userId, topicId, 5);
+
+    if (batchQuestions.length === 0) {
+      return res.status(500).json({ error: 'No se pudieron generar preguntas' });
+    }
+
+    // Primera pregunta para retornar
+    questionToReturn = batchQuestions[0];
+
+    // Resto al buffer (4 preguntas)
+    for (let i = 1; i < batchQuestions.length; i++) {
+      const q = batchQuestions[i];
+      db.addToBuffer(userId, topicId, q, q.difficulty, q._cacheId || null);
+    }
+
+    const finalBufferSize = db.getBufferSize(userId, topicId);
+    console.log(`✅ Batch generado: 1 entregada + ${finalBufferSize} en buffer`);
+
+    res.json({
+      questions: [questionToReturn],
+      source: 'generated',
+      bufferSize: finalBufferSize
+    });
+
+  } catch (error) {
+    console.error('❌ Error en /api/study/question:', error);
+
+    const errorCode = error.status || 500;
+    const errorMessage = errorCode === 529 ? 'Claude temporalmente ocupado' :
+                        errorCode === 429 ? 'Límite de solicitudes alcanzado' :
+                        'Error generando pregunta';
+
+    res.status(errorCode).json({
+      error: errorMessage,
+      retryable: [429, 503, 529].includes(errorCode),
+      waitTime: errorCode === 529 ? 5000 : 3000
+    });
+  }
+});
+
+/**
+ * Generar batch de preguntas (mix de caché + nuevas)
+ */
+async function generateQuestionBatch(userId, topicId, count = 5) {
+  const CACHE_PROBABILITY = 0.60;
+  const questions = [];
+
+  // Obtener contenido del tema
+  const topicContent = await getDocumentsByTopics([topicId]);
+  const topicChunks = splitIntoChunks(topicContent, 1200);
+
+  if (topicChunks.length === 0) {
+    throw new Error('No hay contenido disponible para este tema');
+  }
+
+  console.log(`📄 Tema ${topicId}: ${topicChunks.length} chunks disponibles`);
+
+  // Generar preguntas mezclando dificultades
+  for (let i = 0; i < count; i++) {
+    // Distribuir dificultades: 20% simple, 60% media, 20% elaborada
+    let difficulty = 'media';
+    const rand = Math.random();
+    if (rand < 0.20) difficulty = 'simple';
+    else if (rand > 0.80) difficulty = 'elaborada';
+
+    const tryCache = Math.random() < CACHE_PROBABILITY;
+    let question = null;
+
+    // Intentar caché primero
+    if (tryCache) {
+      const cached = db.getCachedQuestion(userId, [topicId], difficulty);
+      if (cached) {
+        question = cached.question;
+        question._cacheId = cached.cacheId;
+        question._sourceTopic = topicId;
+        db.markQuestionAsSeen(userId, cached.cacheId, 'study');
+        console.log(`💾 Pregunta ${i + 1}/${count} desde caché (${difficulty})`);
+      }
+    }
+
+    // Si no hay en caché, generar nueva
+    if (!question) {
+      const chunkIndex = db.getUnusedChunkIndex(userId, topicId, topicChunks.length);
+      const selectedChunk = topicChunks[chunkIndex];
+
+      let prompt, maxTokens, calls;
+      if (difficulty === 'simple') {
+        prompt = CLAUDE_PROMPT_SIMPLE;
+        maxTokens = 800;
+        calls = 1;
+      } else if (difficulty === 'media') {
+        prompt = CLAUDE_PROMPT_MEDIA;
+        maxTokens = 1100;
+        calls = 1;
+      } else {
+        prompt = CLAUDE_PROMPT_ELABORATED;
+        maxTokens = 1500;
+        calls = 1;
+      }
+
+      const fullPrompt = prompt.replace('{{CONTENT}}', selectedChunk);
+
+      try {
+        const response = await callClaudeWithImprovedRetry(fullPrompt, maxTokens, difficulty, calls);
+        const responseText = response.content[0].text;
+        const questionsData = parseClaudeResponse(responseText);
+
+        if (questionsData?.questions?.length > 0) {
+          question = questionsData.questions[0];
+          question._sourceTopic = topicId;
+
+          // Guardar en caché
+          db.saveToCacheAndTrack(userId, topicId, difficulty, question, 'study');
+
+          db.markChunkAsUsed(userId, topicId, chunkIndex);
+          console.log(`🆕 Pregunta ${i + 1}/${count} generada (${difficulty})`);
+        }
+      } catch (error) {
+        console.error(`❌ Error generando pregunta ${i + 1}:`, error.message);
+      }
+    }
+
+    if (question) {
+      questions.push(question);
+    }
+  }
+
+  return questions;
+}
+
+/**
+ * Rellenar buffer en background
+ */
+async function refillBuffer(userId, topicId, count = 3) {
+  console.log(`🔄 [Background] Rellenando buffer con ${count} preguntas...`);
+
+  try {
+    const newQuestions = await generateQuestionBatch(userId, topicId, count);
+
+    for (const q of newQuestions) {
+      db.addToBuffer(userId, topicId, q, q.difficulty, q._cacheId || null);
+    }
+
+    const bufferSize = db.getBufferSize(userId, topicId);
+    console.log(`✅ [Background] Buffer rellenado: ${bufferSize} preguntas`);
+  } catch (error) {
+    console.error(`❌ [Background] Error rellenando buffer:`, error);
+  }
+}
+
 app.post('/api/record-answer', requireAuth, (req, res) => {
   try {
     const { topicId, questionData, userAnswer, isCorrect, isReview, questionId } = req.body;
@@ -1741,6 +1955,16 @@ async function startServer() {
       console.log(`   Render: Tu URL de Render`);
       console.log('\n🎯 ¡Sistema listo para generar exámenes!');
       console.log('========================================\n');
+
+      // FASE 2: Limpiar buffers y caché expirados cada 30 minutos
+      setInterval(() => {
+        console.log('🧹 Ejecutando limpieza periódica...');
+        const buffersDeleted = db.cleanExpiredBuffers();
+        const cacheDeleted = db.cleanExpiredCache();
+        console.log(`✅ Limpieza completada: ${buffersDeleted} buffers + ${cacheDeleted} caché eliminados`);
+      }, 30 * 60 * 1000); // 30 minutos
+
+      console.log('⏰ Limpieza automática programada cada 30 minutos\n');
     });
     
   } catch (error) {

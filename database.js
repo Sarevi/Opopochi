@@ -188,7 +188,30 @@ function initDatabase() {
     )
   `);
 
-  console.log('✅ Base de datos inicializada (con sistema de caché)');
+  // ========================
+  // TABLA 4: Buffer de preguntas (FASE 2 - Sistema de Prefetch)
+  // ========================
+
+  // Tabla para almacenar preguntas pre-generadas para respuesta instantánea
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS user_question_buffer (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL,
+      topic_id TEXT NOT NULL,
+      question_data TEXT NOT NULL,
+      question_cache_id INTEGER,
+      difficulty TEXT NOT NULL,
+      created_at INTEGER NOT NULL,
+      expires_at INTEGER NOT NULL,
+      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+      FOREIGN KEY (question_cache_id) REFERENCES question_cache(id) ON DELETE SET NULL
+    )
+  `);
+
+  // Índice para búsquedas rápidas de buffer por usuario y tema
+  db.exec(`CREATE INDEX IF NOT EXISTS idx_buffer_user_topic ON user_question_buffer(user_id, topic_id, expires_at)`);
+
+  console.log('✅ Base de datos inicializada (con sistema de caché + buffer de prefetch)');
 }
 
 // ========================
@@ -909,6 +932,126 @@ function updateCacheStats(questionsGenerated, questionsCached, totalCost) {
 }
 
 // ========================
+// FUNCIONES DE BUFFER (PREFETCH)
+// ========================
+
+/**
+ * Añadir pregunta al buffer del usuario
+ * @param {number} userId - ID del usuario
+ * @param {string} topicId - ID del tema
+ * @param {object} questionData - Datos de la pregunta
+ * @param {string} difficulty - Dificultad
+ * @param {number|null} cacheId - ID en cache (si aplica)
+ */
+function addToBuffer(userId, topicId, questionData, difficulty, cacheId = null) {
+  const now = Date.now();
+  const expiresAt = now + (3600 * 1000); // 1 hour expiry
+
+  try {
+    const stmt = db.prepare(`
+      INSERT INTO user_question_buffer (user_id, topic_id, question_data, question_cache_id, difficulty, created_at, expires_at)
+      VALUES (?, ?, ?, ?, ?, ?, ?)
+    `);
+
+    const result = stmt.run(userId, topicId, JSON.stringify(questionData), cacheId, difficulty, now, expiresAt);
+    return result.lastInsertRowid;
+  } catch (error) {
+    console.error('Error añadiendo pregunta al buffer:', error);
+    return null;
+  }
+}
+
+/**
+ * Obtener pregunta del buffer
+ * @param {number} userId - ID del usuario
+ * @param {string} topicId - ID del tema
+ * @returns {object|null} Pregunta del buffer o null
+ */
+function getFromBuffer(userId, topicId) {
+  const now = Date.now();
+
+  try {
+    const stmt = db.prepare(`
+      SELECT id, question_data, question_cache_id, difficulty
+      FROM user_question_buffer
+      WHERE user_id = ?
+        AND topic_id = ?
+        AND expires_at > ?
+      ORDER BY created_at ASC
+      LIMIT 1
+    `);
+
+    const result = stmt.get(userId, topicId, now);
+
+    if (result) {
+      // Remove from buffer after retrieving
+      db.prepare('DELETE FROM user_question_buffer WHERE id = ?').run(result.id);
+
+      return {
+        question: JSON.parse(result.question_data),
+        cacheId: result.question_cache_id
+      };
+    }
+
+    return null;
+  } catch (error) {
+    console.error('Error obteniendo pregunta del buffer:', error);
+    return null;
+  }
+}
+
+/**
+ * Obtener tamaño del buffer para un usuario y tema
+ * @param {number} userId - ID del usuario
+ * @param {string} topicId - ID del tema
+ * @returns {number} Cantidad de preguntas en buffer
+ */
+function getBufferSize(userId, topicId) {
+  const now = Date.now();
+
+  try {
+    const stmt = db.prepare(`
+      SELECT COUNT(*) as count
+      FROM user_question_buffer
+      WHERE user_id = ?
+        AND topic_id = ?
+        AND expires_at > ?
+    `);
+
+    return stmt.get(userId, topicId, now).count;
+  } catch (error) {
+    console.error('Error obteniendo tamaño del buffer:', error);
+    return 0;
+  }
+}
+
+/**
+ * Limpiar buffers expirados
+ * @returns {number} Cantidad de preguntas eliminadas
+ */
+function cleanExpiredBuffers() {
+  const now = Date.now();
+
+  try {
+    const stmt = db.prepare(`
+      DELETE FROM user_question_buffer
+      WHERE expires_at < ?
+    `);
+
+    const result = stmt.run(now);
+
+    if (result.changes > 0) {
+      console.log(`🧹 Buffer limpio: ${result.changes} preguntas expiradas eliminadas`);
+    }
+
+    return result.changes;
+  } catch (error) {
+    console.error('Error limpiando buffers expirados:', error);
+    return 0;
+  }
+}
+
+// ========================
 // EXPORTAR FUNCIONES
 // ========================
 
@@ -944,5 +1087,10 @@ module.exports = {
   cleanExpiredCache,
   getCacheStats,
   updateCacheStats,
+  // Funciones de buffer (prefetch)
+  addToBuffer,
+  getFromBuffer,
+  getBufferSize,
+  cleanExpiredBuffers,
   db
 };
