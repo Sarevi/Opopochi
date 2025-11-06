@@ -898,6 +898,32 @@
                 width: 100%;
             }
         }
+
+        /* ESTILOS PARA EXAMEN OFICIAL */
+        .exam-size-btn {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 16px 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #6b7280;
+        }
+
+        .exam-size-btn:hover {
+            border-color: #f97316;
+            background: #fff7ed;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.15);
+        }
+
+        .exam-size-btn.active {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            border-color: #f97316;
+            color: white;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -1025,6 +1051,9 @@
             <button class="nav-button" onclick="showPage('review')" id="nav-review">
                 🔄 Reforzar
             </button>
+            <button class="nav-button" onclick="showPage('official-exam')" id="nav-official-exam">
+                🎓 Examen Oficial
+            </button>
         </nav>
 
         <!-- NOTIFICACIÓN DE REINTENTOS -->
@@ -1068,6 +1097,21 @@
                 <div class="question-header">
                     <div id="current-topic-name">Tema Actual</div>
                     <div id="question-number">Pregunta 1</div>
+                </div>
+
+                <!-- Barra de progreso para examen oficial -->
+                <div id="exam-progress-bar" style="display: none; background: #f3f4f6; border-radius: 8px; overflow: hidden; margin: 16px 0; height: 8px;">
+                    <div id="exam-progress-fill" style="height: 100%; background: linear-gradient(90deg, #f97316 0%, #ea580c 100%); width: 0%; transition: width 0.3s ease;"></div>
+                </div>
+                <div id="exam-progress-text" style="display: none; text-align: center; color: #6b7280; font-size: 0.875rem; margin-bottom: 16px;">
+                    <span id="exam-progress-current">0</span> de <span id="exam-progress-total">0</span> preguntas respondidas
+                </div>
+
+                <!-- Botón Finalizar Examen (solo cuando termine todas) -->
+                <div id="exam-finish-container" style="display: none; margin-bottom: 16px;">
+                    <button onclick="showFinishExamModal()" style="width: 100%; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 16px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; font-size: 1.125rem; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3); transition: all 0.2s;">
+                        ✅ Finalizar Examen y Ver Resultados
+                    </button>
                 </div>
 
                 <div class="question-card">
@@ -1133,6 +1177,90 @@
                 </div>
             </div>
         </div>
+
+        <!-- PÁGINA: EXAMEN OFICIAL -->
+        <div id="official-exam-page" class="page">
+            <div class="card">
+                <h2><span class="emoji">🎓</span>Examen Oficial Simulacro</h2>
+                <p style="color: #6b7280; margin-top: 8px;">Pon a prueba tus conocimientos con un examen completo como el real</p>
+            </div>
+
+            <div class="card" style="margin-top: 24px;">
+                <h3 style="margin-bottom: 16px; color: #1f2937;">⚙️ Configurar Examen</h3>
+
+                <!-- Banner Examen Pendiente -->
+                <div id="pending-exam-banner" style="display: none; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 12px; padding: 20px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+                        <div style="font-size: 2.5rem;">📝</div>
+                        <div style="flex: 1;">
+                            <div style="font-weight: 700; font-size: 1.125rem; color: white; margin-bottom: 4px;">¡Tienes un Examen Pendiente!</div>
+                            <div style="color: rgba(255,255,255,0.9); font-size: 0.875rem;" id="pending-exam-info">
+                                Respondiste X de Y preguntas
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                        <button onclick="continueOfficialExam()" style="background: white; color: #059669; padding: 12px 20px; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; transition: all 0.2s;">
+                            ✅ Continuar Examen
+                        </button>
+                        <button onclick="cancelPendingExam()" style="background: rgba(255,255,255,0.2); color: white; padding: 12px 20px; font-weight: 600; border: 1px solid white; border-radius: 8px; cursor: pointer; font-size: 1rem; transition: all 0.2s;">
+                            ❌ Cancelar y Empezar Nuevo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Selector de Preguntas -->
+                <div style="margin-bottom: 24px;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 12px; color: #374151;">
+                        📝 Número de Preguntas
+                    </label>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+                        <button class="exam-size-btn active" data-size="25" onclick="selectExamSize(25)">
+                            <div style="font-size: 1.5rem; font-weight: bold;">25</div>
+                            <div style="font-size: 0.75rem; opacity: 0.8;">Rápido</div>
+                        </button>
+                        <button class="exam-size-btn" data-size="50" onclick="selectExamSize(50)">
+                            <div style="font-size: 1.5rem; font-weight: bold;">50</div>
+                            <div style="font-size: 0.75rem; opacity: 0.8;">Medio</div>
+                        </button>
+                        <button class="exam-size-btn" data-size="75" onclick="selectExamSize(75)">
+                            <div style="font-size: 1.5rem; font-weight: bold;">75</div>
+                            <div style="font-size: 0.75rem; opacity: 0.8;">Largo</div>
+                        </button>
+                        <button class="exam-size-btn" data-size="100" onclick="selectExamSize(100)">
+                            <div style="font-size: 1.5rem; font-weight: bold;">100</div>
+                            <div style="font-size: 0.75rem; opacity: 0.8;">Completo</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Información del Examen -->
+                <div style="background: #fef3c7; border: 2px solid #fbbf24; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
+                    <div style="display: flex; align-items: start; gap: 12px;">
+                        <span style="font-size: 1.5rem;">⚠️</span>
+                        <div>
+                            <div style="font-weight: 600; color: #92400e; margin-bottom: 4px;">Modo Examen Real</div>
+                            <ul style="margin: 0; padding-left: 20px; color: #92400e; font-size: 0.875rem; line-height: 1.6;">
+                                <li>Preguntas mezcladas de <strong>todos los temas</strong></li>
+                                <li>No podrás volver a preguntas anteriores</li>
+                                <li>No verás las respuestas hasta el final</li>
+                                <li>Las preguntas falladas se guardarán en <strong>Reforzar</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botón Iniciar -->
+                <button id="start-exam-btn" onclick="startOfficialExam()" style="width: 100%; background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); color: white; padding: 16px 32px; font-size: 1.125rem; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3); transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 16px rgba(249, 115, 22, 0.4)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 4px 12px rgba(249, 115, 22, 0.3)';">
+                    🚀 Iniciar Examen Oficial
+                </button>
+                <div id="exam-loading" style="display: none; text-align: center; margin-top: 16px; padding: 24px; background: #fff7ed; border-radius: 12px; border: 2px solid #f97316;">
+                    <div class="loading" style="margin: 0 auto 16px;"></div>
+                    <div style="font-weight: 600; color: #f97316; margin-bottom: 8px;">Generando Examen Oficial</div>
+                    <div style="font-size: 0.875rem; color: #9a3412;">Esto puede tardar 1-2 minutos. Por favor espera...</div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -1150,6 +1278,15 @@
         const API_BASE = '';
         let currentUser = null;
         let isAuthenticated = false;
+
+        // Variables para Examen Oficial
+        let officialExamConfig = {
+            questionCount: 25
+        };
+        let officialExamQuestions = [];
+        let isOfficialExamMode = false;
+        let officialExamStartTime = null;
+        let officialExamAnswers = [];
 
         // ========================
         // SISTEMA DE AUTENTICACIÓN
@@ -1487,13 +1624,13 @@
                 }
                 
                 try {
-                    const response = await fetch(`${API_BASE}/api/generate-exam`, {
+                    // FASE 2: Usar endpoint con prefetch para respuestas instantáneas
+                    const response = await fetch(`${API_BASE}/api/study/question`, {
                         method: 'POST',
                         credentials: 'include',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
-                            topics: [currentTopic],
-                            questionCount: 1
+                            topicId: currentTopic
                         }),
                     });
 
@@ -1512,6 +1649,15 @@
 
                         if (data.questions && data.questions.length > 0) {
                             currentQuestion = data.questions[0];
+
+                            // FASE 2: Log de información del buffer
+                            if (data.source === 'buffer') {
+                                console.log('⚡ Pregunta INSTANTÁNEA desde buffer');
+                            } else if (data.source === 'generated') {
+                                console.log('🔨 Batch de 5 preguntas generado');
+                            }
+                            console.log(`💾 Buffer: ${data.bufferSize} preguntas listas`);
+
                             hideRetryNotification();
                             displayQuestion();
                             return true;
@@ -1775,6 +1921,9 @@
                 case 'review':
                     displayFailedQuestions();
                     break;
+                case 'official-exam':
+                    checkPendingExam();
+                    break;
             }
         }
 
@@ -1784,16 +1933,24 @@
             document.getElementById('question-container').classList.remove('hidden');
         }
 
-        function backToTopicSelection() {
+        async function backToTopicSelection() {
             document.getElementById('topic-selection').style.display = 'block';
             document.getElementById('available-topics').style.display = 'block';
             document.getElementById('question-container').classList.add('hidden');
             hideRetryNotification();
 
+            // Si estábamos en modo repaso, recargar preguntas falladas
+            const wasReviewMode = window.isReviewMode === true;
+
             // Salir del modo repaso si estaba activo
             window.isReviewMode = false;
             window.reviewQuestions = null;
             window.currentReviewIndex = 0;
+
+            // Recargar datos del usuario si veníamos de modo repaso
+            if (wasReviewMode) {
+                await loadUserData();
+            }
 
             loadAvailableTopics();
         }
@@ -1895,16 +2052,46 @@
             }
             
             currentTopic = selectedTopicId;
-            
+
             const topicConfig = availableTopics.find(([id]) => id === selectedTopicId);
             const topicTitle = topicConfig ? topicConfig[1].title : 'Tema Demo';
-            
+
             document.getElementById('current-topic-name').textContent = topicTitle;
             questionCount = 0;
             correctAnswers = 0;
-            
+
+            // FASE 3: Pre-warming - generar preguntas en background
+            preWarmBuffer(selectedTopicId);
+
             showQuestionMode();
             generateNextQuestion();
+        }
+
+        // ========================
+        // FASE 3: PRE-WARMING
+        // ========================
+
+        async function preWarmBuffer(topicId) {
+            try {
+                console.log(`🔥 FASE 3: Pre-warming buffer para ${topicId}...`);
+
+                const response = await fetch(`${API_BASE}/api/study/pre-warm`, {
+                    method: 'POST',
+                    credentials: 'include',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ topicId: topicId })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log(`✅ Pre-warming: ${data.message} (Buffer: ${data.bufferSize})`);
+                } else {
+                    console.warn('⚠️ Pre-warming falló, continuando normal');
+                }
+            } catch (error) {
+                console.warn('⚠️ Error en pre-warming:', error);
+                // No bloquear si pre-warm falla
+            }
         }
 
         // ========================
@@ -1912,6 +2099,22 @@
         // ========================
 
         async function generateNextQuestion() {
+            // SI ES MODO EXAMEN OFICIAL
+            if (isOfficialExamMode && officialExamQuestions.length > 0) {
+                // Si ya respondió todas las preguntas
+                if (questionCount >= officialExamQuestions.length) {
+                    finishOfficialExam();
+                    return;
+                }
+
+                // Mostrar siguiente pregunta
+                questionCount++;
+                currentQuestion = officialExamQuestions[questionCount - 1];
+                document.getElementById('question-number').textContent = `Pregunta ${questionCount} de ${officialExamQuestions.length}`;
+                displayQuestion();
+                return;
+            }
+
             if (!currentTopic) return;
 
             // Si estamos en modo repaso, navegar por las preguntas del test
@@ -2034,12 +2237,22 @@
             document.querySelectorAll('.option').forEach(opt => {
                 opt.classList.remove('selected', 'correct', 'incorrect');
             });
-            
+
             const selectedOption = document.querySelectorAll('.option')[optionIndex];
             selectedOption.classList.add('selected');
             document.getElementById(`option-${optionIndex}`).checked = true;
-            
-            showResult(optionIndex);
+
+            // SI ES MODO EXAMEN OFICIAL: guardar respuesta y pasar a siguiente sin mostrar resultado
+            if (isOfficialExamMode) {
+                saveOfficialExamAnswer(optionIndex);
+                // Pequeño delay para feedback visual de selección
+                setTimeout(() => {
+                    generateNextQuestion();
+                }, 300);
+            } else {
+                // MODO NORMAL: mostrar resultado inmediatamente
+                showResult(optionIndex);
+            }
         }
 
         async function showResult(userAnswer) {
@@ -2051,12 +2264,28 @@
             const isReview = window.isReviewMode === true;
             const questionId = isReview ? currentQuestion.id : null;
 
-            // Actualizar estadísticas (o marcar como revisada si es repaso)
-            await updateLocalStats(currentTopic, isCorrect, isReview, questionId);
+            // SI ES MODO EXAMEN OFICIAL
+            if (isOfficialExamMode) {
+                // Guardar respuesta en el array
+                officialExamAnswers.push({
+                    questionNumber: questionCount,
+                    question: currentQuestion.question,
+                    userAnswer,
+                    correctAnswer: currentQuestion.correct,
+                    isCorrect,
+                    timestamp: Date.now()
+                });
 
-            // Solo agregar a preguntas falladas si NO es modo repaso
-            if (!isCorrect && !isReview) {
-                await addLocalFailedQuestion(currentTopic, currentQuestion, userAnswer);
+                // NO actualizar estadísticas ni preguntas falladas en modo oficial
+            } else {
+                // MODO NORMAL O REPASO
+                // Actualizar estadísticas (o marcar como revisada si es repaso)
+                await updateLocalStats(currentTopic, isCorrect, isReview, questionId);
+
+                // Solo agregar a preguntas falladas si NO es modo repaso
+                if (!isCorrect && !isReview) {
+                    await addLocalFailedQuestion(currentTopic, currentQuestion, userAnswer);
+                }
             }
 
             document.querySelectorAll('.option').forEach((opt, index) => {
@@ -2161,26 +2390,100 @@
                 return;
             }
 
-            let failedHTML = '<div class="failed-topics">';
+            // Separar examenes de temas normales
+            const exams = [];
+            const topics = [];
 
             Object.entries(failedQuestions).forEach(([topicId, topicData]) => {
-                const topicTitle = topicData.title || 'Tema';
-                const questionCount = topicData.questions.length;
-
-                failedHTML += `
-                    <div class="failed-topic-card" style="background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #f3f4f6;">
-                        <div style="margin-bottom: 16px;">
-                            <h3 style="margin: 0 0 8px 0; color: #1f2937; font-size: 1.25rem;">${topicTitle}</h3>
-                            <div style="color: #dc2626; font-weight: 600; font-size: 0.875rem;">
-                                📝 ${questionCount} pregunta${questionCount !== 1 ? 's' : ''} para repasar
-                            </div>
-                        </div>
-                        <button onclick="startReviewTest('${topicId}')" style="width: 100%; background: #f97316; color: white; padding: 14px 24px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; font-size: 1rem; transition: all 0.2s ease;" onmouseover="this.style.background='#ea580c'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(249, 115, 22, 0.3)';" onmouseout="this.style.background='#f97316'; this.style.transform='none'; this.style.boxShadow='none';">
-                            🎯 Hacer Test de Repaso
-                        </button>
-                    </div>
-                `;
+                if (topicId.startsWith('examen-')) {
+                    exams.push([topicId, topicData]);
+                } else {
+                    topics.push([topicId, topicData]);
+                }
             });
+
+            let failedHTML = '<div class="failed-topics">';
+
+            // Mostrar EXAMENES primero (si hay)
+            if (exams.length > 0) {
+                failedHTML += `
+                    <div style="margin-bottom: 32px;">
+                        <h3 style="color: #1f2937; font-size: 1.25rem; margin-bottom: 16px; border-bottom: 2px solid #f97316; padding-bottom: 8px;">
+                            🎓 Examenes Oficiales
+                        </h3>
+                `;
+
+                exams.forEach(([examId, examData]) => {
+                    // Extraer info del examId: "examen-25-1730678400000"
+                    const parts = examId.split('-');
+                    const questionCount = examData.questions.length;
+                    const examSize = parts[1] || '?';
+                    const timestamp = parts[2] ? new Date(parseInt(parts[2])) : null;
+                    const dateStr = timestamp ? timestamp.toLocaleDateString('es-ES', {
+                        day: 'numeric',
+                        month: 'short',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    }) : '';
+
+                    failedHTML += `
+                        <div class="failed-topic-card" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 2px solid #fbbf24;">
+                            <div style="margin-bottom: 16px;">
+                                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                    <h3 style="margin: 0; color: #92400e; font-size: 1.25rem;">Examen ${examSize} preguntas</h3>
+                                    <span style="background: #f59e0b; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">OFICIAL</span>
+                                </div>
+                                <div style="color: #78350f; font-size: 0.75rem; margin-bottom: 4px;">
+                                    📅 ${dateStr}
+                                </div>
+                                <div style="color: #dc2626; font-weight: 600; font-size: 0.875rem;">
+                                    📝 ${questionCount} pregunta${questionCount !== 1 ? 's' : ''} fallada${questionCount !== 1 ? 's' : ''}
+                                </div>
+                            </div>
+                            <button onclick="startReviewTest('${examId}')" style="width: 100%; background: #f59e0b; color: white; padding: 14px 24px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; font-size: 1rem; transition: all 0.2s ease;" onmouseover="this.style.background='#d97706'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(245, 158, 11, 0.3)';" onmouseout="this.style.background='#f59e0b'; this.style.transform='none'; this.style.boxShadow='none';">
+                                🎯 Repasar Preguntas del Examen
+                            </button>
+                        </div>
+                    `;
+                });
+
+                failedHTML += '</div>';
+            }
+
+            // Mostrar TEMAS normales (si hay)
+            if (topics.length > 0) {
+                if (exams.length > 0) {
+                    failedHTML += `
+                        <div style="margin-bottom: 32px;">
+                            <h3 style="color: #1f2937; font-size: 1.25rem; margin-bottom: 16px; border-bottom: 2px solid #f97316; padding-bottom: 8px;">
+                                📚 Temas de Estudio
+                            </h3>
+                    `;
+                }
+
+                topics.forEach(([topicId, topicData]) => {
+                    const topicTitle = topicData.title || 'Tema';
+                    const questionCount = topicData.questions.length;
+
+                    failedHTML += `
+                        <div class="failed-topic-card" style="background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #f3f4f6;">
+                            <div style="margin-bottom: 16px;">
+                                <h3 style="margin: 0 0 8px 0; color: #1f2937; font-size: 1.25rem;">${topicTitle}</h3>
+                                <div style="color: #dc2626; font-weight: 600; font-size: 0.875rem;">
+                                    📝 ${questionCount} pregunta${questionCount !== 1 ? 's' : ''} para repasar
+                                </div>
+                            </div>
+                            <button onclick="startReviewTest('${topicId}')" style="width: 100%; background: #f97316; color: white; padding: 14px 24px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; font-size: 1rem; transition: all 0.2s ease;" onmouseover="this.style.background='#ea580c'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(249, 115, 22, 0.3)';" onmouseout="this.style.background='#f97316'; this.style.transform='none'; this.style.boxShadow='none';">
+                                🎯 Hacer Test de Repaso
+                            </button>
+                        </div>
+                    `;
+                });
+
+                if (exams.length > 0) {
+                    failedHTML += '</div>';
+                }
+            }
 
             failedHTML += '</div>';
             container.innerHTML = failedHTML;
@@ -2221,9 +2524,18 @@
                 questionCount = 1;
                 correctAnswers = 0;
 
-                // Obtener el título del tema
-                const topicConfig = availableTopics.find(([id]) => id === topicId);
-                const topicTitle = topicConfig ? topicConfig[1].title : (failedQuestions[topicId]?.title || 'Test de Repaso');
+                // Obtener el título del tema o examen
+                let topicTitle;
+                if (topicId.startsWith('examen-')) {
+                    // Es un examen oficial
+                    const parts = topicId.split('-');
+                    const examSize = parts[1] || '?';
+                    topicTitle = `🎓 Examen ${examSize} preguntas`;
+                } else {
+                    // Es un tema normal
+                    const topicConfig = availableTopics.find(([id]) => id === topicId);
+                    topicTitle = topicConfig ? topicConfig[1].title : (failedQuestions[topicId]?.title || 'Test de Repaso');
+                }
 
                 document.getElementById('current-topic-name').textContent = topicTitle + ' - REPASO';
                 document.getElementById('question-number').textContent = `Pregunta ${questionCount} de ${window.reviewQuestions.length}`;
@@ -2283,11 +2595,463 @@
         }
 
         // ========================
+        // EXAMEN OFICIAL
+        // ========================
+
+        function saveOfficialExamAnswer(userAnswer) {
+            const isCorrect = userAnswer === currentQuestion.correct;
+
+            // Guardar respuesta en el array (sin mostrar feedback)
+            officialExamAnswers.push({
+                questionNumber: questionCount,
+                question: currentQuestion.question,
+                options: currentQuestion.options,
+                userAnswer,
+                correctAnswer: currentQuestion.correct,
+                explanation: currentQuestion.explanation,
+                isCorrect,
+                difficulty: currentQuestion.difficulty,
+                page_reference: currentQuestion.page_reference,
+                timestamp: Date.now()
+            });
+
+            // Contar correctas para el resumen final
+            if (isCorrect) correctAnswers++;
+
+            // GUARDAR PROGRESO EN LOCALSTORAGE
+            const examState = {
+                questions: officialExamQuestions,
+                answers: officialExamAnswers,
+                currentQuestionIndex: questionCount, // Ya respondió esta, la siguiente será questionCount + 1
+                correctAnswers: correctAnswers,
+                startTime: officialExamStartTime,
+                questionCount: officialExamQuestions.length,
+                timestamp: Date.now()
+            };
+            localStorage.setItem('official_exam_progress', JSON.stringify(examState));
+
+            console.log(`📝 Respuesta guardada: Pregunta ${questionCount} - ${isCorrect ? 'Correcta ✅' : 'Incorrecta ❌'}`);
+            console.log(`💾 Progreso guardado: ${questionCount}/${officialExamQuestions.length}`);
+
+            // Actualizar barra de progreso
+            updateExamProgress();
+        }
+
+        function updateExamProgress() {
+            if (!isOfficialExamMode) return;
+
+            const answered = officialExamAnswers.length;
+            const total = officialExamQuestions.length;
+            const percentage = (answered / total) * 100;
+
+            // Actualizar barra
+            document.getElementById('exam-progress-fill').style.width = `${percentage}%`;
+            document.getElementById('exam-progress-current').textContent = answered;
+            document.getElementById('exam-progress-total').textContent = total;
+
+            // Mostrar botón de finalizar si respondió todas
+            if (answered === total) {
+                document.getElementById('exam-finish-container').style.display = 'block';
+            }
+        }
+
+        function showFinishExamModal() {
+            const answered = officialExamAnswers.length;
+            const total = officialExamQuestions.length;
+
+            document.getElementById('modal-exam-summary').textContent =
+                `Has respondido las ${total} preguntas del examen. ¿Deseas ver tus resultados?`;
+
+            const modal = document.getElementById('finish-exam-modal');
+            modal.style.display = 'flex';
+        }
+
+        function closeFinishExamModal() {
+            document.getElementById('finish-exam-modal').style.display = 'none';
+        }
+
+        function confirmFinishExam() {
+            closeFinishExamModal();
+            finishOfficialExam();
+        }
+
+        function selectExamSize(size) {
+            officialExamConfig.questionCount = size;
+            document.querySelectorAll('.exam-size-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (parseInt(btn.dataset.size) === size) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        async function startOfficialExam() {
+            try {
+                console.log(`🎓 Iniciando examen oficial: ${officialExamConfig.questionCount} preguntas`);
+
+                // Mostrar loading en la página de configuración
+                const startBtn = document.getElementById('start-exam-btn');
+                const loadingDiv = document.getElementById('exam-loading');
+
+                startBtn.disabled = true;
+                startBtn.style.opacity = '0.5';
+                startBtn.style.cursor = 'not-allowed';
+                loadingDiv.style.display = 'block';
+
+                // Solicitar examen al servidor
+                const response = await fetch(`${API_BASE}/api/exam/official`, {
+                    method: 'POST',
+                    credentials: 'include',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        questionCount: officialExamConfig.questionCount
+                    })
+                });
+
+                if (response.status === 401 || response.status === 403) {
+                    isAuthenticated = false;
+                    currentUser = null;
+                    showAuthScreen();
+                    showAuthMessage('error', 'Sesión expirada. Inicia sesión nuevamente.');
+                    return;
+                }
+
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => ({ error: 'Error desconocido' }));
+                    throw new Error(errorData.error || `Error del servidor: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                // Configurar examen
+                officialExamQuestions = data.questions;
+                isOfficialExamMode = true;
+                officialExamStartTime = Date.now();
+                officialExamAnswers = [];
+                questionCount = 1;
+                correctAnswers = 0;
+                currentQuestion = officialExamQuestions[0];
+
+                // GUARDAR ESTADO INICIAL EN LOCALSTORAGE
+                const initialExamState = {
+                    questions: officialExamQuestions,
+                    answers: [],
+                    currentQuestionIndex: 0, // Aún no ha respondido ninguna
+                    correctAnswers: 0,
+                    startTime: officialExamStartTime,
+                    questionCount: officialExamQuestions.length,
+                    timestamp: Date.now()
+                };
+                localStorage.setItem('official_exam_progress', JSON.stringify(initialExamState));
+                console.log('💾 Estado inicial del examen guardado');
+
+                // Mostrar primera pregunta
+                showPage('study');
+                showQuestionMode();
+                document.getElementById('current-topic-name').textContent = '🎓 EXAMEN OFICIAL';
+                document.getElementById('question-number').textContent = `Pregunta ${questionCount} de ${officialExamQuestions.length}`;
+                displayQuestion();
+
+                // Mostrar barra de progreso y texto
+                document.getElementById('exam-progress-bar').style.display = 'block';
+                document.getElementById('exam-progress-text').style.display = 'block';
+                document.getElementById('exam-progress-total').textContent = officialExamQuestions.length;
+                document.getElementById('exam-progress-current').textContent = '0';
+
+                console.log(`✅ Examen oficial iniciado: ${officialExamQuestions.length} preguntas`);
+
+            } catch (error) {
+                console.error('Error iniciando examen oficial:', error);
+                console.error('Error completo:', error.message, error.stack);
+                alert(`Error al generar examen oficial:\n${error.message}\n\nRevisa la consola para más detalles.`);
+
+                // Restaurar botón y ocultar loading en caso de error
+                const startBtn = document.getElementById('start-exam-btn');
+                const loadingDiv = document.getElementById('exam-loading');
+
+                if (startBtn) {
+                    startBtn.disabled = false;
+                    startBtn.style.opacity = '1';
+                    startBtn.style.cursor = 'pointer';
+                }
+                if (loadingDiv) {
+                    loadingDiv.style.display = 'none';
+                }
+            }
+        }
+
+        async function finishOfficialExam() {
+
+            const totalQuestions = officialExamQuestions.length;
+            const answeredQuestions = officialExamAnswers.length;
+            const correctCount = officialExamAnswers.filter(a => a.isCorrect).length;
+            const incorrectCount = totalQuestions - correctCount;
+            const nota = (correctCount / totalQuestions) * 10;
+
+            // Crear identificador único del examen
+            const examId = `examen-${totalQuestions}-${Date.now()}`;
+            const examName = `Examen ${totalQuestions} preguntas`;
+
+            // Guardar preguntas falladas en la base de datos
+            const failedAnswers = officialExamAnswers.filter(a => !a.isCorrect);
+            if (failedAnswers.length > 0) {
+                try {
+                    const response = await fetch('/api/exam/save-failed', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            examId,
+                            examName,
+                            failedQuestions: failedAnswers
+                        })
+                    });
+
+                    if (response.ok) {
+                        console.log(`✅ ${failedAnswers.length} preguntas falladas guardadas en repaso`);
+                        // Recargar datos del usuario para actualizar contador de repaso
+                        await loadUserData();
+                    }
+                } catch (error) {
+                    console.error('Error guardando preguntas falladas:', error);
+                }
+            }
+
+            // Generar HTML con todas las respuestas
+            let answersHTML = '';
+            officialExamAnswers.forEach((answer, index) => {
+                const isCorrect = answer.isCorrect;
+                const bgColor = isCorrect ? '#f0fdf4' : '#fef2f2';
+                const borderColor = isCorrect ? '#16a34a' : '#dc2626';
+                const icon = isCorrect ? '✅' : '❌';
+
+                answersHTML += `
+                    <div style="background: ${bgColor}; border-left: 4px solid ${borderColor}; border-radius: 8px; padding: 16px; margin-bottom: 12px;">
+                        <div style="display: flex; align-items: start; gap: 12px;">
+                            <div style="font-size: 1.5rem;">${icon}</div>
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; margin-bottom: 8px;">Pregunta ${answer.questionNumber}</div>
+                                <div style="margin-bottom: 8px; color: #374151;">${answer.question}</div>
+                                <div style="font-size: 0.875rem; color: #6b7280;">
+                                    <div style="margin-bottom: 4px;">
+                                        <strong>Tu respuesta:</strong> ${answer.options[answer.userAnswer]} ${!isCorrect ? '❌' : ''}
+                                    </div>
+                                    ${!isCorrect ? `<div style="margin-bottom: 4px;"><strong>Correcta:</strong> ${answer.options[answer.correctAnswer]} ✅</div>` : ''}
+                                    <div style="margin-top: 8px; padding: 8px; background: white; border-radius: 4px;">
+                                        <strong>Explicación:</strong> ${answer.explanation}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Mostrar resultados
+            const resultHTML = `
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 4rem; margin-bottom: 16px;">
+                        ${nota >= 5 ? '🎉' : '📚'}
+                    </div>
+                    <h2 style="margin-bottom: 8px;">
+                        ✅ Examen Finalizado
+                    </h2>
+                    <div style="font-size: 3rem; font-weight: bold; color: ${nota >= 5 ? '#16a34a' : '#dc2626'}; margin: 24px 0;">
+                        ${nota.toFixed(2)} / 10
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; text-align: center;">
+                        <div>
+                            <div style="font-size: 2rem; font-weight: bold; color: #16a34a;">${correctCount}</div>
+                            <div style="color: #6b7280; font-size: 0.875rem;">Correctas</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; font-weight: bold; color: #dc2626;">${incorrectCount}</div>
+                            <div style="color: #6b7280; font-size: 0.875rem;">Incorrectas</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; font-weight: bold; color: #f97316;">${totalQuestions}</div>
+                            <div style="color: #6b7280; font-size: 0.875rem;">Total</div>
+                        </div>
+                    </div>
+                    <div style="background: #f9fafb; border-radius: 8px; padding: 16px; margin: 24px 0;">
+                        <div style="font-weight: 600; margin-bottom: 8px;">📊 Estadísticas</div>
+                        <div style="display: flex; justify-content: space-around; font-size: 0.875rem; color: #6b7280;">
+                            <div>Precisión: ${((correctCount / totalQuestions) * 100).toFixed(1)}%</div>
+                            <div>Total: ${totalQuestions} preguntas</div>
+                        </div>
+                        ${incorrectCount > 0 ? `
+                            <div style="margin-top: 12px; padding: 12px; background: #fef3c7; border-radius: 6px; font-size: 0.875rem; color: #92400e;">
+                                💾 Se han guardado ${incorrectCount} pregunta${incorrectCount > 1 ? 's' : ''} fallada${incorrectCount > 1 ? 's' : ''} en <strong>Reforzar</strong> como "${examName}"
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 24px;">
+                    <h3 style="margin-bottom: 16px;">📋 Revisión de Respuestas</h3>
+                    <div style="max-height: 600px; overflow-y: auto;">
+                        ${answersHTML}
+                    </div>
+                </div>
+
+                <div style="margin-top: 24px;">
+                    <button onclick="exitOfficialExam()" style="width: 100%; background: #f97316; color: white; padding: 16px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; font-size: 1.125rem;">
+                        🏠 Volver al Inicio
+                    </button>
+                </div>
+            `;
+
+            document.getElementById('topic-selection').style.display = 'none';
+            document.getElementById('question-container').innerHTML = resultHTML;
+            document.getElementById('question-container').classList.remove('hidden');
+
+            // Resetear variables
+            isOfficialExamMode = false;
+            officialExamQuestions = [];
+            officialExamAnswers = [];
+
+            // LIMPIAR PROGRESO GUARDADO
+            localStorage.removeItem('official_exam_progress');
+            console.log('🗑️ Progreso del examen eliminado de localStorage');
+
+            // Ocultar elementos del examen
+            document.getElementById('exam-progress-bar').style.display = 'none';
+            document.getElementById('exam-progress-text').style.display = 'none';
+            document.getElementById('exam-finish-container').style.display = 'none';
+        }
+
+        function exitOfficialExam() {
+            isOfficialExamMode = false;
+            officialExamQuestions = [];
+            officialExamAnswers = [];
+
+            // Restaurar botón y ocultar loading
+            const startBtn = document.getElementById('start-exam-btn');
+            const loadingDiv = document.getElementById('exam-loading');
+
+            if (startBtn) {
+                startBtn.disabled = false;
+                startBtn.style.opacity = '1';
+                startBtn.style.cursor = 'pointer';
+            }
+            if (loadingDiv) {
+                loadingDiv.style.display = 'none';
+            }
+
+            // Ocultar elementos del examen
+            document.getElementById('exam-progress-bar').style.display = 'none';
+            document.getElementById('exam-progress-text').style.display = 'none';
+            document.getElementById('exam-finish-container').style.display = 'none';
+
+            showPage('official-exam');
+        }
+
+        // Detectar examen pendiente y mostrar banner
+        function checkPendingExam() {
+            // Siempre restaurar botón y ocultar loading al entrar a esta página
+            const startBtn = document.getElementById('start-exam-btn');
+            const loadingDiv = document.getElementById('exam-loading');
+
+            if (startBtn) {
+                startBtn.disabled = false;
+                startBtn.style.opacity = '1';
+                startBtn.style.cursor = 'pointer';
+            }
+            if (loadingDiv) {
+                loadingDiv.style.display = 'none';
+            }
+
+            const savedProgress = localStorage.getItem('official_exam_progress');
+
+            if (savedProgress) {
+                try {
+                    const examState = JSON.parse(savedProgress);
+                    const answered = examState.currentQuestionIndex;
+                    const total = examState.questionCount;
+
+                    // Mostrar banner
+                    document.getElementById('pending-exam-banner').style.display = 'block';
+                    document.getElementById('pending-exam-info').textContent =
+                        `Respondiste ${answered} de ${total} preguntas`;
+
+                    console.log(`📝 Examen pendiente detectado: ${answered}/${total}`);
+                } catch (error) {
+                    console.error('Error leyendo examen pendiente:', error);
+                    localStorage.removeItem('official_exam_progress');
+                }
+            } else {
+                document.getElementById('pending-exam-banner').style.display = 'none';
+            }
+        }
+
+        // Continuar examen pendiente
+        function continueOfficialExam() {
+            const savedProgress = localStorage.getItem('official_exam_progress');
+
+            if (!savedProgress) {
+                alert('No se encontró el examen pendiente.');
+                return;
+            }
+
+            try {
+                const examState = JSON.parse(savedProgress);
+
+                // Restaurar estado completo
+                officialExamQuestions = examState.questions;
+                officialExamAnswers = examState.answers;
+                questionCount = examState.currentQuestionIndex + 1; // Siguiente pregunta
+                correctAnswers = examState.correctAnswers;
+                officialExamStartTime = examState.startTime;
+                isOfficialExamMode = true;
+
+                // Verificar si ya terminó todas las preguntas
+                if (questionCount > officialExamQuestions.length) {
+                    finishOfficialExam();
+                    return;
+                }
+
+                // Cargar la siguiente pregunta
+                currentQuestion = officialExamQuestions[questionCount - 1];
+
+                // Ir a la página de estudio y mostrar la pregunta
+                showPage('study');
+                showQuestionMode();
+                document.getElementById('current-topic-name').textContent = '🎓 EXAMEN OFICIAL';
+                document.getElementById('question-number').textContent =
+                    `Pregunta ${questionCount} de ${officialExamQuestions.length}`;
+                displayQuestion();
+
+                // Mostrar y actualizar barra de progreso
+                document.getElementById('exam-progress-bar').style.display = 'block';
+                document.getElementById('exam-progress-text').style.display = 'block';
+                updateExamProgress();
+
+                console.log(`✅ Examen restaurado: Continuando desde pregunta ${questionCount}`);
+            } catch (error) {
+                console.error('Error restaurando examen:', error);
+                alert('Error al restaurar el examen. Se eliminará el progreso.');
+                localStorage.removeItem('official_exam_progress');
+                checkPendingExam();
+            }
+        }
+
+        // Cancelar examen pendiente
+        function cancelPendingExam() {
+            if (confirm('¿Estás seguro? Se perderá todo el progreso del examen actual.')) {
+                localStorage.removeItem('official_exam_progress');
+                checkPendingExam();
+                console.log('❌ Examen pendiente cancelado');
+            }
+        }
+
+        // ========================
         // INICIALIZACIÓN
         // ========================
 
         window.onload = async function() {
             console.log('🚀 Iniciando aplicación...');
+
+            // Configurar monitoreo de conexión
+            setupConnectionMonitoring();
 
             // Primero verificar autenticación
             const authenticated = await checkAuth();
@@ -2302,6 +3066,70 @@
                 console.log('⏳ Esperando autenticación...');
             }
         };
+
+        // ========================
+        // MONITOREO DE CONEXIÓN
+        // ========================
+
+        function setupConnectionMonitoring() {
+            const statusBanner = document.getElementById('connection-status');
+            const statusIcon = document.getElementById('connection-status-icon');
+            const statusText = document.getElementById('connection-status-text');
+
+            // Mostrar banner cuando se pierde la conexión
+            window.addEventListener('offline', () => {
+                console.log('🔴 Conexión perdida');
+                statusBanner.style.display = 'flex';
+                statusBanner.style.background = '#ef4444';
+                statusIcon.textContent = '📡';
+                statusText.textContent = 'Sin conexión - tus respuestas están guardadas localmente';
+            });
+
+            // Ocultar banner cuando se recupera la conexión
+            window.addEventListener('online', () => {
+                console.log('🟢 Conexión recuperada');
+                statusBanner.style.background = '#10b981';
+                statusIcon.textContent = '✅';
+                statusText.textContent = 'Conexión recuperada';
+
+                // Ocultar banner después de 3 segundos
+                setTimeout(() => {
+                    statusBanner.style.display = 'none';
+                }, 3000);
+            });
+
+            // Verificar estado inicial
+            if (!navigator.onLine) {
+                statusBanner.style.display = 'flex';
+            }
+        }
     </script>
+
+    <!-- Modal de Confirmación para Finalizar Examen -->
+    <div id="finish-exam-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000; align-items: center; justify-content: center;">
+        <div style="background: white; border-radius: 16px; padding: 32px; max-width: 500px; margin: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+            <div style="text-align: center; margin-bottom: 24px;">
+                <div style="font-size: 4rem; margin-bottom: 16px;">📝</div>
+                <h2 style="margin: 0 0 12px 0; color: #1f2937;">¿Finalizar Examen?</h2>
+                <p id="modal-exam-summary" style="color: #6b7280; margin: 0; line-height: 1.6;">
+                    Has respondido X de Y preguntas
+                </p>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <button onclick="closeFinishExamModal()" style="background: #f3f4f6; color: #374151; padding: 14px 20px; font-weight: 600; border: none; border-radius: 10px; cursor: pointer; font-size: 1rem; transition: all 0.2s;">
+                    ❌ Cancelar
+                </button>
+                <button onclick="confirmFinishExam()" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 14px 20px; font-weight: 600; border: none; border-radius: 10px; cursor: pointer; font-size: 1rem; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3); transition: all 0.2s;">
+                    ✅ Finalizar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner de estado de conexión -->
+    <div id="connection-status" style="display: none; position: fixed; bottom: 20px; right: 20px; background: #ef4444; color: white; padding: 12px 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 9999; font-weight: 600; font-size: 0.875rem;">
+        <span id="connection-status-icon">📡</span>
+        <span id="connection-status-text">Sin conexión</span>
+    </div>
 </body>
 </html>

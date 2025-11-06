@@ -13,6 +13,13 @@ const db = new Database(dbPath);
 // Habilitar foreign keys
 db.pragma('foreign_keys = ON');
 
+// Habilitar WAL mode para mejor concurrencia (200 usuarios concurrentes)
+db.pragma('journal_mode = WAL');
+
+// Optimizaciones de rendimiento
+db.pragma('synchronous = NORMAL');
+db.pragma('cache_size = -64000'); // 64MB de caché
+
 // ========================
 // CREAR TABLAS
 // ========================
@@ -132,7 +139,79 @@ function initDatabase() {
     console.log('ℹ️ No se requiere migración de failed_questions');
   }
 
-  console.log('✅ Base de datos inicializada');
+  // ========================
+  // SISTEMA DE CACHÉ DE PREGUNTAS
+  // ========================
+
+  // Tabla 1: Pool global de preguntas en caché
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS question_cache (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      question_data TEXT NOT NULL,
+      difficulty TEXT NOT NULL,
+      topic_id TEXT NOT NULL,
+      generated_at INTEGER NOT NULL,
+      expires_at INTEGER NOT NULL,
+      times_used INTEGER DEFAULT 0
+    )
+  `);
+
+  // Crear índices para optimizar búsquedas
+  db.exec(`CREATE INDEX IF NOT EXISTS idx_cache_expiry ON question_cache(expires_at)`);
+  db.exec(`CREATE INDEX IF NOT EXISTS idx_cache_difficulty ON question_cache(difficulty)`);
+  db.exec(`CREATE INDEX IF NOT EXISTS idx_cache_topic ON question_cache(topic_id)`);
+
+  // Tabla 2: Tracking individual de preguntas vistas por usuario
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS user_seen_questions (
+      user_id INTEGER NOT NULL,
+      question_cache_id INTEGER NOT NULL,
+      seen_at INTEGER NOT NULL,
+      context TEXT,
+      PRIMARY KEY (user_id, question_cache_id),
+      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+      FOREIGN KEY (question_cache_id) REFERENCES question_cache(id) ON DELETE CASCADE
+    )
+  `);
+
+  // Índice para búsquedas por usuario y fecha
+  db.exec(`CREATE INDEX IF NOT EXISTS idx_user_seen ON user_seen_questions(user_id, seen_at)`);
+
+  // Tabla 3: Estadísticas de caché (opcional - para tracking de costes)
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS cache_stats (
+      date TEXT PRIMARY KEY,
+      questions_generated INTEGER DEFAULT 0,
+      questions_cached INTEGER DEFAULT 0,
+      cache_hit_rate REAL DEFAULT 0,
+      total_cost_usd REAL DEFAULT 0
+    )
+  `);
+
+  // ========================
+  // TABLA 4: Buffer de preguntas (FASE 2 - Sistema de Prefetch)
+  // ========================
+
+  // Tabla para almacenar preguntas pre-generadas para respuesta instantánea
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS user_question_buffer (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL,
+      topic_id TEXT NOT NULL,
+      question_data TEXT NOT NULL,
+      question_cache_id INTEGER,
+      difficulty TEXT NOT NULL,
+      created_at INTEGER NOT NULL,
+      expires_at INTEGER NOT NULL,
+      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+      FOREIGN KEY (question_cache_id) REFERENCES question_cache(id) ON DELETE SET NULL
+    )
+  `);
+
+  // Índice para búsquedas rápidas de buffer por usuario y tema
+  db.exec(`CREATE INDEX IF NOT EXISTS idx_buffer_user_topic ON user_question_buffer(user_id, topic_id, expires_at)`);
+
+  console.log('✅ Base de datos inicializada (con sistema de caché + buffer de prefetch)');
 }
 
 // ========================
@@ -323,8 +402,23 @@ function getUserFailedQuestions(userId) {
   return grouped;
 }
 
-// Agregar pregunta fallada
+// Agregar pregunta fallada (evitando duplicados)
 function addFailedQuestion(userId, topicId, questionData, userAnswer) {
+  // Verificar si ya existe esta pregunta para este usuario y tema
+  const checkStmt = db.prepare(`
+    SELECT id FROM failed_questions
+    WHERE user_id = ? AND topic_id = ? AND question = ?
+  `);
+
+  const existing = checkStmt.get(userId, topicId, questionData.question);
+
+  // Si ya existe, NO insertarla de nuevo
+  if (existing) {
+    console.log(`⚠️ Pregunta duplicada detectada - NO se insertará (ID existente: ${existing.id})`);
+    return { success: true, duplicate: true, id: existing.id };
+  }
+
+  // Si no existe, insertarla
   const stmt = db.prepare(`
     INSERT INTO failed_questions (user_id, topic_id, question, options, correct, user_answer, explanation, difficulty, page_reference)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
@@ -342,7 +436,8 @@ function addFailedQuestion(userId, topicId, questionData, userAnswer) {
     questionData.page_reference
   );
 
-  return { success: true };
+  console.log(`✅ Pregunta fallada agregada correctamente`);
+  return { success: true, duplicate: false };
 }
 
 // Eliminar pregunta fallada
@@ -590,6 +685,399 @@ function getChunkCoverage(userId, topicId) {
 }
 
 // ========================
+// FUNCIONES DE CACHÉ DE PREGUNTAS
+// ========================
+
+const NO_REPEAT_DAYS = 15; // Periodo mínimo sin repeticiones (configurable)
+const CACHE_EXPIRY_HOURS = 48; // Expiración de preguntas en caché
+
+/**
+ * Buscar pregunta en caché que el usuario NO ha visto
+ * @param {number} userId - ID del usuario
+ * @param {string|string[]} topicIds - ID del tema o array de IDs de temas
+ * @param {string} difficulty - Dificultad requerida ('simple', 'media', 'elaborada')
+ * @returns {object|null} - Pregunta del caché o null si no hay disponibles
+ */
+function getCachedQuestion(userId, topicIds, difficulty) {
+  const cutoffTime = Date.now() - (NO_REPEAT_DAYS * 24 * 3600 * 1000);
+  const now = Date.now();
+
+  // Convertir a array si es string único
+  const topicArray = Array.isArray(topicIds) ? topicIds : [topicIds];
+
+  if (topicArray.length === 0) {
+    console.log('✗ No se proporcionaron temas');
+    return null;
+  }
+
+  try {
+    // Construir placeholders para IN clause
+    const placeholders = topicArray.map(() => '?').join(',');
+
+    const stmt = db.prepare(`
+      SELECT qc.id, qc.question_data, qc.topic_id
+      FROM question_cache qc
+      WHERE qc.topic_id IN (${placeholders})
+        AND qc.difficulty = ?
+        AND qc.expires_at > ?
+        AND qc.id NOT IN (
+          SELECT question_cache_id
+          FROM user_seen_questions
+          WHERE user_id = ?
+          AND seen_at > ?
+        )
+      ORDER BY RANDOM()
+      LIMIT 1
+    `);
+
+    const result = stmt.get(...topicArray, difficulty, now, userId, cutoffTime);
+
+    if (result) {
+      console.log(`✓ Pregunta encontrada en caché (ID: ${result.id}, Tema: ${result.topic_id})`);
+      return {
+        cacheId: result.id,
+        topicId: result.topic_id,
+        question: JSON.parse(result.question_data)
+      };
+    }
+
+    console.log(`✗ No hay preguntas disponibles en caché para usuario ${userId}, temas [${topicArray.join(', ')}], dificultad ${difficulty}`);
+    return null;
+  } catch (error) {
+    console.error('Error buscando en caché:', error);
+    return null;
+  }
+}
+
+/**
+ * Guardar pregunta en caché y marcarla como vista por el usuario
+ * @param {number} userId - ID del usuario
+ * @param {string} topicId - ID del tema
+ * @param {string} difficulty - Dificultad de la pregunta
+ * @param {object} questionData - Datos completos de la pregunta
+ * @param {string} context - Contexto ('study' o 'exam')
+ * @returns {number} - ID de la pregunta en caché
+ */
+function saveToCacheAndTrack(userId, topicId, difficulty, questionData, context = 'study') {
+  const now = Date.now();
+  const expiresAt = now + (CACHE_EXPIRY_HOURS * 3600 * 1000);
+
+  try {
+    // 1. Guardar en caché
+    const insertStmt = db.prepare(`
+      INSERT INTO question_cache (question_data, difficulty, topic_id, generated_at, expires_at)
+      VALUES (?, ?, ?, ?, ?)
+    `);
+
+    const result = insertStmt.run(
+      JSON.stringify(questionData),
+      difficulty,
+      topicId,
+      now,
+      expiresAt
+    );
+
+    const cacheId = result.lastInsertRowid;
+
+    // 2. Marcar como vista por este usuario
+    const trackStmt = db.prepare(`
+      INSERT INTO user_seen_questions (user_id, question_cache_id, seen_at, context)
+      VALUES (?, ?, ?, ?)
+    `);
+
+    trackStmt.run(userId, cacheId, now, context);
+
+    // 3. Incrementar contador de uso
+    const updateStmt = db.prepare(`
+      UPDATE question_cache
+      SET times_used = times_used + 1
+      WHERE id = ?
+    `);
+
+    updateStmt.run(cacheId);
+
+    console.log(`✅ Pregunta guardada en caché (ID: ${cacheId}) y marcada como vista por usuario ${userId}`);
+    return cacheId;
+  } catch (error) {
+    console.error('Error guardando en caché:', error);
+    return null;
+  }
+}
+
+/**
+ * Marcar pregunta existente del caché como vista por un usuario
+ * @param {number} userId - ID del usuario
+ * @param {number} cacheId - ID de la pregunta en caché
+ * @param {string} context - Contexto ('study' o 'exam')
+ */
+function markQuestionAsSeen(userId, cacheId, context = 'study') {
+  const now = Date.now();
+
+  try {
+    const stmt = db.prepare(`
+      INSERT OR IGNORE INTO user_seen_questions (user_id, question_cache_id, seen_at, context)
+      VALUES (?, ?, ?, ?)
+    `);
+
+    stmt.run(userId, cacheId, now, context);
+
+    // Incrementar contador
+    const updateStmt = db.prepare(`
+      UPDATE question_cache
+      SET times_used = times_used + 1
+      WHERE id = ?
+    `);
+
+    updateStmt.run(cacheId);
+
+    console.log(`✅ Pregunta ${cacheId} marcada como vista por usuario ${userId}`);
+  } catch (error) {
+    console.error('Error marcando pregunta como vista:', error);
+  }
+}
+
+/**
+ * Limpiar preguntas expiradas del caché
+ * @returns {number} - Cantidad de preguntas eliminadas
+ */
+function cleanExpiredCache() {
+  const now = Date.now();
+
+  try {
+    const stmt = db.prepare(`
+      DELETE FROM question_cache
+      WHERE expires_at < ?
+    `);
+
+    const result = stmt.run(now);
+
+    if (result.changes > 0) {
+      console.log(`🧹 Limpieza de caché: ${result.changes} preguntas expiradas eliminadas`);
+    }
+
+    return result.changes;
+  } catch (error) {
+    console.error('Error limpiando caché:', error);
+    return 0;
+  }
+}
+
+/**
+ * Obtener estadísticas del caché
+ * @returns {object} - Estadísticas del sistema de caché
+ */
+function getCacheStats() {
+  try {
+    // Total de preguntas en caché
+    const totalStmt = db.prepare('SELECT COUNT(*) as total FROM question_cache WHERE expires_at > ?');
+    const total = totalStmt.get(Date.now()).total;
+
+    // Preguntas por dificultad
+    const diffStmt = db.prepare(`
+      SELECT difficulty, COUNT(*) as count
+      FROM question_cache
+      WHERE expires_at > ?
+      GROUP BY difficulty
+    `);
+    const byDifficulty = diffStmt.all(Date.now());
+
+    // Preguntas más usadas
+    const topStmt = db.prepare(`
+      SELECT times_used, COUNT(*) as count
+      FROM question_cache
+      WHERE expires_at > ?
+      GROUP BY times_used
+      ORDER BY times_used DESC
+      LIMIT 5
+    `);
+    const topUsed = topStmt.all(Date.now());
+
+    return {
+      totalQuestions: total,
+      byDifficulty,
+      topUsed
+    };
+  } catch (error) {
+    console.error('Error obteniendo estadísticas de caché:', error);
+    return { totalQuestions: 0, byDifficulty: [], topUsed: [] };
+  }
+}
+
+/**
+ * Actualizar estadísticas diarias de caché
+ * @param {number} questionsGenerated - Preguntas generadas nuevas
+ * @param {number} questionsCached - Preguntas obtenidas de caché
+ * @param {number} totalCost - Coste total en USD
+ */
+function updateCacheStats(questionsGenerated, questionsCached, totalCost) {
+  const today = new Date().toISOString().split('T')[0];
+  const total = questionsGenerated + questionsCached;
+  const hitRate = total > 0 ? (questionsCached / total) : 0;
+
+  try {
+    const stmt = db.prepare(`
+      INSERT INTO cache_stats (date, questions_generated, questions_cached, cache_hit_rate, total_cost_usd)
+      VALUES (?, ?, ?, ?, ?)
+      ON CONFLICT(date) DO UPDATE SET
+        questions_generated = questions_generated + ?,
+        questions_cached = questions_cached + ?,
+        cache_hit_rate = (CAST(questions_cached AS REAL) / (questions_generated + questions_cached)),
+        total_cost_usd = total_cost_usd + ?
+    `);
+
+    stmt.run(today, questionsGenerated, questionsCached, hitRate, totalCost, questionsGenerated, questionsCached, totalCost);
+  } catch (error) {
+    console.error('Error actualizando estadísticas de caché:', error);
+  }
+}
+
+// ========================
+// FUNCIONES DE BUFFER (PREFETCH)
+// ========================
+
+/**
+ * Añadir pregunta al buffer del usuario
+ * @param {number} userId - ID del usuario
+ * @param {string} topicId - ID del tema
+ * @param {object} questionData - Datos de la pregunta
+ * @param {string} difficulty - Dificultad
+ * @param {number|null} cacheId - ID en cache (si aplica)
+ */
+function addToBuffer(userId, topicId, questionData, difficulty, cacheId = null) {
+  const now = Date.now();
+  const expiresAt = now + (3600 * 1000); // 1 hour expiry
+
+  try {
+    // Validar que questionData tiene los campos mínimos requeridos
+    if (!questionData || !questionData.question || !questionData.options) {
+      console.error('Error: questionData inválido en addToBuffer');
+      return null;
+    }
+
+    const stmt = db.prepare(`
+      INSERT INTO user_question_buffer (user_id, topic_id, question_data, question_cache_id, difficulty, created_at, expires_at)
+      VALUES (?, ?, ?, ?, ?, ?, ?)
+    `);
+
+    const questionJson = JSON.stringify(questionData);
+    const result = stmt.run(userId, topicId, questionJson, cacheId, difficulty, now, expiresAt);
+    return result.lastInsertRowid;
+  } catch (error) {
+    console.error('Error añadiendo pregunta al buffer:', error);
+    return null;
+  }
+}
+
+/**
+ * Obtener pregunta del buffer
+ * @param {number} userId - ID del usuario
+ * @param {string} topicId - ID del tema
+ * @returns {object|null} Pregunta del buffer o null
+ */
+function getFromBuffer(userId, topicId) {
+  const now = Date.now();
+
+  try {
+    const stmt = db.prepare(`
+      SELECT id, question_data, question_cache_id, difficulty
+      FROM user_question_buffer
+      WHERE user_id = ?
+        AND topic_id = ?
+        AND expires_at > ?
+      ORDER BY created_at ASC
+      LIMIT 1
+    `);
+
+    const result = stmt.get(userId, topicId, now);
+
+    if (result) {
+      let questionData = null;
+
+      // Intentar parsear JSON de forma segura
+      try {
+        questionData = JSON.parse(result.question_data);
+      } catch (parseError) {
+        console.error('Error parseando question_data del buffer:', parseError);
+        // Eliminar pregunta corrupta del buffer
+        db.prepare('DELETE FROM user_question_buffer WHERE id = ?').run(result.id);
+        return null;
+      }
+
+      // Validar que tiene los campos necesarios
+      if (!questionData || !questionData.question || !questionData.options) {
+        console.error('Question data del buffer no tiene campos requeridos');
+        db.prepare('DELETE FROM user_question_buffer WHERE id = ?').run(result.id);
+        return null;
+      }
+
+      // Remove from buffer after retrieving (solo si es válido)
+      db.prepare('DELETE FROM user_question_buffer WHERE id = ?').run(result.id);
+
+      return {
+        question: questionData,
+        cacheId: result.question_cache_id
+      };
+    }
+
+    return null;
+  } catch (error) {
+    console.error('Error obteniendo pregunta del buffer:', error);
+    return null;
+  }
+}
+
+/**
+ * Obtener tamaño del buffer para un usuario y tema
+ * @param {number} userId - ID del usuario
+ * @param {string} topicId - ID del tema
+ * @returns {number} Cantidad de preguntas en buffer
+ */
+function getBufferSize(userId, topicId) {
+  const now = Date.now();
+
+  try {
+    const stmt = db.prepare(`
+      SELECT COUNT(*) as count
+      FROM user_question_buffer
+      WHERE user_id = ?
+        AND topic_id = ?
+        AND expires_at > ?
+    `);
+
+    return stmt.get(userId, topicId, now).count;
+  } catch (error) {
+    console.error('Error obteniendo tamaño del buffer:', error);
+    return 0;
+  }
+}
+
+/**
+ * Limpiar buffers expirados
+ * @returns {number} Cantidad de preguntas eliminadas
+ */
+function cleanExpiredBuffers() {
+  const now = Date.now();
+
+  try {
+    const stmt = db.prepare(`
+      DELETE FROM user_question_buffer
+      WHERE expires_at < ?
+    `);
+
+    const result = stmt.run(now);
+
+    if (result.changes > 0) {
+      console.log(`🧹 Buffer limpio: ${result.changes} preguntas expiradas eliminadas`);
+    }
+
+    return result.changes;
+  } catch (error) {
+    console.error('Error limpiando buffers expirados:', error);
+    return 0;
+  }
+}
+
+// ========================
 // EXPORTAR FUNCIONES
 // ========================
 
@@ -618,5 +1106,17 @@ module.exports = {
   markChunkAsUsed,
   resetChunkUsage,
   getChunkCoverage,
+  // Funciones de caché
+  getCachedQuestion,
+  saveToCacheAndTrack,
+  markQuestionAsSeen,
+  cleanExpiredCache,
+  getCacheStats,
+  updateCacheStats,
+  // Funciones de buffer (prefetch)
+  addToBuffer,
+  getFromBuffer,
+  getBufferSize,
+  cleanExpiredBuffers,
   db
 };

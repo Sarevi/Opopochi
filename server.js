@@ -186,40 +186,47 @@ async function callClaudeWithImprovedRetry(fullPrompt, maxTokens = 700, question
         model: "claude-haiku-4-5-20251001", // Claude Haiku 4.5 - Rápido, económico y capaz
         max_tokens: maxTokens, // Variable según tipo de pregunta
         temperature: 0.2,  // Temperatura baja para eficiencia máxima
-        /* COSTO OPTIMIZADO - SISTEMA 3 NIVELES (30% Simple / 60% Media / 10% Elaborada):
+        /* SISTEMA PREMIUM - MÁXIMA CALIDAD (20% Simple / 60% Media / 20% Elaborada):
          *
-         * PREGUNTAS SIMPLES (30% - 3 por llamada) - DIRECTAS:
+         * PREGUNTAS SIMPLES (20% - 3 por llamada) - TIPO OPOSICIÓN:
          * - Chunk: 1200 caracteres (~480 tokens)
-         * - Prompt: ~110 tokens
-         * - Input total: ~590 tokens × $0.80/1M = $0.000472
-         * - Output: ~70 tokens × 3 = 210 tokens × $4.00/1M = $0.000840
-         * - Total: $0.001312 ÷ 3 = $0.000437 USD/pregunta
+         * - Prompt detallado: ~200 tokens (instrucciones completas + ejemplos)
+         * - Input total: ~680 tokens × $0.80/1M = $0.000544
+         * - Output (800 max): ~93 tokens × 3 = 280 tokens × $4.00/1M = $0.001120
+         * - Total: $0.001664 ÷ 3 = $0.000555 USD/pregunta
          *
-         * PREGUNTAS MEDIAS (60% - 3 por llamada) - CONTEXTO CORTO:
+         * PREGUNTAS MEDIAS (60% - 3 por llamada) - APLICACIÓN PRÁCTICA:
          * - Chunk: 1200 caracteres (~480 tokens)
-         * - Prompt: ~120 tokens
-         * - Input total: ~600 tokens × $0.80/1M = $0.000480
-         * - Output: ~110 tokens × 3 = 330 tokens × $4.00/1M = $0.001320
-         * - Total: $0.001800 ÷ 3 = $0.000600 USD/pregunta
+         * - Prompt detallado: ~250 tokens (metodología + casos realistas)
+         * - Input total: ~730 tokens × $0.80/1M = $0.000584
+         * - Output (1100 max): ~122 tokens × 3 = 366 tokens × $4.00/1M = $0.001464
+         * - Total: $0.002048 ÷ 3 = $0.000683 USD/pregunta
          *
-         * PREGUNTAS ELABORADAS (10% - 2 por llamada) - CASOS LARGOS:
+         * PREGUNTAS ELABORADAS (20% - 2 por llamada) - CASOS COMPLEJOS:
          * - Chunk: 1200 caracteres (~480 tokens)
-         * - Prompt: ~140 tokens
-         * - Input total: ~620 tokens × $0.80/1M = $0.000496
-         * - Output: ~160 tokens × 2 = 320 tokens × $4.00/1M = $0.001280
-         * - Total: $0.001776 ÷ 2 = $0.000888 USD/pregunta
+         * - Prompt detallado: ~350 tokens (casos multifactoriales detallados)
+         * - Input total: ~830 tokens × $0.80/1M = $0.000664
+         * - Output (1400 max): ~233 tokens × 2 = 466 tokens × $4.00/1M = $0.001864
+         * - Total: $0.002528 ÷ 2 = $0.001264 USD/pregunta
          *
-         * COSTO PROMEDIO PONDERADO (30/60/10):
-         * (0.30 × $0.000437) + (0.60 × $0.000600) + (0.10 × $0.000888)
-         * = $0.000131 + $0.000360 + $0.000089
-         * = $0.000580 USD (~0.00054 EUR) por pregunta
+         * COSTO PROMEDIO PONDERADO (20/60/20):
+         * (0.20 × $0.000555) + (0.60 × $0.000683) + (0.20 × $0.001264)
+         * = $0.000111 + $0.000410 + $0.000253
+         * = $0.000774 USD (~0.00072 EUR) por pregunta
          *
-         * 🎉 RESULTADOS FINALES:
-         * • Con 1€ generas ~1,840 preguntas (era 518 originalmente)
-         * • Mejor balance: 60% contexto corto (sweet spot calidad/costo)
-         * • 30% directas + 10% casos complejos (lo justo)
-         * • REDUCCIÓN TOTAL: 70% vs sistema original
-         * • Ahorro mensual (10k): $5.80 vs $19.30 = $13.50/mes ahorrado
+         * 🎯 SISTEMA PREMIUM - MÁXIMA CALIDAD:
+         * • Con 1€ generas ~1,290 preguntas de CALIDAD OPOSICIÓN
+         * • Incremento coste: +24% vs sistema anterior (+$0.15/100 preguntas)
+         * • Mejora calidad: SIGNIFICATIVA (nivel examen oficial)
+         * • Examen 100 preguntas: $0.077 USD (~7 céntimos)
+         * • Balance: EXCELENTE relación calidad/precio para uso educativo
+         *
+         * CARACTERÍSTICAS PREMIUM:
+         * • Prompts extensos con metodología detallada
+         * • Ejemplos de preguntas tipo oposición real
+         * • Instrucciones para distractores inteligentes
+         * • Casos prácticos multifactoriales realistas
+         * • Verificación estricta contra invención de datos
          */
         messages: [{
           role: "user",
@@ -347,82 +354,141 @@ function parseClaudeResponse(responseText) {
 
 // PROMPTS OPTIMIZADOS - 3 NIVELES: Simple (30%), Media (60%), Elaborada (10%)
 
-// PROMPT SIMPLE (30% - Genera 3 preguntas por llamada) - PREGUNTAS DIRECTAS
-const CLAUDE_PROMPT_SIMPLE = `Genera 3 preguntas test DIRECTAS de Técnico Farmacia. Solo JSON.
+// PROMPT SIMPLE (20% - Genera 3 preguntas por llamada) - PREGUNTAS DIRECTAS
+const CLAUDE_PROMPT_SIMPLE = `Eres evaluador experto para OPOSICIONES de Técnico en Farmacia.
 
-ESTILO: Pregunta directa sin contexto ni enunciado largo.
+GENERA 3 preguntas tipo TEST de conocimientos fundamentales basadas en la documentación.
 
-EJEMPLOS:
-- "¿Cuál es la temperatura de conservación de medicamentos termolábiles?"
-- "¿Qué ratio habitantes/farmacia rige en zonas semiurbanas?"
-- "¿Cuánto tiempo puede conservarse una fórmula magistral acuosa?"
+ESTILO PROFESIONAL:
+✓ "Según el RD 1345/2007, ¿qué plazo máximo tiene la Administración para resolver solicitudes de autorización?"
+✓ "¿Cuál es el rango de temperatura establecido para la conservación de medicamentos termolábiles?"
+✓ "¿Qué tiempo máximo de validez tienen las fórmulas magistrales acuosas sin conservantes?"
 
-VARIEDAD:
-- Pregunta 1: Muy difícil
-- Pregunta 2: Difícil
-- Pregunta 3: Media
+METODOLOGÍA:
+1. Identifica 3 conceptos clave DIFERENTES (plazos normativos, temperaturas, rangos, procedimientos, definiciones)
+2. Formula pregunta profesional directa
+3. Extrae respuesta literal de la documentación
+4. Genera 3 distractores plausibles:
+   - Cifras próximas alteradas (2-8°C → opciones: 0-4°C, 4-10°C, 15-25°C)
+   - Plazos similares incorrectos (3 meses → opciones: 1 mes, 6 meses, 1 año)
+   - Conceptos relacionados pero no aplicables
 
-REGLAS:
-- Pregunta: 1 línea, máximo 15 palabras
-- 4 opciones (A,B,C,D), 1 correcta
-- Distractores: altera números/plazos del texto
-- Explicación: 1 línea (máximo 12 palabras)
-- Conceptos DIFERENTES entre sí
+DIFICULTAD:
+- Pregunta 1: Difícil (normativa específica o dato técnico preciso)
+- Pregunta 2: Media (procedimiento estándar o concepto técnico)
+- Pregunta 3: Media-Fácil (fundamento esencial)
 
-JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"","page_reference":""}]}
+EXPLICACIÓN (máximo 15 palabras):
+✓ Cita directa: "Art. 12.2 establece plazo de 3 meses"
+✓ Referencia normativa: "RD 824/2010 fija temperatura 2-8°C"
+✗ NUNCA: "El texto dice", "Según los apuntes", "La documentación indica"
 
-TEXTO:
-{{CONTENT}}`;
-
-// PROMPT MEDIA (50% - Genera 3 preguntas por llamada) - CONTEXTO CORTO
-const CLAUDE_PROMPT_MEDIA = `Genera 3 preguntas test con CONTEXTO CORTO de Técnico Farmacia. Solo JSON.
-
-ESTILO: Contexto breve (1-2 líneas) + pregunta concreta.
-
-EJEMPLOS:
-- "Un medicamento llega a 15°C. ¿Es aceptable para termolábiles?"
-- "Una zona tiene 5.600 habitantes. ¿Cuántas farmacias pueden abrirse?"
-- "Preparas una fórmula acuosa hoy. ¿Hasta cuándo es válida?"
-
-VARIEDAD:
-- Pregunta 1: Muy difícil
-- Pregunta 2: Difícil
-- Pregunta 3: Media
-
-REGLAS:
-- Contexto + pregunta: máximo 25 palabras total
-- 4 opciones, distorsiona números en incorrectas
-- Explicación: 1 línea (máximo 15 palabras)
-- Situaciones DIFERENTES entre sí
+PROHIBIDO:
+- Inventar datos no documentados
+- Códigos ATC completos (usar familias: IECAs, ARA-II)
+- Listados >3 medicamentos
+- Precios, marcas comerciales
 
 JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"","page_reference":""}]}
 
-TEXTO:
+DOCUMENTACIÓN:
 {{CONTENT}}`;
 
-// PROMPT ELABORADA (20% - Genera 2 preguntas por llamada) - CASOS PRÁCTICOS LARGOS
-const CLAUDE_PROMPT_ELABORADA = `Genera 2 preguntas test con CASOS PRÁCTICOS completos. Solo JSON.
+// PROMPT MEDIA (60% - Genera 3 preguntas por llamada) - APLICACIÓN PRÁCTICA
+const CLAUDE_PROMPT_MEDIA = `Eres evaluador experto para OPOSICIONES de Técnico en Farmacia.
 
-ESTILO: Situación realista detallada (3-4 líneas) + pregunta específica.
+GENERA 3 preguntas de CASOS PRÁCTICOS BREVES que evalúen aplicación de conocimientos.
 
-CASOS PRÁCTICOS (elegir 2 tipos DIFERENTES):
-A) Recepción: "Durante la recepción de un pedido observas que..."
-B) Elaboración: "Al preparar una fórmula magistral en el laboratorio detectas..."
-C) Dispensación: "Un paciente solicita un medicamento y al revisar..."
-D) Control: "Durante el inventario del almacén compruebas que..."
-E) Conservación: "Al verificar las condiciones de almacenamiento encuentras..."
-F) Análisis: "En el laboratorio de análisis clínicos observas que..."
+ESTILO PROFESIONAL (situación + decisión):
+✓ "Recibes vacunas que han viajado a 12°C durante 3 horas. ¿Cuál es tu actuación según protocolo de cadena de frío?"
+✓ "Una embarazada solicita un medicamento categoría D en embarazo. ¿Qué debes hacer?"
+✓ "El Datamatrix de un lote no incluye número de serie. ¿Es conforme con la normativa de trazabilidad?"
 
-REGLAS:
-- Caso completo con detalles relevantes
-- 4 opciones, distorsiona datos numéricos
-- Explicación: 2 líneas (máximo 25 palabras)
+METODOLOGÍA:
+1. Identifica PROCEDIMIENTO, PROTOCOLO o CRITERIO normativo
+2. Crea situación profesional realista (1-2 líneas, máx 30 palabras)
+3. Pregunta: ¿Cuál es la actuación/decisión correcta?
+4. Respuesta correcta: Acción que establece la normativa
+5. Distractores profesionales:
+   - Acción parcial (omite paso crítico del protocolo)
+   - Acción excesiva (añade requisitos no exigidos)
+   - Práctica común pero técnicamente incorrecta
+
+CONTEXTO SITUACIONES:
+- Trabajo diario del técnico (recepción, dispensación, elaboración, control)
+- Datos reales documentados (temperaturas, plazos, categorías)
+- Requieren conocer procedimiento específico
+
+DIFICULTAD:
+- Pregunta 1: Difícil (múltiples factores, protocolo complejo)
+- Pregunta 2: Media (procedimiento estándar)
+- Pregunta 3: Media-Fácil (criterio básico)
+
+EXPLICACIÓN (máximo 18 palabras):
+✓ Directa: "Protocolo cadena frío requiere rechazo si >8°C más de 2 horas"
+✓ Normativa: "Art. 85 obliga dispensación solo con autorización médica explícita"
+✗ NUNCA: "El texto dice que", "Según documentación"
+
+PROHIBIDO:
+- Inventar datos no documentados
+- Situaciones con cifras irreales
+- Normativa obsoleta
+
+JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"","page_reference":""}]}
+
+DOCUMENTACIÓN:
+{{CONTENT}}`;
+
+// PROMPT ELABORADA (20% - Genera 2 preguntas por llamada) - CASOS COMPLEJOS
+const CLAUDE_PROMPT_ELABORADA = `Eres evaluador experto para OPOSICIONES de Técnico en Farmacia.
+
+GENERA 2 CASOS PRÁCTICOS COMPLEJOS con múltiples factores que requieran razonamiento profesional.
+
+ESTILO PROFESIONAL (situación multifactorial 50-70 palabras):
+✓ "Durante la recepción de insulinas NPH observas: albarán indica salida hace 36 horas, temperatura registrada 14°C, embalaje con golpes, documentación incluye certificado de cadena de frío válido. El transportista informa de avería en ruta. ¿Cuál es tu actuación prioritaria?"
+
+✓ "Al elaborar fórmula dermatológica con hidroquinona al 4%, el envase original muestra: apertura hace 8 meses, ligera decoloración amarillenta, certificado de análisis con pureza 99.5%, receta médica para melasma. ¿Qué decisión tomas?"
+
+TIPOS DE CASOS (selecciona 2 DIFERENTES):
+A) Recepción/Control entrada: Verificación documentación, control temperatura, inspección visual, conformidad
+B) Elaboración magistral: Estabilidad principios activos, incompatibilidades, caducidad materias primas
+C) Dispensación especializada: Verificación recetas, categorías embarazo, sustancias controladas, sustituciones
+D) Almacenamiento/Conservación: Condiciones ambientales, segregación por tipo, control temperatura continuo
+E) Control calidad/Trazabilidad: Verificación lotes, Datamatrix, alertas sanitarias, retiradas
+F) Gestión residuos sanitarios: Clasificación (grupos I-IV), segregación, procedimientos eliminación
+G) Preparación nutriciones parenterales: Cálculo osmolaridad, compatibilidades, estabilidad
+H) Reenvasado/Reacondicionamiento: Mantenimiento información, etiquetado, trazabilidad
+I) Dispensación hospitalaria: Dosis unitarias, sistemas personalizados, armarios automatizados
+J) Administración medicamentos: Vías administración, tiempos perfusión, incompatibilidades IV
+
+METODOLOGÍA:
+1. Identifica PROTOCOLO o PROCEDIMIENTO normativo documentado
+2. Construye caso con 3-4 FACTORES documentados:
+   - Factor favorecedor (elemento correcto o positivo)
+   - Factor crítico (problema o desviación significativa)
+   - Factores contextuales (información adicional relevante)
+3. Pregunta directa: "¿Cuál es tu actuación?" o "¿Qué decisión tomas?"
+4. Opciones: 4 acciones profesionales graduadas en corrección
+5. Respuesta: Acción completa que establece el protocolo
+
+DISTRACTORES PROFESIONALES:
+- Acción parcial (omite paso crítico obligatorio)
+- Práctica habitual pero normativamente incorrecta
+- Acción extrema (demasiado permisiva o excesivamente restrictiva)
+
+EXPLICACIÓN (máximo 20 palabras):
+✓ Directa: "Protocolo exige rechazo si temperatura >8°C independientemente de certificación"
+✓ Normativa: "RD 824/2010 Art. 5 prohíbe uso materias primas con signos alteración"
+✗ NUNCA: "El texto indica", "Según documentación", "Los apuntes especifican"
+
+CRÍTICO - SOLO DATOS DOCUMENTADOS:
+- Todas las cifras (temperaturas, plazos, porcentajes, concentraciones) DEBEN estar documentadas
+- No inventar medicamentos, normativa específica o situaciones sin base
 - Dificultad: muy difícil (ambas)
-- NO repetir tipo de caso
 
 JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"muy difícil","page_reference":""}]}
 
-TEXTO:
+DOCUMENTACIÓN:
 {{CONTENT}}`;
 
 // ========================
@@ -887,92 +953,206 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
       return res.status(404).json({ error: 'No hay contenido suficiente' });
     }
 
-    const topicId = topics.join(','); // Combinar topics si son múltiples
     let allGeneratedQuestions = [];
 
-    // SISTEMA 3 NIVELES: 30% simples / 60% medias / 10% elaboradas
+    // CONFIGURACIÓN DE CACHÉ
+    const CACHE_PROBABILITY = 0.60; // 60% intentar caché, 40% generar nueva
+    let cacheHits = 0;
+    let cacheMisses = 0;
+
+    // SISTEMA 3 NIVELES: 20% simples / 60% medias / 20% elaboradas
     const totalNeeded = questionCount;
-    const simpleNeeded = Math.round(totalNeeded * 0.30); // 30% simples
+    const simpleNeeded = Math.round(totalNeeded * 0.20); // 20% simples
     const mediaNeeded = Math.round(totalNeeded * 0.60); // 60% medias
-    const elaboratedNeeded = totalNeeded - simpleNeeded - mediaNeeded; // 10% elaboradas (resto)
+    const elaboratedNeeded = totalNeeded - simpleNeeded - mediaNeeded; // 20% elaboradas (resto)
 
-    const simpleCalls = Math.ceil(simpleNeeded / 3); // 3 preguntas simples por llamada
-    const mediaCalls = Math.ceil(mediaNeeded / 3); // 3 preguntas medias por llamada
-    const elaboratedCalls = Math.ceil(elaboratedNeeded / 2); // 2 preguntas elaboradas por llamada
+    // Distribuir preguntas equitativamente entre temas
+    const questionsPerTopic = {
+      simple: Math.ceil(simpleNeeded / topics.length),
+      media: Math.ceil(mediaNeeded / topics.length),
+      elaborada: Math.ceil(elaboratedNeeded / topics.length)
+    };
 
-    console.log(`🎯 Plan (30/60/10): ${simpleNeeded} simples (${simpleCalls} llamadas) + ${mediaNeeded} medias (${mediaCalls} llamadas) + ${elaboratedNeeded} elaboradas (${elaboratedCalls} llamadas)`);
+    console.log(`🎯 Plan (20/60/20): ${simpleNeeded} simples + ${mediaNeeded} medias + ${elaboratedNeeded} elaboradas`);
+    console.log(`📊 Distribución por tema (${topics.length} temas): ${questionsPerTopic.simple} simples + ${questionsPerTopic.media} medias + ${questionsPerTopic.elaborada} elaboradas por tema`);
 
-    // Generar preguntas SIMPLES (30%)
-    for (let i = 0; i < simpleCalls; i++) {
-      const chunkIndex = db.getUnusedChunkIndex(userId, topicId, chunks.length);
-      const selectedChunk = chunks[chunkIndex];
+    // ====================================================================
+    // GENERAR PREGUNTAS POR TEMA ESPECÍFICO (distribución equitativa)
+    // ====================================================================
 
-      console.log(`\n⚪ SIMPLE ${i + 1}/${simpleCalls} - Chunk ${chunkIndex}/${chunks.length}`);
-      console.log(`📝 "${selectedChunk.substring(0, 100)}..."`);
+    for (const currentTopic of topics) {
+      console.log(`\n${'='.repeat(60)}`);
+      console.log(`📘 Procesando tema: ${currentTopic}`);
+      console.log(`${'='.repeat(60)}`);
 
-      const fullPrompt = CLAUDE_PROMPT_SIMPLE.replace('{{CONTENT}}', selectedChunk);
+      // Obtener contenido específico de este tema
+      const topicContent = await getDocumentsByTopics([currentTopic]);
+      const topicChunks = splitIntoChunks(topicContent, 1200);
 
-      try {
-        const response = await callClaudeWithImprovedRetry(fullPrompt, 600, 'simples', 3);
-        const responseText = response.content[0].text;
-        const questionsData = parseClaudeResponse(responseText);
+      console.log(`📄 Tema ${currentTopic}: ${topicChunks.length} chunks disponibles`);
 
-        if (questionsData?.questions?.length) {
-          allGeneratedQuestions.push(...questionsData.questions);
-          db.markChunkAsUsed(userId, topicId, chunkIndex);
+      // --- PREGUNTAS SIMPLES para este tema ---
+      let simpleCount = 0;
+      while (simpleCount < questionsPerTopic.simple && allGeneratedQuestions.filter(q => q._sourceTopic === currentTopic && q.difficulty === 'simple').length < questionsPerTopic.simple) {
+        const questionsToGet = Math.min(3, questionsPerTopic.simple - simpleCount);
+        const tryCache = Math.random() < CACHE_PROBABILITY;
+        let questions = [];
+
+        if (tryCache) {
+          console.log(`\n💾 SIMPLE [${currentTopic}] - Intentando caché (${questionsToGet} preguntas)...`);
+          for (let j = 0; j < questionsToGet; j++) {
+            const cached = db.getCachedQuestion(userId, [currentTopic], 'simple');
+            if (cached) {
+              cached.question._sourceTopic = currentTopic;
+              questions.push(cached.question);
+              db.markQuestionAsSeen(userId, cached.cacheId, 'exam');
+              cacheHits++;
+              console.log(`✓ Pregunta de caché (ID: ${cached.cacheId})`);
+            } else {
+              break;
+            }
+          }
         }
-      } catch (error) {
-        console.error(`❌ Error en simple ${i + 1}:`, error.message);
-      }
-    }
 
-    // Generar preguntas MEDIAS (50%)
-    for (let i = 0; i < mediaCalls; i++) {
-      const chunkIndex = db.getUnusedChunkIndex(userId, topicId, chunks.length);
-      const selectedChunk = chunks[chunkIndex];
+        if (questions.length < questionsToGet) {
+          const toGenerate = questionsToGet - questions.length;
+          console.log(`\n⚪ SIMPLE [${currentTopic}] - Generando ${toGenerate} preguntas nuevas`);
 
-      console.log(`\n🔵 MEDIA ${i + 1}/${mediaCalls} - Chunk ${chunkIndex}/${chunks.length}`);
-      console.log(`📝 "${selectedChunk.substring(0, 100)}..."`);
+          const chunkIndex = db.getUnusedChunkIndex(userId, currentTopic, topicChunks.length);
+          const selectedChunk = topicChunks[chunkIndex];
+          const fullPrompt = CLAUDE_PROMPT_SIMPLE.replace('{{CONTENT}}', selectedChunk);
 
-      const fullPrompt = CLAUDE_PROMPT_MEDIA.replace('{{CONTENT}}', selectedChunk);
+          try {
+            const response = await callClaudeWithImprovedRetry(fullPrompt, 800, 'simples', 3);
+            const responseText = response.content[0].text;
+            const questionsData = parseClaudeResponse(responseText);
 
-      try {
-        const response = await callClaudeWithImprovedRetry(fullPrompt, 900, 'medias', 3);
-        const responseText = response.content[0].text;
-        const questionsData = parseClaudeResponse(responseText);
-
-        if (questionsData?.questions?.length) {
-          allGeneratedQuestions.push(...questionsData.questions);
-          db.markChunkAsUsed(userId, topicId, chunkIndex);
+            if (questionsData?.questions?.length) {
+              questionsData.questions.slice(0, toGenerate).forEach(q => {
+                q._sourceTopic = currentTopic;
+                db.saveToCacheAndTrack(userId, currentTopic, 'simple', q, 'exam');
+                questions.push(q);
+                cacheMisses++;
+              });
+              db.markChunkAsUsed(userId, currentTopic, chunkIndex);
+            }
+          } catch (error) {
+            console.error(`❌ Error generando simples [${currentTopic}]:`, error.message);
+          }
         }
-      } catch (error) {
-        console.error(`❌ Error en media ${i + 1}:`, error.message);
+
+        allGeneratedQuestions.push(...questions);
+        simpleCount += questions.length;
       }
-    }
 
-    // Generar preguntas ELABORADAS (20%)
-    for (let i = 0; i < elaboratedCalls; i++) {
-      const chunkIndex = db.getUnusedChunkIndex(userId, topicId, chunks.length);
-      const selectedChunk = chunks[chunkIndex];
+      // --- PREGUNTAS MEDIAS para este tema ---
+      let mediaCount = 0;
+      while (mediaCount < questionsPerTopic.media && allGeneratedQuestions.filter(q => q._sourceTopic === currentTopic && q.difficulty === 'media').length < questionsPerTopic.media) {
+        const questionsToGet = Math.min(3, questionsPerTopic.media - mediaCount);
+        const tryCache = Math.random() < CACHE_PROBABILITY;
+        let questions = [];
 
-      console.log(`\n🔴 ELABORADA ${i + 1}/${elaboratedCalls} - Chunk ${chunkIndex}/${chunks.length}`);
-      console.log(`📝 "${selectedChunk.substring(0, 100)}..."`);
-
-      const fullPrompt = CLAUDE_PROMPT_ELABORADA.replace('{{CONTENT}}', selectedChunk);
-
-      try {
-        const response = await callClaudeWithImprovedRetry(fullPrompt, 1000, 'elaboradas', 2);
-        const responseText = response.content[0].text;
-        const questionsData = parseClaudeResponse(responseText);
-
-        if (questionsData?.questions?.length) {
-          allGeneratedQuestions.push(...questionsData.questions);
-          db.markChunkAsUsed(userId, topicId, chunkIndex);
+        if (tryCache) {
+          console.log(`\n💾 MEDIA [${currentTopic}] - Intentando caché (${questionsToGet} preguntas)...`);
+          for (let j = 0; j < questionsToGet; j++) {
+            const cached = db.getCachedQuestion(userId, [currentTopic], 'media');
+            if (cached) {
+              cached.question._sourceTopic = currentTopic;
+              questions.push(cached.question);
+              db.markQuestionAsSeen(userId, cached.cacheId, 'exam');
+              cacheHits++;
+              console.log(`✓ Pregunta de caché (ID: ${cached.cacheId})`);
+            } else {
+              break;
+            }
+          }
         }
-      } catch (error) {
-        console.error(`❌ Error en elaborada ${i + 1}:`, error.message);
+
+        if (questions.length < questionsToGet) {
+          const toGenerate = questionsToGet - questions.length;
+          console.log(`\n🔵 MEDIA [${currentTopic}] - Generando ${toGenerate} preguntas nuevas`);
+
+          const chunkIndex = db.getUnusedChunkIndex(userId, currentTopic, topicChunks.length);
+          const selectedChunk = topicChunks[chunkIndex];
+          const fullPrompt = CLAUDE_PROMPT_MEDIA.replace('{{CONTENT}}', selectedChunk);
+
+          try {
+            const response = await callClaudeWithImprovedRetry(fullPrompt, 1100, 'medias', 3);
+            const responseText = response.content[0].text;
+            const questionsData = parseClaudeResponse(responseText);
+
+            if (questionsData?.questions?.length) {
+              questionsData.questions.slice(0, toGenerate).forEach(q => {
+                q._sourceTopic = currentTopic;
+                db.saveToCacheAndTrack(userId, currentTopic, 'media', q, 'exam');
+                questions.push(q);
+                cacheMisses++;
+              });
+              db.markChunkAsUsed(userId, currentTopic, chunkIndex);
+            }
+          } catch (error) {
+            console.error(`❌ Error generando medias [${currentTopic}]:`, error.message);
+          }
+        }
+
+        allGeneratedQuestions.push(...questions);
+        mediaCount += questions.length;
       }
-    }
+
+      // --- PREGUNTAS ELABORADAS para este tema ---
+      let elaboratedCount = 0;
+      while (elaboratedCount < questionsPerTopic.elaborada && allGeneratedQuestions.filter(q => q._sourceTopic === currentTopic && q.difficulty === 'elaborada').length < questionsPerTopic.elaborada) {
+        const questionsToGet = Math.min(2, questionsPerTopic.elaborada - elaboratedCount);
+        const tryCache = Math.random() < CACHE_PROBABILITY;
+        let questions = [];
+
+        if (tryCache) {
+          console.log(`\n💾 ELABORADA [${currentTopic}] - Intentando caché (${questionsToGet} preguntas)...`);
+          for (let j = 0; j < questionsToGet; j++) {
+            const cached = db.getCachedQuestion(userId, [currentTopic], 'elaborada');
+            if (cached) {
+              cached.question._sourceTopic = currentTopic;
+              questions.push(cached.question);
+              db.markQuestionAsSeen(userId, cached.cacheId, 'exam');
+              cacheHits++;
+              console.log(`✓ Pregunta de caché (ID: ${cached.cacheId})`);
+            } else {
+              break;
+            }
+          }
+        }
+
+        if (questions.length < questionsToGet) {
+          const toGenerate = questionsToGet - questions.length;
+          console.log(`\n🔴 ELABORADA [${currentTopic}] - Generando ${toGenerate} preguntas nuevas`);
+
+          const chunkIndex = db.getUnusedChunkIndex(userId, currentTopic, topicChunks.length);
+          const selectedChunk = topicChunks[chunkIndex];
+          const fullPrompt = CLAUDE_PROMPT_ELABORADA.replace('{{CONTENT}}', selectedChunk);
+
+          try {
+            const response = await callClaudeWithImprovedRetry(fullPrompt, 1400, 'elaboradas', 2);
+            const responseText = response.content[0].text;
+            const questionsData = parseClaudeResponse(responseText);
+
+            if (questionsData?.questions?.length) {
+              questionsData.questions.slice(0, toGenerate).forEach(q => {
+                q._sourceTopic = currentTopic;
+                db.saveToCacheAndTrack(userId, currentTopic, 'elaborada', q, 'exam');
+                questions.push(q);
+                cacheMisses++;
+              });
+              db.markChunkAsUsed(userId, currentTopic, chunkIndex);
+            }
+          } catch (error) {
+            console.error(`❌ Error generando elaboradas [${currentTopic}]:`, error.message);
+          }
+        }
+
+        allGeneratedQuestions.push(...questions);
+        elaboratedCount += questions.length;
+      }
+    } // FIN del loop por temas
 
     // Validar y aleatorizar todas las preguntas generadas
     const finalQuestions = allGeneratedQuestions.slice(0, questionCount).map((q, index) => {
@@ -989,6 +1169,10 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
 
       // ALEATORIZAR ORDEN DE LAS OPCIONES
       const randomizedQuestion = randomizeQuestionOptions(q);
+
+      // Eliminar propiedad temporal _sourceTopic antes de enviar al cliente
+      delete randomizedQuestion._sourceTopic;
+
       console.log(`🎲 Pregunta ${index + 1}: "${q.question.substring(0, 50)}..." - Correcta: ${['A', 'B', 'C', 'D'][randomizedQuestion.correct]} - Dificultad: ${q.difficulty}`);
 
       return randomizedQuestion;
@@ -1018,19 +1202,44 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
       db.logActivity(userId, 'question_generated', topics[0]);
     });
 
-    // Mostrar cobertura de chunks
-    const coverage = db.getChunkCoverage(userId, topicId);
-    console.log(`📊 Cobertura del tema: ${coverage}/${chunks.length} chunks usados (${Math.round(coverage/chunks.length*100)}%)`);
+    // Mostrar cobertura de chunks por tema
+    console.log(`\n📊 COBERTURA DE CHUNKS POR TEMA:`);
+    const coverageByTopic = await Promise.all(
+      topics.map(async (topic) => {
+        const topicContent = await getDocumentsByTopics([topic]);
+        const topicChunks = splitIntoChunks(topicContent, 1200);
+        const coverage = db.getChunkCoverage(userId, topic);
+        const percentage = topicChunks.length > 0 ? Math.round(coverage / topicChunks.length * 100) : 0;
+        console.log(`  ${topic}: ${coverage}/${topicChunks.length} chunks (${percentage}%)`);
+        return { topic, used: coverage, total: topicChunks.length, percentage };
+      })
+    );
+
+    // Estadísticas de caché
+    const total = cacheHits + cacheMisses;
+    const cacheHitRate = total > 0 ? Math.round((cacheHits / total) * 100) : 0;
+    console.log(`\n💾 CACHÉ: ${cacheHits} hits / ${cacheMisses} misses (${cacheHitRate}% hit rate)`);
+
+    // Actualizar estadísticas diarias de caché
+    const costPerQuestion = 0.00076;
+    const totalCost = cacheMisses * costPerQuestion;
+    db.updateCacheStats(cacheMisses, cacheHits, totalCost);
+
+    // Limpiar preguntas expiradas (cada vez que se genera un examen)
+    db.cleanExpiredCache();
 
     res.json({
       examId: Date.now(),
       questions: finalQuestions,
       topics,
       questionCount: finalQuestions.length,
-      coverage: {
-        used: coverage,
-        total: chunks.length,
-        percentage: Math.round(coverage/chunks.length*100)
+      coverageByTopic,
+      cacheStats: {
+        hits: cacheHits,
+        misses: cacheMisses,
+        hitRate: cacheHitRate,
+        totalQuestions: total,
+        cost: totalCost.toFixed(5)
       }
     });
     
@@ -1050,10 +1259,316 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
   }
 });
 
+// ====================================================================
+// FASE 3: PRE-WARMING - Generar preguntas ANTES de que usuario las pida
+// ====================================================================
+app.post('/api/study/pre-warm', requireAuth, async (req, res) => {
+  try {
+    const { topicId } = req.body;
+    const userId = req.user.id;
+
+    // Validación: topicId es requerido
+    if (!topicId) {
+      return res.status(400).json({ error: 'topicId es requerido' });
+    }
+
+    // Validación: topicId existe en la configuración
+    if (!TOPIC_CONFIG[topicId]) {
+      return res.status(400).json({ error: `Tema "${topicId}" no existe` });
+    }
+
+    console.log(`🔥 Pre-warming: Usuario ${userId} seleccionó tema ${topicId}`);
+
+    // Verificar si ya tiene buffer
+    const currentBufferSize = db.getBufferSize(userId, topicId);
+
+    if (currentBufferSize >= 3) {
+      console.log(`✓ Buffer ya tiene ${currentBufferSize} preguntas, no es necesario pre-warm`);
+      return res.json({
+        success: true,
+        message: 'Buffer ya preparado',
+        bufferSize: currentBufferSize
+      });
+    }
+
+    // Retornar inmediatamente (no bloquear)
+    res.json({
+      success: true,
+      message: 'Pre-warming iniciado en background',
+      bufferSize: currentBufferSize
+    });
+
+    // Generar preguntas en background (FASE 3: caché agresivo 80%)
+    setImmediate(async () => {
+      try {
+        console.log(`🔨 [Background] Generando 3 preguntas para pre-warming (cache agresivo: 80%)...`);
+
+        const questionsNeeded = 3 - currentBufferSize;
+        const batchQuestions = await generateQuestionBatch(userId, topicId, questionsNeeded, 0.80);
+
+        // Añadir todas al buffer
+        for (const q of batchQuestions) {
+          db.addToBuffer(userId, topicId, q, q.difficulty, q._cacheId || null);
+        }
+
+        const finalBufferSize = db.getBufferSize(userId, topicId);
+        console.log(`✅ [Background] Pre-warming completado: ${finalBufferSize} preguntas en buffer`);
+      } catch (error) {
+        console.error(`❌ [Background] Error en pre-warming:`, error);
+      }
+    });
+
+  } catch (error) {
+    console.error('❌ Error en /api/study/pre-warm:', error);
+
+    res.status(500).json({
+      error: 'Error iniciando pre-warming',
+      success: false
+    });
+  }
+});
+
+// ====================================================================
+// FASE 2: ENDPOINT CON PREFETCH PARA ESTUDIO (RESPUESTA INSTANTÁNEA)
+// ====================================================================
+app.post('/api/study/question', requireAuth, async (req, res) => {
+  try {
+    const { topicId } = req.body;
+    const userId = req.user.id;
+
+    // Validación: topicId es requerido
+    if (!topicId) {
+      return res.status(400).json({ error: 'topicId es requerido' });
+    }
+
+    // Validación: topicId existe en la configuración
+    if (!TOPIC_CONFIG[topicId]) {
+      return res.status(400).json({ error: `Tema "${topicId}" no existe` });
+    }
+
+    console.log(`📚 Usuario ${userId} solicita pregunta de estudio: ${topicId}`);
+
+    // PASO 1: Verificar si hay pregunta en buffer
+    const bufferSize = db.getBufferSize(userId, topicId);
+    console.log(`💾 Buffer actual: ${bufferSize} preguntas`);
+
+    let questionToReturn = null;
+
+    if (bufferSize > 0) {
+      // Obtener pregunta del buffer (INSTANT!)
+      const buffered = db.getFromBuffer(userId, topicId);
+
+      if (buffered && buffered.question) {
+        questionToReturn = buffered.question;
+
+        // Marcar como vista si viene de caché
+        if (buffered.cacheId) {
+          db.markQuestionAsSeen(userId, buffered.cacheId, 'study');
+        }
+
+        console.log(`⚡ Pregunta entregada desde buffer (INSTANT!)`);
+
+        // Check buffer size after retrieval
+        const newBufferSize = db.getBufferSize(userId, topicId);
+        console.log(`💾 Buffer después de entrega: ${newBufferSize} preguntas`);
+
+        // Si buffer bajó de 3, rellenar en background
+        if (newBufferSize < 3) {
+          console.log(`🔄 Buffer bajo (${newBufferSize}), iniciando refill en background...`);
+
+          // Generar 2-3 preguntas más en background (sin esperar)
+          setImmediate(async () => {
+            try {
+              await refillBuffer(userId, topicId, 3 - newBufferSize);
+            } catch (error) {
+              console.error('Error en background refill:', error);
+            }
+          });
+        }
+
+        // Retornar inmediatamente
+        return res.json({
+          questions: [questionToReturn],
+          source: 'buffer',
+          bufferSize: newBufferSize
+        });
+      } else {
+        // Buffer reportó preguntas pero getFromBuffer falló (datos corruptos?)
+        console.warn(`⚠️ Buffer reportó ${bufferSize} preguntas pero getFromBuffer retornó null`);
+      }
+    }
+
+    // PASO 2: Buffer vacío - generar batch de 3 preguntas (optimizado FASE 3)
+    console.log(`🔨 Buffer vacío - generando batch inicial de 3 preguntas...`);
+
+    const batchQuestions = await generateQuestionBatch(userId, topicId, 3);
+
+    if (batchQuestions.length === 0) {
+      return res.status(500).json({ error: 'No se pudieron generar preguntas' });
+    }
+
+    // Primera pregunta para retornar
+    questionToReturn = batchQuestions[0];
+
+    // Resto al buffer (2 preguntas en batch de 3)
+    for (let i = 1; i < batchQuestions.length; i++) {
+      const q = batchQuestions[i];
+      db.addToBuffer(userId, topicId, q, q.difficulty, q._cacheId || null);
+    }
+
+    const finalBufferSize = db.getBufferSize(userId, topicId);
+    console.log(`✅ Batch generado: 1 entregada + ${finalBufferSize} en buffer`);
+
+    res.json({
+      questions: [questionToReturn],
+      source: 'generated',
+      bufferSize: finalBufferSize
+    });
+
+  } catch (error) {
+    console.error('❌ Error en /api/study/question:', error);
+
+    const errorCode = error.status || 500;
+    const errorMessage = errorCode === 529 ? 'Claude temporalmente ocupado' :
+                        errorCode === 429 ? 'Límite de solicitudes alcanzado' :
+                        'Error generando pregunta';
+
+    res.status(errorCode).json({
+      error: errorMessage,
+      retryable: [429, 503, 529].includes(errorCode),
+      waitTime: errorCode === 529 ? 5000 : 3000
+    });
+  }
+});
+
+/**
+ * Generar batch de preguntas (mix de caché + nuevas)
+ */
+async function generateQuestionBatch(userId, topicId, count = 3, cacheProb = 0.60) {
+  const questions = [];
+  const MAX_RETRIES = count * 2; // Intentar hasta el doble para asegurar al menos 1 pregunta
+
+  // Obtener contenido del tema
+  const topicContent = await getDocumentsByTopics([topicId]);
+  const topicChunks = splitIntoChunks(topicContent, 1200);
+
+  if (topicChunks.length === 0) {
+    throw new Error('No hay contenido disponible para este tema');
+  }
+
+  console.log(`📄 Tema ${topicId}: ${topicChunks.length} chunks disponibles`);
+
+  // Generar preguntas mezclando dificultades
+  let attempts = 0;
+  while (questions.length < count && attempts < MAX_RETRIES) {
+    attempts++;
+
+    // Distribuir dificultades: 20% simple, 60% media, 20% elaborada
+    let difficulty = 'media';
+    const rand = Math.random();
+    if (rand < 0.20) difficulty = 'simple';
+    else if (rand > 0.80) difficulty = 'elaborada';
+
+    const tryCache = Math.random() < cacheProb;
+    let question = null;
+
+    // Intentar caché primero
+    if (tryCache) {
+      const cached = db.getCachedQuestion(userId, [topicId], difficulty);
+      if (cached) {
+        question = cached.question;
+        question._cacheId = cached.cacheId;
+        question._sourceTopic = topicId;
+        db.markQuestionAsSeen(userId, cached.cacheId, 'study');
+        console.log(`💾 Pregunta ${questions.length + 1}/${count} desde caché (${difficulty}) [cache prob: ${Math.round(cacheProb * 100)}%]`);
+      }
+    }
+
+    // Si no hay en caché, generar nueva
+    if (!question) {
+      const chunkIndex = db.getUnusedChunkIndex(userId, topicId, topicChunks.length);
+      const selectedChunk = topicChunks[chunkIndex];
+
+      let prompt, maxTokens, calls;
+      if (difficulty === 'simple') {
+        prompt = CLAUDE_PROMPT_SIMPLE;
+        maxTokens = 800;
+        calls = 1;
+      } else if (difficulty === 'media') {
+        prompt = CLAUDE_PROMPT_MEDIA;
+        maxTokens = 1100;
+        calls = 1;
+      } else {
+        prompt = CLAUDE_PROMPT_ELABORATED;
+        maxTokens = 1500;
+        calls = 1;
+      }
+
+      const fullPrompt = prompt.replace('{{CONTENT}}', selectedChunk);
+
+      try {
+        const response = await callClaudeWithImprovedRetry(fullPrompt, maxTokens, difficulty, calls);
+        const responseText = response.content[0].text;
+        const questionsData = parseClaudeResponse(responseText);
+
+        if (questionsData?.questions?.length > 0) {
+          question = questionsData.questions[0];
+          question._sourceTopic = topicId;
+
+          // Guardar en caché
+          db.saveToCacheAndTrack(userId, topicId, difficulty, question, 'study');
+
+          db.markChunkAsUsed(userId, topicId, chunkIndex);
+          console.log(`🆕 Pregunta ${questions.length + 1}/${count} generada (${difficulty})`);
+        }
+      } catch (error) {
+        console.error(`❌ Error generando pregunta (intento ${attempts}):`, error.message);
+      }
+    }
+
+    if (question) {
+      questions.push(question);
+    }
+  }
+
+  // Log final con stats
+  console.log(`✅ Batch completado: ${questions.length}/${count} preguntas en ${attempts} intentos`);
+
+  // Si no se generó NINGUNA pregunta, lanzar error
+  if (questions.length === 0) {
+    throw new Error('No se pudo generar ninguna pregunta después de múltiples intentos');
+  }
+
+  return questions;
+}
+
+/**
+ * Rellenar buffer en background
+ */
+async function refillBuffer(userId, topicId, count = 3) {
+  console.log(`🔄 [Background] Rellenando buffer con ${count} preguntas...`);
+
+  try {
+    const newQuestions = await generateQuestionBatch(userId, topicId, count);
+
+    for (const q of newQuestions) {
+      db.addToBuffer(userId, topicId, q, q.difficulty, q._cacheId || null);
+    }
+
+    const bufferSize = db.getBufferSize(userId, topicId);
+    console.log(`✅ [Background] Buffer rellenado: ${bufferSize} preguntas`);
+  } catch (error) {
+    console.error(`❌ [Background] Error rellenando buffer:`, error);
+  }
+}
+
 app.post('/api/record-answer', requireAuth, (req, res) => {
   try {
     const { topicId, questionData, userAnswer, isCorrect, isReview, questionId } = req.body;
     const userId = req.user.id;
+
+    // LOG DETALLADO PARA DEBUG
+    console.log(`📝 RECORD-ANSWER - Usuario: ${userId}, Tema: ${topicId}, isReview: ${isReview}, questionId: ${questionId}, isCorrect: ${isCorrect}`);
 
     // Obtener título del tema
     const topicConfig = TOPIC_CONFIG[topicId];
@@ -1061,10 +1576,11 @@ app.post('/api/record-answer', requireAuth, (req, res) => {
 
     // SISTEMA DE REPASO: Si es una pregunta de repaso
     if (isReview && questionId) {
+      console.log(`🔍 MODO REPASO DETECTADO - questionId: ${questionId}, isCorrect: ${isCorrect}`);
       if (isCorrect) {
         // Si acierta la pregunta de repaso, ELIMINARLA de preguntas falladas
-        db.removeFailedQuestion(userId, questionId);
-        console.log(`✅ Pregunta de repaso ${questionId} acertada - Eliminada de preguntas falladas`);
+        const result = db.removeFailedQuestion(userId, questionId);
+        console.log(`✅ ELIMINANDO pregunta ${questionId} de usuario ${userId} - Resultado:`, result);
       } else {
         // Si falla de nuevo, se mantiene en preguntas falladas
         console.log(`❌ Pregunta de repaso ${questionId} fallada nuevamente - Se mantiene`);
@@ -1187,6 +1703,212 @@ app.get('/api/review-exam/:topicId', requireAuth, (req, res) => {
   } catch (error) {
     console.error('❌ Error generando test de repaso:', error);
     res.status(500).json({ error: 'Error al generar test de repaso' });
+  }
+});
+
+// ========================
+// EXAMEN OFICIAL (SIMULACRO)
+// ========================
+
+app.post('/api/exam/official', requireAuth, async (req, res) => {
+  try {
+    const { questionCount } = req.body; // 25, 50, 75, 100
+    const userId = req.user.id;
+
+    // Validar questionCount
+    if (![25, 50, 75, 100].includes(questionCount)) {
+      return res.status(400).json({ error: 'Número de preguntas inválido. Use 25, 50, 75 o 100.' });
+    }
+
+    console.log(`🎓 Usuario ${userId} solicita EXAMEN OFICIAL de ${questionCount} preguntas`);
+
+    // Obtener todos los temas disponibles
+    const allTopics = Object.keys(TOPIC_CONFIG);
+
+    // Calcular cuántas preguntas por tema (distribución equitativa)
+    const questionsPerTopic = Math.ceil(questionCount / allTopics.length);
+
+    console.log(`📚 Generando ${questionsPerTopic} preguntas por tema de ${allTopics.length} temas`);
+
+    // Obtener todo el contenido mezclado de todos los temas
+    const allContent = await getDocumentsByTopics(allTopics);
+
+    if (!allContent || !allContent.trim()) {
+      return res.status(404).json({
+        error: 'No se encontró contenido para los temas'
+      });
+    }
+
+    // Dividir en chunks de 1200 caracteres
+    const chunks = splitIntoChunks(allContent, 1200);
+    console.log(`📄 Documento dividido en ${chunks.length} chunks de todos los temas`);
+
+    if (chunks.length === 0) {
+      return res.status(404).json({ error: 'No hay contenido suficiente' });
+    }
+
+    const topicId = 'examen-oficial'; // ID especial para examen oficial
+    let allGeneratedQuestions = [];
+
+    // SISTEMA 3 NIVELES: 20% simples / 60% medias / 20% elaboradas
+    const totalNeeded = questionCount;
+    const simpleNeeded = Math.round(totalNeeded * 0.20);
+    const mediaNeeded = Math.round(totalNeeded * 0.60);
+    const elaboratedNeeded = totalNeeded - simpleNeeded - mediaNeeded;
+
+    const simpleCalls = Math.ceil(simpleNeeded / 3);
+    const mediaCalls = Math.ceil(mediaNeeded / 3);
+    const elaboratedCalls = Math.ceil(elaboratedNeeded / 2);
+
+    console.log(`🎯 Plan (20/60/20): ${simpleNeeded} simples + ${mediaNeeded} medias + ${elaboratedNeeded} elaboradas`);
+
+    // Generar preguntas SIMPLES (20%)
+    for (let i = 0; i < simpleCalls; i++) {
+      const chunkIndex = Math.floor(Math.random() * chunks.length);
+      const selectedChunk = chunks[chunkIndex];
+
+      console.log(`⚪ SIMPLE ${i + 1}/${simpleCalls}`);
+
+      const fullPrompt = CLAUDE_PROMPT_SIMPLE.replace('{{CONTENT}}', selectedChunk);
+
+      try {
+        const response = await callClaudeWithImprovedRetry(fullPrompt, 800, 'simples', 3);
+        const responseText = response.content[0].text;
+        const questionsData = parseClaudeResponse(responseText);
+
+        if (questionsData?.questions?.length) {
+          allGeneratedQuestions.push(...questionsData.questions);
+        }
+      } catch (error) {
+        console.error(`❌ Error en simple ${i + 1}:`, error.message);
+      }
+    }
+
+    // Generar preguntas MEDIAS (60%)
+    for (let i = 0; i < mediaCalls; i++) {
+      const chunkIndex = Math.floor(Math.random() * chunks.length);
+      const selectedChunk = chunks[chunkIndex];
+
+      console.log(`🔵 MEDIA ${i + 1}/${mediaCalls}`);
+
+      const fullPrompt = CLAUDE_PROMPT_MEDIA.replace('{{CONTENT}}', selectedChunk);
+
+      try {
+        const response = await callClaudeWithImprovedRetry(fullPrompt, 1100, 'medias', 3);
+        const responseText = response.content[0].text;
+        const questionsData = parseClaudeResponse(responseText);
+
+        if (questionsData?.questions?.length) {
+          allGeneratedQuestions.push(...questionsData.questions);
+        }
+      } catch (error) {
+        console.error(`❌ Error en media ${i + 1}:`, error.message);
+      }
+    }
+
+    // Generar preguntas ELABORADAS (20%)
+    for (let i = 0; i < elaboratedCalls; i++) {
+      const chunkIndex = Math.floor(Math.random() * chunks.length);
+      const selectedChunk = chunks[chunkIndex];
+
+      console.log(`🔴 ELABORADA ${i + 1}/${elaboratedCalls}`);
+
+      const fullPrompt = CLAUDE_PROMPT_ELABORADA.replace('{{CONTENT}}', selectedChunk);
+
+      try {
+        const response = await callClaudeWithImprovedRetry(fullPrompt, 1400, 'elaboradas', 2);
+        const responseText = response.content[0].text;
+        const questionsData = parseClaudeResponse(responseText);
+
+        if (questionsData?.questions?.length) {
+          allGeneratedQuestions.push(...questionsData.questions);
+        }
+      } catch (error) {
+        console.error(`❌ Error en elaborada ${i + 1}:`, error.message);
+      }
+    }
+
+    // Validar y aleatorizar todas las preguntas generadas
+    const finalQuestions = allGeneratedQuestions.slice(0, questionCount).map((q, index) => {
+      if (!q.question || !Array.isArray(q.options) || q.options.length !== 4) {
+        q.options = q.options || ["A) Opción 1", "B) Opción 2", "C) Opción 3", "D) Opción 4"];
+      }
+      q.correct = q.correct ?? 0;
+      q.explanation = q.explanation || "Explicación no disponible.";
+      q.difficulty = q.difficulty || "media";
+      q.page_reference = q.page_reference || "Examen Oficial";
+
+      // Aleatorizar orden de las opciones
+      return randomizeQuestionOptions(q);
+    });
+
+    // Mezclar aleatoriamente las preguntas (shuffle Fisher-Yates)
+    for (let i = finalQuestions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [finalQuestions[i], finalQuestions[j]] = [finalQuestions[j], finalQuestions[i]];
+    }
+
+    console.log(`✅ Examen oficial generado: ${finalQuestions.length} preguntas mezcladas`);
+
+    res.json({
+      examId: Date.now(),
+      questions: finalQuestions,
+      questionCount: finalQuestions.length,
+      isOfficial: true,
+      topics: allTopics,
+      timestamp: new Date().toISOString()
+    });
+
+  } catch (error) {
+    console.error('❌ Error generando examen oficial:', error);
+    res.status(500).json({ error: 'Error al generar examen oficial' });
+  }
+});
+
+// Guardar preguntas falladas del examen oficial
+app.post('/api/exam/save-failed', requireAuth, (req, res) => {
+  try {
+    const userId = req.user.id;
+    const { examId, examName, failedQuestions } = req.body;
+
+    console.log(`💾 Usuario ${userId} guardando ${failedQuestions.length} preguntas falladas del "${examName}"`);
+
+    // Guardar cada pregunta fallada con el examId como topic_id
+    let savedCount = 0;
+    for (const answer of failedQuestions) {
+      const questionData = {
+        question: answer.question,
+        options: answer.options,
+        correct: answer.correctAnswer,
+        explanation: answer.explanation,
+        difficulty: answer.difficulty || 'media',
+        page_reference: answer.page_reference || ''
+      };
+
+      const result = db.addFailedQuestion(
+        userId,
+        examId,  // Usar examId como topic_id (ej: "examen-25-1234567890")
+        questionData,
+        answer.userAnswer
+      );
+
+      if (result.success && !result.duplicate) {
+        savedCount++;
+      }
+    }
+
+    console.log(`✅ Guardadas ${savedCount} preguntas nuevas del examen (${failedQuestions.length - savedCount} duplicadas omitidas)`);
+
+    res.json({
+      success: true,
+      savedCount,
+      examId,
+      examName
+    });
+
+  } catch (error) {
+    console.error('❌ Error guardando preguntas falladas del examen:', error);
+    res.status(500).json({ error: 'Error al guardar preguntas falladas' });
   }
 });
 
@@ -1322,6 +2044,16 @@ async function startServer() {
       console.log(`   Render: Tu URL de Render`);
       console.log('\n🎯 ¡Sistema listo para generar exámenes!');
       console.log('========================================\n');
+
+      // FASE 2: Limpiar buffers y caché expirados cada 30 minutos
+      setInterval(() => {
+        console.log('🧹 Ejecutando limpieza periódica...');
+        const buffersDeleted = db.cleanExpiredBuffers();
+        const cacheDeleted = db.cleanExpiredCache();
+        console.log(`✅ Limpieza completada: ${buffersDeleted} buffers + ${cacheDeleted} caché eliminados`);
+      }, 30 * 60 * 1000); // 30 minutos
+
+      console.log('⏰ Limpieza automática programada cada 30 minutos\n');
     });
     
   } catch (error) {
