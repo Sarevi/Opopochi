@@ -2052,16 +2052,46 @@
             }
             
             currentTopic = selectedTopicId;
-            
+
             const topicConfig = availableTopics.find(([id]) => id === selectedTopicId);
             const topicTitle = topicConfig ? topicConfig[1].title : 'Tema Demo';
-            
+
             document.getElementById('current-topic-name').textContent = topicTitle;
             questionCount = 0;
             correctAnswers = 0;
-            
+
+            // FASE 3: Pre-warming - generar preguntas en background
+            preWarmBuffer(selectedTopicId);
+
             showQuestionMode();
             generateNextQuestion();
+        }
+
+        // ========================
+        // FASE 3: PRE-WARMING
+        // ========================
+
+        async function preWarmBuffer(topicId) {
+            try {
+                console.log(`🔥 FASE 3: Pre-warming buffer para ${topicId}...`);
+
+                const response = await fetch(`${API_BASE}/api/study/pre-warm`, {
+                    method: 'POST',
+                    credentials: 'include',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ topicId: topicId })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log(`✅ Pre-warming: ${data.message} (Buffer: ${data.bufferSize})`);
+                } else {
+                    console.warn('⚠️ Pre-warming falló, continuando normal');
+                }
+            } catch (error) {
+                console.warn('⚠️ Error en pre-warming:', error);
+                // No bloquear si pre-warm falla
+            }
         }
 
         // ========================

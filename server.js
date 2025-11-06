@@ -1260,6 +1260,75 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
 });
 
 // ====================================================================
+// FASE 3: PRE-WARMING - Generar preguntas ANTES de que usuario las pida
+// ====================================================================
+app.post('/api/study/pre-warm', requireAuth, async (req, res) => {
+  try {
+    const { topicId } = req.body;
+    const userId = req.user.id;
+
+    // Validación: topicId es requerido
+    if (!topicId) {
+      return res.status(400).json({ error: 'topicId es requerido' });
+    }
+
+    // Validación: topicId existe en la configuración
+    if (!TOPIC_CONFIG[topicId]) {
+      return res.status(400).json({ error: `Tema "${topicId}" no existe` });
+    }
+
+    console.log(`🔥 Pre-warming: Usuario ${userId} seleccionó tema ${topicId}`);
+
+    // Verificar si ya tiene buffer
+    const currentBufferSize = db.getBufferSize(userId, topicId);
+
+    if (currentBufferSize >= 3) {
+      console.log(`✓ Buffer ya tiene ${currentBufferSize} preguntas, no es necesario pre-warm`);
+      return res.json({
+        success: true,
+        message: 'Buffer ya preparado',
+        bufferSize: currentBufferSize
+      });
+    }
+
+    // Retornar inmediatamente (no bloquear)
+    res.json({
+      success: true,
+      message: 'Pre-warming iniciado en background',
+      bufferSize: currentBufferSize
+    });
+
+    // Generar preguntas en background (FASE 3: caché agresivo 80%)
+    setImmediate(async () => {
+      try {
+        console.log(`🔨 [Background] Generando 3 preguntas para pre-warming (cache agresivo: 80%)...`);
+
+        const questionsNeeded = 3 - currentBufferSize;
+        const batchQuestions = await generateQuestionBatch(userId, topicId, questionsNeeded, 0.80);
+
+        // Añadir todas al buffer
+        for (const q of batchQuestions) {
+          db.addToBuffer(userId, topicId, q, q.difficulty, q._cacheId || null);
+        }
+
+        const finalBufferSize = db.getBufferSize(userId, topicId);
+        console.log(`✅ [Background] Pre-warming completado: ${finalBufferSize} preguntas en buffer`);
+      } catch (error) {
+        console.error(`❌ [Background] Error en pre-warming:`, error);
+      }
+    });
+
+  } catch (error) {
+    console.error('❌ Error en /api/study/pre-warm:', error);
+
+    res.status(500).json({
+      error: 'Error iniciando pre-warming',
+      success: false
+    });
+  }
+});
+
+// ====================================================================
 // FASE 2: ENDPOINT CON PREFETCH PARA ESTUDIO (RESPUESTA INSTANTÁNEA)
 // ====================================================================
 app.post('/api/study/question', requireAuth, async (req, res) => {
@@ -1329,10 +1398,10 @@ app.post('/api/study/question', requireAuth, async (req, res) => {
       }
     }
 
-    // PASO 2: Buffer vacío - generar batch de 5 preguntas
-    console.log(`🔨 Buffer vacío - generando batch inicial de 5 preguntas...`);
+    // PASO 2: Buffer vacío - generar batch de 3 preguntas (optimizado FASE 3)
+    console.log(`🔨 Buffer vacío - generando batch inicial de 3 preguntas...`);
 
-    const batchQuestions = await generateQuestionBatch(userId, topicId, 5);
+    const batchQuestions = await generateQuestionBatch(userId, topicId, 3);
 
     if (batchQuestions.length === 0) {
       return res.status(500).json({ error: 'No se pudieron generar preguntas' });
@@ -1341,7 +1410,7 @@ app.post('/api/study/question', requireAuth, async (req, res) => {
     // Primera pregunta para retornar
     questionToReturn = batchQuestions[0];
 
-    // Resto al buffer (4 preguntas)
+    // Resto al buffer (2 preguntas en batch de 3)
     for (let i = 1; i < batchQuestions.length; i++) {
       const q = batchQuestions[i];
       db.addToBuffer(userId, topicId, q, q.difficulty, q._cacheId || null);
@@ -1375,8 +1444,7 @@ app.post('/api/study/question', requireAuth, async (req, res) => {
 /**
  * Generar batch de preguntas (mix de caché + nuevas)
  */
-async function generateQuestionBatch(userId, topicId, count = 5) {
-  const CACHE_PROBABILITY = 0.60;
+async function generateQuestionBatch(userId, topicId, count = 3, cacheProb = 0.60) {
   const questions = [];
   const MAX_RETRIES = count * 2; // Intentar hasta el doble para asegurar al menos 1 pregunta
 
@@ -1401,7 +1469,7 @@ async function generateQuestionBatch(userId, topicId, count = 5) {
     if (rand < 0.20) difficulty = 'simple';
     else if (rand > 0.80) difficulty = 'elaborada';
 
-    const tryCache = Math.random() < CACHE_PROBABILITY;
+    const tryCache = Math.random() < cacheProb;
     let question = null;
 
     // Intentar caché primero
@@ -1412,7 +1480,7 @@ async function generateQuestionBatch(userId, topicId, count = 5) {
         question._cacheId = cached.cacheId;
         question._sourceTopic = topicId;
         db.markQuestionAsSeen(userId, cached.cacheId, 'study');
-        console.log(`💾 Pregunta ${questions.length + 1}/${count} desde caché (${difficulty})`);
+        console.log(`💾 Pregunta ${questions.length + 1}/${count} desde caché (${difficulty}) [cache prob: ${Math.round(cacheProb * 100)}%]`);
       }
     }
 
