@@ -2128,8 +2128,9 @@ app.post('/api/study/question', requireAuth, async (req, res) => {
 
 /**
  * Generar batch de preguntas (mix de caché + nuevas)
+ * cacheProb aumentado a 70% para optimizar costos (ahorro ~25%)
  */
-async function generateQuestionBatch(userId, topicId, count = 3, cacheProb = 0.60) {
+async function generateQuestionBatch(userId, topicId, count = 3, cacheProb = 0.70) {
   const questions = [];
   const MAX_RETRIES = count * 2; // Intentar hasta el doble para asegurar al menos 1 pregunta
 
@@ -2788,14 +2789,14 @@ async function preGenerateMonthlyCache() {
   const startTime = Date.now();
   const allTopics = Object.keys(TOPIC_CONFIG);
   const SYSTEM_USER_ID = 0; // Usuario especial para pre-generación
-  const QUESTIONS_PER_TOPIC = 15;
+  const QUESTIONS_PER_TOPIC = 20; // Aumentado de 15 a 20 para mejor hit rate (70%)
   const MAX_RETRIES_PER_DIFFICULTY = 3; // Reintentos máximos por dificultad
 
   // Distribución 20/60/20
   const distribution = {
-    'simple': 3,
-    'media': 9,
-    'elaborada': 3
+    'simple': 4,      // 20% de 20 = 4
+    'media': 12,      // 60% de 20 = 12
+    'elaborada': 4    // 20% de 20 = 4
   };
 
   let totalGenerated = 0;
