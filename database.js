@@ -689,7 +689,8 @@ function getChunkCoverage(userId, topicId) {
 // ========================
 
 const NO_REPEAT_DAYS = 15; // Periodo mínimo sin repeticiones (configurable)
-const CACHE_EXPIRY_HOURS = 336; // Expiración de preguntas en caché (14 días / 2 semanas)
+const CACHE_EXPIRY_HOURS = 720; // Expiración de preguntas en caché (30 días / 1 mes)
+const MAX_CACHE_SIZE = 10000; // Límite máximo de preguntas en caché
 
 /**
  * Buscar pregunta en caché que el usuario NO ha visto
@@ -750,6 +751,39 @@ function getCachedQuestion(userId, topicIds, difficulty) {
 }
 
 /**
+ * Limpiar caché antiguo si supera el límite de 10,000 preguntas
+ * Elimina las preguntas más antiguas (FIFO)
+ */
+function cleanOldCacheIfNeeded() {
+  try {
+    // Contar preguntas actuales en caché
+    const countStmt = db.prepare('SELECT COUNT(*) as total FROM question_cache');
+    const result = countStmt.get();
+    const currentSize = result.total;
+
+    if (currentSize >= MAX_CACHE_SIZE) {
+      // Eliminar las 500 preguntas más antiguas para dejar espacio
+      const deleteCount = 500;
+      console.log(`🗑️ Caché lleno (${currentSize}/${MAX_CACHE_SIZE}) - Eliminando ${deleteCount} preguntas antiguas...`);
+
+      db.prepare(`
+        DELETE FROM question_cache
+        WHERE id IN (
+          SELECT id FROM question_cache
+          ORDER BY generated_at ASC
+          LIMIT ?
+        )
+      `).run(deleteCount);
+
+      const newSize = currentSize - deleteCount;
+      console.log(`✅ Caché limpiado: ${newSize}/${MAX_CACHE_SIZE} preguntas restantes`);
+    }
+  } catch (error) {
+    console.error('Error limpiando caché:', error);
+  }
+}
+
+/**
  * Guardar pregunta en caché y marcarla como vista por el usuario
  * @param {number} userId - ID del usuario
  * @param {string} topicId - ID del tema
@@ -761,6 +795,9 @@ function getCachedQuestion(userId, topicIds, difficulty) {
 function saveToCacheAndTrack(userId, topicId, difficulty, questionData, context = 'study') {
   const now = Date.now();
   const expiresAt = now + (CACHE_EXPIRY_HOURS * 3600 * 1000);
+
+  // Limpiar caché si supera el límite de 10,000 preguntas
+  cleanOldCacheIfNeeded();
 
   try {
     // 1. Guardar en caché
