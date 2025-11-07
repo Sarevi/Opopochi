@@ -2642,8 +2642,9 @@ app.use('*', (req, res) => {
 // ========================
 
 /**
- * Pre-generar 15 preguntas de cada tema para caché mensual
+ * Pre-generar 15 preguntas de cada tema para caché mensual con sistema robusto
  * Distribución: 3 simple, 9 media, 3 elaborada (20/60/20)
+ * GARANTIZA 15 preguntas por tema con reintentos automáticos
  */
 async function preGenerateMonthlyCache() {
   console.log('\n🚀 ========================================');
@@ -2654,6 +2655,7 @@ async function preGenerateMonthlyCache() {
   const allTopics = Object.keys(TOPIC_CONFIG);
   const SYSTEM_USER_ID = 0; // Usuario especial para pre-generación
   const QUESTIONS_PER_TOPIC = 15;
+  const MAX_RETRIES_PER_DIFFICULTY = 3; // Reintentos máximos por dificultad
 
   // Distribución 20/60/20
   const distribution = {
@@ -2663,51 +2665,144 @@ async function preGenerateMonthlyCache() {
   };
 
   let totalGenerated = 0;
-  let totalErrors = 0;
+  let totalExpected = allTopics.length * QUESTIONS_PER_TOPIC;
+  const topicResults = [];
 
+  // Procesar cada tema
   for (const topicId of allTopics) {
     const topicTitle = TOPIC_CONFIG[topicId].title;
     console.log(`\n📚 Procesando: ${topicTitle}`);
     console.log(`   Objetivo: ${QUESTIONS_PER_TOPIC} preguntas (3S + 9M + 3E)`);
 
     let topicGenerated = 0;
+    const difficultyResults = {};
 
-    // Generar por dificultad
-    for (const [difficulty, count] of Object.entries(distribution)) {
-      console.log(`\n   🎯 Generando ${count} preguntas ${difficulty.toUpperCase()}...`);
+    // Generar por dificultad con reintentos
+    for (const [difficulty, targetCount] of Object.entries(distribution)) {
+      console.log(`\n   🎯 Generando ${targetCount} preguntas ${difficulty.toUpperCase()}...`);
 
-      try {
-        // Usar generateQuestionBatch con cacheProb=0 (siempre genera nuevas)
-        const questions = await generateQuestionBatch(SYSTEM_USER_ID, topicId, count, 0);
+      let generated = 0;
+      let attempts = 0;
 
-        topicGenerated += questions.length;
-        totalGenerated += questions.length;
+      // Reintentos hasta conseguir todas las preguntas o agotar intentos
+      while (generated < targetCount && attempts < MAX_RETRIES_PER_DIFFICULTY) {
+        attempts++;
+        const remaining = targetCount - generated;
 
-        console.log(`   ✅ ${questions.length}/${count} preguntas ${difficulty} generadas`);
-      } catch (error) {
-        console.error(`   ❌ Error generando ${difficulty}:`, error.message);
-        totalErrors++;
+        try {
+          console.log(`   🔄 Intento ${attempts}/${MAX_RETRIES_PER_DIFFICULTY} (faltan ${remaining})...`);
+
+          // Usar generateQuestionBatch con cacheProb=0 (siempre genera nuevas)
+          const questions = await generateQuestionBatch(SYSTEM_USER_ID, topicId, remaining, 0);
+
+          if (questions && questions.length > 0) {
+            generated += questions.length;
+            topicGenerated += questions.length;
+            totalGenerated += questions.length;
+
+            console.log(`   ✅ ${questions.length} preguntas generadas (total: ${generated}/${targetCount})`);
+
+            if (generated >= targetCount) {
+              console.log(`   🎉 ${difficulty.toUpperCase()} completado!`);
+              break;
+            }
+          } else {
+            console.warn(`   ⚠️  generateQuestionBatch retornó 0 preguntas`);
+          }
+
+        } catch (error) {
+          console.error(`   ❌ Error en intento ${attempts}:`, error.message);
+
+          // Si es error de rate limit, pausar más tiempo
+          if (error.message.includes('rate') || error.message.includes('429')) {
+            const backoffTime = attempts * 5000; // 5s, 10s, 15s
+            console.log(`   ⏳ Rate limit detectado - Pausa de ${backoffTime/1000}s...`);
+            await new Promise(resolve => setTimeout(resolve, backoffTime));
+          }
+        }
+
+        // Pausa entre intentos (progresiva)
+        if (generated < targetCount && attempts < MAX_RETRIES_PER_DIFFICULTY) {
+          const pauseTime = 2000 + (attempts * 1000); // 2s, 3s, 4s
+          await new Promise(resolve => setTimeout(resolve, pauseTime));
+        }
       }
 
-      // Pausa de 2 segundos entre dificultades para no saturar API
+      // Guardar resultado de esta dificultad
+      difficultyResults[difficulty] = {
+        expected: targetCount,
+        generated: generated,
+        success: generated === targetCount
+      };
+
+      if (generated < targetCount) {
+        console.error(`   ⚠️  ${difficulty.toUpperCase()} incompleto: ${generated}/${targetCount} (faltan ${targetCount - generated})`);
+      }
+
+      // Pausa entre dificultades
       await new Promise(resolve => setTimeout(resolve, 2000));
     }
 
-    console.log(`   📊 Tema completado: ${topicGenerated}/${QUESTIONS_PER_TOPIC} preguntas`);
+    // Resultado del tema
+    const topicSuccess = topicGenerated === QUESTIONS_PER_TOPIC;
+    topicResults.push({
+      topicId,
+      topicTitle,
+      expected: QUESTIONS_PER_TOPIC,
+      generated: topicGenerated,
+      success: topicSuccess,
+      details: difficultyResults
+    });
+
+    if (topicSuccess) {
+      console.log(`   ✅ Tema completado: ${topicGenerated}/${QUESTIONS_PER_TOPIC} preguntas`);
+    } else {
+      console.error(`   ⚠️  Tema incompleto: ${topicGenerated}/${QUESTIONS_PER_TOPIC} preguntas (faltan ${QUESTIONS_PER_TOPIC - topicGenerated})`);
+    }
   }
 
+  // Resumen final
   const duration = ((Date.now() - startTime) / 1000 / 60).toFixed(2);
   const cost = (totalGenerated * 0.0025).toFixed(2);
+  const successfulTopics = topicResults.filter(t => t.success).length;
+  const successRate = ((totalGenerated / totalExpected) * 100).toFixed(1);
 
   console.log('\n🎉 ========================================');
   console.log('🎉 PRE-GENERACIÓN COMPLETADA');
   console.log('🎉 ========================================');
   console.log(`📊 Temas procesados: ${allTopics.length}`);
-  console.log(`✅ Preguntas generadas: ${totalGenerated}`);
-  console.log(`❌ Errores: ${totalErrors}`);
+  console.log(`✅ Temas completos (15/15): ${successfulTopics}/${allTopics.length}`);
+  console.log(`📈 Tasa de éxito: ${successRate}%`);
+  console.log(`✅ Preguntas generadas: ${totalGenerated}/${totalExpected}`);
   console.log(`⏱️  Tiempo total: ${duration} minutos`);
   console.log(`💰 Costo estimado: $${cost}`);
+
+  // Mostrar temas incompletos
+  const incompleteTopics = topicResults.filter(t => !t.success);
+  if (incompleteTopics.length > 0) {
+    console.log('\n⚠️  TEMAS INCOMPLETOS:');
+    incompleteTopics.forEach(topic => {
+      console.log(`   - ${topic.topicTitle}: ${topic.generated}/${topic.expected}`);
+      Object.entries(topic.details).forEach(([diff, result]) => {
+        if (!result.success) {
+          console.log(`     • ${diff}: ${result.generated}/${result.expected}`);
+        }
+      });
+    });
+  }
+
   console.log('🎉 ========================================\n');
+
+  // Retornar resultados para posible logging/alertas
+  return {
+    success: successfulTopics === allTopics.length,
+    totalGenerated,
+    totalExpected,
+    successRate: parseFloat(successRate),
+    duration: parseFloat(duration),
+    cost: parseFloat(cost),
+    topicResults
+  };
 }
 
 // ========================
