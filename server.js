@@ -1642,8 +1642,18 @@ app.get('/api/failed-questions', requireAuth, (req, res) => {
     const userId = req.user.id;
     const failedQuestions = db.getUserFailedQuestions(userId);
 
-    // El formato ya viene agrupado por topic_id desde database.js
-    // Solo necesitamos asegurarnos que se mantiene el formato esperado
+    // Agregar títulos de temas desde TOPIC_CONFIG
+    Object.keys(failedQuestions).forEach(topicId => {
+      if (topicId.startsWith('examen-')) {
+        // Para exámenes, mantener el formato original
+        failedQuestions[topicId].title = failedQuestions[topicId].title || 'Examen Oficial';
+      } else {
+        // Para temas normales, buscar el título en TOPIC_CONFIG
+        const topicConfig = TOPIC_CONFIG[topicId];
+        failedQuestions[topicId].title = topicConfig?.title || `Tema ${topicId}`;
+      }
+    });
+
     res.json(failedQuestions);
   } catch (error) {
     console.error('❌ Error obteniendo preguntas falladas:', error);

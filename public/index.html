@@ -2539,10 +2539,11 @@
         // ========================
 
         function showLoading() {
-            document.getElementById('question-text').innerHTML = 
-                `<div style="text-align: center; padding: 20px;">
+            document.getElementById('question-text').innerHTML =
+                `<div style="text-align: center; padding: 30px;">
                     <div class="loading"></div>
-                    <p style="margin-top: 12px; color: #6b7280;">Generando pregunta...</p>
+                    <p style="margin-top: 16px; color: #1f2937; font-weight: 600; font-size: 1rem;">Buscando las mejores preguntas...</p>
+                    <p style="margin-top: 8px; color: #6b7280; font-size: 0.875rem;">Puede tardar unos segundos la primera vez</p>
                 </div>`;
             document.getElementById('options-container').innerHTML = '';
             document.getElementById('result-section').style.display = 'none';
