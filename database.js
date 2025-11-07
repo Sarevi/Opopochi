@@ -689,7 +689,7 @@ function getChunkCoverage(userId, topicId) {
 // ========================
 
 const NO_REPEAT_DAYS = 15; // Periodo mínimo sin repeticiones (configurable)
-const CACHE_EXPIRY_HOURS = 48; // Expiración de preguntas en caché
+const CACHE_EXPIRY_HOURS = 336; // Expiración de preguntas en caché (14 días / 2 semanas)
 
 /**
  * Buscar pregunta en caché que el usuario NO ha visto
