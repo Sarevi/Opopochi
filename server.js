@@ -11,6 +11,7 @@ const session = require('express-session');
 const SQLiteStore = require('connect-sqlite3')(session);
 const { Anthropic } = require('@anthropic-ai/sdk');
 const pdfParse = require('pdf-parse');
+const cron = require('node-cron');
 require('dotenv').config();
 
 // Importar sistema de base de datos
@@ -2630,11 +2631,84 @@ app.use((error, req, res, next) => {
 
 // 404 para rutas no encontradas
 app.use('*', (req, res) => {
-  res.status(404).json({ 
+  res.status(404).json({
     error: 'Ruta no encontrada',
     path: req.originalUrl
   });
 });
+
+// ========================
+// PRE-GENERACIÓN MENSUAL DE CACHÉ
+// ========================
+
+/**
+ * Pre-generar 15 preguntas de cada tema para caché mensual
+ * Distribución: 3 simple, 9 media, 3 elaborada (20/60/20)
+ */
+async function preGenerateMonthlyCache() {
+  console.log('\n🚀 ========================================');
+  console.log('🚀 INICIO PRE-GENERACIÓN MENSUAL DE CACHÉ');
+  console.log('🚀 ========================================\n');
+
+  const startTime = Date.now();
+  const allTopics = Object.keys(TOPIC_CONFIG);
+  const SYSTEM_USER_ID = 0; // Usuario especial para pre-generación
+  const QUESTIONS_PER_TOPIC = 15;
+
+  // Distribución 20/60/20
+  const distribution = {
+    'simple': 3,
+    'media': 9,
+    'elaborada': 3
+  };
+
+  let totalGenerated = 0;
+  let totalErrors = 0;
+
+  for (const topicId of allTopics) {
+    const topicTitle = TOPIC_CONFIG[topicId].title;
+    console.log(`\n📚 Procesando: ${topicTitle}`);
+    console.log(`   Objetivo: ${QUESTIONS_PER_TOPIC} preguntas (3S + 9M + 3E)`);
+
+    let topicGenerated = 0;
+
+    // Generar por dificultad
+    for (const [difficulty, count] of Object.entries(distribution)) {
+      console.log(`\n   🎯 Generando ${count} preguntas ${difficulty.toUpperCase()}...`);
+
+      try {
+        // Usar generateQuestionBatch con cacheProb=0 (siempre genera nuevas)
+        const questions = await generateQuestionBatch(SYSTEM_USER_ID, topicId, count, 0);
+
+        topicGenerated += questions.length;
+        totalGenerated += questions.length;
+
+        console.log(`   ✅ ${questions.length}/${count} preguntas ${difficulty} generadas`);
+      } catch (error) {
+        console.error(`   ❌ Error generando ${difficulty}:`, error.message);
+        totalErrors++;
+      }
+
+      // Pausa de 2 segundos entre dificultades para no saturar API
+      await new Promise(resolve => setTimeout(resolve, 2000));
+    }
+
+    console.log(`   📊 Tema completado: ${topicGenerated}/${QUESTIONS_PER_TOPIC} preguntas`);
+  }
+
+  const duration = ((Date.now() - startTime) / 1000 / 60).toFixed(2);
+  const cost = (totalGenerated * 0.0025).toFixed(2);
+
+  console.log('\n🎉 ========================================');
+  console.log('🎉 PRE-GENERACIÓN COMPLETADA');
+  console.log('🎉 ========================================');
+  console.log(`📊 Temas procesados: ${allTopics.length}`);
+  console.log(`✅ Preguntas generadas: ${totalGenerated}`);
+  console.log(`❌ Errores: ${totalErrors}`);
+  console.log(`⏱️  Tiempo total: ${duration} minutos`);
+  console.log(`💰 Costo estimado: $${cost}`);
+  console.log('🎉 ========================================\n');
+}
 
 // ========================
 // INICIALIZACIÓN OPTIMIZADA
@@ -2690,6 +2764,20 @@ async function startServer() {
       }, 30 * 60 * 1000); // 30 minutos
 
       console.log('⏰ Limpieza automática programada cada 30 minutos\n');
+
+      // PRE-GENERACIÓN MENSUAL: Día 1 de cada mes a las 3:00 AM
+      cron.schedule('0 3 1 * *', async () => {
+        console.log('📅 Cron: Iniciando pre-generación mensual...');
+        try {
+          await preGenerateMonthlyCache();
+        } catch (error) {
+          console.error('❌ Error en pre-generación mensual:', error);
+        }
+      }, {
+        timezone: "Europe/Madrid"  // Ajusta a tu zona horaria
+      });
+
+      console.log('📅 Pre-generación mensual programada: Día 1 a las 3:00 AM\n');
     });
     
   } catch (error) {
