@@ -473,17 +473,41 @@ function advancedQuestionValidation(question, sourceChunks = []) {
 
   // 5. VALIDACIÓN ESPECÍFICA POR DIFICULTAD
   const difficulty = question.difficulty;
+  const questionWords = question.question.split(/\s+/).length;
 
   if (difficulty === 'simple') {
-    // Preguntas simples deben ser cortas y directas
-    if (question.question.length > 150) {
+    // Preguntas simples: 8-15 palabras
+    if (questionWords > 20) {
       issues.push('simple_question_too_long');
+      score -= 15;
+    } else if (questionWords < 6) {
+      issues.push('simple_question_too_short');
+      score -= 10;
+    }
+  }
+
+  if (difficulty === 'media') {
+    // Preguntas medias: 15-25 palabras
+    if (questionWords > 35) {
+      issues.push('media_question_too_long');
+      score -= 10;
+    } else if (questionWords < 10) {
+      issues.push('media_question_too_short');
       score -= 10;
     }
   }
 
   if (difficulty === 'elaborada') {
-    // Preguntas elaboradas deben tener opciones más detalladas
+    // Preguntas elaboradas: 25-40 palabras
+    if (questionWords < 20) {
+      issues.push('elaborated_question_too_short');
+      score -= 15;
+    } else if (questionWords > 50) {
+      issues.push('elaborated_question_too_long');
+      score -= 10;
+    }
+
+    // Opciones deben ser detalladas
     const avgOptionLength = options.reduce((sum, o) => sum + o.length, 0) / 4;
     if (avgOptionLength < 30) {
       issues.push('elaborated_options_too_simple');
@@ -760,7 +784,7 @@ OBJETIVO: Genera 2 preguntas (1 por fragmento) sobre conceptos DIFERENTES.
 INSTRUCCIONES:
 
 1. IDENTIFICA concepto clave por fragmento: plazos, temperaturas, rangos, definiciones, porcentajes, clasificaciones
-2. FORMULA pregunta directa (10-20 palabras): "Según [normativa], ¿cuál/qué [dato específico]?"
+2. FORMULA pregunta CORTA y directa (8-15 palabras): "Según [normativa], ¿cuál/qué [dato específico]?"
 3. RESPUESTA CORRECTA: La información DEBE estar en el fragmento (puedes reformular, pero NO inventes datos)
 4. CREA 3 DISTRACTORES plausibles:
    - Cifra próxima alterada (2-8°C → 0-4°C, 4-10°C, 8-15°C)
@@ -894,7 +918,7 @@ INSTRUCCIONES:
 
 1. IDENTIFICA contenido que permita pregunta compleja (NO solo procedimientos)
 2. ELIGE tipo de pregunta según el contenido (varía entre los 8 tipos)
-3. FORMULA pregunta (15-30 palabras) que requiera análisis profundo - VARÍA la fórmula
+3. FORMULA pregunta LARGA y compleja (25-40 palabras) que requiera análisis profundo - VARÍA la fórmula
 4. RESPUESTA CORRECTA: La información DEBE estar en el fragmento (puedes reformular, pero NO inventes datos)
 5. CREA 3 DISTRACTORES sofisticados:
    - Respuesta parcial (omite elementos críticos)
