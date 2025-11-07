@@ -1014,8 +1014,10 @@ function addToBuffer(userId, topicId, questionData, difficulty, cacheId = null) 
 function getFromBuffer(userId, topicId) {
   const now = Date.now();
 
-  try {
-    const stmt = db.prepare(`
+  // Usar transacción para prevenir race conditions
+  // SELECT + DELETE debe ser atómico para evitar que múltiples requests obtengan la misma pregunta
+  const getAndDeleteQuestion = db.transaction(() => {
+    const selectStmt = db.prepare(`
       SELECT id, question_data, question_cache_id, difficulty
       FROM user_question_buffer
       WHERE user_id = ?
@@ -1025,40 +1027,48 @@ function getFromBuffer(userId, topicId) {
       LIMIT 1
     `);
 
-    const result = stmt.get(userId, topicId, now);
+    const result = selectStmt.get(userId, topicId, now);
 
-    if (result) {
-      let questionData = null;
-
-      // Intentar parsear JSON de forma segura
-      try {
-        questionData = JSON.parse(result.question_data);
-      } catch (parseError) {
-        console.error('Error parseando question_data del buffer:', parseError);
-        // Eliminar pregunta corrupta del buffer
-        db.prepare('DELETE FROM user_question_buffer WHERE id = ?').run(result.id);
-        return null;
-      }
-
-      // Validar que tiene los campos necesarios
-      if (!questionData || !questionData.question || !questionData.options) {
-        console.error('Question data del buffer no tiene campos requeridos');
-        db.prepare('DELETE FROM user_question_buffer WHERE id = ?').run(result.id);
-        return null;
-      }
-
-      // Remove from buffer after retrieving (solo si es válido)
-      db.prepare('DELETE FROM user_question_buffer WHERE id = ?').run(result.id);
-
-      return {
-        question: questionData,
-        cacheId: result.question_cache_id
-      };
+    if (!result) {
+      return null;
     }
 
-    return null;
+    // Parsear y validar JSON
+    let questionData = null;
+
+    try {
+      questionData = JSON.parse(result.question_data);
+
+      // Validar estructura de la pregunta
+      if (!questionData ||
+          typeof questionData !== 'object' ||
+          !questionData.question ||
+          !Array.isArray(questionData.options) ||
+          questionData.options.length !== 4 ||
+          typeof questionData.correct !== 'number') {
+        throw new Error('Estructura de pregunta inválida');
+      }
+
+    } catch (parseError) {
+      console.error('Error parseando/validando question_data del buffer:', parseError);
+      // Eliminar pregunta corrupta del buffer
+      db.prepare('DELETE FROM user_question_buffer WHERE id = ?').run(result.id);
+      return null;
+    }
+
+    // DELETE dentro de la transacción (atómico con el SELECT)
+    db.prepare('DELETE FROM user_question_buffer WHERE id = ?').run(result.id);
+
+    return {
+      question: questionData,
+      cacheId: result.question_cache_id
+    };
+  });
+
+  try {
+    return getAndDeleteQuestion();
   } catch (error) {
-    console.error('Error obteniendo pregunta del buffer:', error);
+    console.error('Error en transacción getFromBuffer:', error);
     return null;
   }
 }
