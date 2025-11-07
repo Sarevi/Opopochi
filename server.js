@@ -728,9 +728,9 @@ function parseClaudeResponse(responseText) {
 // PROMPTS OPTIMIZADOS - 3 NIVELES: Simple (20%), Media (60%), Elaborada (20%)
 
 // PROMPT SIMPLE (20% - Genera 2 preguntas, 1 por fragmento) - PREGUNTAS DIRECTAS
-const CLAUDE_PROMPT_SIMPLE = `Eres evaluador experto en OPOSICIONES de Técnico en Farmacia del Servicio Andaluz de Salud.
+const CLAUDE_PROMPT_SIMPLE = `Eres evaluador experto en OPOSICIONES de Técnico en Farmacia del SERGAS (Servicio Gallego de Salud).
 
-CONTEXTO: Generarás preguntas de CONOCIMIENTOS DIRECTOS (nivel básico) basadas en datos literales del texto. Este tipo representa el 20% de exámenes reales y evalúa memorización de conceptos clave.
+CONTEXTO: Generarás preguntas SIMPLES (dificultad básica). Este tipo representa el 20% de las preguntas que se generan. Evalúan memorización de datos objetivos, definiciones y conceptos fundamentales que aparecen LITERALMENTE en los apuntes.
 
 === FRAGMENTO 1 ===
 {{CHUNK_1}}
@@ -759,30 +759,30 @@ OBJETIVO: Genera 2 preguntas (1 por fragmento) sobre conceptos DIFERENTES.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 INSTRUCCIONES:
 
-1. IDENTIFICA concepto clave por fragmento (plazos, temperaturas, definiciones)
-2. FORMULA pregunta directa: "Según [normativa], ¿[dato específico]?" (10-20 palabras)
-3. RESPUESTA CORRECTA: debe estar literalmente en el texto
+1. IDENTIFICA concepto clave por fragmento: plazos, temperaturas, rangos, definiciones, porcentajes, clasificaciones
+2. FORMULA pregunta directa (10-20 palabras): "Según [normativa], ¿cuál/qué [dato específico]?"
+3. RESPUESTA CORRECTA: DEBE estar LITERALMENTE escrita en el fragmento - NO inventes NADA
 4. CREA 3 DISTRACTORES plausibles:
-   - Cifra próxima alterada (ej: 2-8°C → usar 0-4°C, 4-10°C, 8-15°C)
-   - Dato de contexto relacionado pero incorrecto
+   - Cifra próxima alterada (2-8°C → 0-4°C, 4-10°C, 8-15°C)
+   - Dato de otro contexto relacionado
    - Error común de estudiantes
-   REGLA: Todos deben parecer correctos a primera vista
-5. EXPLICACIÓN: máx 15 palabras, cita directa normativa
+5. EXPLICACIÓN: máx 15 palabras, cita directa
+
+⚠️ CRÍTICO - RESPUESTA EN EL TEXTO:
+SOLO usa datos que aparecen LITERALMENTE en el fragmento. Si no encuentras un dato objetivo claro, busca otro concepto. NUNCA inventes cifras, plazos o datos.
 
 PROHIBIDO:
 ✗ Narrativas ("un técnico recibe...")
-✗ Distractores absurdos (-50°C, 500°C)
 ✗ Inventar datos no documentados
-✗ Códigos ATC completos
-✗ Marcas comerciales
+✗ Distractores absurdos
 
 RESPONDE SOLO JSON:
 {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"simple","page_reference":""}]}`;
 
-// PROMPT MEDIA (60% - Genera 2 preguntas, 1 por fragmento) - APLICACIÓN ACADÉMICA
-const CLAUDE_PROMPT_MEDIA = `Eres evaluador experto en OPOSICIONES de Técnico en Farmacia del Servicio Andaluz de Salud.
+// PROMPT MEDIA (60% - Genera 2 preguntas, 1 por fragmento) - NIVEL INTERMEDIO
+const CLAUDE_PROMPT_MEDIA = `Eres evaluador experto en OPOSICIONES de Técnico en Farmacia del SERGAS (Servicio Gallego de Salud).
 
-CONTEXTO: Generarás preguntas de APLICACIÓN DE CONOCIMIENTOS (nivel intermedio) basadas en protocolos y procedimientos. Este tipo representa el 60% de exámenes reales y evalúa cómo aplicar normativa en situaciones reales.
+CONTEXTO: Generarás preguntas MEDIAS (dificultad intermedia). Este tipo representa el 60% de las preguntas que se generan. Evalúan comprensión, aplicación y análisis de conceptos que aparecen en los apuntes. NO solo protocolos - también características, funciones, clasificaciones, comparaciones, relaciones causa-efecto, etc.
 
 === FRAGMENTO 1 ===
 {{CHUNK_1}}
@@ -790,50 +790,68 @@ CONTEXTO: Generarás preguntas de APLICACIÓN DE CONOCIMIENTOS (nivel intermedio
 === FRAGMENTO 2 ===
 {{CHUNK_2}}
 
-OBJETIVO: Genera 2 preguntas (1 por fragmento) sobre aplicaciones DIFERENTES.
+OBJETIVO: Genera 2 preguntas (1 por fragmento) sobre temas DIFERENTES y con variedad de enfoques.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📚 EJEMPLO DE PREGUNTA EXCELENTE (sigue este estilo):
-{
-  "question": "¿Qué establece el protocolo de cadena de frío ante vacunas que han superado los 8°C durante el transporte?",
-  "options": [
-    "A) Rechazo inmediato del lote completo sin excepciones",
-    "B) Aceptación si el tiempo no supera las 2 horas y hay certificado de calidad",
-    "C) Cuarentena de 24 horas y análisis individual de cada vial",
-    "D) Aceptación si la temperatura no ha superado los 10°C"
-  ],
-  "correct": 0,
-  "explanation": "Protocolo cadena frío: rechazo si >8°C independientemente del tiempo",
-  "difficulty": "media",
-  "page_reference": "Protocolo cadena frío, apartado 3.2"
-}
+📚 TIPOS DE PREGUNTAS MEDIAS (varía el tipo):
+
+TIPO 1 - Características/Propiedades:
+"¿Qué características definen a los medicamentos fotosensibles según su clasificación?"
+
+TIPO 2 - Funciones/Objetivos:
+"¿Cuál es la función principal del sistema de trazabilidad farmacéutica?"
+
+TIPO 3 - Procedimientos/Protocolos:
+"¿Qué establece el protocolo ante vacunas que superan 8°C?"
+
+TIPO 4 - Clasificaciones/Categorías:
+"¿Cómo se clasifican los residuos sanitarios según su peligrosidad?"
+
+TIPO 5 - Comparaciones/Diferencias:
+"¿En qué se diferencia una fórmula magistral de un preparado oficinal?"
+
+TIPO 6 - Requisitos/Condiciones:
+"¿Qué requisitos debe cumplir el etiquetado de medicamentos reacondicionados?"
+
+TIPO 7 - Causas/Consecuencias:
+"¿Qué consecuencias tiene la ruptura de la cadena de frío en medicamentos termolábiles?"
+
+TIPO 8 - Indicaciones/Contraindicaciones:
+"¿Cuándo está indicada la dispensación de medicamentos en dosis unitarias?"
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 INSTRUCCIONES:
 
-1. IDENTIFICA protocolo/procedimiento aplicable del fragmento
-2. FORMULA pregunta: "¿Qué establece [protocolo] ante [situación]?" (15-25 palabras)
-3. RESPUESTA CORRECTA: acción completa que establece la normativa
-4. CREA 3 DISTRACTORES tipo procedimiento:
-   - Acción parcialmente correcta (omite paso crítico)
-   - Acción excesiva (añade requisitos no exigidos)
-   - Práctica común pero técnicamente incorrecta
-   REGLA: Todos deben sonar profesionales y plausibles
-5. EXPLICACIÓN: máx 18 palabras, cita protocolo específico
+1. IDENTIFICA el concepto/tema del fragmento (NO solo protocolos)
+2. ELIGE tipo de pregunta adecuado según el contenido (varía entre los 8 tipos)
+3. FORMULA pregunta (15-25 palabras) - NO uses siempre la misma fórmula
+4. RESPUESTA CORRECTA: DEBE estar TEXTUALMENTE en el fragmento - NO inventes
+5. CREA 3 DISTRACTORES plausibles según tipo:
+   - Características: atributos similares pero de otro concepto
+   - Funciones: objetivos parciales o de sistemas relacionados
+   - Procedimientos: acciones parciales, excesivas o incorrectas
+   - Clasificaciones: categorías próximas o confundibles
+   - Comparaciones: diferencias invertidas o mezcladas
+6. EXPLICACIÓN: máx 18 palabras
+
+⚠️ CRÍTICO - VARIEDAD Y PRECISIÓN:
+- NO uses siempre "¿Qué establece [protocolo]...?" - VARÍA el tipo de pregunta
+- TODO debe estar LITERALMENTE en el fragmento
+- Si no hay suficiente info para un tipo, usa otro
+- Las 2 preguntas deben ser de tipos DIFERENTES si es posible
 
 PROHIBIDO:
-✗ Narrativas extensas ("durante tu turno, recibes un lote que...")
-✗ Distractores obviamente incorrectos
-✗ Inventar protocolos no mencionados
-✗ Situaciones con datos ficticios
+✗ Narrativas ("durante tu turno, recibes...")
+✗ Inventar datos, protocolos o procedimientos
+✗ Usar siempre la misma fórmula de pregunta
 
 RESPONDE SOLO JSON:
 {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"media","page_reference":""}]}`;
 
-// PROMPT ELABORADA (20% - Genera 2 preguntas, 1 por fragmento) - CASOS COMPLEJOS
-const CLAUDE_PROMPT_ELABORADA = `Eres evaluador experto en OPOSICIONES de Técnico en Farmacia del Servicio Andaluz de Salud.
+// PROMPT ELABORADA (20% - Genera 2 preguntas, 1 por fragmento) - NIVEL AVANZADO
+const CLAUDE_PROMPT_ELABORADA = `Eres evaluador experto en OPOSICIONES de Técnico en Farmacia del SERGAS (Servicio Gallego de Salud).
 
-CONTEXTO: Generarás preguntas COMPLEJAS (nivel avanzado) que requieren conocer múltiples criterios y tomar decisiones técnicas. Este tipo representa el 20% de exámenes reales y evalúa razonamiento profesional y conocimiento profundo.
+CONTEXTO: Generarás preguntas ELABORADAS (dificultad avanzada). Este tipo representa el 20% de las preguntas que se generan. Requieren análisis profundo, integración de múltiples conceptos y razonamiento complejo sobre contenidos de los apuntes. NO solo procedimientos complejos - también análisis de criterios, síntesis de información, evaluación de situaciones, etc.
 
 === FRAGMENTO 1 ===
 {{CHUNK_1}}
@@ -841,48 +859,62 @@ CONTEXTO: Generarás preguntas COMPLEJAS (nivel avanzado) que requieren conocer 
 === FRAGMENTO 2 ===
 {{CHUNK_2}}
 
-OBJETIVO: Genera 2 preguntas (1 por fragmento) sobre áreas DIFERENTES (Recepción, Elaboración, Dispensación, Control calidad, Trazabilidad, etc.).
+OBJETIVO: Genera 2 preguntas (1 por fragmento) sobre temas DIFERENTES con variedad de enfoques complejos.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📚 EJEMPLO DE PREGUNTA EXCELENTE (sigue este estilo):
-{
-  "question": "¿Qué factores determinan el rechazo de un lote de medicamentos termolábiles en recepción según protocolo de calidad?",
-  "options": [
-    "A) Temperatura superior a 8°C en cualquier momento del transporte, independientemente de la duración o certificación",
-    "B) Temperatura entre 8-10°C durante más de 30 minutos, incluso con certificado de calidad vigente",
-    "C) Ausencia de registro de temperatura continuo, aunque la temperatura final sea correcta",
-    "D) Temperatura superior a 8°C solo si el tiempo acumulado supera las 4 horas y no hay certificado"
-  ],
-  "correct": 0,
-  "explanation": "Protocolo de calidad: rechazo inmediato si >8°C sin considerar tiempo ni certificación",
-  "difficulty": "elaborada",
-  "page_reference": "Protocolo calidad medicamentos termolábiles, sección 4"
-}
+📚 TIPOS DE PREGUNTAS ELABORADAS (varía el tipo):
+
+TIPO 1 - Análisis de Criterios Múltiples:
+"¿Qué criterios conjuntos determinan la clasificación de un medicamento como estupefaciente?"
+
+TIPO 2 - Integración de Conceptos:
+"¿Qué relación existe entre la termoestabilidad de un principio activo y su forma de almacenamiento en el servicio de farmacia?"
+
+TIPO 3 - Evaluación de Situaciones:
+"¿En qué circunstancias está justificada la dispensación sin receta de un medicamento sujeto a prescripción?"
+
+TIPO 4 - Comparación Compleja:
+"¿Qué diferencias fundamentales existen entre la elaboración de una nutrición parenteral y una fórmula magistral estéril?"
+
+TIPO 5 - Consecuencias y Cadenas Causales:
+"¿Qué consecuencias en cadena puede tener la ruptura del sistema de trazabilidad en un lote de medicamentos?"
+
+TIPO 6 - Procedimientos Complejos Multi-paso:
+"¿Qué factores determinan el rechazo de un lote en recepción según protocolo de calidad?"
+
+TIPO 7 - Análisis de Excepciones:
+"¿En qué casos excepcionales puede almacenarse un medicamento fuera de sus condiciones habituales de conservación?"
+
+TIPO 8 - Síntesis de Normativa:
+"¿Qué requisitos acumulativos debe cumplir un medicamento para ser dispensado en dosis unitarias?"
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 INSTRUCCIONES:
 
-1. IDENTIFICA procedimiento complejo que requiere conocer múltiples criterios
-2. FORMULA pregunta: "¿Qué factores/criterios/requisitos determinan [decisión técnica]?" (15-30 palabras)
-3. RESPUESTA CORRECTA: criterio completo y exacto según normativa
-4. CREA 3 DISTRACTORES sofisticados:
-   - Criterio parcialmente correcto (incluye algunos factores pero omite el crítico)
-   - Práctica común en farmacia pero técnicamente incorrecta según normativa
-   - Criterio excesivo (añade condiciones no exigidas que parecen lógicas)
+1. IDENTIFICA contenido que permita pregunta compleja (NO solo procedimientos)
+2. ELIGE tipo de pregunta según el contenido (varía entre los 8 tipos)
+3. FORMULA pregunta (15-30 palabras) que requiera análisis profundo - VARÍA la fórmula
+4. RESPUESTA CORRECTA: DEBE estar COMPLETA Y TEXTUALMENTE en el fragmento
+5. CREA 3 DISTRACTORES sofisticados:
+   - Respuesta parcial (omite elementos críticos)
+   - Práctica común pero técnicamente incorrecta
+   - Criterio excesivo (añade requisitos no exigidos)
+   - Confusión de conceptos relacionados
    REGLA: Deben requerir conocimiento profundo para descartar
-5. EXPLICACIÓN: máx 20 palabras, cita normativa/protocolo específico
+6. EXPLICACIÓN: máx 20 palabras
 
-CARACTERÍSTICAS PREGUNTAS ELABORADAS:
-✓ Requieren conocer 2+ criterios simultáneos
-✓ Implican toma de decisiones técnicas
-✓ Distinguen entre práctica común y normativa estricta
-✓ Evalúan casos con múltiples variables
+⚠️ CRÍTICO - VARIEDAD Y PRECISIÓN:
+- NO uses siempre "¿Qué factores determinan...?" - VARÍA el tipo
+- TODO debe estar LITERALMENTE en el fragmento
+- Requieren integrar 2+ conceptos del texto
+- Las 2 preguntas deben ser de tipos DIFERENTES si es posible
+- Si el fragmento no permite pregunta compleja, haz una MEDIA difícil
 
 PROHIBIDO:
-✗ Narrativas largas con historias complejas
-✗ Distractores fácilmente descartables
-✗ Inventar criterios no documentados
-✗ Situaciones irreales o exageradas
+✗ Narrativas largas con historias
+✗ Inventar criterios, procedimientos o situaciones
+✗ Usar siempre la misma fórmula de pregunta
+✗ Situaciones irreales
 
 RESPONDE SOLO JSON:
 {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"elaborada","page_reference":""}]}`;
