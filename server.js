@@ -2069,9 +2069,10 @@ async function generateQuestionBatch(userId, topicId, count = 3, cacheProb = 0.6
         const questionsData = parseClaudeResponse(responseText);
 
         if (questionsData?.questions?.length > 0) {
-          // Tomar hasta 2 preguntas del batch
+          // Procesar TODAS las preguntas generadas (optimización: aprovechar 100%)
           const needed = Math.min(2, count - questions.length);
-          for (let i = 0; i < needed && i < questionsData.questions.length; i++) {
+
+          for (let i = 0; i < questionsData.questions.length; i++) {
             const q = questionsData.questions[i];
 
             // FASE 1: Validación básica
@@ -2093,10 +2094,16 @@ async function generateQuestionBatch(userId, topicId, count = 3, cacheProb = 0.6
               q._sourceTopic = topicId;
               q._qualityScore = finalScore;
 
-              // Guardar en caché
+              // SIEMPRE guardar en caché (aprovecha 100% de preguntas generadas)
               db.saveToCacheAndTrack(userId, topicId, difficulty, q, 'study');
 
-              batchQuestions.push(q);
+              // Solo añadir a batchQuestions las que necesitamos para el buffer
+              if (batchQuestions.length < needed) {
+                batchQuestions.push(q);
+                console.log(`   ✅ Pregunta ${batchQuestions.length}/${needed} añadida al buffer`);
+              } else {
+                console.log(`   💾 Pregunta extra guardada solo en caché (aprovechamiento 100%)`);
+              }
             } else {
               console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 70)`);
             }
