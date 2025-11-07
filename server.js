@@ -191,16 +191,22 @@ function calculateDelay(attempt, config = IMPROVED_CLAUDE_CONFIG) {
 }
 
 async function callClaudeWithImprovedRetry(fullPrompt, maxTokens = 700, questionType = 'media', questionsPerCall = 2, config = IMPROVED_CLAUDE_CONFIG) {
-  let lastError = null;
+  const ABSOLUTE_TIMEOUT = 60000; // 60 segundos máximo absoluto
 
-  for (let attempt = 1; attempt <= config.maxRetries; attempt++) {
-    try {
-      console.log(`🤖 Intento ${attempt}/${config.maxRetries} - Generando ${questionsPerCall} preguntas ${questionType}...`);
+  // Envolver toda la lógica de retry en un timeout absoluto
+  const retryWithTimeout = Promise.race([
+    // Lógica de retry normal
+    (async () => {
+      let lastError = null;
 
-      // Determinar temperatura según dificultad
-      const temperature = TEMPERATURE_CONFIG[questionType] || 0.5;
+      for (let attempt = 1; attempt <= config.maxRetries; attempt++) {
+        try {
+          console.log(`🤖 Intento ${attempt}/${config.maxRetries} - Generando ${questionsPerCall} preguntas ${questionType}...`);
 
-      const response = await anthropic.messages.create({
+          // Determinar temperatura según dificultad
+          const temperature = TEMPERATURE_CONFIG[questionType] || 0.5;
+
+          const response = await anthropic.messages.create({
         model: "claude-haiku-4-5-20251001", // Claude Haiku 4.5 - Rápido, económico y capaz
         max_tokens: maxTokens, // Variable según tipo de pregunta
         temperature: temperature,  // Temperatura variable según dificultad
@@ -252,30 +258,42 @@ async function callClaudeWithImprovedRetry(fullPrompt, maxTokens = 700, question
         }]
       });
 
-      console.log(`✅ ${questionsPerCall} preguntas ${questionType} generadas en intento ${attempt}`);
-      return response;
+          console.log(`✅ ${questionsPerCall} preguntas ${questionType} generadas en intento ${attempt}`);
+          return response;
 
-    } catch (error) {
-      lastError = error;
-      console.error(`❌ Intento ${attempt} fallido:`, {
-        status: error.status,
-        message: error.message,
-        type: error.type,
-        error: error.error
-      });
+        } catch (error) {
+          lastError = error;
+          console.error(`❌ Intento ${attempt} fallido:`, {
+            status: error.status,
+            message: error.message,
+            type: error.type,
+            error: error.error
+          });
 
-      if (attempt === config.maxRetries) {
-        console.log(`💀 Todos los ${config.maxRetries} intentos fallaron`);
-        break;
+          if (attempt === config.maxRetries) {
+            console.log(`💀 Todos los ${config.maxRetries} intentos fallaron`);
+            break;
+          }
+
+          const waitTime = calculateDelay(attempt, config);
+          console.log(`⏳ Esperando ${waitTime/1000}s antes del siguiente intento...`);
+          await new Promise(resolve => setTimeout(resolve, waitTime));
+        }
       }
 
-      const waitTime = calculateDelay(attempt, config);
-      console.log(`⏳ Esperando ${waitTime/1000}s antes del siguiente intento...`);
-      await new Promise(resolve => setTimeout(resolve, waitTime));
-    }
-  }
+      throw lastError;
+    })(),
 
-  throw lastError;
+    // Timeout absoluto
+    new Promise((_, reject) =>
+      setTimeout(() => {
+        console.error('⏰ TIMEOUT: La generación tardó más de 60 segundos');
+        reject(new Error('Timeout: La generación de preguntas tardó demasiado (>60s). Por favor, intenta de nuevo.'));
+      }, ABSOLUTE_TIMEOUT)
+    )
+  ]);
+
+  return retryWithTimeout;
 }
 
 // ========================
@@ -634,8 +652,30 @@ function selectSpacedChunks(userId, topicId, chunks, count = 2) {
 }
 
 // ========================
-// PARSING OPTIMIZADO
+// VALIDACIÓN Y PARSING
 // ========================
+
+/**
+ * Extrae y valida el texto de la respuesta de Claude
+ * @throws Error si la respuesta es inválida o vacía
+ */
+function extractClaudeResponseText(response) {
+  if (!response) {
+    throw new Error('Respuesta de Claude es null o undefined');
+  }
+
+  if (!response.content || !Array.isArray(response.content) || response.content.length === 0) {
+    throw new Error('Respuesta de Claude sin contenido válido');
+  }
+
+  const textContent = response.content[0]?.text;
+
+  if (!textContent || typeof textContent !== 'string' || textContent.trim().length === 0) {
+    throw new Error('Respuesta de Claude vacía o inválida');
+  }
+
+  return textContent;
+}
 
 function parseClaudeResponse(responseText) {
   // Log para debug (primeros 300 caracteres)
@@ -733,22 +773,22 @@ function parseClaudeResponse(responseText) {
       return { questions };
     }
 
-    // Pregunta de emergencia optimizada
+    // Pregunta de emergencia con mensaje de error técnico
     console.log('🚨 Todos los métodos de parsing fallaron - usando pregunta de emergencia');
 
     return {
       questions: [{
-        question: "¿Cuál es el principio fundamental que rige la administración de justicia según la Constitución Española?",
+        question: "⚠️ ERROR TÉCNICO: No se pudo generar una pregunta válida del contenido solicitado",
         options: [
-          "A) La justicia emana del pueblo y se administra por Jueces y Tribunales independientes (art. 117 CE)",
-          "B) La justicia es administrada directamente por el Gobierno central",
-          "C) Los jueces dependen jerárquicamente del Ministerio de Justicia",
-          "D) La administración de justicia corresponde a las Comunidades Autónomas"
+          "A) Por favor, recarga la página e intenta de nuevo",
+          "B) Si el problema persiste, contacta al administrador",
+          "C) Puede ser un problema temporal del servicio de IA",
+          "D) Intenta con otro tema mientras se resuelve el problema"
         ],
         correct: 0,
-        explanation: "La respuesta correcta es A. El artículo 117 de la Constitución establece que la justicia emana del pueblo y se administra en nombre del Rey por Jueces y Tribunales independientes, inamovibles, responsables y sometidos únicamente al imperio de la ley.",
+        explanation: "Error técnico: El sistema no pudo generar preguntas válidas del material de estudio. Esto puede ser temporal. Por favor, recarga la página o intenta con otro tema. Si el problema continúa, contacta al administrador.",
         difficulty: "media",
-        page_reference: "Artículo 117 CE"
+        page_reference: "Error técnico - Sistema"
       }]
     };
   }
@@ -1087,25 +1127,69 @@ async function getRandomChunkFromTopics(topics) {
 
 // Middleware para verificar si el usuario está autenticado
 function requireAuth(req, res, next) {
-  console.log('🔒 requireAuth - Session ID:', req.sessionID, '- User ID en sesión:', req.session.userId);
+  console.log('🔒 requireAuth - Session ID:', req.sessionID, '- User ID en sesión:', req.session?.userId);
   console.log('🔒 requireAuth - Cookie header:', req.headers.cookie);
 
-  if (!req.session.userId) {
-    console.log('❌ No hay userId en la sesión - Rechazando petición');
-    return res.status(401).json({ error: 'No autenticado', requiresLogin: true });
+  // Validar que la sesión existe
+  if (!req.session || !req.session.userId) {
+    console.log('❌ No hay sesión o userId - Rechazando petición');
+    return res.status(401).json({
+      error: 'Sesión expirada',
+      requiresLogin: true,
+      message: 'Tu sesión ha expirado. Por favor, inicia sesión de nuevo.'
+    });
+  }
+
+  // Verificar tiempo restante de sesión y renovar automáticamente si es necesario
+  try {
+    const expiresAt = req.session.cookie._expires;
+    const now = Date.now();
+    const timeLeft = expiresAt ? expiresAt - now : 0;
+
+    // Si quedan menos de 5 minutos, renovar sesión automáticamente
+    if (timeLeft > 0 && timeLeft < 5 * 60 * 1000) {
+      console.log('🔄 Renovando sesión automáticamente (quedan', Math.round(timeLeft / 1000), 'segundos)');
+      req.session.touch();
+    }
+
+    // Si la sesión ya expiró
+    if (timeLeft <= 0) {
+      console.log('❌ Sesión expirada completamente');
+      return res.status(401).json({
+        error: 'Sesión expirada',
+        requiresLogin: true,
+        message: 'Tu sesión ha expirado. Por favor, inicia sesión de nuevo.'
+      });
+    }
+  } catch (error) {
+    console.error('Error verificando expiración de sesión:', error);
+    // Continuar aunque falle la verificación de tiempo
   }
 
   // Verificar que el usuario existe y está activo
   const user = db.getUserById(req.session.userId);
+
   if (!user) {
     console.log('❌ Usuario no encontrado en DB');
-    req.session.destroy();
-    return res.status(401).json({ error: 'Usuario no encontrado', requiresLogin: true });
+    // Destruir sesión inválida de forma segura
+    if (req.session && typeof req.session.destroy === 'function') {
+      req.session.destroy();
+    }
+    return res.status(401).json({
+      error: 'Usuario no encontrado',
+      requiresLogin: true,
+      message: 'Tu cuenta ya no existe. Por favor, contacta al administrador.'
+    });
   }
 
   if (user.estado === 'bloqueado') {
     console.log('❌ Usuario bloqueado:', user.username);
-    return res.status(403).json({ error: 'Cuenta bloqueada. Contacta al administrador.' });
+    return res.status(403).json({
+      error: 'Cuenta bloqueada',
+      message: 'Tu cuenta está pendiente de activación por el administrador. Por favor, contacta a través de correo para activar tu cuenta.',
+      requiresActivation: true,
+      contactInfo: process.env.ADMIN_CONTACT || 'Contacta al administrador'
+    });
   }
 
   console.log('✅ requireAuth OK - Usuario:', user.username);
@@ -1497,7 +1581,7 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
 
           try {
             const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.simple, 'simple', 2);
-            const responseText = response.content[0].text;
+            const responseText = extractClaudeResponseText(response);
             const questionsData = parseClaudeResponse(responseText);
 
             if (questionsData?.questions?.length) {
@@ -1579,7 +1663,7 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
 
           try {
             const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.media, 'media', 2);
-            const responseText = response.content[0].text;
+            const responseText = extractClaudeResponseText(response);
             const questionsData = parseClaudeResponse(responseText);
 
             if (questionsData?.questions?.length) {
@@ -1661,7 +1745,7 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
 
           try {
             const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.elaborada, 'elaborada', 2);
-            const responseText = response.content[0].text;
+            const responseText = extractClaudeResponseText(response);
             const questionsData = parseClaudeResponse(responseText);
 
             if (questionsData?.questions?.length) {
@@ -1729,21 +1813,21 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
       return randomizedQuestion;
     });
 
-    // Si no se generaron suficientes preguntas, agregar fallback
+    // Si no se generaron suficientes preguntas, agregar fallback con mensaje de error
     if (finalQuestions.length === 0) {
-      console.log('⚠️ No se generaron preguntas, usando fallback');
+      console.log('⚠️ No se generaron preguntas, usando fallback de error');
       const fallbackQuestion = {
-        question: "¿Cuál es la temperatura de conservación de los medicamentos termolábiles?",
+        question: `⚠️ ERROR: No se pudieron generar preguntas del ${topics.map(t => TOPIC_CONFIG[t]?.title || t).join(', ')}`,
         options: [
-          "A) Entre 2°C y 8°C en frigorífico",
-          "B) Entre 15°C y 25°C a temperatura ambiente",
-          "C) Entre -18°C y -25°C en congelador",
-          "D) Entre 8°C y 15°C en cámara fría"
+          "A) Por favor, intenta de nuevo - Puede ser un problema temporal",
+          "B) Verifica tu conexión a internet y recarga la página",
+          "C) Si el error continúa, contacta al administrador del sistema",
+          "D) Prueba con otro tema mientras se resuelve el problema"
         ],
         correct: 0,
-        explanation: "Los medicamentos termolábiles deben conservarse entre 2°C y 8°C.",
+        explanation: `Error técnico: No se pudieron generar preguntas del tema seleccionado. Esto puede deberse a: 1) Sobrecarga temporal del servicio de IA, 2) Problema de conexión, 3) Error en los materiales de estudio. Por favor, recarga la página e intenta de nuevo. Si el problema persiste, contacta al administrador.`,
         difficulty: "media",
-        page_reference: "Tema de Farmacia"
+        page_reference: "Error técnico - Sistema"
       };
       finalQuestions.push(randomizeQuestionOptions(fallbackQuestion));
     }
@@ -1796,17 +1880,42 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
     
   } catch (error) {
     console.error('❌ Error generando examen:', error);
-    
-    const errorCode = error.status || 500;
-    const errorMessage = errorCode === 529 ? 'Claude temporalmente ocupado' :
-                        errorCode === 429 ? 'Límite de solicitudes alcanzado' :
-                        'Error interno del servidor';
-    
-    res.status(errorCode).json({ 
-      error: errorMessage,
-      retryable: [429, 503, 529].includes(errorCode),
-      waitTime: errorCode === 529 ? 5000 : 3000
-    });
+
+    // Validar que error existe antes de acceder a propiedades
+    const errorCode = error?.status || (error?.message ? 500 : 520);
+    const errorType = error?.type || 'unknown_error';
+
+    // Mensajes específicos con acciones claras
+    const errorInfo = {
+      529: {
+        message: 'El servicio de IA está temporalmente saturado',
+        action: 'Espera 10-15 segundos e intenta de nuevo',
+        retryable: true,
+        waitTime: 10000
+      },
+      429: {
+        message: 'Has alcanzado el límite de solicitudes por minuto',
+        action: 'Espera 30 segundos antes de generar otro examen',
+        retryable: true,
+        waitTime: 30000
+      },
+      503: {
+        message: 'Servicio temporalmente no disponible',
+        action: 'Intenta de nuevo en unos momentos',
+        retryable: true,
+        waitTime: 5000
+      },
+      500: {
+        message: errorType === 'api_error' ? 'Error en servicio de IA' : 'Error generando examen',
+        action: 'Si el problema persiste, contacta al administrador',
+        retryable: true,
+        waitTime: 5000
+      }
+    };
+
+    const response = errorInfo[errorCode] || errorInfo[500];
+
+    res.status(errorCode).json(response);
   }
 });
 
@@ -1979,16 +2088,41 @@ app.post('/api/study/question', requireAuth, async (req, res) => {
   } catch (error) {
     console.error('❌ Error en /api/study/question:', error);
 
-    const errorCode = error.status || 500;
-    const errorMessage = errorCode === 529 ? 'Claude temporalmente ocupado' :
-                        errorCode === 429 ? 'Límite de solicitudes alcanzado' :
-                        'Error generando pregunta';
+    // Validar que error existe antes de acceder a propiedades
+    const errorCode = error?.status || (error?.message ? 500 : 520);
+    const errorType = error?.type || 'unknown_error';
 
-    res.status(errorCode).json({
-      error: errorMessage,
-      retryable: [429, 503, 529].includes(errorCode),
-      waitTime: errorCode === 529 ? 5000 : 3000
-    });
+    // Mensajes específicos con acciones claras
+    const errorInfo = {
+      529: {
+        message: 'El servicio de IA está temporalmente saturado',
+        action: 'Espera 10-15 segundos e intenta de nuevo',
+        retryable: true,
+        waitTime: 10000
+      },
+      429: {
+        message: 'Has alcanzado el límite de solicitudes por minuto',
+        action: 'Espera 30 segundos antes de solicitar más preguntas',
+        retryable: true,
+        waitTime: 30000
+      },
+      503: {
+        message: 'Servicio temporalmente no disponible',
+        action: 'Intenta de nuevo en unos momentos',
+        retryable: true,
+        waitTime: 5000
+      },
+      500: {
+        message: errorType === 'api_error' ? 'Error en servicio de IA' : 'Error generando pregunta',
+        action: 'Si el problema persiste, contacta al administrador',
+        retryable: true,
+        waitTime: 5000
+      }
+    };
+
+    const response = errorInfo[errorCode] || errorInfo[500];
+
+    res.status(errorCode).json(response);
   }
 });
 
@@ -2066,7 +2200,7 @@ async function generateQuestionBatch(userId, topicId, count = 3, cacheProb = 0.6
 
       try {
         const response = await callClaudeWithImprovedRetry(fullPrompt, maxTokens, difficulty, 2);
-        const responseText = response.content[0].text;
+        const responseText = extractClaudeResponseText(response);
         const questionsData = parseClaudeResponse(responseText);
 
         if (questionsData?.questions?.length > 0) {
@@ -2388,7 +2522,7 @@ app.post('/api/exam/official', requireAuth, async (req, res) => {
 
       try {
         const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.simple, 'simple', 2);
-        const responseText = response.content[0].text;
+        const responseText = extractClaudeResponseText(response);
         const questionsData = parseClaudeResponse(responseText);
 
         if (questionsData?.questions?.length) {
@@ -2421,7 +2555,7 @@ app.post('/api/exam/official', requireAuth, async (req, res) => {
 
       try {
         const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.media, 'media', 2);
-        const responseText = response.content[0].text;
+        const responseText = extractClaudeResponseText(response);
         const questionsData = parseClaudeResponse(responseText);
 
         if (questionsData?.questions?.length) {
@@ -2454,7 +2588,7 @@ app.post('/api/exam/official', requireAuth, async (req, res) => {
 
       try {
         const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.elaborada, 'elaborada', 2);
-        const responseText = response.content[0].text;
+        const responseText = extractClaudeResponseText(response);
         const questionsData = parseClaudeResponse(responseText);
 
         if (questionsData?.questions?.length) {
