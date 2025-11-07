@@ -88,9 +88,9 @@ const TEMPERATURE_CONFIG = {
 
 // CONFIGURACIÓN DE TOKENS OPTIMIZADA (2 preguntas por llamada)
 const MAX_TOKENS_CONFIG = {
-  simple: 220,      // 2 preguntas × 110 tokens
-  media: 260,       // 2 preguntas × 130 tokens
-  elaborada: 400    // 2 preguntas × 200 tokens
+  simple: 600,      // 2 preguntas × 300 tokens (margen amplio)
+  media: 800,       // 2 preguntas × 400 tokens (margen amplio)
+  elaborada: 1000   // 2 preguntas × 500 tokens (margen amplio)
 };
 
 // Configuración completa de temas - TÉCNICO DE FARMACIA
@@ -474,8 +474,8 @@ function selectSpacedChunks(userId, topicId, chunks, count = 2) {
 // ========================
 
 function parseClaudeResponse(responseText) {
-  // Log para debug (primeros 500 caracteres)
-  console.log('📝 Response preview:', responseText.substring(0, 500).replace(/\n/g, '\\n'));
+  // Log para debug (primeros 300 caracteres)
+  console.log('📝 Response preview:', responseText.substring(0, 300).replace(/\n/g, ' '));
 
   try {
     // Intento 1: Parsear directamente
@@ -495,7 +495,27 @@ function parseClaudeResponse(responseText) {
         console.log('✅ JSON extraído de bloque markdown');
         return parsed;
       } catch (e) {
-        console.log('❌ JSON de markdown inválido:', e.message);
+        console.log('⚠️ JSON de markdown incompleto, intentando reparar...');
+        // Intentar completar JSON truncado
+        let jsonStr = jsonMatch[1].trim();
+
+        // Contar llaves para cerrar
+        const openBraces = (jsonStr.match(/{/g) || []).length;
+        const closeBraces = (jsonStr.match(/}/g) || []).length;
+        const openBrackets = (jsonStr.match(/\[/g) || []).length;
+        const closeBrackets = (jsonStr.match(/]/g) || []).length;
+
+        // Cerrar estructuras abiertas
+        for (let i = 0; i < (openBrackets - closeBrackets); i++) jsonStr += ']';
+        for (let i = 0; i < (openBraces - closeBraces); i++) jsonStr += '}';
+
+        try {
+          const parsed = JSON.parse(jsonStr);
+          console.log('✅ JSON reparado y parseado');
+          return parsed;
+        } catch (e2) {
+          console.log('❌ No se pudo reparar JSON:', e2.message);
+        }
       }
     }
 
@@ -511,25 +531,46 @@ function parseClaudeResponse(responseText) {
         return parsed;
       } catch (e) {
         console.log('❌ JSON de llaves inválido:', e.message);
-        console.log('📄 JSON intentado:', jsonStr.substring(0, 200));
       }
     }
 
-    // Intento 4: Buscar array de questions directamente
-    const questionsMatch = responseText.match(/"questions"\s*:\s*(\[[\s\S]*?\])/);
-    if (questionsMatch) {
+    // Intento 4: Extraer preguntas individuales completas (nuevo método robusto)
+    const questionPattern = /{[\s\S]*?"question"\s*:\s*"([^"]*)"[\s\S]*?"options"\s*:\s*\[([\s\S]*?)\][\s\S]*?"correct"\s*:\s*(\d+)[\s\S]*?"explanation"\s*:\s*"([^"]*)"[\s\S]*?"difficulty"\s*:\s*"([^"]*)"[\s\S]*?"page_reference"\s*:\s*"([^"]*)"\s*}/g;
+    const questions = [];
+    let match;
+
+    while ((match = questionPattern.exec(responseText)) !== null) {
       try {
-        const questions = JSON.parse(questionsMatch[1]);
-        console.log('✅ Array de questions extraído directamente');
-        return { questions };
+        const optionsText = match[2];
+        const options = [];
+        const optionPattern = /"([^"]*)"/g;
+        let optMatch;
+        while ((optMatch = optionPattern.exec(optionsText)) !== null) {
+          options.push(optMatch[1]);
+        }
+
+        if (options.length === 4) {
+          questions.push({
+            question: match[1],
+            options: options,
+            correct: parseInt(match[3]),
+            explanation: match[4],
+            difficulty: match[5],
+            page_reference: match[6]
+          });
+        }
       } catch (e) {
-        console.log('❌ Array de questions inválido:', e.message);
+        console.log('⚠️ Error extrayendo pregunta individual:', e.message);
       }
+    }
+
+    if (questions.length > 0) {
+      console.log(`✅ Extraídas ${questions.length} pregunta(s) completa(s) mediante regex`);
+      return { questions };
     }
 
     // Pregunta de emergencia optimizada
     console.log('🚨 Todos los métodos de parsing fallaron - usando pregunta de emergencia');
-    console.log('📄 Response completo:', responseText);
 
     return {
       questions: [{
