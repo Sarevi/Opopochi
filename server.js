@@ -439,11 +439,15 @@ function advancedQuestionValidation(question, sourceChunks = []) {
   // 3. VALIDACIÓN DE EXPLICACIÓN
   const explanation = question.explanation || '';
 
-  // 3.1 Explicación con frases prohibidas
-  const badPhrases = ['el texto dice', 'según el fragmento', 'la documentación indica', 'los apuntes'];
+  // 3.1 Explicación con frases prohibidas (auto-referencias)
+  const badPhrases = [
+    'el texto dice', 'según el fragmento', 'la documentación indica', 'los apuntes',
+    'el fragmento destaca', 'el fragmento indica', 'el fragmento establece',
+    'en el texto', 'como indica el', 'según se establece'
+  ];
   if (badPhrases.some(phrase => explanation.toLowerCase().includes(phrase))) {
     issues.push('explanation_bad_phrasing');
-    score -= 10;
+    score -= 15;  // Penalización aumentada
   }
 
   // 3.2 Explicación que no menciona conceptos clave de la pregunta
@@ -790,7 +794,9 @@ INSTRUCCIONES:
    - Cifra próxima alterada (2-8°C → 0-4°C, 4-10°C, 8-15°C)
    - Dato de otro contexto relacionado
    - Error común de estudiantes
-5. EXPLICACIÓN: máx 15 palabras, cita directa
+5. EXPLICACIÓN: máx 15 palabras, DIRECTA sin auto-referencias
+   Ejemplo: "Máximo 7 días entre 2-8°C según RD 1345/2007 Art. 8.3"
+   NO escribas: "El fragmento destaca que..." o "Según el texto..."
 
 ⚠️ CRÍTICO - RESPUESTA CORRECTA DEL TEXTO:
 La información de la respuesta CORRECTA debe DERIVARSE del fragmento - puedes reformular pero NO inventes datos.
@@ -800,6 +806,7 @@ PROHIBIDO:
 ✗ Narrativas ("un técnico recibe...")
 ✗ Inventar la respuesta correcta (los distractores SÍ deben ser inventados/incorrectos)
 ✗ Distractores absurdos (extremos irreales)
+✗ Explicaciones con auto-referencias ("el fragmento destaca...", "el texto indica...")
 
 RESPONDE SOLO JSON:
 {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"simple","page_reference":""}]}`;
@@ -857,7 +864,9 @@ INSTRUCCIONES:
    - Procedimientos: acciones parciales, excesivas o incorrectas
    - Clasificaciones: categorías próximas o confundibles
    - Comparaciones: diferencias invertidas o mezcladas
-6. EXPLICACIÓN: máx 18 palabras
+6. EXPLICACIÓN: máx 18 palabras, DIRECTA sin auto-referencias
+   Ejemplo: "Protocolo indica notificar inmediatamente y aislar lote según RD 824/2015"
+   NO escribas: "El fragmento establece que..." o "Como indica el texto..."
 
 ⚠️ CRÍTICO - VARIEDAD Y PRECISIÓN:
 - NO uses siempre "¿Qué establece [protocolo]...?" - VARÍA el tipo de pregunta
@@ -869,6 +878,7 @@ PROHIBIDO:
 ✗ Narrativas ("durante tu turno, recibes...")
 ✗ Inventar la respuesta correcta (los distractores SÍ deben ser inventados/incorrectos)
 ✗ Usar siempre la misma fórmula de pregunta
+✗ Explicaciones con auto-referencias ("el fragmento destaca...", "el texto indica...")
 
 RESPONDE SOLO JSON:
 {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"media","page_reference":""}]}`;
@@ -926,7 +936,9 @@ INSTRUCCIONES:
    - Criterio excesivo (añade requisitos no exigidos)
    - Confusión de conceptos relacionados
    REGLA: Deben requerir conocimiento profundo para descartar
-6. EXPLICACIÓN: máx 20 palabras
+6. EXPLICACIÓN: máx 20 palabras, DIRECTA sin auto-referencias
+   Ejemplo: "Requiere verificar trazabilidad, temperatura y documentación según criterios de calidad RD 1345/2007"
+   NO escribas: "El fragmento indica que se debe..." o "En el texto se establece..."
 
 ⚠️ CRÍTICO - VARIEDAD Y PRECISIÓN:
 - NO uses siempre "¿Qué factores determinan...?" - VARÍA el tipo
@@ -940,6 +952,7 @@ PROHIBIDO:
 ✗ Inventar la respuesta correcta (los distractores SÍ deben ser inventados/incorrectos)
 ✗ Usar siempre la misma fórmula de pregunta
 ✗ Situaciones irreales
+✗ Explicaciones con auto-referencias ("el fragmento destaca...", "el texto indica...")
 
 RESPONDE SOLO JSON:
 {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"elaborada","page_reference":""}]}`;
