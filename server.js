@@ -316,7 +316,7 @@ function randomizeQuestionOptions(question) {
 }
 
 // ========================
-// SISTEMA DE VALIDACIÓN DE CALIDAD
+// SISTEMA DE VALIDACIÓN DE CALIDAD (FASE 2)
 // ========================
 
 function validateQuestionQuality(question) {
@@ -384,6 +384,141 @@ function validateQuestionQuality(question) {
     issues,
     score
   };
+}
+
+/**
+ * POST-VALIDACIÓN AVANZADA (FASE 2)
+ * Valida coherencia, plausibilidad de distractores y calidad general
+ */
+function advancedQuestionValidation(question, sourceChunks = []) {
+  const issues = [];
+  let score = 100;
+
+  // 1. VALIDACIÓN DE COHERENCIA (índice correct)
+  if (question.correct < 0 || question.correct > 3) {
+    issues.push('invalid_correct_index');
+    score -= 30;
+  }
+
+  // 2. VALIDACIÓN DE OPCIONES
+  const options = question.options.map(o => o.substring(3).trim());
+
+  // 2.1 Opciones muy cortas (probable error)
+  const tooShort = options.filter(o => o.length < 5);
+  if (tooShort.length > 0) {
+    issues.push('options_too_short');
+    score -= 15;
+  }
+
+  // 2.2 Opciones muy desbalanceadas en longitud
+  const lengths = options.map(o => o.length);
+  const maxLength = Math.max(...lengths);
+  const minLength = Math.min(...lengths);
+  if (maxLength > minLength * 3) {
+    issues.push('unbalanced_option_lengths');
+    score -= 10;
+  }
+
+  // 2.3 Detectar distractores absurdos (valores extremos)
+  const questionLower = question.question.toLowerCase();
+  if (questionLower.includes('temperatura') || questionLower.includes('°c')) {
+    options.forEach(opt => {
+      const optLower = opt.toLowerCase();
+      // Detectar temperaturas absurdas: <-20°C o >60°C
+      const tempMatch = optLower.match(/(-?\d+)\s*°?\s*c/i);
+      if (tempMatch) {
+        const temp = parseInt(tempMatch[1]);
+        if (temp < -20 || temp > 60) {
+          issues.push('absurd_temperature');
+          score -= 20;
+        }
+      }
+    });
+  }
+
+  // 3. VALIDACIÓN DE EXPLICACIÓN
+  const explanation = question.explanation || '';
+
+  // 3.1 Explicación con frases prohibidas
+  const badPhrases = ['el texto dice', 'según el fragmento', 'la documentación indica', 'los apuntes'];
+  if (badPhrases.some(phrase => explanation.toLowerCase().includes(phrase))) {
+    issues.push('explanation_bad_phrasing');
+    score -= 10;
+  }
+
+  // 3.2 Explicación que no menciona conceptos clave de la pregunta
+  const questionKeywords = extractKeywords(question.question);
+  const explanationKeywords = extractKeywords(explanation);
+  const overlap = questionKeywords.filter(k => explanationKeywords.includes(k)).length;
+  if (overlap === 0 && questionKeywords.length > 2) {
+    issues.push('explanation_unrelated');
+    score -= 15;
+  }
+
+  // 4. VALIDACIÓN DE RESPUESTA CORRECTA EN SOURCE
+  if (sourceChunks.length > 0) {
+    const correctOption = options[question.correct];
+    const sourceText = sourceChunks.join(' ').toLowerCase();
+
+    // Extraer conceptos clave de la opción correcta
+    const correctKeywords = extractKeywords(correctOption);
+    const foundInSource = correctKeywords.filter(k => sourceText.includes(k.toLowerCase())).length;
+
+    // Si menos del 30% de keywords están en el source, es sospechoso
+    if (correctKeywords.length > 0 && (foundInSource / correctKeywords.length) < 0.3) {
+      issues.push('answer_not_in_source');
+      score -= 25;
+    }
+  }
+
+  // 5. VALIDACIÓN ESPECÍFICA POR DIFICULTAD
+  const difficulty = question.difficulty;
+
+  if (difficulty === 'simple') {
+    // Preguntas simples deben ser cortas y directas
+    if (question.question.length > 150) {
+      issues.push('simple_question_too_long');
+      score -= 10;
+    }
+  }
+
+  if (difficulty === 'elaborada') {
+    // Preguntas elaboradas deben tener opciones más detalladas
+    const avgOptionLength = options.reduce((sum, o) => sum + o.length, 0) / 4;
+    if (avgOptionLength < 30) {
+      issues.push('elaborated_options_too_simple');
+      score -= 10;
+    }
+  }
+
+  // 6. BONUS: Pregunta excelente
+  if (score >= 95) {
+    issues.push('excellent_quality');
+  }
+
+  return {
+    isValid: score >= 70, // Mínimo 70 puntos para ser aceptable
+    issues,
+    score: Math.max(0, score),
+    warnings: issues.filter(i => !i.startsWith('excellent'))
+  };
+}
+
+/**
+ * Extrae keywords relevantes de un texto (excluye palabras comunes)
+ */
+function extractKeywords(text) {
+  const stopWords = new Set([
+    'el', 'la', 'los', 'las', 'un', 'una', 'de', 'del', 'en', 'a', 'al',
+    'que', 'es', 'por', 'para', 'con', 'se', 'y', 'o', 'según', 'cual',
+    'cuales', 'cuál', 'cuáles', 'qué', 'como', 'cómo'
+  ]);
+
+  return text
+    .toLowerCase()
+    .replace(/[^\w\sáéíóúñ]/g, ' ')
+    .split(/\s+/)
+    .filter(word => word.length > 3 && !stopWords.has(word));
 }
 
 // ========================
@@ -593,9 +728,9 @@ function parseClaudeResponse(responseText) {
 // PROMPTS OPTIMIZADOS - 3 NIVELES: Simple (20%), Media (60%), Elaborada (20%)
 
 // PROMPT SIMPLE (20% - Genera 2 preguntas, 1 por fragmento) - PREGUNTAS DIRECTAS
-const CLAUDE_PROMPT_SIMPLE = `Experto en oposiciones Técnico Farmacia.
+const CLAUDE_PROMPT_SIMPLE = `Eres evaluador experto en OPOSICIONES de Técnico en Farmacia del Servicio Andaluz de Salud.
 
-GENERA 2 PREGUNTAS directas (1 por fragmento, conceptos DIFERENTES):
+CONTEXTO: Generarás preguntas de CONOCIMIENTOS DIRECTOS (nivel básico) basadas en datos literales del texto. Este tipo representa el 20% de exámenes reales y evalúa memorización de conceptos clave.
 
 === FRAGMENTO 1 ===
 {{CHUNK_1}}
@@ -603,29 +738,51 @@ GENERA 2 PREGUNTAS directas (1 por fragmento, conceptos DIFERENTES):
 === FRAGMENTO 2 ===
 {{CHUNK_2}}
 
-ESTILO OPOSICIÓN:
-✓ "Según el RD 1345/2007, ¿qué plazo máximo establece...?"
-✓ "¿Cuál es la temperatura de conservación para medicamentos termolábiles?"
-✓ "¿Qué normativa regula las fórmulas magistrales?"
+OBJETIVO: Genera 2 preguntas (1 por fragmento) sobre conceptos DIFERENTES.
 
-METODOLOGÍA:
-1. Identifica 1 concepto clave por fragmento (plazos, temperaturas, definiciones)
-2. Pregunta directa académica
-3. Respuesta literal del texto
-4. Distractores: cifras alteradas, plazos incorrectos, conceptos similares
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📚 EJEMPLO DE PREGUNTA EXCELENTE (sigue este estilo):
+{
+  "question": "Según el Real Decreto 1345/2007, ¿cuál es el plazo máximo para la dispensación de fórmulas magistrales acuosas sin conservantes?",
+  "options": [
+    "A) 24 horas desde su elaboración",
+    "B) 7 días conservadas entre 2-8°C",
+    "C) 15 días en condiciones normales",
+    "D) 30 días si se mantienen refrigeradas"
+  ],
+  "correct": 1,
+  "explanation": "RD 1345/2007 Art. 8.3: máximo 7 días entre 2-8°C",
+  "difficulty": "simple",
+  "page_reference": "RD 1345/2007 Art. 8.3"
+}
 
-EXPLICACIÓN (máx 15 palabras):
-✓ "Art. 12.2 establece plazo de 3 meses"
-✗ "El texto dice que..."
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INSTRUCCIONES:
 
-PROHIBIDO: inventar datos, códigos ATC completos, marcas comerciales
+1. IDENTIFICA concepto clave por fragmento (plazos, temperaturas, definiciones)
+2. FORMULA pregunta directa: "Según [normativa], ¿[dato específico]?" (10-20 palabras)
+3. RESPUESTA CORRECTA: debe estar literalmente en el texto
+4. CREA 3 DISTRACTORES plausibles:
+   - Cifra próxima alterada (ej: 2-8°C → usar 0-4°C, 4-10°C, 8-15°C)
+   - Dato de contexto relacionado pero incorrecto
+   - Error común de estudiantes
+   REGLA: Todos deben parecer correctos a primera vista
+5. EXPLICACIÓN: máx 15 palabras, cita directa normativa
 
-JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"simple","page_reference":""}]}`;
+PROHIBIDO:
+✗ Narrativas ("un técnico recibe...")
+✗ Distractores absurdos (-50°C, 500°C)
+✗ Inventar datos no documentados
+✗ Códigos ATC completos
+✗ Marcas comerciales
+
+RESPONDE SOLO JSON:
+{"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"simple","page_reference":""}]}`;
 
 // PROMPT MEDIA (60% - Genera 2 preguntas, 1 por fragmento) - APLICACIÓN ACADÉMICA
-const CLAUDE_PROMPT_MEDIA = `Experto en oposiciones Técnico Farmacia.
+const CLAUDE_PROMPT_MEDIA = `Eres evaluador experto en OPOSICIONES de Técnico en Farmacia del Servicio Andaluz de Salud.
 
-GENERA 2 PREGUNTAS de aplicación (1 por fragmento, temas DIFERENTES):
+CONTEXTO: Generarás preguntas de APLICACIÓN DE CONOCIMIENTOS (nivel intermedio) basadas en protocolos y procedimientos. Este tipo representa el 60% de exámenes reales y evalúa cómo aplicar normativa en situaciones reales.
 
 === FRAGMENTO 1 ===
 {{CHUNK_1}}
@@ -633,28 +790,50 @@ GENERA 2 PREGUNTAS de aplicación (1 por fragmento, temas DIFERENTES):
 === FRAGMENTO 2 ===
 {{CHUNK_2}}
 
-ESTILO ACADÉMICO APLICADO:
-✓ "¿Qué establece el protocolo de cadena de frío ante temperaturas superiores a 8°C?"
-✓ "Según normativa, ¿cuál es el criterio de dispensación de medicamentos categoría D en embarazo?"
-✓ "¿Qué requisitos debe cumplir el Datamatrix según normativa de trazabilidad?"
+OBJETIVO: Genera 2 preguntas (1 por fragmento) sobre aplicaciones DIFERENTES.
 
-FORMATO:
-- Pregunta directa sobre aplicación de normativa/procedimiento
-- NO narrativas tipo "recibes un lote"
-- Distractores: acciones parciales, excesivas, prácticas incorrectas
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📚 EJEMPLO DE PREGUNTA EXCELENTE (sigue este estilo):
+{
+  "question": "¿Qué establece el protocolo de cadena de frío ante vacunas que han superado los 8°C durante el transporte?",
+  "options": [
+    "A) Rechazo inmediato del lote completo sin excepciones",
+    "B) Aceptación si el tiempo no supera las 2 horas y hay certificado de calidad",
+    "C) Cuarentena de 24 horas y análisis individual de cada vial",
+    "D) Aceptación si la temperatura no ha superado los 10°C"
+  ],
+  "correct": 0,
+  "explanation": "Protocolo cadena frío: rechazo si >8°C independientemente del tiempo",
+  "difficulty": "media",
+  "page_reference": "Protocolo cadena frío, apartado 3.2"
+}
 
-EXPLICACIÓN (máx 18 palabras):
-✓ "Protocolo exige rechazo si >8°C más de 2 horas"
-✗ "El texto dice que..."
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INSTRUCCIONES:
 
-PROHIBIDO: inventar datos, situaciones narrativas largas
+1. IDENTIFICA protocolo/procedimiento aplicable del fragmento
+2. FORMULA pregunta: "¿Qué establece [protocolo] ante [situación]?" (15-25 palabras)
+3. RESPUESTA CORRECTA: acción completa que establece la normativa
+4. CREA 3 DISTRACTORES tipo procedimiento:
+   - Acción parcialmente correcta (omite paso crítico)
+   - Acción excesiva (añade requisitos no exigidos)
+   - Práctica común pero técnicamente incorrecta
+   REGLA: Todos deben sonar profesionales y plausibles
+5. EXPLICACIÓN: máx 18 palabras, cita protocolo específico
 
-JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"media","page_reference":""}]}`;
+PROHIBIDO:
+✗ Narrativas extensas ("durante tu turno, recibes un lote que...")
+✗ Distractores obviamente incorrectos
+✗ Inventar protocolos no mencionados
+✗ Situaciones con datos ficticios
+
+RESPONDE SOLO JSON:
+{"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"media","page_reference":""}]}`;
 
 // PROMPT ELABORADA (20% - Genera 2 preguntas, 1 por fragmento) - CASOS COMPLEJOS
-const CLAUDE_PROMPT_ELABORADA = `Experto en oposiciones Técnico Farmacia.
+const CLAUDE_PROMPT_ELABORADA = `Eres evaluador experto en OPOSICIONES de Técnico en Farmacia del Servicio Andaluz de Salud.
 
-GENERA 2 PREGUNTAS COMPLEJAS académicas (1 por fragmento, áreas DIFERENTES):
+CONTEXTO: Generarás preguntas COMPLEJAS (nivel avanzado) que requieren conocer múltiples criterios y tomar decisiones técnicas. Este tipo representa el 20% de exámenes reales y evalúa razonamiento profesional y conocimiento profundo.
 
 === FRAGMENTO 1 ===
 {{CHUNK_1}}
@@ -662,26 +841,51 @@ GENERA 2 PREGUNTAS COMPLEJAS académicas (1 por fragmento, áreas DIFERENTES):
 === FRAGMENTO 2 ===
 {{CHUNK_2}}
 
-ESTILO ACADÉMICO COMPLEJO:
-✓ "¿Qué factores determinan el rechazo de un lote de insulinas en recepción según protocolo?"
-✓ "¿Cuáles son los criterios de estabilidad para elaboración de fórmulas con hidroquinona?"
-✓ "¿Qué requisitos establece la normativa para dispensación de sustancias controladas?"
+OBJETIVO: Genera 2 preguntas (1 por fragmento) sobre áreas DIFERENTES (Recepción, Elaboración, Dispensación, Control calidad, Trazabilidad, etc.).
 
-FORMATO:
-- Preguntas que requieren conocer múltiples factores/criterios
-- Enfoque académico, NO narrativo
-- Distractores: criterios parciales, práctica común incorrecta, excesos normativos
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📚 EJEMPLO DE PREGUNTA EXCELENTE (sigue este estilo):
+{
+  "question": "¿Qué factores determinan el rechazo de un lote de medicamentos termolábiles en recepción según protocolo de calidad?",
+  "options": [
+    "A) Temperatura superior a 8°C en cualquier momento del transporte, independientemente de la duración o certificación",
+    "B) Temperatura entre 8-10°C durante más de 30 minutos, incluso con certificado de calidad vigente",
+    "C) Ausencia de registro de temperatura continuo, aunque la temperatura final sea correcta",
+    "D) Temperatura superior a 8°C solo si el tiempo acumulado supera las 4 horas y no hay certificado"
+  ],
+  "correct": 0,
+  "explanation": "Protocolo de calidad: rechazo inmediato si >8°C sin considerar tiempo ni certificación",
+  "difficulty": "elaborada",
+  "page_reference": "Protocolo calidad medicamentos termolábiles, sección 4"
+}
 
-ÁREAS DIFERENTES:
-Recepción, Elaboración, Dispensación, Almacenamiento, Control calidad, Trazabilidad, Residuos, NPT, Administración
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INSTRUCCIONES:
 
-EXPLICACIÓN (máx 20 palabras):
-✓ "Protocolo exige rechazo si temperatura >8°C independiente de certificación"
-✗ "El texto indica que..."
+1. IDENTIFICA procedimiento complejo que requiere conocer múltiples criterios
+2. FORMULA pregunta: "¿Qué factores/criterios/requisitos determinan [decisión técnica]?" (15-30 palabras)
+3. RESPUESTA CORRECTA: criterio completo y exacto según normativa
+4. CREA 3 DISTRACTORES sofisticados:
+   - Criterio parcialmente correcto (incluye algunos factores pero omite el crítico)
+   - Práctica común en farmacia pero técnicamente incorrecta según normativa
+   - Criterio excesivo (añade condiciones no exigidas que parecen lógicas)
+   REGLA: Deben requerir conocimiento profundo para descartar
+5. EXPLICACIÓN: máx 20 palabras, cita normativa/protocolo específico
 
-CRÍTICO: Solo datos documentados, dificultad elaborada
+CARACTERÍSTICAS PREGUNTAS ELABORADAS:
+✓ Requieren conocer 2+ criterios simultáneos
+✓ Implican toma de decisiones técnicas
+✓ Distinguen entre práctica común y normativa estricta
+✓ Evalúan casos con múltiples variables
 
-JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"elaborada","page_reference":""}]}`;
+PROHIBIDO:
+✗ Narrativas largas con historias complejas
+✗ Distractores fácilmente descartables
+✗ Inventar criterios no documentados
+✗ Situaciones irreales o exageradas
+
+RESPONDE SOLO JSON:
+{"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"elaborada","page_reference":""}]}`;
 
 // ========================
 // FUNCIONES DE ARCHIVOS OPTIMIZADAS
@@ -1227,14 +1431,30 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
 
             if (questionsData?.questions?.length) {
               questionsData.questions.slice(0, toGenerate).forEach(q => {
-                // Validar calidad de pregunta
+                // FASE 1: Validación básica
                 const validation = validateQuestionQuality(q);
-                console.log(`   📊 Calidad: ${validation.score}/100 ${validation.issues.length > 0 ? `(${validation.issues.join(', ')})` : ''}`);
 
-                q._sourceTopic = currentTopic;
-                db.saveToCacheAndTrack(userId, currentTopic, 'simple', q, 'exam');
-                questions.push(q);
-                cacheMisses++;
+                // FASE 2: Validación avanzada con chunks
+                const advValidation = advancedQuestionValidation(q, [chunk1, chunk2]);
+
+                // Score combinado
+                const finalScore = Math.round((validation.score * 0.4) + (advValidation.score * 0.6));
+
+                console.log(`   📊 Calidad: ${finalScore}/100 (básica: ${validation.score}, avanzada: ${advValidation.score})`);
+                if (advValidation.warnings.length > 0) {
+                  console.log(`   ⚠️  Warnings: ${advValidation.warnings.join(', ')}`);
+                }
+
+                // Solo aceptar preguntas con score >= 70
+                if (finalScore >= 70) {
+                  q._sourceTopic = currentTopic;
+                  q._qualityScore = finalScore;
+                  db.saveToCacheAndTrack(userId, currentTopic, 'simple', q, 'exam');
+                  questions.push(q);
+                  cacheMisses++;
+                } else {
+                  console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 70)`);
+                }
               });
 
               // Marcar ambos chunks como usados
@@ -1293,14 +1513,30 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
 
             if (questionsData?.questions?.length) {
               questionsData.questions.slice(0, toGenerate).forEach(q => {
-                // Validar calidad de pregunta
+                // FASE 1: Validación básica
                 const validation = validateQuestionQuality(q);
-                console.log(`   📊 Calidad: ${validation.score}/100 ${validation.issues.length > 0 ? `(${validation.issues.join(', ')})` : ''}`);
 
-                q._sourceTopic = currentTopic;
-                db.saveToCacheAndTrack(userId, currentTopic, 'media', q, 'exam');
-                questions.push(q);
-                cacheMisses++;
+                // FASE 2: Validación avanzada con chunks
+                const advValidation = advancedQuestionValidation(q, [chunk1, chunk2]);
+
+                // Score combinado
+                const finalScore = Math.round((validation.score * 0.4) + (advValidation.score * 0.6));
+
+                console.log(`   📊 Calidad: ${finalScore}/100 (básica: ${validation.score}, avanzada: ${advValidation.score})`);
+                if (advValidation.warnings.length > 0) {
+                  console.log(`   ⚠️  Warnings: ${advValidation.warnings.join(', ')}`);
+                }
+
+                // Solo aceptar preguntas con score >= 70
+                if (finalScore >= 70) {
+                  q._sourceTopic = currentTopic;
+                  q._qualityScore = finalScore;
+                  db.saveToCacheAndTrack(userId, currentTopic, 'media', q, 'exam');
+                  questions.push(q);
+                  cacheMisses++;
+                } else {
+                  console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 70)`);
+                }
               });
 
               // Marcar ambos chunks como usados
@@ -1359,14 +1595,30 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
 
             if (questionsData?.questions?.length) {
               questionsData.questions.slice(0, toGenerate).forEach(q => {
-                // Validar calidad de pregunta
+                // FASE 1: Validación básica
                 const validation = validateQuestionQuality(q);
-                console.log(`   📊 Calidad: ${validation.score}/100 ${validation.issues.length > 0 ? `(${validation.issues.join(', ')})` : ''}`);
 
-                q._sourceTopic = currentTopic;
-                db.saveToCacheAndTrack(userId, currentTopic, 'elaborada', q, 'exam');
-                questions.push(q);
-                cacheMisses++;
+                // FASE 2: Validación avanzada con chunks
+                const advValidation = advancedQuestionValidation(q, [chunk1, chunk2]);
+
+                // Score combinado
+                const finalScore = Math.round((validation.score * 0.4) + (advValidation.score * 0.6));
+
+                console.log(`   📊 Calidad: ${finalScore}/100 (básica: ${validation.score}, avanzada: ${advValidation.score})`);
+                if (advValidation.warnings.length > 0) {
+                  console.log(`   ⚠️  Warnings: ${advValidation.warnings.join(', ')}`);
+                }
+
+                // Solo aceptar preguntas con score >= 70
+                if (finalScore >= 70) {
+                  q._sourceTopic = currentTopic;
+                  q._qualityScore = finalScore;
+                  db.saveToCacheAndTrack(userId, currentTopic, 'elaborada', q, 'exam');
+                  questions.push(q);
+                  cacheMisses++;
+                } else {
+                  console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 70)`);
+                }
               });
 
               // Marcar ambos chunks como usados
@@ -1752,16 +2004,32 @@ async function generateQuestionBatch(userId, topicId, count = 3, cacheProb = 0.6
           for (let i = 0; i < needed && i < questionsData.questions.length; i++) {
             const q = questionsData.questions[i];
 
-            // Validar calidad
+            // FASE 1: Validación básica
             const validation = validateQuestionQuality(q);
-            console.log(`   📊 Calidad: ${validation.score}/100 ${validation.issues.length > 0 ? `(${validation.issues.join(', ')})` : ''}`);
 
-            q._sourceTopic = topicId;
+            // FASE 2: Validación avanzada con chunks
+            const advValidation = advancedQuestionValidation(q, [chunk1, chunk2]);
 
-            // Guardar en caché
-            db.saveToCacheAndTrack(userId, topicId, difficulty, q, 'study');
+            // Score combinado
+            const finalScore = Math.round((validation.score * 0.4) + (advValidation.score * 0.6));
 
-            batchQuestions.push(q);
+            console.log(`   📊 Calidad: ${finalScore}/100 (básica: ${validation.score}, avanzada: ${advValidation.score})`);
+            if (advValidation.warnings.length > 0) {
+              console.log(`   ⚠️  Warnings: ${advValidation.warnings.join(', ')}`);
+            }
+
+            // Solo aceptar preguntas con score >= 70
+            if (finalScore >= 70) {
+              q._sourceTopic = topicId;
+              q._qualityScore = finalScore;
+
+              // Guardar en caché
+              db.saveToCacheAndTrack(userId, topicId, difficulty, q, 'study');
+
+              batchQuestions.push(q);
+            } else {
+              console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 70)`);
+            }
           }
 
           // Marcar chunks como usados
