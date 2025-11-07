@@ -474,37 +474,63 @@ function selectSpacedChunks(userId, topicId, chunks, count = 2) {
 // ========================
 
 function parseClaudeResponse(responseText) {
+  // Log para debug (primeros 500 caracteres)
+  console.log('📝 Response preview:', responseText.substring(0, 500).replace(/\n/g, '\\n'));
+
   try {
-    return JSON.parse(responseText);
+    // Intento 1: Parsear directamente
+    const parsed = JSON.parse(responseText);
+    console.log('✅ JSON parseado directamente');
+    return parsed;
   } catch (error) {
-    console.log('🔧 Extrayendo JSON...');
-    
-    // Buscar JSON en bloques de código
-    let jsonMatch = responseText.match(/```json\n([\s\S]*?)\n```/) || 
-                   responseText.match(/```\n([\s\S]*?)\n```/);
-    
+    console.log('🔧 Extrayendo JSON con métodos alternativos...');
+
+    // Intento 2: Buscar JSON en bloques de código markdown
+    let jsonMatch = responseText.match(/```json\s*([\s\S]*?)\s*```/) ||
+                   responseText.match(/```\s*([\s\S]*?)\s*```/);
+
     if (jsonMatch) {
       try {
-        return JSON.parse(jsonMatch[1]);
+        const parsed = JSON.parse(jsonMatch[1].trim());
+        console.log('✅ JSON extraído de bloque markdown');
+        return parsed;
       } catch (e) {
-        console.log('❌ JSON extraído no válido');
+        console.log('❌ JSON de markdown inválido:', e.message);
       }
     }
-    
-    // Buscar JSON sin markdown
+
+    // Intento 3: Buscar objeto JSON más externo
     const jsonStart = responseText.indexOf('{');
     const jsonEnd = responseText.lastIndexOf('}');
-    
+
     if (jsonStart !== -1 && jsonEnd !== -1 && jsonEnd > jsonStart) {
+      const jsonStr = responseText.substring(jsonStart, jsonEnd + 1);
       try {
-        return JSON.parse(responseText.substring(jsonStart, jsonEnd + 1));
+        const parsed = JSON.parse(jsonStr);
+        console.log('✅ JSON extraído por búsqueda de llaves');
+        return parsed;
       } catch (e) {
-        console.log('❌ JSON sin markdown no válido');
+        console.log('❌ JSON de llaves inválido:', e.message);
+        console.log('📄 JSON intentado:', jsonStr.substring(0, 200));
       }
     }
-    
+
+    // Intento 4: Buscar array de questions directamente
+    const questionsMatch = responseText.match(/"questions"\s*:\s*(\[[\s\S]*?\])/);
+    if (questionsMatch) {
+      try {
+        const questions = JSON.parse(questionsMatch[1]);
+        console.log('✅ Array de questions extraído directamente');
+        return { questions };
+      } catch (e) {
+        console.log('❌ Array de questions inválido:', e.message);
+      }
+    }
+
     // Pregunta de emergencia optimizada
-    console.log('🚨 Usando pregunta de emergencia...');
+    console.log('🚨 Todos los métodos de parsing fallaron - usando pregunta de emergencia');
+    console.log('📄 Response completo:', responseText);
+
     return {
       questions: [{
         question: "¿Cuál es el principio fundamental que rige la administración de justicia según la Constitución Española?",
