@@ -79,6 +79,20 @@ const IMPROVED_CLAUDE_CONFIG = {
   jitterFactor: 0.1          // Jitter moderado
 };
 
+// CONFIGURACIÓN DE TEMPERATURA VARIABLE POR DIFICULTAD
+const TEMPERATURE_CONFIG = {
+  'simple': 0.3,      // Más determinista (datos precisos)
+  'media': 0.5,       // Balance
+  'elaborada': 0.7    // Más creativa (casos complejos)
+};
+
+// CONFIGURACIÓN DE TOKENS OPTIMIZADA (2 preguntas por llamada)
+const MAX_TOKENS_CONFIG = {
+  simple: 600,      // 2 preguntas × 300 tokens (margen amplio)
+  media: 800,       // 2 preguntas × 400 tokens (margen amplio)
+  elaborada: 1000   // 2 preguntas × 500 tokens (margen amplio)
+};
+
 // Configuración completa de temas - TÉCNICO DE FARMACIA
 const TOPIC_CONFIG = {
   "tema-4-organizaciones-farmaceuticas": {
@@ -175,17 +189,20 @@ function calculateDelay(attempt, config = IMPROVED_CLAUDE_CONFIG) {
   return Math.round(finalDelay);
 }
 
-async function callClaudeWithImprovedRetry(fullPrompt, maxTokens = 700, questionType = 'media', questionsPerCall = 3, config = IMPROVED_CLAUDE_CONFIG) {
+async function callClaudeWithImprovedRetry(fullPrompt, maxTokens = 700, questionType = 'media', questionsPerCall = 2, config = IMPROVED_CLAUDE_CONFIG) {
   let lastError = null;
 
   for (let attempt = 1; attempt <= config.maxRetries; attempt++) {
     try {
       console.log(`🤖 Intento ${attempt}/${config.maxRetries} - Generando ${questionsPerCall} preguntas ${questionType}...`);
 
+      // Determinar temperatura según dificultad
+      const temperature = TEMPERATURE_CONFIG[questionType] || 0.5;
+
       const response = await anthropic.messages.create({
         model: "claude-haiku-4-5-20251001", // Claude Haiku 4.5 - Rápido, económico y capaz
         max_tokens: maxTokens, // Variable según tipo de pregunta
-        temperature: 0.2,  // Temperatura baja para eficiencia máxima
+        temperature: temperature,  // Temperatura variable según dificultad
         /* SISTEMA PREMIUM - MÁXIMA CALIDAD (20% Simple / 60% Media / 20% Elaborada):
          *
          * PREGUNTAS SIMPLES (20% - 3 por llamada) - TIPO OPOSICIÓN:
@@ -299,41 +316,421 @@ function randomizeQuestionOptions(question) {
 }
 
 // ========================
+// SISTEMA DE VALIDACIÓN DE CALIDAD (FASE 2)
+// ========================
+
+function validateQuestionQuality(question) {
+  const issues = [];
+
+  // Validar que existe la pregunta y opciones
+  if (!question.question || !question.options || question.options.length !== 4) {
+    issues.push('missing_fields');
+    return { isValid: false, issues, score: 0 };
+  }
+
+  // Validar que no empieza con frases narrativas problemáticas
+  const narrativeStarts = [
+    'recibes', 'durante la recepción', 'al elaborar',
+    'un paciente solicita', 'en tu turno', 'te llega',
+    'mientras trabajas', 'en la farmacia'
+  ];
+
+  const questionLower = question.question.toLowerCase();
+  const hasNarrativeStart = narrativeStarts.some(phrase =>
+    questionLower.startsWith(phrase) ||
+    questionLower.includes(`. ${phrase}`)
+  );
+
+  if (hasNarrativeStart) {
+    issues.push('narrative_start');
+  }
+
+  // Validar que no tiene códigos ATC completos (solo familias están permitidas)
+  if (questionLower.match(/código atc[:\s]+[a-z]\d{2}[a-z]{2}\d{2}/i)) {
+    issues.push('atc_code_full');
+  }
+
+  // Validar longitud razonable de pregunta
+  if (question.question.length > 350) {
+    issues.push('question_too_long');
+  }
+
+  if (question.question.length < 20) {
+    issues.push('question_too_short');
+  }
+
+  // Validar explicación concisa (máximo 25 palabras)
+  const explanationWords = question.explanation ? question.explanation.split(/\s+/).length : 0;
+  if (explanationWords > 25) {
+    issues.push('explanation_verbose');
+  }
+
+  if (explanationWords < 5) {
+    issues.push('explanation_too_short');
+  }
+
+  // Validar que las opciones no sean idénticas
+  const optionsText = question.options.map(o => o.substring(3).toLowerCase());
+  const uniqueOptions = new Set(optionsText);
+  if (uniqueOptions.size < 4) {
+    issues.push('duplicate_options');
+  }
+
+  // Calcular score (100 - 15 puntos por cada issue)
+  const score = Math.max(0, 100 - issues.length * 15);
+
+  return {
+    isValid: issues.length === 0,
+    issues,
+    score
+  };
+}
+
+/**
+ * POST-VALIDACIÓN AVANZADA (FASE 2)
+ * Valida coherencia, plausibilidad de distractores y calidad general
+ */
+function advancedQuestionValidation(question, sourceChunks = []) {
+  const issues = [];
+  let score = 100;
+
+  // 1. VALIDACIÓN DE COHERENCIA (índice correct)
+  if (question.correct < 0 || question.correct > 3) {
+    issues.push('invalid_correct_index');
+    score -= 30;
+  }
+
+  // 2. VALIDACIÓN DE OPCIONES
+  const options = question.options.map(o => o.substring(3).trim());
+
+  // 2.1 Opciones muy cortas (probable error)
+  const tooShort = options.filter(o => o.length < 5);
+  if (tooShort.length > 0) {
+    issues.push('options_too_short');
+    score -= 15;
+  }
+
+  // 2.2 Opciones muy desbalanceadas en longitud
+  const lengths = options.map(o => o.length);
+  const maxLength = Math.max(...lengths);
+  const minLength = Math.min(...lengths);
+  if (maxLength > minLength * 3) {
+    issues.push('unbalanced_option_lengths');
+    score -= 10;
+  }
+
+  // 2.3 Detectar distractores absurdos (valores extremos)
+  const questionLower = question.question.toLowerCase();
+  if (questionLower.includes('temperatura') || questionLower.includes('°c')) {
+    options.forEach(opt => {
+      const optLower = opt.toLowerCase();
+      // Detectar temperaturas absurdas: <-20°C o >60°C
+      const tempMatch = optLower.match(/(-?\d+)\s*°?\s*c/i);
+      if (tempMatch) {
+        const temp = parseInt(tempMatch[1]);
+        if (temp < -20 || temp > 60) {
+          issues.push('absurd_temperature');
+          score -= 20;
+        }
+      }
+    });
+  }
+
+  // 3. VALIDACIÓN DE EXPLICACIÓN
+  const explanation = question.explanation || '';
+
+  // 3.1 Explicación con frases prohibidas
+  const badPhrases = ['el texto dice', 'según el fragmento', 'la documentación indica', 'los apuntes'];
+  if (badPhrases.some(phrase => explanation.toLowerCase().includes(phrase))) {
+    issues.push('explanation_bad_phrasing');
+    score -= 10;
+  }
+
+  // 3.2 Explicación que no menciona conceptos clave de la pregunta
+  const questionKeywords = extractKeywords(question.question);
+  const explanationKeywords = extractKeywords(explanation);
+  const overlap = questionKeywords.filter(k => explanationKeywords.includes(k)).length;
+  if (overlap === 0 && questionKeywords.length > 2) {
+    issues.push('explanation_unrelated');
+    score -= 15;
+  }
+
+  // 4. VALIDACIÓN DE RESPUESTA CORRECTA EN SOURCE
+  if (sourceChunks.length > 0) {
+    const correctOption = options[question.correct];
+    const sourceText = sourceChunks.join(' ').toLowerCase();
+
+    // Extraer conceptos clave de la opción correcta
+    const correctKeywords = extractKeywords(correctOption);
+    const foundInSource = correctKeywords.filter(k => sourceText.includes(k.toLowerCase())).length;
+
+    // Si menos del 30% de keywords están en el source, es sospechoso
+    if (correctKeywords.length > 0 && (foundInSource / correctKeywords.length) < 0.3) {
+      issues.push('answer_not_in_source');
+      score -= 25;
+    }
+  }
+
+  // 5. VALIDACIÓN ESPECÍFICA POR DIFICULTAD
+  const difficulty = question.difficulty;
+  const questionWords = question.question.split(/\s+/).length;
+
+  if (difficulty === 'simple') {
+    // Preguntas simples: 8-15 palabras
+    if (questionWords > 20) {
+      issues.push('simple_question_too_long');
+      score -= 15;
+    } else if (questionWords < 6) {
+      issues.push('simple_question_too_short');
+      score -= 10;
+    }
+  }
+
+  if (difficulty === 'media') {
+    // Preguntas medias: 15-25 palabras
+    if (questionWords > 35) {
+      issues.push('media_question_too_long');
+      score -= 10;
+    } else if (questionWords < 10) {
+      issues.push('media_question_too_short');
+      score -= 10;
+    }
+  }
+
+  if (difficulty === 'elaborada') {
+    // Preguntas elaboradas: 25-40 palabras
+    if (questionWords < 20) {
+      issues.push('elaborated_question_too_short');
+      score -= 15;
+    } else if (questionWords > 50) {
+      issues.push('elaborated_question_too_long');
+      score -= 10;
+    }
+
+    // Opciones deben ser detalladas
+    const avgOptionLength = options.reduce((sum, o) => sum + o.length, 0) / 4;
+    if (avgOptionLength < 30) {
+      issues.push('elaborated_options_too_simple');
+      score -= 10;
+    }
+  }
+
+  // 6. BONUS: Pregunta excelente
+  if (score >= 95) {
+    issues.push('excellent_quality');
+  }
+
+  return {
+    isValid: score >= 70, // Mínimo 70 puntos para ser aceptable
+    issues,
+    score: Math.max(0, score),
+    warnings: issues.filter(i => !i.startsWith('excellent'))
+  };
+}
+
+/**
+ * Extrae keywords relevantes de un texto (excluye palabras comunes)
+ */
+function extractKeywords(text) {
+  const stopWords = new Set([
+    'el', 'la', 'los', 'las', 'un', 'una', 'de', 'del', 'en', 'a', 'al',
+    'que', 'es', 'por', 'para', 'con', 'se', 'y', 'o', 'según', 'cual',
+    'cuales', 'cuál', 'cuáles', 'qué', 'como', 'cómo'
+  ]);
+
+  return text
+    .toLowerCase()
+    .replace(/[^\w\sáéíóúñ]/g, ' ')
+    .split(/\s+/)
+    .filter(word => word.length > 3 && !stopWords.has(word));
+}
+
+// ========================
+// SISTEMA DE CHUNKS ESPACIADOS
+// ========================
+
+function selectSpacedChunks(userId, topicId, chunks, count = 2) {
+  const totalChunks = chunks.length;
+
+  if (totalChunks === 0) {
+    console.error('❌ No hay chunks disponibles');
+    return [];
+  }
+
+  // Obtener chunks ya usados
+  const usedStmt = db.db.prepare(`
+    SELECT chunk_index
+    FROM chunk_usage
+    WHERE user_id = ? AND topic_id = ?
+  `);
+  const usedChunks = usedStmt.all(userId, topicId).map(r => r.chunk_index);
+
+  // Crear array de disponibles
+  let available = [];
+  for (let i = 0; i < totalChunks; i++) {
+    if (!usedChunks.includes(i)) {
+      available.push(i);
+    }
+  }
+
+  // Si no hay suficientes disponibles, resetear
+  if (available.length < count) {
+    console.log(`♻️ Usuario ${userId} completó chunks del tema ${topicId}. Reseteando...`);
+    db.resetChunkUsage(userId, topicId);
+    available = Array.from({length: totalChunks}, (_, i) => i);
+  }
+
+  const selected = [];
+
+  if (totalChunks === 1) {
+    // Caso especial: solo 1 chunk disponible
+    selected.push(0);
+    return selected;
+  }
+
+  // Calcular distancia mínima (30% del total de chunks)
+  const minDistance = Math.max(3, Math.floor(totalChunks * 0.3));
+
+  // Seleccionar primer chunk aleatorio
+  const firstIdx = available[Math.floor(Math.random() * available.length)];
+  selected.push(firstIdx);
+
+  if (count === 1) {
+    return selected;
+  }
+
+  // Seleccionar segundo chunk con distancia mínima
+  const validForSecond = available.filter(idx =>
+    Math.abs(idx - firstIdx) >= minDistance
+  );
+
+  if (validForSecond.length > 0) {
+    // Hay chunks a suficiente distancia
+    const secondIdx = validForSecond[Math.floor(Math.random() * validForSecond.length)];
+    selected.push(secondIdx);
+  } else {
+    // No hay suficiente distancia: seleccionar el más lejano posible
+    const others = available.filter(idx => idx !== firstIdx);
+    if (others.length > 0) {
+      const farthest = others.reduce((prev, curr) =>
+        Math.abs(curr - firstIdx) > Math.abs(prev - firstIdx) ? curr : prev
+      );
+      selected.push(farthest);
+    } else {
+      // Último recurso: usar el mismo chunk (edge case)
+      selected.push(firstIdx);
+    }
+  }
+
+  const distance = selected.length === 2 ? Math.abs(selected[1] - selected[0]) : 0;
+  console.log(`📍 Chunks espaciados: [${selected.join(', ')}] de ${totalChunks} total (distancia: ${distance}, objetivo: ${minDistance})`);
+
+  return selected;
+}
+
+// ========================
 // PARSING OPTIMIZADO
 // ========================
 
 function parseClaudeResponse(responseText) {
+  // Log para debug (primeros 300 caracteres)
+  console.log('📝 Response preview:', responseText.substring(0, 300).replace(/\n/g, ' '));
+
   try {
-    return JSON.parse(responseText);
+    // Intento 1: Parsear directamente
+    const parsed = JSON.parse(responseText);
+    console.log('✅ JSON parseado directamente');
+    return parsed;
   } catch (error) {
-    console.log('🔧 Extrayendo JSON...');
-    
-    // Buscar JSON en bloques de código
-    let jsonMatch = responseText.match(/```json\n([\s\S]*?)\n```/) || 
-                   responseText.match(/```\n([\s\S]*?)\n```/);
-    
+    console.log('🔧 Extrayendo JSON con métodos alternativos...');
+
+    // Intento 2: Buscar JSON en bloques de código markdown
+    let jsonMatch = responseText.match(/```json\s*([\s\S]*?)\s*```/) ||
+                   responseText.match(/```\s*([\s\S]*?)\s*```/);
+
     if (jsonMatch) {
       try {
-        return JSON.parse(jsonMatch[1]);
+        const parsed = JSON.parse(jsonMatch[1].trim());
+        console.log('✅ JSON extraído de bloque markdown');
+        return parsed;
       } catch (e) {
-        console.log('❌ JSON extraído no válido');
+        console.log('⚠️ JSON de markdown incompleto, intentando reparar...');
+        // Intentar completar JSON truncado
+        let jsonStr = jsonMatch[1].trim();
+
+        // Contar llaves para cerrar
+        const openBraces = (jsonStr.match(/{/g) || []).length;
+        const closeBraces = (jsonStr.match(/}/g) || []).length;
+        const openBrackets = (jsonStr.match(/\[/g) || []).length;
+        const closeBrackets = (jsonStr.match(/]/g) || []).length;
+
+        // Cerrar estructuras abiertas
+        for (let i = 0; i < (openBrackets - closeBrackets); i++) jsonStr += ']';
+        for (let i = 0; i < (openBraces - closeBraces); i++) jsonStr += '}';
+
+        try {
+          const parsed = JSON.parse(jsonStr);
+          console.log('✅ JSON reparado y parseado');
+          return parsed;
+        } catch (e2) {
+          console.log('❌ No se pudo reparar JSON:', e2.message);
+        }
       }
     }
-    
-    // Buscar JSON sin markdown
+
+    // Intento 3: Buscar objeto JSON más externo
     const jsonStart = responseText.indexOf('{');
     const jsonEnd = responseText.lastIndexOf('}');
-    
+
     if (jsonStart !== -1 && jsonEnd !== -1 && jsonEnd > jsonStart) {
+      const jsonStr = responseText.substring(jsonStart, jsonEnd + 1);
       try {
-        return JSON.parse(responseText.substring(jsonStart, jsonEnd + 1));
+        const parsed = JSON.parse(jsonStr);
+        console.log('✅ JSON extraído por búsqueda de llaves');
+        return parsed;
       } catch (e) {
-        console.log('❌ JSON sin markdown no válido');
+        console.log('❌ JSON de llaves inválido:', e.message);
       }
     }
-    
+
+    // Intento 4: Extraer preguntas individuales completas (nuevo método robusto)
+    const questionPattern = /{[\s\S]*?"question"\s*:\s*"([^"]*)"[\s\S]*?"options"\s*:\s*\[([\s\S]*?)\][\s\S]*?"correct"\s*:\s*(\d+)[\s\S]*?"explanation"\s*:\s*"([^"]*)"[\s\S]*?"difficulty"\s*:\s*"([^"]*)"[\s\S]*?"page_reference"\s*:\s*"([^"]*)"\s*}/g;
+    const questions = [];
+    let match;
+
+    while ((match = questionPattern.exec(responseText)) !== null) {
+      try {
+        const optionsText = match[2];
+        const options = [];
+        const optionPattern = /"([^"]*)"/g;
+        let optMatch;
+        while ((optMatch = optionPattern.exec(optionsText)) !== null) {
+          options.push(optMatch[1]);
+        }
+
+        if (options.length === 4) {
+          questions.push({
+            question: match[1],
+            options: options,
+            correct: parseInt(match[3]),
+            explanation: match[4],
+            difficulty: match[5],
+            page_reference: match[6]
+          });
+        }
+      } catch (e) {
+        console.log('⚠️ Error extrayendo pregunta individual:', e.message);
+      }
+    }
+
+    if (questions.length > 0) {
+      console.log(`✅ Extraídas ${questions.length} pregunta(s) completa(s) mediante regex`);
+      return { questions };
+    }
+
     // Pregunta de emergencia optimizada
-    console.log('🚨 Usando pregunta de emergencia...');
+    console.log('🚨 Todos los métodos de parsing fallaron - usando pregunta de emergencia');
+
     return {
       questions: [{
         question: "¿Cuál es el principio fundamental que rige la administración de justicia según la Constitución Española?",
@@ -352,144 +749,200 @@ function parseClaudeResponse(responseText) {
   }
 }
 
-// PROMPTS OPTIMIZADOS - 3 NIVELES: Simple (30%), Media (60%), Elaborada (10%)
+// PROMPTS OPTIMIZADOS - 3 NIVELES: Simple (20%), Media (60%), Elaborada (20%)
 
-// PROMPT SIMPLE (20% - Genera 3 preguntas por llamada) - PREGUNTAS DIRECTAS
-const CLAUDE_PROMPT_SIMPLE = `Eres evaluador experto para OPOSICIONES de Técnico en Farmacia.
+// PROMPT SIMPLE (20% - Genera 2 preguntas, 1 por fragmento) - PREGUNTAS DIRECTAS
+const CLAUDE_PROMPT_SIMPLE = `Eres evaluador experto en OPOSICIONES de Técnico en Farmacia del SERGAS (Servicio Gallego de Salud).
 
-GENERA 3 preguntas tipo TEST de conocimientos fundamentales basadas en la documentación.
+CONTEXTO: Generarás preguntas SIMPLES (dificultad básica). Este tipo representa el 20% de las preguntas que se generan. Evalúan memorización de datos objetivos, definiciones y conceptos fundamentales que aparecen LITERALMENTE en los apuntes.
 
-ESTILO PROFESIONAL:
-✓ "Según el RD 1345/2007, ¿qué plazo máximo tiene la Administración para resolver solicitudes de autorización?"
-✓ "¿Cuál es el rango de temperatura establecido para la conservación de medicamentos termolábiles?"
-✓ "¿Qué tiempo máximo de validez tienen las fórmulas magistrales acuosas sin conservantes?"
+=== FRAGMENTO 1 ===
+{{CHUNK_1}}
 
-METODOLOGÍA:
-1. Identifica 3 conceptos clave DIFERENTES (plazos normativos, temperaturas, rangos, procedimientos, definiciones)
-2. Formula pregunta profesional directa
-3. Extrae respuesta literal de la documentación
-4. Genera 3 distractores plausibles:
-   - Cifras próximas alteradas (2-8°C → opciones: 0-4°C, 4-10°C, 15-25°C)
-   - Plazos similares incorrectos (3 meses → opciones: 1 mes, 6 meses, 1 año)
-   - Conceptos relacionados pero no aplicables
+=== FRAGMENTO 2 ===
+{{CHUNK_2}}
 
-DIFICULTAD:
-- Pregunta 1: Difícil (normativa específica o dato técnico preciso)
-- Pregunta 2: Media (procedimiento estándar o concepto técnico)
-- Pregunta 3: Media-Fácil (fundamento esencial)
+OBJETIVO: Genera 2 preguntas (1 por fragmento) sobre conceptos DIFERENTES.
 
-EXPLICACIÓN (máximo 15 palabras):
-✓ Cita directa: "Art. 12.2 establece plazo de 3 meses"
-✓ Referencia normativa: "RD 824/2010 fija temperatura 2-8°C"
-✗ NUNCA: "El texto dice", "Según los apuntes", "La documentación indica"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📚 EJEMPLO DE PREGUNTA EXCELENTE (sigue este estilo):
+{
+  "question": "Según el Real Decreto 1345/2007, ¿cuál es el plazo máximo para la dispensación de fórmulas magistrales acuosas sin conservantes?",
+  "options": [
+    "A) 24 horas desde su elaboración",
+    "B) 7 días conservadas entre 2-8°C",
+    "C) 15 días en condiciones normales",
+    "D) 30 días si se mantienen refrigeradas"
+  ],
+  "correct": 1,
+  "explanation": "RD 1345/2007 Art. 8.3: máximo 7 días entre 2-8°C",
+  "difficulty": "simple",
+  "page_reference": "RD 1345/2007 Art. 8.3"
+}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INSTRUCCIONES:
+
+1. IDENTIFICA concepto clave por fragmento: plazos, temperaturas, rangos, definiciones, porcentajes, clasificaciones
+2. FORMULA pregunta CORTA y directa (8-15 palabras): "Según [normativa], ¿cuál/qué [dato específico]?"
+3. RESPUESTA CORRECTA: La información DEBE estar en el fragmento (puedes reformular, pero NO inventes datos)
+4. CREA 3 DISTRACTORES plausibles:
+   - Cifra próxima alterada (2-8°C → 0-4°C, 4-10°C, 8-15°C)
+   - Dato de otro contexto relacionado
+   - Error común de estudiantes
+5. EXPLICACIÓN: máx 15 palabras, cita directa
+
+⚠️ CRÍTICO - RESPUESTA CORRECTA DEL TEXTO:
+La información de la respuesta CORRECTA debe DERIVARSE del fragmento - puedes reformular pero NO inventes datos.
+Los DISTRACTORES deben ser plausibles pero INCORRECTOS (pueden ser inventados para confundir).
 
 PROHIBIDO:
-- Inventar datos no documentados
-- Códigos ATC completos (usar familias: IECAs, ARA-II)
-- Listados >3 medicamentos
-- Precios, marcas comerciales
+✗ Narrativas ("un técnico recibe...")
+✗ Inventar la respuesta correcta (los distractores SÍ deben ser inventados/incorrectos)
+✗ Distractores absurdos (extremos irreales)
 
-JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"","page_reference":""}]}
+RESPONDE SOLO JSON:
+{"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"simple","page_reference":""}]}`;
 
-DOCUMENTACIÓN:
-{{CONTENT}}`;
+// PROMPT MEDIA (60% - Genera 2 preguntas, 1 por fragmento) - NIVEL INTERMEDIO
+const CLAUDE_PROMPT_MEDIA = `Eres evaluador experto en OPOSICIONES de Técnico en Farmacia del SERGAS (Servicio Gallego de Salud).
 
-// PROMPT MEDIA (60% - Genera 3 preguntas por llamada) - APLICACIÓN PRÁCTICA
-const CLAUDE_PROMPT_MEDIA = `Eres evaluador experto para OPOSICIONES de Técnico en Farmacia.
+CONTEXTO: Generarás preguntas MEDIAS (dificultad intermedia). Este tipo representa el 60% de las preguntas que se generan. Evalúan comprensión, aplicación y análisis de conceptos que aparecen en los apuntes. NO solo protocolos - también características, funciones, clasificaciones, comparaciones, relaciones causa-efecto, etc.
 
-GENERA 3 preguntas de CASOS PRÁCTICOS BREVES que evalúen aplicación de conocimientos.
+=== FRAGMENTO 1 ===
+{{CHUNK_1}}
 
-ESTILO PROFESIONAL (situación + decisión):
-✓ "Recibes vacunas que han viajado a 12°C durante 3 horas. ¿Cuál es tu actuación según protocolo de cadena de frío?"
-✓ "Una embarazada solicita un medicamento categoría D en embarazo. ¿Qué debes hacer?"
-✓ "El Datamatrix de un lote no incluye número de serie. ¿Es conforme con la normativa de trazabilidad?"
+=== FRAGMENTO 2 ===
+{{CHUNK_2}}
 
-METODOLOGÍA:
-1. Identifica PROCEDIMIENTO, PROTOCOLO o CRITERIO normativo
-2. Crea situación profesional realista (1-2 líneas, máx 30 palabras)
-3. Pregunta: ¿Cuál es la actuación/decisión correcta?
-4. Respuesta correcta: Acción que establece la normativa
-5. Distractores profesionales:
-   - Acción parcial (omite paso crítico del protocolo)
-   - Acción excesiva (añade requisitos no exigidos)
+OBJETIVO: Genera 2 preguntas (1 por fragmento) sobre temas DIFERENTES y con variedad de enfoques.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📚 TIPOS DE PREGUNTAS MEDIAS (varía el tipo):
+
+TIPO 1 - Características/Propiedades:
+"¿Qué características definen a los medicamentos fotosensibles según su clasificación?"
+
+TIPO 2 - Funciones/Objetivos:
+"¿Cuál es la función principal del sistema de trazabilidad farmacéutica?"
+
+TIPO 3 - Procedimientos/Protocolos:
+"¿Qué establece el protocolo ante vacunas que superan 8°C?"
+
+TIPO 4 - Clasificaciones/Categorías:
+"¿Cómo se clasifican los residuos sanitarios según su peligrosidad?"
+
+TIPO 5 - Comparaciones/Diferencias:
+"¿En qué se diferencia una fórmula magistral de un preparado oficinal?"
+
+TIPO 6 - Requisitos/Condiciones:
+"¿Qué requisitos debe cumplir el etiquetado de medicamentos reacondicionados?"
+
+TIPO 7 - Causas/Consecuencias:
+"¿Qué consecuencias tiene la ruptura de la cadena de frío en medicamentos termolábiles?"
+
+TIPO 8 - Indicaciones/Contraindicaciones:
+"¿Cuándo está indicada la dispensación de medicamentos en dosis unitarias?"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INSTRUCCIONES:
+
+1. IDENTIFICA el concepto/tema del fragmento (NO solo protocolos)
+2. ELIGE tipo de pregunta adecuado según el contenido (varía entre los 8 tipos)
+3. FORMULA pregunta (15-25 palabras) - NO uses siempre la misma fórmula
+4. RESPUESTA CORRECTA: La información DEBE estar en el fragmento (puedes reformular, pero NO inventes datos)
+5. CREA 3 DISTRACTORES plausibles según tipo:
+   - Características: atributos similares pero de otro concepto
+   - Funciones: objetivos parciales o de sistemas relacionados
+   - Procedimientos: acciones parciales, excesivas o incorrectas
+   - Clasificaciones: categorías próximas o confundibles
+   - Comparaciones: diferencias invertidas o mezcladas
+6. EXPLICACIÓN: máx 18 palabras
+
+⚠️ CRÍTICO - VARIEDAD Y PRECISIÓN:
+- NO uses siempre "¿Qué establece [protocolo]...?" - VARÍA el tipo de pregunta
+- La información de la respuesta CORRECTA debe DERIVARSE del fragmento (puedes reformular, NO inventes datos)
+- Si no hay suficiente info para un tipo, usa otro
+- Las 2 preguntas deben ser de tipos DIFERENTES si es posible
+
+PROHIBIDO:
+✗ Narrativas ("durante tu turno, recibes...")
+✗ Inventar la respuesta correcta (los distractores SÍ deben ser inventados/incorrectos)
+✗ Usar siempre la misma fórmula de pregunta
+
+RESPONDE SOLO JSON:
+{"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"media","page_reference":""}]}`;
+
+// PROMPT ELABORADA (20% - Genera 2 preguntas, 1 por fragmento) - NIVEL AVANZADO
+const CLAUDE_PROMPT_ELABORADA = `Eres evaluador experto en OPOSICIONES de Técnico en Farmacia del SERGAS (Servicio Gallego de Salud).
+
+CONTEXTO: Generarás preguntas ELABORADAS (dificultad avanzada). Este tipo representa el 20% de las preguntas que se generan. Requieren análisis profundo, integración de múltiples conceptos y razonamiento complejo sobre contenidos de los apuntes. NO solo procedimientos complejos - también análisis de criterios, síntesis de información, evaluación de situaciones, etc.
+
+=== FRAGMENTO 1 ===
+{{CHUNK_1}}
+
+=== FRAGMENTO 2 ===
+{{CHUNK_2}}
+
+OBJETIVO: Genera 2 preguntas (1 por fragmento) sobre temas DIFERENTES con variedad de enfoques complejos.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📚 TIPOS DE PREGUNTAS ELABORADAS (varía el tipo):
+
+TIPO 1 - Análisis de Criterios Múltiples:
+"¿Qué criterios conjuntos determinan la clasificación de un medicamento como estupefaciente?"
+
+TIPO 2 - Integración de Conceptos:
+"¿Qué relación existe entre la termoestabilidad de un principio activo y su forma de almacenamiento en el servicio de farmacia?"
+
+TIPO 3 - Evaluación de Situaciones:
+"¿En qué circunstancias está justificada la dispensación sin receta de un medicamento sujeto a prescripción?"
+
+TIPO 4 - Comparación Compleja:
+"¿Qué diferencias fundamentales existen entre la elaboración de una nutrición parenteral y una fórmula magistral estéril?"
+
+TIPO 5 - Consecuencias y Cadenas Causales:
+"¿Qué consecuencias en cadena puede tener la ruptura del sistema de trazabilidad en un lote de medicamentos?"
+
+TIPO 6 - Procedimientos Complejos Multi-paso:
+"¿Qué factores determinan el rechazo de un lote en recepción según protocolo de calidad?"
+
+TIPO 7 - Análisis de Excepciones:
+"¿En qué casos excepcionales puede almacenarse un medicamento fuera de sus condiciones habituales de conservación?"
+
+TIPO 8 - Síntesis de Normativa:
+"¿Qué requisitos acumulativos debe cumplir un medicamento para ser dispensado en dosis unitarias?"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INSTRUCCIONES:
+
+1. IDENTIFICA contenido que permita pregunta compleja (NO solo procedimientos)
+2. ELIGE tipo de pregunta según el contenido (varía entre los 8 tipos)
+3. FORMULA pregunta LARGA y compleja (25-40 palabras) que requiera análisis profundo - VARÍA la fórmula
+4. RESPUESTA CORRECTA: La información DEBE estar en el fragmento (puedes reformular, pero NO inventes datos)
+5. CREA 3 DISTRACTORES sofisticados:
+   - Respuesta parcial (omite elementos críticos)
    - Práctica común pero técnicamente incorrecta
+   - Criterio excesivo (añade requisitos no exigidos)
+   - Confusión de conceptos relacionados
+   REGLA: Deben requerir conocimiento profundo para descartar
+6. EXPLICACIÓN: máx 20 palabras
 
-CONTEXTO SITUACIONES:
-- Trabajo diario del técnico (recepción, dispensación, elaboración, control)
-- Datos reales documentados (temperaturas, plazos, categorías)
-- Requieren conocer procedimiento específico
-
-DIFICULTAD:
-- Pregunta 1: Difícil (múltiples factores, protocolo complejo)
-- Pregunta 2: Media (procedimiento estándar)
-- Pregunta 3: Media-Fácil (criterio básico)
-
-EXPLICACIÓN (máximo 18 palabras):
-✓ Directa: "Protocolo cadena frío requiere rechazo si >8°C más de 2 horas"
-✓ Normativa: "Art. 85 obliga dispensación solo con autorización médica explícita"
-✗ NUNCA: "El texto dice que", "Según documentación"
+⚠️ CRÍTICO - VARIEDAD Y PRECISIÓN:
+- NO uses siempre "¿Qué factores determinan...?" - VARÍA el tipo
+- La información de la respuesta CORRECTA debe DERIVARSE del fragmento (puedes reformular, NO inventes datos)
+- Requieren integrar 2+ conceptos del texto
+- Las 2 preguntas deben ser de tipos DIFERENTES si es posible
+- Si el fragmento no permite pregunta compleja, haz una MEDIA difícil
 
 PROHIBIDO:
-- Inventar datos no documentados
-- Situaciones con cifras irreales
-- Normativa obsoleta
+✗ Narrativas largas con historias
+✗ Inventar la respuesta correcta (los distractores SÍ deben ser inventados/incorrectos)
+✗ Usar siempre la misma fórmula de pregunta
+✗ Situaciones irreales
 
-JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"","page_reference":""}]}
-
-DOCUMENTACIÓN:
-{{CONTENT}}`;
-
-// PROMPT ELABORADA (20% - Genera 2 preguntas por llamada) - CASOS COMPLEJOS
-const CLAUDE_PROMPT_ELABORADA = `Eres evaluador experto para OPOSICIONES de Técnico en Farmacia.
-
-GENERA 2 CASOS PRÁCTICOS COMPLEJOS con múltiples factores que requieran razonamiento profesional.
-
-ESTILO PROFESIONAL (situación multifactorial 50-70 palabras):
-✓ "Durante la recepción de insulinas NPH observas: albarán indica salida hace 36 horas, temperatura registrada 14°C, embalaje con golpes, documentación incluye certificado de cadena de frío válido. El transportista informa de avería en ruta. ¿Cuál es tu actuación prioritaria?"
-
-✓ "Al elaborar fórmula dermatológica con hidroquinona al 4%, el envase original muestra: apertura hace 8 meses, ligera decoloración amarillenta, certificado de análisis con pureza 99.5%, receta médica para melasma. ¿Qué decisión tomas?"
-
-TIPOS DE CASOS (selecciona 2 DIFERENTES):
-A) Recepción/Control entrada: Verificación documentación, control temperatura, inspección visual, conformidad
-B) Elaboración magistral: Estabilidad principios activos, incompatibilidades, caducidad materias primas
-C) Dispensación especializada: Verificación recetas, categorías embarazo, sustancias controladas, sustituciones
-D) Almacenamiento/Conservación: Condiciones ambientales, segregación por tipo, control temperatura continuo
-E) Control calidad/Trazabilidad: Verificación lotes, Datamatrix, alertas sanitarias, retiradas
-F) Gestión residuos sanitarios: Clasificación (grupos I-IV), segregación, procedimientos eliminación
-G) Preparación nutriciones parenterales: Cálculo osmolaridad, compatibilidades, estabilidad
-H) Reenvasado/Reacondicionamiento: Mantenimiento información, etiquetado, trazabilidad
-I) Dispensación hospitalaria: Dosis unitarias, sistemas personalizados, armarios automatizados
-J) Administración medicamentos: Vías administración, tiempos perfusión, incompatibilidades IV
-
-METODOLOGÍA:
-1. Identifica PROTOCOLO o PROCEDIMIENTO normativo documentado
-2. Construye caso con 3-4 FACTORES documentados:
-   - Factor favorecedor (elemento correcto o positivo)
-   - Factor crítico (problema o desviación significativa)
-   - Factores contextuales (información adicional relevante)
-3. Pregunta directa: "¿Cuál es tu actuación?" o "¿Qué decisión tomas?"
-4. Opciones: 4 acciones profesionales graduadas en corrección
-5. Respuesta: Acción completa que establece el protocolo
-
-DISTRACTORES PROFESIONALES:
-- Acción parcial (omite paso crítico obligatorio)
-- Práctica habitual pero normativamente incorrecta
-- Acción extrema (demasiado permisiva o excesivamente restrictiva)
-
-EXPLICACIÓN (máximo 20 palabras):
-✓ Directa: "Protocolo exige rechazo si temperatura >8°C independientemente de certificación"
-✓ Normativa: "RD 824/2010 Art. 5 prohíbe uso materias primas con signos alteración"
-✗ NUNCA: "El texto indica", "Según documentación", "Los apuntes especifican"
-
-CRÍTICO - SOLO DATOS DOCUMENTADOS:
-- Todas las cifras (temperaturas, plazos, porcentajes, concentraciones) DEBEN estar documentadas
-- No inventar medicamentos, normativa específica o situaciones sin base
-- Dificultad: muy difícil (ambas)
-
-JSON: {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"muy difícil","page_reference":""}]}
-
-DOCUMENTACIÓN:
-{{CONTENT}}`;
+RESPONDE SOLO JSON:
+{"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"elaborada","page_reference":""}]}`;
 
 // ========================
 // FUNCIONES DE ARCHIVOS OPTIMIZADAS
@@ -527,8 +980,8 @@ async function ensureDocumentsDirectory() {
   }
 }
 
-// Función para dividir contenido en chunks ULTRA-OPTIMIZADO (1200 caracteres = máxima eficiencia)
-function splitIntoChunks(content, chunkSize = 1200) {
+// Función para dividir contenido en chunks OPTIMIZADO (1000 caracteres = balance calidad/coste)
+function splitIntoChunks(content, chunkSize = 1000) {
   const chunks = [];
   const lines = content.split('\n');
   let currentChunk = '';
@@ -945,8 +1398,8 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
       });
     }
 
-    // Dividir en chunks de 1200 caracteres
-    const chunks = splitIntoChunks(allContent, 1200);
+    // Dividir en chunks de 1000 caracteres (optimizado)
+    const chunks = splitIntoChunks(allContent, 1000);
     console.log(`📄 Documento dividido en ${chunks.length} chunks`);
 
     if (chunks.length === 0) {
@@ -987,7 +1440,7 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
 
       // Obtener contenido específico de este tema
       const topicContent = await getDocumentsByTopics([currentTopic]);
-      const topicChunks = splitIntoChunks(topicContent, 1200);
+      const topicChunks = splitIntoChunks(topicContent, 1000);
 
       console.log(`📄 Tema ${currentTopic}: ${topicChunks.length} chunks disponibles`);
 
@@ -1018,23 +1471,51 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
           const toGenerate = questionsToGet - questions.length;
           console.log(`\n⚪ SIMPLE [${currentTopic}] - Generando ${toGenerate} preguntas nuevas`);
 
-          const chunkIndex = db.getUnusedChunkIndex(userId, currentTopic, topicChunks.length);
-          const selectedChunk = topicChunks[chunkIndex];
-          const fullPrompt = CLAUDE_PROMPT_SIMPLE.replace('{{CONTENT}}', selectedChunk);
+          // Seleccionar 2 chunks espaciados
+          const selectedIndices = selectSpacedChunks(userId, currentTopic, topicChunks, 2);
+          const chunk1 = topicChunks[selectedIndices[0]];
+          const chunk2 = selectedIndices.length > 1 ? topicChunks[selectedIndices[1]] : chunk1;
+
+          // Crear prompt con 2 fragmentos
+          const fullPrompt = CLAUDE_PROMPT_SIMPLE
+            .replace('{{CHUNK_1}}', chunk1)
+            .replace('{{CHUNK_2}}', chunk2);
 
           try {
-            const response = await callClaudeWithImprovedRetry(fullPrompt, 800, 'simples', 3);
+            const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.simple, 'simple', 2);
             const responseText = response.content[0].text;
             const questionsData = parseClaudeResponse(responseText);
 
             if (questionsData?.questions?.length) {
               questionsData.questions.slice(0, toGenerate).forEach(q => {
-                q._sourceTopic = currentTopic;
-                db.saveToCacheAndTrack(userId, currentTopic, 'simple', q, 'exam');
-                questions.push(q);
-                cacheMisses++;
+                // FASE 1: Validación básica
+                const validation = validateQuestionQuality(q);
+
+                // FASE 2: Validación avanzada con chunks
+                const advValidation = advancedQuestionValidation(q, [chunk1, chunk2]);
+
+                // Score combinado
+                const finalScore = Math.round((validation.score * 0.4) + (advValidation.score * 0.6));
+
+                console.log(`   📊 Calidad: ${finalScore}/100 (básica: ${validation.score}, avanzada: ${advValidation.score})`);
+                if (advValidation.warnings.length > 0) {
+                  console.log(`   ⚠️  Warnings: ${advValidation.warnings.join(', ')}`);
+                }
+
+                // Solo aceptar preguntas con score >= 70
+                if (finalScore >= 70) {
+                  q._sourceTopic = currentTopic;
+                  q._qualityScore = finalScore;
+                  db.saveToCacheAndTrack(userId, currentTopic, 'simple', q, 'exam');
+                  questions.push(q);
+                  cacheMisses++;
+                } else {
+                  console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 70)`);
+                }
               });
-              db.markChunkAsUsed(userId, currentTopic, chunkIndex);
+
+              // Marcar ambos chunks como usados
+              selectedIndices.forEach(idx => db.markChunkAsUsed(userId, currentTopic, idx));
             }
           } catch (error) {
             console.error(`❌ Error generando simples [${currentTopic}]:`, error.message);
@@ -1072,23 +1553,51 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
           const toGenerate = questionsToGet - questions.length;
           console.log(`\n🔵 MEDIA [${currentTopic}] - Generando ${toGenerate} preguntas nuevas`);
 
-          const chunkIndex = db.getUnusedChunkIndex(userId, currentTopic, topicChunks.length);
-          const selectedChunk = topicChunks[chunkIndex];
-          const fullPrompt = CLAUDE_PROMPT_MEDIA.replace('{{CONTENT}}', selectedChunk);
+          // Seleccionar 2 chunks espaciados
+          const selectedIndices = selectSpacedChunks(userId, currentTopic, topicChunks, 2);
+          const chunk1 = topicChunks[selectedIndices[0]];
+          const chunk2 = selectedIndices.length > 1 ? topicChunks[selectedIndices[1]] : chunk1;
+
+          // Crear prompt con 2 fragmentos
+          const fullPrompt = CLAUDE_PROMPT_MEDIA
+            .replace('{{CHUNK_1}}', chunk1)
+            .replace('{{CHUNK_2}}', chunk2);
 
           try {
-            const response = await callClaudeWithImprovedRetry(fullPrompt, 1100, 'medias', 3);
+            const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.media, 'media', 2);
             const responseText = response.content[0].text;
             const questionsData = parseClaudeResponse(responseText);
 
             if (questionsData?.questions?.length) {
               questionsData.questions.slice(0, toGenerate).forEach(q => {
-                q._sourceTopic = currentTopic;
-                db.saveToCacheAndTrack(userId, currentTopic, 'media', q, 'exam');
-                questions.push(q);
-                cacheMisses++;
+                // FASE 1: Validación básica
+                const validation = validateQuestionQuality(q);
+
+                // FASE 2: Validación avanzada con chunks
+                const advValidation = advancedQuestionValidation(q, [chunk1, chunk2]);
+
+                // Score combinado
+                const finalScore = Math.round((validation.score * 0.4) + (advValidation.score * 0.6));
+
+                console.log(`   📊 Calidad: ${finalScore}/100 (básica: ${validation.score}, avanzada: ${advValidation.score})`);
+                if (advValidation.warnings.length > 0) {
+                  console.log(`   ⚠️  Warnings: ${advValidation.warnings.join(', ')}`);
+                }
+
+                // Solo aceptar preguntas con score >= 70
+                if (finalScore >= 70) {
+                  q._sourceTopic = currentTopic;
+                  q._qualityScore = finalScore;
+                  db.saveToCacheAndTrack(userId, currentTopic, 'media', q, 'exam');
+                  questions.push(q);
+                  cacheMisses++;
+                } else {
+                  console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 70)`);
+                }
               });
-              db.markChunkAsUsed(userId, currentTopic, chunkIndex);
+
+              // Marcar ambos chunks como usados
+              selectedIndices.forEach(idx => db.markChunkAsUsed(userId, currentTopic, idx));
             }
           } catch (error) {
             console.error(`❌ Error generando medias [${currentTopic}]:`, error.message);
@@ -1126,23 +1635,51 @@ app.post('/api/generate-exam', requireAuth, async (req, res) => {
           const toGenerate = questionsToGet - questions.length;
           console.log(`\n🔴 ELABORADA [${currentTopic}] - Generando ${toGenerate} preguntas nuevas`);
 
-          const chunkIndex = db.getUnusedChunkIndex(userId, currentTopic, topicChunks.length);
-          const selectedChunk = topicChunks[chunkIndex];
-          const fullPrompt = CLAUDE_PROMPT_ELABORADA.replace('{{CONTENT}}', selectedChunk);
+          // Seleccionar 2 chunks espaciados
+          const selectedIndices = selectSpacedChunks(userId, currentTopic, topicChunks, 2);
+          const chunk1 = topicChunks[selectedIndices[0]];
+          const chunk2 = selectedIndices.length > 1 ? topicChunks[selectedIndices[1]] : chunk1;
+
+          // Crear prompt con 2 fragmentos
+          const fullPrompt = CLAUDE_PROMPT_ELABORADA
+            .replace('{{CHUNK_1}}', chunk1)
+            .replace('{{CHUNK_2}}', chunk2);
 
           try {
-            const response = await callClaudeWithImprovedRetry(fullPrompt, 1400, 'elaboradas', 2);
+            const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.elaborada, 'elaborada', 2);
             const responseText = response.content[0].text;
             const questionsData = parseClaudeResponse(responseText);
 
             if (questionsData?.questions?.length) {
               questionsData.questions.slice(0, toGenerate).forEach(q => {
-                q._sourceTopic = currentTopic;
-                db.saveToCacheAndTrack(userId, currentTopic, 'elaborada', q, 'exam');
-                questions.push(q);
-                cacheMisses++;
+                // FASE 1: Validación básica
+                const validation = validateQuestionQuality(q);
+
+                // FASE 2: Validación avanzada con chunks
+                const advValidation = advancedQuestionValidation(q, [chunk1, chunk2]);
+
+                // Score combinado
+                const finalScore = Math.round((validation.score * 0.4) + (advValidation.score * 0.6));
+
+                console.log(`   📊 Calidad: ${finalScore}/100 (básica: ${validation.score}, avanzada: ${advValidation.score})`);
+                if (advValidation.warnings.length > 0) {
+                  console.log(`   ⚠️  Warnings: ${advValidation.warnings.join(', ')}`);
+                }
+
+                // Solo aceptar preguntas con score >= 70
+                if (finalScore >= 70) {
+                  q._sourceTopic = currentTopic;
+                  q._qualityScore = finalScore;
+                  db.saveToCacheAndTrack(userId, currentTopic, 'elaborada', q, 'exam');
+                  questions.push(q);
+                  cacheMisses++;
+                } else {
+                  console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 70)`);
+                }
               });
-              db.markChunkAsUsed(userId, currentTopic, chunkIndex);
+
+              // Marcar ambos chunks como usados
+              selectedIndices.forEach(idx => db.markChunkAsUsed(userId, currentTopic, idx));
             }
           } catch (error) {
             console.error(`❌ Error generando elaboradas [${currentTopic}]:`, error.message);
@@ -1450,7 +1987,7 @@ async function generateQuestionBatch(userId, topicId, count = 3, cacheProb = 0.6
 
   // Obtener contenido del tema
   const topicContent = await getDocumentsByTopics([topicId]);
-  const topicChunks = splitIntoChunks(topicContent, 1200);
+  const topicChunks = splitIntoChunks(topicContent, 1000);
 
   if (topicChunks.length === 0) {
     throw new Error('No hay contenido disponible para este tema');
@@ -1458,7 +1995,7 @@ async function generateQuestionBatch(userId, topicId, count = 3, cacheProb = 0.6
 
   console.log(`📄 Tema ${topicId}: ${topicChunks.length} chunks disponibles`);
 
-  // Generar preguntas mezclando dificultades
+  // Generar preguntas mezclando dificultades (batches de 2)
   let attempts = 0;
   while (questions.length < count && attempts < MAX_RETRIES) {
     attempts++;
@@ -1470,65 +2007,100 @@ async function generateQuestionBatch(userId, topicId, count = 3, cacheProb = 0.6
     else if (rand > 0.80) difficulty = 'elaborada';
 
     const tryCache = Math.random() < cacheProb;
-    let question = null;
+    let batchQuestions = [];
 
-    // Intentar caché primero
+    // Intentar caché primero (hasta 2 preguntas)
     if (tryCache) {
-      const cached = db.getCachedQuestion(userId, [topicId], difficulty);
-      if (cached) {
-        question = cached.question;
-        question._cacheId = cached.cacheId;
-        question._sourceTopic = topicId;
-        db.markQuestionAsSeen(userId, cached.cacheId, 'study');
-        console.log(`💾 Pregunta ${questions.length + 1}/${count} desde caché (${difficulty}) [cache prob: ${Math.round(cacheProb * 100)}%]`);
+      const needed = Math.min(2, count - questions.length);
+      for (let i = 0; i < needed; i++) {
+        const cached = db.getCachedQuestion(userId, [topicId], difficulty);
+        if (cached) {
+          cached.question._cacheId = cached.cacheId;
+          cached.question._sourceTopic = topicId;
+          batchQuestions.push(cached.question);
+          db.markQuestionAsSeen(userId, cached.cacheId, 'study');
+          console.log(`💾 Pregunta ${questions.length + batchQuestions.length}/${count} desde caché (${difficulty})`);
+        } else {
+          break;
+        }
       }
     }
 
-    // Si no hay en caché, generar nueva
-    if (!question) {
-      const chunkIndex = db.getUnusedChunkIndex(userId, topicId, topicChunks.length);
-      const selectedChunk = topicChunks[chunkIndex];
+    // Si no hay suficientes en caché, generar batch de 2
+    if (batchQuestions.length === 0) {
+      // Seleccionar 2 chunks espaciados
+      const selectedIndices = selectSpacedChunks(userId, topicId, topicChunks, 2);
+      const chunk1 = topicChunks[selectedIndices[0]];
+      const chunk2 = selectedIndices.length > 1 ? topicChunks[selectedIndices[1]] : chunk1;
 
-      let prompt, maxTokens, calls;
+      let prompt, maxTokens;
       if (difficulty === 'simple') {
         prompt = CLAUDE_PROMPT_SIMPLE;
-        maxTokens = 800;
-        calls = 1;
+        maxTokens = MAX_TOKENS_CONFIG.simple;
       } else if (difficulty === 'media') {
         prompt = CLAUDE_PROMPT_MEDIA;
-        maxTokens = 1100;
-        calls = 1;
+        maxTokens = MAX_TOKENS_CONFIG.media;
       } else {
-        prompt = CLAUDE_PROMPT_ELABORATED;
-        maxTokens = 1500;
-        calls = 1;
+        prompt = CLAUDE_PROMPT_ELABORADA;
+        maxTokens = MAX_TOKENS_CONFIG.elaborada;
       }
 
-      const fullPrompt = prompt.replace('{{CONTENT}}', selectedChunk);
+      // Crear prompt con 2 fragmentos
+      const fullPrompt = prompt
+        .replace('{{CHUNK_1}}', chunk1)
+        .replace('{{CHUNK_2}}', chunk2);
 
       try {
-        const response = await callClaudeWithImprovedRetry(fullPrompt, maxTokens, difficulty, calls);
+        const response = await callClaudeWithImprovedRetry(fullPrompt, maxTokens, difficulty, 2);
         const responseText = response.content[0].text;
         const questionsData = parseClaudeResponse(responseText);
 
         if (questionsData?.questions?.length > 0) {
-          question = questionsData.questions[0];
-          question._sourceTopic = topicId;
+          // Tomar hasta 2 preguntas del batch
+          const needed = Math.min(2, count - questions.length);
+          for (let i = 0; i < needed && i < questionsData.questions.length; i++) {
+            const q = questionsData.questions[i];
 
-          // Guardar en caché
-          db.saveToCacheAndTrack(userId, topicId, difficulty, question, 'study');
+            // FASE 1: Validación básica
+            const validation = validateQuestionQuality(q);
 
-          db.markChunkAsUsed(userId, topicId, chunkIndex);
-          console.log(`🆕 Pregunta ${questions.length + 1}/${count} generada (${difficulty})`);
+            // FASE 2: Validación avanzada con chunks
+            const advValidation = advancedQuestionValidation(q, [chunk1, chunk2]);
+
+            // Score combinado
+            const finalScore = Math.round((validation.score * 0.4) + (advValidation.score * 0.6));
+
+            console.log(`   📊 Calidad: ${finalScore}/100 (básica: ${validation.score}, avanzada: ${advValidation.score})`);
+            if (advValidation.warnings.length > 0) {
+              console.log(`   ⚠️  Warnings: ${advValidation.warnings.join(', ')}`);
+            }
+
+            // Solo aceptar preguntas con score >= 70
+            if (finalScore >= 70) {
+              q._sourceTopic = topicId;
+              q._qualityScore = finalScore;
+
+              // Guardar en caché
+              db.saveToCacheAndTrack(userId, topicId, difficulty, q, 'study');
+
+              batchQuestions.push(q);
+            } else {
+              console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 70)`);
+            }
+          }
+
+          // Marcar chunks como usados
+          selectedIndices.forEach(idx => db.markChunkAsUsed(userId, topicId, idx));
+
+          console.log(`🆕 ${batchQuestions.length} preguntas generadas (${difficulty})`);
         }
       } catch (error) {
         console.error(`❌ Error generando pregunta (intento ${attempts}):`, error.message);
       }
     }
 
-    if (question) {
-      questions.push(question);
-    }
+    // Añadir preguntas del batch
+    questions.push(...batchQuestions);
   }
 
   // Log final con stats
@@ -1749,8 +2321,8 @@ app.post('/api/exam/official', requireAuth, async (req, res) => {
       });
     }
 
-    // Dividir en chunks de 1200 caracteres
-    const chunks = splitIntoChunks(allContent, 1200);
+    // Dividir en chunks de 1000 caracteres (optimizado)
+    const chunks = splitIntoChunks(allContent, 1000);
     console.log(`📄 Documento dividido en ${chunks.length} chunks de todos los temas`);
 
     if (chunks.length === 0) {
@@ -1766,23 +2338,35 @@ app.post('/api/exam/official', requireAuth, async (req, res) => {
     const mediaNeeded = Math.round(totalNeeded * 0.60);
     const elaboratedNeeded = totalNeeded - simpleNeeded - mediaNeeded;
 
-    const simpleCalls = Math.ceil(simpleNeeded / 3);
-    const mediaCalls = Math.ceil(mediaNeeded / 3);
+    const simpleCalls = Math.ceil(simpleNeeded / 2);
+    const mediaCalls = Math.ceil(mediaNeeded / 2);
     const elaboratedCalls = Math.ceil(elaboratedNeeded / 2);
 
     console.log(`🎯 Plan (20/60/20): ${simpleNeeded} simples + ${mediaNeeded} medias + ${elaboratedNeeded} elaboradas`);
 
-    // Generar preguntas SIMPLES (20%)
+    // Generar preguntas SIMPLES (20%) - 2 por llamada con chunks espaciados
     for (let i = 0; i < simpleCalls; i++) {
-      const chunkIndex = Math.floor(Math.random() * chunks.length);
-      const selectedChunk = chunks[chunkIndex];
-
       console.log(`⚪ SIMPLE ${i + 1}/${simpleCalls}`);
 
-      const fullPrompt = CLAUDE_PROMPT_SIMPLE.replace('{{CONTENT}}', selectedChunk);
+      // Seleccionar 2 chunks aleatorios espaciados
+      const chunk1Index = Math.floor(Math.random() * chunks.length);
+      const minDistance = Math.max(3, Math.floor(chunks.length * 0.3));
+
+      // Buscar segundo chunk lejos del primero
+      let chunk2Index;
+      do {
+        chunk2Index = Math.floor(Math.random() * chunks.length);
+      } while (Math.abs(chunk2Index - chunk1Index) < minDistance && chunks.length > 1);
+
+      const chunk1 = chunks[chunk1Index];
+      const chunk2 = chunks[chunk2Index];
+
+      const fullPrompt = CLAUDE_PROMPT_SIMPLE
+        .replace('{{CHUNK_1}}', chunk1)
+        .replace('{{CHUNK_2}}', chunk2);
 
       try {
-        const response = await callClaudeWithImprovedRetry(fullPrompt, 800, 'simples', 3);
+        const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.simple, 'simple', 2);
         const responseText = response.content[0].text;
         const questionsData = parseClaudeResponse(responseText);
 
@@ -1794,17 +2378,28 @@ app.post('/api/exam/official', requireAuth, async (req, res) => {
       }
     }
 
-    // Generar preguntas MEDIAS (60%)
+    // Generar preguntas MEDIAS (60%) - 2 por llamada con chunks espaciados
     for (let i = 0; i < mediaCalls; i++) {
-      const chunkIndex = Math.floor(Math.random() * chunks.length);
-      const selectedChunk = chunks[chunkIndex];
-
       console.log(`🔵 MEDIA ${i + 1}/${mediaCalls}`);
 
-      const fullPrompt = CLAUDE_PROMPT_MEDIA.replace('{{CONTENT}}', selectedChunk);
+      // Seleccionar 2 chunks aleatorios espaciados
+      const chunk1Index = Math.floor(Math.random() * chunks.length);
+      const minDistance = Math.max(3, Math.floor(chunks.length * 0.3));
+
+      let chunk2Index;
+      do {
+        chunk2Index = Math.floor(Math.random() * chunks.length);
+      } while (Math.abs(chunk2Index - chunk1Index) < minDistance && chunks.length > 1);
+
+      const chunk1 = chunks[chunk1Index];
+      const chunk2 = chunks[chunk2Index];
+
+      const fullPrompt = CLAUDE_PROMPT_MEDIA
+        .replace('{{CHUNK_1}}', chunk1)
+        .replace('{{CHUNK_2}}', chunk2);
 
       try {
-        const response = await callClaudeWithImprovedRetry(fullPrompt, 1100, 'medias', 3);
+        const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.media, 'media', 2);
         const responseText = response.content[0].text;
         const questionsData = parseClaudeResponse(responseText);
 
@@ -1816,17 +2411,28 @@ app.post('/api/exam/official', requireAuth, async (req, res) => {
       }
     }
 
-    // Generar preguntas ELABORADAS (20%)
+    // Generar preguntas ELABORADAS (20%) - 2 por llamada con chunks espaciados
     for (let i = 0; i < elaboratedCalls; i++) {
-      const chunkIndex = Math.floor(Math.random() * chunks.length);
-      const selectedChunk = chunks[chunkIndex];
-
       console.log(`🔴 ELABORADA ${i + 1}/${elaboratedCalls}`);
 
-      const fullPrompt = CLAUDE_PROMPT_ELABORADA.replace('{{CONTENT}}', selectedChunk);
+      // Seleccionar 2 chunks aleatorios espaciados
+      const chunk1Index = Math.floor(Math.random() * chunks.length);
+      const minDistance = Math.max(3, Math.floor(chunks.length * 0.3));
+
+      let chunk2Index;
+      do {
+        chunk2Index = Math.floor(Math.random() * chunks.length);
+      } while (Math.abs(chunk2Index - chunk1Index) < minDistance && chunks.length > 1);
+
+      const chunk1 = chunks[chunk1Index];
+      const chunk2 = chunks[chunk2Index];
+
+      const fullPrompt = CLAUDE_PROMPT_ELABORADA
+        .replace('{{CHUNK_1}}', chunk1)
+        .replace('{{CHUNK_2}}', chunk2);
 
       try {
-        const response = await callClaudeWithImprovedRetry(fullPrompt, 1400, 'elaboradas', 2);
+        const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.elaborada, 'elaborada', 2);
         const responseText = response.content[0].text;
         const questionsData = parseClaudeResponse(responseText);
 
