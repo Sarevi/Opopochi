@@ -768,13 +768,14 @@ INSTRUCCIONES:
    - Error común de estudiantes
 5. EXPLICACIÓN: máx 15 palabras, cita directa
 
-⚠️ CRÍTICO - RESPUESTA EN EL TEXTO:
-SOLO usa datos que aparecen LITERALMENTE en el fragmento. Si no encuentras un dato objetivo claro, busca otro concepto. NUNCA inventes cifras, plazos o datos.
+⚠️ CRÍTICO - RESPUESTA CORRECTA EN EL TEXTO:
+La respuesta CORRECTA DEBE estar LITERALMENTE en el fragmento - NO inventes la respuesta correcta.
+Los DISTRACTORES deben ser plausibles pero INCORRECTOS (pueden ser inventados para confundir).
 
 PROHIBIDO:
 ✗ Narrativas ("un técnico recibe...")
-✗ Inventar datos no documentados
-✗ Distractores absurdos
+✗ Inventar la respuesta correcta (los distractores SÍ deben ser inventados/incorrectos)
+✗ Distractores absurdos (extremos irreales)
 
 RESPONDE SOLO JSON:
 {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"simple","page_reference":""}]}`;
@@ -836,13 +837,13 @@ INSTRUCCIONES:
 
 ⚠️ CRÍTICO - VARIEDAD Y PRECISIÓN:
 - NO uses siempre "¿Qué establece [protocolo]...?" - VARÍA el tipo de pregunta
-- TODO debe estar LITERALMENTE en el fragmento
+- La respuesta CORRECTA debe estar LITERALMENTE en el fragmento (distractores plausibles pero incorrectos)
 - Si no hay suficiente info para un tipo, usa otro
 - Las 2 preguntas deben ser de tipos DIFERENTES si es posible
 
 PROHIBIDO:
 ✗ Narrativas ("durante tu turno, recibes...")
-✗ Inventar datos, protocolos o procedimientos
+✗ Inventar la respuesta correcta (los distractores SÍ deben ser inventados/incorrectos)
 ✗ Usar siempre la misma fórmula de pregunta
 
 RESPONDE SOLO JSON:
@@ -905,14 +906,14 @@ INSTRUCCIONES:
 
 ⚠️ CRÍTICO - VARIEDAD Y PRECISIÓN:
 - NO uses siempre "¿Qué factores determinan...?" - VARÍA el tipo
-- TODO debe estar LITERALMENTE en el fragmento
+- La respuesta CORRECTA debe estar LITERALMENTE en el fragmento (distractores plausibles pero incorrectos)
 - Requieren integrar 2+ conceptos del texto
 - Las 2 preguntas deben ser de tipos DIFERENTES si es posible
 - Si el fragmento no permite pregunta compleja, haz una MEDIA difícil
 
 PROHIBIDO:
 ✗ Narrativas largas con historias
-✗ Inventar criterios, procedimientos o situaciones
+✗ Inventar la respuesta correcta (los distractores SÍ deben ser inventados/incorrectos)
 ✗ Usar siempre la misma fórmula de pregunta
 ✗ Situaciones irreales
 
