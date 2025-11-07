@@ -761,15 +761,15 @@ INSTRUCCIONES:
 
 1. IDENTIFICA concepto clave por fragmento: plazos, temperaturas, rangos, definiciones, porcentajes, clasificaciones
 2. FORMULA pregunta directa (10-20 palabras): "Según [normativa], ¿cuál/qué [dato específico]?"
-3. RESPUESTA CORRECTA: DEBE estar LITERALMENTE escrita en el fragmento - NO inventes NADA
+3. RESPUESTA CORRECTA: La información DEBE estar en el fragmento (puedes reformular, pero NO inventes datos)
 4. CREA 3 DISTRACTORES plausibles:
    - Cifra próxima alterada (2-8°C → 0-4°C, 4-10°C, 8-15°C)
    - Dato de otro contexto relacionado
    - Error común de estudiantes
 5. EXPLICACIÓN: máx 15 palabras, cita directa
 
-⚠️ CRÍTICO - RESPUESTA CORRECTA EN EL TEXTO:
-La respuesta CORRECTA DEBE estar LITERALMENTE en el fragmento - NO inventes la respuesta correcta.
+⚠️ CRÍTICO - RESPUESTA CORRECTA DEL TEXTO:
+La información de la respuesta CORRECTA debe DERIVARSE del fragmento - puedes reformular pero NO inventes datos.
 Los DISTRACTORES deben ser plausibles pero INCORRECTOS (pueden ser inventados para confundir).
 
 PROHIBIDO:
@@ -826,7 +826,7 @@ INSTRUCCIONES:
 1. IDENTIFICA el concepto/tema del fragmento (NO solo protocolos)
 2. ELIGE tipo de pregunta adecuado según el contenido (varía entre los 8 tipos)
 3. FORMULA pregunta (15-25 palabras) - NO uses siempre la misma fórmula
-4. RESPUESTA CORRECTA: DEBE estar TEXTUALMENTE en el fragmento - NO inventes
+4. RESPUESTA CORRECTA: La información DEBE estar en el fragmento (puedes reformular, pero NO inventes datos)
 5. CREA 3 DISTRACTORES plausibles según tipo:
    - Características: atributos similares pero de otro concepto
    - Funciones: objetivos parciales o de sistemas relacionados
@@ -837,7 +837,7 @@ INSTRUCCIONES:
 
 ⚠️ CRÍTICO - VARIEDAD Y PRECISIÓN:
 - NO uses siempre "¿Qué establece [protocolo]...?" - VARÍA el tipo de pregunta
-- La respuesta CORRECTA debe estar LITERALMENTE en el fragmento (distractores plausibles pero incorrectos)
+- La información de la respuesta CORRECTA debe DERIVARSE del fragmento (puedes reformular, NO inventes datos)
 - Si no hay suficiente info para un tipo, usa otro
 - Las 2 preguntas deben ser de tipos DIFERENTES si es posible
 
@@ -895,7 +895,7 @@ INSTRUCCIONES:
 1. IDENTIFICA contenido que permita pregunta compleja (NO solo procedimientos)
 2. ELIGE tipo de pregunta según el contenido (varía entre los 8 tipos)
 3. FORMULA pregunta (15-30 palabras) que requiera análisis profundo - VARÍA la fórmula
-4. RESPUESTA CORRECTA: DEBE estar COMPLETA Y TEXTUALMENTE en el fragmento
+4. RESPUESTA CORRECTA: La información DEBE estar en el fragmento (puedes reformular, pero NO inventes datos)
 5. CREA 3 DISTRACTORES sofisticados:
    - Respuesta parcial (omite elementos críticos)
    - Práctica común pero técnicamente incorrecta
@@ -906,7 +906,7 @@ INSTRUCCIONES:
 
 ⚠️ CRÍTICO - VARIEDAD Y PRECISIÓN:
 - NO uses siempre "¿Qué factores determinan...?" - VARÍA el tipo
-- La respuesta CORRECTA debe estar LITERALMENTE en el fragmento (distractores plausibles pero incorrectos)
+- La información de la respuesta CORRECTA debe DERIVARSE del fragmento (puedes reformular, NO inventes datos)
 - Requieren integrar 2+ conceptos del texto
 - Las 2 preguntas deben ser de tipos DIFERENTES si es posible
 - Si el fragmento no permite pregunta compleja, haz una MEDIA difícil
