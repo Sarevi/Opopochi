@@ -544,6 +544,9 @@
             <div class="section-header">
                 <h2>Gestión de Usuarios</h2>
                 <div style="display: flex; gap: 10px;">
+                    <button class="action-button" onclick="exportAllUsersToExcel()" style="background: #10b981;">
+                        📊 Exportar Todo (Excel)
+                    </button>
                     <button class="action-button" onclick="loadUsers()">
                         🔄 Refrescar
                     </button>
@@ -576,7 +579,12 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2 id="modal-user-title">Estadísticas de Usuario</h2>
-                <button class="close-modal" onclick="closeModal()">&times;</button>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <button class="action-button" onclick="exportUserToExcel()" style="background: #10b981; padding: 8px 16px; font-size: 0.9rem;">
+                        📊 Exportar Excel
+                    </button>
+                    <button class="close-modal" onclick="closeModal()">&times;</button>
+                </div>
             </div>
 
             <div id="modal-stats-content">
@@ -590,6 +598,7 @@
         let adminPassword = '';
         let users = [];
         let currentFilter = 'todos';
+        let currentViewingUserId = null; // Para exportar Excel del usuario en el modal
 
         // ========================
         // SISTEMA DE NOTIFICACIONES
@@ -888,6 +897,7 @@
             const user = users.find(u => u.id === userId);
             if (!user) return;
 
+            currentViewingUserId = userId; // Guardar para exportación
             document.getElementById('modal-user-title').textContent = `Estadísticas de ${user.username}`;
             document.getElementById('user-stats-modal').classList.add('active');
 
@@ -1034,6 +1044,89 @@
 
         function closeModal() {
             document.getElementById('user-stats-modal').classList.remove('active');
+            currentViewingUserId = null;
+        }
+
+        // ========================
+        // EXPORTACIÓN A EXCEL
+        // ========================
+
+        function exportUserToExcel() {
+            if (!currentViewingUserId) {
+                showNotification('Error: no se pudo identificar el usuario', 'error');
+                return;
+            }
+
+            const url = `${API_BASE}/api/admin/export/user/${currentViewingUserId}`;
+
+            // Usar fetch para obtener el archivo
+            fetch(url, {
+                headers: {
+                    'X-Admin-Password': adminPassword
+                }
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('Error al exportar');
+                return response.blob();
+            })
+            .then(blob => {
+                // Crear enlace de descarga
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                const user = users.find(u => u.id === currentViewingUserId);
+                a.download = `usuario_${user ? user.username : currentViewingUserId}_${Date.now()}.xlsx`;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+
+                showNotification('📊 Excel descargado correctamente', 'success');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showNotification('❌ Error al descargar Excel', 'error');
+            });
+        }
+
+        function exportAllUsersToExcel() {
+            if (!adminPassword) {
+                showNotification('Error: no estás autenticado', 'error');
+                return;
+            }
+
+            // Crear un formulario invisible para enviar la petición con la contraseña en el header
+            const url = `${API_BASE}/api/admin/export/all`;
+
+            // Usar fetch para obtener el archivo
+            fetch(url, {
+                headers: {
+                    'X-Admin-Password': adminPassword
+                }
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('Error al exportar');
+                return response.blob();
+            })
+            .then(blob => {
+                // Crear enlace de descarga
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = `todos_usuarios_${Date.now()}.xlsx`;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+
+                showNotification('📊 Excel descargado correctamente', 'success');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showNotification('❌ Error al descargar Excel', 'error');
+            });
         }
 
         // Auto-refresh cada 30 segundos
