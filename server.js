@@ -2324,6 +2324,9 @@ app.post('/api/record-answer', requireAuth, (req, res) => {
       // Actualizar estadísticas en la base de datos
       db.updateUserStats(userId, topicId, topicTitle, isCorrect);
 
+      // Registrar en historial para estadísticas semanales
+      db.recordAnswer(userId, topicId, topicTitle, isCorrect);
+
       // Si es incorrecta, guardar en preguntas falladas
       if (!isCorrect) {
         db.addFailedQuestion(userId, topicId, questionData, userAnswer);
@@ -2368,6 +2371,28 @@ app.get('/api/user-stats', requireAuth, (req, res) => {
   } catch (error) {
     console.error('❌ Error obteniendo estadísticas:', error);
     res.status(500).json({ error: 'Error al obtener estadísticas' });
+  }
+});
+
+// Nuevo endpoint: Estadísticas semanales
+app.get('/api/weekly-stats', requireAuth, (req, res) => {
+  try {
+    const userId = req.user.id;
+    const weeks = parseInt(req.query.weeks) || 4;
+
+    // Obtener estadísticas por tema
+    const statsByTopic = db.getWeeklyStatsByTopic(userId, weeks);
+
+    // Obtener resumen semanal
+    const summary = db.getWeeklySummary(userId, weeks);
+
+    res.json({
+      byTopic: statsByTopic,
+      summary: summary
+    });
+  } catch (error) {
+    console.error('❌ Error obteniendo estadísticas semanales:', error);
+    res.status(500).json({ error: 'Error al obtener estadísticas semanales' });
   }
 });
 
