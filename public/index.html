@@ -32,15 +32,20 @@
         .header {
             text-align: center;
             color: #6b7280;
-            margin-bottom: 32px;
+            margin-bottom: 40px;
+            padding: 0 16px;
         }
 
         .header h1 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            margin-bottom: 8px;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
             letter-spacing: -0.025em;
-            color: #374151;
+            color: #1f2937;
+        }
+
+        .header h1 .emoji {
+            font-size: 3.5rem;
         }
 
         .header p {
@@ -853,7 +858,11 @@
 
         @media (max-width: 768px) {
             .header h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
+            }
+
+            .header h1 .emoji {
+                font-size: 2.5rem;
             }
 
             .container {
