@@ -2046,9 +2046,12 @@ app.post('/api/study/question', requireAuth, async (req, res) => {
           });
         }
 
+        // Aleatorizar opciones antes de devolver
+        const randomizedQuestion = randomizeQuestionOptions(questionToReturn);
+
         // Retornar inmediatamente
         return res.json({
-          questions: [questionToReturn],
+          questions: [randomizedQuestion],
           source: 'buffer',
           bufferSize: newBufferSize
         });
@@ -2079,8 +2082,11 @@ app.post('/api/study/question', requireAuth, async (req, res) => {
     const finalBufferSize = db.getBufferSize(userId, topicId);
     console.log(`✅ Batch generado: 1 entregada + ${finalBufferSize} en buffer`);
 
+    // Aleatorizar opciones antes de devolver
+    const randomizedQuestion = randomizeQuestionOptions(questionToReturn);
+
     res.json({
-      questions: [questionToReturn],
+      questions: [randomizedQuestion],
       source: 'generated',
       bufferSize: finalBufferSize
     });
