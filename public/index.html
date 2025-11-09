@@ -2544,8 +2544,13 @@
                     }) : '';
 
                     failedHTML += `
-                        <div class="failed-topic-card" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 2px solid #fbbf24;">
-                            <div style="margin-bottom: 16px;">
+                        <div class="failed-topic-card" style="position: relative; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 2px solid #fbbf24;">
+                            <!-- Badge PDF superior derecho -->
+                            <button onclick="exportToPDF('${examId}')" style="position: absolute; top: 16px; right: 16px; background: #fed7aa; color: #9a3412; padding: 6px 12px; font-weight: 600; border: none; border-radius: 6px; cursor: pointer; font-size: 0.75rem; transition: all 0.2s ease;" onmouseover="this.style.background='#fdba74'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 2px 8px rgba(251, 146, 60, 0.3)';" onmouseout="this.style.background='#fed7aa'; this.style.transform='none'; this.style.boxShadow='none';">
+                                📄 Exportar PDF
+                            </button>
+
+                            <div style="margin-bottom: 16px; padding-right: 120px;">
                                 <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
                                     <h3 style="margin: 0; color: #92400e; font-size: 1.25rem;">Examen ${examSize} preguntas</h3>
                                     <span style="background: #f59e0b; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">OFICIAL</span>
@@ -3304,12 +3309,11 @@
                             // Split SIN el prefijo para evitar problemas de encoding
                             const optLines = doc.splitTextToSize(opt, maxWidth - 10);
 
-                            // Agregar prefijo solo a la primera línea
+                            // Agregar prefijo solo a respuesta del usuario (no a correcta, solo color)
                             let prefix = '  ';
-                            if (isCorrect) prefix = '[CORRECTA] ';
-                            else if (wasSelected) prefix = '[TU RESPUESTA] ';
+                            if (wasSelected && !isCorrect) prefix = '[TU RESPUESTA] ';
 
-                            // Primera línea con prefijo
+                            // Primera línea con prefijo (si aplica)
                             doc.text(prefix + optLines[0], margin + 5, yPos);
                             yPos += 5;
 
