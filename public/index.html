@@ -2345,95 +2345,7 @@
                 return;
             }
 
-            // Filtrar temas con >25 preguntas y calcular mejores/peores
-            const qualifiedTopics = Object.entries(userStats)
-                .filter(([_, stats]) => stats.totalQuestions > 25)
-                .map(([topicId, stats]) => ({
-                    topicId,
-                    ...stats,
-                    accuracy: stats.accuracy || 0
-                }))
-                .sort((a, b) => b.accuracy - a.accuracy); // Ordenar de mayor a menor accuracy
-
-            // Evitar solapamiento: necesitamos al menos 2 temas para separar mejores de peores
-            let bestTopics = [];
-            let worstTopics = [];
-
-            if (qualifiedTopics.length >= 4) {
-                // Con 4+ temas: top 3 y bottom 3 sin solapamiento
-                const topCount = Math.min(3, Math.floor(qualifiedTopics.length / 2));
-                bestTopics = qualifiedTopics.slice(0, topCount);
-                worstTopics = qualifiedTopics.slice(-topCount).reverse(); // Reverse para mostrar peor primero
-            } else if (qualifiedTopics.length === 3) {
-                // Con 3 temas: mejor 1, peor 1
-                bestTopics = [qualifiedTopics[0]];
-                worstTopics = [qualifiedTopics[2]];
-            } else if (qualifiedTopics.length === 2) {
-                // Con 2 temas: mejor 1, peor 1
-                bestTopics = [qualifiedTopics[0]];
-                worstTopics = [qualifiedTopics[1]];
-            }
-            // Si solo hay 1 tema, no mostramos tarjetas destacadas
-
             let statsHTML = '';
-
-            // TARJETAS DE DESTACADOS (solo si hay al menos 2 temas cualificados)
-            if (bestTopics.length > 0 && worstTopics.length > 0) {
-                statsHTML += `
-                    <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;">
-
-                        <!-- MEJORES TEMAS -->
-                        <div style="background: white; border-radius: 12px; padding: 16px; border: 2px solid #22c55e;">
-                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
-                                <div style="font-size: 1.5rem;">🏆</div>
-                                <div>
-                                    <h3 style="margin: 0; color: #166534; font-size: 0.95rem; font-weight: 700;">Mejores Temas</h3>
-                                    <p style="margin: 2px 0 0 0; color: #22c55e; font-size: 0.7rem;">Mayor % de acierto</p>
-                                </div>
-                            </div>
-                            <div style="display: flex; flex-direction: column; gap: 6px;">
-                                ${bestTopics.map((topic, index) => `
-                                    <div style="background: #f9fafb; border-radius: 6px; padding: 8px 10px; border-left: 3px solid #22c55e; display: flex; justify-content: space-between; align-items: center;">
-                                        <div style="font-weight: 600; color: #1f2937; font-size: 0.8rem; flex: 1; padding-right: 8px; line-height: 1.3;">${index + 1}. ${topic.title}</div>
-                                        <div style="background: #22c55e; color: white; padding: 3px 8px; border-radius: 8px; font-weight: 700; font-size: 0.75rem; min-width: 45px; text-align: center;">
-                                            ${Math.round(topic.accuracy)}%
-                                        </div>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>
-
-                        <!-- TEMAS A REPASAR -->
-                        <div style="background: white; border-radius: 12px; padding: 16px; border: 2px solid #ef4444;">
-                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
-                                <div style="font-size: 1.5rem;">📚</div>
-                                <div>
-                                    <h3 style="margin: 0; color: #991b1b; font-size: 0.95rem; font-weight: 700;">Temas a Repasar</h3>
-                                    <p style="margin: 2px 0 0 0; color: #ef4444; font-size: 0.7rem;">Necesitan más práctica</p>
-                                </div>
-                            </div>
-                            <div style="display: flex; flex-direction: column; gap: 6px;">
-                                ${worstTopics.map((topic, index) => `
-                                    <div style="background: #f9fafb; border-radius: 6px; padding: 8px 10px; border-left: 3px solid #ef4444; display: flex; justify-content: space-between; align-items: center;">
-                                        <div style="font-weight: 600; color: #1f2937; font-size: 0.8rem; flex: 1; padding-right: 8px; line-height: 1.3;">${index + 1}. ${topic.title}</div>
-                                        <div style="background: #ef4444; color: white; padding: 3px 8px; border-radius: 8px; font-weight: 700; font-size: 0.75rem; min-width: 45px; text-align: center;">
-                                            ${Math.round(topic.accuracy)}%
-                                        </div>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- SEPARADOR -->
-                    <div style="border-top: 2px solid #e5e7eb; margin: 24px 0; position: relative;">
-                        <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #f9fafb; padding: 0 12px; color: #6b7280; font-weight: 600; font-size: 0.8rem;">
-                            📊 TODOS LOS TEMAS
-                        </div>
-                    </div>
-                `;
-            }
 
             // TABLA COMPACTA DE TODOS LOS TEMAS
             // Ordenar temas por número (extraer número del título "TEMA X - ...")
@@ -2445,16 +2357,16 @@
                 return numA - numB;
             });
 
-            // VISTA DESKTOP (tabla)
-            statsHTML += '<div class="topics-table-desktop" style="background: white; border-radius: 12px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow-x: auto;">';
+            // VISTA DESKTOP (tabla compacta)
+            statsHTML += '<div class="topics-table-desktop" style="background: white; border-radius: 12px; padding: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow-x: auto;">';
             statsHTML += '<table style="width: 100%; border-collapse: collapse; min-width: 600px;">';
             statsHTML += '<thead style="background: #f9fafb;">';
             statsHTML += '<tr>';
-            statsHTML += '<th style="padding: 12px; text-align: left; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.875rem;">Tema</th>';
-            statsHTML += '<th style="padding: 12px; text-align: center; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.875rem;">Preguntas</th>';
-            statsHTML += '<th style="padding: 12px; text-align: center; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.875rem;">Correctas</th>';
-            statsHTML += '<th style="padding: 12px; text-align: center; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.875rem;">% Acierto</th>';
-            statsHTML += '<th style="padding: 12px; text-align: center; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.875rem;">Última vez</th>';
+            statsHTML += '<th style="padding: 8px 10px; text-align: left; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.8rem;">Tema</th>';
+            statsHTML += '<th style="padding: 8px 10px; text-align: center; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.8rem;">Preguntas</th>';
+            statsHTML += '<th style="padding: 8px 10px; text-align: center; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.8rem;">Correctas</th>';
+            statsHTML += '<th style="padding: 8px 10px; text-align: center; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.8rem;">% Acierto</th>';
+            statsHTML += '<th style="padding: 8px 10px; text-align: center; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.8rem;">Última vez</th>';
             statsHTML += '</tr>';
             statsHTML += '</thead>';
             statsHTML += '<tbody>';
@@ -2462,22 +2374,22 @@
             sortedTopics.forEach(([topicId, stats], index) => {
                 const accuracy = stats.accuracy || 0;
                 const badgeColor = accuracy >= 80 ? '#22c55e' : accuracy >= 60 ? '#f59e0b' : '#ef4444';
-                const lastStudied = new Date(stats.lastStudied).toLocaleDateString('es-ES');
+                const lastStudied = new Date(stats.lastStudied).toLocaleDateString('es-ES', { day: 'numeric', month: 'short' });
                 const rowBg = index % 2 === 0 ? '#ffffff' : '#f9fafb';
 
                 statsHTML += `
                     <tr style="border-bottom: 1px solid #f3f4f6; background: ${rowBg}; transition: background 0.2s ease;"
                         onmouseover="this.style.background='#f3f4f6';"
                         onmouseout="this.style.background='${rowBg}';">
-                        <td style="padding: 12px; font-weight: 600; color: #1f2937; font-size: 0.875rem;">${stats.title}</td>
-                        <td style="padding: 12px; text-align: center; color: #6b7280; font-size: 0.875rem;">${stats.totalQuestions}</td>
-                        <td style="padding: 12px; text-align: center; color: #6b7280; font-size: 0.875rem;">${stats.correctAnswers}</td>
-                        <td style="padding: 12px; text-align: center;">
-                            <span style="background: ${badgeColor}; color: white; padding: 4px 12px; border-radius: 6px; font-weight: 600; font-size: 0.875rem;">
+                        <td style="padding: 8px 10px; font-weight: 600; color: #1f2937; font-size: 0.8rem;">${stats.title}</td>
+                        <td style="padding: 8px 10px; text-align: center; color: #6b7280; font-size: 0.8rem;">${stats.totalQuestions}</td>
+                        <td style="padding: 8px 10px; text-align: center; color: #6b7280; font-size: 0.8rem;">${stats.correctAnswers}</td>
+                        <td style="padding: 8px 10px; text-align: center;">
+                            <span style="background: ${badgeColor}; color: white; padding: 3px 10px; border-radius: 5px; font-weight: 600; font-size: 0.8rem;">
                                 ${Math.round(accuracy)}%
                             </span>
                         </td>
-                        <td style="padding: 12px; text-align: center; color: #6b7280; font-size: 0.75rem;">${lastStudied}</td>
+                        <td style="padding: 8px 10px; text-align: center; color: #6b7280; font-size: 0.75rem;">${lastStudied}</td>
                     </tr>
                 `;
             });
