@@ -1163,14 +1163,11 @@
                 </div>
             </div>
 
-            <!-- Estadísticas Semanales -->
-            <div id="weekly-stats-container" style="display: none;">
-                <div class="card" style="margin-top: 24px;">
-                    <h2><span class="emoji">📅</span>Progreso Semanal</h2>
-                    <p style="color: #6b7280; margin-top: 8px; margin-bottom: 24px;">Análisis de tu rendimiento por semana</p>
-
-                    <div id="weekly-stats-content"></div>
-                </div>
+            <!-- Botón Estadísticas Semanales PDF -->
+            <div style="margin-top: 24px; text-align: center;">
+                <button onclick="showWeeklyStatsModal()" style="background: #3b82f6; color: white; padding: 14px 28px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; font-size: 1rem; transition: all 0.2s ease; box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);" onmouseover="this.style.background='#2563eb'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(59, 130, 246, 0.4)';" onmouseout="this.style.background='#3b82f6'; this.style.transform='none'; this.style.boxShadow='0 2px 8px rgba(59, 130, 246, 0.3)';">
+                    📊 Descargar Estadísticas Semanales (PDF)
+                </button>
             </div>
         </div>
 
@@ -2429,8 +2426,19 @@
                 `;
             }
 
-            // GRID DE TODOS LOS TEMAS (diseño mejorado)
-            statsHTML += '<div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">';
+            // TABLA COMPACTA DE TODOS LOS TEMAS
+            statsHTML += '<div style="background: white; border-radius: 12px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow-x: auto;">';
+            statsHTML += '<table style="width: 100%; border-collapse: collapse; min-width: 600px;">';
+            statsHTML += '<thead style="background: #f9fafb;">';
+            statsHTML += '<tr>';
+            statsHTML += '<th style="padding: 12px; text-align: left; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.875rem;">Tema</th>';
+            statsHTML += '<th style="padding: 12px; text-align: center; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.875rem;">Preguntas</th>';
+            statsHTML += '<th style="padding: 12px; text-align: center; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.875rem;">Correctas</th>';
+            statsHTML += '<th style="padding: 12px; text-align: center; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.875rem;">% Acierto</th>';
+            statsHTML += '<th style="padding: 12px; text-align: center; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.875rem;">Última vez</th>';
+            statsHTML += '</tr>';
+            statsHTML += '</thead>';
+            statsHTML += '<tbody>';
 
             // Ordenar temas por número (extraer número del título "TEMA X - ...")
             const sortedTopics = Object.entries(userStats).sort(([idA, statsA], [idB, statsB]) => {
@@ -2441,52 +2449,33 @@
                 return numA - numB;
             });
 
-            sortedTopics.forEach(([topicId, stats]) => {
+            sortedTopics.forEach(([topicId, stats], index) => {
                 const accuracy = stats.accuracy || 0;
-                const badgeClass = accuracy >= 80 ? 'good' : accuracy >= 60 ? 'warning' : 'danger';
                 const badgeColor = accuracy >= 80 ? '#22c55e' : accuracy >= 60 ? '#f59e0b' : '#ef4444';
                 const lastStudied = new Date(stats.lastStudied).toLocaleDateString('es-ES');
+                const rowBg = index % 2 === 0 ? '#ffffff' : '#f9fafb';
 
                 statsHTML += `
-                    <div style="background: white; border-radius: 12px; padding: 18px; border: 2px solid ${badgeColor}; transition: all 0.2s ease; cursor: default;"
-                         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)';"
-                         onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
-
-                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 14px;">
-                            <div style="font-weight: 700; color: #1f2937; font-size: 1rem; line-height: 1.3; flex: 1; padding-right: 8px;">${stats.title}</div>
-                            <div style="background: ${badgeColor}; color: white; padding: 6px 12px; border-radius: 8px; font-weight: 700; font-size: 1rem; min-width: 60px; text-align: center;">
+                    <tr style="border-bottom: 1px solid #f3f4f6; background: ${rowBg}; transition: background 0.2s ease;"
+                        onmouseover="this.style.background='#f3f4f6';"
+                        onmouseout="this.style.background='${rowBg}';">
+                        <td style="padding: 12px; font-weight: 600; color: #1f2937; font-size: 0.875rem;">${stats.title}</td>
+                        <td style="padding: 12px; text-align: center; color: #6b7280; font-size: 0.875rem;">${stats.totalQuestions}</td>
+                        <td style="padding: 12px; text-align: center; color: #6b7280; font-size: 0.875rem;">${stats.correctAnswers}</td>
+                        <td style="padding: 12px; text-align: center;">
+                            <span style="background: ${badgeColor}; color: white; padding: 4px 12px; border-radius: 6px; font-weight: 600; font-size: 0.875rem;">
                                 ${Math.round(accuracy)}%
-                            </div>
-                        </div>
-
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px;">
-                            <div style="background: #f9fafb; border-radius: 8px; padding: 10px; text-align: center;">
-                                <div style="font-size: 1.5rem; font-weight: 700; color: #1f2937; margin-bottom: 2px;">${stats.totalQuestions}</div>
-                                <div style="color: #6b7280; font-size: 0.7rem; font-weight: 600; text-transform: uppercase;">Preguntas</div>
-                            </div>
-                            <div style="background: #f9fafb; border-radius: 8px; padding: 10px; text-align: center;">
-                                <div style="font-size: 1.5rem; font-weight: 700; color: ${badgeColor}; margin-bottom: 2px;">${stats.correctAnswers}</div>
-                                <div style="color: #6b7280; font-size: 0.7rem; font-weight: 600; text-transform: uppercase;">Correctas</div>
-                            </div>
-                        </div>
-
-                        <div style="background: #e5e7eb; border-radius: 6px; height: 8px; overflow: hidden; margin-bottom: 10px;">
-                            <div style="background: ${badgeColor}; height: 100%; width: ${accuracy}%; transition: width 0.3s ease;"></div>
-                        </div>
-
-                        <div style="display: flex; align-items: center; gap: 6px; color: #6b7280; font-size: 0.75rem;">
-                            <span>📅</span>
-                            <span style="font-weight: 500;">Último: ${lastStudied}</span>
-                        </div>
-                    </div>
+                            </span>
+                        </td>
+                        <td style="padding: 12px; text-align: center; color: #6b7280; font-size: 0.75rem;">${lastStudied}</td>
+                    </tr>
                 `;
             });
 
+            statsHTML += '</tbody>';
+            statsHTML += '</table>';
             statsHTML += '</div>';
             container.innerHTML = statsHTML;
-
-            // Cargar estadísticas semanales
-            loadWeeklyStats();
         }
 
         // ========================
@@ -3234,6 +3223,265 @@
         }
 
         // ========================
+        // ESTADÍSTICAS SEMANALES PDF
+        // ========================
+
+        function showWeeklyStatsModal() {
+            const modal = document.getElementById('weekly-stats-modal');
+            modal.style.display = 'flex';
+        }
+
+        function closeWeeklyStatsModal() {
+            const modal = document.getElementById('weekly-stats-modal');
+            modal.style.display = 'none';
+        }
+
+        async function exportWeeklyStatsToPDF(weeks) {
+            try {
+                console.log(`📊 Exportando estadísticas semanales (${weeks} semanas)...`);
+                closeWeeklyStatsModal();
+
+                // Fetch data from API
+                const url = weeks === 0
+                    ? `${API_BASE}/api/weekly-stats?weeks=1000`
+                    : `${API_BASE}/api/weekly-stats?weeks=${weeks}`;
+
+                const response = await fetch(url, {
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    throw new Error('Error cargando estadísticas semanales');
+                }
+
+                const data = await response.json();
+
+                if (!data.summary || data.summary.length === 0) {
+                    alert('No hay datos disponibles para el período seleccionado');
+                    return;
+                }
+
+                // Generate PDF
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+                const pageWidth = doc.internal.pageSize.getWidth();
+                const pageHeight = doc.internal.pageSize.getHeight();
+                const margin = 15;
+                let yPos = 20;
+
+                // Título
+                doc.setFontSize(18);
+                doc.setFont(undefined, 'bold');
+                const titleText = weeks === 0 ? 'Estadísticas - Todo el Historial' : `Estadísticas - Últimas ${weeks} Semanas`;
+                doc.text(titleText, margin, yPos);
+                yPos += 8;
+
+                doc.setFontSize(10);
+                doc.setFont(undefined, 'normal');
+                doc.setTextColor(107, 114, 128);
+                doc.text(`Generado: ${new Date().toLocaleDateString('es-ES', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric'
+                })}`, margin, yPos);
+                yPos += 12;
+
+                // Resumen general
+                const totalQuestions = data.summary.reduce((sum, w) => sum + w.total_questions, 0);
+                const totalCorrect = data.summary.reduce((sum, w) => sum + w.correct_answers, 0);
+                const avgAccuracy = totalQuestions > 0 ? Math.round((totalCorrect / totalQuestions) * 100) : 0;
+
+                doc.setFontSize(11);
+                doc.setFont(undefined, 'bold');
+                doc.setTextColor(31, 41, 55);
+                doc.text('RESUMEN GENERAL', margin, yPos);
+                yPos += 7;
+
+                doc.setFontSize(10);
+                doc.setFont(undefined, 'normal');
+                doc.setTextColor(75, 85, 99);
+                doc.text(`Total de preguntas: ${totalQuestions}`, margin + 5, yPos);
+                yPos += 5;
+                doc.text(`Respuestas correctas: ${totalCorrect}`, margin + 5, yPos);
+                yPos += 5;
+                doc.text(`Porcentaje de acierto: ${avgAccuracy}%`, margin + 5, yPos);
+                yPos += 10;
+
+                // Línea separadora
+                doc.setLineWidth(0.5);
+                doc.setDrawColor(229, 231, 235);
+                doc.line(margin, yPos, pageWidth - margin, yPos);
+                yPos += 10;
+
+                // Tabla de resumen por semanas
+                doc.setFontSize(11);
+                doc.setFont(undefined, 'bold');
+                doc.setTextColor(31, 41, 55);
+                doc.text('RESUMEN POR SEMANA', margin, yPos);
+                yPos += 8;
+
+                // Encabezados de tabla
+                doc.setFontSize(9);
+                doc.setFont(undefined, 'bold');
+                doc.setTextColor(107, 114, 128);
+                doc.setFillColor(249, 250, 251);
+                doc.rect(margin, yPos - 5, pageWidth - (2 * margin), 8, 'F');
+
+                doc.text('Semana', margin + 3, yPos);
+                doc.text('Preguntas', pageWidth - margin - 95, yPos);
+                doc.text('Correctas', pageWidth - margin - 65, yPos);
+                doc.text('% Acierto', pageWidth - margin - 35, yPos);
+                yPos += 8;
+
+                // Datos de semanas
+                doc.setFont(undefined, 'normal');
+                doc.setTextColor(31, 41, 55);
+
+                data.summary.forEach((week, index) => {
+                    if (yPos > pageHeight - 30) {
+                        doc.addPage();
+                        yPos = 20;
+                    }
+
+                    const weekDate = new Date(week.week_start);
+                    const weekStr = weekDate.toLocaleDateString('es-ES', {
+                        day: 'numeric',
+                        month: 'short'
+                    });
+                    const accuracy = Math.round(week.accuracy);
+
+                    // Fila alternada
+                    if (index % 2 === 0) {
+                        doc.setFillColor(249, 250, 251);
+                        doc.rect(margin, yPos - 5, pageWidth - (2 * margin), 7, 'F');
+                    }
+
+                    doc.text(weekStr, margin + 3, yPos);
+                    doc.text(String(week.total_questions), pageWidth - margin - 88, yPos);
+                    doc.text(String(week.correct_answers), pageWidth - margin - 60, yPos);
+
+                    // Color según accuracy
+                    const accuracyColor = accuracy >= 80 ? [34, 197, 94] : accuracy >= 60 ? [245, 158, 11] : [239, 68, 68];
+                    doc.setTextColor(...accuracyColor);
+                    doc.setFont(undefined, 'bold');
+                    doc.text(`${accuracy}%`, pageWidth - margin - 28, yPos);
+                    doc.setTextColor(31, 41, 55);
+                    doc.setFont(undefined, 'normal');
+
+                    yPos += 7;
+                });
+
+                yPos += 5;
+
+                // Desglose por tema (si hay datos)
+                if (data.byTopic && data.byTopic.length > 0) {
+                    if (yPos > pageHeight - 60) {
+                        doc.addPage();
+                        yPos = 20;
+                    }
+
+                    // Línea separadora
+                    doc.setLineWidth(0.5);
+                    doc.setDrawColor(229, 231, 235);
+                    doc.line(margin, yPos, pageWidth - margin, yPos);
+                    yPos += 10;
+
+                    doc.setFontSize(11);
+                    doc.setFont(undefined, 'bold');
+                    doc.setTextColor(31, 41, 55);
+                    doc.text('DESGLOSE POR TEMA', margin, yPos);
+                    yPos += 8;
+
+                    // Agrupar por tema
+                    const byTopicMap = {};
+                    data.byTopic.forEach(entry => {
+                        if (!byTopicMap[entry.topic_id]) {
+                            byTopicMap[entry.topic_id] = {
+                                title: entry.topic_title,
+                                total: 0,
+                                correct: 0
+                            };
+                        }
+                        byTopicMap[entry.topic_id].total += entry.total_questions;
+                        byTopicMap[entry.topic_id].correct += entry.correct_answers;
+                    });
+
+                    // Encabezados
+                    doc.setFontSize(9);
+                    doc.setFont(undefined, 'bold');
+                    doc.setTextColor(107, 114, 128);
+                    doc.setFillColor(249, 250, 251);
+                    doc.rect(margin, yPos - 5, pageWidth - (2 * margin), 8, 'F');
+
+                    doc.text('Tema', margin + 3, yPos);
+                    doc.text('Preguntas', pageWidth - margin - 65, yPos);
+                    doc.text('% Acierto', pageWidth - margin - 35, yPos);
+                    yPos += 8;
+
+                    // Datos por tema
+                    doc.setFont(undefined, 'normal');
+                    doc.setTextColor(31, 41, 55);
+
+                    let topicIndex = 0;
+                    Object.entries(byTopicMap).forEach(([topicId, topicInfo]) => {
+                        if (yPos > pageHeight - 20) {
+                            doc.addPage();
+                            yPos = 20;
+                            topicIndex = 0;
+                        }
+
+                        const avgAccuracy = topicInfo.total > 0
+                            ? Math.round((topicInfo.correct / topicInfo.total) * 100)
+                            : 0;
+
+                        // Fila alternada
+                        if (topicIndex % 2 === 0) {
+                            doc.setFillColor(249, 250, 251);
+                            doc.rect(margin, yPos - 5, pageWidth - (2 * margin), 7, 'F');
+                        }
+
+                        // Acortar título si es muy largo
+                        const maxTitleWidth = pageWidth - margin - 80;
+                        let titleText = topicInfo.title;
+                        if (doc.getTextWidth(titleText) > maxTitleWidth) {
+                            while (doc.getTextWidth(titleText + '...') > maxTitleWidth && titleText.length > 10) {
+                                titleText = titleText.slice(0, -1);
+                            }
+                            titleText += '...';
+                        }
+
+                        doc.setFontSize(8);
+                        doc.text(titleText, margin + 3, yPos);
+                        doc.setFontSize(9);
+                        doc.text(String(topicInfo.total), pageWidth - margin - 57, yPos);
+
+                        // Color según accuracy
+                        const accuracyColor = avgAccuracy >= 80 ? [34, 197, 94] : avgAccuracy >= 60 ? [245, 158, 11] : [239, 68, 68];
+                        doc.setTextColor(...accuracyColor);
+                        doc.setFont(undefined, 'bold');
+                        doc.text(`${avgAccuracy}%`, pageWidth - margin - 28, yPos);
+                        doc.setTextColor(31, 41, 55);
+                        doc.setFont(undefined, 'normal');
+
+                        yPos += 7;
+                        topicIndex++;
+                    });
+                }
+
+                // Descargar PDF
+                const fileName = weeks === 0
+                    ? 'estadisticas_completo.pdf'
+                    : `estadisticas_${weeks}_semanas.pdf`;
+                doc.save(fileName);
+
+                console.log('✅ PDF de estadísticas generado y descargado');
+            } catch (error) {
+                console.error('❌ Error generando PDF de estadísticas:', error);
+                alert('Error al generar el PDF de estadísticas. Verifica que tengas datos registrados.');
+            }
+        }
+
+        // ========================
         // EXPORTAR PREGUNTAS FALLADAS A PDF
         // ========================
 
@@ -3370,113 +3618,43 @@
         // ESTADÍSTICAS SEMANALES
         // ========================
 
-        async function loadWeeklyStats() {
-            try {
-                const response = await fetch(`${API_BASE}/api/weekly-stats?weeks=4`, {
-                    credentials: 'include'
-                });
-
-                if (!response.ok) {
-                    throw new Error('Error cargando estadísticas semanales');
-                }
-
-                const data = await response.json();
-
-                if (!data.summary || data.summary.length === 0) {
-                    // No hay datos, no mostrar la sección
-                    document.getElementById('weekly-stats-container').style.display = 'none';
-                    return;
-                }
-
-                // Mostrar el contenedor
-                document.getElementById('weekly-stats-container').style.display = 'block';
-
-                // Generar HTML
-                let html = '';
-
-                // Resumen semanal
-                html += '<div style="margin-bottom: 24px;">';
-                html += '<h3 style="margin-bottom: 16px; color: #1f2937; font-size: 1.1rem;">📈 Resumen por Semana</h3>';
-                html += '<div style="overflow-x: auto;">';
-                html += '<table style="width: 100%; border-collapse: collapse; min-width: 500px;">';
-                html += '<thead style="background: #f9fafb;">';
-                html += '<tr>';
-                html += '<th style="padding: 12px; text-align: left; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.875rem;">Semana</th>';
-                html += '<th style="padding: 12px; text-align: center; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.875rem;">Preguntas</th>';
-                html += '<th style="padding: 12px; text-align: center; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.875rem;">Correctas</th>';
-                html += '<th style="padding: 12px; text-align: center; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.875rem;">Acierto</th>';
-                html += '<th style="padding: 12px; text-align: center; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.875rem;">Temas</th>';
-                html += '</tr>';
-                html += '</thead>';
-                html += '<tbody>';
-
-                data.summary.forEach((week, index) => {
-                    const weekDate = new Date(week.week_start);
-                    const weekStr = weekDate.toLocaleDateString('es-ES', { day: 'numeric', month: 'short' });
-                    const accuracy = Math.round(week.accuracy);
-                    const accuracyColor = accuracy >= 80 ? '#22c55e' : accuracy >= 60 ? '#f59e0b' : '#ef4444';
-
-                    html += `<tr style="border-bottom: 1px solid #f3f4f6;">`;
-                    html += `<td style="padding: 12px; font-weight: 500; color: #1f2937;">${weekStr}</td>`;
-                    html += `<td style="padding: 12px; text-align: center; color: #6b7280;">${week.total_questions}</td>`;
-                    html += `<td style="padding: 12px; text-align: center; color: #6b7280;">${week.correct_answers}</td>`;
-                    html += `<td style="padding: 12px; text-align: center;"><span style="background: ${accuracyColor}; color: white; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-size: 0.85rem;">${accuracy}%</span></td>`;
-                    html += `<td style="padding: 12px; text-align: center; color: #6b7280;">${week.topics_studied}</td>`;
-                    html += `</tr>`;
-                });
-
-                html += '</tbody>';
-                html += '</table>';
-                html += '</div>';
-                html += '</div>';
-
-                // Desglose por tema
-                if (data.byTopic && data.byTopic.length > 0) {
-                    html += '<div style="margin-top: 32px;">';
-                    html += '<h3 style="margin-bottom: 16px; color: #1f2937; font-size: 1.1rem;">📚 Desglose por Tema</h3>';
-
-                    // Agrupar por tema
-                    const byTopicMap = {};
-                    data.byTopic.forEach(entry => {
-                        if (!byTopicMap[entry.topic_id]) {
-                            byTopicMap[entry.topic_id] = {
-                                title: entry.topic_title,
-                                weeks: []
-                            };
-                        }
-                        byTopicMap[entry.topic_id].weeks.push(entry);
-                    });
-
-                    html += '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">';
-
-                    Object.entries(byTopicMap).forEach(([topicId, topicInfo]) => {
-                        // Calcular promedio
-                        const avgAccuracy = Math.round(topicInfo.weeks.reduce((sum, w) => sum + w.accuracy, 0) / topicInfo.weeks.length);
-                        const totalQuestions = topicInfo.weeks.reduce((sum, w) => sum + w.total_questions, 0);
-                        const accuracyColor = avgAccuracy >= 80 ? '#22c55e' : avgAccuracy >= 60 ? '#f59e0b' : '#ef4444';
-
-                        html += `<div style="background: white; border: 2px solid ${accuracyColor}; border-radius: 12px; padding: 16px;">`;
-                        html += `<h4 style="margin: 0 0 12px 0; color: #1f2937; font-size: 0.95rem; line-height: 1.3;">${topicInfo.title}</h4>`;
-                        html += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">`;
-                        html += `<span style="color: #6b7280; font-size: 0.85rem;">Promedio:</span>`;
-                        html += `<span style="background: ${accuracyColor}; color: white; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-size: 0.85rem;">${avgAccuracy}%</span>`;
-                        html += `</div>`;
-                        html += `<div style="color: #6b7280; font-size: 0.85rem;">Total: ${totalQuestions} preguntas</div>`;
-                        html += `</div>`;
-                    });
-
-                    html += '</div>';
-                    html += '</div>';
-                }
-
-                document.getElementById('weekly-stats-content').innerHTML = html;
-
-            } catch (error) {
-                console.error('❌ Error cargando estadísticas semanales:', error);
-                document.getElementById('weekly-stats-container').style.display = 'none';
-            }
-        }
     </script>
+
+    <!-- Modal de Selección de Rango Estadísticas Semanales -->
+    <div id="weekly-stats-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000; align-items: center; justify-content: center;">
+        <div style="background: white; border-radius: 16px; padding: 32px; max-width: 500px; margin: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+            <div style="text-align: center; margin-bottom: 24px;">
+                <div style="font-size: 4rem; margin-bottom: 16px;">📊</div>
+                <h2 style="margin: 0 0 12px 0; color: #1f2937;">Estadísticas Semanales</h2>
+                <p style="color: #6b7280; margin: 0; line-height: 1.6;">
+                    Selecciona el período de tiempo para el informe PDF
+                </p>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px;">
+                <button onclick="exportWeeklyStatsToPDF(1)" style="background: #f3f4f6; color: #374151; padding: 14px 20px; font-weight: 600; border: none; border-radius: 10px; cursor: pointer; font-size: 0.95rem; transition: all 0.2s;" onmouseover="this.style.background='#e5e7eb';" onmouseout="this.style.background='#f3f4f6';">
+                    1 Semana
+                </button>
+                <button onclick="exportWeeklyStatsToPDF(2)" style="background: #f3f4f6; color: #374151; padding: 14px 20px; font-weight: 600; border: none; border-radius: 10px; cursor: pointer; font-size: 0.95rem; transition: all 0.2s;" onmouseover="this.style.background='#e5e7eb';" onmouseout="this.style.background='#f3f4f6';">
+                    2 Semanas
+                </button>
+                <button onclick="exportWeeklyStatsToPDF(4)" style="background: #3b82f6; color: white; padding: 14px 20px; font-weight: 600; border: none; border-radius: 10px; cursor: pointer; font-size: 0.95rem; transition: all 0.2s;" onmouseover="this.style.background='#2563eb';" onmouseout="this.style.background='#3b82f6';">
+                    4 Semanas
+                </button>
+                <button onclick="exportWeeklyStatsToPDF(8)" style="background: #f3f4f6; color: #374151; padding: 14px 20px; font-weight: 600; border: none; border-radius: 10px; cursor: pointer; font-size: 0.95rem; transition: all 0.2s;" onmouseover="this.style.background='#e5e7eb';" onmouseout="this.style.background='#f3f4f6';">
+                    8 Semanas
+                </button>
+                <button onclick="exportWeeklyStatsToPDF(12)" style="background: #f3f4f6; color: #374151; padding: 14px 20px; font-weight: 600; border: none; border-radius: 10px; cursor: pointer; font-size: 0.95rem; transition: all 0.2s;" onmouseover="this.style.background='#e5e7eb';" onmouseout="this.style.background='#f3f4f6';">
+                    12 Semanas
+                </button>
+                <button onclick="exportWeeklyStatsToPDF(0)" style="background: #f3f4f6; color: #374151; padding: 14px 20px; font-weight: 600; border: none; border-radius: 10px; cursor: pointer; font-size: 0.95rem; transition: all 0.2s;" onmouseover="this.style.background='#e5e7eb';" onmouseout="this.style.background='#f3f4f6';">
+                    Todo el historial
+                </button>
+            </div>
+            <button onclick="closeWeeklyStatsModal()" style="width: 100%; background: #ef4444; color: white; padding: 14px 20px; font-weight: 600; border: none; border-radius: 10px; cursor: pointer; font-size: 1rem; transition: all 0.2s;" onmouseover="this.style.background='#dc2626';" onmouseout="this.style.background='#ef4444';">
+                ❌ Cancelar
+            </button>
+        </div>
+    </div>
 
     <!-- Modal de Confirmación para Finalizar Examen -->
     <div id="finish-exam-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000; align-items: center; justify-content: center;">
