@@ -211,6 +211,22 @@ function initDatabase() {
   // Índice para búsquedas rápidas de buffer por usuario y tema
   db.exec(`CREATE INDEX IF NOT EXISTS idx_buffer_user_topic ON user_question_buffer(user_id, topic_id, expires_at)`);
 
+  // Tabla de historial de respuestas (para estadísticas semanales)
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS answer_history (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL,
+      topic_id TEXT NOT NULL,
+      topic_title TEXT NOT NULL,
+      is_correct INTEGER NOT NULL,
+      answered_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    )
+  `);
+
+  // Índice para consultas rápidas de historial por usuario y fecha
+  db.exec(`CREATE INDEX IF NOT EXISTS idx_answer_history_user_date ON answer_history(user_id, answered_at)`);
+
   console.log('✅ Base de datos inicializada (con sistema de caché + buffer de prefetch)');
 }
 
@@ -1125,6 +1141,90 @@ function cleanExpiredBuffers() {
 }
 
 // ========================
+// FUNCIONES DE ESTADÍSTICAS SEMANALES
+// ========================
+
+/**
+ * Registrar respuesta en historial (para estadísticas semanales)
+ * @param {number} userId - ID del usuario
+ * @param {string} topicId - ID del tema
+ * @param {string} topicTitle - Título del tema
+ * @param {boolean} isCorrect - Si la respuesta fue correcta
+ */
+function recordAnswer(userId, topicId, topicTitle, isCorrect) {
+  try {
+    const stmt = db.prepare(`
+      INSERT INTO answer_history (user_id, topic_id, topic_title, is_correct)
+      VALUES (?, ?, ?, ?)
+    `);
+    stmt.run(userId, topicId, topicTitle, isCorrect ? 1 : 0);
+  } catch (error) {
+    console.error('Error registrando respuesta en historial:', error);
+  }
+}
+
+/**
+ * Obtener estadísticas semanales por tema
+ * @param {number} userId - ID del usuario
+ * @param {number} weeks - Número de semanas hacia atrás (default: 4)
+ * @returns {Array} Estadísticas agrupadas por semana y tema
+ */
+function getWeeklyStatsByTopic(userId, weeks = 4) {
+  try {
+    const stmt = db.prepare(`
+      SELECT
+        topic_id,
+        topic_title,
+        strftime('%Y-W%W', answered_at) as week,
+        date(answered_at, 'weekday 0', '-6 days') as week_start,
+        COUNT(*) as total_questions,
+        SUM(is_correct) as correct_answers,
+        ROUND(CAST(SUM(is_correct) AS FLOAT) / COUNT(*) * 100, 1) as accuracy
+      FROM answer_history
+      WHERE user_id = ?
+        AND answered_at >= datetime('now', '-' || ? || ' days')
+      GROUP BY topic_id, week
+      ORDER BY week DESC, topic_id ASC
+    `);
+
+    return stmt.all(userId, weeks * 7);
+  } catch (error) {
+    console.error('Error obteniendo estadísticas semanales:', error);
+    return [];
+  }
+}
+
+/**
+ * Obtener resumen semanal consolidado
+ * @param {number} userId - ID del usuario
+ * @param {number} weeks - Número de semanas hacia atrás (default: 4)
+ * @returns {Array} Resumen por semana con totales
+ */
+function getWeeklySummary(userId, weeks = 4) {
+  try {
+    const stmt = db.prepare(`
+      SELECT
+        strftime('%Y-W%W', answered_at) as week,
+        date(answered_at, 'weekday 0', '-6 days') as week_start,
+        COUNT(*) as total_questions,
+        SUM(is_correct) as correct_answers,
+        ROUND(CAST(SUM(is_correct) AS FLOAT) / COUNT(*) * 100, 1) as accuracy,
+        COUNT(DISTINCT topic_id) as topics_studied
+      FROM answer_history
+      WHERE user_id = ?
+        AND answered_at >= datetime('now', '-' || ? || ' days')
+      GROUP BY week
+      ORDER BY week DESC
+    `);
+
+    return stmt.all(userId, weeks * 7);
+  } catch (error) {
+    console.error('Error obteniendo resumen semanal:', error);
+    return [];
+  }
+}
+
+// ========================
 // EXPORTAR FUNCIONES
 // ========================
 
@@ -1165,5 +1265,9 @@ module.exports = {
   getFromBuffer,
   getBufferSize,
   cleanExpiredBuffers,
+  // Funciones de estadísticas semanales
+  recordAnswer,
+  getWeeklyStatsByTopic,
+  getWeeklySummary,
   db
 };

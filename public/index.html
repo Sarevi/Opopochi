@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oposicion Tecnico Farmacia</title>
+    <!-- jsPDF para exportar PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -32,15 +34,20 @@
         .header {
             text-align: center;
             color: #6b7280;
-            margin-bottom: 32px;
+            margin-bottom: 40px;
+            padding: 0 16px;
         }
 
         .header h1 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            margin-bottom: 8px;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
             letter-spacing: -0.025em;
-            color: #374151;
+            color: #1f2937;
+        }
+
+        .header h1 .emoji {
+            font-size: 3.5rem;
         }
 
         .header p {
@@ -63,11 +70,11 @@
 
         .nav-button {
             flex: 1;
-            padding: 12px 16px;
+            padding: 16px 20px;
             background: transparent;
             border: none;
             border-radius: 8px;
-            font-size: 0.875rem;
+            font-size: 1rem;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -853,7 +860,11 @@
 
         @media (max-width: 768px) {
             .header h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
+            }
+
+            .header h1 .emoji {
+                font-size: 2.5rem;
             }
 
             .container {
@@ -1022,7 +1033,7 @@
 
         <div class="header">
             <h1>
-                <span class="emoji">📚</span>Oposicion Tecnico Farmacia
+                <span class="emoji">📚</span>Técnicos de Farmacia
                 <span id="user-info" class="user-info" style="display: none;"></span>
             </h1>
             <div id="server-status" class="server-status offline">
@@ -1149,6 +1160,16 @@
                     <div class="emoji">📈</div>
                     <h3>¡Comienza a estudiar!</h3>
                     <p>Aquí verás tus estadísticas una vez que respondas algunas preguntas.</p>
+                </div>
+            </div>
+
+            <!-- Estadísticas Semanales -->
+            <div id="weekly-stats-container" style="display: none;">
+                <div class="card" style="margin-top: 24px;">
+                    <h2><span class="emoji">📅</span>Progreso Semanal</h2>
+                    <p style="color: #6b7280; margin-top: 8px; margin-bottom: 24px;">Análisis de tu rendimiento por semana</p>
+
+                    <div id="weekly-stats-content"></div>
                 </div>
             </div>
         </div>
@@ -2353,22 +2374,22 @@
             // TARJETAS DE DESTACADOS (solo si hay al menos 2 temas cualificados)
             if (bestTopics.length > 0 && worstTopics.length > 0) {
                 statsHTML += `
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
+                    <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;">
 
                         <!-- MEJORES TEMAS -->
-                        <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-radius: 12px; padding: 16px; border: 2px solid #22c55e; box-shadow: 0 2px 8px rgba(34, 197, 94, 0.1);">
+                        <div style="background: white; border-radius: 12px; padding: 16px; border: 2px solid #22c55e;">
                             <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
-                                <div style="font-size: 1.75rem;">🏆</div>
+                                <div style="font-size: 1.5rem;">🏆</div>
                                 <div>
-                                    <h3 style="margin: 0; color: #166534; font-size: 1rem; font-weight: 700;">Mejores Temas</h3>
-                                    <p style="margin: 2px 0 0 0; color: #15803d; font-size: 0.75rem;">Mayor % de acierto</p>
+                                    <h3 style="margin: 0; color: #166534; font-size: 0.95rem; font-weight: 700;">Mejores Temas</h3>
+                                    <p style="margin: 2px 0 0 0; color: #22c55e; font-size: 0.7rem;">Mayor % de acierto</p>
                                 </div>
                             </div>
-                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <div style="display: flex; flex-direction: column; gap: 6px;">
                                 ${bestTopics.map((topic, index) => `
-                                    <div style="background: white; border-radius: 8px; padding: 10px 12px; border-left: 3px solid #22c55e; display: flex; justify-content: space-between; align-items: center;">
-                                        <div style="font-weight: 600; color: #1f2937; font-size: 0.85rem; flex: 1; padding-right: 8px;">${index + 1}. ${topic.title}</div>
-                                        <div style="background: #22c55e; color: white; padding: 4px 10px; border-radius: 12px; font-weight: 700; font-size: 0.85rem; min-width: 50px; text-align: center;">
+                                    <div style="background: #f9fafb; border-radius: 6px; padding: 8px 10px; border-left: 3px solid #22c55e; display: flex; justify-content: space-between; align-items: center;">
+                                        <div style="font-weight: 600; color: #1f2937; font-size: 0.8rem; flex: 1; padding-right: 8px; line-height: 1.3;">${index + 1}. ${topic.title}</div>
+                                        <div style="background: #22c55e; color: white; padding: 3px 8px; border-radius: 8px; font-weight: 700; font-size: 0.75rem; min-width: 45px; text-align: center;">
                                             ${Math.round(topic.accuracy)}%
                                         </div>
                                     </div>
@@ -2377,19 +2398,19 @@
                         </div>
 
                         <!-- TEMAS A REPASAR -->
-                        <div style="background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-radius: 12px; padding: 16px; border: 2px solid #ef4444; box-shadow: 0 2px 8px rgba(239, 68, 68, 0.1);">
+                        <div style="background: white; border-radius: 12px; padding: 16px; border: 2px solid #ef4444;">
                             <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
-                                <div style="font-size: 1.75rem;">📚</div>
+                                <div style="font-size: 1.5rem;">📚</div>
                                 <div>
-                                    <h3 style="margin: 0; color: #991b1b; font-size: 1rem; font-weight: 700;">Temas a Repasar</h3>
-                                    <p style="margin: 2px 0 0 0; color: #dc2626; font-size: 0.75rem;">Necesitan más práctica</p>
+                                    <h3 style="margin: 0; color: #991b1b; font-size: 0.95rem; font-weight: 700;">Temas a Repasar</h3>
+                                    <p style="margin: 2px 0 0 0; color: #ef4444; font-size: 0.7rem;">Necesitan más práctica</p>
                                 </div>
                             </div>
-                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <div style="display: flex; flex-direction: column; gap: 6px;">
                                 ${worstTopics.map((topic, index) => `
-                                    <div style="background: white; border-radius: 8px; padding: 10px 12px; border-left: 3px solid #ef4444; display: flex; justify-content: space-between; align-items: center;">
-                                        <div style="font-weight: 600; color: #1f2937; font-size: 0.85rem; flex: 1; padding-right: 8px;">${index + 1}. ${topic.title}</div>
-                                        <div style="background: #ef4444; color: white; padding: 4px 10px; border-radius: 12px; font-weight: 700; font-size: 0.85rem; min-width: 50px; text-align: center;">
+                                    <div style="background: #f9fafb; border-radius: 6px; padding: 8px 10px; border-left: 3px solid #ef4444; display: flex; justify-content: space-between; align-items: center;">
+                                        <div style="font-weight: 600; color: #1f2937; font-size: 0.8rem; flex: 1; padding-right: 8px; line-height: 1.3;">${index + 1}. ${topic.title}</div>
+                                        <div style="background: #ef4444; color: white; padding: 3px 8px; border-radius: 8px; font-weight: 700; font-size: 0.75rem; min-width: 45px; text-align: center;">
                                             ${Math.round(topic.accuracy)}%
                                         </div>
                                     </div>
@@ -2400,8 +2421,8 @@
                     </div>
 
                     <!-- SEPARADOR -->
-                    <div style="border-top: 2px solid #e5e7eb; margin: 32px 0; position: relative;">
-                        <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #f9fafb; padding: 0 16px; color: #6b7280; font-weight: 600; font-size: 0.875rem;">
+                    <div style="border-top: 2px solid #e5e7eb; margin: 24px 0; position: relative;">
+                        <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #f9fafb; padding: 0 12px; color: #6b7280; font-weight: 600; font-size: 0.8rem;">
                             📊 TODOS LOS TEMAS
                         </div>
                     </div>
@@ -2424,41 +2445,38 @@
                 const accuracy = stats.accuracy || 0;
                 const badgeClass = accuracy >= 80 ? 'good' : accuracy >= 60 ? 'warning' : 'danger';
                 const badgeColor = accuracy >= 80 ? '#22c55e' : accuracy >= 60 ? '#f59e0b' : '#ef4444';
-                const gradientBg = accuracy >= 80 ? 'linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%)' :
-                                   accuracy >= 60 ? 'linear-gradient(135deg, #fffbeb 0%, #ffffff 100%)' :
-                                                    'linear-gradient(135deg, #fef2f2 0%, #ffffff 100%)';
                 const lastStudied = new Date(stats.lastStudied).toLocaleDateString('es-ES');
 
                 statsHTML += `
-                    <div style="background: ${gradientBg}; border-radius: 16px; padding: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); border: 2px solid ${badgeColor}25; transition: all 0.2s ease; cursor: default;"
-                         onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)';"
-                         onmouseout="this.style.transform='none'; this.style.boxShadow='0 2px 12px rgba(0,0,0,0.08)';">
+                    <div style="background: white; border-radius: 12px; padding: 18px; border: 2px solid ${badgeColor}; transition: all 0.2s ease; cursor: default;"
+                         onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)';"
+                         onmouseout="this.style.transform='none'; this.style.boxShadow='none';">
 
-                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 16px;">
-                            <div style="font-weight: 700; color: #1f2937; font-size: 1.1rem; line-height: 1.3; flex: 1; padding-right: 8px;">${stats.title}</div>
-                            <div style="background: ${badgeColor}; color: white; padding: 8px 14px; border-radius: 12px; font-weight: 800; font-size: 1.1rem; min-width: 65px; text-align: center; box-shadow: 0 2px 8px ${badgeColor}40;">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 14px;">
+                            <div style="font-weight: 700; color: #1f2937; font-size: 1rem; line-height: 1.3; flex: 1; padding-right: 8px;">${stats.title}</div>
+                            <div style="background: ${badgeColor}; color: white; padding: 6px 12px; border-radius: 8px; font-weight: 700; font-size: 1rem; min-width: 60px; text-align: center;">
                                 ${Math.round(accuracy)}%
                             </div>
                         </div>
 
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
-                            <div style="background: white; border-radius: 10px; padding: 12px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.05);">
-                                <div style="font-size: 1.75rem; font-weight: 800; color: #1f2937; margin-bottom: 4px;">${stats.totalQuestions}</div>
-                                <div style="color: #6b7280; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Preguntas</div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px;">
+                            <div style="background: #f9fafb; border-radius: 8px; padding: 10px; text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 700; color: #1f2937; margin-bottom: 2px;">${stats.totalQuestions}</div>
+                                <div style="color: #6b7280; font-size: 0.7rem; font-weight: 600; text-transform: uppercase;">Preguntas</div>
                             </div>
-                            <div style="background: white; border-radius: 10px; padding: 12px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.05);">
-                                <div style="font-size: 1.75rem; font-weight: 800; color: ${badgeColor}; margin-bottom: 4px;">${stats.correctAnswers}</div>
-                                <div style="color: #6b7280; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Correctas</div>
+                            <div style="background: #f9fafb; border-radius: 8px; padding: 10px; text-align: center;">
+                                <div style="font-size: 1.5rem; font-weight: 700; color: ${badgeColor}; margin-bottom: 2px;">${stats.correctAnswers}</div>
+                                <div style="color: #6b7280; font-size: 0.7rem; font-weight: 600; text-transform: uppercase;">Correctas</div>
                             </div>
                         </div>
 
-                        <div style="background: #e5e7eb; border-radius: 8px; height: 10px; overflow: hidden; margin-bottom: 12px;">
-                            <div style="background: ${badgeColor}; height: 100%; width: ${accuracy}%; transition: width 0.3s ease; box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);"></div>
+                        <div style="background: #e5e7eb; border-radius: 6px; height: 8px; overflow: hidden; margin-bottom: 10px;">
+                            <div style="background: ${badgeColor}; height: 100%; width: ${accuracy}%; transition: width 0.3s ease;"></div>
                         </div>
 
-                        <div style="display: flex; align-items: center; gap: 6px; color: #6b7280; font-size: 0.8rem;">
+                        <div style="display: flex; align-items: center; gap: 6px; color: #6b7280; font-size: 0.75rem;">
                             <span>📅</span>
-                            <span style="font-weight: 500;">Último estudio: ${lastStudied}</span>
+                            <span style="font-weight: 500;">Último: ${lastStudied}</span>
                         </div>
                     </div>
                 `;
@@ -2466,6 +2484,9 @@
 
             statsHTML += '</div>';
             container.innerHTML = statsHTML;
+
+            // Cargar estadísticas semanales
+            loadWeeklyStats();
         }
 
         // ========================
@@ -2569,9 +2590,14 @@
                                     📝 ${questionCount} pregunta${questionCount !== 1 ? 's' : ''} para repasar
                                 </div>
                             </div>
-                            <button onclick="startReviewTest('${topicId}')" style="width: 100%; background: #f97316; color: white; padding: 14px 24px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; font-size: 1rem; transition: all 0.2s ease;" onmouseover="this.style.background='#ea580c'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(249, 115, 22, 0.3)';" onmouseout="this.style.background='#f97316'; this.style.transform='none'; this.style.boxShadow='none';">
-                                🎯 Hacer Test de Repaso
-                            </button>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                                <button onclick="startReviewTest('${topicId}')" style="background: #f97316; color: white; padding: 14px 20px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; font-size: 1rem; transition: all 0.2s ease;" onmouseover="this.style.background='#ea580c'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(249, 115, 22, 0.3)';" onmouseout="this.style.background='#f97316'; this.style.transform='none'; this.style.boxShadow='none';">
+                                    🎯 Hacer Test
+                                </button>
+                                <button onclick="exportToPDF('${topicId}')" style="background: #10b981; color: white; padding: 14px 20px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; font-size: 1rem; transition: all 0.2s ease;" onmouseover="this.style.background='#059669'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(16, 185, 129, 0.3)';" onmouseout="this.style.background='#10b981'; this.style.transform='none'; this.style.boxShadow='none';">
+                                    📄 Exportar PDF
+                                </button>
+                            </div>
                         </div>
                     `;
                 });
@@ -3198,6 +3224,240 @@
             // Verificar estado inicial
             if (!navigator.onLine) {
                 statusBanner.style.display = 'flex';
+            }
+        }
+
+        // ========================
+        // EXPORTAR PREGUNTAS FALLADAS A PDF
+        // ========================
+
+        async function exportToPDF(topicId) {
+            try {
+                console.log(`📄 Exportando preguntas falladas de ${topicId} a PDF...`);
+
+                const topicData = failedQuestions[topicId];
+                if (!topicData || !topicData.questions || topicData.questions.length === 0) {
+                    alert('No hay preguntas para exportar');
+                    return;
+                }
+
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+                const pageWidth = doc.internal.pageSize.getWidth();
+                const pageHeight = doc.internal.pageSize.getHeight();
+                const margin = 15;
+                const maxWidth = pageWidth - (2 * margin);
+                let yPos = 20;
+
+                // Título
+                doc.setFontSize(16);
+                doc.setFont(undefined, 'bold');
+                doc.text(topicData.title || 'Preguntas Falladas', margin, yPos);
+                yPos += 10;
+
+                doc.setFontSize(10);
+                doc.setFont(undefined, 'normal');
+                doc.text(`Total: ${topicData.questions.length} preguntas`, margin, yPos);
+                doc.text(`Fecha: ${new Date().toLocaleDateString('es-ES')}`, pageWidth - margin - 50, yPos);
+                yPos += 10;
+
+                // Línea separadora
+                doc.setLineWidth(0.5);
+                doc.line(margin, yPos, pageWidth - margin, yPos);
+                yPos += 10;
+
+                // Procesar cada pregunta
+                topicData.questions.forEach((q, index) => {
+                    // Verificar si necesitamos nueva página
+                    if (yPos > pageHeight - 60) {
+                        doc.addPage();
+                        yPos = 20;
+                    }
+
+                    // Número de pregunta
+                    doc.setFontSize(12);
+                    doc.setFont(undefined, 'bold');
+                    doc.text(`Pregunta ${index + 1}:`, margin, yPos);
+                    yPos += 7;
+
+                    // Texto de la pregunta
+                    doc.setFontSize(10);
+                    doc.setFont(undefined, 'normal');
+                    const questionLines = doc.splitTextToSize(q.question, maxWidth);
+                    doc.text(questionLines, margin, yPos);
+                    yPos += (questionLines.length * 5) + 5;
+
+                    // Opciones
+                    try {
+                        const options = typeof q.options === 'string' ? JSON.parse(q.options) : q.options;
+                        options.forEach((opt, optIndex) => {
+                            const isCorrect = optIndex === q.correct;
+                            const wasSelected = optIndex === q.user_answer;
+
+                            if (isCorrect) doc.setTextColor(34, 197, 94); // Verde
+                            else if (wasSelected) doc.setTextColor(239, 68, 68); // Rojo
+                            else doc.setTextColor(107, 114, 128); // Gris
+
+                            doc.setFont(undefined, isCorrect ? 'bold' : 'normal');
+
+                            let prefix = '';
+                            if (isCorrect) prefix = '✓ ';
+                            else if (wasSelected) prefix = '✗ ';
+
+                            const optText = `${prefix}${opt}`;
+                            const optLines = doc.splitTextToSize(optText, maxWidth - 5);
+                            doc.text(optLines, margin + 5, yPos);
+                            yPos += (optLines.length * 5) + 2;
+                        });
+                    } catch (e) {
+                        console.error('Error procesando opciones:', e);
+                    }
+
+                    doc.setTextColor(0, 0, 0); // Reset color
+                    yPos += 3;
+
+                    // Explicación
+                    if (q.explanation) {
+                        doc.setFontSize(9);
+                        doc.setFont(undefined, 'italic');
+                        doc.setTextColor(75, 85, 99);
+                        const explText = `Explicación: ${q.explanation}`;
+                        const explLines = doc.splitTextToSize(explText, maxWidth);
+                        doc.text(explLines, margin, yPos);
+                        yPos += (explLines.length * 4) + 8;
+                        doc.setTextColor(0, 0, 0);
+                    } else {
+                        yPos += 5;
+                    }
+
+                    // Línea separadora entre preguntas
+                    if (index < topicData.questions.length - 1) {
+                        doc.setLineWidth(0.2);
+                        doc.setDrawColor(229, 231, 235);
+                        doc.line(margin, yPos, pageWidth - margin, yPos);
+                        yPos += 10;
+                    }
+                });
+
+                // Descargar PDF
+                const fileName = `${topicData.title.replace(/[^a-z0-9]/gi, '_')}_falladas.pdf`;
+                doc.save(fileName);
+
+                console.log('✅ PDF generado y descargado');
+            } catch (error) {
+                console.error('❌ Error generando PDF:', error);
+                alert('Error al generar el PDF. Por favor intenta de nuevo.');
+            }
+        }
+
+        // ========================
+        // ESTADÍSTICAS SEMANALES
+        // ========================
+
+        async function loadWeeklyStats() {
+            try {
+                const response = await fetch(`${API_BASE}/api/weekly-stats?weeks=4`, {
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    throw new Error('Error cargando estadísticas semanales');
+                }
+
+                const data = await response.json();
+
+                if (!data.summary || data.summary.length === 0) {
+                    // No hay datos, no mostrar la sección
+                    document.getElementById('weekly-stats-container').style.display = 'none';
+                    return;
+                }
+
+                // Mostrar el contenedor
+                document.getElementById('weekly-stats-container').style.display = 'block';
+
+                // Generar HTML
+                let html = '';
+
+                // Resumen semanal
+                html += '<div style="margin-bottom: 24px;">';
+                html += '<h3 style="margin-bottom: 16px; color: #1f2937; font-size: 1.1rem;">📈 Resumen por Semana</h3>';
+                html += '<div style="overflow-x: auto;">';
+                html += '<table style="width: 100%; border-collapse: collapse; min-width: 500px;">';
+                html += '<thead style="background: #f9fafb;">';
+                html += '<tr>';
+                html += '<th style="padding: 12px; text-align: left; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.875rem;">Semana</th>';
+                html += '<th style="padding: 12px; text-align: center; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.875rem;">Preguntas</th>';
+                html += '<th style="padding: 12px; text-align: center; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.875rem;">Correctas</th>';
+                html += '<th style="padding: 12px; text-align: center; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.875rem;">Acierto</th>';
+                html += '<th style="padding: 12px; text-align: center; border-bottom: 2px solid #e5e7eb; font-weight: 600; color: #6b7280; font-size: 0.875rem;">Temas</th>';
+                html += '</tr>';
+                html += '</thead>';
+                html += '<tbody>';
+
+                data.summary.forEach((week, index) => {
+                    const weekDate = new Date(week.week_start);
+                    const weekStr = weekDate.toLocaleDateString('es-ES', { day: 'numeric', month: 'short' });
+                    const accuracy = Math.round(week.accuracy);
+                    const accuracyColor = accuracy >= 80 ? '#22c55e' : accuracy >= 60 ? '#f59e0b' : '#ef4444';
+
+                    html += `<tr style="border-bottom: 1px solid #f3f4f6;">`;
+                    html += `<td style="padding: 12px; font-weight: 500; color: #1f2937;">${weekStr}</td>`;
+                    html += `<td style="padding: 12px; text-align: center; color: #6b7280;">${week.total_questions}</td>`;
+                    html += `<td style="padding: 12px; text-align: center; color: #6b7280;">${week.correct_answers}</td>`;
+                    html += `<td style="padding: 12px; text-align: center;"><span style="background: ${accuracyColor}; color: white; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-size: 0.85rem;">${accuracy}%</span></td>`;
+                    html += `<td style="padding: 12px; text-align: center; color: #6b7280;">${week.topics_studied}</td>`;
+                    html += `</tr>`;
+                });
+
+                html += '</tbody>';
+                html += '</table>';
+                html += '</div>';
+                html += '</div>';
+
+                // Desglose por tema
+                if (data.byTopic && data.byTopic.length > 0) {
+                    html += '<div style="margin-top: 32px;">';
+                    html += '<h3 style="margin-bottom: 16px; color: #1f2937; font-size: 1.1rem;">📚 Desglose por Tema</h3>';
+
+                    // Agrupar por tema
+                    const byTopicMap = {};
+                    data.byTopic.forEach(entry => {
+                        if (!byTopicMap[entry.topic_id]) {
+                            byTopicMap[entry.topic_id] = {
+                                title: entry.topic_title,
+                                weeks: []
+                            };
+                        }
+                        byTopicMap[entry.topic_id].weeks.push(entry);
+                    });
+
+                    html += '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">';
+
+                    Object.entries(byTopicMap).forEach(([topicId, topicInfo]) => {
+                        // Calcular promedio
+                        const avgAccuracy = Math.round(topicInfo.weeks.reduce((sum, w) => sum + w.accuracy, 0) / topicInfo.weeks.length);
+                        const totalQuestions = topicInfo.weeks.reduce((sum, w) => sum + w.total_questions, 0);
+                        const accuracyColor = avgAccuracy >= 80 ? '#22c55e' : avgAccuracy >= 60 ? '#f59e0b' : '#ef4444';
+
+                        html += `<div style="background: white; border: 2px solid ${accuracyColor}; border-radius: 12px; padding: 16px;">`;
+                        html += `<h4 style="margin: 0 0 12px 0; color: #1f2937; font-size: 0.95rem; line-height: 1.3;">${topicInfo.title}</h4>`;
+                        html += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">`;
+                        html += `<span style="color: #6b7280; font-size: 0.85rem;">Promedio:</span>`;
+                        html += `<span style="background: ${accuracyColor}; color: white; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-size: 0.85rem;">${avgAccuracy}%</span>`;
+                        html += `</div>`;
+                        html += `<div style="color: #6b7280; font-size: 0.85rem;">Total: ${totalQuestions} preguntas</div>`;
+                        html += `</div>`;
+                    });
+
+                    html += '</div>';
+                    html += '</div>';
+                }
+
+                document.getElementById('weekly-stats-content').innerHTML = html;
+
+            } catch (error) {
+                console.error('❌ Error cargando estadísticas semanales:', error);
+                document.getElementById('weekly-stats-container').style.display = 'none';
             }
         }
     </script>
