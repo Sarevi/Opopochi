@@ -2590,11 +2590,11 @@
                                     📝 ${questionCount} pregunta${questionCount !== 1 ? 's' : ''} para repasar
                                 </div>
                             </div>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-                                <button onclick="startReviewTest('${topicId}')" style="background: #f97316; color: white; padding: 14px 20px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; font-size: 1rem; transition: all 0.2s ease;" onmouseover="this.style.background='#ea580c'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(249, 115, 22, 0.3)';" onmouseout="this.style.background='#f97316'; this.style.transform='none'; this.style.boxShadow='none';">
-                                    🎯 Hacer Test
+                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                                <button onclick="startReviewTest('${topicId}')" style="width: 100%; background: #f97316; color: white; padding: 14px 20px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; font-size: 1rem; transition: all 0.2s ease;" onmouseover="this.style.background='#ea580c'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(249, 115, 22, 0.3)';" onmouseout="this.style.background='#f97316'; this.style.transform='none'; this.style.boxShadow='none';">
+                                    🎯 Hacer Test de Repaso
                                 </button>
-                                <button onclick="exportToPDF('${topicId}')" style="background: #10b981; color: white; padding: 14px 20px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; font-size: 1rem; transition: all 0.2s ease;" onmouseover="this.style.background='#059669'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(16, 185, 129, 0.3)';" onmouseout="this.style.background='#10b981'; this.style.transform='none'; this.style.boxShadow='none';">
+                                <button onclick="exportToPDF('${topicId}')" style="width: 100%; background: #10b981; color: white; padding: 8px 16px; font-weight: 500; border: none; border-radius: 8px; cursor: pointer; font-size: 0.875rem; transition: all 0.2s ease;" onmouseover="this.style.background='#059669'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(16, 185, 129, 0.3)';" onmouseout="this.style.background='#10b981'; this.style.transform='none'; this.style.boxShadow='none';">
                                     📄 Exportar PDF
                                 </button>
                             </div>
@@ -3300,14 +3300,25 @@
 
                             doc.setFont(undefined, isCorrect ? 'bold' : 'normal');
 
-                            let prefix = '';
-                            if (isCorrect) prefix = '✓ ';
-                            else if (wasSelected) prefix = '✗ ';
+                            // Split SIN el prefijo para evitar problemas de encoding
+                            const optLines = doc.splitTextToSize(opt, maxWidth - 10);
 
-                            const optText = `${prefix}${opt}`;
-                            const optLines = doc.splitTextToSize(optText, maxWidth - 5);
-                            doc.text(optLines, margin + 5, yPos);
-                            yPos += (optLines.length * 5) + 2;
+                            // Agregar prefijo solo a la primera línea
+                            let prefix = '  ';
+                            if (isCorrect) prefix = '[CORRECTA] ';
+                            else if (wasSelected) prefix = '[TU RESPUESTA] ';
+
+                            // Primera línea con prefijo
+                            doc.text(prefix + optLines[0], margin + 5, yPos);
+                            yPos += 5;
+
+                            // Resto de líneas sin prefijo (indentadas)
+                            for (let i = 1; i < optLines.length; i++) {
+                                doc.text(optLines[i], margin + 5, yPos);
+                                yPos += 5;
+                            }
+
+                            yPos += 2;
                         });
                     } catch (e) {
                         console.error('Error procesando opciones:', e);
