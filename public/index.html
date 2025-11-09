@@ -2306,7 +2306,7 @@
 
         function displayStats() {
             const container = document.getElementById('stats-container');
-            
+
             if (Object.keys(userStats).length === 0) {
                 container.innerHTML = `
                     <div class="empty-state">
@@ -2317,38 +2317,139 @@
                 `;
                 return;
             }
-            
-            let statsHTML = '<div class="stats-grid">';
-            
+
+            // Filtrar temas con >25 preguntas y calcular mejores/peores
+            const qualifiedTopics = Object.entries(userStats)
+                .filter(([_, stats]) => stats.totalQuestions > 25)
+                .map(([topicId, stats]) => ({
+                    topicId,
+                    ...stats,
+                    accuracy: stats.accuracy || 0
+                }));
+
+            // Ordenar por accuracy
+            const bestTopics = [...qualifiedTopics].sort((a, b) => b.accuracy - a.accuracy).slice(0, 3);
+            const worstTopics = [...qualifiedTopics].sort((a, b) => a.accuracy - b.accuracy).slice(0, 3);
+
+            let statsHTML = '';
+
+            // TARJETAS DE DESTACADOS (solo si hay temas con >25 preguntas)
+            if (qualifiedTopics.length > 0) {
+                statsHTML += `
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 32px;">
+
+                        <!-- MEJORES TEMAS -->
+                        <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-radius: 16px; padding: 24px; border: 2px solid #22c55e; box-shadow: 0 4px 16px rgba(34, 197, 94, 0.15);">
+                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                                <div style="font-size: 2.5rem;">🏆</div>
+                                <div>
+                                    <h3 style="margin: 0; color: #166534; font-size: 1.25rem; font-weight: 700;">Mejores Temas</h3>
+                                    <p style="margin: 4px 0 0 0; color: #15803d; font-size: 0.875rem;">Mayor % de acierto</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 12px;">
+                                ${bestTopics.length > 0 ? bestTopics.map((topic, index) => `
+                                    <div style="background: white; border-radius: 12px; padding: 16px; border-left: 4px solid #22c55e; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                            <div style="font-weight: 600; color: #1f2937; font-size: 0.95rem; flex: 1;">${index + 1}. ${topic.title}</div>
+                                            <div style="background: #22c55e; color: white; padding: 6px 12px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; min-width: 60px; text-align: center;">
+                                                ${Math.round(topic.accuracy)}%
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; gap: 16px; font-size: 0.8rem; color: #6b7280;">
+                                            <div>📝 ${topic.totalQuestions} preguntas</div>
+                                            <div>✅ ${topic.correctAnswers} correctas</div>
+                                        </div>
+                                    </div>
+                                `).join('') : '<div style="text-align: center; color: #15803d; font-size: 0.875rem; padding: 20px;">No hay datos suficientes aún</div>'}
+                            </div>
+                        </div>
+
+                        <!-- TEMAS A REPASAR -->
+                        <div style="background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border-radius: 16px; padding: 24px; border: 2px solid #ef4444; box-shadow: 0 4px 16px rgba(239, 68, 68, 0.15);">
+                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                                <div style="font-size: 2.5rem;">📚</div>
+                                <div>
+                                    <h3 style="margin: 0; color: #991b1b; font-size: 1.25rem; font-weight: 700;">Temas a Repasar</h3>
+                                    <p style="margin: 4px 0 0 0; color: #dc2626; font-size: 0.875rem;">Necesitan más práctica</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 12px;">
+                                ${worstTopics.length > 0 ? worstTopics.map((topic, index) => `
+                                    <div style="background: white; border-radius: 12px; padding: 16px; border-left: 4px solid #ef4444; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                            <div style="font-weight: 600; color: #1f2937; font-size: 0.95rem; flex: 1;">${index + 1}. ${topic.title}</div>
+                                            <div style="background: #ef4444; color: white; padding: 6px 12px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; min-width: 60px; text-align: center;">
+                                                ${Math.round(topic.accuracy)}%
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; gap: 16px; font-size: 0.8rem; color: #6b7280;">
+                                            <div>📝 ${topic.totalQuestions} preguntas</div>
+                                            <div>❌ ${topic.totalQuestions - topic.correctAnswers} incorrectas</div>
+                                        </div>
+                                    </div>
+                                `).join('') : '<div style="text-align: center; color: #dc2626; font-size: 0.875rem; padding: 20px;">No hay datos suficientes aún</div>'}
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- SEPARADOR -->
+                    <div style="border-top: 2px solid #e5e7eb; margin: 32px 0; position: relative;">
+                        <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #f9fafb; padding: 0 16px; color: #6b7280; font-weight: 600; font-size: 0.875rem;">
+                            📊 TODOS LOS TEMAS
+                        </div>
+                    </div>
+                `;
+            }
+
+            // GRID DE TODOS LOS TEMAS (diseño mejorado)
+            statsHTML += '<div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">';
+
             Object.entries(userStats).forEach(([topicId, stats]) => {
                 const accuracy = stats.accuracy || 0;
                 const badgeClass = accuracy >= 80 ? 'good' : accuracy >= 60 ? 'warning' : 'danger';
+                const badgeColor = accuracy >= 80 ? '#22c55e' : accuracy >= 60 ? '#f59e0b' : '#ef4444';
+                const gradientBg = accuracy >= 80 ? 'linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%)' :
+                                   accuracy >= 60 ? 'linear-gradient(135deg, #fffbeb 0%, #ffffff 100%)' :
+                                                    'linear-gradient(135deg, #fef2f2 0%, #ffffff 100%)';
                 const lastStudied = new Date(stats.lastStudied).toLocaleDateString('es-ES');
-                
+
                 statsHTML += `
-                    <div class="stat-card">
-                        <div class="stat-header">
-                            <div class="stat-title">${stats.title}</div>
-                            <div class="stat-badge ${badgeClass}">${accuracy}%</div>
-                        </div>
-                        <div class="stat-numbers">
-                            <div class="stat-number">
-                                <div class="value">${stats.totalQuestions}</div>
-                                <div class="label">Preguntas</div>
-                            </div>
-                            <div class="stat-number">
-                                <div class="value">${stats.correctAnswers}</div>
-                                <div class="label">Correctas</div>
+                    <div style="background: ${gradientBg}; border-radius: 16px; padding: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); border: 2px solid ${badgeColor}25; transition: all 0.2s ease; cursor: default;"
+                         onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)';"
+                         onmouseout="this.style.transform='none'; this.style.boxShadow='0 2px 12px rgba(0,0,0,0.08)';">
+
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 16px;">
+                            <div style="font-weight: 700; color: #1f2937; font-size: 1.1rem; line-height: 1.3; flex: 1; padding-right: 8px;">${stats.title}</div>
+                            <div style="background: ${badgeColor}; color: white; padding: 8px 14px; border-radius: 12px; font-weight: 800; font-size: 1.1rem; min-width: 65px; text-align: center; box-shadow: 0 2px 8px ${badgeColor}40;">
+                                ${Math.round(accuracy)}%
                             </div>
                         </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill ${badgeClass}" style="width: ${accuracy}%"></div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+                            <div style="background: white; border-radius: 10px; padding: 12px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.05);">
+                                <div style="font-size: 1.75rem; font-weight: 800; color: #1f2937; margin-bottom: 4px;">${stats.totalQuestions}</div>
+                                <div style="color: #6b7280; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Preguntas</div>
+                            </div>
+                            <div style="background: white; border-radius: 10px; padding: 12px; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.05);">
+                                <div style="font-size: 1.75rem; font-weight: 800; color: ${badgeColor}; margin-bottom: 4px;">${stats.correctAnswers}</div>
+                                <div style="color: #6b7280; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Correctas</div>
+                            </div>
                         </div>
-                        <div class="last-studied">Último estudio: ${lastStudied}</div>
+
+                        <div style="background: #e5e7eb; border-radius: 8px; height: 10px; overflow: hidden; margin-bottom: 12px;">
+                            <div style="background: ${badgeColor}; height: 100%; width: ${accuracy}%; transition: width 0.3s ease; box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);"></div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; gap: 6px; color: #6b7280; font-size: 0.8rem;">
+                            <span>📅</span>
+                            <span style="font-weight: 500;">Último estudio: ${lastStudied}</span>
+                        </div>
                     </div>
                 `;
             });
-            
+
             statsHTML += '</div>';
             container.innerHTML = statsHTML;
         }
@@ -2924,7 +3025,7 @@
             document.getElementById('exam-progress-text').style.display = 'none';
             document.getElementById('exam-finish-container').style.display = 'none';
 
-            showPage('official-exam');
+            showPage('study');
         }
 
         // Detectar examen pendiente y mostrar banner
