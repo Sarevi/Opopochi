@@ -2583,21 +2583,22 @@
                     const questionCount = topicData.questions.length;
 
                     failedHTML += `
-                        <div class="failed-topic-card" style="background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #f3f4f6;">
-                            <div style="margin-bottom: 16px;">
+                        <div class="failed-topic-card" style="position: relative; background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #f3f4f6;">
+                            <!-- Badge PDF superior derecho -->
+                            <button onclick="exportToPDF('${topicId}')" style="position: absolute; top: 16px; right: 16px; background: #fed7aa; color: #9a3412; padding: 6px 12px; font-weight: 600; border: none; border-radius: 6px; cursor: pointer; font-size: 0.75rem; transition: all 0.2s ease;" onmouseover="this.style.background='#fdba74'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 2px 8px rgba(251, 146, 60, 0.3)';" onmouseout="this.style.background='#fed7aa'; this.style.transform='none'; this.style.boxShadow='none';">
+                                📄 Exportar PDF
+                            </button>
+
+                            <div style="margin-bottom: 16px; padding-right: 120px;">
                                 <h3 style="margin: 0 0 8px 0; color: #1f2937; font-size: 1.25rem;">${topicTitle}</h3>
                                 <div style="color: #dc2626; font-weight: 600; font-size: 0.875rem;">
                                     📝 ${questionCount} pregunta${questionCount !== 1 ? 's' : ''} para repasar
                                 </div>
                             </div>
-                            <div style="display: flex; flex-direction: column; gap: 8px;">
-                                <button onclick="startReviewTest('${topicId}')" style="width: 100%; background: #f97316; color: white; padding: 14px 20px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; font-size: 1rem; transition: all 0.2s ease;" onmouseover="this.style.background='#ea580c'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(249, 115, 22, 0.3)';" onmouseout="this.style.background='#f97316'; this.style.transform='none'; this.style.boxShadow='none';">
-                                    🎯 Hacer Test de Repaso
-                                </button>
-                                <button onclick="exportToPDF('${topicId}')" style="width: 100%; background: #10b981; color: white; padding: 8px 16px; font-weight: 500; border: none; border-radius: 8px; cursor: pointer; font-size: 0.875rem; transition: all 0.2s ease;" onmouseover="this.style.background='#059669'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(16, 185, 129, 0.3)';" onmouseout="this.style.background='#10b981'; this.style.transform='none'; this.style.boxShadow='none';">
-                                    📄 Exportar PDF
-                                </button>
-                            </div>
+
+                            <button onclick="startReviewTest('${topicId}')" style="width: 100%; background: #f97316; color: white; padding: 14px 20px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; font-size: 1rem; transition: all 0.2s ease;" onmouseover="this.style.background='#ea580c'; this.style.transform='translateY(-1px)'; this.style.boxShadow='0 4px 12px rgba(249, 115, 22, 0.3)';" onmouseout="this.style.background='#f97316'; this.style.transform='none'; this.style.boxShadow='none';">
+                                🎯 Hacer Test de Repaso
+                            </button>
                         </div>
                     `;
                 });
