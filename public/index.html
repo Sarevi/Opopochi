@@ -900,6 +900,15 @@
                 margin-top: 16px;
                 width: 100%;
             }
+
+            /* Tabla responsive - Ocultar tabla desktop y mostrar vista móvil */
+            .topics-table-desktop {
+                display: none !important;
+            }
+
+            .topics-table-mobile {
+                display: block !important;
+            }
         }
 
         /* ESTILOS PARA EXAMEN OFICIAL */
@@ -2427,7 +2436,17 @@
             }
 
             // TABLA COMPACTA DE TODOS LOS TEMAS
-            statsHTML += '<div style="background: white; border-radius: 12px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow-x: auto;">';
+            // Ordenar temas por número (extraer número del título "TEMA X - ...")
+            const sortedTopics = Object.entries(userStats).sort(([idA, statsA], [idB, statsB]) => {
+                const matchA = statsA.title.match(/TEMA\s+(\d+)/);
+                const matchB = statsB.title.match(/TEMA\s+(\d+)/);
+                const numA = matchA ? parseInt(matchA[1]) : 999;
+                const numB = matchB ? parseInt(matchB[1]) : 999;
+                return numA - numB;
+            });
+
+            // VISTA DESKTOP (tabla)
+            statsHTML += '<div class="topics-table-desktop" style="background: white; border-radius: 12px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow-x: auto;">';
             statsHTML += '<table style="width: 100%; border-collapse: collapse; min-width: 600px;">';
             statsHTML += '<thead style="background: #f9fafb;">';
             statsHTML += '<tr>';
@@ -2439,15 +2458,6 @@
             statsHTML += '</tr>';
             statsHTML += '</thead>';
             statsHTML += '<tbody>';
-
-            // Ordenar temas por número (extraer número del título "TEMA X - ...")
-            const sortedTopics = Object.entries(userStats).sort(([idA, statsA], [idB, statsB]) => {
-                const matchA = statsA.title.match(/TEMA\s+(\d+)/);
-                const matchB = statsB.title.match(/TEMA\s+(\d+)/);
-                const numA = matchA ? parseInt(matchA[1]) : 999;
-                const numB = matchB ? parseInt(matchB[1]) : 999;
-                return numA - numB;
-            });
 
             sortedTopics.forEach(([topicId, stats], index) => {
                 const accuracy = stats.accuracy || 0;
@@ -2474,6 +2484,34 @@
 
             statsHTML += '</tbody>';
             statsHTML += '</table>';
+            statsHTML += '</div>';
+
+            // VISTA MÓVIL (lista compacta)
+            statsHTML += '<div class="topics-table-mobile" style="display: none;">';
+
+            sortedTopics.forEach(([topicId, stats], index) => {
+                const accuracy = stats.accuracy || 0;
+                const badgeColor = accuracy >= 80 ? '#22c55e' : accuracy >= 60 ? '#f59e0b' : '#ef4444';
+                const lastStudied = new Date(stats.lastStudied).toLocaleDateString('es-ES', { day: 'numeric', month: 'short' });
+
+                statsHTML += `
+                    <div style="background: white; border-left: 4px solid ${badgeColor}; border-radius: 8px; padding: 12px 16px; margin-bottom: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+                            <div style="font-weight: 600; color: #1f2937; font-size: 0.875rem; flex: 1; line-height: 1.3;">${stats.title}</div>
+                            <div style="background: ${badgeColor}; color: white; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-size: 0.875rem; margin-left: 8px;">
+                                ${Math.round(accuracy)}%
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: #6b7280;">
+                            <div>
+                                <span style="font-weight: 600;">${stats.correctAnswers}</span>/${stats.totalQuestions} correctas
+                            </div>
+                            <div>📅 ${lastStudied}</div>
+                        </div>
+                    </div>
+                `;
+            });
+
             statsHTML += '</div>';
             container.innerHTML = statsHTML;
         }
