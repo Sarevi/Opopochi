@@ -139,6 +139,20 @@ function initDatabase() {
     console.log('ℹ️ No se requiere migración de failed_questions');
   }
 
+  // MIGRACIÓN: Añadir campo active_sessions a tabla users (control de sesiones simultáneas)
+  try {
+    const userTableInfo = db.prepare("PRAGMA table_info(users)").all();
+    const activeSessionsColumn = userTableInfo.find(col => col.name === 'active_sessions');
+
+    if (!activeSessionsColumn) {
+      console.log('🔄 Añadiendo campo active_sessions a tabla users...');
+      db.exec(`ALTER TABLE users ADD COLUMN active_sessions TEXT DEFAULT '[]'`);
+      console.log('✅ Campo active_sessions añadido correctamente');
+    }
+  } catch (error) {
+    console.log('ℹ️ Campo active_sessions ya existe o error en migración:', error.message);
+  }
+
   // ========================
   // SISTEMA DE CACHÉ DE PREGUNTAS
   // ========================
