@@ -838,10 +838,11 @@ INSTRUCCIONES:
 4. EXPLICACIÓN (IMPORTANTE):
    • Una explicación INDEPENDIENTE por pregunta
    • NO mencionar "Fragmento 1" ni "Fragmento 2"
-   • Formato: "**Normativa/Concepto:** dato específico.\n\n💡 *Razón:* porqué."
-   • Máximo 12 palabras en dato + 5 palabras en razón
-   • Insight SOLO si aporta valor (riesgo/eficacia/seguridad)
-   • Ejemplo: "**RD 1345/2007 Art. 8.3:** 7 días máx entre 2-8°C.\n\n💡 *Razón:* Riesgo microbiano sin conservantes."
+   • Formato básico: "**Normativa/Concepto:** dato específico."
+   • Máximo 12 palabras
+   • 💡 **OPCIONAL** - SOLO añadir "\n\n💡 *Razón:* porqué" (máx 5 palabras) si aporta información NUEVA que no sea obvia (riesgo clínico, implicación práctica, consecuencia no evidente)
+   • Ejemplo SIN razón: "**RD 1345/2007 Art. 8.3:** 7 días máx entre 2-8°C."
+   • Ejemplo CON razón: "**RD 1345/2007 Art. 8.3:** 7 días máx entre 2-8°C.\n\n💡 *Razón:* Riesgo microbiano sin conservantes."
 
 CRÍTICO:
 • Respuesta correcta del fragmento (NO inventar)
@@ -890,9 +891,10 @@ INSTRUCCIONES:
 3. EXPLICACIÓN (IMPORTANTE):
    • Una explicación INDEPENDIENTE por pregunta
    • NO mencionar "Fragmento 1" ni "Fragmento 2"
-   • Formato: "**Normativa/Protocolo:** dato específico.\n\n💡 *Razón:* porqué."
-   • Máximo 13 palabras en dato + 6 palabras en razón
-   • Insight SOLO si aporta (lógica operativa/sanitaria)
+   • Formato básico: "**Normativa/Protocolo:** dato específico."
+   • Máximo 13 palabras
+   • 💡 **OPCIONAL** - SOLO añadir "\n\n💡 *Razón:* porqué" (máx 6 palabras) si aporta información NUEVA no redundante (lógica operativa/sanitaria, consecuencia práctica importante)
+   • NO incluir razón si simplemente repite o parafrasea lo ya dicho
 
 CRÍTICO:
 • USA LOS 15 TIPOS - máxima variedad, NO repetir
@@ -938,10 +940,11 @@ INSTRUCCIONES:
 3. EXPLICACIÓN (IMPORTANTE - estructura avanzada):
    • Una explicación INDEPENDIENTE por pregunta
    • NO mencionar "Fragmento 1" ni "Fragmento 2"
-   • Formato simple: "**Normativa:** dato.\n\n💡 *Razón:* porqué."
-   • Formato bullets si 3+ elementos: "**Normativa:**\n• Item1\n• Item2\n\n💡 *Razón:* porqué."
-   • Máximo 15 palabras (20 si bullets) + 7 palabras en razón
-   • Insight SOLO si crítico (seguridad/legal)
+   • Formato simple: "**Normativa:** dato."
+   • Formato bullets si 3+ elementos: "**Normativa:**\n• Item1\n• Item2"
+   • Máximo 15 palabras (20 si bullets)
+   • 💡 **OPCIONAL** - SOLO añadir "\n\n💡 *Razón:* porqué" (máx 7 palabras) si aporta información CRÍTICA no redundante (seguridad/legal, implicación grave, contexto esencial no obvio)
+   • NO incluir razón si la explicación ya es completa y clara
 
 CRÍTICO:
 • Integrar 2+ conceptos del fragmento
