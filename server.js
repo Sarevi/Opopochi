@@ -1131,6 +1131,32 @@ function requireAuth(req, res, next) {
     });
   }
 
+  // VALIDAR SESIÓN ACTIVA (Control de sesiones simultáneas)
+  let activeSessions = [];
+  try {
+    activeSessions = JSON.parse(user.active_sessions || '[]');
+  } catch (e) {
+    activeSessions = [];
+  }
+
+  if (!activeSessions.includes(req.sessionID)) {
+    console.log('❌ Sesión no está en la lista de sesiones activas');
+    console.log('📱 Sesión actual:', req.sessionID);
+    console.log('📱 Sesiones activas válidas:', activeSessions);
+
+    // Destruir sesión invalidada
+    if (req.session && typeof req.session.destroy === 'function') {
+      req.session.destroy();
+    }
+
+    return res.status(401).json({
+      error: 'Sesión invalidada',
+      requiresLogin: true,
+      message: 'Tu sesión fue cerrada porque alguien inició sesión desde otro dispositivo. Si no fuiste tú, cambia tu contraseña.',
+      code: 'SESSION_INVALIDATED'
+    });
+  }
+
   if (user.estado === 'bloqueado') {
     console.log('❌ Usuario bloqueado:', user.username);
     return res.status(403).json({
@@ -1231,6 +1257,35 @@ app.post('/api/auth/login', (req, res) => {
       return res.status(401).json({ error: result.error });
     }
 
+    // CONTROL DE SESIONES SIMULTÁNEAS (máx 2 dispositivos)
+    const MAX_SESSIONS = 2;
+    const user = db.getUserById(result.user.id);
+    let activeSessions = [];
+
+    try {
+      activeSessions = JSON.parse(user.active_sessions || '[]');
+    } catch (e) {
+      activeSessions = [];
+    }
+
+    console.log(`📱 Sesiones activas actuales: ${activeSessions.length}/${MAX_SESSIONS}`);
+
+    // Si ya hay MAX_SESSIONS, eliminar la más antigua
+    if (activeSessions.length >= MAX_SESSIONS) {
+      const oldestSession = activeSessions.shift(); // Elimina la primera (más antigua)
+      console.log(`🗑️ Eliminando sesión más antigua: ${oldestSession}`);
+
+      // Eliminar sesión de la BD de sesiones
+      try {
+        const Database = require('better-sqlite3');
+        const sessionsDb = new Database('./sessions.db');
+        sessionsDb.prepare('DELETE FROM sessions WHERE sid = ?').run(oldestSession);
+        sessionsDb.close();
+      } catch (err) {
+        console.error('⚠️ Error eliminando sesión antigua:', err.message);
+      }
+    }
+
     // Guardar en sesión
     req.session.userId = result.user.id;
 
@@ -1241,8 +1296,16 @@ app.post('/api/auth/login', (req, res) => {
         return res.status(500).json({ error: 'Error guardando sesión' });
       }
 
+      // Añadir nueva sesión al array
+      activeSessions.push(req.sessionID);
+
+      // Actualizar active_sessions en BD
+      db.run('UPDATE users SET active_sessions = ? WHERE id = ?',
+        [JSON.stringify(activeSessions), result.user.id]);
+
       console.log('✅ Login exitoso - Usuario ID:', result.user.id, '- Session ID:', req.sessionID);
       console.log('📦 Sesión guardada:', { userId: req.session.userId, sessionID: req.sessionID });
+      console.log(`📱 Sesiones activas después del login: ${activeSessions.length}/${MAX_SESSIONS}`);
       console.log('🍪 Cookie que se enviará:', req.session.cookie);
 
       res.json({
@@ -1250,7 +1313,8 @@ app.post('/api/auth/login', (req, res) => {
         user: {
           id: result.user.id,
           username: result.user.username
-        }
+        },
+        activeSessions: activeSessions.length // Info para debug
       });
     });
 
@@ -1262,6 +1326,37 @@ app.post('/api/auth/login', (req, res) => {
 
 // Logout
 app.post('/api/auth/logout', (req, res) => {
+  const userId = req.session?.userId;
+  const sessionId = req.sessionID;
+
+  // Eliminar sesión del array de sesiones activas
+  if (userId) {
+    try {
+      const user = db.getUserById(userId);
+      if (user) {
+        let activeSessions = [];
+        try {
+          activeSessions = JSON.parse(user.active_sessions || '[]');
+        } catch (e) {
+          activeSessions = [];
+        }
+
+        // Eliminar la sesión actual del array
+        activeSessions = activeSessions.filter(sid => sid !== sessionId);
+
+        // Actualizar en BD
+        db.run('UPDATE users SET active_sessions = ? WHERE id = ?',
+          [JSON.stringify(activeSessions), userId]);
+
+        console.log(`🚪 Logout - Sesión eliminada del usuario ${user.username}`);
+        console.log(`📱 Sesiones activas restantes: ${activeSessions.length}`);
+      }
+    } catch (err) {
+      console.error('⚠️ Error eliminando sesión del array:', err);
+    }
+  }
+
+  // Destruir sesión
   req.session.destroy((err) => {
     if (err) {
       return res.status(500).json({ error: 'Error al cerrar sesión' });
