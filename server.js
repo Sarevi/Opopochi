@@ -1300,8 +1300,7 @@ app.post('/api/auth/login', (req, res) => {
       activeSessions.push(req.sessionID);
 
       // Actualizar active_sessions en BD
-      db.run('UPDATE users SET active_sessions = ? WHERE id = ?',
-        [JSON.stringify(activeSessions), result.user.id]);
+      db.updateActiveSessions(result.user.id, activeSessions);
 
       console.log('✅ Login exitoso - Usuario ID:', result.user.id, '- Session ID:', req.sessionID);
       console.log('📦 Sesión guardada:', { userId: req.session.userId, sessionID: req.sessionID });
@@ -1345,8 +1344,7 @@ app.post('/api/auth/logout', (req, res) => {
         activeSessions = activeSessions.filter(sid => sid !== sessionId);
 
         // Actualizar en BD
-        db.run('UPDATE users SET active_sessions = ? WHERE id = ?',
-          [JSON.stringify(activeSessions), userId]);
+        db.updateActiveSessions(userId, activeSessions);
 
         console.log(`🚪 Logout - Sesión eliminada del usuario ${user.username}`);
         console.log(`📱 Sesiones activas restantes: ${activeSessions.length}`);

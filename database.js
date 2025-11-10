@@ -529,6 +529,16 @@ function updateLastAccess(userId) {
   return stmt.run(userId);
 }
 
+// Actualizar sesiones activas del usuario
+function updateActiveSessions(userId, sessionsArray) {
+  const stmt = db.prepare(`
+    UPDATE users
+    SET active_sessions = ?
+    WHERE id = ?
+  `);
+  return stmt.run(JSON.stringify(sessionsArray), userId);
+}
+
 // Obtener preguntas por día de un usuario
 function getUserQuestionsPerDay(userId, days = 30) {
   const stmt = db.prepare(`
@@ -1273,6 +1283,7 @@ module.exports = {
   logActivity,
   getAdminStats,
   updateLastAccess,
+  updateActiveSessions,
   getUserQuestionsPerDay,
   getUserQuestionsPerMonth,
   getUserActivity,
