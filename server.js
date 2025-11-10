@@ -835,14 +835,17 @@ INSTRUCCIONES:
    e) Precisión incorrecta: rango casi correcto con detalle erróneo
    → Requieren conocer dato exacto
 
-4. EXPLICACIÓN:
-   • Markdown con negritas, dato + referencia
-   • Máximo 12 palabras
-   • Insight SOLO si aporta (riesgo/eficacia/seguridad): máx 5 palabras
-   • Formato: "**Normativa:** dato.\n\n💡 *Razón:* porqué."
+4. EXPLICACIÓN (IMPORTANTE):
+   • Una explicación INDEPENDIENTE por pregunta
+   • NO mencionar "Fragmento 1" ni "Fragmento 2"
+   • Formato: "**Normativa/Concepto:** dato específico.\n\n💡 *Razón:* porqué."
+   • Máximo 12 palabras en dato + 5 palabras en razón
+   • Insight SOLO si aporta valor (riesgo/eficacia/seguridad)
+   • Ejemplo: "**RD 1345/2007 Art. 8.3:** 7 días máx entre 2-8°C.\n\n💡 *Razón:* Riesgo microbiano sin conservantes."
 
 CRÍTICO:
 • Respuesta correcta del fragmento (NO inventar)
+• Cada pregunta tiene su PROPIA explicación (NO combinar)
 • Distractores plausibles incorrectos (inventar estratégicamente)
 • NO auto-referencias, NO narrativas
 
@@ -884,15 +887,17 @@ INSTRUCCIONES:
    g) Confusión terminológica: término similar incorrecto
    → Requieren dominio completo del concepto
 
-3. EXPLICACIÓN:
-   • Markdown con negritas, respuesta + referencia
-   • Máximo 13 palabras
-   • Insight SOLO si aporta (lógica operativa/sanitaria): máx 6 palabras
-   • Formato: "**Normativa/Protocolo:** dato.\n\n💡 *Razón:* porqué."
+3. EXPLICACIÓN (IMPORTANTE):
+   • Una explicación INDEPENDIENTE por pregunta
+   • NO mencionar "Fragmento 1" ni "Fragmento 2"
+   • Formato: "**Normativa/Protocolo:** dato específico.\n\n💡 *Razón:* porqué."
+   • Máximo 13 palabras en dato + 6 palabras en razón
+   • Insight SOLO si aporta (lógica operativa/sanitaria)
 
 CRÍTICO:
 • USA LOS 15 TIPOS - máxima variedad, NO repetir
 • Respuesta correcta del fragmento (NO inventar)
+• Cada pregunta tiene su PROPIA explicación (NO combinar)
 • 2 preguntas de tipos DIFERENTES
 • NO auto-referencias, NO narrativas
 
@@ -930,16 +935,17 @@ INSTRUCCIONES:
    g) Criterio insuficiente: solo uno de varios necesarios
    → Requieren DOMINIO PROFUNDO
 
-3. EXPLICACIÓN (estructura avanzada):
-   • Markdown estructurado
-   • Bullets si 3+ elementos: "**Normativa:**\n• Item1\n• Item2"
-   • Tabla si comparación: "NPT: X / FM: Y"
-   • Máximo 15 palabras (20 si múltiples elementos)
-   • Insight SOLO si crítico (seguridad/legal): máx 7 palabras
-   • Formato: "**Normativa:**\n• Dato1\n• Dato2\n\n💡 *Razón:* porqué."
+3. EXPLICACIÓN (IMPORTANTE - estructura avanzada):
+   • Una explicación INDEPENDIENTE por pregunta
+   • NO mencionar "Fragmento 1" ni "Fragmento 2"
+   • Formato simple: "**Normativa:** dato.\n\n💡 *Razón:* porqué."
+   • Formato bullets si 3+ elementos: "**Normativa:**\n• Item1\n• Item2\n\n💡 *Razón:* porqué."
+   • Máximo 15 palabras (20 si bullets) + 7 palabras en razón
+   • Insight SOLO si crítico (seguridad/legal)
 
 CRÍTICO:
 • Integrar 2+ conceptos del fragmento
+• Cada pregunta tiene su PROPIA explicación (NO combinar)
 • 2 preguntas tipos DIFERENTES
 • Si fragmento no permite elaborada, hacer MEDIA difícil
 • Respuesta correcta del fragmento (NO inventar)

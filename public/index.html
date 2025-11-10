@@ -2338,7 +2338,15 @@
                 resultTitle.style.color = '#dc2626';
             }
 
-            resultExplanation.textContent = currentQuestion.explanation;
+            // Convertir markdown básico a HTML
+            let formattedExplanation = currentQuestion.explanation
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // **texto** -> <strong>texto</strong>
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')              // *texto* -> <em>texto</em>
+                .replace(/\\n/g, '<br>')                            // \n -> <br>
+                .replace(/\n/g, '<br>')                             // saltos de línea reales -> <br>
+                .replace(/• /g, '<br>• ');                          // bullets con salto de línea
+
+            resultExplanation.innerHTML = formattedExplanation;
             resultSection.style.display = 'block';
 
             document.getElementById('next-question-btn').style.display = 'block';
@@ -2932,7 +2940,12 @@
                                     </div>
                                     ${!isCorrect ? `<div style="margin-bottom: 4px;"><strong>Correcta:</strong> ${answer.options[answer.correctAnswer]} ✅</div>` : ''}
                                     <div style="margin-top: 8px; padding: 8px; background: white; border-radius: 4px;">
-                                        <strong>Explicación:</strong> ${answer.explanation}
+                                        <strong>Explicación:</strong> ${answer.explanation
+                                            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                                            .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                                            .replace(/\\n/g, '<br>')
+                                            .replace(/\n/g, '<br>')
+                                            .replace(/• /g, '<br>• ')}
                                     </div>
                                 </div>
                             </div>
@@ -3562,7 +3575,13 @@
                         doc.setFontSize(9);
                         doc.setFont(undefined, 'italic');
                         doc.setTextColor(75, 85, 99);
-                        const explText = `Explicación: ${q.explanation}`;
+                        // Limpiar markdown para PDF
+                        const cleanExplanation = q.explanation
+                            .replace(/\*\*(.*?)\*\*/g, '$1')  // Eliminar **
+                            .replace(/\*(.*?)\*/g, '$1')      // Eliminar *
+                            .replace(/\\n/g, ' ')             // Convertir \n a espacio
+                            .replace(/\n/g, ' ');             // Convertir saltos reales a espacio
+                        const explText = `Explicación: ${cleanExplanation}`;
                         const explLines = doc.splitTextToSize(explText, maxWidth);
                         doc.text(explLines, margin, yPos);
                         yPos += (explLines.length * 4) + 8;
