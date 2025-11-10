@@ -12,6 +12,7 @@ const SQLiteStore = require('connect-sqlite3')(session);
 const { Anthropic } = require('@anthropic-ai/sdk');
 const pdfParse = require('pdf-parse');
 const cron = require('node-cron');
+const XLSX = require('xlsx');
 require('dotenv').config();
 
 // Importar sistema de base de datos
@@ -1194,6 +1195,15 @@ function requireAuth(req, res, next) {
 
   console.log('✅ requireAuth OK - Usuario:', user.username);
   req.user = user;
+
+  // Actualizar último acceso en cada petición autenticada
+  try {
+    db.updateLastAccess(user.id);
+  } catch (error) {
+    console.error('Error actualizando last_access:', error);
+    // No bloqueamos la petición si falla la actualización
+  }
+
   next();
 }
 
@@ -1461,6 +1471,121 @@ app.get('/api/admin/today', requireAdmin, (req, res) => {
   } catch (error) {
     console.error('Error obteniendo actividad de hoy:', error);
     res.status(500).json({ error: 'Error al obtener actividad de hoy' });
+  }
+});
+
+// Exportar datos de un usuario específico a Excel
+app.get('/api/admin/export/user/:id', requireAdmin, (req, res) => {
+  try {
+    const userId = parseInt(req.params.id);
+    const users = db.getAdminStats();
+    const user = users.find(u => u.id === userId);
+
+    if (!user) {
+      return res.status(404).json({ error: 'Usuario no encontrado' });
+    }
+
+    // Obtener actividad detallada
+    const questionsPerDay = db.getUserQuestionsPerDay(userId, 30);
+    const questionsPerMonth = db.getUserQuestionsPerMonth(userId);
+
+    // Preparar datos para Excel
+    const mainData = [{
+      'ID': user.id,
+      'Usuario': user.username,
+      'Estado': user.estado.toUpperCase(),
+      'Registrado': new Date(user.created_at).toLocaleDateString('es-ES'),
+      'Preguntas Totales': user.total_questions,
+      'Respuestas Correctas': user.correct_answers,
+      'Precisión (%)': Math.round(user.avg_accuracy * 10) / 10,
+      'Último Acceso': new Date(user.last_access).toLocaleString('es-ES')
+    }];
+
+    // Crear libro de Excel
+    const wb = XLSX.utils.book_new();
+
+    // Hoja 1: Datos principales
+    const ws1 = XLSX.utils.json_to_sheet(mainData);
+    XLSX.utils.book_append_sheet(wb, ws1, 'Datos Usuario');
+
+    // Hoja 2: Actividad por día (últimos 30 días)
+    if (questionsPerDay.length > 0) {
+      const dailyData = questionsPerDay.map(day => ({
+        'Fecha': new Date(day.date).toLocaleDateString('es-ES'),
+        'Preguntas': day.count
+      }));
+      const ws2 = XLSX.utils.json_to_sheet(dailyData);
+      XLSX.utils.book_append_sheet(wb, ws2, 'Actividad Diaria');
+    }
+
+    // Hoja 3: Actividad por mes
+    if (questionsPerMonth.length > 0) {
+      const monthlyData = questionsPerMonth.map(month => ({
+        'Mes': month.month,
+        'Preguntas': month.count
+      }));
+      const ws3 = XLSX.utils.json_to_sheet(monthlyData);
+      XLSX.utils.book_append_sheet(wb, ws3, 'Actividad Mensual');
+    }
+
+    // Generar buffer y enviar
+    const buffer = XLSX.write(wb, { type: 'buffer', bookType: 'xlsx' });
+    const filename = `usuario_${user.username}_${Date.now()}.xlsx`;
+
+    res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+    res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    res.send(buffer);
+  } catch (error) {
+    console.error('Error exportando usuario a Excel:', error);
+    res.status(500).json({ error: 'Error al exportar datos' });
+  }
+});
+
+// Exportar todos los usuarios a Excel
+app.get('/api/admin/export/all', requireAdmin, (req, res) => {
+  try {
+    const users = db.getAdminStats();
+
+    // Preparar datos para Excel
+    const data = users.map(user => ({
+      'ID': user.id,
+      'Usuario': user.username,
+      'Estado': user.estado.toUpperCase(),
+      'Registrado': new Date(user.created_at).toLocaleDateString('es-ES'),
+      'Preguntas Totales': user.total_questions,
+      'Respuestas Correctas': user.correct_answers,
+      'Precisión (%)': Math.round(user.avg_accuracy * 10) / 10,
+      'Último Acceso': new Date(user.last_access).toLocaleString('es-ES')
+    }));
+
+    // Crear libro y hoja de Excel
+    const wb = XLSX.utils.book_new();
+    const ws = XLSX.utils.json_to_sheet(data);
+
+    // Ajustar ancho de columnas
+    ws['!cols'] = [
+      { wch: 5 },   // ID
+      { wch: 15 },  // Usuario
+      { wch: 12 },  // Estado
+      { wch: 12 },  // Registrado
+      { wch: 15 },  // Preguntas Totales
+      { wch: 18 },  // Respuestas Correctas
+      { wch: 15 },  // Precisión
+      { wch: 20 }   // Último Acceso
+    ];
+
+    XLSX.utils.book_append_sheet(wb, ws, 'Todos los Usuarios');
+
+    // Generar buffer y enviar
+    const buffer = XLSX.write(wb, { type: 'buffer', bookType: 'xlsx' });
+    const filename = `todos_usuarios_${Date.now()}.xlsx`;
+
+    res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
+    res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    res.send(buffer);
+  } catch (error) {
+    console.error('Error exportando todos los usuarios a Excel:', error);
+    res.status(500).json({ error: 'Error al exportar datos' });
   }
 });
 

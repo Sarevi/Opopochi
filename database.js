@@ -491,7 +491,11 @@ function getAdminStats() {
       u.last_access,
       COALESCE(SUM(s.total_questions), 0) as total_questions,
       COALESCE(SUM(s.correct_answers), 0) as correct_answers,
-      COALESCE(AVG(s.accuracy), 0) as avg_accuracy
+      CASE
+        WHEN SUM(s.total_questions) > 0
+        THEN (CAST(SUM(s.correct_answers) AS REAL) * 100.0 / SUM(s.total_questions))
+        ELSE 0
+      END as avg_accuracy
     FROM users u
     LEFT JOIN user_stats s ON u.id = s.user_id
     GROUP BY u.id
@@ -499,6 +503,16 @@ function getAdminStats() {
   `);
 
   return stmt.all();
+}
+
+// Actualizar último acceso del usuario
+function updateLastAccess(userId) {
+  const stmt = db.prepare(`
+    UPDATE users
+    SET last_access = datetime('now')
+    WHERE id = ?
+  `);
+  return stmt.run(userId);
 }
 
 // Obtener preguntas por día de un usuario
@@ -1244,6 +1258,7 @@ module.exports = {
   removeFailedQuestion,
   logActivity,
   getAdminStats,
+  updateLastAccess,
   getUserQuestionsPerDay,
   getUserQuestionsPerMonth,
   getUserActivity,
