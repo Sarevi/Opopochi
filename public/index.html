@@ -1959,24 +1959,33 @@
         }
 
         async function backToTopicSelection() {
-            document.getElementById('topic-selection').style.display = 'block';
-            document.getElementById('available-topics').style.display = 'block';
+            // Detectar desde qué modo venimos
+            const wasReviewMode = window.isReviewMode === true;
+            const wasExamMode = isOfficialExamMode === true;
+
+            // Ocultar contenedor de preguntas
             document.getElementById('question-container').classList.add('hidden');
             hideRetryNotification();
 
-            // Si estábamos en modo repaso, recargar preguntas falladas
-            const wasReviewMode = window.isReviewMode === true;
-
-            // Salir del modo repaso si estaba activo
-            window.isReviewMode = false;
-            window.reviewQuestions = null;
-            window.currentReviewIndex = 0;
-
-            // Recargar datos del usuario si veníamos de modo repaso
+            // Si estábamos en modo repaso
             if (wasReviewMode) {
+                window.isReviewMode = false;
+                window.reviewQuestions = null;
+                window.currentReviewIndex = 0;
                 await loadUserData();
+                showPage('review'); // Volver a página Reforzar
+                return;
             }
 
+            // Si estábamos en modo examen oficial
+            if (wasExamMode) {
+                showPage('official-exam'); // Volver a página Examen Oficial
+                return;
+            }
+
+            // Si estábamos en modo estudio normal, volver a selección de temas
+            document.getElementById('topic-selection').style.display = 'block';
+            document.getElementById('available-topics').style.display = 'block';
             loadAvailableTopics();
         }
 
@@ -3056,7 +3065,7 @@
             document.getElementById('exam-progress-text').style.display = 'none';
             document.getElementById('exam-finish-container').style.display = 'none';
 
-            showPage('study');
+            showPage('official-exam'); // Volver a página Examen Oficial
         }
 
         // Detectar examen pendiente y mostrar banner
