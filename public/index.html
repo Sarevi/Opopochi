@@ -2342,9 +2342,12 @@
             let formattedExplanation = currentQuestion.explanation
                 .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // **texto** -> <strong>texto</strong>
                 .replace(/\*(.*?)\*/g, '<em>$1</em>')              // *texto* -> <em>texto</em>
-                .replace(/\\n/g, '<br>')                            // \n -> <br>
-                .replace(/\n/g, '<br>')                             // saltos de línea reales -> <br>
-                .replace(/• /g, '<br>• ');                          // bullets con salto de línea
+                .replace(/\\n\\n/g, '<br><br>')                     // \n\n -> doble salto
+                .replace(/\\n/g, '<br>')                            // \n -> salto simple
+                .replace(/\n\n/g, '<br><br>')                       // saltos reales dobles
+                .replace(/\n/g, '<br>')                             // saltos reales simples
+                .replace(/• /g, '<br>• ')                           // bullets con salto
+                .replace(/\.\s*(<br>)*\s*(💡)/g, '.<br><br>💡');   // Asegurar espacio antes de 💡
 
             resultExplanation.innerHTML = formattedExplanation;
             resultSection.style.display = 'block';
@@ -2943,9 +2946,12 @@
                                         <strong>Explicación:</strong> ${answer.explanation
                                             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
                                             .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                                            .replace(/\\n\\n/g, '<br><br>')
                                             .replace(/\\n/g, '<br>')
+                                            .replace(/\n\n/g, '<br><br>')
                                             .replace(/\n/g, '<br>')
-                                            .replace(/• /g, '<br>• ')}
+                                            .replace(/• /g, '<br>• ')
+                                            .replace(/\.\s*(<br>)*\s*(💡)/g, '.<br><br>💡')}
                                     </div>
                                 </div>
                             </div>
