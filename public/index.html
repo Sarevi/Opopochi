@@ -1928,16 +1928,20 @@
             document.querySelectorAll('.page').forEach(page => {
                 page.classList.remove('active');
             });
-            
+
             document.querySelectorAll('.nav-button').forEach(btn => {
                 btn.classList.remove('active');
             });
-            
+
             document.getElementById(`${pageName}-page`).classList.add('active');
             document.getElementById(`nav-${pageName}`).classList.add('active');
-            
+
             switch(pageName) {
                 case 'study':
+                    // Asegurar que la selección de temas esté visible
+                    document.getElementById('topic-selection').style.display = 'block';
+                    document.getElementById('available-topics').style.display = 'block';
+                    document.getElementById('question-container').classList.add('hidden');
                     loadAvailableTopics();
                     break;
                 case 'progress':
