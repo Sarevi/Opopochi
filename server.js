@@ -1148,31 +1148,23 @@ function requireAuth(req, res, next) {
     activeSessions = [];
   }
 
-  // Si la sesión no está en la lista, agregarla automáticamente (compatibilidad con sesiones existentes)
+  // Si la sesión no está en la lista, RECHAZAR (no agregar automáticamente)
   if (!activeSessions.includes(req.sessionID)) {
-    console.log('📱 Sesión no registrada, agregándola automáticamente:', req.sessionID);
+    console.log('❌ Sesión no está en la lista de sesiones activas');
+    console.log('📱 Sesión actual:', req.sessionID);
+    console.log('📱 Sesiones activas válidas:', activeSessions);
 
-    const MAX_SESSIONS = 2;
-
-    // Si ya hay MAX_SESSIONS, eliminar la más antigua
-    if (activeSessions.length >= MAX_SESSIONS) {
-      const oldestSession = activeSessions.shift();
-      console.log(`🗑️ Eliminando sesión más antigua: ${oldestSession}`);
-
-      try {
-        const Database = require('better-sqlite3');
-        const sessionsDb = new Database('./sessions.db');
-        sessionsDb.prepare('DELETE FROM sessions WHERE sid = ?').run(oldestSession);
-        sessionsDb.close();
-      } catch (err) {
-        console.error('⚠️ Error eliminando sesión antigua:', err.message);
-      }
+    // Destruir sesión invalidada
+    if (req.session && typeof req.session.destroy === 'function') {
+      req.session.destroy();
     }
 
-    // Agregar sesión actual
-    activeSessions.push(req.sessionID);
-    db.updateActiveSessions(user.id, activeSessions);
-    console.log('✅ Sesión agregada. Total sesiones activas:', activeSessions.length);
+    return res.status(401).json({
+      error: 'Sesión invalidada',
+      requiresLogin: true,
+      message: 'Tu sesión fue cerrada porque se alcanzó el límite de dispositivos simultáneos (máximo 2). Si no fuiste tú, cambia tu contraseña.',
+      code: 'SESSION_INVALIDATED'
+    });
   }
 
   if (user.estado === 'bloqueado') {
