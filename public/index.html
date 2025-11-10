@@ -1928,16 +1928,20 @@
             document.querySelectorAll('.page').forEach(page => {
                 page.classList.remove('active');
             });
-            
+
             document.querySelectorAll('.nav-button').forEach(btn => {
                 btn.classList.remove('active');
             });
-            
+
             document.getElementById(`${pageName}-page`).classList.add('active');
             document.getElementById(`nav-${pageName}`).classList.add('active');
-            
+
             switch(pageName) {
                 case 'study':
+                    // Asegurar que la selección de temas esté visible
+                    document.getElementById('topic-selection').style.display = 'block';
+                    document.getElementById('available-topics').style.display = 'block';
+                    document.getElementById('question-container').classList.add('hidden');
                     loadAvailableTopics();
                     break;
                 case 'progress':
@@ -1959,24 +1963,33 @@
         }
 
         async function backToTopicSelection() {
-            document.getElementById('topic-selection').style.display = 'block';
-            document.getElementById('available-topics').style.display = 'block';
+            // Detectar desde qué modo venimos
+            const wasReviewMode = window.isReviewMode === true;
+            const wasExamMode = isOfficialExamMode === true;
+
+            // Ocultar contenedor de preguntas
             document.getElementById('question-container').classList.add('hidden');
             hideRetryNotification();
 
-            // Si estábamos en modo repaso, recargar preguntas falladas
-            const wasReviewMode = window.isReviewMode === true;
-
-            // Salir del modo repaso si estaba activo
-            window.isReviewMode = false;
-            window.reviewQuestions = null;
-            window.currentReviewIndex = 0;
-
-            // Recargar datos del usuario si veníamos de modo repaso
+            // Si estábamos en modo repaso
             if (wasReviewMode) {
+                window.isReviewMode = false;
+                window.reviewQuestions = null;
+                window.currentReviewIndex = 0;
                 await loadUserData();
+                showPage('review'); // Volver a página Reforzar
+                return;
             }
 
+            // Si estábamos en modo examen oficial
+            if (wasExamMode) {
+                showPage('official-exam'); // Volver a página Examen Oficial
+                return;
+            }
+
+            // Si estábamos en modo estudio normal, volver a selección de temas
+            document.getElementById('topic-selection').style.display = 'block';
+            document.getElementById('available-topics').style.display = 'block';
             loadAvailableTopics();
         }
 
@@ -2338,7 +2351,18 @@
                 resultTitle.style.color = '#dc2626';
             }
 
-            resultExplanation.textContent = currentQuestion.explanation;
+            // Convertir markdown básico a HTML
+            let formattedExplanation = currentQuestion.explanation
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // **texto** -> <strong>texto</strong>
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')              // *texto* -> <em>texto</em>
+                .replace(/\\n\\n/g, '<br><br>')                     // \n\n -> doble salto
+                .replace(/\\n/g, '<br>')                            // \n -> salto simple
+                .replace(/\n\n/g, '<br><br>')                       // saltos reales dobles
+                .replace(/\n/g, '<br>')                             // saltos reales simples
+                .replace(/• /g, '<br>• ')                           // bullets con salto
+                .replace(/\.\s*(<br>)*\s*(💡)/g, '.<br><br>💡');   // Asegurar espacio antes de 💡
+
+            resultExplanation.innerHTML = formattedExplanation;
             resultSection.style.display = 'block';
 
             document.getElementById('next-question-btn').style.display = 'block';
@@ -2932,7 +2956,15 @@
                                     </div>
                                     ${!isCorrect ? `<div style="margin-bottom: 4px;"><strong>Correcta:</strong> ${answer.options[answer.correctAnswer]} ✅</div>` : ''}
                                     <div style="margin-top: 8px; padding: 8px; background: white; border-radius: 4px;">
-                                        <strong>Explicación:</strong> ${answer.explanation}
+                                        <strong>Explicación:</strong> ${answer.explanation
+                                            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                                            .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                                            .replace(/\\n\\n/g, '<br><br>')
+                                            .replace(/\\n/g, '<br>')
+                                            .replace(/\n\n/g, '<br><br>')
+                                            .replace(/\n/g, '<br>')
+                                            .replace(/• /g, '<br>• ')
+                                            .replace(/\.\s*(<br>)*\s*(💡)/g, '.<br><br>💡')}
                                     </div>
                                 </div>
                             </div>
@@ -3037,7 +3069,7 @@
             document.getElementById('exam-progress-text').style.display = 'none';
             document.getElementById('exam-finish-container').style.display = 'none';
 
-            showPage('study');
+            showPage('official-exam'); // Volver a página Examen Oficial
         }
 
         // Detectar examen pendiente y mostrar banner
@@ -3562,7 +3594,13 @@
                         doc.setFontSize(9);
                         doc.setFont(undefined, 'italic');
                         doc.setTextColor(75, 85, 99);
-                        const explText = `Explicación: ${q.explanation}`;
+                        // Limpiar markdown para PDF
+                        const cleanExplanation = q.explanation
+                            .replace(/\*\*(.*?)\*\*/g, '$1')  // Eliminar **
+                            .replace(/\*(.*?)\*/g, '$1')      // Eliminar *
+                            .replace(/\\n/g, ' ')             // Convertir \n a espacio
+                            .replace(/\n/g, ' ');             // Convertir saltos reales a espacio
+                        const explText = `Explicación: ${cleanExplanation}`;
                         const explLines = doc.splitTextToSize(explText, maxWidth);
                         doc.text(explLines, margin, yPos);
                         yPos += (explLines.length * 4) + 8;
