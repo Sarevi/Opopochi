@@ -838,11 +838,12 @@ INSTRUCCIONES:
 4. EXPLICACIÓN (IMPORTANTE):
    • Una explicación INDEPENDIENTE por pregunta
    • NO mencionar "Fragmento 1" ni "Fragmento 2"
-   • Formato básico: "**Normativa/Concepto:** dato específico."
-   • Máximo 12 palabras
-   • 💡 **OPCIONAL** - SOLO añadir "\n\n💡 *Razón:* porqué" (máx 5 palabras) si aporta información NUEVA que no sea obvia (riesgo clínico, implicación práctica, consecuencia no evidente)
-   • Ejemplo SIN razón: "**RD 1345/2007 Art. 8.3:** 7 días máx entre 2-8°C."
-   • Ejemplo CON razón: "**RD 1345/2007 Art. 8.3:** 7 días máx entre 2-8°C.\n\n💡 *Razón:* Riesgo microbiano sin conservantes."
+   • Formato: "**Normativa/Concepto:** dato específico."
+   • Máximo 12 palabras en dato
+   • 💡 **Incluir razón** si añade contexto útil (riesgo, implicación clínica, porqué importante): "\n\n💡 *Razón:* porqué" (máx 5 palabras)
+   • **NO incluir razón** si solo repite lo ya dicho en otras palabras
+   • Ejemplo CON razón útil: "**RD 1345/2007 Art. 8.3:** 7 días máx entre 2-8°C.\n\n💡 *Razón:* Riesgo microbiano sin conservantes."
+   • Ejemplo SIN razón (redundante): "**Ley 29/2006 Art. 5:** Garantizar medicamentos seguros." (NO añadir "💡 Razón: Para seguridad del paciente" porque es redundante)
 
 CRÍTICO:
 • Respuesta correcta del fragmento (NO inventar)
@@ -891,10 +892,10 @@ INSTRUCCIONES:
 3. EXPLICACIÓN (IMPORTANTE):
    • Una explicación INDEPENDIENTE por pregunta
    • NO mencionar "Fragmento 1" ni "Fragmento 2"
-   • Formato básico: "**Normativa/Protocolo:** dato específico."
-   • Máximo 13 palabras
-   • 💡 **OPCIONAL** - SOLO añadir "\n\n💡 *Razón:* porqué" (máx 6 palabras) si aporta información NUEVA no redundante (lógica operativa/sanitaria, consecuencia práctica importante)
-   • NO incluir razón si simplemente repite o parafrasea lo ya dicho
+   • Formato: "**Normativa/Protocolo:** dato específico."
+   • Máximo 13 palabras en dato
+   • 💡 **Incluir razón** si añade contexto útil (lógica operativa, implicación práctica, porqué importante): "\n\n💡 *Razón:* porqué" (máx 6 palabras)
+   • **NO incluir razón** si solo repite lo dicho con otras palabras
 
 CRÍTICO:
 • USA LOS 15 TIPOS - máxima variedad, NO repetir
@@ -942,9 +943,9 @@ INSTRUCCIONES:
    • NO mencionar "Fragmento 1" ni "Fragmento 2"
    • Formato simple: "**Normativa:** dato."
    • Formato bullets si 3+ elementos: "**Normativa:**\n• Item1\n• Item2"
-   • Máximo 15 palabras (20 si bullets)
-   • 💡 **OPCIONAL** - SOLO añadir "\n\n💡 *Razón:* porqué" (máx 7 palabras) si aporta información CRÍTICA no redundante (seguridad/legal, implicación grave, contexto esencial no obvio)
-   • NO incluir razón si la explicación ya es completa y clara
+   • Máximo 15 palabras en dato (20 si bullets)
+   • 💡 **Incluir razón** si añade contexto crítico útil (seguridad/legal, implicación grave, porqué esencial): "\n\n💡 *Razón:* porqué" (máx 7 palabras)
+   • **NO incluir razón** si solo repite la información ya explicada
 
 CRÍTICO:
 • Integrar 2+ conceptos del fragmento
@@ -1148,31 +1149,23 @@ function requireAuth(req, res, next) {
     activeSessions = [];
   }
 
-  // Si la sesión no está en la lista, agregarla automáticamente (compatibilidad con sesiones existentes)
+  // Si la sesión no está en la lista, RECHAZAR (no agregar automáticamente)
   if (!activeSessions.includes(req.sessionID)) {
-    console.log('📱 Sesión no registrada, agregándola automáticamente:', req.sessionID);
+    console.log('❌ Sesión no está en la lista de sesiones activas');
+    console.log('📱 Sesión actual:', req.sessionID);
+    console.log('📱 Sesiones activas válidas:', activeSessions);
 
-    const MAX_SESSIONS = 2;
-
-    // Si ya hay MAX_SESSIONS, eliminar la más antigua
-    if (activeSessions.length >= MAX_SESSIONS) {
-      const oldestSession = activeSessions.shift();
-      console.log(`🗑️ Eliminando sesión más antigua: ${oldestSession}`);
-
-      try {
-        const Database = require('better-sqlite3');
-        const sessionsDb = new Database('./sessions.db');
-        sessionsDb.prepare('DELETE FROM sessions WHERE sid = ?').run(oldestSession);
-        sessionsDb.close();
-      } catch (err) {
-        console.error('⚠️ Error eliminando sesión antigua:', err.message);
-      }
+    // Destruir sesión invalidada
+    if (req.session && typeof req.session.destroy === 'function') {
+      req.session.destroy();
     }
 
-    // Agregar sesión actual
-    activeSessions.push(req.sessionID);
-    db.updateActiveSessions(user.id, activeSessions);
-    console.log('✅ Sesión agregada. Total sesiones activas:', activeSessions.length);
+    return res.status(401).json({
+      error: 'Sesión invalidada',
+      requiresLogin: true,
+      message: 'Tu sesión fue cerrada porque se alcanzó el límite de dispositivos simultáneos (máximo 2). Si no fuiste tú, cambia tu contraseña.',
+      code: 'SESSION_INVALIDATED'
+    });
   }
 
   if (user.estado === 'bloqueado') {
