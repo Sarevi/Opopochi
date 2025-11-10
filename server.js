@@ -811,44 +811,127 @@ CONTEXTO: Generarás preguntas SIMPLES (dificultad básica). Este tipo represent
 OBJETIVO: Genera 2 preguntas (1 por fragmento) sobre conceptos DIFERENTES.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📚 EJEMPLO DE PREGUNTA EXCELENTE (sigue este estilo):
+📚 EJEMPLOS DE PREGUNTAS EXCELENTES:
+
+EJEMPLO 1 - Pregunta directa SIN contexto adicional:
 {
-  "question": "Según el Real Decreto 1345/2007, ¿cuál es el plazo máximo para la dispensación de fórmulas magistrales acuosas sin conservantes?",
+  "question": "¿Cuál es el plazo máximo de validez de una fórmula magistral acuosa sin conservantes según el RD 1345/2007?",
   "options": [
-    "A) 24 horas desde su elaboración",
-    "B) 7 días conservadas entre 2-8°C",
-    "C) 15 días en condiciones normales",
-    "D) 30 días si se mantienen refrigeradas"
+    "A) 7 días si se almacenan en condiciones normales de temperatura",
+    "B) 7 días conservadas entre 2-8°C desde su elaboración",
+    "C) 10 días entre 2-8°C cuando contienen conservantes autorizados",
+    "D) 5 días entre 2-8°C para preparaciones acuosas sin conservantes"
   ],
   "correct": 1,
-  "explanation": "RD 1345/2007 Art. 8.3: máximo 7 días entre 2-8°C",
+  "explanation": "**RD 1345/2007 Art. 8.3:** Plazo máximo de 7 días entre 2-8°C.\n\n💡 *Razón:* Sin conservantes hay riesgo elevado de proliferación microbiana.",
   "difficulty": "simple",
   "page_reference": "RD 1345/2007 Art. 8.3"
 }
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-INSTRUCCIONES:
+EJEMPLO 2 - Pregunta CON contexto breve (cuando sea natural):
+{
+  "question": "En el almacenamiento de medicamentos termolábiles, ¿qué rango de temperatura debe mantenerse según normativa?",
+  "options": [
+    "A) Entre 0-4°C en refrigeración convencional",
+    "B) Entre 2-8°C en cámara frigorífica",
+    "C) Entre 4-10°C en zona climatizada",
+    "D) Entre 8-15°C en área controlada"
+  ],
+  "correct": 1,
+  "explanation": "**Normativa almacenamiento:** Termolábiles requieren 2-8°C en cámara frigorífica.\n\n💡 *Razón:* Fuera de este rango pierden efectividad terapéutica.",
+  "difficulty": "simple",
+  "page_reference": "Protocolo conservación medicamentos"
+}
 
-1. IDENTIFICA concepto clave por fragmento: plazos, temperaturas, rangos, definiciones, porcentajes, clasificaciones
-2. FORMULA pregunta CORTA y directa (8-15 palabras): "Según [normativa], ¿cuál/qué [dato específico]?"
-3. RESPUESTA CORRECTA: La información DEBE estar en el fragmento (puedes reformular, pero NO inventes datos)
-4. CREA 3 DISTRACTORES plausibles:
-   - Cifra próxima alterada (2-8°C → 0-4°C, 4-10°C, 8-15°C)
-   - Dato de otro contexto relacionado
-   - Error común de estudiantes
-5. EXPLICACIÓN: máx 15 palabras, DIRECTA sin auto-referencias
-   Ejemplo: "Máximo 7 días entre 2-8°C según RD 1345/2007 Art. 8.3"
-   NO escribas: "El fragmento destaca que..." o "Según el texto..."
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INSTRUCCIONES DETALLADAS:
+
+1. ESTILO DE PREGUNTA (REALISTA):
+
+   ✓ VARÍA el estilo naturalmente:
+
+   **Estilo A - Directa (50% de las preguntas):**
+   "¿Cuál es [dato específico] según [normativa]?"
+   "¿Qué establece [norma] sobre [concepto]?"
+
+   **Estilo B - Con contexto breve (50% de las preguntas):**
+   "En [situación profesional breve], ¿[pregunta específica]?"
+   → El contexto debe ser BREVE (máx 6-8 palabras) y NATURAL
+   → Solo cuando ayude a enmarcar la pregunta
+
+   Ejemplos contexto BUENO:
+   ✓ "En el almacenamiento de medicamentos fotosensibles, ¿..."
+   ✓ "Durante la elaboración de fórmulas magistrales, ¿..."
+   ✓ "En la dispensación de estupefacientes, ¿..."
+
+   Ejemplos contexto MALO:
+   ✗ "Un técnico de farmacia recibe una petición de..." (narrativa)
+   ✗ "En el contexto de la gestión integral de la farmacia hospitalaria..." (excesivo)
+
+   ⚠️ REGLA: Si la pregunta es clara SIN contexto, NO lo añadas. El contexto debe ser NATURAL, no forzado.
+
+2. IDENTIFICA concepto clave por fragmento:
+   - Plazos, temperaturas, rangos numéricos
+   - Definiciones normativas
+   - Porcentajes, clasificaciones oficiales
+   - Requisitos específicos
+
+3. DISTRACTORES SOFISTICADOS (CRÍTICO):
+
+   Usa estas TRAMPAS COGNITIVAS:
+
+   a) **Error de contexto cercano**: Dato correcto pero de OTRO caso relacionado
+      Ejemplo: "7 días a temperatura ambiente" (confunde conservación refrigerada con normal)
+
+   b) **Error de detalle numérico**: Cifra próxima + contexto correcto
+      Ejemplo: "5 días entre 2-8°C" (plazo parecido, condiciones correctas)
+
+   c) **Mezcla conceptual**: Combina elementos de dos situaciones diferentes
+      Ejemplo: "10 días entre 2-8°C con conservantes" (mezcla fórmulas CON y SIN conservantes)
+
+   d) **Error común de estudiante**: Respuesta que "suena lógica" pero incorrecta
+      Ejemplo: "7 días en condiciones normales" (olvida la refrigeración obligatoria)
+
+   e) **Precisión incorrecta**: Rango casi correcto con detalle erróneo
+      Ejemplo: "2-8°C si se dispensan en 5 días" (rango bueno, plazo malo)
+
+   ⚠️ REGLA: Todos los distractores deben requerir CONOCER EL DATO EXACTO para descartarlos.
+
+4. EXPLICACIÓN MEJORADA:
+
+   **FORMATO BASE (siempre):**
+   - Markdown con negritas para destacar
+   - Dato específico + referencia normativa
+   - Máximo 15 palabras
+   - Sin auto-referencias ("el fragmento dice...", "según el texto...")
+
+   **+ INSIGHT (solo SI aporta comprensión):**
+   - Añade línea adicional: "💡 *Razón:* [porqué clínico/técnico]"
+   - Usa SOLO cuando haya: riesgo sanitario, razón técnica importante, o lógica crítica
+   - Máximo 8 palabras adicionales
+
+   **Cuándo SÍ añadir insight:**
+   ✓ Riesgos: "Sin conservantes → proliferación microbiana"
+   ✓ Efectividad: "Fuera de rango → pérdida de eficacia"
+   ✓ Seguridad: "Temperatura elevada → degradación activo"
+
+   **Cuándo NO añadir insight:**
+   ✗ Es solo normativa sin razón especial
+   ✗ El dato es auto-evidente
+   ✗ No hay implicación clínica relevante
 
 ⚠️ CRÍTICO - RESPUESTA CORRECTA DEL TEXTO:
 La información de la respuesta CORRECTA debe DERIVARSE del fragmento - puedes reformular pero NO inventes datos.
-Los DISTRACTORES deben ser plausibles pero INCORRECTOS (pueden ser inventados para confundir).
+Los DISTRACTORES deben ser plausibles pero INCORRECTOS (invéntalos estratégicamente según las trampas cognitivas).
 
 PROHIBIDO:
-✗ Narrativas ("un técnico recibe...")
-✗ Inventar la respuesta correcta (los distractores SÍ deben ser inventados/incorrectos)
-✗ Distractores absurdos (extremos irreales)
+✗ Narrativas ("un técnico recibe una petición...")
+✗ Contexto forzado o excesivo (>8 palabras)
+✗ Añadir contexto cuando la pregunta es clara sin él
+✗ Inventar la respuesta correcta
+✗ Distractores obvios o absurdos
 ✗ Explicaciones con auto-referencias ("el fragmento destaca...", "el texto indica...")
+✗ Insights irrelevantes o forzados
 
 RESPONDE SOLO JSON:
 {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"simple","page_reference":""}]}`;
@@ -856,7 +939,7 @@ RESPONDE SOLO JSON:
 // PROMPT MEDIA (60% - Genera 2 preguntas, 1 por fragmento) - NIVEL INTERMEDIO
 const CLAUDE_PROMPT_MEDIA = `Eres evaluador experto en OPOSICIONES de Técnico en Farmacia del SERGAS (Servicio Gallego de Salud).
 
-CONTEXTO: Generarás preguntas MEDIAS (dificultad intermedia). Este tipo representa el 60% de las preguntas que se generan. Evalúan comprensión, aplicación y análisis de conceptos que aparecen en los apuntes. NO solo protocolos - también características, funciones, clasificaciones, comparaciones, relaciones causa-efecto, etc.
+CONTEXTO: Generarás preguntas MEDIAS (dificultad intermedia). Este tipo representa el 60% de las preguntas que se generan. Evalúan comprensión, aplicación y análisis de conceptos que aparecen en los apuntes.
 
 === FRAGMENTO 1 ===
 {{CHUNK_1}}
@@ -864,63 +947,169 @@ CONTEXTO: Generarás preguntas MEDIAS (dificultad intermedia). Este tipo represe
 === FRAGMENTO 2 ===
 {{CHUNK_2}}
 
-OBJETIVO: Genera 2 preguntas (1 por fragmento) sobre temas DIFERENTES y con variedad de enfoques.
+OBJETIVO: Genera 2 preguntas (1 por fragmento) sobre temas DIFERENTES y con MÁXIMA variedad de enfoques.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📚 TIPOS DE PREGUNTAS MEDIAS (varía el tipo):
+📚 TIPOS DE PREGUNTAS MEDIAS (USA MÁXIMA VARIEDAD - 15 tipos disponibles):
+
+**GRUPO A - DESCRIPTIVAS:**
 
 TIPO 1 - Características/Propiedades:
-"¿Qué características definen a los medicamentos fotosensibles según su clasificación?"
+"¿Qué características definen a los medicamentos fotosensibles según su clasificación farmacotécnica?"
 
 TIPO 2 - Funciones/Objetivos:
-"¿Cuál es la función principal del sistema de trazabilidad farmacéutica?"
+"¿Cuál es la función principal del sistema de trazabilidad en la cadena de distribución farmacéutica?"
 
-TIPO 3 - Procedimientos/Protocolos:
-"¿Qué establece el protocolo ante vacunas que superan 8°C?"
+TIPO 3 - Requisitos/Condiciones:
+"¿Qué requisitos debe cumplir el etiquetado de medicamentos reacondicionados en dosis unitarias?"
 
-TIPO 4 - Clasificaciones/Categorías:
-"¿Cómo se clasifican los residuos sanitarios según su peligrosidad?"
+**GRUPO B - PROCEDIMENTALES:**
 
-TIPO 5 - Comparaciones/Diferencias:
-"¿En qué se diferencia una fórmula magistral de un preparado oficinal?"
+TIPO 4 - Procedimientos/Protocolos:
+"¿Qué establece el protocolo de actuación ante una incidencia de temperatura en la conservación de vacunas?"
 
-TIPO 6 - Requisitos/Condiciones:
-"¿Qué requisitos debe cumplir el etiquetado de medicamentos reacondicionados?"
+TIPO 5 - Secuencias de Actuación:
+"¿Cuál es la secuencia correcta de pasos en la recepción de medicamentos en farmacia hospitalaria?"
 
-TIPO 7 - Causas/Consecuencias:
-"¿Qué consecuencias tiene la ruptura de la cadena de frío en medicamentos termolábiles?"
+TIPO 6 - Criterios de Decisión:
+"¿Qué criterios determinan la aceptación o rechazo de un lote de medicamentos en recepción?"
 
-TIPO 8 - Indicaciones/Contraindicaciones:
-"¿Cuándo está indicada la dispensación de medicamentos en dosis unitarias?"
+**GRUPO C - ANALÍTICAS:**
+
+TIPO 7 - Clasificaciones/Categorías:
+"¿Cómo se clasifican los residuos sanitarios según su nivel de peligrosidad biológica?"
+
+TIPO 8 - Comparaciones/Diferencias:
+"¿En qué se diferencia una fórmula magistral de un preparado oficinal según el RD 175/2001?"
+
+TIPO 9 - Relaciones Causa-Efecto:
+"¿Qué consecuencias tiene la ruptura de la cadena de frío sobre la estabilidad de medicamentos termolábiles?"
+
+**GRUPO D - APLICATIVAS:**
+
+TIPO 10 - Aplicación de Normativa:
+"¿Qué normativa específica regula la dispensación de medicamentos psicotropos en farmacia comunitaria?"
+
+TIPO 11 - Indicaciones/Contraindicaciones:
+"¿Cuándo está indicado el uso del sistema de dispensación en dosis unitarias en farmacia hospitalaria?"
+
+TIPO 12 - Identificación de Errores:
+"¿Qué error se comete al almacenar medicamentos termolábiles entre 8-15°C?"
+
+**GRUPO E - EVALUATIVAS:**
+
+TIPO 13 - Interpretación de Datos:
+"Si un medicamento indica 'conservar entre 2-8°C', ¿qué implica para su almacenamiento y dispensación?"
+
+TIPO 14 - Priorización de Acciones:
+"Ante múltiples incidencias simultáneas en farmacia, ¿qué situación requiere actuación prioritaria?"
+
+TIPO 15 - Excepciones y Casos Especiales:
+"¿En qué situaciones excepcionales puede dispensarse un medicamento sin receta estando sujeto a prescripción?"
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-INSTRUCCIONES:
+INSTRUCCIONES DETALLADAS:
 
-1. IDENTIFICA el concepto/tema del fragmento (NO solo protocolos)
-2. ELIGE tipo de pregunta adecuado según el contenido (varía entre los 8 tipos)
-3. FORMULA pregunta (15-25 palabras) - NO uses siempre la misma fórmula
-4. RESPUESTA CORRECTA: La información DEBE estar en el fragmento (puedes reformular, pero NO inventes datos)
-5. CREA 3 DISTRACTORES plausibles según tipo:
-   - Características: atributos similares pero de otro concepto
-   - Funciones: objetivos parciales o de sistemas relacionados
-   - Procedimientos: acciones parciales, excesivas o incorrectas
-   - Clasificaciones: categorías próximas o confundibles
-   - Comparaciones: diferencias invertidas o mezcladas
-6. EXPLICACIÓN: máx 18 palabras, DIRECTA sin auto-referencias
-   Ejemplo: "Protocolo indica notificar inmediatamente y aislar lote según RD 824/2015"
-   NO escribas: "El fragmento establece que..." o "Como indica el texto..."
+1. ESTILO DE PREGUNTA (REALISTA Y VARIADO):
 
-⚠️ CRÍTICO - VARIEDAD Y PRECISIÓN:
-- NO uses siempre "¿Qué establece [protocolo]...?" - VARÍA el tipo de pregunta
-- La información de la respuesta CORRECTA debe DERIVARSE del fragmento (puedes reformular, NO inventes datos)
-- Si no hay suficiente info para un tipo, usa otro
-- Las 2 preguntas deben ser de tipos DIFERENTES si es posible
+   ✓ VARÍA constantemente entre:
+
+   **Estilo A - Pregunta directa (40%):**
+   "¿Qué [aspecto] caracteriza a [concepto]?"
+   "¿Cómo se [acción] según [normativa]?"
+
+   **Estilo B - Con contexto profesional breve (40%):**
+   "En [situación], ¿qué [aspecto específico]?"
+   → Contexto máx 8-10 palabras, SOLO cuando sea natural
+
+   **Estilo C - Aplicativa/Evaluativa (20%):**
+   "Si [condición], ¿qué [consecuencia/acción]?"
+   "¿Qué implica [dato/situación]?"
+
+   Ejemplos BUENOS:
+   ✓ "¿Qué función cumple el código nacional en el sistema de trazabilidad?"
+   ✓ "En la conservación de vacunas, ¿qué rango de temperatura es obligatorio?"
+   ✓ "Si un lote supera los 8°C, ¿qué acción prioritaria establece el protocolo?"
+
+   Ejemplos MALOS:
+   ✗ "Durante tu turno en la farmacia del hospital..." (narrativa)
+   ✗ "En el contexto general de la gestión farmacéutica..." (vago)
+
+   ⚠️ REGLA CRÍTICA:
+   - Si la pregunta es clara SIN contexto → NO lo añadas
+   - El contexto debe ser PROFESIONAL y BREVE, nunca narrativo
+   - VARÍA el tipo de pregunta - NO uses siempre "¿Qué establece...?"
+
+2. IDENTIFICA el concepto/tema del fragmento
+
+3. ELIGE tipo de pregunta según contenido (USA LOS 15 TIPOS - máxima variedad)
+
+4. DISTRACTORES SOFISTICADOS NIVEL MEDIO:
+
+   a) **Respuesta parcialmente correcta**: Incluye parte verdadera pero omite elemento crítico
+      Ejemplo: "Notificar al responsable" (correcto pero incompleto: falta aislar lote + documentar)
+
+   b) **Procedimiento de contexto relacionado**: Acción correcta de OTRO protocolo similar
+      Ejemplo: "Aplicar protocolo de caducidades vencidas" en vez de "protocolo de temperatura"
+
+   c) **Exceso o defecto de requisitos**: Acción correcta con intensidad inadecuada
+      Ejemplo: "Desechar inmediatamente todo el stock" cuando es "aislar lote afectado y evaluar"
+
+   d) **Mezcla de elementos**: Combina partes de dos procedimientos diferentes
+      Ejemplo: "Registrar en libro de estupefacientes" para medicamento termolábil (confunde protocolos)
+
+   e) **Inversión de orden lógico**: Pasos correctos pero secuencia equivocada
+      Ejemplo: "Almacenar primero y luego verificar temperatura" (es al revés)
+
+   f) **Error de ámbito normativo**: Aplica norma de contexto diferente
+      Ejemplo: "Según RD de farmacia comunitaria" cuando aplica normativa hospitalaria
+
+   g) **Confusión terminológica**: Usa término similar pero incorrecto
+      Ejemplo: "Fórmula oficinal" en vez de "fórmula magistral"
+
+   ⚠️ REGLA: El opositor debe DOMINAR EL CONCEPTO para elegir correctamente. Conocimiento superficial no basta.
+
+5. EXPLICACIÓN MEJORADA:
+
+   **FORMATO BASE (siempre):**
+   - Markdown con negritas y estructura clara
+   - Respuesta específica completa
+   - Referencia normativa/protocolo
+   - Máximo 18 palabras
+   - Sin auto-referencias
+
+   **+ INSIGHT (cuando sea relevante):**
+   - Añade: "💡 *Razón:* [porqué técnico/clínico/operativo]"
+   - Usa cuando: haya justificación sanitaria, lógica operativa importante, o consecuencia crítica
+   - Máximo 10 palabras adicionales
+
+   **Ejemplos BUENOS:**
+   ✓ "**Protocolo temperatura vacunas:** Aislar lote + notificar inmediatamente + evaluar.\n\n💡 *Razón:* Evitar dispensación de producto potencialmente ineficaz."
+
+   ✓ "**RD 175/2001 Art. 3:** Magistral = prescripción individual; Oficinal = fórmula estandarizada formulario."
+
+   ✓ "**Trazabilidad farmacéutica:** Código nacional permite seguimiento completo del lote.\n\n💡 *Razón:* Esencial para retiradas y alertas sanitarias."
+
+   **Ejemplos MALOS:**
+   ✗ "El fragmento indica que se debe..." (auto-referencia)
+   ✗ "Es importante porque es importante" (insight inútil)
+
+⚠️ CRÍTICO - VARIEDAD MÁXIMA:
+- USA LOS 15 TIPOS - no repitas el mismo tipo
+- NO uses siempre "¿Qué establece...?" - VARÍA la formulación
+- Las 2 preguntas deben ser de tipos DIFERENTES
+- Si no hay info suficiente para un tipo complejo, usa otro más simple del listado
+- La respuesta CORRECTA debe DERIVARSE del fragmento (reformula, NO inventes)
 
 PROHIBIDO:
-✗ Narrativas ("durante tu turno, recibes...")
-✗ Inventar la respuesta correcta (los distractores SÍ deben ser inventados/incorrectos)
-✗ Usar siempre la misma fórmula de pregunta
-✗ Explicaciones con auto-referencias ("el fragmento destaca...", "el texto indica...")
+✗ Narrativas ("durante tu turno...", "un paciente llega...")
+✗ Contexto forzado o excesivo
+✗ Añadir contexto cuando no es necesario
+✗ Usar siempre la misma fórmula
+✗ Inventar la respuesta correcta (distractores SÍ pueden ser inventados)
+✗ Distractores obvios
+✗ Explicaciones con auto-referencias
+✗ Insights forzados
 
 RESPONDE SOLO JSON:
 {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"media","page_reference":""}]}`;
@@ -928,7 +1117,7 @@ RESPONDE SOLO JSON:
 // PROMPT ELABORADA (20% - Genera 2 preguntas, 1 por fragmento) - NIVEL AVANZADO
 const CLAUDE_PROMPT_ELABORADA = `Eres evaluador experto en OPOSICIONES de Técnico en Farmacia del SERGAS (Servicio Gallego de Salud).
 
-CONTEXTO: Generarás preguntas ELABORADAS (dificultad avanzada). Este tipo representa el 20% de las preguntas que se generan. Requieren análisis profundo, integración de múltiples conceptos y razonamiento complejo sobre contenidos de los apuntes. NO solo procedimientos complejos - también análisis de criterios, síntesis de información, evaluación de situaciones, etc.
+CONTEXTO: Generarás preguntas ELABORADAS (dificultad avanzada). Este tipo representa el 20% de las preguntas que se generan. Requieren análisis profundo, integración de múltiples conceptos y razonamiento complejo sobre contenidos de los apuntes.
 
 === FRAGMENTO 1 ===
 {{CHUNK_1}}
@@ -939,62 +1128,156 @@ CONTEXTO: Generarás preguntas ELABORADAS (dificultad avanzada). Este tipo repre
 OBJETIVO: Genera 2 preguntas (1 por fragmento) sobre temas DIFERENTES con variedad de enfoques complejos.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📚 TIPOS DE PREGUNTAS ELABORADAS (varía el tipo):
+📚 TIPOS DE PREGUNTAS ELABORADAS (varía el tipo - 10 disponibles):
 
 TIPO 1 - Análisis de Criterios Múltiples:
-"¿Qué criterios conjuntos determinan la clasificación de un medicamento como estupefaciente?"
+"¿Qué criterios acumulativos determinan la clasificación de un medicamento como estupefaciente según normativa vigente?"
 
 TIPO 2 - Integración de Conceptos:
-"¿Qué relación existe entre la termoestabilidad de un principio activo y su forma de almacenamiento en el servicio de farmacia?"
+"En el almacenamiento de principios activos termolábiles, ¿qué relación existe entre su termoestabilidad, condiciones de conservación y plazos de validez?"
 
-TIPO 3 - Evaluación de Situaciones:
-"¿En qué circunstancias está justificada la dispensación sin receta de un medicamento sujeto a prescripción?"
+TIPO 3 - Evaluación de Situaciones Complejas:
+"¿En qué circunstancias excepcionales está justificada la dispensación de medicamentos sujetos a prescripción sin receta médica?"
 
-TIPO 4 - Comparación Compleja:
-"¿Qué diferencias fundamentales existen entre la elaboración de una nutrición parenteral y una fórmula magistral estéril?"
+TIPO 4 - Comparación Multi-criterio:
+"¿Qué diferencias fundamentales existen entre la elaboración de nutrición parenteral y fórmula magistral estéril en cuanto a proceso, control y normativa?"
 
-TIPO 5 - Consecuencias y Cadenas Causales:
-"¿Qué consecuencias en cadena puede tener la ruptura del sistema de trazabilidad en un lote de medicamentos?"
+TIPO 5 - Consecuencias en Cadena:
+"Cuando se produce ruptura del sistema de trazabilidad en un lote de medicamentos, ¿qué consecuencias encadenadas afectan a la seguridad del paciente?"
 
-TIPO 6 - Procedimientos Complejos Multi-paso:
-"¿Qué factores determinan el rechazo de un lote en recepción según protocolo de calidad?"
+TIPO 6 - Procedimientos Multi-paso Complejos:
+"¿Qué factores acumulativos determinan el rechazo de un lote en recepción según protocolo de calidad farmacéutica?"
 
 TIPO 7 - Análisis de Excepciones:
-"¿En qué casos excepcionales puede almacenarse un medicamento fuera de sus condiciones habituales de conservación?"
+"¿En qué casos excepcionales documentados puede almacenarse un medicamento fuera de sus condiciones habituales de conservación?"
 
-TIPO 8 - Síntesis de Normativa:
-"¿Qué requisitos acumulativos debe cumplir un medicamento para ser dispensado en dosis unitarias?"
+TIPO 8 - Síntesis Normativa Multi-requisito:
+"¿Qué requisitos acumulativos debe cumplir un medicamento para dispensarse en sistema de dosis unitarias según normativa?"
+
+TIPO 9 - Resolución de Conflictos Normativos:
+"Cuando coinciden requisitos de diferentes normativas para un mismo medicamento, ¿qué criterio de prelación se aplica?"
+
+TIPO 10 - Análisis de Impacto:
+"¿Qué impacto tiene la clasificación de un medicamento como termolábil sobre toda la cadena logística farmacéutica?"
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-INSTRUCCIONES:
+INSTRUCCIONES DETALLADAS:
 
-1. IDENTIFICA contenido que permita pregunta compleja (NO solo procedimientos)
-2. ELIGE tipo de pregunta según el contenido (varía entre los 8 tipos)
-3. FORMULA pregunta LARGA y compleja (25-40 palabras) que requiera análisis profundo - VARÍA la fórmula
-4. RESPUESTA CORRECTA: La información DEBE estar en el fragmento (puedes reformular, pero NO inventes datos)
-5. CREA 3 DISTRACTORES sofisticados:
-   - Respuesta parcial (omite elementos críticos)
-   - Práctica común pero técnicamente incorrecta
-   - Criterio excesivo (añade requisitos no exigidos)
-   - Confusión de conceptos relacionados
-   REGLA: Deben requerir conocimiento profundo para descartar
-6. EXPLICACIÓN: máx 20 palabras, DIRECTA sin auto-referencias
-   Ejemplo: "Requiere verificar trazabilidad, temperatura y documentación según criterios de calidad RD 1345/2007"
-   NO escribas: "El fragmento indica que se debe..." o "En el texto se establece..."
+1. ESTILO DE PREGUNTA (COMPLEJA Y REALISTA):
 
-⚠️ CRÍTICO - VARIEDAD Y PRECISIÓN:
-- NO uses siempre "¿Qué factores determinan...?" - VARÍA el tipo
-- La información de la respuesta CORRECTA debe DERIVARSE del fragmento (puedes reformular, NO inventes datos)
-- Requieren integrar 2+ conceptos del texto
-- Las 2 preguntas deben ser de tipos DIFERENTES si es posible
-- Si el fragmento no permite pregunta compleja, haz una MEDIA difícil
+   Por ser preguntas ELABORADAS, el contexto puede ser más extenso cuando sea NECESARIO para plantear la complejidad:
+
+   **Estilo A - Con contexto necesario (60%):**
+   "En [situación compleja específica], ¿qué [análisis/evaluación/criterios]?"
+   → Contexto: 10-18 palabras si es necesario para plantear complejidad
+   → Debe aportar elementos necesarios para la pregunta compleja
+
+   **Estilo B - Directa compleja (40%):**
+   "¿Qué [criterios múltiples/relaciones/consecuencias] [análisis complejo]?"
+   → Cuando la complejidad está en el análisis, no en el contexto
+
+   Ejemplos BUENOS:
+   ✓ "En la elaboración de nutrición parenteral en área estéril, ¿qué requisitos acumulativos de control de calidad son obligatorios?"
+
+   ✓ "¿Qué factores determinan conjuntamente la clasificación de un medicamento como de conservación especial?"
+
+   ✓ "Cuando un lote presenta desviación de temperatura durante transporte, ¿qué evaluación completa debe realizarse antes de decidir su aceptación?"
+
+   Ejemplos MALOS:
+   ✗ "Durante un día complicado en tu farmacia..." (narrativa innecesaria)
+   ✗ Contexto que no aporta a la complejidad de la pregunta
+
+   ⚠️ REGLA: El contexto en ELABORADAS puede ser más amplio, pero debe ser FUNCIONAL (necesario para plantear la complejidad), no decorativo.
+
+2. IDENTIFICA contenido que permita pregunta compleja
+
+3. ELIGE tipo de pregunta según contenido (varía entre los 10 tipos)
+
+4. DISTRACTORES SOFISTICADOS NIVEL AVANZADO:
+
+   a) **Respuesta técnicamente parcial**: Cumple criterios principales pero omite elementos críticos
+      Ejemplo: "Verificar temperatura, lote y caducidad" (falta: documentación albarán, trazabilidad, notificación)
+
+   b) **Práctica habitual no normativa**: Lo común en la práctica pero técnicamente incorrecto
+      Ejemplo: "Aceptar si el proveedor es habitual de confianza" (práctica real pero inadmisible normativamente)
+
+   c) **Sobre-requisito**: Añade criterios más estrictos de los legalmente requeridos
+      Ejemplo: "Requiere autorización Director + Comité + Inspección Sanidad" cuando solo necesita Director
+
+   d) **Confusión normativa**: Aplica criterios de legislación similar pero incorrecta
+      Ejemplo: "Según RD medicamentos generales" en contexto de estupefacientes (normativa específica distinta)
+
+   e) **Secuencia correcta incompleta**: Pasos adecuados pero omite alguno crítico de la cadena
+      Ejemplo: "Evaluar → documentar → almacenar" (falta: notificar incidencia + aislar lote)
+
+   f) **Mezcla de escenarios**: Combina procedimientos de situaciones relacionadas pero diferentes
+      Ejemplo: "Protocolo caducidad + temperatura + estupefacientes" (mezcla tres protocolos distintos)
+
+   g) **Criterio insuficiente**: Usa solo uno de varios criterios acumulativos necesarios
+      Ejemplo: "Basta verificar la temperatura" cuando requiere temperatura + lote + caducidad + documentación
+
+   ⚠️ REGLA CRÍTICA: Requieren DOMINIO PROFUNDO. Un opositor con conocimiento superficial o medio NO puede descartarlos correctamente.
+
+5. EXPLICACIÓN MEJORADA (ESTRUCTURA AVANZADA):
+
+   **FORMATO BASE (siempre):**
+   - Markdown estructurado (bullets si 3+ elementos, tabla si comparación)
+   - Respuesta completa con TODOS los elementos necesarios
+   - Referencia normativa específica
+   - Máximo 20 palabras (o 28 si estructura compleja con múltiples elementos)
+   - Sin auto-referencias
+
+   **+ INSIGHT (cuando sea relevante):**
+   - Añade: "💡 *Razón:* [porqué técnico/sanitario/legal crítico]"
+   - Usa cuando: haya justificación de seguridad crítica, razón legal fundamental, o lógica técnica esencial
+   - Máximo 12 palabras adicionales
+
+   **ESTRUCTURA según complejidad:**
+
+   *Para criterios múltiples (bullets):*
+   ```
+   **Normativa Art. X:**
+   • Criterio 1: detalle
+   • Criterio 2: detalle
+   • Criterio 3: detalle
+
+   💡 *Razón:* Justificación crítica.
+   ```
+
+   *Para comparaciones (mini-tabla opcional):*
+   ```
+   **Diferencias NPT vs FM:**
+   NPT: Nutrición parenteral, análisis obligatorio, caducidad 24-48h
+   FM: Fórmula magistral, análisis según caso, caducidad variable
+
+   💡 *Razón:* NPT mayor riesgo infeccioso.
+   ```
+
+   **Ejemplos BUENOS:**
+   ✓ "**RD 1345/2007 Recepción:**\n• Verificar: temperatura, lote, caducidad\n• Documentar: albarán + registro\n• Notificar incidencias a responsable\n\n💡 *Razón:* Garantiza trazabilidad completa."
+
+   ✓ "**Criterios rechazo lote:** Temperatura fuera rango + falta documentación + lote no trazable.\n\n💡 *Razón:* Cualquiera compromete seguridad paciente."
+
+   **Ejemplos MALOS:**
+   ✗ "Como indica el texto, se debe..." (auto-referencia)
+   ✗ Explicación que no cubre todos los elementos de la respuesta compleja
+
+⚠️ CRÍTICO - COMPLEJIDAD REAL:
+- Requieren integrar 2+ conceptos del fragmento
+- Las 2 preguntas deben ser de tipos DIFERENTES
+- Si el fragmento no permite pregunta elaborada, haz una MEDIA difícil
+- La respuesta CORRECTA debe DERIVARSE del fragmento (reformula pero NO inventes)
+- Los distractores SÍ deben ser inventados estratégicamente
 
 PROHIBIDO:
-✗ Narrativas largas con historias
-✗ Inventar la respuesta correcta (los distractores SÍ deben ser inventados/incorrectos)
-✗ Usar siempre la misma fórmula de pregunta
+✗ Narrativas largas con historias ficticias
+✗ Contexto decorativo que no aporta a la complejidad
+✗ Inventar la respuesta correcta (distractores SÍ inventados)
+✗ Usar siempre la misma fórmula
 ✗ Situaciones irreales
-✗ Explicaciones con auto-referencias ("el fragmento destaca...", "el texto indica...")
+✗ Distractores que se descartan con lógica común
+✗ Explicaciones con auto-referencias
+✗ Insights irrelevantes
 
 RESPONDE SOLO JSON:
 {"questions":[{"question":"","options":["A) ","B) ","C) ","D) "],"correct":0,"explanation":"","difficulty":"elaborada","page_reference":""}]}`;
