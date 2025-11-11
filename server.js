@@ -29,6 +29,40 @@ db.initDatabase();
 // Confiar en proxies (necesario para Render)
 app.set('trust proxy', 1);
 
+// ========================
+// HELMET - Headers de Seguridad
+// ========================
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'"], // unsafe-inline necesario para scripts inline en HTML
+      styleSrc: ["'self'", "'unsafe-inline'"], // unsafe-inline necesario para estilos inline
+      imgSrc: ["'self'", 'data:', 'https:'],
+      connectSrc: ["'self'", 'https://api.anthropic.com'], // API de Claude
+      fontSrc: ["'self'"],
+      objectSrc: ["'none'"],
+      mediaSrc: ["'self'"],
+      frameSrc: ["'none'"] // Previene clickjacking
+    }
+  },
+  hsts: {
+    maxAge: 31536000, // 1 año
+    includeSubDomains: true,
+    preload: true
+  },
+  frameguard: {
+    action: 'deny' // Previene que la app sea embebida en iframes
+  },
+  noSniff: true, // Previene MIME sniffing
+  xssFilter: true, // Filtro XSS legacy (navegadores antiguos)
+  referrerPolicy: {
+    policy: 'strict-origin-when-cross-origin'
+  }
+}));
+
+console.log('✅ Helmet configurado - Headers de seguridad activos');
+
 // Middleware de sesiones
 app.use(session({
   store: new SQLiteStore({
@@ -47,14 +81,36 @@ app.use(session({
   }
 }));
 
-// Middleware optimizado para producción
+// ========================
+// CORS - Configuración Segura
+// ========================
+// Orígenes permitidos - Configurar según entorno
+const allowedOrigins = process.env.NODE_ENV === 'production'
+  ? (process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : [])
+  : ['http://localhost:3000', 'http://127.0.0.1:3000']; // Desarrollo
+
 app.use(cors({
-    origin: true,  // Permitir todos los orígenes (más permisivo para debugging)
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Admin-Password'],
-    exposedHeaders: ['Set-Cookie']
+  origin: (origin, callback) => {
+    // Permitir requests sin origin (Postman, curl) solo en desarrollo
+    if (!origin && process.env.NODE_ENV !== 'production') {
+      return callback(null, true);
+    }
+
+    // Verificar si el origin está en la lista permitida
+    if (allowedOrigins.includes(origin) || allowedOrigins.length === 0) {
+      callback(null, true);
+    } else {
+      console.warn(`🚫 Origen bloqueado por CORS: ${origin}`);
+      callback(new Error('No permitido por CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'], // Eliminado X-Admin-Password
+  maxAge: 86400 // Cache preflight 24 horas
 }));
+
+console.log(`✅ CORS configurado - Orígenes permitidos:`, allowedOrigins.length > 0 ? allowedOrigins : ['TODOS (⚠️  Configurar ALLOWED_ORIGINS en producción)']);
 app.use(express.json({ limit: '10mb' }));
 
 // ========================
