@@ -13,6 +13,8 @@ const { Anthropic } = require('@anthropic-ai/sdk');
 const pdfParse = require('pdf-parse');
 const cron = require('node-cron');
 const XLSX = require('xlsx');
+const rateLimit = require('express-rate-limit');
+const helmet = require('helmet');
 require('dotenv').config();
 
 // Importar sistema de base de datos
@@ -26,6 +28,40 @@ db.initDatabase();
 
 // Confiar en proxies (necesario para Render)
 app.set('trust proxy', 1);
+
+// ========================
+// HELMET - Headers de Seguridad
+// ========================
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'"], // unsafe-inline necesario para scripts inline en HTML
+      styleSrc: ["'self'", "'unsafe-inline'"], // unsafe-inline necesario para estilos inline
+      imgSrc: ["'self'", 'data:', 'https:'],
+      connectSrc: ["'self'", 'https://api.anthropic.com'], // API de Claude
+      fontSrc: ["'self'"],
+      objectSrc: ["'none'"],
+      mediaSrc: ["'self'"],
+      frameSrc: ["'none'"] // Previene clickjacking
+    }
+  },
+  hsts: {
+    maxAge: 31536000, // 1 año
+    includeSubDomains: true,
+    preload: true
+  },
+  frameguard: {
+    action: 'deny' // Previene que la app sea embebida en iframes
+  },
+  noSniff: true, // Previene MIME sniffing
+  xssFilter: true, // Filtro XSS legacy (navegadores antiguos)
+  referrerPolicy: {
+    policy: 'strict-origin-when-cross-origin'
+  }
+}));
+
+console.log('✅ Helmet configurado - Headers de seguridad activos');
 
 // Middleware de sesiones
 app.use(session({
@@ -45,15 +81,91 @@ app.use(session({
   }
 }));
 
-// Middleware optimizado para producción
+// ========================
+// CORS - Configuración Segura
+// ========================
+// Orígenes permitidos - Configurar según entorno
+const allowedOrigins = process.env.NODE_ENV === 'production'
+  ? (process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : [])
+  : ['http://localhost:3000', 'http://127.0.0.1:3000']; // Desarrollo
+
 app.use(cors({
-    origin: true,  // Permitir todos los orígenes (más permisivo para debugging)
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Admin-Password'],
-    exposedHeaders: ['Set-Cookie']
+  origin: (origin, callback) => {
+    // Permitir requests sin origin (Postman, curl) solo en desarrollo
+    if (!origin && process.env.NODE_ENV !== 'production') {
+      return callback(null, true);
+    }
+
+    // Verificar si el origin está en la lista permitida
+    if (allowedOrigins.includes(origin) || allowedOrigins.length === 0) {
+      callback(null, true);
+    } else {
+      console.warn(`🚫 Origen bloqueado por CORS: ${origin}`);
+      callback(new Error('No permitido por CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'], // Eliminado X-Admin-Password
+  maxAge: 86400 // Cache preflight 24 horas
 }));
+
+console.log(`✅ CORS configurado - Orígenes permitidos:`, allowedOrigins.length > 0 ? allowedOrigins : ['TODOS (⚠️  Configurar ALLOWED_ORIGINS en producción)']);
 app.use(express.json({ limit: '10mb' }));
+
+// ========================
+// RATE LIMITING - Protección contra sobrecarga
+// ========================
+
+// Limiter global: 300 requests por 15 minutos por IP
+// Para 300 usuarios concurrentes: ~1 request/3 segundos promedio
+const globalLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutos
+  max: 300, // máximo 300 requests por ventana
+  message: 'Demasiadas peticiones desde esta IP, por favor intenta de nuevo en 15 minutos',
+  standardHeaders: true, // Retorna info en headers `RateLimit-*`
+  legacyHeaders: false, // Deshabilita headers `X-RateLimit-*`
+  // Usar IP real del usuario (importante con proxies)
+  keyGenerator: (req) => {
+    return req.ip || req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  }
+});
+
+// Limiter para autenticación: 10 intentos por 15 minutos
+// Previene brute force attacks
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 10,
+  message: 'Demasiados intentos de login. Por favor espera 15 minutos',
+  skipSuccessfulRequests: false // Contar todos los intentos
+});
+
+// Limiter para generación de exámenes: 30 por hora por usuario
+// Previene abuso de API de IA y costos excesivos
+const examLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000, // 1 hora
+  max: 30,
+  message: 'Límite de generación de exámenes alcanzado. Por favor espera 1 hora',
+  keyGenerator: (req) => {
+    // Por usuario autenticado, no por IP
+    return req.session?.userId?.toString() || req.ip;
+  }
+});
+
+// Limiter para endpoints de estudio: 100 preguntas por hora por usuario
+const studyLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000, // 1 hora
+  max: 100,
+  message: 'Límite de preguntas alcanzado. Por favor espera 1 hora',
+  keyGenerator: (req) => {
+    return req.session?.userId?.toString() || req.ip;
+  }
+});
+
+// Aplicar limiter global a todas las rutas
+app.use(globalLimiter);
+
+console.log('✅ Rate limiting configurado para 300+ usuarios concurrentes');
 
 // Middleware de logging para debugging
 app.use((req, res, next) => {
@@ -94,6 +206,40 @@ const MAX_TOKENS_CONFIG = {
   media: 800,       // 2 preguntas × 400 tokens (margen amplio)
   elaborada: 1000   // 2 preguntas × 500 tokens (margen amplio)
 };
+
+// ========================
+// CONTROL DE GENERACIONES EN BACKGROUND
+// ========================
+// Previene que múltiples clicks inicien generaciones duplicadas
+// Clave: `${userId}-${topicId}` -> Promise de generación en curso
+const backgroundGenerations = new Map();
+
+// Función auxiliar para ejecutar generación controlada
+async function runControlledBackgroundGeneration(userId, topicId, generationFn) {
+  const key = `${userId}-${topicId}`;
+
+  // Si ya hay una generación en curso para este usuario+tópico, no iniciar otra
+  if (backgroundGenerations.has(key)) {
+    console.log(`⏭️  Generación en background ya en progreso para usuario ${userId}, tópico ${topicId}`);
+    return;
+  }
+
+  try {
+    // Marcar que está en progreso
+    const promise = generationFn();
+    backgroundGenerations.set(key, promise);
+
+    // Ejecutar generación
+    await promise;
+
+    console.log(`✅ Generación en background completada para usuario ${userId}, tópico ${topicId}`);
+  } catch (error) {
+    console.error(`❌ Error en generación background (usuario ${userId}, tópico ${topicId}):`, error);
+  } finally {
+    // Limpiar entrada del Map
+    backgroundGenerations.delete(key);
+  }
+}
 
 // Configuración completa de temas - TÉCNICO DE FARMACIA
 const TOPIC_CONFIG = {
@@ -1190,7 +1336,7 @@ app.get('/', (req, res) => {
 });
 
 // Registro de usuario
-app.post('/api/auth/register', (req, res) => {
+app.post('/api/auth/register', authLimiter, (req, res) => {
   try {
     const { username, password } = req.body;
 
@@ -1227,7 +1373,7 @@ app.post('/api/auth/register', (req, res) => {
 });
 
 // Login
-app.post('/api/auth/login', (req, res) => {
+app.post('/api/auth/login', authLimiter, (req, res) => {
   try {
     const { username, password } = req.body;
     console.log('🔑 Intento de login - Usuario:', username);
@@ -1357,10 +1503,27 @@ app.post('/api/admin/users', requireAdmin, (req, res) => {
   }
 });
 
+// ========================
+// FUNCIONES AUXILIARES DE VALIDACIÓN
+// ========================
+
+// Validar y parsear userId de parámetros de ruta
+function parseUserId(idString) {
+  const userId = parseInt(idString);
+  if (isNaN(userId) || userId <= 0) {
+    throw new Error('ID de usuario inválido');
+  }
+  return userId;
+}
+
+// ========================
+// ENDPOINTS DE ADMIN
+// ========================
+
 // Activar usuario
 app.post('/api/admin/users/:id/activate', requireAdmin, (req, res) => {
   try {
-    const userId = parseInt(req.params.id);
+    const userId = parseUserId(req.params.id);
     db.activateUser(userId);
     res.json({ success: true });
   } catch (error) {
@@ -1372,7 +1535,7 @@ app.post('/api/admin/users/:id/activate', requireAdmin, (req, res) => {
 // Bloquear usuario
 app.post('/api/admin/users/:id/block', requireAdmin, (req, res) => {
   try {
-    const userId = parseInt(req.params.id);
+    const userId = parseUserId(req.params.id);
     db.blockUser(userId);
     res.json({ success: true });
   } catch (error) {
@@ -1406,7 +1569,7 @@ app.get('/api/admin/stats', requireAdmin, (req, res) => {
 // Obtener actividad detallada de un usuario (admin)
 app.get('/api/admin/users/:id/activity', requireAdmin, (req, res) => {
   try {
-    const userId = parseInt(req.params.id);
+    const userId = parseUserId(req.params.id);
 
     const questionsPerDay = db.getUserQuestionsPerDay(userId, 30);
     const questionsPerMonth = db.getUserQuestionsPerMonth(userId, 6);
@@ -1439,7 +1602,7 @@ app.get('/api/admin/today', requireAdmin, (req, res) => {
 // Exportar datos de un usuario específico a Excel
 app.get('/api/admin/export/user/:id', requireAdmin, (req, res) => {
   try {
-    const userId = parseInt(req.params.id);
+    const userId = parseUserId(req.params.id);
     const users = db.getAdminStats();
     const user = users.find(u => u.id === userId);
 
@@ -1563,7 +1726,7 @@ app.get('/api/topics', (req, res) => {
   }
 });
 
-app.post('/api/generate-exam', requireAuth, async (req, res) => {
+app.post('/api/generate-exam', requireAuth, examLimiter, async (req, res) => {
   try {
     const { topics, questionCount = 1 } = req.body;
     const userId = req.user.id;
@@ -2045,9 +2208,9 @@ app.post('/api/study/pre-warm', requireAuth, async (req, res) => {
       bufferSize: currentBufferSize
     });
 
-    // Generar preguntas en background (FASE 3: caché agresivo 80%)
-    setImmediate(async () => {
-      try {
+    // Generar preguntas en background (CONTROLADO - previene duplicados)
+    setImmediate(() => {
+      runControlledBackgroundGeneration(userId, topicId, async () => {
         console.log(`🔨 [Background] Generando 3 preguntas para pre-warming (cache agresivo: 80%)...`);
 
         const questionsNeeded = 3 - currentBufferSize;
@@ -2060,9 +2223,7 @@ app.post('/api/study/pre-warm', requireAuth, async (req, res) => {
 
         const finalBufferSize = db.getBufferSize(userId, topicId);
         console.log(`✅ [Background] Pre-warming completado: ${finalBufferSize} preguntas en buffer`);
-      } catch (error) {
-        console.error(`❌ [Background] Error en pre-warming:`, error);
-      }
+      });
     });
 
   } catch (error) {
@@ -2078,7 +2239,7 @@ app.post('/api/study/pre-warm', requireAuth, async (req, res) => {
 // ====================================================================
 // FASE 2: ENDPOINT CON PREFETCH PARA ESTUDIO (RESPUESTA INSTANTÁNEA)
 // ====================================================================
-app.post('/api/study/question', requireAuth, async (req, res) => {
+app.post('/api/study/question', requireAuth, studyLimiter, async (req, res) => {
   try {
     const { topicId } = req.body;
     const userId = req.user.id;
@@ -2123,13 +2284,11 @@ app.post('/api/study/question', requireAuth, async (req, res) => {
         if (newBufferSize < 3) {
           console.log(`🔄 Buffer bajo (${newBufferSize}), iniciando refill en background...`);
 
-          // Generar 2-3 preguntas más en background (sin esperar)
-          setImmediate(async () => {
-            try {
+          // Generar 2-3 preguntas más en background (CONTROLADO - previene duplicados)
+          setImmediate(() => {
+            runControlledBackgroundGeneration(userId, topicId, async () => {
               await refillBuffer(userId, topicId, 3 - newBufferSize);
-            } catch (error) {
-              console.error('Error en background refill:', error);
-            }
+            });
           });
         }
 
@@ -2566,7 +2725,7 @@ app.get('/api/review-exam/:topicId', requireAuth, (req, res) => {
 // EXAMEN OFICIAL (SIMULACRO)
 // ========================
 
-app.post('/api/exam/official', requireAuth, async (req, res) => {
+app.post('/api/exam/official', requireAuth, examLimiter, async (req, res) => {
   try {
     const { questionCount } = req.body; // 25, 50, 75, 100
     const userId = req.user.id;
