@@ -13,8 +13,6 @@ const { Anthropic } = require('@anthropic-ai/sdk');
 const pdfParse = require('pdf-parse');
 const cron = require('node-cron');
 const XLSX = require('xlsx');
-const rateLimit = require('express-rate-limit');
-const helmet = require('helmet');
 require('dotenv').config();
 
 // Importar sistema de base de datos
@@ -29,15 +27,13 @@ db.initDatabase();
 // Confiar en proxies (necesario para Render)
 app.set('trust proxy', 1);
 
-// ========================
-// HELMET - Headers de Seguridad
-// ========================
-// DESHABILITADO TEMPORALMENTE - Bloqueaba scripts inline
-// app.use(helmet({
-//   contentSecurityPolicy: false // Deshabilitar CSP para permitir scripts inline
-// }));
+// CORS
+app.use(cors({
+  origin: true,
+  credentials: true
+}));
 
-// console.log('✅ Helmet configurado - Headers de seguridad activos');
+app.use(express.json({ limit: '10mb' }));
 
 // Middleware de sesiones
 app.use(session({
@@ -56,70 +52,6 @@ app.use(session({
     sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax'  // 'none' necesario para HTTPS con proxy
   }
 }));
-
-// ========================
-// CORS - Configuración Simple
-// ========================
-app.use(cors({
-  origin: true, // Permitir todos los orígenes temporalmente
-  credentials: true
-}));
-
-console.log('✅ CORS configurado - Permitiendo todos los orígenes');
-app.use(express.json({ limit: '10mb' }));
-
-// ========================
-// RATE LIMITING - Protección contra sobrecarga
-// ========================
-
-// Limiter global: 300 requests por 15 minutos por IP
-// Para 300 usuarios concurrentes: ~1 request/3 segundos promedio
-const globalLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutos
-  max: 300, // máximo 300 requests por ventana
-  message: 'Demasiadas peticiones desde esta IP, por favor intenta de nuevo en 15 minutos',
-  standardHeaders: true, // Retorna info en headers `RateLimit-*`
-  legacyHeaders: false // Deshabilita headers `X-RateLimit-*`
-  // keyGenerator se omite - usa IP automáticamente con trust proxy
-});
-
-// Limiter para autenticación: 10 intentos por 15 minutos
-// Previene brute force attacks
-const authLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 10,
-  message: 'Demasiados intentos de login. Por favor espera 15 minutos',
-  skipSuccessfulRequests: false // Contar todos los intentos
-});
-
-// Limiter para generación de exámenes: 30 por hora por IP
-// Previene abuso de API de IA y costos excesivos
-const examLimiter = rateLimit({
-  windowMs: 60 * 60 * 1000, // 1 hora
-  max: 30,
-  message: 'Límite de generación de exámenes alcanzado. Por favor espera 1 hora'
-  // keyGenerator se omite - usa IP automáticamente
-});
-
-// Limiter para endpoints de estudio: 100 preguntas por hora por IP
-const studyLimiter = rateLimit({
-  windowMs: 60 * 60 * 1000, // 1 hora
-  max: 100,
-  message: 'Límite de preguntas alcanzado. Por favor espera 1 hora'
-  // keyGenerator se omite - usa IP automáticamente
-});
-
-// Aplicar limiter global a todas las rutas
-// DESHABILITADO TEMPORALMENTE - Podría estar bloqueando requests
-// app.use(globalLimiter);
-
-// console.log('✅ Rate limiting configurado para 300+ usuarios concurrentes');
-
-// Middleware de logging para debugging
-app.use((req, res, next) => {
-  console.log(`📨 ${req.method} ${req.path} - Origin: ${req.headers.origin || 'none'} - Cookies: ${req.headers.cookie ? 'presente' : 'ausente'}`);
-  next();
-});
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname));
@@ -1284,7 +1216,7 @@ app.get('/', (req, res) => {
 });
 
 // Registro de usuario
-app.post('/api/auth/register', authLimiter, (req, res) => {
+app.post('/api/auth/register', (req, res) => {
   try {
     const { username, password } = req.body;
 
@@ -1321,7 +1253,7 @@ app.post('/api/auth/register', authLimiter, (req, res) => {
 });
 
 // Login
-app.post('/api/auth/login', authLimiter, (req, res) => {
+app.post('/api/auth/login', (req, res) => {
   try {
     const { username, password } = req.body;
     console.log('🔑 Intento de login - Usuario:', username);
@@ -1674,7 +1606,7 @@ app.get('/api/topics', (req, res) => {
   }
 });
 
-app.post('/api/generate-exam', requireAuth, examLimiter, async (req, res) => {
+app.post('/api/generate-exam', requireAuth, async (req, res) => {
   try {
     const { topics, questionCount = 1 } = req.body;
     const userId = req.user.id;
@@ -2187,7 +2119,7 @@ app.post('/api/study/pre-warm', requireAuth, async (req, res) => {
 // ====================================================================
 // FASE 2: ENDPOINT CON PREFETCH PARA ESTUDIO (RESPUESTA INSTANTÁNEA)
 // ====================================================================
-app.post('/api/study/question', requireAuth, studyLimiter, async (req, res) => {
+app.post('/api/study/question', requireAuth, async (req, res) => {
   try {
     const { topicId } = req.body;
     const userId = req.user.id;
@@ -2673,7 +2605,7 @@ app.get('/api/review-exam/:topicId', requireAuth, (req, res) => {
 // EXAMEN OFICIAL (SIMULACRO)
 // ========================
 
-app.post('/api/exam/official', requireAuth, examLimiter, async (req, res) => {
+app.post('/api/exam/official', requireAuth, async (req, res) => {
   try {
     const { questionCount } = req.body; // 25, 50, 75, 100
     const userId = req.user.id;
