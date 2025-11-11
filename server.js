@@ -91,8 +91,8 @@ const allowedOrigins = process.env.NODE_ENV === 'production'
 
 app.use(cors({
   origin: (origin, callback) => {
-    // Permitir requests sin origin (Postman, curl) solo en desarrollo
-    if (!origin && process.env.NODE_ENV !== 'production') {
+    // Permitir requests sin origin (same-origin, Postman, curl)
+    if (!origin) {
       return callback(null, true);
     }
 
@@ -106,7 +106,7 @@ app.use(cors({
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'], // Eliminado X-Admin-Password
+  allowedHeaders: ['Content-Type', 'Authorization'],
   maxAge: 86400 // Cache preflight 24 horas
 }));
 
@@ -124,11 +124,8 @@ const globalLimiter = rateLimit({
   max: 300, // máximo 300 requests por ventana
   message: 'Demasiadas peticiones desde esta IP, por favor intenta de nuevo en 15 minutos',
   standardHeaders: true, // Retorna info en headers `RateLimit-*`
-  legacyHeaders: false, // Deshabilita headers `X-RateLimit-*`
-  // Usar IP real del usuario (importante con proxies)
-  keyGenerator: (req) => {
-    return req.ip || req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  }
+  legacyHeaders: false // Deshabilita headers `X-RateLimit-*`
+  // keyGenerator se omite - usa IP automáticamente con trust proxy
 });
 
 // Limiter para autenticación: 10 intentos por 15 minutos
@@ -140,26 +137,21 @@ const authLimiter = rateLimit({
   skipSuccessfulRequests: false // Contar todos los intentos
 });
 
-// Limiter para generación de exámenes: 30 por hora por usuario
+// Limiter para generación de exámenes: 30 por hora por IP
 // Previene abuso de API de IA y costos excesivos
 const examLimiter = rateLimit({
   windowMs: 60 * 60 * 1000, // 1 hora
   max: 30,
-  message: 'Límite de generación de exámenes alcanzado. Por favor espera 1 hora',
-  keyGenerator: (req) => {
-    // Por usuario autenticado, no por IP
-    return req.session?.userId?.toString() || req.ip;
-  }
+  message: 'Límite de generación de exámenes alcanzado. Por favor espera 1 hora'
+  // keyGenerator se omite - usa IP automáticamente
 });
 
-// Limiter para endpoints de estudio: 100 preguntas por hora por usuario
+// Limiter para endpoints de estudio: 100 preguntas por hora por IP
 const studyLimiter = rateLimit({
   windowMs: 60 * 60 * 1000, // 1 hora
   max: 100,
-  message: 'Límite de preguntas alcanzado. Por favor espera 1 hora',
-  keyGenerator: (req) => {
-    return req.session?.userId?.toString() || req.ip;
-  }
+  message: 'Límite de preguntas alcanzado. Por favor espera 1 hora'
+  // keyGenerator se omite - usa IP automáticamente
 });
 
 // Aplicar limiter global a todas las rutas
