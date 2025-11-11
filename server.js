@@ -13,6 +13,8 @@ const { Anthropic } = require('@anthropic-ai/sdk');
 const pdfParse = require('pdf-parse');
 const cron = require('node-cron');
 const XLSX = require('xlsx');
+const rateLimit = require('express-rate-limit');
+const helmet = require('helmet');
 require('dotenv').config();
 
 // Importar sistema de base de datos
@@ -54,6 +56,60 @@ app.use(cors({
     exposedHeaders: ['Set-Cookie']
 }));
 app.use(express.json({ limit: '10mb' }));
+
+// ========================
+// RATE LIMITING - Protección contra sobrecarga
+// ========================
+
+// Limiter global: 300 requests por 15 minutos por IP
+// Para 300 usuarios concurrentes: ~1 request/3 segundos promedio
+const globalLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutos
+  max: 300, // máximo 300 requests por ventana
+  message: 'Demasiadas peticiones desde esta IP, por favor intenta de nuevo en 15 minutos',
+  standardHeaders: true, // Retorna info en headers `RateLimit-*`
+  legacyHeaders: false, // Deshabilita headers `X-RateLimit-*`
+  // Usar IP real del usuario (importante con proxies)
+  keyGenerator: (req) => {
+    return req.ip || req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  }
+});
+
+// Limiter para autenticación: 10 intentos por 15 minutos
+// Previene brute force attacks
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 10,
+  message: 'Demasiados intentos de login. Por favor espera 15 minutos',
+  skipSuccessfulRequests: false // Contar todos los intentos
+});
+
+// Limiter para generación de exámenes: 30 por hora por usuario
+// Previene abuso de API de IA y costos excesivos
+const examLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000, // 1 hora
+  max: 30,
+  message: 'Límite de generación de exámenes alcanzado. Por favor espera 1 hora',
+  keyGenerator: (req) => {
+    // Por usuario autenticado, no por IP
+    return req.session?.userId?.toString() || req.ip;
+  }
+});
+
+// Limiter para endpoints de estudio: 100 preguntas por hora por usuario
+const studyLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000, // 1 hora
+  max: 100,
+  message: 'Límite de preguntas alcanzado. Por favor espera 1 hora',
+  keyGenerator: (req) => {
+    return req.session?.userId?.toString() || req.ip;
+  }
+});
+
+// Aplicar limiter global a todas las rutas
+app.use(globalLimiter);
+
+console.log('✅ Rate limiting configurado para 300+ usuarios concurrentes');
 
 // Middleware de logging para debugging
 app.use((req, res, next) => {
@@ -1190,7 +1246,7 @@ app.get('/', (req, res) => {
 });
 
 // Registro de usuario
-app.post('/api/auth/register', (req, res) => {
+app.post('/api/auth/register', authLimiter, (req, res) => {
   try {
     const { username, password } = req.body;
 
@@ -1227,7 +1283,7 @@ app.post('/api/auth/register', (req, res) => {
 });
 
 // Login
-app.post('/api/auth/login', (req, res) => {
+app.post('/api/auth/login', authLimiter, (req, res) => {
   try {
     const { username, password } = req.body;
     console.log('🔑 Intento de login - Usuario:', username);
@@ -1563,7 +1619,7 @@ app.get('/api/topics', (req, res) => {
   }
 });
 
-app.post('/api/generate-exam', requireAuth, async (req, res) => {
+app.post('/api/generate-exam', requireAuth, examLimiter, async (req, res) => {
   try {
     const { topics, questionCount = 1 } = req.body;
     const userId = req.user.id;
@@ -2078,7 +2134,7 @@ app.post('/api/study/pre-warm', requireAuth, async (req, res) => {
 // ====================================================================
 // FASE 2: ENDPOINT CON PREFETCH PARA ESTUDIO (RESPUESTA INSTANTÁNEA)
 // ====================================================================
-app.post('/api/study/question', requireAuth, async (req, res) => {
+app.post('/api/study/question', requireAuth, studyLimiter, async (req, res) => {
   try {
     const { topicId } = req.body;
     const userId = req.user.id;
@@ -2566,7 +2622,7 @@ app.get('/api/review-exam/:topicId', requireAuth, (req, res) => {
 // EXAMEN OFICIAL (SIMULACRO)
 // ========================
 
-app.post('/api/exam/official', requireAuth, async (req, res) => {
+app.post('/api/exam/official', requireAuth, examLimiter, async (req, res) => {
   try {
     const { questionCount } = req.body; // 25, 50, 75, 100
     const userId = req.user.id;
