@@ -27,14 +27,6 @@ db.initDatabase();
 // Confiar en proxies (necesario para Render)
 app.set('trust proxy', 1);
 
-// CORS
-app.use(cors({
-  origin: true,
-  credentials: true
-}));
-
-app.use(express.json({ limit: '10mb' }));
-
 // Middleware de sesiones
 app.use(session({
   store: new SQLiteStore({
@@ -52,6 +44,22 @@ app.use(session({
     sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax'  // 'none' necesario para HTTPS con proxy
   }
 }));
+
+// Middleware optimizado para producción
+app.use(cors({
+    origin: true,  // Permitir todos los orígenes (más permisivo para debugging)
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Admin-Password'],
+    exposedHeaders: ['Set-Cookie']
+}));
+app.use(express.json({ limit: '10mb' }));
+
+// Middleware de logging para debugging
+app.use((req, res, next) => {
+  console.log(`📨 ${req.method} ${req.path} - Origin: ${req.headers.origin || 'none'} - Cookies: ${req.headers.cookie ? 'presente' : 'ausente'}`);
+  next();
+});
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname));
@@ -86,40 +94,6 @@ const MAX_TOKENS_CONFIG = {
   media: 800,       // 2 preguntas × 400 tokens (margen amplio)
   elaborada: 1000   // 2 preguntas × 500 tokens (margen amplio)
 };
-
-// ========================
-// CONTROL DE GENERACIONES EN BACKGROUND
-// ========================
-// Previene que múltiples clicks inicien generaciones duplicadas
-// Clave: `${userId}-${topicId}` -> Promise de generación en curso
-const backgroundGenerations = new Map();
-
-// Función auxiliar para ejecutar generación controlada
-async function runControlledBackgroundGeneration(userId, topicId, generationFn) {
-  const key = `${userId}-${topicId}`;
-
-  // Si ya hay una generación en curso para este usuario+tópico, no iniciar otra
-  if (backgroundGenerations.has(key)) {
-    console.log(`⏭️  Generación en background ya en progreso para usuario ${userId}, tópico ${topicId}`);
-    return;
-  }
-
-  try {
-    // Marcar que está en progreso
-    const promise = generationFn();
-    backgroundGenerations.set(key, promise);
-
-    // Ejecutar generación
-    await promise;
-
-    console.log(`✅ Generación en background completada para usuario ${userId}, tópico ${topicId}`);
-  } catch (error) {
-    console.error(`❌ Error en generación background (usuario ${userId}, tópico ${topicId}):`, error);
-  } finally {
-    // Limpiar entrada del Map
-    backgroundGenerations.delete(key);
-  }
-}
 
 // Configuración completa de temas - TÉCNICO DE FARMACIA
 const TOPIC_CONFIG = {
@@ -1383,27 +1357,10 @@ app.post('/api/admin/users', requireAdmin, (req, res) => {
   }
 });
 
-// ========================
-// FUNCIONES AUXILIARES DE VALIDACIÓN
-// ========================
-
-// Validar y parsear userId de parámetros de ruta
-function parseUserId(idString) {
-  const userId = parseInt(idString);
-  if (isNaN(userId) || userId <= 0) {
-    throw new Error('ID de usuario inválido');
-  }
-  return userId;
-}
-
-// ========================
-// ENDPOINTS DE ADMIN
-// ========================
-
 // Activar usuario
 app.post('/api/admin/users/:id/activate', requireAdmin, (req, res) => {
   try {
-    const userId = parseUserId(req.params.id);
+    const userId = parseInt(req.params.id);
     db.activateUser(userId);
     res.json({ success: true });
   } catch (error) {
@@ -1415,7 +1372,7 @@ app.post('/api/admin/users/:id/activate', requireAdmin, (req, res) => {
 // Bloquear usuario
 app.post('/api/admin/users/:id/block', requireAdmin, (req, res) => {
   try {
-    const userId = parseUserId(req.params.id);
+    const userId = parseInt(req.params.id);
     db.blockUser(userId);
     res.json({ success: true });
   } catch (error) {
@@ -1449,7 +1406,7 @@ app.get('/api/admin/stats', requireAdmin, (req, res) => {
 // Obtener actividad detallada de un usuario (admin)
 app.get('/api/admin/users/:id/activity', requireAdmin, (req, res) => {
   try {
-    const userId = parseUserId(req.params.id);
+    const userId = parseInt(req.params.id);
 
     const questionsPerDay = db.getUserQuestionsPerDay(userId, 30);
     const questionsPerMonth = db.getUserQuestionsPerMonth(userId, 6);
@@ -1482,7 +1439,7 @@ app.get('/api/admin/today', requireAdmin, (req, res) => {
 // Exportar datos de un usuario específico a Excel
 app.get('/api/admin/export/user/:id', requireAdmin, (req, res) => {
   try {
-    const userId = parseUserId(req.params.id);
+    const userId = parseInt(req.params.id);
     const users = db.getAdminStats();
     const user = users.find(u => u.id === userId);
 
@@ -2088,9 +2045,9 @@ app.post('/api/study/pre-warm', requireAuth, async (req, res) => {
       bufferSize: currentBufferSize
     });
 
-    // Generar preguntas en background (CONTROLADO - previene duplicados)
-    setImmediate(() => {
-      runControlledBackgroundGeneration(userId, topicId, async () => {
+    // Generar preguntas en background (FASE 3: caché agresivo 80%)
+    setImmediate(async () => {
+      try {
         console.log(`🔨 [Background] Generando 3 preguntas para pre-warming (cache agresivo: 80%)...`);
 
         const questionsNeeded = 3 - currentBufferSize;
@@ -2103,7 +2060,9 @@ app.post('/api/study/pre-warm', requireAuth, async (req, res) => {
 
         const finalBufferSize = db.getBufferSize(userId, topicId);
         console.log(`✅ [Background] Pre-warming completado: ${finalBufferSize} preguntas en buffer`);
-      });
+      } catch (error) {
+        console.error(`❌ [Background] Error en pre-warming:`, error);
+      }
     });
 
   } catch (error) {
@@ -2164,11 +2123,13 @@ app.post('/api/study/question', requireAuth, async (req, res) => {
         if (newBufferSize < 3) {
           console.log(`🔄 Buffer bajo (${newBufferSize}), iniciando refill en background...`);
 
-          // Generar 2-3 preguntas más en background (CONTROLADO - previene duplicados)
-          setImmediate(() => {
-            runControlledBackgroundGeneration(userId, topicId, async () => {
+          // Generar 2-3 preguntas más en background (sin esperar)
+          setImmediate(async () => {
+            try {
               await refillBuffer(userId, topicId, 3 - newBufferSize);
-            });
+            } catch (error) {
+              console.error('Error en background refill:', error);
+            }
           });
         }
 
