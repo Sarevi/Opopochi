@@ -151,6 +151,40 @@ const MAX_TOKENS_CONFIG = {
   elaborada: 1000   // 2 preguntas × 500 tokens (margen amplio)
 };
 
+// ========================
+// CONTROL DE GENERACIONES EN BACKGROUND
+// ========================
+// Previene que múltiples clicks inicien generaciones duplicadas
+// Clave: `${userId}-${topicId}` -> Promise de generación en curso
+const backgroundGenerations = new Map();
+
+// Función auxiliar para ejecutar generación controlada
+async function runControlledBackgroundGeneration(userId, topicId, generationFn) {
+  const key = `${userId}-${topicId}`;
+
+  // Si ya hay una generación en curso para este usuario+tópico, no iniciar otra
+  if (backgroundGenerations.has(key)) {
+    console.log(`⏭️  Generación en background ya en progreso para usuario ${userId}, tópico ${topicId}`);
+    return;
+  }
+
+  try {
+    // Marcar que está en progreso
+    const promise = generationFn();
+    backgroundGenerations.set(key, promise);
+
+    // Ejecutar generación
+    await promise;
+
+    console.log(`✅ Generación en background completada para usuario ${userId}, tópico ${topicId}`);
+  } catch (error) {
+    console.error(`❌ Error en generación background (usuario ${userId}, tópico ${topicId}):`, error);
+  } finally {
+    // Limpiar entrada del Map
+    backgroundGenerations.delete(key);
+  }
+}
+
 // Configuración completa de temas - TÉCNICO DE FARMACIA
 const TOPIC_CONFIG = {
   "tema-4-organizaciones-farmaceuticas": {
@@ -2101,9 +2135,9 @@ app.post('/api/study/pre-warm', requireAuth, async (req, res) => {
       bufferSize: currentBufferSize
     });
 
-    // Generar preguntas en background (FASE 3: caché agresivo 80%)
-    setImmediate(async () => {
-      try {
+    // Generar preguntas en background (CONTROLADO - previene duplicados)
+    setImmediate(() => {
+      runControlledBackgroundGeneration(userId, topicId, async () => {
         console.log(`🔨 [Background] Generando 3 preguntas para pre-warming (cache agresivo: 80%)...`);
 
         const questionsNeeded = 3 - currentBufferSize;
@@ -2116,9 +2150,7 @@ app.post('/api/study/pre-warm', requireAuth, async (req, res) => {
 
         const finalBufferSize = db.getBufferSize(userId, topicId);
         console.log(`✅ [Background] Pre-warming completado: ${finalBufferSize} preguntas en buffer`);
-      } catch (error) {
-        console.error(`❌ [Background] Error en pre-warming:`, error);
-      }
+      });
     });
 
   } catch (error) {
@@ -2179,13 +2211,11 @@ app.post('/api/study/question', requireAuth, studyLimiter, async (req, res) => {
         if (newBufferSize < 3) {
           console.log(`🔄 Buffer bajo (${newBufferSize}), iniciando refill en background...`);
 
-          // Generar 2-3 preguntas más en background (sin esperar)
-          setImmediate(async () => {
-            try {
+          // Generar 2-3 preguntas más en background (CONTROLADO - previene duplicados)
+          setImmediate(() => {
+            runControlledBackgroundGeneration(userId, topicId, async () => {
               await refillBuffer(userId, topicId, 3 - newBufferSize);
-            } catch (error) {
-              console.error('Error en background refill:', error);
-            }
+            });
           });
         }
 
