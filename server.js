@@ -32,36 +32,12 @@ app.set('trust proxy', 1);
 // ========================
 // HELMET - Headers de Seguridad
 // ========================
-app.use(helmet({
-  contentSecurityPolicy: {
-    directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", "'unsafe-inline'"], // unsafe-inline necesario para scripts inline en HTML
-      styleSrc: ["'self'", "'unsafe-inline'"], // unsafe-inline necesario para estilos inline
-      imgSrc: ["'self'", 'data:', 'https:'],
-      connectSrc: ["'self'", 'https://api.anthropic.com'], // API de Claude
-      fontSrc: ["'self'"],
-      objectSrc: ["'none'"],
-      mediaSrc: ["'self'"],
-      frameSrc: ["'none'"] // Previene clickjacking
-    }
-  },
-  hsts: {
-    maxAge: 31536000, // 1 año
-    includeSubDomains: true,
-    preload: true
-  },
-  frameguard: {
-    action: 'deny' // Previene que la app sea embebida en iframes
-  },
-  noSniff: true, // Previene MIME sniffing
-  xssFilter: true, // Filtro XSS legacy (navegadores antiguos)
-  referrerPolicy: {
-    policy: 'strict-origin-when-cross-origin'
-  }
-}));
+// DESHABILITADO TEMPORALMENTE - Bloqueaba scripts inline
+// app.use(helmet({
+//   contentSecurityPolicy: false // Deshabilitar CSP para permitir scripts inline
+// }));
 
-console.log('✅ Helmet configurado - Headers de seguridad activos');
+// console.log('✅ Helmet configurado - Headers de seguridad activos');
 
 // Middleware de sesiones
 app.use(session({
@@ -82,35 +58,14 @@ app.use(session({
 }));
 
 // ========================
-// CORS - Configuración Segura
+// CORS - Configuración Simple
 // ========================
-// Orígenes permitidos - Configurar según entorno
-const allowedOrigins = process.env.NODE_ENV === 'production'
-  ? (process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',') : [])
-  : ['http://localhost:3000', 'http://127.0.0.1:3000']; // Desarrollo
-
 app.use(cors({
-  origin: (origin, callback) => {
-    // Permitir requests sin origin (same-origin, Postman, curl)
-    if (!origin) {
-      return callback(null, true);
-    }
-
-    // Verificar si el origin está en la lista permitida
-    if (allowedOrigins.includes(origin) || allowedOrigins.length === 0) {
-      callback(null, true);
-    } else {
-      console.warn(`🚫 Origen bloqueado por CORS: ${origin}`);
-      callback(new Error('No permitido por CORS'));
-    }
-  },
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  maxAge: 86400 // Cache preflight 24 horas
+  origin: true, // Permitir todos los orígenes temporalmente
+  credentials: true
 }));
 
-console.log(`✅ CORS configurado - Orígenes permitidos:`, allowedOrigins.length > 0 ? allowedOrigins : ['TODOS (⚠️  Configurar ALLOWED_ORIGINS en producción)']);
+console.log('✅ CORS configurado - Permitiendo todos los orígenes');
 app.use(express.json({ limit: '10mb' }));
 
 // ========================
@@ -155,9 +110,10 @@ const studyLimiter = rateLimit({
 });
 
 // Aplicar limiter global a todas las rutas
-app.use(globalLimiter);
+// DESHABILITADO TEMPORALMENTE - Podría estar bloqueando requests
+// app.use(globalLimiter);
 
-console.log('✅ Rate limiting configurado para 300+ usuarios concurrentes');
+// console.log('✅ Rate limiting configurado para 300+ usuarios concurrentes');
 
 // Middleware de logging para debugging
 app.use((req, res, next) => {
