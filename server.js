@@ -27,6 +27,15 @@ db.initDatabase();
 // Confiar en proxies (necesario para Render)
 app.set('trust proxy', 1);
 
+// DESHABILITAR CSP - Permite todos los scripts y event handlers
+app.use((req, res, next) => {
+  res.removeHeader('Content-Security-Policy');
+  res.removeHeader('Content-Security-Policy-Report-Only');
+  res.removeHeader('X-Content-Security-Policy');
+  res.removeHeader('X-WebKit-CSP');
+  next();
+});
+
 // Middleware de sesiones
 app.use(session({
   store: new SQLiteStore({
