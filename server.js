@@ -1447,10 +1447,27 @@ app.post('/api/admin/users', requireAdmin, (req, res) => {
   }
 });
 
+// ========================
+// FUNCIONES AUXILIARES DE VALIDACIÓN
+// ========================
+
+// Validar y parsear userId de parámetros de ruta
+function parseUserId(idString) {
+  const userId = parseInt(idString);
+  if (isNaN(userId) || userId <= 0) {
+    throw new Error('ID de usuario inválido');
+  }
+  return userId;
+}
+
+// ========================
+// ENDPOINTS DE ADMIN
+// ========================
+
 // Activar usuario
 app.post('/api/admin/users/:id/activate', requireAdmin, (req, res) => {
   try {
-    const userId = parseInt(req.params.id);
+    const userId = parseUserId(req.params.id);
     db.activateUser(userId);
     res.json({ success: true });
   } catch (error) {
@@ -1462,7 +1479,7 @@ app.post('/api/admin/users/:id/activate', requireAdmin, (req, res) => {
 // Bloquear usuario
 app.post('/api/admin/users/:id/block', requireAdmin, (req, res) => {
   try {
-    const userId = parseInt(req.params.id);
+    const userId = parseUserId(req.params.id);
     db.blockUser(userId);
     res.json({ success: true });
   } catch (error) {
@@ -1496,7 +1513,7 @@ app.get('/api/admin/stats', requireAdmin, (req, res) => {
 // Obtener actividad detallada de un usuario (admin)
 app.get('/api/admin/users/:id/activity', requireAdmin, (req, res) => {
   try {
-    const userId = parseInt(req.params.id);
+    const userId = parseUserId(req.params.id);
 
     const questionsPerDay = db.getUserQuestionsPerDay(userId, 30);
     const questionsPerMonth = db.getUserQuestionsPerMonth(userId, 6);
@@ -1529,7 +1546,7 @@ app.get('/api/admin/today', requireAdmin, (req, res) => {
 // Exportar datos de un usuario específico a Excel
 app.get('/api/admin/export/user/:id', requireAdmin, (req, res) => {
   try {
-    const userId = parseInt(req.params.id);
+    const userId = parseUserId(req.params.id);
     const users = db.getAdminStats();
     const user = users.find(u => u.id === userId);
 
