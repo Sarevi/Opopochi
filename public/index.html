@@ -2839,17 +2839,25 @@
                 startBtn.style.cursor = 'not-allowed';
                 loadingDiv.style.display = 'block';
 
-                // Solicitar examen al servidor
-                const response = await fetch(`${API_BASE}/api/exam/official`, {
-                    method: 'POST',
-                    credentials: 'include',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        questionCount: officialExamConfig.questionCount
-                    })
-                });
+                // 🔴 FIX: Añadir timeout de 10 minutos para exámenes largos (100 preguntas tardan ~4-5 min)
+                const controller = new AbortController();
+                const timeout = setTimeout(() => controller.abort(), 600000); // 10 minutos
 
-                if (response.status === 401 || response.status === 403) {
+                try {
+                    // Solicitar examen al servidor
+                    const response = await fetch(`${API_BASE}/api/exam/official`, {
+                        method: 'POST',
+                        credentials: 'include',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            questionCount: officialExamConfig.questionCount
+                        }),
+                        signal: controller.signal
+                    });
+
+                    clearTimeout(timeout); // Limpiar timeout si se completó antes
+
+                    if (response.status === 401 || response.status === 403) {
                     isAuthenticated = false;
                     currentUser = null;
                     showAuthScreen();
@@ -2902,9 +2910,15 @@
                 console.log(`✅ Examen oficial iniciado: ${officialExamQuestions.length} preguntas`);
 
             } catch (error) {
-                console.error('Error iniciando examen oficial:', error);
-                console.error('Error completo:', error.message, error.stack);
-                alert(`Error al generar examen oficial:\n${error.message}\n\nRevisa la consola para más detalles.`);
+                // Manejar timeout específicamente
+                if (error.name === 'AbortError') {
+                    console.error('⏰ TIMEOUT: El examen tardó más de 10 minutos en generarse');
+                    alert('⏰ El examen está tardando demasiado en generarse.\n\nPor favor, intenta nuevamente con menos preguntas o espera unos minutos.');
+                } else {
+                    console.error('Error iniciando examen oficial:', error);
+                    console.error('Error completo:', error.message, error.stack);
+                    alert(`Error al generar examen oficial:\n${error.message}\n\nRevisa la consola para más detalles.`);
+                }
 
                 // Restaurar botón y ocultar loading en caso de error
                 const startBtn = document.getElementById('start-exam-btn');
