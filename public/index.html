@@ -3579,13 +3579,20 @@
         // Helper function para normalizar texto para jsPDF
         function normalizeTextForPDF(text) {
             if (!text) return '';
-            // Normalizar caracteres especiales que causan problemas en jsPDF
-            return text
+
+            // Primero normalizar caracteres especiales comunes
+            let normalized = text
                 .replace(/[""]/g, '"')
                 .replace(/['']/g, "'")
                 .replace(/…/g, '...')
                 .replace(/–/g, '-')
                 .replace(/—/g, '-');
+
+            // Normalizar caracteres con acentos y diacríticos para evitar problemas de encoding en jsPDF
+            // Usar NFD (Normalization Form Decomposed) para separar base + diacrítico, luego eliminar diacríticos
+            normalized = normalized.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+            return normalized;
         }
 
         async function exportToPDF(topicId) {
