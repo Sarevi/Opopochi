@@ -2795,104 +2795,167 @@ app.post('/api/exam/official', requireAuth, examLimiter, async (req, res) => {
 
     console.log(`🎯 Plan (20/60/20): ${simpleNeeded} simples + ${mediaNeeded} medias + ${elaboratedNeeded} elaboradas`);
 
-    // Generar preguntas SIMPLES (20%) - 2 por llamada con chunks espaciados
-    for (let i = 0; i < simpleCalls; i++) {
-      console.log(`⚪ SIMPLE ${i + 1}/${simpleCalls}`);
+    // 🚀 OPTIMIZACIÓN: Intentar obtener preguntas del CACHÉ primero (que el usuario NO ha visto)
+    console.log(`💾 Intentando obtener preguntas del caché...`);
 
-      // Seleccionar 2 chunks aleatorios espaciados
-      const chunk1Index = Math.floor(Math.random() * chunks.length);
-      const minDistance = Math.max(3, Math.floor(chunks.length * 0.3));
+    const cachedSimple = [];
+    const cachedMedia = [];
+    const cachedElaborada = [];
 
-      // Buscar segundo chunk lejos del primero
-      let chunk2Index;
-      do {
-        chunk2Index = Math.floor(Math.random() * chunks.length);
-      } while (Math.abs(chunk2Index - chunk1Index) < minDistance && chunks.length > 1);
-
-      const chunk1 = chunks[chunk1Index];
-      const chunk2 = chunks[chunk2Index];
-
-      const fullPrompt = CLAUDE_PROMPT_SIMPLE
-        .replace('{{CHUNK_1}}', chunk1)
-        .replace('{{CHUNK_2}}', chunk2);
-
-      try {
-        const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.simple, 'simple', 2);
-        const responseText = extractClaudeResponseText(response);
-        const questionsData = parseClaudeResponse(responseText);
-
-        if (questionsData?.questions?.length) {
-          allGeneratedQuestions.push(...questionsData.questions);
-        }
-      } catch (error) {
-        console.error(`❌ Error en simple ${i + 1}:`, error.message);
+    // Intentar obtener preguntas simples del caché
+    for (let i = 0; i < simpleNeeded && cachedSimple.length < simpleNeeded; i++) {
+      const cached = db.getCachedQuestion(userId, allTopics, 'simple');
+      if (cached) {
+        cached.question._cacheId = cached.cacheId;
+        cachedSimple.push(cached.question);
+        db.markQuestionAsSeen(userId, cached.cacheId, 'exam');
+      } else {
+        break; // No más en caché
       }
     }
 
-    // Generar preguntas MEDIAS (60%) - 2 por llamada con chunks espaciados
-    for (let i = 0; i < mediaCalls; i++) {
-      console.log(`🔵 MEDIA ${i + 1}/${mediaCalls}`);
-
-      // Seleccionar 2 chunks aleatorios espaciados
-      const chunk1Index = Math.floor(Math.random() * chunks.length);
-      const minDistance = Math.max(3, Math.floor(chunks.length * 0.3));
-
-      let chunk2Index;
-      do {
-        chunk2Index = Math.floor(Math.random() * chunks.length);
-      } while (Math.abs(chunk2Index - chunk1Index) < minDistance && chunks.length > 1);
-
-      const chunk1 = chunks[chunk1Index];
-      const chunk2 = chunks[chunk2Index];
-
-      const fullPrompt = CLAUDE_PROMPT_MEDIA
-        .replace('{{CHUNK_1}}', chunk1)
-        .replace('{{CHUNK_2}}', chunk2);
-
-      try {
-        const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.media, 'media', 2);
-        const responseText = extractClaudeResponseText(response);
-        const questionsData = parseClaudeResponse(responseText);
-
-        if (questionsData?.questions?.length) {
-          allGeneratedQuestions.push(...questionsData.questions);
-        }
-      } catch (error) {
-        console.error(`❌ Error en media ${i + 1}:`, error.message);
+    // Intentar obtener preguntas medias del caché
+    for (let i = 0; i < mediaNeeded && cachedMedia.length < mediaNeeded; i++) {
+      const cached = db.getCachedQuestion(userId, allTopics, 'media');
+      if (cached) {
+        cached.question._cacheId = cached.cacheId;
+        cachedMedia.push(cached.question);
+        db.markQuestionAsSeen(userId, cached.cacheId, 'exam');
+      } else {
+        break; // No más en caché
       }
     }
 
-    // Generar preguntas ELABORADAS (20%) - 2 por llamada con chunks espaciados
-    for (let i = 0; i < elaboratedCalls; i++) {
-      console.log(`🔴 ELABORADA ${i + 1}/${elaboratedCalls}`);
-
-      // Seleccionar 2 chunks aleatorios espaciados
-      const chunk1Index = Math.floor(Math.random() * chunks.length);
-      const minDistance = Math.max(3, Math.floor(chunks.length * 0.3));
-
-      let chunk2Index;
-      do {
-        chunk2Index = Math.floor(Math.random() * chunks.length);
-      } while (Math.abs(chunk2Index - chunk1Index) < minDistance && chunks.length > 1);
-
-      const chunk1 = chunks[chunk1Index];
-      const chunk2 = chunks[chunk2Index];
-
-      const fullPrompt = CLAUDE_PROMPT_ELABORADA
-        .replace('{{CHUNK_1}}', chunk1)
-        .replace('{{CHUNK_2}}', chunk2);
-
-      try {
-        const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.elaborada, 'elaborada', 2);
-        const responseText = extractClaudeResponseText(response);
-        const questionsData = parseClaudeResponse(responseText);
-
-        if (questionsData?.questions?.length) {
-          allGeneratedQuestions.push(...questionsData.questions);
-        }
-      } catch (error) {
-        console.error(`❌ Error en elaborada ${i + 1}:`, error.message);
+    // Intentar obtener preguntas elaboradas del caché
+    for (let i = 0; i < elaboratedNeeded && cachedElaborada.length < elaboratedNeeded; i++) {
+      const cached = db.getCachedQuestion(userId, allTopics, 'elaborada');
+      if (cached) {
+        cached.question._cacheId = cached.cacheId;
+        cachedElaborada.push(cached.question);
+        db.markQuestionAsSeen(userId, cached.cacheId, 'exam');
+      } else {
+        break; // No más en caché
       }
+    }
+
+    console.log(`✅ Obtenidas del caché: ${cachedSimple.length} simples, ${cachedMedia.length} medias, ${cachedElaborada.length} elaboradas`);
+    allGeneratedQuestions.push(...cachedSimple, ...cachedMedia, ...cachedElaborada);
+
+    // Calcular cuántas faltan por generar
+    const simpleMissing = simpleNeeded - cachedSimple.length;
+    const mediaMissing = mediaNeeded - cachedMedia.length;
+    const elaboratedMissing = elaboratedNeeded - cachedElaborada.length;
+
+    const totalMissing = simpleMissing + mediaMissing + elaboratedMissing;
+    console.log(`🔨 Faltan por generar: ${simpleMissing} simples, ${mediaMissing} medias, ${elaboratedMissing} elaboradas (total: ${totalMissing})`);
+
+    // Si faltan preguntas, generarlas en PARALELO (más rápido)
+    if (totalMissing > 0) {
+      const parallelPromises = [];
+
+      // Generar preguntas SIMPLES faltantes en paralelo
+      const simpleCallsMissing = Math.ceil(simpleMissing / 2);
+      for (let i = 0; i < simpleCallsMissing; i++) {
+        const promise = (async () => {
+          const chunk1Index = Math.floor(Math.random() * chunks.length);
+          const minDistance = Math.max(3, Math.floor(chunks.length * 0.3));
+          let chunk2Index;
+          do {
+            chunk2Index = Math.floor(Math.random() * chunks.length);
+          } while (Math.abs(chunk2Index - chunk1Index) < minDistance && chunks.length > 1);
+
+          const chunk1 = chunks[chunk1Index];
+          const chunk2 = chunks[chunk2Index];
+          const fullPrompt = CLAUDE_PROMPT_SIMPLE
+            .replace('{{CHUNK_1}}', chunk1)
+            .replace('{{CHUNK_2}}', chunk2);
+
+          try {
+            const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.simple, 'simple', 2);
+            const responseText = extractClaudeResponseText(response);
+            const questionsData = parseClaudeResponse(responseText);
+            console.log(`⚪ SIMPLE ${i + 1}/${simpleCallsMissing} generadas`);
+            return questionsData?.questions || [];
+          } catch (error) {
+            console.error(`❌ Error en simple ${i + 1}:`, error.message);
+            return [];
+          }
+        })();
+        parallelPromises.push(promise);
+      }
+
+      // Generar preguntas MEDIAS faltantes en paralelo
+      const mediaCallsMissing = Math.ceil(mediaMissing / 2);
+      for (let i = 0; i < mediaCallsMissing; i++) {
+        const promise = (async () => {
+          const chunk1Index = Math.floor(Math.random() * chunks.length);
+          const minDistance = Math.max(3, Math.floor(chunks.length * 0.3));
+          let chunk2Index;
+          do {
+            chunk2Index = Math.floor(Math.random() * chunks.length);
+          } while (Math.abs(chunk2Index - chunk1Index) < minDistance && chunks.length > 1);
+
+          const chunk1 = chunks[chunk1Index];
+          const chunk2 = chunks[chunk2Index];
+          const fullPrompt = CLAUDE_PROMPT_MEDIA
+            .replace('{{CHUNK_1}}', chunk1)
+            .replace('{{CHUNK_2}}', chunk2);
+
+          try {
+            const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.media, 'media', 2);
+            const responseText = extractClaudeResponseText(response);
+            const questionsData = parseClaudeResponse(responseText);
+            console.log(`🔵 MEDIA ${i + 1}/${mediaCallsMissing} generadas`);
+            return questionsData?.questions || [];
+          } catch (error) {
+            console.error(`❌ Error en media ${i + 1}:`, error.message);
+            return [];
+          }
+        })();
+        parallelPromises.push(promise);
+      }
+
+      // Generar preguntas ELABORADAS faltantes en paralelo
+      const elaboratedCallsMissing = Math.ceil(elaboratedMissing / 2);
+      for (let i = 0; i < elaboratedCallsMissing; i++) {
+        const promise = (async () => {
+          const chunk1Index = Math.floor(Math.random() * chunks.length);
+          const minDistance = Math.max(3, Math.floor(chunks.length * 0.3));
+          let chunk2Index;
+          do {
+            chunk2Index = Math.floor(Math.random() * chunks.length);
+          } while (Math.abs(chunk2Index - chunk1Index) < minDistance && chunks.length > 1);
+
+          const chunk1 = chunks[chunk1Index];
+          const chunk2 = chunks[chunk2Index];
+          const fullPrompt = CLAUDE_PROMPT_ELABORADA
+            .replace('{{CHUNK_1}}', chunk1)
+            .replace('{{CHUNK_2}}', chunk2);
+
+          try {
+            const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.elaborada, 'elaborada', 2);
+            const responseText = extractClaudeResponseText(response);
+            const questionsData = parseClaudeResponse(responseText);
+            console.log(`🔴 ELABORADA ${i + 1}/${elaboratedCallsMissing} generadas`);
+            return questionsData?.questions || [];
+          } catch (error) {
+            console.error(`❌ Error en elaborada ${i + 1}:`, error.message);
+            return [];
+          }
+        })();
+        parallelPromises.push(promise);
+      }
+
+      // Esperar a que TODAS las promesas paralelas se completen
+      console.log(`⏳ Esperando ${parallelPromises.length} llamadas paralelas a Claude API...`);
+      const results = await Promise.all(parallelPromises);
+
+      // Agregar todas las preguntas generadas
+      for (const questions of results) {
+        allGeneratedQuestions.push(...questions);
+      }
+
+      console.log(`✅ Generación paralela completada: ${results.flat().length} preguntas nuevas generadas`);
     }
 
     // 🔴 FIX: Validar que tenemos suficientes preguntas antes de continuar
