@@ -691,7 +691,7 @@ function advancedQuestionValidation(question, sourceChunks = []) {
   }
 
   return {
-    isValid: score >= 70, // Mínimo 70 puntos para ser aceptable
+    isValid: score >= 65, // 🔴 FIX: Umbral reducido de 70 a 65 para reducir desperdicio de API
     issues,
     score: Math.max(0, score),
     warnings: issues.filter(i => !i.startsWith('excellent'))
@@ -1850,15 +1850,15 @@ app.post('/api/generate-exam', requireAuth, examLimiter, async (req, res) => {
                   console.log(`   ⚠️  Warnings: ${advValidation.warnings.join(', ')}`);
                 }
 
-                // Solo aceptar preguntas con score >= 70
-                if (finalScore >= 70) {
+                // 🔴 FIX: Umbral reducido de 70 a 65 para reducir desperdicio de API
+                if (finalScore >= 65) {
                   q._sourceTopic = currentTopic;
                   q._qualityScore = finalScore;
                   db.saveToCacheAndTrack(userId, currentTopic, 'simple', q, 'exam');
                   questions.push(q);
                   cacheMisses++;
                 } else {
-                  console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 70)`);
+                  console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 65)`);
                 }
               });
 
@@ -1932,15 +1932,15 @@ app.post('/api/generate-exam', requireAuth, examLimiter, async (req, res) => {
                   console.log(`   ⚠️  Warnings: ${advValidation.warnings.join(', ')}`);
                 }
 
-                // Solo aceptar preguntas con score >= 70
-                if (finalScore >= 70) {
+                // 🔴 FIX: Umbral reducido de 70 a 65 para reducir desperdicio de API
+                if (finalScore >= 65) {
                   q._sourceTopic = currentTopic;
                   q._qualityScore = finalScore;
                   db.saveToCacheAndTrack(userId, currentTopic, 'media', q, 'exam');
                   questions.push(q);
                   cacheMisses++;
                 } else {
-                  console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 70)`);
+                  console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 65)`);
                 }
               });
 
@@ -2014,15 +2014,15 @@ app.post('/api/generate-exam', requireAuth, examLimiter, async (req, res) => {
                   console.log(`   ⚠️  Warnings: ${advValidation.warnings.join(', ')}`);
                 }
 
-                // Solo aceptar preguntas con score >= 70
-                if (finalScore >= 70) {
+                // 🔴 FIX: Umbral reducido de 70 a 65 para reducir desperdicio de API
+                if (finalScore >= 65) {
                   q._sourceTopic = currentTopic;
                   q._qualityScore = finalScore;
                   db.saveToCacheAndTrack(userId, currentTopic, 'elaborada', q, 'exam');
                   questions.push(q);
                   cacheMisses++;
                 } else {
-                  console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 70)`);
+                  console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 65)`);
                 }
               });
 
@@ -2477,8 +2477,8 @@ async function generateQuestionBatch(userId, topicId, count = 3, cacheProb = 0.7
               console.log(`   ⚠️  Warnings: ${advValidation.warnings.join(', ')}`);
             }
 
-            // Solo aceptar preguntas con score >= 70
-            if (finalScore >= 70) {
+            // 🔴 FIX: Umbral reducido de 70 a 65 para reducir desperdicio de API (~10% menos rechazos)
+            if (finalScore >= 65) {
               q._sourceTopic = topicId;
               q._qualityScore = finalScore;
 
@@ -2493,7 +2493,7 @@ async function generateQuestionBatch(userId, topicId, count = 3, cacheProb = 0.7
                 console.log(`   💾 Pregunta extra guardada solo en caché (aprovechamiento 100%)`);
               }
             } else {
-              console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 70)`);
+              console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 65)`);
             }
           }
 
@@ -2529,7 +2529,25 @@ async function refillBuffer(userId, topicId, count = 3) {
   console.log(`🔄 [Background] Rellenando buffer con ${count} preguntas...`);
 
   try {
-    const newQuestions = await generateQuestionBatch(userId, topicId, count);
+    // 🔴 FIX: Verificar buffer actual antes de generar (previene duplicados por race condition)
+    const currentBufferSize = db.getBufferSize(userId, topicId);
+
+    if (currentBufferSize >= 3) {
+      console.log(`⏭️  [Background] Buffer ya tiene ${currentBufferSize} preguntas, refill cancelado`);
+      return;
+    }
+
+    // Ajustar cantidad a generar según buffer actual
+    const actualCount = Math.max(0, 3 - currentBufferSize);
+
+    if (actualCount === 0) {
+      console.log(`⏭️  [Background] Buffer completo, no se necesita refill`);
+      return;
+    }
+
+    console.log(`🔄 [Background] Generando ${actualCount} preguntas (buffer actual: ${currentBufferSize})`);
+
+    const newQuestions = await generateQuestionBatch(userId, topicId, actualCount);
 
     for (const q of newQuestions) {
       db.addToBuffer(userId, topicId, q, q.difficulty, q._cacheId || null);
@@ -2877,6 +2895,27 @@ app.post('/api/exam/official', requireAuth, examLimiter, async (req, res) => {
       }
     }
 
+    // 🔴 FIX: Validar que tenemos suficientes preguntas antes de continuar
+    const minimumRequired = Math.floor(questionCount * 0.9); // 90% mínimo
+
+    console.log(`📊 Generadas ${allGeneratedQuestions.length} de ${questionCount} solicitadas (mínimo: ${minimumRequired})`);
+
+    if (allGeneratedQuestions.length < minimumRequired) {
+      return res.status(500).json({
+        error: 'No se pudieron generar suficientes preguntas',
+        details: `Solo se generaron ${allGeneratedQuestions.length} de ${questionCount} preguntas solicitadas. El sistema requiere al menos ${minimumRequired} preguntas (90%) para garantizar la calidad del examen.`,
+        generated: allGeneratedQuestions.length,
+        requested: questionCount,
+        minimum: minimumRequired
+      });
+    }
+
+    // Avisar si está entre 90-99% (parcialmente completo)
+    const isPartial = allGeneratedQuestions.length < questionCount;
+    if (isPartial) {
+      console.log(`⚠️ ADVERTENCIA: Examen parcial - ${allGeneratedQuestions.length}/${questionCount} preguntas`);
+    }
+
     // Validar y aleatorizar todas las preguntas generadas
     const finalQuestions = allGeneratedQuestions.slice(0, questionCount).map((q, index) => {
       if (!q.question || !Array.isArray(q.options) || q.options.length !== 4) {
@@ -2904,6 +2943,8 @@ app.post('/api/exam/official', requireAuth, examLimiter, async (req, res) => {
       questions: finalQuestions,
       questionCount: finalQuestions.length,
       isOfficial: true,
+      isPartial: isPartial,
+      partialWarning: isPartial ? `Se generaron ${finalQuestions.length} de ${questionCount} preguntas solicitadas.` : null,
       topics: allTopics,
       timestamp: new Date().toISOString()
     });
