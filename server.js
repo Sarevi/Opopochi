@@ -922,23 +922,12 @@ function parseClaudeResponse(responseText) {
       return { questions };
     }
 
-    // Pregunta de emergencia con mensaje de error técnico
-    console.log('🚨 Todos los métodos de parsing fallaron - usando pregunta de emergencia');
+    // 🔴 FIX: No generar preguntas de error técnico - retornar array vacío
+    console.log('🚨 Todos los métodos de parsing fallaron - retornando array vacío');
+    console.log('⚠️ Este contenido será omitido del examen');
 
     return {
-      questions: [{
-        question: "⚠️ ERROR TÉCNICO: No se pudo generar una pregunta válida del contenido solicitado",
-        options: [
-          "A) Por favor, recarga la página e intenta de nuevo",
-          "B) Si el problema persiste, contacta al administrador",
-          "C) Puede ser un problema temporal del servicio de IA",
-          "D) Intenta con otro tema mientras se resuelve el problema"
-        ],
-        correct: 0,
-        explanation: "Error técnico: El sistema no pudo generar preguntas válidas del material de estudio. Esto puede ser temporal. Por favor, recarga la página o intenta con otro tema. Si el problema continúa, contacta al administrador.",
-        difficulty: "media",
-        page_reference: "Error técnico - Sistema"
-      }]
+      questions: []
     };
   }
 }
