@@ -2523,6 +2523,33 @@ async function generateQuestionBatch(userId, topicId, count = 3, cacheProb = 0.7
 }
 
 /**
+ * Ejecutar promesas en lotes con concurrencia limitada
+ * @param {Array<Function>} promiseFunctions - Array de funciones que retornan promesas
+ * @param {number} concurrencyLimit - Número máximo de promesas simultáneas
+ * @returns {Promise<Array>} - Array de resultados
+ */
+async function executeWithConcurrencyLimit(promiseFunctions, concurrencyLimit = 10) {
+  const results = [];
+  const executing = [];
+
+  for (const promiseFn of promiseFunctions) {
+    const promise = promiseFn().then(result => {
+      executing.splice(executing.indexOf(promise), 1);
+      return result;
+    });
+
+    results.push(promise);
+    executing.push(promise);
+
+    if (executing.length >= concurrencyLimit) {
+      await Promise.race(executing);
+    }
+  }
+
+  return Promise.all(results);
+}
+
+/**
  * Rellenar buffer en background
  */
 async function refillBuffer(userId, topicId, count = 3) {
@@ -2849,14 +2876,15 @@ app.post('/api/exam/official', requireAuth, examLimiter, async (req, res) => {
     const totalMissing = simpleMissing + mediaMissing + elaboratedMissing;
     console.log(`🔨 Faltan por generar: ${simpleMissing} simples, ${mediaMissing} medias, ${elaboratedMissing} elaboradas (total: ${totalMissing})`);
 
-    // Si faltan preguntas, generarlas en PARALELO (más rápido)
+    // Si faltan preguntas, generarlas en PARALELO CONTROLADO (más rápido pero sin saturar API)
     if (totalMissing > 0) {
-      const parallelPromises = [];
+      const promiseFunctions = [];
+      const MAX_CONCURRENT_CALLS = 10; // Máximo 10 llamadas simultáneas por usuario
 
       // Generar preguntas SIMPLES faltantes en paralelo
       const simpleCallsMissing = Math.ceil(simpleMissing / 2);
       for (let i = 0; i < simpleCallsMissing; i++) {
-        const promise = (async () => {
+        const promiseFn = async () => {
           const chunk1Index = Math.floor(Math.random() * chunks.length);
           const minDistance = Math.max(3, Math.floor(chunks.length * 0.3));
           let chunk2Index;
@@ -2880,14 +2908,14 @@ app.post('/api/exam/official', requireAuth, examLimiter, async (req, res) => {
             console.error(`❌ Error en simple ${i + 1}:`, error.message);
             return [];
           }
-        })();
-        parallelPromises.push(promise);
+        };
+        promiseFunctions.push(promiseFn);
       }
 
       // Generar preguntas MEDIAS faltantes en paralelo
       const mediaCallsMissing = Math.ceil(mediaMissing / 2);
       for (let i = 0; i < mediaCallsMissing; i++) {
-        const promise = (async () => {
+        const promiseFn = async () => {
           const chunk1Index = Math.floor(Math.random() * chunks.length);
           const minDistance = Math.max(3, Math.floor(chunks.length * 0.3));
           let chunk2Index;
@@ -2911,14 +2939,14 @@ app.post('/api/exam/official', requireAuth, examLimiter, async (req, res) => {
             console.error(`❌ Error en media ${i + 1}:`, error.message);
             return [];
           }
-        })();
-        parallelPromises.push(promise);
+        };
+        promiseFunctions.push(promiseFn);
       }
 
       // Generar preguntas ELABORADAS faltantes en paralelo
       const elaboratedCallsMissing = Math.ceil(elaboratedMissing / 2);
       for (let i = 0; i < elaboratedCallsMissing; i++) {
-        const promise = (async () => {
+        const promiseFn = async () => {
           const chunk1Index = Math.floor(Math.random() * chunks.length);
           const minDistance = Math.max(3, Math.floor(chunks.length * 0.3));
           let chunk2Index;
@@ -2942,13 +2970,13 @@ app.post('/api/exam/official', requireAuth, examLimiter, async (req, res) => {
             console.error(`❌ Error en elaborada ${i + 1}:`, error.message);
             return [];
           }
-        })();
-        parallelPromises.push(promise);
+        };
+        promiseFunctions.push(promiseFn);
       }
 
-      // Esperar a que TODAS las promesas paralelas se completen
-      console.log(`⏳ Esperando ${parallelPromises.length} llamadas paralelas a Claude API...`);
-      const results = await Promise.all(parallelPromises);
+      // Ejecutar con límite de concurrencia para no saturar Claude API
+      console.log(`⏳ Ejecutando ${promiseFunctions.length} llamadas con límite de ${MAX_CONCURRENT_CALLS} concurrentes...`);
+      const results = await executeWithConcurrencyLimit(promiseFunctions, MAX_CONCURRENT_CALLS);
 
       // Agregar todas las preguntas generadas
       for (const questions of results) {
