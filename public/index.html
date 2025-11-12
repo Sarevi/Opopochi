@@ -3076,7 +3076,7 @@
                 </div>
 
                 <div style="margin-top: 24px;">
-                    <button onclick="exitOfficialExam()" style="width: 100%; background: #f97316; color: white; padding: 16px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; font-size: 1.125rem;">
+                    <button id="exit-exam-btn" style="width: 100%; background: #f97316; color: white; padding: 16px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; font-size: 1.125rem;">
                         🏠 Volver al Inicio
                     </button>
                 </div>
@@ -3089,6 +3089,17 @@
             document.getElementById('topic-selection').style.display = 'none';
             document.getElementById('question-container').innerHTML = resultHTML;
             document.getElementById('question-container').classList.remove('hidden');
+
+            // 🔴 FIX: Agregar event listener al botón "Volver al Inicio" después de insertar el HTML
+            setTimeout(() => {
+                const exitBtn = document.getElementById('exit-exam-btn');
+                if (exitBtn) {
+                    exitBtn.addEventListener('click', exitOfficialExam);
+                    console.log('✅ Event listener agregado al botón Volver al Inicio');
+                } else {
+                    console.error('❌ No se encontró el botón exit-exam-btn');
+                }
+            }, 100);
 
             // Resetear variables
             isOfficialExamMode = false;
