@@ -1234,7 +1234,13 @@ function getWeeklyStatsByTopic(userId, weeks = 4) {
       ORDER BY week DESC, topic_id ASC
     `);
 
-    return stmt.all(userId, weeks * 7);
+    const allResults = stmt.all(userId, weeks * 7);
+
+    // 🔴 FIX: Limitar a exactamente N semanas únicas solicitadas
+    const uniqueWeeks = [...new Set(allResults.map(r => r.week))];
+    const limitedWeeks = uniqueWeeks.slice(0, weeks);
+
+    return allResults.filter(r => limitedWeeks.includes(r.week));
   } catch (error) {
     console.error('Error obteniendo estadísticas semanales:', error);
     return [];
@@ -1262,9 +1268,10 @@ function getWeeklySummary(userId, weeks = 4) {
         AND answered_at >= datetime('now', '-' || ? || ' days')
       GROUP BY week
       ORDER BY week DESC
+      LIMIT ?
     `);
 
-    return stmt.all(userId, weeks * 7);
+    return stmt.all(userId, weeks * 7, weeks);
   } catch (error) {
     console.error('Error obteniendo resumen semanal:', error);
     return [];
