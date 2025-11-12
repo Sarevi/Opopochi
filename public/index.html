@@ -3554,7 +3554,7 @@
                             yPos = 20;
                         }
 
-                        // Título de la semana
+                        // Título de la semana (sin emoji para compatibilidad PDF)
                         doc.setFontSize(10);
                         doc.setFont(undefined, 'bold');
                         doc.setTextColor(79, 70, 229); // Color morado para semana
@@ -3564,7 +3564,7 @@
                             month: 'long',
                             year: 'numeric'
                         });
-                        doc.text(`📅 Semana del ${weekStr}`, margin, yPos);
+                        doc.text(`Semana del ${weekStr}`, margin, yPos);
                         yPos += 6;
 
                         // Encabezados de tabla
@@ -3637,7 +3637,12 @@
                             topicIndex++;
                         });
 
-                        yPos += 3; // Espacio entre semanas
+                        // Línea separadora entre semanas
+                        yPos += 3;
+                        doc.setLineWidth(0.3);
+                        doc.setDrawColor(209, 213, 219); // Gris claro
+                        doc.line(margin, yPos, pageWidth - margin, yPos);
+                        yPos += 5; // Espacio adicional entre semanas
                     });
                 }
 
