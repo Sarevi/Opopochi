@@ -2812,17 +2812,21 @@ app.post('/api/exam/official', requireAuth, examLimiter, async (req, res) => {
     const topicId = 'examen-oficial'; // ID especial para examen oficial
     let allGeneratedQuestions = [];
 
+    // 🔴 SOBRE-GENERAR 10% para asegurar que lleguemos al mínimo después de filtrar inválidas
+    // Ejemplo: piden 100 → generamos 110 → devolvemos 100 válidas
+    const bufferPercentage = 0.10; // 10% extra
+    const totalToGenerate = Math.ceil(questionCount * (1 + bufferPercentage));
+
     // SISTEMA 3 NIVELES: 20% simples / 60% medias / 20% elaboradas
-    const totalNeeded = questionCount;
-    const simpleNeeded = Math.round(totalNeeded * 0.20);
-    const mediaNeeded = Math.round(totalNeeded * 0.60);
-    const elaboratedNeeded = totalNeeded - simpleNeeded - mediaNeeded;
+    const simpleNeeded = Math.round(totalToGenerate * 0.20);
+    const mediaNeeded = Math.round(totalToGenerate * 0.60);
+    const elaboratedNeeded = totalToGenerate - simpleNeeded - mediaNeeded;
 
     const simpleCalls = Math.ceil(simpleNeeded / 2);
     const mediaCalls = Math.ceil(mediaNeeded / 2);
     const elaboratedCalls = Math.ceil(elaboratedNeeded / 2);
 
-    console.log(`🎯 Plan (20/60/20): ${simpleNeeded} simples + ${mediaNeeded} medias + ${elaboratedNeeded} elaboradas`);
+    console.log(`🎯 Plan con buffer del ${Math.round(bufferPercentage * 100)}%: ${totalToGenerate} preguntas (${simpleNeeded} simples + ${mediaNeeded} medias + ${elaboratedNeeded} elaboradas) para entregar ${questionCount}`);
 
     // 🚀 OPTIMIZACIÓN: Intentar obtener preguntas del CACHÉ primero (que el usuario NO ha visto)
     console.log(`💾 Intentando obtener preguntas del caché...`);
@@ -2988,19 +2992,39 @@ app.post('/api/exam/official', requireAuth, examLimiter, async (req, res) => {
       console.log(`✅ Generación paralela completada: ${results.flat().length} preguntas nuevas generadas`);
     }
 
-    // 🔴 FIX: Validar que tenemos EXACTAMENTE las preguntas solicitadas
-    const minimumRequired = questionCount; // 100% requerido
+    // Validar que tenemos AL MENOS las preguntas solicitadas (gracias al buffer del 10%)
+    console.log(`📊 Generadas ${allGeneratedQuestions.length} preguntas (solicitadas: ${questionCount})`);
 
-    console.log(`📊 Generadas ${allGeneratedQuestions.length} de ${questionCount} solicitadas (mínimo: ${minimumRequired})`);
-
-    if (allGeneratedQuestions.length < minimumRequired) {
+    if (allGeneratedQuestions.length < questionCount) {
       return res.status(500).json({
         error: 'No se pudieron generar suficientes preguntas',
-        details: `Solo se generaron ${allGeneratedQuestions.length} de ${questionCount} preguntas solicitadas. El sistema requiere exactamente ${minimumRequired} preguntas para el examen.`,
+        details: `Solo se generaron ${allGeneratedQuestions.length} de ${questionCount} preguntas solicitadas (incluso con buffer del 10%). Por favor, intenta de nuevo en unos minutos.`,
         generated: allGeneratedQuestions.length,
-        requested: questionCount,
-        minimum: minimumRequired
+        requested: questionCount
       });
+    }
+
+    // Éxito: tenemos suficientes preguntas gracias al buffer
+    if (allGeneratedQuestions.length > questionCount) {
+      const surplus = allGeneratedQuestions.length - questionCount;
+      console.log(`✅ Buffer funcionó: ${allGeneratedQuestions.length} generadas, usando ${questionCount}, guardando ${surplus} sobrantes en caché`);
+
+      // Guardar preguntas sobrantes en el caché para reutilizarlas
+      const surplusQuestions = allGeneratedQuestions.slice(questionCount);
+      let savedCount = 0;
+
+      for (const question of surplusQuestions) {
+        try {
+          const cacheId = db.saveToCache(topicId, question.difficulty || 'media', question);
+          if (cacheId) savedCount++;
+        } catch (error) {
+          console.error('Error guardando pregunta sobrante en caché:', error);
+        }
+      }
+
+      console.log(`💾 ${savedCount}/${surplus} preguntas sobrantes guardadas en caché para uso futuro`);
+    } else {
+      console.log(`✅ Generación exacta: ${allGeneratedQuestions.length} preguntas`);
     }
 
     // Validar y aleatorizar todas las preguntas generadas
@@ -3030,8 +3054,6 @@ app.post('/api/exam/official', requireAuth, examLimiter, async (req, res) => {
       questions: finalQuestions,
       questionCount: finalQuestions.length,
       isOfficial: true,
-      isPartial: isPartial,
-      partialWarning: isPartial ? `Se generaron ${finalQuestions.length} de ${questionCount} preguntas solicitadas.` : null,
       topics: allTopics,
       timestamp: new Date().toISOString()
     });

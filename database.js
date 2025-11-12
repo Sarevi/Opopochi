@@ -870,6 +870,41 @@ function saveToCacheAndTrack(userId, topicId, difficulty, questionData, context 
 }
 
 /**
+ * Guardar pregunta al caché SIN tracking de usuario (para preguntas sobrantes/buffer)
+ * @param {string} topicId - ID del tema
+ * @param {string} difficulty - Dificultad de la pregunta
+ * @param {object} questionData - Datos de la pregunta
+ * @returns {number} - ID de la pregunta en caché
+ */
+function saveToCache(topicId, difficulty, questionData) {
+  const now = Date.now();
+  const expiresAt = now + (CACHE_EXPIRY_HOURS * 3600 * 1000);
+
+  // Limpiar caché si supera el límite
+  cleanOldCacheIfNeeded();
+
+  try {
+    const insertStmt = db.prepare(`
+      INSERT INTO question_cache (question_data, difficulty, topic_id, generated_at, expires_at)
+      VALUES (?, ?, ?, ?, ?)
+    `);
+
+    const result = insertStmt.run(
+      JSON.stringify(questionData),
+      difficulty,
+      topicId,
+      now,
+      expiresAt
+    );
+
+    return result.lastInsertRowid;
+  } catch (error) {
+    console.error('Error guardando en caché:', error);
+    return null;
+  }
+}
+
+/**
  * Marcar pregunta existente del caché como vista por un usuario
  * @param {number} userId - ID del usuario
  * @param {number} cacheId - ID de la pregunta en caché
@@ -1269,6 +1304,7 @@ module.exports = {
   getChunkCoverage,
   // Funciones de caché
   getCachedQuestion,
+  saveToCache,
   saveToCacheAndTrack,
   markQuestionAsSeen,
   cleanExpiredCache,
