@@ -2879,8 +2879,26 @@
 
                 const data = await response.json();
 
-                // Configurar examen
-                officialExamQuestions = data.questions;
+                // 🔴 FIX: Filtrar preguntas de error técnico antes de configurar el examen
+                const validQuestions = data.questions.filter(q => {
+                    return !q.question.includes('ERROR TÉCNICO') &&
+                           !q.question.includes('⚠️') &&
+                           !q.question.includes('No se pudo generar una pregunta válida');
+                });
+
+                console.log(`📝 Preguntas válidas: ${validQuestions.length} de ${data.questions.length}`);
+
+                // Verificar que tengamos suficientes preguntas válidas
+                if (validQuestions.length === 0) {
+                    throw new Error('No se pudieron generar preguntas válidas. Por favor, intenta de nuevo.');
+                }
+
+                if (validQuestions.length < officialExamConfig.questionCount * 0.8) {
+                    console.warn(`⚠️ Solo se generaron ${validQuestions.length} preguntas válidas de ${officialExamConfig.questionCount} solicitadas`);
+                }
+
+                // Configurar examen con preguntas válidas
+                officialExamQuestions = validQuestions;
                 isOfficialExamMode = true;
                 officialExamStartTime = Date.now();
                 officialExamAnswers = [];
@@ -3110,10 +3128,14 @@
             localStorage.removeItem('official_exam_progress');
             console.log('🗑️ Progreso del examen eliminado de localStorage');
 
-            // Ocultar elementos del examen
-            document.getElementById('exam-progress-bar').style.display = 'none';
-            document.getElementById('exam-progress-text').style.display = 'none';
-            document.getElementById('exam-finish-container').style.display = 'none';
+            // Ocultar elementos del examen (con validación)
+            const progressBar = document.getElementById('exam-progress-bar');
+            const progressText = document.getElementById('exam-progress-text');
+            const finishContainer = document.getElementById('exam-finish-container');
+
+            if (progressBar) progressBar.style.display = 'none';
+            if (progressText) progressText.style.display = 'none';
+            if (finishContainer) finishContainer.style.display = 'none';
 
             // 🔴 FIX: Deshabilitar temporalmente los botones de navegación para evitar cambios accidentales
             document.querySelectorAll('.nav-button').forEach(btn => {
@@ -3142,10 +3164,14 @@
                 loadingDiv.style.display = 'none';
             }
 
-            // Ocultar elementos del examen
-            document.getElementById('exam-progress-bar').style.display = 'none';
-            document.getElementById('exam-progress-text').style.display = 'none';
-            document.getElementById('exam-finish-container').style.display = 'none';
+            // Ocultar elementos del examen (con validación)
+            const progressBar = document.getElementById('exam-progress-bar');
+            const progressText = document.getElementById('exam-progress-text');
+            const finishContainer = document.getElementById('exam-finish-container');
+
+            if (progressBar) progressBar.style.display = 'none';
+            if (progressText) progressText.style.display = 'none';
+            if (finishContainer) finishContainer.style.display = 'none';
 
             // 🔴 FIX: Re-habilitar botones de navegación
             document.querySelectorAll('.nav-button').forEach(btn => {
@@ -3153,7 +3179,14 @@
                 btn.style.opacity = '1';
             });
 
-            showPage('official-exam'); // Volver a la página de Examen Oficial
+            // Limpiar el contenedor de preguntas
+            const questionContainer = document.getElementById('question-container');
+            if (questionContainer) {
+                questionContainer.innerHTML = '';
+                questionContainer.classList.add('hidden');
+            }
+
+            showPage('study'); // 🔴 FIX: Volver a la página de Estudiar en lugar de Examen Oficial
         }
 
         // Detectar examen pendiente y mostrar banner
