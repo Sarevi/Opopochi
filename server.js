@@ -2988,25 +2988,19 @@ app.post('/api/exam/official', requireAuth, examLimiter, async (req, res) => {
       console.log(`✅ Generación paralela completada: ${results.flat().length} preguntas nuevas generadas`);
     }
 
-    // 🔴 FIX: Validar que tenemos suficientes preguntas antes de continuar
-    const minimumRequired = Math.floor(questionCount * 0.9); // 90% mínimo
+    // 🔴 FIX: Validar que tenemos EXACTAMENTE las preguntas solicitadas
+    const minimumRequired = questionCount; // 100% requerido
 
     console.log(`📊 Generadas ${allGeneratedQuestions.length} de ${questionCount} solicitadas (mínimo: ${minimumRequired})`);
 
     if (allGeneratedQuestions.length < minimumRequired) {
       return res.status(500).json({
         error: 'No se pudieron generar suficientes preguntas',
-        details: `Solo se generaron ${allGeneratedQuestions.length} de ${questionCount} preguntas solicitadas. El sistema requiere al menos ${minimumRequired} preguntas (90%) para garantizar la calidad del examen.`,
+        details: `Solo se generaron ${allGeneratedQuestions.length} de ${questionCount} preguntas solicitadas. El sistema requiere exactamente ${minimumRequired} preguntas para el examen.`,
         generated: allGeneratedQuestions.length,
         requested: questionCount,
         minimum: minimumRequired
       });
-    }
-
-    // Avisar si está entre 90-99% (parcialmente completo)
-    const isPartial = allGeneratedQuestions.length < questionCount;
-    if (isPartial) {
-      console.log(`⚠️ ADVERTENCIA: Examen parcial - ${allGeneratedQuestions.length}/${questionCount} preguntas`);
     }
 
     // Validar y aleatorizar todas las preguntas generadas
