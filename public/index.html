@@ -2660,6 +2660,14 @@
                 window.isReviewMode = true;
                 window.currentReviewIndex = 0;
 
+                // 🔴 FIX: Asegurar que NO está en modo examen oficial
+                isOfficialExamMode = false;
+
+                // Ocultar elementos del examen oficial
+                document.getElementById('exam-progress-bar').style.display = 'none';
+                document.getElementById('exam-progress-text').style.display = 'none';
+                document.getElementById('exam-finish-container').style.display = 'none';
+
                 currentQuestion = window.reviewQuestions[0];
                 questionCount = 1;
                 correctAnswers = 0;
@@ -3116,7 +3124,7 @@
             document.getElementById('exam-progress-text').style.display = 'none';
             document.getElementById('exam-finish-container').style.display = 'none';
 
-            showPage('study'); // Volver al Inicio
+            showPage('home'); // Volver al Inicio
         }
 
         // Detectar examen pendiente y mostrar banner
@@ -3474,12 +3482,21 @@
                     doc.text('% Acierto', pageWidth - margin - 35, yPos);
                     yPos += 8;
 
-                    // Datos por tema
+                    // Datos por tema - ORDENAR NUMÉRICAMENTE
                     doc.setFont(undefined, 'normal');
                     doc.setTextColor(31, 41, 55);
 
+                    // Ordenar temas por número (extraer "TEMA X" del título)
+                    const sortedTopicEntries = Object.entries(byTopicMap).sort(([idA, infoA], [idB, infoB]) => {
+                        const matchA = infoA.title.match(/TEMA\s+(\d+)/);
+                        const matchB = infoB.title.match(/TEMA\s+(\d+)/);
+                        const numA = matchA ? parseInt(matchA[1]) : 999;
+                        const numB = matchB ? parseInt(matchB[1]) : 999;
+                        return numA - numB;
+                    });
+
                     let topicIndex = 0;
-                    Object.entries(byTopicMap).forEach(([topicId, topicInfo]) => {
+                    sortedTopicEntries.forEach(([topicId, topicInfo]) => {
                         if (yPos > pageHeight - 20) {
                             doc.addPage();
                             yPos = 20;
@@ -3541,6 +3558,18 @@
         // EXPORTAR PREGUNTAS FALLADAS A PDF
         // ========================
 
+        // Helper function para normalizar texto para jsPDF
+        function normalizeTextForPDF(text) {
+            if (!text) return '';
+            // Normalizar caracteres especiales que causan problemas en jsPDF
+            return text
+                .replace(/[""]/g, '"')
+                .replace(/['']/g, "'")
+                .replace(/…/g, '...')
+                .replace(/–/g, '-')
+                .replace(/—/g, '-');
+        }
+
         async function exportToPDF(topicId) {
             try {
                 console.log(`📄 Exportando preguntas falladas de ${topicId} a PDF...`);
@@ -3593,7 +3622,7 @@
                     // Texto de la pregunta
                     doc.setFontSize(10);
                     doc.setFont(undefined, 'normal');
-                    const questionLines = doc.splitTextToSize(q.question, maxWidth);
+                    const questionLines = doc.splitTextToSize(normalizeTextForPDF(q.question), maxWidth);
                     doc.text(questionLines, margin, yPos);
                     yPos += (questionLines.length * 5) + 5;
 
@@ -3611,19 +3640,19 @@
                             doc.setFont(undefined, isCorrect ? 'bold' : 'normal');
 
                             // Split SIN el prefijo para evitar problemas de encoding
-                            const optLines = doc.splitTextToSize(opt, maxWidth - 10);
+                            const optLines = doc.splitTextToSize(normalizeTextForPDF(opt), maxWidth - 10);
 
                             // Agregar prefijo solo a respuesta del usuario (no a correcta, solo color)
                             let prefix = '  ';
                             if (wasSelected && !isCorrect) prefix = '[TU RESPUESTA] ';
 
                             // Primera línea con prefijo (si aplica)
-                            doc.text(prefix + optLines[0], margin + 5, yPos);
+                            doc.text(normalizeTextForPDF(prefix + optLines[0]), margin + 5, yPos);
                             yPos += 5;
 
                             // Resto de líneas sin prefijo (indentadas)
                             for (let i = 1; i < optLines.length; i++) {
-                                doc.text(optLines[i], margin + 5, yPos);
+                                doc.text(normalizeTextForPDF(optLines[i]), margin + 5, yPos);
                                 yPos += 5;
                             }
 
@@ -3642,11 +3671,11 @@
                         doc.setFont(undefined, 'italic');
                         doc.setTextColor(75, 85, 99);
                         // Limpiar markdown para PDF
-                        const cleanExplanation = q.explanation
+                        const cleanExplanation = normalizeTextForPDF(q.explanation
                             .replace(/\*\*(.*?)\*\*/g, '$1')  // Eliminar **
                             .replace(/\*(.*?)\*/g, '$1')      // Eliminar *
                             .replace(/\\n/g, ' ')             // Convertir \n a espacio
-                            .replace(/\n/g, ' ');             // Convertir saltos reales a espacio
+                            .replace(/\n/g, ' '));            // Convertir saltos reales a espacio
                         const explText = `Explicación: ${cleanExplanation}`;
                         const explLines = doc.splitTextToSize(explText, maxWidth);
                         doc.text(explLines, margin, yPos);
