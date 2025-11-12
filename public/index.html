@@ -3592,6 +3592,10 @@
             // Usar NFD (Normalization Form Decomposed) para separar base + diacrítico, luego eliminar diacríticos
             normalized = normalized.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
+            // Eliminar emojis y caracteres Unicode especiales que causan símbolos raros en jsPDF
+            // Mantener solo caracteres ASCII básicos, números, puntuación y espacios
+            normalized = normalized.replace(/[^\x00-\x7F]/g, '');
+
             return normalized;
         }
 
@@ -3696,12 +3700,13 @@
                         doc.setFont(undefined, 'italic');
                         doc.setTextColor(75, 85, 99);
                         // Limpiar markdown para PDF
-                        const cleanExplanation = normalizeTextForPDF(q.explanation
+                        const cleanExplanation = q.explanation
                             .replace(/\*\*(.*?)\*\*/g, '$1')  // Eliminar **
                             .replace(/\*(.*?)\*/g, '$1')      // Eliminar *
                             .replace(/\\n/g, ' ')             // Convertir \n a espacio
-                            .replace(/\n/g, ' '));            // Convertir saltos reales a espacio
-                        const explText = `Explicación: ${cleanExplanation}`;
+                            .replace(/\n/g, ' ');             // Convertir saltos reales a espacio
+                        // Normalizar TODO el texto (incluido el prefijo) ANTES de splitTextToSize
+                        const explText = normalizeTextForPDF(`Explicacion: ${cleanExplanation}`);
                         const explLines = doc.splitTextToSize(explText, maxWidth);
                         doc.text(explLines, margin, yPos);
                         yPos += (explLines.length * 4) + 8;
