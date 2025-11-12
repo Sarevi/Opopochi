@@ -36,7 +36,8 @@ app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", "'unsafe-inline'"], // unsafe-inline necesario para scripts inline en HTML
+      scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-hashes'", "https://cdnjs.cloudflare.com"], // unsafe-inline/unsafe-hashes para scripts y event handlers inline, CDN para jsPDF
+      scriptSrcAttr: ["'unsafe-inline'", "'unsafe-hashes'"], // Permitir event handlers inline (onclick, etc)
       styleSrc: ["'self'", "'unsafe-inline'"], // unsafe-inline necesario para estilos inline
       imgSrc: ["'self'", 'data:', 'https:'],
       connectSrc: ["'self'", 'https://api.anthropic.com'], // API de Claude
