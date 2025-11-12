@@ -91,8 +91,9 @@ const allowedOrigins = process.env.NODE_ENV === 'production'
 
 app.use(cors({
   origin: (origin, callback) => {
-    // Permitir requests sin origin (Postman, curl) solo en desarrollo
-    if (!origin && process.env.NODE_ENV !== 'production') {
+    // Permitir requests sin origin (Postman, curl, acceso directo por IP)
+    // Esto es seguro porque ya tenemos autenticación y rate limiting
+    if (!origin) {
       return callback(null, true);
     }
 
