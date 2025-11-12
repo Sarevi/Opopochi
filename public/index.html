@@ -2827,6 +2827,10 @@
         }
 
         async function startOfficialExam() {
+            // 🔴 FIX: Añadir timeout de 10 minutos para exámenes largos (100 preguntas tardan ~4-5 min)
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 600000); // 10 minutos
+
             try {
                 console.log(`🎓 Iniciando examen oficial: ${officialExamConfig.questionCount} preguntas`);
 
@@ -2839,25 +2843,20 @@
                 startBtn.style.cursor = 'not-allowed';
                 loadingDiv.style.display = 'block';
 
-                // 🔴 FIX: Añadir timeout de 10 minutos para exámenes largos (100 preguntas tardan ~4-5 min)
-                const controller = new AbortController();
-                const timeout = setTimeout(() => controller.abort(), 600000); // 10 minutos
+                // Solicitar examen al servidor
+                const response = await fetch(`${API_BASE}/api/exam/official`, {
+                    method: 'POST',
+                    credentials: 'include',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        questionCount: officialExamConfig.questionCount
+                    }),
+                    signal: controller.signal
+                });
 
-                try {
-                    // Solicitar examen al servidor
-                    const response = await fetch(`${API_BASE}/api/exam/official`, {
-                        method: 'POST',
-                        credentials: 'include',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            questionCount: officialExamConfig.questionCount
-                        }),
-                        signal: controller.signal
-                    });
+                clearTimeout(timeout); // Limpiar timeout si se completó antes
 
-                    clearTimeout(timeout); // Limpiar timeout si se completó antes
-
-                    if (response.status === 401 || response.status === 403) {
+                if (response.status === 401 || response.status === 403) {
                     isAuthenticated = false;
                     currentUser = null;
                     showAuthScreen();
@@ -2897,19 +2896,31 @@
                 // Mostrar primera pregunta
                 showPage('study');
                 showQuestionMode();
-                document.getElementById('current-topic-name').textContent = '🎓 EXAMEN OFICIAL';
-                document.getElementById('question-number').textContent = `Pregunta ${questionCount} de ${officialExamQuestions.length}`;
+
+                // Usar setTimeout para asegurar que los elementos existen después de showPage
+                setTimeout(() => {
+                    const topicName = document.getElementById('current-topic-name');
+                    const questionNumber = document.getElementById('question-number');
+                    const progressBar = document.getElementById('exam-progress-bar');
+                    const progressText = document.getElementById('exam-progress-text');
+                    const progressTotal = document.getElementById('exam-progress-total');
+                    const progressCurrent = document.getElementById('exam-progress-current');
+
+                    if (topicName) topicName.textContent = '🎓 EXAMEN OFICIAL';
+                    if (questionNumber) questionNumber.textContent = `Pregunta ${questionCount} de ${officialExamQuestions.length}`;
+                    if (progressBar) progressBar.style.display = 'block';
+                    if (progressText) progressText.style.display = 'block';
+                    if (progressTotal) progressTotal.textContent = officialExamQuestions.length;
+                    if (progressCurrent) progressCurrent.textContent = '0';
+
+                    console.log(`✅ Examen oficial iniciado: ${officialExamQuestions.length} preguntas`);
+                }, 100);
+
                 displayQuestion();
 
-                // Mostrar barra de progreso y texto
-                document.getElementById('exam-progress-bar').style.display = 'block';
-                document.getElementById('exam-progress-text').style.display = 'block';
-                document.getElementById('exam-progress-total').textContent = officialExamQuestions.length;
-                document.getElementById('exam-progress-current').textContent = '0';
-
-                console.log(`✅ Examen oficial iniciado: ${officialExamQuestions.length} preguntas`);
-
             } catch (error) {
+                clearTimeout(timeout); // Asegurar limpieza del timeout en caso de error
+
                 // Manejar timeout específicamente
                 if (error.name === 'AbortError') {
                     console.error('⏰ TIMEOUT: El examen tardó más de 10 minutos en generarse');
