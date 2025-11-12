@@ -3515,91 +3515,134 @@
                     doc.setFontSize(11);
                     doc.setFont(undefined, 'bold');
                     doc.setTextColor(31, 41, 55);
-                    doc.text('DESGLOSE POR TEMA', margin, yPos);
+                    doc.text('DESGLOSE POR TEMA Y SEMANA', margin, yPos);
                     yPos += 8;
 
-                    // Agrupar por tema
-                    const byTopicMap = {};
+                    // 🔴 FIX: Agrupar por SEMANA primero, luego por tema
+                    const byWeekMap = {};
                     data.byTopic.forEach(entry => {
-                        if (!byTopicMap[entry.topic_id]) {
-                            byTopicMap[entry.topic_id] = {
+                        const weekKey = entry.week_start; // Usar week_start como clave
+                        if (!byWeekMap[weekKey]) {
+                            byWeekMap[weekKey] = {
+                                week_start: entry.week_start,
+                                topics: {}
+                            };
+                        }
+
+                        if (!byWeekMap[weekKey].topics[entry.topic_id]) {
+                            byWeekMap[weekKey].topics[entry.topic_id] = {
                                 title: entry.topic_title,
                                 total: 0,
                                 correct: 0
                             };
                         }
-                        byTopicMap[entry.topic_id].total += entry.total_questions;
-                        byTopicMap[entry.topic_id].correct += entry.correct_answers;
+
+                        byWeekMap[weekKey].topics[entry.topic_id].total += entry.total_questions;
+                        byWeekMap[weekKey].topics[entry.topic_id].correct += entry.correct_answers;
                     });
 
-                    // Encabezados
-                    doc.setFontSize(9);
-                    doc.setFont(undefined, 'bold');
-                    doc.setTextColor(107, 114, 128);
-                    doc.setFillColor(249, 250, 251);
-                    doc.rect(margin, yPos - 5, pageWidth - (2 * margin), 8, 'F');
-
-                    doc.text('Tema', margin + 3, yPos);
-                    doc.text('Preguntas', pageWidth - margin - 65, yPos);
-                    doc.text('% Acierto', pageWidth - margin - 35, yPos);
-                    yPos += 8;
-
-                    // Datos por tema - ORDENAR NUMÉRICAMENTE
-                    doc.setFont(undefined, 'normal');
-                    doc.setTextColor(31, 41, 55);
-
-                    // Ordenar temas por número (extraer "TEMA X" del título)
-                    const sortedTopicEntries = Object.entries(byTopicMap).sort(([idA, infoA], [idB, infoB]) => {
-                        const matchA = infoA.title.match(/TEMA\s+(\d+)/);
-                        const matchB = infoB.title.match(/TEMA\s+(\d+)/);
-                        const numA = matchA ? parseInt(matchA[1]) : 999;
-                        const numB = matchB ? parseInt(matchB[1]) : 999;
-                        return numA - numB;
+                    // 🔴 FIX: Iterar por SEMANA primero, luego por tema
+                    // Ordenar semanas por fecha (más reciente primero)
+                    const sortedWeeks = Object.entries(byWeekMap).sort(([dateA], [dateB]) => {
+                        return new Date(dateB) - new Date(dateA);
                     });
 
-                    let topicIndex = 0;
-                    sortedTopicEntries.forEach(([topicId, topicInfo]) => {
-                        if (yPos > pageHeight - 20) {
+                    sortedWeeks.forEach(([weekStart, weekData]) => {
+                        // Verificar si necesitamos nueva página
+                        if (yPos > pageHeight - 60) {
                             doc.addPage();
                             yPos = 20;
-                            topicIndex = 0;
                         }
 
-                        const avgAccuracy = topicInfo.total > 0
-                            ? Math.round((topicInfo.correct / topicInfo.total) * 100)
-                            : 0;
-
-                        // Fila alternada
-                        if (topicIndex % 2 === 0) {
-                            doc.setFillColor(249, 250, 251);
-                            doc.rect(margin, yPos - 5, pageWidth - (2 * margin), 7, 'F');
-                        }
-
-                        // Acortar título si es muy largo
-                        const maxTitleWidth = pageWidth - margin - 80;
-                        let titleText = topicInfo.title;
-                        if (doc.getTextWidth(titleText) > maxTitleWidth) {
-                            while (doc.getTextWidth(titleText + '...') > maxTitleWidth && titleText.length > 10) {
-                                titleText = titleText.slice(0, -1);
-                            }
-                            titleText += '...';
-                        }
-
-                        doc.setFontSize(8);
-                        doc.text(titleText, margin + 3, yPos);
-                        doc.setFontSize(9);
-                        doc.text(String(topicInfo.total), pageWidth - margin - 57, yPos);
-
-                        // Color según accuracy
-                        const accuracyColor = avgAccuracy >= 80 ? [34, 197, 94] : avgAccuracy >= 60 ? [245, 158, 11] : [239, 68, 68];
-                        doc.setTextColor(...accuracyColor);
+                        // Título de la semana (sin emoji para compatibilidad PDF)
+                        doc.setFontSize(10);
                         doc.setFont(undefined, 'bold');
-                        doc.text(`${avgAccuracy}%`, pageWidth - margin - 28, yPos);
-                        doc.setTextColor(31, 41, 55);
-                        doc.setFont(undefined, 'normal');
+                        doc.setTextColor(79, 70, 229); // Color morado para semana
+                        const weekDate = new Date(weekStart);
+                        const weekStr = weekDate.toLocaleDateString('es-ES', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                        });
+                        doc.text(`Semana del ${weekStr}`, margin, yPos);
+                        yPos += 6;
 
-                        yPos += 7;
-                        topicIndex++;
+                        // Encabezados de tabla
+                        doc.setFontSize(9);
+                        doc.setFont(undefined, 'bold');
+                        doc.setTextColor(107, 114, 128);
+                        doc.setFillColor(249, 250, 251);
+                        doc.rect(margin, yPos - 5, pageWidth - (2 * margin), 8, 'F');
+
+                        doc.text('Tema', margin + 3, yPos);
+                        doc.text('Preguntas', pageWidth - margin - 65, yPos);
+                        doc.text('% Acierto', pageWidth - margin - 35, yPos);
+                        yPos += 8;
+
+                        // Ordenar temas por número
+                        const sortedTopics = Object.entries(weekData.topics).sort(([idA, infoA], [idB, infoB]) => {
+                            const matchA = infoA.title.match(/TEMA\s+(\d+)/);
+                            const matchB = infoB.title.match(/TEMA\s+(\d+)/);
+                            const numA = matchA ? parseInt(matchA[1]) : 999;
+                            const numB = matchB ? parseInt(matchB[1]) : 999;
+                            return numA - numB;
+                        });
+
+                        // Datos por tema de esta semana
+                        doc.setFont(undefined, 'normal');
+                        doc.setTextColor(31, 41, 55);
+
+                        let topicIndex = 0;
+                        sortedTopics.forEach(([topicId, topicInfo]) => {
+                            if (yPos > pageHeight - 20) {
+                                doc.addPage();
+                                yPos = 20;
+                                topicIndex = 0;
+                            }
+
+                            const avgAccuracy = topicInfo.total > 0
+                                ? Math.round((topicInfo.correct / topicInfo.total) * 100)
+                                : 0;
+
+                            // Fila alternada
+                            if (topicIndex % 2 === 0) {
+                                doc.setFillColor(249, 250, 251);
+                                doc.rect(margin, yPos - 5, pageWidth - (2 * margin), 7, 'F');
+                            }
+
+                            // Acortar título si es muy largo
+                            const maxTitleWidth = pageWidth - margin - 80;
+                            let titleText = topicInfo.title;
+                            if (doc.getTextWidth(titleText) > maxTitleWidth) {
+                                while (doc.getTextWidth(titleText + '...') > maxTitleWidth && titleText.length > 10) {
+                                    titleText = titleText.slice(0, -1);
+                                }
+                                titleText += '...';
+                            }
+
+                            doc.setFontSize(8);
+                            doc.text(titleText, margin + 3, yPos);
+                            doc.setFontSize(9);
+                            doc.text(String(topicInfo.total), pageWidth - margin - 57, yPos);
+
+                            // Color según accuracy
+                            const accuracyColor = avgAccuracy >= 80 ? [34, 197, 94] : avgAccuracy >= 60 ? [245, 158, 11] : [239, 68, 68];
+                            doc.setTextColor(...accuracyColor);
+                            doc.setFont(undefined, 'bold');
+                            doc.text(`${avgAccuracy}%`, pageWidth - margin - 28, yPos);
+                            doc.setTextColor(31, 41, 55);
+                            doc.setFont(undefined, 'normal');
+
+                            yPos += 7;
+                            topicIndex++;
+                        });
+
+                        // Línea separadora entre semanas
+                        yPos += 3;
+                        doc.setLineWidth(0.3);
+                        doc.setDrawColor(209, 213, 219); // Gris claro
+                        doc.line(margin, yPos, pageWidth - margin, yPos);
+                        yPos += 5; // Espacio adicional entre semanas
                     });
                 }
 
