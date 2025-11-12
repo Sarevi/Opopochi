@@ -784,21 +784,27 @@ function cleanOldCacheIfNeeded() {
     const currentSize = result.total;
 
     if (currentSize >= MAX_CACHE_SIZE) {
-      // Eliminar las 500 preguntas más antiguas para dejar espacio
+      // 🔴 FIX: Eliminar preguntas considerando popularidad y referencias activas
       const deleteCount = 500;
-      console.log(`🗑️ Caché lleno (${currentSize}/${MAX_CACHE_SIZE}) - Eliminando ${deleteCount} preguntas antiguas...`);
+      console.log(`🗑️ Caché lleno (${currentSize}/${MAX_CACHE_SIZE}) - Eliminando ${deleteCount} preguntas menos útiles...`);
 
+      // Calcular score de prioridad: más bajo = más candidato a eliminación
+      // Score = (times_used * 100) + (días desde generación * -1)
+      // Excluir preguntas que están en buffers activos
       db.prepare(`
         DELETE FROM question_cache
         WHERE id IN (
-          SELECT id FROM question_cache
-          ORDER BY generated_at ASC
+          SELECT qc.id
+          FROM question_cache qc
+          LEFT JOIN user_question_buffer uqb ON qc.id = uqb.question_cache_id AND uqb.expires_at > ?
+          WHERE uqb.question_cache_id IS NULL
+          ORDER BY (qc.times_used * 100) - ((? - qc.generated_at) / 86400000) ASC
           LIMIT ?
         )
-      `).run(deleteCount);
+      `).run(Date.now(), Date.now(), deleteCount);
 
       const newSize = currentSize - deleteCount;
-      console.log(`✅ Caché limpiado: ${newSize}/${MAX_CACHE_SIZE} preguntas restantes`);
+      console.log(`✅ Caché limpiado: ${newSize}/${MAX_CACHE_SIZE} preguntas restantes (priorizando popularidad)`);
     }
   } catch (error) {
     console.error('Error limpiando caché:', error);
