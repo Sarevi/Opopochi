@@ -3082,6 +3082,10 @@
                 </div>
             `;
 
+            // 🔴 FIX: Asegurar que estamos en la página correcta para ver resultados
+            // Esto previene que accidentalmente cambies de página y pierdas los resultados
+            showPage('study');
+
             document.getElementById('topic-selection').style.display = 'none';
             document.getElementById('question-container').innerHTML = resultHTML;
             document.getElementById('question-container').classList.remove('hidden');
@@ -3099,6 +3103,14 @@
             document.getElementById('exam-progress-bar').style.display = 'none';
             document.getElementById('exam-progress-text').style.display = 'none';
             document.getElementById('exam-finish-container').style.display = 'none';
+
+            // 🔴 FIX: Deshabilitar temporalmente los botones de navegación para evitar cambios accidentales
+            document.querySelectorAll('.nav-button').forEach(btn => {
+                btn.style.pointerEvents = 'none';
+                btn.style.opacity = '0.5';
+            });
+
+            console.log('📊 Resultados del examen mostrados. Navegación deshabilitada para evitar pérdida de resultados.');
         }
 
         function exitOfficialExam() {
@@ -3123,6 +3135,12 @@
             document.getElementById('exam-progress-bar').style.display = 'none';
             document.getElementById('exam-progress-text').style.display = 'none';
             document.getElementById('exam-finish-container').style.display = 'none';
+
+            // 🔴 FIX: Re-habilitar botones de navegación
+            document.querySelectorAll('.nav-button').forEach(btn => {
+                btn.style.pointerEvents = 'auto';
+                btn.style.opacity = '1';
+            });
 
             showPage('official-exam'); // Volver a la página de Examen Oficial
         }
