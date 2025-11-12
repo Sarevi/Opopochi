@@ -3027,8 +3027,38 @@ app.post('/api/exam/official', requireAuth, examLimiter, async (req, res) => {
       console.log(`✅ Generación exacta: ${allGeneratedQuestions.length} preguntas`);
     }
 
+    // 🔴 FIX: Eliminar preguntas duplicadas antes de enviar al usuario
+    const uniqueQuestions = [];
+    const seenQuestions = new Set();
+
+    for (const q of allGeneratedQuestions) {
+      // Usar el texto de la pregunta como identificador único
+      const questionKey = q.question?.trim().toLowerCase();
+
+      if (questionKey && !seenQuestions.has(questionKey)) {
+        seenQuestions.add(questionKey);
+        uniqueQuestions.push(q);
+      }
+    }
+
+    const duplicatesRemoved = allGeneratedQuestions.length - uniqueQuestions.length;
+    if (duplicatesRemoved > 0) {
+      console.log(`🗑️ Eliminadas ${duplicatesRemoved} preguntas duplicadas`);
+    }
+
+    // Verificar que aún tenemos suficientes después de eliminar duplicadas
+    if (uniqueQuestions.length < questionCount) {
+      return res.status(500).json({
+        error: 'No se pudieron generar suficientes preguntas únicas',
+        details: `Solo se generaron ${uniqueQuestions.length} preguntas únicas de ${questionCount} solicitadas (se encontraron ${duplicatesRemoved} duplicadas). Por favor, intenta de nuevo.`,
+        generated: uniqueQuestions.length,
+        requested: questionCount,
+        duplicates: duplicatesRemoved
+      });
+    }
+
     // Validar y aleatorizar todas las preguntas generadas
-    const finalQuestions = allGeneratedQuestions.slice(0, questionCount).map((q, index) => {
+    const finalQuestions = uniqueQuestions.slice(0, questionCount).map((q, index) => {
       if (!q.question || !Array.isArray(q.options) || q.options.length !== 4) {
         q.options = q.options || ["A) Opción 1", "B) Opción 2", "C) Opción 3", "D) Opción 4"];
       }
