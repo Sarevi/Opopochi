@@ -126,11 +126,8 @@ const globalLimiter = rateLimit({
   max: 300, // máximo 300 requests por ventana
   message: 'Demasiadas peticiones desde esta IP, por favor intenta de nuevo en 15 minutos',
   standardHeaders: true, // Retorna info en headers `RateLimit-*`
-  legacyHeaders: false, // Deshabilita headers `X-RateLimit-*`
-  // Usar IP real del usuario (importante con proxies)
-  keyGenerator: (req) => {
-    return req.ip || req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  }
+  legacyHeaders: false // Deshabilita headers `X-RateLimit-*`
+  // Usa req.ip por defecto (ya configurado con trust proxy)
 });
 
 // Limiter para autenticación: 10 intentos por 15 minutos
@@ -149,8 +146,8 @@ const examLimiter = rateLimit({
   max: 30,
   message: 'Límite de generación de exámenes alcanzado. Por favor espera 1 hora',
   keyGenerator: (req) => {
-    // Por usuario autenticado, no por IP
-    return req.session?.userId?.toString() || req.ip;
+    // Por usuario autenticado, no por IP (evita problemas con IPv6)
+    return req.session?.userId?.toString() || 'anonymous';
   }
 });
 
@@ -160,7 +157,7 @@ const studyLimiter = rateLimit({
   max: 100,
   message: 'Límite de preguntas alcanzado. Por favor espera 1 hora',
   keyGenerator: (req) => {
-    return req.session?.userId?.toString() || req.ip;
+    return req.session?.userId?.toString() || 'anonymous';
   }
 });
 
