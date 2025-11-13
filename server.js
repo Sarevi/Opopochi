@@ -216,6 +216,9 @@ const MAX_TOKENS_CONFIG = {
 // Clave: `${userId}-${topicId}` -> Promise de generación en curso
 const backgroundGenerations = new Map();
 
+// TTL para limpieza automática (5 minutos por defecto)
+const BACKGROUND_GENERATION_TTL = 5 * 60 * 1000;
+
 // Función auxiliar para ejecutar generación controlada
 async function runControlledBackgroundGeneration(userId, topicId, generationFn) {
   const key = `${userId}-${topicId}`;
@@ -225,6 +228,14 @@ async function runControlledBackgroundGeneration(userId, topicId, generationFn) 
     console.log(`⏭️  Generación en background ya en progreso para usuario ${userId}, tópico ${topicId}`);
     return;
   }
+
+  // SEGURIDAD: Limpieza automática por timeout (previene memory leaks)
+  const timeoutId = setTimeout(() => {
+    if (backgroundGenerations.has(key)) {
+      console.warn(`⚠️ Limpiando generación expirada en background (usuario ${userId}, tópico ${topicId})`);
+      backgroundGenerations.delete(key);
+    }
+  }, BACKGROUND_GENERATION_TTL);
 
   try {
     // Marcar que está en progreso
@@ -238,6 +249,8 @@ async function runControlledBackgroundGeneration(userId, topicId, generationFn) 
   } catch (error) {
     console.error(`❌ Error en generación background (usuario ${userId}, tópico ${topicId}):`, error);
   } finally {
+    // Cancelar timeout (ya completó)
+    clearTimeout(timeoutId);
     // Limpiar entrada del Map
     backgroundGenerations.delete(key);
   }
@@ -1307,10 +1320,21 @@ function requireAuth(req, res, next) {
 
 // Middleware para verificar si es admin
 function requireAdmin(req, res, next) {
-  const adminPassword = process.env.ADMIN_PASSWORD || 'admin123';
+  const adminPassword = process.env.ADMIN_PASSWORD;
+
+  // SEGURIDAD: Validar que ADMIN_PASSWORD está configurado en producción
+  if (!adminPassword) {
+    console.error('🚨 ADMIN_PASSWORD no está configurado en variables de entorno');
+    if (process.env.NODE_ENV === 'production') {
+      return res.status(500).json({ error: 'Configuración de servidor inválida' });
+    }
+    // En desarrollo, usar password por defecto pero avisar
+    console.warn('⚠️ Usando password por defecto en desarrollo. NUNCA uses esto en producción.');
+  }
+
   const providedPassword = req.headers['x-admin-password'];
 
-  if (providedPassword !== adminPassword) {
+  if (providedPassword !== (adminPassword || 'admin123')) {
     return res.status(403).json({ error: 'Acceso denegado' });
   }
 
@@ -2874,7 +2898,7 @@ app.post('/api/exam/official', requireAuth, examLimiter, async (req, res) => {
     // Si faltan preguntas, generarlas en PARALELO CONTROLADO (más rápido pero sin saturar API)
     if (totalMissing > 0) {
       const promiseFunctions = [];
-      const MAX_CONCURRENT_CALLS = 10; // Máximo 10 llamadas simultáneas por usuario
+      const MAX_CONCURRENT_CALLS = 30; // Máximo 30 llamadas simultáneas (optimizado para mejor rendimiento)
 
       // Generar preguntas SIMPLES faltantes en paralelo
       const simpleCallsMissing = Math.ceil(simpleMissing / 2);
