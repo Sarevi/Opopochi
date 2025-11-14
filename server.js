@@ -2223,9 +2223,9 @@ app.post('/api/study/pre-warm', requireAuth, async (req, res) => {
     // Generar preguntas en background (CONTROLADO - previene duplicados)
     setImmediate(() => {
       runControlledBackgroundGeneration(userId, topicId, async () => {
-        console.log(`🔨 [Background] Generando 3 preguntas para pre-warming (cache agresivo: 80%)...`);
+        console.log(`🔨 [Background] Generando 2 preguntas para pre-warming (cache agresivo: 80%)...`);
 
-        const questionsNeeded = 3 - currentBufferSize;
+        const questionsNeeded = 2 - currentBufferSize;
         const batchQuestions = await generateQuestionBatch(userId, topicId, questionsNeeded, 0.80);
 
         // Añadir todas al buffer
