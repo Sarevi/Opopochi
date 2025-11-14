@@ -15,6 +15,7 @@ const cron = require('node-cron');
 const XLSX = require('xlsx');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
+const { body, param, validationResult } = require('express-validator');
 require('dotenv').config();
 
 // Importar sistema de base de datos
@@ -25,6 +26,94 @@ const port = process.env.PORT || 3000;
 
 // Inicializar base de datos
 db.initDatabase();
+
+// ========================
+// SISTEMA DE BACKUPS AUTOMÁTICOS
+// ========================
+
+/**
+ * Realiza backup de la base de datos con rotación automática
+ * Mantiene los últimos 30 días de backups
+ * @returns {Promise<string>} Ruta del archivo de backup creado
+ */
+async function backupDatabase() {
+  const backupDir = path.join(__dirname, 'backups');
+
+  try {
+    // Crear directorio de backups si no existe
+    await fs.mkdir(backupDir, { recursive: true });
+
+    // Generar nombre de archivo con timestamp
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-').split('T')[0];
+    const timeHour = new Date().toISOString().split('T')[1].split('.')[0].replace(/:/g, '-');
+    const backupFilename = `backup-${timestamp}_${timeHour}.db`;
+    const backupPath = path.join(backupDir, backupFilename);
+
+    // Verificar que la BD existe
+    const dbPath = path.join(__dirname, 'oposiciones.db');
+    try {
+      await fs.access(dbPath);
+    } catch (error) {
+      console.error('⚠️ Base de datos no encontrada, saltando backup');
+      return null;
+    }
+
+    // Realizar copia de la base de datos
+    await fs.copyFile(dbPath, backupPath);
+
+    // Verificar integridad del backup (que tenga tamaño razonable)
+    const stats = await fs.stat(backupPath);
+    if (stats.size < 1024) { // Menos de 1KB es sospechoso
+      throw new Error('Backup generado con tamaño sospechosamente pequeño');
+    }
+
+    console.log(`✅ Backup creado: ${backupFilename} (${(stats.size / 1024 / 1024).toFixed(2)} MB)`);
+
+    // Rotar backups antiguos (mantener últimos 30 días)
+    await rotateOldBackups(backupDir, 30);
+
+    return backupPath;
+  } catch (error) {
+    console.error('❌ Error creando backup de base de datos:', error);
+    throw error;
+  }
+}
+
+/**
+ * Elimina backups antiguos manteniendo solo los N más recientes
+ * @param {string} backupDir - Directorio de backups
+ * @param {number} daysToKeep - Días de backups a mantener
+ */
+async function rotateOldBackups(backupDir, daysToKeep = 30) {
+  try {
+    const files = await fs.readdir(backupDir);
+
+    // Filtrar solo archivos de backup
+    const backupFiles = files
+      .filter(f => f.startsWith('backup-') && f.endsWith('.db'))
+      .map(f => ({
+        name: f,
+        path: path.join(backupDir, f),
+        time: fsSync.statSync(path.join(backupDir, f)).mtime.getTime()
+      }))
+      .sort((a, b) => b.time - a.time); // Más reciente primero
+
+    // Si hay más de daysToKeep backups, eliminar los antiguos
+    if (backupFiles.length > daysToKeep) {
+      const toDelete = backupFiles.slice(daysToKeep);
+
+      for (const file of toDelete) {
+        await fs.unlink(file.path);
+        console.log(`🗑️  Backup antiguo eliminado: ${file.name}`);
+      }
+
+      console.log(`✅ Rotación completada: ${backupFiles.length - toDelete.length} backups mantenidos, ${toDelete.length} eliminados`);
+    }
+  } catch (error) {
+    console.error('⚠️ Error en rotación de backups:', error);
+    // No lanzar error - la rotación fallando no debe detener el backup
+  }
+}
 
 // Confiar en proxies (necesario para Render)
 app.set('trust proxy', 1);
@@ -174,6 +263,137 @@ app.use((req, res, next) => {
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname));
+
+// ========================
+// MIDDLEWARE DE VALIDACIÓN DE INPUTS
+// ========================
+
+/**
+ * Middleware para procesar errores de validación
+ * Retorna 400 Bad Request con detalles de errores
+ */
+const handleValidationErrors = (req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    const errorMessages = errors.array().map(err => ({
+      field: err.path || err.param,
+      message: err.msg,
+      value: err.value
+    }));
+
+    console.warn(`⚠️ Validación fallida en ${req.method} ${req.path}:`, errorMessages);
+
+    return res.status(400).json({
+      success: false,
+      error: 'Datos de entrada inválidos',
+      errors: errorMessages
+    });
+  }
+  next();
+};
+
+// Validación para registro de usuario
+const validateRegister = [
+  body('username')
+    .trim()
+    .isLength({ min: 3, max: 50 })
+    .withMessage('El nombre de usuario debe tener entre 3 y 50 caracteres')
+    .matches(/^[a-zA-Z0-9_-]+$/)
+    .withMessage('El nombre de usuario solo puede contener letras, números, guiones y guiones bajos'),
+  body('password')
+    .isLength({ min: 6 })
+    .withMessage('La contraseña debe tener al menos 6 caracteres'),
+  handleValidationErrors
+];
+
+// Validación para login
+const validateLogin = [
+  body('username')
+    .trim()
+    .notEmpty()
+    .withMessage('El nombre de usuario es requerido'),
+  body('password')
+    .notEmpty()
+    .withMessage('La contraseña es requerida'),
+  handleValidationErrors
+];
+
+// Validación para generación de examen
+const validateExamGeneration = [
+  body('questionCount')
+    .isInt({ min: 1, max: 100 })
+    .withMessage('El número de preguntas debe ser entre 1 y 100'),
+  body('topics')
+    .isArray({ min: 1, max: 18 })
+    .withMessage('Debes seleccionar entre 1 y 18 temas'),
+  body('topics.*')
+    .custom((value) => {
+      // Validación dinámica contra TOPIC_CONFIG
+      // Se validará en runtime cuando TOPIC_CONFIG esté disponible
+      return typeof value === 'string' && value.length > 0;
+    })
+    .withMessage('Cada tema debe ser una cadena de texto válida'),
+  handleValidationErrors
+];
+
+// Validación para examen oficial
+const validateOfficialExam = [
+  body('questionCount')
+    .isInt({ min: 1, max: 150 })
+    .withMessage('El número de preguntas debe ser entre 1 y 150'),
+  body('topics')
+    .isArray({ min: 1, max: 18 })
+    .withMessage('Debes seleccionar entre 1 y 18 temas'),
+  handleValidationErrors
+];
+
+// Validación para preguntas de estudio
+const validateStudyQuestion = [
+  body('topicId')
+    .trim()
+    .notEmpty()
+    .withMessage('El ID del tema es requerido')
+    .isLength({ max: 100 })
+    .withMessage('El ID del tema es demasiado largo'),
+  handleValidationErrors
+];
+
+// Validación para registrar respuesta
+const validateRecordAnswer = [
+  body('topicId')
+    .trim()
+    .notEmpty()
+    .withMessage('El ID del tema es requerido'),
+  body('isCorrect')
+    .isBoolean()
+    .withMessage('isCorrect debe ser un booleano'),
+  body('questionData')
+    .optional()
+    .isObject()
+    .withMessage('questionData debe ser un objeto'),
+  handleValidationErrors
+];
+
+// Validación para pre-warming
+const validatePreWarm = [
+  body('topicId')
+    .trim()
+    .notEmpty()
+    .withMessage('El ID del tema es requerido')
+    .isLength({ max: 100 })
+    .withMessage('El ID del tema es demasiado largo'),
+  handleValidationErrors
+];
+
+// Validación para parámetros de usuario (admin)
+const validateUserId = [
+  param('id')
+    .isInt({ min: 1 })
+    .withMessage('El ID de usuario debe ser un número entero positivo'),
+  handleValidationErrors
+];
+
+console.log('✅ Middleware de validación de inputs configurado');
 
 // Cliente de Anthropic (Claude)
 const anthropic = new Anthropic({
@@ -1348,13 +1568,12 @@ app.get('/', (req, res) => {
 });
 
 // Registro de usuario
-app.post('/api/auth/register', authLimiter, (req, res) => {
+app.post('/api/auth/register', authLimiter, validateRegister, (req, res) => {
   try {
     const { username, password } = req.body;
 
-    if (!username || !password) {
-      return res.status(400).json({ error: 'Username y password requeridos' });
-    }
+    // Las validaciones básicas ya fueron hechas por el middleware
+    // Aquí solo validaciones de negocio
 
     if (username.length < 3) {
       return res.status(400).json({ error: 'Username debe tener al menos 3 caracteres' });
@@ -1385,7 +1604,7 @@ app.post('/api/auth/register', authLimiter, (req, res) => {
 });
 
 // Login
-app.post('/api/auth/login', authLimiter, (req, res) => {
+app.post('/api/auth/login', authLimiter, validateLogin, (req, res) => {
   try {
     const { username, password } = req.body;
     console.log('🔑 Intento de login - Usuario:', username);
@@ -1533,7 +1752,7 @@ function parseUserId(idString) {
 // ========================
 
 // Activar usuario
-app.post('/api/admin/users/:id/activate', requireAdmin, (req, res) => {
+app.post('/api/admin/users/:id/activate', requireAdmin, validateUserId, (req, res) => {
   try {
     const userId = parseUserId(req.params.id);
     db.activateUser(userId);
@@ -1545,7 +1764,7 @@ app.post('/api/admin/users/:id/activate', requireAdmin, (req, res) => {
 });
 
 // Bloquear usuario
-app.post('/api/admin/users/:id/block', requireAdmin, (req, res) => {
+app.post('/api/admin/users/:id/block', requireAdmin, validateUserId, (req, res) => {
   try {
     const userId = parseUserId(req.params.id);
     db.blockUser(userId);
@@ -1579,7 +1798,7 @@ app.get('/api/admin/stats', requireAdmin, (req, res) => {
 });
 
 // Obtener actividad detallada de un usuario (admin)
-app.get('/api/admin/users/:id/activity', requireAdmin, (req, res) => {
+app.get('/api/admin/users/:id/activity', requireAdmin, validateUserId, (req, res) => {
   try {
     const userId = parseUserId(req.params.id);
 
@@ -1612,7 +1831,7 @@ app.get('/api/admin/today', requireAdmin, (req, res) => {
 });
 
 // Exportar datos de un usuario específico a Excel
-app.get('/api/admin/export/user/:id', requireAdmin, (req, res) => {
+app.get('/api/admin/export/user/:id', requireAdmin, validateUserId, (req, res) => {
   try {
     const userId = parseUserId(req.params.id);
     const users = db.getAdminStats();
@@ -1727,6 +1946,45 @@ app.get('/api/admin/export/all', requireAdmin, (req, res) => {
 });
 
 // ========================
+// ENDPOINT DE BACKUP MANUAL (ADMIN)
+// ========================
+
+app.post('/api/admin/backup', requireAdmin, async (req, res) => {
+  try {
+    console.log('💾 Backup manual solicitado por admin');
+    const backupPath = await backupDatabase();
+
+    if (!backupPath) {
+      return res.status(500).json({
+        success: false,
+        error: 'No se pudo crear el backup (base de datos no encontrada)'
+      });
+    }
+
+    // Obtener información del backup
+    const stats = await fs.stat(backupPath);
+    const filename = path.basename(backupPath);
+
+    res.json({
+      success: true,
+      message: 'Backup creado exitosamente',
+      backup: {
+        filename: filename,
+        size: `${(stats.size / 1024 / 1024).toFixed(2)} MB`,
+        created: new Date().toISOString()
+      }
+    });
+  } catch (error) {
+    console.error('❌ Error en backup manual:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Error al crear backup',
+      details: error.message
+    });
+  }
+});
+
+// ========================
 // RUTAS DE LA API OPTIMIZADAS
 // ========================
 
@@ -1738,7 +1996,7 @@ app.get('/api/topics', (req, res) => {
   }
 });
 
-app.post('/api/generate-exam', requireAuth, examLimiter, async (req, res) => {
+app.post('/api/generate-exam', requireAuth, examLimiter, validateExamGeneration, async (req, res) => {
   try {
     const { topics, questionCount = 1 } = req.body;
     const userId = req.user.id;
@@ -2184,7 +2442,7 @@ app.post('/api/generate-exam', requireAuth, examLimiter, async (req, res) => {
 // ====================================================================
 // FASE 3: PRE-WARMING - Generar preguntas ANTES de que usuario las pida
 // ====================================================================
-app.post('/api/study/pre-warm', requireAuth, async (req, res) => {
+app.post('/api/study/pre-warm', requireAuth, validatePreWarm, async (req, res) => {
   try {
     const { topicId } = req.body;
     const userId = req.user.id;
@@ -2251,7 +2509,7 @@ app.post('/api/study/pre-warm', requireAuth, async (req, res) => {
 // ====================================================================
 // FASE 2: ENDPOINT CON PREFETCH PARA ESTUDIO (RESPUESTA INSTANTÁNEA)
 // ====================================================================
-app.post('/api/study/question', requireAuth, studyLimiter, async (req, res) => {
+app.post('/api/study/question', requireAuth, studyLimiter, validateStudyQuestion, async (req, res) => {
   try {
     const { topicId } = req.body;
     const userId = req.user.id;
@@ -2599,7 +2857,7 @@ async function refillBuffer(userId, topicId, count = 3) {
   }
 }
 
-app.post('/api/record-answer', requireAuth, (req, res) => {
+app.post('/api/record-answer', requireAuth, validateRecordAnswer, (req, res) => {
   try {
     const { topicId, questionData, userAnswer, isCorrect, isReview, questionId } = req.body;
     const userId = req.user.id;
@@ -2782,7 +3040,7 @@ app.get('/api/review-exam/:topicId', requireAuth, (req, res) => {
 // EXAMEN OFICIAL (SIMULACRO)
 // ========================
 
-app.post('/api/exam/official', requireAuth, examLimiter, async (req, res) => {
+app.post('/api/exam/official', requireAuth, examLimiter, validateOfficialExam, async (req, res) => {
   try {
     const { questionCount } = req.body; // 25, 50, 75, 100
     const userId = req.user.id;
@@ -3461,6 +3719,22 @@ async function startServer() {
       }, 30 * 60 * 1000); // 30 minutos
 
       console.log('⏰ Limpieza automática programada cada 30 minutos\n');
+
+      // BACKUP DIARIO: Todos los días a las 2:00 AM
+      cron.schedule('0 2 * * *', async () => {
+        console.log('💾 Cron: Iniciando backup automático de base de datos...');
+        try {
+          await backupDatabase();
+          console.log('✅ Backup automático completado exitosamente');
+        } catch (error) {
+          console.error('❌ Error en backup automático:', error);
+          // En producción, aquí podrías enviar alerta por email/Slack
+        }
+      }, {
+        timezone: "Europe/Madrid"
+      });
+
+      console.log('💾 Backup automático programado: Diario a las 2:00 AM\n');
 
       // PRE-GENERACIÓN MENSUAL: Día 1 de cada mes a las 3:00 AM
       cron.schedule('0 3 1 * *', async () => {
