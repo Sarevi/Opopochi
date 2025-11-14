@@ -2105,12 +2105,17 @@
         function startStudying() {
             const select = document.getElementById('topic-select');
             const selectedTopicId = select.value;
-            
+
             if (!selectedTopicId) {
                 showError('Por favor selecciona un tema');
                 return;
             }
-            
+
+            // 🔴 FIX: Asegurar que NO estamos en modo examen
+            isOfficialExamMode = false;
+            officialExamQuestions = [];
+            officialExamAnswers = [];
+
             currentTopic = selectedTopicId;
 
             const topicConfig = availableTopics.find(([id]) => id === selectedTopicId);
@@ -3281,9 +3286,16 @@
         // Cancelar examen pendiente
         function cancelPendingExam() {
             if (confirm('¿Estás seguro? Se perderá todo el progreso del examen actual.')) {
+                // Limpiar localStorage
                 localStorage.removeItem('official_exam_progress');
+
+                // 🔴 FIX: Resetear variables globales del examen
+                isOfficialExamMode = false;
+                officialExamQuestions = [];
+                officialExamAnswers = [];
+
                 checkPendingExam();
-                console.log('❌ Examen pendiente cancelado');
+                console.log('❌ Examen pendiente cancelado y variables reseteadas');
             }
         }
 
