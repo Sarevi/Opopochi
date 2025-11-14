@@ -2204,7 +2204,7 @@ app.post('/api/study/pre-warm', requireAuth, async (req, res) => {
     // Verificar si ya tiene buffer
     const currentBufferSize = db.getBufferSize(userId, topicId);
 
-    if (currentBufferSize >= 2) {
+    if (currentBufferSize >= 3) {
       console.log(`✓ Buffer ya tiene ${currentBufferSize} preguntas, no es necesario pre-warm`);
       return res.json({
         success: true,
@@ -2292,14 +2292,14 @@ app.post('/api/study/question', requireAuth, studyLimiter, async (req, res) => {
         const newBufferSize = db.getBufferSize(userId, topicId);
         console.log(`💾 Buffer después de entrega: ${newBufferSize} preguntas`);
 
-        // Si buffer bajó de 2, rellenar en background
-        if (newBufferSize < 2) {
+        // Si buffer bajó de 3, rellenar en background
+        if (newBufferSize < 3) {
           console.log(`🔄 Buffer bajo (${newBufferSize}), iniciando refill en background...`);
 
-          // Generar 1-2 preguntas más en background (CONTROLADO - previene duplicados)
+          // Generar 2-3 preguntas más en background (CONTROLADO - previene duplicados)
           setImmediate(() => {
             runControlledBackgroundGeneration(userId, topicId, async () => {
-              await refillBuffer(userId, topicId, 2 - newBufferSize);
+              await refillBuffer(userId, topicId, 3 - newBufferSize);
             });
           });
         }
@@ -2319,10 +2319,10 @@ app.post('/api/study/question', requireAuth, studyLimiter, async (req, res) => {
       }
     }
 
-    // PASO 2: Buffer vacío - generar batch de 2 preguntas (optimizado FASE 3)
-    console.log(`🔨 Buffer vacío - generando batch inicial de 2 preguntas...`);
+    // PASO 2: Buffer vacío - generar batch de 3 preguntas (optimizado FASE 3)
+    console.log(`🔨 Buffer vacío - generando batch inicial de 3 preguntas...`);
 
-    const batchQuestions = await generateQuestionBatch(userId, topicId, 2);
+    const batchQuestions = await generateQuestionBatch(userId, topicId, 3);
 
     if (batchQuestions.length === 0) {
       return res.status(500).json({ error: 'No se pudieron generar preguntas' });
@@ -2331,7 +2331,7 @@ app.post('/api/study/question', requireAuth, studyLimiter, async (req, res) => {
     // Primera pregunta para retornar
     questionToReturn = batchQuestions[0];
 
-    // Resto al buffer (1 pregunta en batch de 2)
+    // Resto al buffer (2 preguntas en batch de 3)
     for (let i = 1; i < batchQuestions.length; i++) {
       const q = batchQuestions[i];
       db.addToBuffer(userId, topicId, q, q.difficulty, q._cacheId || null);
@@ -2564,20 +2564,20 @@ async function executeWithConcurrencyLimit(promiseFunctions, concurrencyLimit = 
 /**
  * Rellenar buffer en background
  */
-async function refillBuffer(userId, topicId, count = 2) {
+async function refillBuffer(userId, topicId, count = 3) {
   console.log(`🔄 [Background] Rellenando buffer con ${count} preguntas...`);
 
   try {
     // 🔴 FIX: Verificar buffer actual antes de generar (previene duplicados por race condition)
     const currentBufferSize = db.getBufferSize(userId, topicId);
 
-    if (currentBufferSize >= 2) {
+    if (currentBufferSize >= 3) {
       console.log(`⏭️  [Background] Buffer ya tiene ${currentBufferSize} preguntas, refill cancelado`);
       return;
     }
 
     // Ajustar cantidad a generar según buffer actual
-    const actualCount = Math.max(0, 2 - currentBufferSize);
+    const actualCount = Math.max(0, 3 - currentBufferSize);
 
     if (actualCount === 0) {
       console.log(`⏭️  [Background] Buffer completo, no se necesita refill`);
