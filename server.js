@@ -2359,10 +2359,10 @@ app.post('/api/study/question', requireAuth, studyLimiter, async (req, res) => {
       }
     }
 
-    // PASO 2: Buffer vacío - generar SOLO 1 pregunta (OPTIMIZACIÓN: máxima velocidad)
-    console.log(`🔨 Buffer vacío - generando 1 pregunta inmediata (optimizado)...`);
+    // PASO 2: Buffer vacío - generar 2 preguntas (OPTIMIZACIÓN: balance velocidad/buffer)
+    console.log(`🔨 Buffer vacío - generando 2 preguntas (1 entrega + 1 buffer)...`);
 
-    const batchQuestions = await generateQuestionBatch(userId, topicId, 1);
+    const batchQuestions = await generateQuestionBatch(userId, topicId, 2);
 
     if (batchQuestions.length === 0) {
       return res.status(500).json({ error: 'No se pudieron generar preguntas' });
@@ -2371,18 +2371,29 @@ app.post('/api/study/question', requireAuth, studyLimiter, async (req, res) => {
     // Primera pregunta para retornar
     questionToReturn = batchQuestions[0];
 
-    console.log(`✅ Pregunta generada y entregada inmediatamente`);
+    // Segunda pregunta al buffer (si existe)
+    if (batchQuestions.length > 1) {
+      const q = batchQuestions[1];
+      db.addToBuffer(userId, topicId, q, q.difficulty, q._cacheId || null);
+      console.log(`✅ 1ª pregunta entregada, 2ª pregunta añadida al buffer`);
+    } else {
+      console.log(`✅ Pregunta generada y entregada (solo se generó 1)`);
+    }
 
-    // Iniciar refill en background para llenar buffer con 3 preguntas
+    // Iniciar refill en background para completar buffer a 3 preguntas
     setImmediate(() => {
       runControlledBackgroundGeneration(userId, topicId, async () => {
-        console.log(`🔄 Llenando buffer en background (3 preguntas)...`);
-        await refillBuffer(userId, topicId, 3);
+        const currentSize = db.getBufferSize(userId, topicId);
+        const needed = 3 - currentSize;
+        if (needed > 0) {
+          console.log(`🔄 Llenando buffer en background (${needed} preguntas más)...`);
+          await refillBuffer(userId, topicId, needed);
+        }
       });
     });
 
     const finalBufferSize = db.getBufferSize(userId, topicId);
-    console.log(`💾 Buffer actual: ${finalBufferSize} (refill en progreso)`);
+    console.log(`💾 Buffer actual: ${finalBufferSize} pregunta(s) (refill en progreso)`);
 
     // Aleatorizar opciones antes de devolver
     const randomizedQuestion = randomizeQuestionOptions(questionToReturn);
