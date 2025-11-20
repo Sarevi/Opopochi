@@ -216,6 +216,14 @@ const backgroundGenerations = new Map();
 // TTL para limpieza automática (5 minutos por defecto)
 const BACKGROUND_GENERATION_TTL = 5 * 60 * 1000;
 
+// ========================
+// CACHÉ DE DOCUMENTOS EN MEMORIA
+// ========================
+// Cachea el contenido de documentos para evitar lecturas repetidas del disco
+// Clave: topicId -> { content: string, chunks: string[], timestamp: number }
+const documentsCache = new Map();
+const DOCUMENT_CACHE_TTL = 30 * 60 * 1000; // 30 minutos
+
 // Función auxiliar para ejecutar generación controlada
 async function runControlledBackgroundGeneration(userId, topicId, generationFn) {
   const key = `${userId}-${topicId}`;
@@ -1164,6 +1172,19 @@ function splitIntoChunks(content, chunkSize = 1000) {
 }
 
 async function getDocumentsByTopics(topics) {
+  // Para un solo tema, intentar usar caché
+  if (topics.length === 1) {
+    const topicId = topics[0];
+    const cached = documentsCache.get(topicId);
+
+    // Si está en caché y no ha expirado, retornar inmediatamente
+    if (cached && (Date.now() - cached.timestamp < DOCUMENT_CACHE_TTL)) {
+      console.log(`💾 Contenido de ${topicId} desde caché (${Math.round((Date.now() - cached.timestamp) / 1000)}s)`);
+      return cached.content;
+    }
+  }
+
+  // Si no está en caché o es multi-tema, leer del disco
   let allContent = '';
   let successCount = 0;
 
@@ -1192,6 +1213,17 @@ async function getDocumentsByTopics(topics) {
   }
 
   console.log(`📊 Archivos procesados: ${successCount}/${topics.length}`);
+
+  // Si es un solo tema, guardarlo en caché
+  if (topics.length === 1 && allContent.trim()) {
+    const topicId = topics[0];
+    documentsCache.set(topicId, {
+      content: allContent,
+      timestamp: Date.now()
+    });
+    console.log(`💾 Contenido de ${topicId} guardado en caché`);
+  }
+
   return allContent;
 }
 
@@ -2223,18 +2255,26 @@ app.post('/api/study/pre-warm', requireAuth, async (req, res) => {
     // Generar preguntas en background (CONTROLADO - previene duplicados)
     setImmediate(() => {
       runControlledBackgroundGeneration(userId, topicId, async () => {
-        console.log(`🔨 [Background] Generando 2 preguntas para pre-warming (cache agresivo: 80%)...`);
+        console.log(`🔨 [Background] Pre-warming: generando 1 pregunta rápida (cache agresivo: 90%)...`);
 
-        const questionsNeeded = 2 - currentBufferSize;
-        const batchQuestions = await generateQuestionBatch(userId, topicId, questionsNeeded, 0.80);
+        const questionsNeeded = 1 - currentBufferSize;
+        if (questionsNeeded > 0) {
+          const batchQuestions = await generateQuestionBatch(userId, topicId, questionsNeeded, 0.90);
 
-        // Añadir todas al buffer
-        for (const q of batchQuestions) {
-          db.addToBuffer(userId, topicId, q, q.difficulty, q._cacheId || null);
+          // Añadir todas al buffer
+          for (const q of batchQuestions) {
+            db.addToBuffer(userId, topicId, q, q.difficulty, q._cacheId || null);
+          }
+
+          const finalBufferSize = db.getBufferSize(userId, topicId);
+          console.log(`✅ [Background] Pre-warming completado: ${finalBufferSize} pregunta(s) en buffer`);
+
+          // Si solo hay 1 pregunta, generar 2 más en background para llenar buffer
+          if (finalBufferSize < 3) {
+            console.log(`🔄 Buffer bajo (${finalBufferSize}), generando ${3 - finalBufferSize} preguntas más...`);
+            await refillBuffer(userId, topicId, 3 - finalBufferSize);
+          }
         }
-
-        const finalBufferSize = db.getBufferSize(userId, topicId);
-        console.log(`✅ [Background] Pre-warming completado: ${finalBufferSize} preguntas en buffer`);
       });
     });
 
@@ -2319,10 +2359,10 @@ app.post('/api/study/question', requireAuth, studyLimiter, async (req, res) => {
       }
     }
 
-    // PASO 2: Buffer vacío - generar batch de 3 preguntas (optimizado FASE 3)
-    console.log(`🔨 Buffer vacío - generando batch inicial de 3 preguntas...`);
+    // PASO 2: Buffer vacío - generar SOLO 1 pregunta (OPTIMIZACIÓN: máxima velocidad)
+    console.log(`🔨 Buffer vacío - generando 1 pregunta inmediata (optimizado)...`);
 
-    const batchQuestions = await generateQuestionBatch(userId, topicId, 3);
+    const batchQuestions = await generateQuestionBatch(userId, topicId, 1);
 
     if (batchQuestions.length === 0) {
       return res.status(500).json({ error: 'No se pudieron generar preguntas' });
@@ -2331,14 +2371,18 @@ app.post('/api/study/question', requireAuth, studyLimiter, async (req, res) => {
     // Primera pregunta para retornar
     questionToReturn = batchQuestions[0];
 
-    // Resto al buffer (2 preguntas en batch de 3)
-    for (let i = 1; i < batchQuestions.length; i++) {
-      const q = batchQuestions[i];
-      db.addToBuffer(userId, topicId, q, q.difficulty, q._cacheId || null);
-    }
+    console.log(`✅ Pregunta generada y entregada inmediatamente`);
+
+    // Iniciar refill en background para llenar buffer con 3 preguntas
+    setImmediate(() => {
+      runControlledBackgroundGeneration(userId, topicId, async () => {
+        console.log(`🔄 Llenando buffer en background (3 preguntas)...`);
+        await refillBuffer(userId, topicId, 3);
+      });
+    });
 
     const finalBufferSize = db.getBufferSize(userId, topicId);
-    console.log(`✅ Batch generado: 1 entregada + ${finalBufferSize} en buffer`);
+    console.log(`💾 Buffer actual: ${finalBufferSize} (refill en progreso)`);
 
     // Aleatorizar opciones antes de devolver
     const randomizedQuestion = randomizeQuestionOptions(questionToReturn);
