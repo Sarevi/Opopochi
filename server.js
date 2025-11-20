@@ -2255,11 +2255,11 @@ app.post('/api/study/pre-warm', requireAuth, async (req, res) => {
     // Generar preguntas en background (CONTROLADO - previene duplicados)
     setImmediate(() => {
       runControlledBackgroundGeneration(userId, topicId, async () => {
-        console.log(`🔨 [Background] Pre-warming: generando 1 pregunta rápida (cache agresivo: 90%)...`);
+        console.log(`🔨 [Background] Pre-warming: generando 2 preguntas rápidas (cache agresivo: 95%)...`);
 
-        const questionsNeeded = 1 - currentBufferSize;
+        const questionsNeeded = Math.min(2, 3 - currentBufferSize);
         if (questionsNeeded > 0) {
-          const batchQuestions = await generateQuestionBatch(userId, topicId, questionsNeeded, 0.90);
+          const batchQuestions = await generateQuestionBatch(userId, topicId, questionsNeeded, 0.95);
 
           // Añadir todas al buffer
           for (const q of batchQuestions) {
@@ -2269,9 +2269,9 @@ app.post('/api/study/pre-warm', requireAuth, async (req, res) => {
           const finalBufferSize = db.getBufferSize(userId, topicId);
           console.log(`✅ [Background] Pre-warming completado: ${finalBufferSize} pregunta(s) en buffer`);
 
-          // Si solo hay 1 pregunta, generar 2 más en background para llenar buffer
+          // Si aún no tiene 3, generar 1 más en background
           if (finalBufferSize < 3) {
-            console.log(`🔄 Buffer bajo (${finalBufferSize}), generando ${3 - finalBufferSize} preguntas más...`);
+            console.log(`🔄 Buffer bajo (${finalBufferSize}), generando ${3 - finalBufferSize} pregunta(s) más...`);
             await refillBuffer(userId, topicId, 3 - finalBufferSize);
           }
         }
@@ -2361,8 +2361,10 @@ app.post('/api/study/question', requireAuth, studyLimiter, async (req, res) => {
 
     // PASO 2: Buffer vacío - generar 2 preguntas (OPTIMIZACIÓN: balance velocidad/buffer)
     console.log(`🔨 Buffer vacío - generando 2 preguntas (1 entrega + 1 buffer)...`);
+    const startTime = Date.now();
 
-    const batchQuestions = await generateQuestionBatch(userId, topicId, 2);
+    // OPTIMIZACIÓN AGRESIVA: 98% probabilidad de caché para máxima velocidad
+    const batchQuestions = await generateQuestionBatch(userId, topicId, 2, 0.98);
 
     if (batchQuestions.length === 0) {
       return res.status(500).json({ error: 'No se pudieron generar preguntas' });
@@ -2393,7 +2395,9 @@ app.post('/api/study/question', requireAuth, studyLimiter, async (req, res) => {
     });
 
     const finalBufferSize = db.getBufferSize(userId, topicId);
+    const elapsedTime = ((Date.now() - startTime) / 1000).toFixed(2);
     console.log(`💾 Buffer actual: ${finalBufferSize} pregunta(s) (refill en progreso)`);
+    console.log(`⏱️  Tiempo de generación: ${elapsedTime}s`);
 
     // Aleatorizar opciones antes de devolver
     const randomizedQuestion = randomizeQuestionOptions(questionToReturn);
@@ -2447,21 +2451,24 @@ app.post('/api/study/question', requireAuth, studyLimiter, async (req, res) => {
 
 /**
  * Generar batch de preguntas (mix de caché + nuevas)
- * cacheProb aumentado a 70% para optimizar costos (ahorro ~25%)
+ * cacheProb aumentado a 90% para optimizar velocidad (prioriza caché)
  */
-async function generateQuestionBatch(userId, topicId, count = 3, cacheProb = 0.70) {
+async function generateQuestionBatch(userId, topicId, count = 3, cacheProb = 0.90) {
+  const batchStartTime = Date.now();
   const questions = [];
   const MAX_RETRIES = count * 2; // Intentar hasta el doble para asegurar al menos 1 pregunta
 
   // Obtener contenido del tema
+  const docStartTime = Date.now();
   const topicContent = await getDocumentsByTopics([topicId]);
   const topicChunks = splitIntoChunks(topicContent, 1000);
+  console.log(`⏱️  [Timing] Carga de documentos: ${((Date.now() - docStartTime) / 1000).toFixed(2)}s`);
 
   if (topicChunks.length === 0) {
     throw new Error('No hay contenido disponible para este tema');
   }
 
-  console.log(`📄 Tema ${topicId}: ${topicChunks.length} chunks disponibles`);
+  console.log(`📄 Tema ${topicId}: ${topicChunks.length} chunks disponibles (cacheProb: ${(cacheProb * 100).toFixed(0)}%)`);
 
   // Generar preguntas mezclando dificultades (batches de 2)
   let attempts = 0;
@@ -2519,7 +2526,9 @@ async function generateQuestionBatch(userId, topicId, count = 3, cacheProb = 0.7
         .replace('{{CHUNK_2}}', chunk2);
 
       try {
+        const claudeStartTime = Date.now();
         const response = await callClaudeWithImprovedRetry(fullPrompt, maxTokens, difficulty, 2);
+        console.log(`⏱️  [Timing] Llamada a Claude: ${((Date.now() - claudeStartTime) / 1000).toFixed(2)}s`);
         const responseText = extractClaudeResponseText(response);
         const questionsData = parseClaudeResponse(responseText);
 
@@ -2579,7 +2588,9 @@ async function generateQuestionBatch(userId, topicId, count = 3, cacheProb = 0.7
   }
 
   // Log final con stats
+  const batchTotalTime = ((Date.now() - batchStartTime) / 1000).toFixed(2);
   console.log(`✅ Batch completado: ${questions.length}/${count} preguntas en ${attempts} intentos`);
+  console.log(`⏱️  [Timing] Tiempo total del batch: ${batchTotalTime}s`);
 
   // Si no se generó NINGUNA pregunta, lanzar error
   if (questions.length === 0) {
