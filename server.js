@@ -15,6 +15,8 @@ const cron = require('node-cron');
 const XLSX = require('xlsx');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
+const Bottleneck = require('bottleneck');
+const async = require('async');
 require('dotenv').config();
 
 // Importar sistema de base de datos
@@ -178,6 +180,34 @@ app.use(express.static(__dirname));
 // Cliente de Anthropic (Claude)
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
+});
+
+// ========================
+// RATE LIMITER DE CLAUDE API
+// ========================
+// Limita las llamadas a Claude API para respetar el límite de 50 req/min
+// y prevenir errores 429 (Rate Limit Exceeded) con múltiples exámenes concurrentes
+const claudeLimiter = new Bottleneck({
+  maxConcurrent: 10,        // Máximo 10 requests simultáneos
+  minTime: 1200,            // Mínimo 1.2 segundos entre requests (50/min)
+  reservoir: 50,            // Pool de 50 tokens
+  reservoirRefreshAmount: 50,
+  reservoirRefreshInterval: 60 * 1000,  // Refrescar cada minuto
+  // Estrategia cuando se alcanza el límite
+  strategy: Bottleneck.strategy.LEAK
+});
+
+// Eventos de monitoreo (opcional, para debugging)
+claudeLimiter.on('failed', (error, jobInfo) => {
+  console.error(`⚠️ Claude API call failed: ${error.message}`);
+  if (jobInfo.retryCount < 2) {
+    console.log(`🔄 Reintentando en ${jobInfo.retryCount * 2}s...`);
+    return jobInfo.retryCount * 2000; // Retry after 2s, 4s
+  }
+});
+
+claudeLimiter.on('depleted', () => {
+  console.warn('⏳ Rate limit alcanzado, esperando...');
 });
 
 // Directorio de documentos
@@ -373,7 +403,8 @@ async function callClaudeWithImprovedRetry(fullPrompt, maxTokens = 700, question
           // Determinar temperatura según dificultad
           const temperature = TEMPERATURE_CONFIG[questionType] || 0.5;
 
-          const response = await anthropic.messages.create({
+          // Envolver llamada a Claude con rate limiter (respeta 50 req/min)
+          const response = await claudeLimiter.schedule(() => anthropic.messages.create({
         model: "claude-haiku-4-5-20251001", // Claude Haiku 4.5 - Rápido, económico y capaz
         max_tokens: maxTokens, // Variable según tipo de pregunta
         temperature: temperature,  // Temperatura variable según dificultad
@@ -423,7 +454,7 @@ async function callClaudeWithImprovedRetry(fullPrompt, maxTokens = 700, question
           role: "user",
           content: fullPrompt
         }]
-      });
+      }));
 
           console.log(`✅ ${questionsPerCall} preguntas ${questionType} generadas en intento ${attempt}`);
           return response;
@@ -1770,410 +1801,444 @@ app.get('/api/topics', (req, res) => {
   }
 });
 
+// ========================
+// QUEUE PARA EXÁMENES
+// ========================
+// Limita exámenes concurrentes para prevenir sobrecarga de memoria y Claude API
+// Con 30 exámenes concurrentes + rate limiter, soporta 100+ usuarios
+const examQueue = async.queue(async (task) => {
+  return await task.fn();
+}, 30); // MÁXIMO 30 exámenes simultáneos
+
+// Monitoreo de la queue
+examQueue.saturated(() => {
+  console.warn('⚠️ Queue de exámenes saturada (30 concurrentes)');
+});
+
+examQueue.empty(() => {
+  console.log('✅ Queue de exámenes vacía');
+});
+
 app.post('/api/generate-exam', requireAuth, examLimiter, async (req, res) => {
-  try {
-    const { topics, questionCount = 1 } = req.body;
-    const userId = req.user.id;
+  const { topics, questionCount = 1 } = req.body;
+  const userId = req.user.id;
 
-    if (!topics?.length) {
-      return res.status(400).json({ error: 'Selecciona al menos un tema' });
-    }
+  // Validación temprana antes de encolar
+  if (!topics?.length) {
+    return res.status(400).json({ error: 'Selecciona al menos un tema' });
+  }
 
-    console.log(`📚 Usuario ${userId} solicita ${questionCount} preguntas de:`, topics);
+  console.log(`📚 Usuario ${userId} solicita ${questionCount} preguntas de:`, topics);
+  console.log(`⏳ Queue: ${examQueue.length()} esperando, ${examQueue.running()} en progreso`);
 
-    // Obtener todo el contenido para dividir en chunks
-    const allContent = await getDocumentsByTopics(topics);
+  // Encolar la generación del examen (máximo 30 concurrentes)
+  examQueue.push({
+    fn: async () => {
+      try {
+        // Obtener todo el contenido para dividir en chunks
+        const allContent = await getDocumentsByTopics(topics);
 
-    if (!allContent || !allContent.trim()) {
-      return res.status(404).json({
-        error: 'No se encontró contenido para los temas seleccionados'
-      });
-    }
-
-    // Dividir en chunks de 1000 caracteres (optimizado)
-    const chunks = splitIntoChunks(allContent, 1000);
-    console.log(`📄 Documento dividido en ${chunks.length} chunks`);
-
-    if (chunks.length === 0) {
-      return res.status(404).json({ error: 'No hay contenido suficiente' });
-    }
-
-    let allGeneratedQuestions = [];
-
-    // CONFIGURACIÓN DE CACHÉ
-    const CACHE_PROBABILITY = 0.60; // 60% intentar caché, 40% generar nueva
-    let cacheHits = 0;
-    let cacheMisses = 0;
-
-    // SISTEMA 3 NIVELES: 20% simples / 60% medias / 20% elaboradas
-    const totalNeeded = questionCount;
-    const simpleNeeded = Math.round(totalNeeded * 0.20); // 20% simples
-    const mediaNeeded = Math.round(totalNeeded * 0.60); // 60% medias
-    const elaboratedNeeded = totalNeeded - simpleNeeded - mediaNeeded; // 20% elaboradas (resto)
-
-    // Distribuir preguntas equitativamente entre temas
-    const questionsPerTopic = {
-      simple: Math.ceil(simpleNeeded / topics.length),
-      media: Math.ceil(mediaNeeded / topics.length),
-      elaborada: Math.ceil(elaboratedNeeded / topics.length)
-    };
-
-    console.log(`🎯 Plan (20/60/20): ${simpleNeeded} simples + ${mediaNeeded} medias + ${elaboratedNeeded} elaboradas`);
-    console.log(`📊 Distribución por tema (${topics.length} temas): ${questionsPerTopic.simple} simples + ${questionsPerTopic.media} medias + ${questionsPerTopic.elaborada} elaboradas por tema`);
-
-    // ====================================================================
-    // GENERAR PREGUNTAS POR TEMA ESPECÍFICO (distribución equitativa)
-    // ====================================================================
-
-    for (const currentTopic of topics) {
-      console.log(`\n${'='.repeat(60)}`);
-      console.log(`📘 Procesando tema: ${currentTopic}`);
-      console.log(`${'='.repeat(60)}`);
-
-      // Obtener contenido específico de este tema
-      const topicContent = await getDocumentsByTopics([currentTopic]);
-      const topicChunks = splitIntoChunks(topicContent, 1000);
-
-      console.log(`📄 Tema ${currentTopic}: ${topicChunks.length} chunks disponibles`);
-
-      // --- PREGUNTAS SIMPLES para este tema ---
-      let simpleCount = 0;
-      while (simpleCount < questionsPerTopic.simple && allGeneratedQuestions.filter(q => q._sourceTopic === currentTopic && q.difficulty === 'simple').length < questionsPerTopic.simple) {
-        const questionsToGet = Math.min(3, questionsPerTopic.simple - simpleCount);
-        const tryCache = Math.random() < CACHE_PROBABILITY;
-        let questions = [];
-
-        if (tryCache) {
-          console.log(`\n💾 SIMPLE [${currentTopic}] - Intentando caché (${questionsToGet} preguntas)...`);
-          for (let j = 0; j < questionsToGet; j++) {
-            const cached = db.getCachedQuestion(userId, [currentTopic], 'simple');
-            if (cached) {
-              cached.question._sourceTopic = currentTopic;
-              questions.push(cached.question);
-              db.markQuestionAsSeen(userId, cached.cacheId, 'exam');
-              cacheHits++;
-              console.log(`✓ Pregunta de caché (ID: ${cached.cacheId})`);
-            } else {
-              break;
-            }
-          }
+        if (!allContent || !allContent.trim()) {
+          const error = new Error('No se encontró contenido para los temas seleccionados');
+          error.status = 404;
+          throw error;
         }
 
-        if (questions.length < questionsToGet) {
-          const toGenerate = questionsToGet - questions.length;
-          console.log(`\n⚪ SIMPLE [${currentTopic}] - Generando ${toGenerate} preguntas nuevas`);
+        // Dividir en chunks de 1000 caracteres (optimizado)
+        const chunks = splitIntoChunks(allContent, 1000);
+        console.log(`📄 Documento dividido en ${chunks.length} chunks`);
 
-          // Seleccionar 2 chunks espaciados
-          const selectedIndices = selectSpacedChunks(userId, currentTopic, topicChunks, 2);
-          const chunk1 = topicChunks[selectedIndices[0]];
-          const chunk2 = selectedIndices.length > 1 ? topicChunks[selectedIndices[1]] : chunk1;
+        if (chunks.length === 0) {
+          const error = new Error('No hay contenido suficiente');
+          error.status = 404;
+          throw error;
+        }
 
-          // Crear prompt con 2 fragmentos
-          const fullPrompt = CLAUDE_PROMPT_SIMPLE
-            .replace('{{CHUNK_1}}', chunk1)
-            .replace('{{CHUNK_2}}', chunk2);
+        let allGeneratedQuestions = [];
 
-          try {
-            const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.simple, 'simple', 2);
-            const responseText = extractClaudeResponseText(response);
-            const questionsData = parseClaudeResponse(responseText);
+        // CONFIGURACIÓN DE CACHÉ
+        const CACHE_PROBABILITY = 0.60; // 60% intentar caché, 40% generar nueva
+        let cacheHits = 0;
+        let cacheMisses = 0;
 
-            if (questionsData?.questions?.length) {
-              questionsData.questions.slice(0, toGenerate).forEach(q => {
-                // FASE 1: Validación básica
-                const validation = validateQuestionQuality(q);
+        // SISTEMA 3 NIVELES: 20% simples / 60% medias / 20% elaboradas
+        const totalNeeded = questionCount;
+        const simpleNeeded = Math.round(totalNeeded * 0.20); // 20% simples
+        const mediaNeeded = Math.round(totalNeeded * 0.60); // 60% medias
+        const elaboratedNeeded = totalNeeded - simpleNeeded - mediaNeeded; // 20% elaboradas (resto)
 
-                // FASE 2: Validación avanzada con chunks
-                const advValidation = advancedQuestionValidation(q, [chunk1, chunk2]);
+        // Distribuir preguntas equitativamente entre temas
+        const questionsPerTopic = {
+          simple: Math.ceil(simpleNeeded / topics.length),
+          media: Math.ceil(mediaNeeded / topics.length),
+          elaborada: Math.ceil(elaboratedNeeded / topics.length)
+        };
 
-                // Score combinado
-                const finalScore = Math.round((validation.score * 0.4) + (advValidation.score * 0.6));
+        console.log(`🎯 Plan (20/60/20): ${simpleNeeded} simples + ${mediaNeeded} medias + ${elaboratedNeeded} elaboradas`);
+        console.log(`📊 Distribución por tema (${topics.length} temas): ${questionsPerTopic.simple} simples + ${questionsPerTopic.media} medias + ${questionsPerTopic.elaborada} elaboradas por tema`);
 
-                console.log(`   📊 Calidad: ${finalScore}/100 (básica: ${validation.score}, avanzada: ${advValidation.score})`);
-                if (advValidation.warnings.length > 0) {
-                  console.log(`   ⚠️  Warnings: ${advValidation.warnings.join(', ')}`);
-                }
+        // ====================================================================
+        // GENERAR PREGUNTAS POR TEMA ESPECÍFICO (distribución equitativa)
+        // ====================================================================
 
-                // 🔴 FIX: Umbral reducido de 70 a 65 para reducir desperdicio de API
-                if (finalScore >= 65) {
-                  q._sourceTopic = currentTopic;
-                  q._qualityScore = finalScore;
-                  db.saveToCacheAndTrack(userId, currentTopic, 'simple', q, 'exam');
-                  questions.push(q);
-                  cacheMisses++;
+        for (const currentTopic of topics) {
+          console.log(`\n${'='.repeat(60)}`);
+          console.log(`📘 Procesando tema: ${currentTopic}`);
+          console.log(`${'='.repeat(60)}`);
+
+          // Obtener contenido específico de este tema
+          const topicContent = await getDocumentsByTopics([currentTopic]);
+          const topicChunks = splitIntoChunks(topicContent, 1000);
+
+          console.log(`📄 Tema ${currentTopic}: ${topicChunks.length} chunks disponibles`);
+
+          // --- PREGUNTAS SIMPLES para este tema ---
+          let simpleCount = 0;
+          while (simpleCount < questionsPerTopic.simple && allGeneratedQuestions.filter(q => q._sourceTopic === currentTopic && q.difficulty === 'simple').length < questionsPerTopic.simple) {
+            const questionsToGet = Math.min(3, questionsPerTopic.simple - simpleCount);
+            const tryCache = Math.random() < CACHE_PROBABILITY;
+            let questions = [];
+
+            if (tryCache) {
+              console.log(`\n💾 SIMPLE [${currentTopic}] - Intentando caché (${questionsToGet} preguntas)...`);
+              for (let j = 0; j < questionsToGet; j++) {
+                const cached = db.getCachedQuestion(userId, [currentTopic], 'simple');
+                if (cached) {
+                  cached.question._sourceTopic = currentTopic;
+                  questions.push(cached.question);
+                  db.markQuestionAsSeen(userId, cached.cacheId, 'exam');
+                  cacheHits++;
+                  console.log(`✓ Pregunta de caché (ID: ${cached.cacheId})`);
                 } else {
-                  console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 65)`);
+                  break;
                 }
-              });
-
-              // Marcar ambos chunks como usados
-              selectedIndices.forEach(idx => db.markChunkAsUsed(userId, currentTopic, idx));
+              }
             }
-          } catch (error) {
-            console.error(`❌ Error generando simples [${currentTopic}]:`, error.message);
+
+          if (questions.length < questionsToGet) {
+            const toGenerate = questionsToGet - questions.length;
+            console.log(`\n⚪ SIMPLE [${currentTopic}] - Generando ${toGenerate} preguntas nuevas`);
+
+            // Seleccionar 2 chunks espaciados
+            const selectedIndices = selectSpacedChunks(userId, currentTopic, topicChunks, 2);
+            const chunk1 = topicChunks[selectedIndices[0]];
+            const chunk2 = selectedIndices.length > 1 ? topicChunks[selectedIndices[1]] : chunk1;
+
+            // Crear prompt con 2 fragmentos
+            const fullPrompt = CLAUDE_PROMPT_SIMPLE
+              .replace('{{CHUNK_1}}', chunk1)
+              .replace('{{CHUNK_2}}', chunk2);
+
+            try {
+              const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.simple, 'simple', 2);
+              const responseText = extractClaudeResponseText(response);
+              const questionsData = parseClaudeResponse(responseText);
+
+              if (questionsData?.questions?.length) {
+                questionsData.questions.slice(0, toGenerate).forEach(q => {
+                  // FASE 1: Validación básica
+                  const validation = validateQuestionQuality(q);
+
+                  // FASE 2: Validación avanzada con chunks
+                  const advValidation = advancedQuestionValidation(q, [chunk1, chunk2]);
+
+                  // Score combinado
+                  const finalScore = Math.round((validation.score * 0.4) + (advValidation.score * 0.6));
+
+                  console.log(`   📊 Calidad: ${finalScore}/100 (básica: ${validation.score}, avanzada: ${advValidation.score})`);
+                  if (advValidation.warnings.length > 0) {
+                    console.log(`   ⚠️  Warnings: ${advValidation.warnings.join(', ')}`);
+                  }
+
+                  // 🔴 FIX: Umbral reducido de 70 a 65 para reducir desperdicio de API
+                  if (finalScore >= 65) {
+                    q._sourceTopic = currentTopic;
+                    q._qualityScore = finalScore;
+                    db.saveToCacheAndTrack(userId, currentTopic, 'simple', q, 'exam');
+                    questions.push(q);
+                    cacheMisses++;
+                  } else {
+                    console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 65)`);
+                  }
+                });
+
+                // Marcar ambos chunks como usados
+                selectedIndices.forEach(idx => db.markChunkAsUsed(userId, currentTopic, idx));
+              }
+            } catch (error) {
+              console.error(`❌ Error generando simples [${currentTopic}]:`, error.message);
+            }
           }
+
+          allGeneratedQuestions.push(...questions);
+          simpleCount += questions.length;
         }
 
-        allGeneratedQuestions.push(...questions);
-        simpleCount += questions.length;
+        // --- PREGUNTAS MEDIAS para este tema ---
+        let mediaCount = 0;
+        while (mediaCount < questionsPerTopic.media && allGeneratedQuestions.filter(q => q._sourceTopic === currentTopic && q.difficulty === 'media').length < questionsPerTopic.media) {
+          const questionsToGet = Math.min(3, questionsPerTopic.media - mediaCount);
+          const tryCache = Math.random() < CACHE_PROBABILITY;
+          let questions = [];
+
+          if (tryCache) {
+            console.log(`\n💾 MEDIA [${currentTopic}] - Intentando caché (${questionsToGet} preguntas)...`);
+            for (let j = 0; j < questionsToGet; j++) {
+              const cached = db.getCachedQuestion(userId, [currentTopic], 'media');
+              if (cached) {
+                cached.question._sourceTopic = currentTopic;
+                questions.push(cached.question);
+                db.markQuestionAsSeen(userId, cached.cacheId, 'exam');
+                cacheHits++;
+                console.log(`✓ Pregunta de caché (ID: ${cached.cacheId})`);
+              } else {
+                break;
+              }
+            }
+          }
+
+          if (questions.length < questionsToGet) {
+            const toGenerate = questionsToGet - questions.length;
+            console.log(`\n🔵 MEDIA [${currentTopic}] - Generando ${toGenerate} preguntas nuevas`);
+
+            // Seleccionar 2 chunks espaciados
+            const selectedIndices = selectSpacedChunks(userId, currentTopic, topicChunks, 2);
+            const chunk1 = topicChunks[selectedIndices[0]];
+            const chunk2 = selectedIndices.length > 1 ? topicChunks[selectedIndices[1]] : chunk1;
+
+            // Crear prompt con 2 fragmentos
+            const fullPrompt = CLAUDE_PROMPT_MEDIA
+              .replace('{{CHUNK_1}}', chunk1)
+              .replace('{{CHUNK_2}}', chunk2);
+
+            try {
+              const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.media, 'media', 2);
+              const responseText = extractClaudeResponseText(response);
+              const questionsData = parseClaudeResponse(responseText);
+
+              if (questionsData?.questions?.length) {
+                questionsData.questions.slice(0, toGenerate).forEach(q => {
+                  // FASE 1: Validación básica
+                  const validation = validateQuestionQuality(q);
+
+                  // FASE 2: Validación avanzada con chunks
+                  const advValidation = advancedQuestionValidation(q, [chunk1, chunk2]);
+
+                  // Score combinado
+                  const finalScore = Math.round((validation.score * 0.4) + (advValidation.score * 0.6));
+
+                  console.log(`   📊 Calidad: ${finalScore}/100 (básica: ${validation.score}, avanzada: ${advValidation.score})`);
+                  if (advValidation.warnings.length > 0) {
+                    console.log(`   ⚠️  Warnings: ${advValidation.warnings.join(', ')}`);
+                  }
+
+                  // 🔴 FIX: Umbral reducido de 70 a 65 para reducir desperdicio de API
+                  if (finalScore >= 65) {
+                    q._sourceTopic = currentTopic;
+                    q._qualityScore = finalScore;
+                    db.saveToCacheAndTrack(userId, currentTopic, 'media', q, 'exam');
+                    questions.push(q);
+                    cacheMisses++;
+                  } else {
+                    console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 65)`);
+                  }
+                });
+
+                // Marcar ambos chunks como usados
+                selectedIndices.forEach(idx => db.markChunkAsUsed(userId, currentTopic, idx));
+              }
+            } catch (error) {
+              console.error(`❌ Error generando medias [${currentTopic}]:`, error.message);
+            }
+          }
+
+          allGeneratedQuestions.push(...questions);
+          mediaCount += questions.length;
+        }
+
+        // --- PREGUNTAS ELABORADAS para este tema ---
+        let elaboratedCount = 0;
+        while (elaboratedCount < questionsPerTopic.elaborada && allGeneratedQuestions.filter(q => q._sourceTopic === currentTopic && q.difficulty === 'elaborada').length < questionsPerTopic.elaborada) {
+          const questionsToGet = Math.min(2, questionsPerTopic.elaborada - elaboratedCount);
+          const tryCache = Math.random() < CACHE_PROBABILITY;
+          let questions = [];
+
+          if (tryCache) {
+            console.log(`\n💾 ELABORADA [${currentTopic}] - Intentando caché (${questionsToGet} preguntas)...`);
+            for (let j = 0; j < questionsToGet; j++) {
+              const cached = db.getCachedQuestion(userId, [currentTopic], 'elaborada');
+              if (cached) {
+                cached.question._sourceTopic = currentTopic;
+                questions.push(cached.question);
+                db.markQuestionAsSeen(userId, cached.cacheId, 'exam');
+                cacheHits++;
+                console.log(`✓ Pregunta de caché (ID: ${cached.cacheId})`);
+              } else {
+                break;
+              }
+            }
+          }
+
+          if (questions.length < questionsToGet) {
+            const toGenerate = questionsToGet - questions.length;
+            console.log(`\n🔴 ELABORADA [${currentTopic}] - Generando ${toGenerate} preguntas nuevas`);
+
+            // Seleccionar 2 chunks espaciados
+            const selectedIndices = selectSpacedChunks(userId, currentTopic, topicChunks, 2);
+            const chunk1 = topicChunks[selectedIndices[0]];
+            const chunk2 = selectedIndices.length > 1 ? topicChunks[selectedIndices[1]] : chunk1;
+
+            // Crear prompt con 2 fragmentos
+            const fullPrompt = CLAUDE_PROMPT_ELABORADA
+              .replace('{{CHUNK_1}}', chunk1)
+              .replace('{{CHUNK_2}}', chunk2);
+
+            try {
+              const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.elaborada, 'elaborada', 2);
+              const responseText = extractClaudeResponseText(response);
+              const questionsData = parseClaudeResponse(responseText);
+
+              if (questionsData?.questions?.length) {
+                questionsData.questions.slice(0, toGenerate).forEach(q => {
+                  // FASE 1: Validación básica
+                  const validation = validateQuestionQuality(q);
+
+                  // FASE 2: Validación avanzada con chunks
+                  const advValidation = advancedQuestionValidation(q, [chunk1, chunk2]);
+
+                  // Score combinado
+                  const finalScore = Math.round((validation.score * 0.4) + (advValidation.score * 0.6));
+
+                  console.log(`   📊 Calidad: ${finalScore}/100 (básica: ${validation.score}, avanzada: ${advValidation.score})`);
+                  if (advValidation.warnings.length > 0) {
+                    console.log(`   ⚠️  Warnings: ${advValidation.warnings.join(', ')}`);
+                  }
+
+                  // 🔴 FIX: Umbral reducido de 70 a 65 para reducir desperdicio de API
+                  if (finalScore >= 65) {
+                    q._sourceTopic = currentTopic;
+                    q._qualityScore = finalScore;
+                    db.saveToCacheAndTrack(userId, currentTopic, 'elaborada', q, 'exam');
+                    questions.push(q);
+                    cacheMisses++;
+                  } else {
+                    console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 65)`);
+                  }
+                });
+
+                // Marcar ambos chunks como usados
+                selectedIndices.forEach(idx => db.markChunkAsUsed(userId, currentTopic, idx));
+              }
+            } catch (error) {
+              console.error(`❌ Error generando elaboradas [${currentTopic}]:`, error.message);
+            }
+          }
+
+          allGeneratedQuestions.push(...questions);
+          elaboratedCount += questions.length;
+          }
+        } // FIN del loop por temas
+
+        // Validar y aleatorizar todas las preguntas generadas
+        const finalQuestions = allGeneratedQuestions.slice(0, questionCount).map((q, index) => {
+          if (!q.question || !Array.isArray(q.options) || q.options.length !== 4) {
+            console.log(`⚠️ Corrigiendo pregunta ${index + 1}`);
+            q.options = q.options || [
+              "A) Opción 1", "B) Opción 2", "C) Opción 3", "D) Opción 4"
+            ];
+          }
+          q.correct = q.correct ?? 0;
+          q.explanation = q.explanation || "Explicación no disponible.";
+          q.difficulty = q.difficulty || "media";
+          q.page_reference = q.page_reference || "Referencia no disponible";
+
+          // ALEATORIZAR ORDEN DE LAS OPCIONES
+          const randomizedQuestion = randomizeQuestionOptions(q);
+
+          // Eliminar propiedad temporal _sourceTopic antes de enviar al cliente
+          delete randomizedQuestion._sourceTopic;
+
+          console.log(`🎲 Pregunta ${index + 1}: "${q.question.substring(0, 50)}..." - Correcta: ${['A', 'B', 'C', 'D'][randomizedQuestion.correct]} - Dificultad: ${q.difficulty}`);
+
+          return randomizedQuestion;
+        });
+
+        // Si no se generaron suficientes preguntas, agregar fallback con mensaje de error
+        if (finalQuestions.length === 0) {
+          console.log('⚠️ No se generaron preguntas, usando fallback de error');
+          const fallbackQuestion = {
+            question: `⚠️ ERROR: No se pudieron generar preguntas del ${topics.map(t => TOPIC_CONFIG[t]?.title || t).join(', ')}`,
+            options: [
+              "A) Por favor, intenta de nuevo - Puede ser un problema temporal",
+              "B) Verifica tu conexión a internet y recarga la página",
+              "C) Si el error continúa, contacta al administrador del sistema",
+              "D) Prueba con otro tema mientras se resuelve el problema"
+            ],
+            correct: 0,
+            explanation: `Error técnico: No se pudieron generar preguntas del tema seleccionado. Esto puede deberse a: 1) Sobrecarga temporal del servicio de IA, 2) Problema de conexión, 3) Error en los materiales de estudio. Por favor, recarga la página e intenta de nuevo. Si el problema persiste, contacta al administrador.`,
+            difficulty: "media",
+            page_reference: "Error técnico - Sistema"
+          };
+          finalQuestions.push(randomizeQuestionOptions(fallbackQuestion));
+        }
+
+        // Registrar actividad por cada pregunta generada
+        finalQuestions.forEach(() => {
+            db.logActivity(userId, 'question_generated', topics[0]);
+        });
+
+        // Mostrar cobertura de chunks por tema
+        console.log(`\n📊 COBERTURA DE CHUNKS POR TEMA:`);
+        const coverageByTopic = await Promise.all(
+            topics.map(async (topic) => {
+              const topicContent = await getDocumentsByTopics([topic]);
+              const topicChunks = splitIntoChunks(topicContent, 1200);
+              const coverage = db.getChunkCoverage(userId, topic);
+              const percentage = topicChunks.length > 0 ? Math.round(coverage / topicChunks.length * 100) : 0;
+              console.log(`  ${topic}: ${coverage}/${topicChunks.length} chunks (${percentage}%)`);
+              return { topic, used: coverage, total: topicChunks.length, percentage };
+            })
+        );
+
+        // Estadísticas de caché
+        const total = cacheHits + cacheMisses;
+        const cacheHitRate = total > 0 ? Math.round((cacheHits / total) * 100) : 0;
+        console.log(`\n💾 CACHÉ: ${cacheHits} hits / ${cacheMisses} misses (${cacheHitRate}% hit rate)`);
+
+        // Actualizar estadísticas diarias de caché
+        const costPerQuestion = 0.00076;
+        const totalCost = cacheMisses * costPerQuestion;
+        db.updateCacheStats(cacheMisses, cacheHits, totalCost);
+
+        // Limpiar preguntas expiradas (cada vez que se genera un examen)
+        db.cleanExpiredCache();
+
+        return {
+          examId: Date.now(),
+          questions: finalQuestions,
+          topics,
+          questionCount: finalQuestions.length,
+          coverageByTopic,
+          cacheStats: {
+            hits: cacheHits,
+            misses: cacheMisses,
+            hitRate: cacheHitRate,
+            totalQuestions: total,
+            cost: totalCost.toFixed(5)
+          }
+        };
+
+      } catch (error) {
+        console.error('❌ Error generando examen:', error);
+        throw error; // Propagar error para manejo externo
       }
-
-      // --- PREGUNTAS MEDIAS para este tema ---
-      let mediaCount = 0;
-      while (mediaCount < questionsPerTopic.media && allGeneratedQuestions.filter(q => q._sourceTopic === currentTopic && q.difficulty === 'media').length < questionsPerTopic.media) {
-        const questionsToGet = Math.min(3, questionsPerTopic.media - mediaCount);
-        const tryCache = Math.random() < CACHE_PROBABILITY;
-        let questions = [];
-
-        if (tryCache) {
-          console.log(`\n💾 MEDIA [${currentTopic}] - Intentando caché (${questionsToGet} preguntas)...`);
-          for (let j = 0; j < questionsToGet; j++) {
-            const cached = db.getCachedQuestion(userId, [currentTopic], 'media');
-            if (cached) {
-              cached.question._sourceTopic = currentTopic;
-              questions.push(cached.question);
-              db.markQuestionAsSeen(userId, cached.cacheId, 'exam');
-              cacheHits++;
-              console.log(`✓ Pregunta de caché (ID: ${cached.cacheId})`);
-            } else {
-              break;
-            }
-          }
-        }
-
-        if (questions.length < questionsToGet) {
-          const toGenerate = questionsToGet - questions.length;
-          console.log(`\n🔵 MEDIA [${currentTopic}] - Generando ${toGenerate} preguntas nuevas`);
-
-          // Seleccionar 2 chunks espaciados
-          const selectedIndices = selectSpacedChunks(userId, currentTopic, topicChunks, 2);
-          const chunk1 = topicChunks[selectedIndices[0]];
-          const chunk2 = selectedIndices.length > 1 ? topicChunks[selectedIndices[1]] : chunk1;
-
-          // Crear prompt con 2 fragmentos
-          const fullPrompt = CLAUDE_PROMPT_MEDIA
-            .replace('{{CHUNK_1}}', chunk1)
-            .replace('{{CHUNK_2}}', chunk2);
-
-          try {
-            const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.media, 'media', 2);
-            const responseText = extractClaudeResponseText(response);
-            const questionsData = parseClaudeResponse(responseText);
-
-            if (questionsData?.questions?.length) {
-              questionsData.questions.slice(0, toGenerate).forEach(q => {
-                // FASE 1: Validación básica
-                const validation = validateQuestionQuality(q);
-
-                // FASE 2: Validación avanzada con chunks
-                const advValidation = advancedQuestionValidation(q, [chunk1, chunk2]);
-
-                // Score combinado
-                const finalScore = Math.round((validation.score * 0.4) + (advValidation.score * 0.6));
-
-                console.log(`   📊 Calidad: ${finalScore}/100 (básica: ${validation.score}, avanzada: ${advValidation.score})`);
-                if (advValidation.warnings.length > 0) {
-                  console.log(`   ⚠️  Warnings: ${advValidation.warnings.join(', ')}`);
-                }
-
-                // 🔴 FIX: Umbral reducido de 70 a 65 para reducir desperdicio de API
-                if (finalScore >= 65) {
-                  q._sourceTopic = currentTopic;
-                  q._qualityScore = finalScore;
-                  db.saveToCacheAndTrack(userId, currentTopic, 'media', q, 'exam');
-                  questions.push(q);
-                  cacheMisses++;
-                } else {
-                  console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 65)`);
-                }
-              });
-
-              // Marcar ambos chunks como usados
-              selectedIndices.forEach(idx => db.markChunkAsUsed(userId, currentTopic, idx));
-            }
-          } catch (error) {
-            console.error(`❌ Error generando medias [${currentTopic}]:`, error.message);
-          }
-        }
-
-        allGeneratedQuestions.push(...questions);
-        mediaCount += questions.length;
-      }
-
-      // --- PREGUNTAS ELABORADAS para este tema ---
-      let elaboratedCount = 0;
-      while (elaboratedCount < questionsPerTopic.elaborada && allGeneratedQuestions.filter(q => q._sourceTopic === currentTopic && q.difficulty === 'elaborada').length < questionsPerTopic.elaborada) {
-        const questionsToGet = Math.min(2, questionsPerTopic.elaborada - elaboratedCount);
-        const tryCache = Math.random() < CACHE_PROBABILITY;
-        let questions = [];
-
-        if (tryCache) {
-          console.log(`\n💾 ELABORADA [${currentTopic}] - Intentando caché (${questionsToGet} preguntas)...`);
-          for (let j = 0; j < questionsToGet; j++) {
-            const cached = db.getCachedQuestion(userId, [currentTopic], 'elaborada');
-            if (cached) {
-              cached.question._sourceTopic = currentTopic;
-              questions.push(cached.question);
-              db.markQuestionAsSeen(userId, cached.cacheId, 'exam');
-              cacheHits++;
-              console.log(`✓ Pregunta de caché (ID: ${cached.cacheId})`);
-            } else {
-              break;
-            }
-          }
-        }
-
-        if (questions.length < questionsToGet) {
-          const toGenerate = questionsToGet - questions.length;
-          console.log(`\n🔴 ELABORADA [${currentTopic}] - Generando ${toGenerate} preguntas nuevas`);
-
-          // Seleccionar 2 chunks espaciados
-          const selectedIndices = selectSpacedChunks(userId, currentTopic, topicChunks, 2);
-          const chunk1 = topicChunks[selectedIndices[0]];
-          const chunk2 = selectedIndices.length > 1 ? topicChunks[selectedIndices[1]] : chunk1;
-
-          // Crear prompt con 2 fragmentos
-          const fullPrompt = CLAUDE_PROMPT_ELABORADA
-            .replace('{{CHUNK_1}}', chunk1)
-            .replace('{{CHUNK_2}}', chunk2);
-
-          try {
-            const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.elaborada, 'elaborada', 2);
-            const responseText = extractClaudeResponseText(response);
-            const questionsData = parseClaudeResponse(responseText);
-
-            if (questionsData?.questions?.length) {
-              questionsData.questions.slice(0, toGenerate).forEach(q => {
-                // FASE 1: Validación básica
-                const validation = validateQuestionQuality(q);
-
-                // FASE 2: Validación avanzada con chunks
-                const advValidation = advancedQuestionValidation(q, [chunk1, chunk2]);
-
-                // Score combinado
-                const finalScore = Math.round((validation.score * 0.4) + (advValidation.score * 0.6));
-
-                console.log(`   📊 Calidad: ${finalScore}/100 (básica: ${validation.score}, avanzada: ${advValidation.score})`);
-                if (advValidation.warnings.length > 0) {
-                  console.log(`   ⚠️  Warnings: ${advValidation.warnings.join(', ')}`);
-                }
-
-                // 🔴 FIX: Umbral reducido de 70 a 65 para reducir desperdicio de API
-                if (finalScore >= 65) {
-                  q._sourceTopic = currentTopic;
-                  q._qualityScore = finalScore;
-                  db.saveToCacheAndTrack(userId, currentTopic, 'elaborada', q, 'exam');
-                  questions.push(q);
-                  cacheMisses++;
-                } else {
-                  console.log(`   ❌ Pregunta rechazada (score ${finalScore} < 65)`);
-                }
-              });
-
-              // Marcar ambos chunks como usados
-              selectedIndices.forEach(idx => db.markChunkAsUsed(userId, currentTopic, idx));
-            }
-          } catch (error) {
-            console.error(`❌ Error generando elaboradas [${currentTopic}]:`, error.message);
-          }
-        }
-
-        allGeneratedQuestions.push(...questions);
-        elaboratedCount += questions.length;
-      }
-    } // FIN del loop por temas
-
-    // Validar y aleatorizar todas las preguntas generadas
-    const finalQuestions = allGeneratedQuestions.slice(0, questionCount).map((q, index) => {
-      if (!q.question || !Array.isArray(q.options) || q.options.length !== 4) {
-        console.log(`⚠️ Corrigiendo pregunta ${index + 1}`);
-        q.options = q.options || [
-          "A) Opción 1", "B) Opción 2", "C) Opción 3", "D) Opción 4"
-        ];
-      }
-      q.correct = q.correct ?? 0;
-      q.explanation = q.explanation || "Explicación no disponible.";
-      q.difficulty = q.difficulty || "media";
-      q.page_reference = q.page_reference || "Referencia no disponible";
-
-      // ALEATORIZAR ORDEN DE LAS OPCIONES
-      const randomizedQuestion = randomizeQuestionOptions(q);
-
-      // Eliminar propiedad temporal _sourceTopic antes de enviar al cliente
-      delete randomizedQuestion._sourceTopic;
-
-      console.log(`🎲 Pregunta ${index + 1}: "${q.question.substring(0, 50)}..." - Correcta: ${['A', 'B', 'C', 'D'][randomizedQuestion.correct]} - Dificultad: ${q.difficulty}`);
-
-      return randomizedQuestion;
-    });
-
-    // Si no se generaron suficientes preguntas, agregar fallback con mensaje de error
-    if (finalQuestions.length === 0) {
-      console.log('⚠️ No se generaron preguntas, usando fallback de error');
-      const fallbackQuestion = {
-        question: `⚠️ ERROR: No se pudieron generar preguntas del ${topics.map(t => TOPIC_CONFIG[t]?.title || t).join(', ')}`,
-        options: [
-          "A) Por favor, intenta de nuevo - Puede ser un problema temporal",
-          "B) Verifica tu conexión a internet y recarga la página",
-          "C) Si el error continúa, contacta al administrador del sistema",
-          "D) Prueba con otro tema mientras se resuelve el problema"
-        ],
-        correct: 0,
-        explanation: `Error técnico: No se pudieron generar preguntas del tema seleccionado. Esto puede deberse a: 1) Sobrecarga temporal del servicio de IA, 2) Problema de conexión, 3) Error en los materiales de estudio. Por favor, recarga la página e intenta de nuevo. Si el problema persiste, contacta al administrador.`,
-        difficulty: "media",
-        page_reference: "Error técnico - Sistema"
-      };
-      finalQuestions.push(randomizeQuestionOptions(fallbackQuestion));
     }
-
-    // Registrar actividad por cada pregunta generada
-    finalQuestions.forEach(() => {
-      db.logActivity(userId, 'question_generated', topics[0]);
-    });
-
-    // Mostrar cobertura de chunks por tema
-    console.log(`\n📊 COBERTURA DE CHUNKS POR TEMA:`);
-    const coverageByTopic = await Promise.all(
-      topics.map(async (topic) => {
-        const topicContent = await getDocumentsByTopics([topic]);
-        const topicChunks = splitIntoChunks(topicContent, 1200);
-        const coverage = db.getChunkCoverage(userId, topic);
-        const percentage = topicChunks.length > 0 ? Math.round(coverage / topicChunks.length * 100) : 0;
-        console.log(`  ${topic}: ${coverage}/${topicChunks.length} chunks (${percentage}%)`);
-        return { topic, used: coverage, total: topicChunks.length, percentage };
-      })
-    );
-
-    // Estadísticas de caché
-    const total = cacheHits + cacheMisses;
-    const cacheHitRate = total > 0 ? Math.round((cacheHits / total) * 100) : 0;
-    console.log(`\n💾 CACHÉ: ${cacheHits} hits / ${cacheMisses} misses (${cacheHitRate}% hit rate)`);
-
-    // Actualizar estadísticas diarias de caché
-    const costPerQuestion = 0.00076;
-    const totalCost = cacheMisses * costPerQuestion;
-    db.updateCacheStats(cacheMisses, cacheHits, totalCost);
-
-    // Limpiar preguntas expiradas (cada vez que se genera un examen)
-    db.cleanExpiredCache();
-
-    res.json({
-      examId: Date.now(),
-      questions: finalQuestions,
-      topics,
-      questionCount: finalQuestions.length,
-      coverageByTopic,
-      cacheStats: {
-        hits: cacheHits,
-        misses: cacheMisses,
-        hitRate: cacheHitRate,
-        totalQuestions: total,
-        cost: totalCost.toFixed(5)
-      }
-    });
-    
-  } catch (error) {
-    console.error('❌ Error generando examen:', error);
+  }).then(result => {
+    // Éxito: enviar resultado al cliente
+    res.json(result);
+  }).catch(error => {
+    // Error: manejar y responder
+    console.error('❌ Error en queue de exámenes:', error);
 
     // Validar que error existe antes de acceder a propiedades
     const errorCode = error?.status || (error?.message ? 500 : 520);
@@ -2208,9 +2273,8 @@ app.post('/api/generate-exam', requireAuth, examLimiter, async (req, res) => {
     };
 
     const response = errorInfo[errorCode] || errorInfo[500];
-
     res.status(errorCode).json(response);
-  }
+  });
 });
 
 // ====================================================================
@@ -2961,7 +3025,7 @@ app.post('/api/exam/official', requireAuth, examLimiter, async (req, res) => {
     // Si faltan preguntas, generarlas en PARALELO CONTROLADO (más rápido pero sin saturar API)
     if (totalMissing > 0) {
       const promiseFunctions = [];
-      const MAX_CONCURRENT_CALLS = 30; // Máximo 30 llamadas simultáneas (optimizado para mejor rendimiento)
+      const MAX_CONCURRENT_CALLS = 10; // Máximo 10 llamadas simultáneas (sincronizado con claudeLimiter)
 
       // Generar preguntas SIMPLES faltantes en paralelo
       const simpleCallsMissing = Math.ceil(simpleMissing / 2);

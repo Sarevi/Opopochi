@@ -16,9 +16,23 @@ db.pragma('foreign_keys = ON');
 // Habilitar WAL mode para mejor concurrencia (200 usuarios concurrentes)
 db.pragma('journal_mode = WAL');
 
-// Optimizaciones de rendimiento
-db.pragma('synchronous = NORMAL');
-db.pragma('cache_size = -64000'); // 64MB de caché
+// ========================
+// OPTIMIZACIONES PARA VPS (4 vCPU + 8GB RAM)
+// ========================
+
+// Rendimiento general
+db.pragma('synchronous = NORMAL');         // Balance velocidad/durabilidad
+db.pragma('cache_size = -262144');         // 256MB de caché (era 64MB)
+db.pragma('mmap_size = 268435456');        // 256MB memory-mapped I/O
+db.pragma('temp_store = MEMORY');          // Tablas temporales en RAM
+db.pragma('page_size = 8192');             // Páginas de 8KB (óptimo para datasets grandes)
+
+// WAL optimizations
+db.pragma('wal_autocheckpoint = 2000');    // Checkpoint cada 2000 páginas (mejor throughput)
+db.pragma('wal_checkpoint(PASSIVE)');      // Checkpoint pasivo inicial
+
+// Análisis automático de consultas
+db.pragma('analysis_limit = 400');         // Mejorar query planner
 
 // ========================
 // CREAR TABLAS
