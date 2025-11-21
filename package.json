@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.24.3",
+    "async": "^3.2.5",
     "bcrypt": "^5.1.1",
     "better-sqlite3": "^11.0.0",
+    "bottleneck": "^2.19.5",
     "connect-sqlite3": "^0.9.13",
     "cors": "^2.8.5",
     "dotenv": "^16.6.1",
