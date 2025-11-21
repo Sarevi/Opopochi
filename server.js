@@ -1790,6 +1790,176 @@ app.get('/api/admin/export/all', requireAdmin, (req, res) => {
 });
 
 // ========================
+// ENDPOINT: PRE-POBLAR CACHÉ
+// ========================
+// Genera 100 preguntas por tema para alcanzar 90% cache hit rate
+// Uso: POST /api/admin/populate-cache con header "x-admin-password"
+app.post('/api/admin/populate-cache', requireAdmin, async (req, res) => {
+  try {
+    const { topicId } = req.body;
+
+    // Si se especifica un tema, solo ese; si no, todos
+    const topicsToPopulate = topicId ? [topicId] : Object.keys(TOPIC_CONFIG);
+
+    console.log(`🔥 Iniciando pre-población de caché para ${topicsToPopulate.length} tema(s)...`);
+
+    // Responder inmediatamente (proceso en background)
+    res.json({
+      success: true,
+      message: `Pre-población iniciada para ${topicsToPopulate.length} tema(s)`,
+      topics: topicsToPopulate,
+      estimatedTime: `${topicsToPopulate.length * 8}-${topicsToPopulate.length * 12} minutos`
+    });
+
+    // Ejecutar en background (no await aquí para no bloquear)
+    (async () => {
+      const ADMIN_USER_ID = 0; // Usuario especial para cache global
+      const TARGET_PER_TOPIC = 100; // 100 preguntas por tema
+      const TARGET_SIMPLE = 20;
+      const TARGET_MEDIA = 60;
+      const TARGET_ELABORADA = 20;
+
+      for (const currentTopic of topicsToPopulate) {
+        console.log(`\n${'='.repeat(60)}`);
+        console.log(`🎯 Pre-poblando caché: ${currentTopic}`);
+        console.log(`${'='.repeat(60)}`);
+
+        try {
+          // Obtener contenido del tema
+          const topicContent = await getDocumentsByTopics([currentTopic]);
+          if (!topicContent) {
+            console.error(`❌ No hay contenido para tema: ${currentTopic}`);
+            continue;
+          }
+
+          const chunks = splitIntoChunks(topicContent, 1000);
+          console.log(`📄 ${chunks.length} chunks disponibles para ${currentTopic}`);
+
+          // Generar preguntas simples (20)
+          console.log(`\n⚪ Generando ${TARGET_SIMPLE} preguntas SIMPLES...`);
+          for (let i = 0; i < Math.ceil(TARGET_SIMPLE / 2); i++) {
+            const chunk1Index = Math.floor(Math.random() * chunks.length);
+            const chunk2Index = Math.floor(Math.random() * chunks.length);
+            const chunk1 = chunks[chunk1Index];
+            const chunk2 = chunks[chunk2Index];
+
+            const fullPrompt = CLAUDE_PROMPT_SIMPLE
+              .replace('{{CHUNK_1}}', chunk1)
+              .replace('{{CHUNK_2}}', chunk2);
+
+            try {
+              const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.simple, 'simple', 2);
+              const responseText = extractClaudeResponseText(response);
+              const questionsData = parseClaudeResponse(responseText);
+
+              if (questionsData?.questions?.length) {
+                questionsData.questions.forEach(q => {
+                  const validation = validateQuestionQuality(q);
+                  const advValidation = advancedQuestionValidation(q, [chunk1, chunk2]);
+                  const finalScore = Math.round((validation.score * 0.4) + (advValidation.score * 0.6));
+
+                  if (finalScore >= 65) {
+                    q._sourceTopic = currentTopic;
+                    q._qualityScore = finalScore;
+                    db.saveToCacheAndTrack(ADMIN_USER_ID, currentTopic, 'simple', q, 'populate');
+                    console.log(`  ✓ Simple guardada (score: ${finalScore})`);
+                  }
+                });
+              }
+            } catch (error) {
+              console.error(`  ❌ Error generando simples: ${error.message}`);
+            }
+          }
+
+          // Generar preguntas medias (60)
+          console.log(`\n🔵 Generando ${TARGET_MEDIA} preguntas MEDIAS...`);
+          for (let i = 0; i < Math.ceil(TARGET_MEDIA / 2); i++) {
+            const chunk1Index = Math.floor(Math.random() * chunks.length);
+            const chunk2Index = Math.floor(Math.random() * chunks.length);
+            const chunk1 = chunks[chunk1Index];
+            const chunk2 = chunks[chunk2Index];
+
+            const fullPrompt = CLAUDE_PROMPT_MEDIA
+              .replace('{{CHUNK_1}}', chunk1)
+              .replace('{{CHUNK_2}}', chunk2);
+
+            try {
+              const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.media, 'media', 2);
+              const responseText = extractClaudeResponseText(response);
+              const questionsData = parseClaudeResponse(responseText);
+
+              if (questionsData?.questions?.length) {
+                questionsData.questions.forEach(q => {
+                  const validation = validateQuestionQuality(q);
+                  const advValidation = advancedQuestionValidation(q, [chunk1, chunk2]);
+                  const finalScore = Math.round((validation.score * 0.4) + (advValidation.score * 0.6));
+
+                  if (finalScore >= 65) {
+                    q._sourceTopic = currentTopic;
+                    q._qualityScore = finalScore;
+                    db.saveToCacheAndTrack(ADMIN_USER_ID, currentTopic, 'media', q, 'populate');
+                    console.log(`  ✓ Media guardada (score: ${finalScore})`);
+                  }
+                });
+              }
+            } catch (error) {
+              console.error(`  ❌ Error generando medias: ${error.message}`);
+            }
+          }
+
+          // Generar preguntas elaboradas (20)
+          console.log(`\n🔴 Generando ${TARGET_ELABORADA} preguntas ELABORADAS...`);
+          for (let i = 0; i < Math.ceil(TARGET_ELABORADA / 2); i++) {
+            const chunk1Index = Math.floor(Math.random() * chunks.length);
+            const chunk2Index = Math.floor(Math.random() * chunks.length);
+            const chunk1 = chunks[chunk1Index];
+            const chunk2 = chunks[chunk2Index];
+
+            const fullPrompt = CLAUDE_PROMPT_ELABORADA
+              .replace('{{CHUNK_1}}', chunk1)
+              .replace('{{CHUNK_2}}', chunk2);
+
+            try {
+              const response = await callClaudeWithImprovedRetry(fullPrompt, MAX_TOKENS_CONFIG.elaborada, 'elaborada', 2);
+              const responseText = extractClaudeResponseText(response);
+              const questionsData = parseClaudeResponse(responseText);
+
+              if (questionsData?.questions?.length) {
+                questionsData.questions.forEach(q => {
+                  const validation = validateQuestionQuality(q);
+                  const advValidation = advancedQuestionValidation(q, [chunk1, chunk2]);
+                  const finalScore = Math.round((validation.score * 0.4) + (advValidation.score * 0.6));
+
+                  if (finalScore >= 65) {
+                    q._sourceTopic = currentTopic;
+                    q._qualityScore = finalScore;
+                    db.saveToCacheAndTrack(ADMIN_USER_ID, currentTopic, 'elaborada', q, 'populate');
+                    console.log(`  ✓ Elaborada guardada (score: ${finalScore})`);
+                  }
+                });
+              }
+            } catch (error) {
+              console.error(`  ❌ Error generando elaboradas: ${error.message}`);
+            }
+          }
+
+          console.log(`✅ Caché poblado para ${currentTopic}`);
+
+        } catch (error) {
+          console.error(`❌ Error poblando tema ${currentTopic}:`, error.message);
+        }
+      }
+
+      console.log('\n🎉 Pre-población de caché completada');
+    })();
+
+  } catch (error) {
+    console.error('❌ Error iniciando pre-población:', error);
+    res.status(500).json({ error: 'Error al iniciar pre-población de caché' });
+  }
+});
+
+// ========================
 // RUTAS DE LA API OPTIMIZADAS
 // ========================
 
@@ -1805,14 +1975,14 @@ app.get('/api/topics', (req, res) => {
 // QUEUE PARA EXÁMENES
 // ========================
 // Limita exámenes concurrentes para prevenir sobrecarga de memoria y Claude API
-// Con 30 exámenes concurrentes + rate limiter, soporta 100+ usuarios
+// Con 100 exámenes concurrentes + cache 90% + rate limiter, soporta 200 usuarios concurrentes
 const examQueue = async.queue(async (task) => {
   return await task.fn();
-}, 30); // MÁXIMO 30 exámenes simultáneos
+}, 100); // MÁXIMO 100 exámenes simultáneos
 
 // Monitoreo de la queue
 examQueue.saturated(() => {
-  console.warn('⚠️ Queue de exámenes saturada (30 concurrentes)');
+  console.warn('⚠️ Queue de exámenes saturada (100 concurrentes)');
 });
 
 examQueue.empty(() => {
@@ -1857,7 +2027,7 @@ app.post('/api/generate-exam', requireAuth, examLimiter, async (req, res) => {
         let allGeneratedQuestions = [];
 
         // CONFIGURACIÓN DE CACHÉ
-        const CACHE_PROBABILITY = 0.60; // 60% intentar caché, 40% generar nueva
+        const CACHE_PROBABILITY = 0.90; // 90% intentar caché, 10% generar nueva (optimizado para 200 usuarios concurrentes)
         let cacheHits = 0;
         let cacheMisses = 0;
 
