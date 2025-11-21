@@ -1964,6 +1964,14 @@
                     document.getElementById('topic-selection').style.display = 'block';
                     document.getElementById('available-topics').style.display = 'block';
                     document.getElementById('question-container').classList.add('hidden');
+
+                    // 🔴 FIX: Si NO está en modo examen, ocultar barra de progreso
+                    if (!isOfficialExamMode) {
+                        document.getElementById('exam-progress-bar').style.display = 'none';
+                        document.getElementById('exam-progress-text').style.display = 'none';
+                        document.getElementById('exam-finish-container').style.display = 'none';
+                    }
+
                     loadAvailableTopics();
                     break;
                 case 'progress':
@@ -2115,6 +2123,11 @@
             isOfficialExamMode = false;
             officialExamQuestions = [];
             officialExamAnswers = [];
+
+            // 🔴 FIX: Ocultar elementos de progreso del examen oficial
+            document.getElementById('exam-progress-bar').style.display = 'none';
+            document.getElementById('exam-progress-text').style.display = 'none';
+            document.getElementById('exam-finish-container').style.display = 'none';
 
             currentTopic = selectedTopicId;
 
@@ -3293,6 +3306,11 @@
                 isOfficialExamMode = false;
                 officialExamQuestions = [];
                 officialExamAnswers = [];
+
+                // 🔴 FIX: Ocultar elementos visuales del examen
+                document.getElementById('exam-progress-bar').style.display = 'none';
+                document.getElementById('exam-progress-text').style.display = 'none';
+                document.getElementById('exam-finish-container').style.display = 'none';
 
                 checkPendingExam();
                 console.log('❌ Examen pendiente cancelado y variables reseteadas');
