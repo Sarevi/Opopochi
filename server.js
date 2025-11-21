@@ -3556,14 +3556,14 @@ async function preGenerateMonthlyCache() {
   const startTime = Date.now();
   const allTopics = Object.keys(TOPIC_CONFIG);
   const SYSTEM_USER_ID = 0; // Usuario especial para pre-generación
-  const QUESTIONS_PER_TOPIC = 20; // Aumentado de 15 a 20 para mejor hit rate (70%)
+  const QUESTIONS_PER_TOPIC = 100; // 100 preguntas por tema para 90% cache hit rate
   const MAX_RETRIES_PER_DIFFICULTY = 3; // Reintentos máximos por dificultad
 
   // Distribución 20/60/20
   const distribution = {
-    'simple': 4,      // 20% de 20 = 4
-    'media': 12,      // 60% de 20 = 12
-    'elaborada': 4    // 20% de 20 = 4
+    'simple': 20,      // 20% de 100 = 20
+    'media': 60,       // 60% de 100 = 60
+    'elaborada': 20    // 20% de 100 = 20
   };
 
   let totalGenerated = 0;
@@ -3574,7 +3574,7 @@ async function preGenerateMonthlyCache() {
   for (const topicId of allTopics) {
     const topicTitle = TOPIC_CONFIG[topicId].title;
     console.log(`\n📚 Procesando: ${topicTitle}`);
-    console.log(`   Objetivo: ${QUESTIONS_PER_TOPIC} preguntas (3S + 9M + 3E)`);
+    console.log(`   Objetivo: ${QUESTIONS_PER_TOPIC} preguntas (20S + 60M + 20E)`);
 
     let topicGenerated = 0;
     const difficultyResults = {};
@@ -3673,7 +3673,7 @@ async function preGenerateMonthlyCache() {
   console.log('🎉 PRE-GENERACIÓN COMPLETADA');
   console.log('🎉 ========================================');
   console.log(`📊 Temas procesados: ${allTopics.length}`);
-  console.log(`✅ Temas completos (15/15): ${successfulTopics}/${allTopics.length}`);
+  console.log(`✅ Temas completos (100/100): ${successfulTopics}/${allTopics.length}`);
   console.log(`📈 Tasa de éxito: ${successRate}%`);
   console.log(`✅ Preguntas generadas: ${totalGenerated}/${totalExpected}`);
   console.log(`⏱️  Tiempo total: ${duration} minutos`);
